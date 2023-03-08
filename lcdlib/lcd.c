@@ -7,7 +7,7 @@
 #include "font.h"
 #include "lcd.h"
 
-lcd display = {LCDWIDTH, LCDHEIGHT, North, 0, 0, WHITE, BLACK};
+lcd display = {LCDWIDTH, LCDHEIGHT, North, 0, 0, 0x20E4, 0xFF99};
 
 void init_lcd()
 {
@@ -18,6 +18,7 @@ void init_lcd()
 	
 	/* Configure ports */
 	CTRL_DDR = 0x7F;
+	// PIN 7 on the control port is an input.
 	DATA_DDR = 0xFF;
 	
 	init_display_controller();
@@ -84,6 +85,36 @@ void fill_rectangle_indexed(rectangle r, uint16_t* col)
 		for(y=r.top; y<=r.bottom; y++)
 			write_data16(*col++);
 }
+
+void happy()
+{
+	uint16_t rx, ry;
+	uint16_t gray, r, g;
+	write_cmd(COLUMN_ADDRESS_SET);
+	write_data16(0);
+	write_data16(240);
+	write_cmd(PAGE_ADDRESS_SET);
+	write_data16(0);
+	write_data16(320);
+	write_cmd(MEMORY_WRITE);
+	for(ry = 0; ry <= 159; ry++){
+		for(rx = 0; rx <= 119; rx++){
+			gray = pgm_read_byte(&happiness[rx+ry*120]);
+			r = (gray >> 3);
+			g = (gray >> 2);
+			write_data16((r<<11)|(g<<5)|(r));
+			write_data16((r<<11)|(g<<5)|(r));
+		}
+		for(rx = 0; rx <= 119; rx++){
+			gray = pgm_read_byte(&happiness[rx+ry*120]);
+			r = (gray >> 3);
+			g = (gray >> 2);
+			write_data16((r<<11)|(g<<5)|(r));
+			write_data16((r<<11)|(g<<5)|(r));
+		}
+	}
+}
+
 
 void clear_screen()
 {
