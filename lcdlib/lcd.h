@@ -42,3 +42,4 @@ void fill_rectangle_indexed(rectangle r, uint16_t* col);
 void display_char(char c);
 void display_string(char *str);
 void init_graphics();
+void calibrate_graphics();

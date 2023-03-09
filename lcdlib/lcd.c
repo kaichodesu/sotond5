@@ -126,6 +126,30 @@ void init_graphics()
 	}
 }
 
+void calibrate_graphics()
+//  Calibration graphic 120*39px
+//  Y offset 216px
+{
+	uint8_t x, y;
+	write_cmd(COLUMN_ADDRESS_SET);
+	write_data16(0);
+	write_data16(240);
+	write_cmd(PAGE_ADDRESS_SET);
+	write_data16(216);
+	write_data16(294);
+	write_cmd(MEMORY_WRITE);
+	for(y = 0; y <= 38; y++){
+		for(x = 0; x <= 119; x++){
+			write_data16(pgm_read_word(&bg1_3[x+y*120]));
+			write_data16(pgm_read_word(&bg1_3[x+y*120]));
+		}
+		for(x = 0; x <= 119; x++){
+			write_data16(pgm_read_word(&bg1_3[x+y*120]));
+			write_data16(pgm_read_word(&bg1_3[x+y*120]));
+		}
+	}
+}
+
 
 void clear_screen()
 {

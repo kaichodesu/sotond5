@@ -10,5 +10,6 @@ int main(){
     set_orientation(North);
     int index;
     init_graphics();
+    calibrate_graphics();
     return 0;
 }
