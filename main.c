@@ -6,11 +6,15 @@
 #include "libio/io.h"
 // DISPLAY 240 x 320
 
-int main(){
+void init(){
     init_lcd();
     set_orientation(North);
-    int index;
+    init_io();
     init_graphics();
+}
+
+int main(){
+    init();
     _delay_ms(2000);
     calibrate_graphics();
     return 0;
