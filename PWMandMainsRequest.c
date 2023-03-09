@@ -11,7 +11,8 @@ void init_PWM(void)
 
 void PWM(uint16_t FREQ, uint16_t duty_cycle)
 {
-    OC1RA = (uint16_t) (F_CPU)/(2*TONE_PRESCALER*FREQ);
+    //define the duty cycle of the pwm
+    OC1RA = (uint16_t) duty_cycle;
 }
 //--------------------------------------------------------
 
