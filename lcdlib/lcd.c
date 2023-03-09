@@ -5,6 +5,7 @@
  
 #include "ili934x.h"
 #include "font.h"
+#include "graphics.h"
 #include "lcd.h"
 
 lcd display = {LCDWIDTH, LCDHEIGHT, North, 0, 0, 0x20E4, 0xFF99};
@@ -86,10 +87,9 @@ void fill_rectangle_indexed(rectangle r, uint16_t* col)
 			write_data16(*col++);
 }
 
-void happy()
+void init_graphics()
 {
-	uint16_t rx, ry;
-	uint16_t gray, r, g;
+	uint16_t x, y;
 	write_cmd(COLUMN_ADDRESS_SET);
 	write_data16(0);
 	write_data16(240);
@@ -97,20 +97,31 @@ void happy()
 	write_data16(0);
 	write_data16(320);
 	write_cmd(MEMORY_WRITE);
-	for(ry = 0; ry <= 159; ry++){
-		for(rx = 0; rx <= 119; rx++){
-			gray = pgm_read_byte(&happiness[rx+ry*120]);
-			r = (gray >> 3);
-			g = (gray >> 2);
-			write_data16((r<<11)|(g<<5)|(r));
-			write_data16((r<<11)|(g<<5)|(r));
+	for(y = 0; y <= 79; y++){
+		for(x = 0; x <= 119; x++){
+			write_data16(pgm_read_word(&bg1_1[x+y*120]));
+			write_data16(pgm_read_word(&bg1_1[x+y*120]));
 		}
-		for(rx = 0; rx <= 119; rx++){
-			gray = pgm_read_byte(&happiness[rx+ry*120]);
-			r = (gray >> 3);
-			g = (gray >> 2);
-			write_data16((r<<11)|(g<<5)|(r));
-			write_data16((r<<11)|(g<<5)|(r));
+		for(x = 0; x <= 119; x++){
+			write_data16(pgm_read_word(&bg1_1[x+y*120]));
+			write_data16(pgm_read_word(&bg1_1[x+y*120]));
+		}
+	}
+	write_cmd(COLUMN_ADDRESS_SET);
+	write_data16(0);
+	write_data16(240);
+	write_cmd(PAGE_ADDRESS_SET);
+	write_data16(160);
+	write_data16(320);
+	write_cmd(MEMORY_WRITE);
+	for(y = 0; y <= 79; y++){
+		for(x = 0; x <= 119; x++){
+			write_data16(pgm_read_word(&bg1_2[x+y*120]));
+			write_data16(pgm_read_word(&bg1_2[x+y*120]));
+		}
+		for(x = 0; x <= 119; x++){
+			write_data16(pgm_read_word(&bg1_2[x+y*120]));
+			write_data16(pgm_read_word(&bg1_2[x+y*120]));
 		}
 	}
 }

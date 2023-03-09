@@ -41,4 +41,4 @@ void fill_rectangle(rectangle r, uint16_t col);
 void fill_rectangle_indexed(rectangle r, uint16_t* col);
 void display_char(char c);
 void display_string(char *str);
-void happy();
+void init_graphics();

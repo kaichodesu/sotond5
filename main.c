@@ -9,6 +9,6 @@ int main(){
     init_lcd();
     set_orientation(North);
     int index;
-    happy();
+    init_graphics();
     return 0;
 }
