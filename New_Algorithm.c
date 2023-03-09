@@ -40,129 +40,102 @@ float32 Load3 = 1; // Current draw of load3         3 worked
 
 MainsReq =   (10/MainsMAX) * BusI;
 
-if(BusI + BatteryChargeI < MainsMAX)
-{
-	CBattery = 1;
+if(BusI + BatteryChargeI < MainsMAX){
+	DBAT_lo();
+	CBAT_hi();
 }
-else DBattery = 1;
+else{
+	CBAT_lo();
+	DBAT_hi();
+}
 
-if(MainsReq >= 10)
-{
+if(MainsReq >= 10){
 	MainsReq = 10;
 }
 
-if(LoadCall1 == 0  && LoadCall2 == 0 && LoadCall3 == 0)
-{
-	LoadSw1 = LoadCall1;
-	LoadSw2 = LoadCall2;
-	LoadSw3 = LoadCall3;
+if(~LC1 && ~LC2 && ~LC3){
+	LS1_lo();
+	LS2_lo();
+	LS3_lo();
 	
 }
 
-if(LoadCall1 == 1  && LoadCall2 == 0 && LoadCall3 == 0) //we will take the busI in the next if loop BusIdiff. If BusI < Bus
-{
-	 if(Load1 < MainsMAX + PV + Wind)
-	 {
-		 LoadSw1 = 1;
+if(LoadCall1 == 1  && LoadCall2 == 0 && LoadCall3 == 0){
+	 //we will take the busI in the next if loop BusIdiff. If BusI < Bus
+	 if(Load1 < MainsMAX + PV + Wind){
+		 LS1_hi();
 	 }
 }
-else LoadSw1 = 0;
+else LS1_lo();
 
 
-if(LoadCall1 == 0  && LoadCall2 == 1 && LoadCall3 == 0 )
-{
-	if(Load2 < MainsMAX + PV + Wind)
-	 {
-		 LoadSw2 = 1;
+if(LoadCall1 == 0  && LoadCall2 == 1 && LoadCall3 == 0 ){
+	if(Load2 < MainsMAX + PV + Wind){
+		 LS2_hi();
 	 }
-	 else LoadSw2 = 0;
+	 else LS2_lo();
 }
 
-
-
-
-if(LoadCall1 == 1  && LoadCall2 == 1 && LoadCall3 == 0)
-{
-	if(Load1 + Load2 < MainsMAX + PV + Wind)
-	 {
-		 LoadSw2 = 1;
+if(LoadCall1 == 1  && LoadCall2 == 1 && LoadCall3 == 0){
+	if(Load1 + Load2 < MainsMAX + PV + Wind){
+		 LS2_hi();
 	 }
-	 else LoadSw2 = 0;
-	 if(Load1 < MainsMAX + PV + Wind)
-	 {
-		 LoadSw1 = 1;
+	 else LS2_lo();
+	 if(Load1 < MainsMAX + PV + Wind){
+		 LS1_hi();
 	 }
-	 else LoadSw1 = 0;
+	 else LS1_lo();
 }
 
 
-if(LoadCall1 == 0  && LoadCall2 == 0 && LoadCall3 == 1)
-{
-	if(Load3 < MainsMAX + PV + Wind)
-	{
-		LoadSw3 = 1;
+if(LoadCall1 == 0  && LoadCall2 == 0 && LoadCall3 == 1){
+	if(Load3 < MainsMAX + PV + Wind){
+		LS3_hi();
 	}
-	else LoadSw3 = 0;
-	
-}
-
-
-if(LoadCall1 == 1  && LoadCall2 == 0 && LoadCall3 == 1)
-{
-	if(Load3 + Load1  < MainsMAX + PV + Wind)
-	{
-		LoadSw3 = 1;
-	}
-	else LoadSw3 = 0;
-	
-	if(Load1 < MainsMAX + PV + Wind)
-	{
-		LoadSw1 = 1;
-	}
-	else LoadSw1 = 0;
-	
-		
-}
-
-
-
-
-
-if(LoadCall1 == 0  && LoadCall2 == 1 && LoadCall3 == 1  )
-{
-	if(Load2 + Load3 < MainsMAX + PV + Wind)
-	{
-		LoadSw3 = 1;
-	}
-	else LoadSw3 = 0;
-	
-	if(Load2 < MainsMAX + PV + Wind)
-	{
-		LoadSw2 = 1;
-	}
-	else LoadSw2 = 0;
+	else LS3_lo();
 	
 }
 
 
-if(LoadCall1 == 1 && LoadCall2 == 1 && LoadCall3 == 1 )
-{
-	if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind)
-	{
-		LoadSw3 = 1;
+if(LoadCall1 == 1  && LoadCall2 == 0 && LoadCall3 == 1){
+	if(Load3 + Load1  < MainsMAX + PV + Wind){
+		LS3_hi();
 	}
-	else LoadSw3 = 0;
+	else LS3_lo();
 	
-	if(Load2 + Load1 < MainsMAX + PV + Wind)
-	{
-		LoadSw2 = 1;
+	if(Load1 < MainsMAX + PV + Wind){
+		LS1_hi();
 	}
-	else LoadSw2 = 0;
+	else LS1_lo();
+}
+
+if(LoadCall1 == 0  && LoadCall2 == 1 && LoadCall3 == 1  ){
+	if(Load2 + Load3 < MainsMAX + PV + Wind){
+		LS3_hi();
+	}
+	else LS3_lo();
+
+	if(Load2 < MainsMAX + PV + Wind){
+		LS2_hi();
+	}
+	else LS2_lo();
+}
+
+
+if(LoadCall1 == 1 && LoadCall2 == 1 && LoadCall3 == 1 ){
+	if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind){
+		LS3_hi();
+	}
+	else LS3_lo();
 	
-	if(Load1 < MainsMAX + PV + Wind)
-	{
-		LoadSw1 = 1;
+	if(Load2 + Load1 < MainsMAX + PV + Wind){
+		LS2_hi();
 	}
-	else LoadSw1 = 0;
+	else LS2_lo();
+	
+	if(Load1 < MainsMAX + PV + Wind){
+		LS1_hi();
+	}
+	else LS1_lo();
 
 }
