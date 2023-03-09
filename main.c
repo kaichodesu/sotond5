@@ -10,6 +10,7 @@ int main(){
     set_orientation(North);
     int index;
     init_graphics();
+    _delay_ms(2000);
     calibrate_graphics();
     return 0;
 }
