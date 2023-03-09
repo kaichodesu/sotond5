@@ -1,18 +1,11 @@
+#ifndef pwm_header_h
+#define pwm_header_h
+#include <stdlib.h>
+#include <avr/io.h>
+#define FREQ 47000
+#define TONE_PRESCALER 1UL
 
-//PWM-----------------------------------------------------
-void init_PWM(void)
-{
-	DDR5 |= _BV(PD5);
-	TCCR1A = _BV(COM1A0)
-		 |_BV(WGM10);
-	TCCR1B = _BV(WGM13)
-		 | _BV(CS11);
-}
+void init_PWM(void);
+void PWM(uint16_t FREQ, uint16_t duty_cycle);
 
-void PWM(uint16_t freq, float MainsReq)
-{
-    step = (uint16_t) 10/((F_CPU)/(2*TONE_PRESCALER*freq));
-	OC1RA = MainsReq * (10/step);
-}
-//--------------------------------------------------------
-
+#endif /* pwm_header_h */

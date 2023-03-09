@@ -1,4 +1,4 @@
-
+#include "mainsreq.h"
 //PWM-----------------------------------------------------
 void init_PWM(void)
 {
@@ -9,10 +9,9 @@ void init_PWM(void)
 		 | _BV(CS11);
 }
 
-void PWM(uint16_t freq, float MainsReq)
+void PWM(uint16_t FREQ, uint16_t duty_cycle)
 {
-    step = (uint16_t) 10/((F_CPU)/(2*TONE_PRESCALER*freq));
-	OC1RA = MainsReq * (10/step);
+    OC1RA = (uint16_t) (F_CPU)/(2*TONE_PRESCALER*FREQ);
 }
 //--------------------------------------------------------
 
