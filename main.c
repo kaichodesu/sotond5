@@ -74,6 +74,7 @@ ISR(TIMER0_COMPA_vect){
 	pvc = ADC;
     ADCSRA |=_BV(ADATE);
     //  Fourth for PV Capacity.
+    //  Turning Auto Triggering back on.
 
     PV = pvc*PV_CALIBRATED/1024;
     Wind = wtc*WIND_CALIBRATED/1024;
@@ -116,7 +117,7 @@ ISR(TIMER0_COMPA_vect){
         else LS2_lo();
     }
 
-    if( LC1 && LC2 == 1 && ~LC3){
+    if( LC1 && LC2 && ~LC3){
         if(Load1 + Load2 < MainsMAX + PV + Wind){
             LS2_hi();
         }
