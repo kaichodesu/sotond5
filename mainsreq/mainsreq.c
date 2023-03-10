@@ -11,7 +11,7 @@ void init_PWM(void)
 
 void PWM(uint16_t frequency, uint16_t duty_cycle)
 {
-    OC1RA = (uint16_t) duty_cycle;
+    OCR1A = (uint16_t) duty_cycle;
 }
 //--------------------------------------------------------
 

@@ -34,7 +34,7 @@ void calibrate_timer0(void)
     //  wait for first conversion to complete
 	while(ADC < 100);
     //  Waiting for the ADC to rise into the rectified waveform.
-	while(ADC > 0.01);
+	while(ADC > 10);
     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
     TCNT0 = 0;
     //  Reset timer 0.

@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccadsD4L.s 			page 1
+GAS LISTING /tmp/ccwYydSM.s 			page 1
 
 
    1               		.file	"adc.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
   42               	.LFB12:
   14:adc.c         **** 
   15:adc.c         **** void adts_disable(void){
-GAS LISTING /tmp/ccadsD4L.s 			page 2
+GAS LISTING /tmp/ccwYydSM.s 			page 2
 
 
   43               		.loc 1 15 24 is_stmt 1 view -0
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
   23:adc.c         **** 
   24:adc.c         **** void calibrate_timer0(void)
   25:adc.c         **** {
-GAS LISTING /tmp/ccadsD4L.s 			page 3
+GAS LISTING /tmp/ccwYydSM.s 			page 3
 
 
   90               		.loc 1 25 1 is_stmt 1 view -0
@@ -176,17 +176,17 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
  129 004c 00F0      		brlo .L6
  130               	.L7:
   36:adc.c         ****     //  Waiting for the ADC to rise into the rectified waveform.
-  37:adc.c         **** 	while(ADC > 0.01);
+  37:adc.c         **** 	while(ADC > 10);
  131               		.loc 1 37 12 is_stmt 1 discriminator 1 view .LVU32
-GAS LISTING /tmp/ccadsD4L.s 			page 4
+GAS LISTING /tmp/ccwYydSM.s 			page 4
 
 
  132               		.loc 1 37 8 is_stmt 0 discriminator 1 view .LVU33
  133 004e 8091 7800 		lds r24,120
  134 0052 9091 7900 		lds r25,120+1
  135               		.loc 1 37 12 discriminator 1 view .LVU34
- 136 0056 892B      		or r24,r25
- 137 0058 01F4      		brne .L7
+ 136 0056 0B97      		sbiw r24,11
+ 137 0058 00F4      		brsh .L7
   38:adc.c         ****     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
   39:adc.c         ****     TCNT0 = 0;
  138               		.loc 1 39 5 is_stmt 1 view .LVU35
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
  173               	/* frame size = 0 */
  174               	/* stack size = 0 */
  175               	.L__stack_usage = 0
-GAS LISTING /tmp/ccadsD4L.s 			page 5
+GAS LISTING /tmp/ccwYydSM.s 			page 5
 
 
   51:adc.c         ****     ADCSRA |=_BV(ADPS2) |_BV(ADPS1);
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
  224 0037 01        		.uleb128 0x1
  225 0038 01        		.byte	0x1
  226 0039 08        		.byte	0x8
-GAS LISTING /tmp/ccadsD4L.s 			page 6
+GAS LISTING /tmp/ccwYydSM.s 			page 6
 
 
  227 003a 0000 0000 		.long	.LASF3
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
  281 00ac DA00 0000 		.long	0xda
  282 00b0 0000 0000 		.long	.LBI4
  283 00b4 02        		.byte	.LVU20
-GAS LISTING /tmp/ccadsD4L.s 			page 7
+GAS LISTING /tmp/ccwYydSM.s 			page 7
 
 
  284 00b5 0000 0000 		.long	.LBB4
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
  338 0010 3A        		.uleb128 0x3a
  339 0011 21        		.uleb128 0x21
  340 0012 02        		.sleb128 2
-GAS LISTING /tmp/ccadsD4L.s 			page 8
+GAS LISTING /tmp/ccwYydSM.s 			page 8
 
 
  341 0013 3B        		.uleb128 0x3b
@@ -478,7 +478,7 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
  395 004a 03        		.uleb128 0x3
  396 004b 0E        		.uleb128 0xe
  397 004c 3A        		.uleb128 0x3a
-GAS LISTING /tmp/ccadsD4L.s 			page 9
+GAS LISTING /tmp/ccwYydSM.s 			page 9
 
 
  398 004d 21        		.uleb128 0x21
@@ -538,7 +538,7 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
  452 0083 52        		.uleb128 0x52
  453 0084 01        		.uleb128 0x1
  454 0085 B842      		.uleb128 0x2138
-GAS LISTING /tmp/ccadsD4L.s 			page 10
+GAS LISTING /tmp/ccwYydSM.s 			page 10
 
 
  455 0087 0B        		.uleb128 0xb
@@ -598,7 +598,7 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
  509 000c 0000      		.word	0
  510 000e 0000      		.word	0
  511 0010 0000 0000 		.long	.Ltext0
-GAS LISTING /tmp/ccadsD4L.s 			page 11
+GAS LISTING /tmp/ccwYydSM.s 			page 11
 
 
  512 0014 8A00 0000 		.long	.Letext0-.Ltext0
@@ -658,7 +658,7 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
  535      6720 756E 
  535      7369 676E 
  535      6564 2069 
-GAS LISTING /tmp/ccadsD4L.s 			page 12
+GAS LISTING /tmp/ccwYydSM.s 			page 12
 
 
  536               	.LASF4:
@@ -703,115 +703,115 @@ GAS LISTING /tmp/ccadsD4L.s 			page 1
  555      6963 686F 
  555      2F44 6F63 
  555      756D 656E 
-GAS LISTING /tmp/ccadsD4L.s 			page 13
+GAS LISTING /tmp/ccwYydSM.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 adc.c
-     /tmp/ccadsD4L.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccadsD4L.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccadsD4L.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccadsD4L.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccadsD4L.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccadsD4L.s:13     .text:0000000000000000 init_timer0
-     /tmp/ccadsD4L.s:16     .text:0000000000000000 .Loc.0
-     /tmp/ccadsD4L.s:17     .text:0000000000000000 L0
-     /tmp/ccadsD4L.s:22     .text:0000000000000000 .Loc.1
-     /tmp/ccadsD4L.s:23     .text:0000000000000000 .Loc.2
-     /tmp/ccadsD4L.s:26     .text:0000000000000004 .Loc.3
-     /tmp/ccadsD4L.s:27     .text:0000000000000004 .Loc.4
-     /tmp/ccadsD4L.s:30     .text:0000000000000008 .Loc.5
-     /tmp/ccadsD4L.s:31     .text:0000000000000008 .Loc.6
-     /tmp/ccadsD4L.s:34     .text:000000000000000a .Loc.7
-     /tmp/ccadsD4L.s:36     .text:000000000000000c L0
-     /tmp/ccadsD4L.s:41     .text:000000000000000c adts_disable
-     /tmp/ccadsD4L.s:43     .text:000000000000000c .Loc.8
-     /tmp/ccadsD4L.s:44     .text:000000000000000c L0
-     /tmp/ccadsD4L.s:49     .text:000000000000000c .Loc.9
-     /tmp/ccadsD4L.s:50     .text:000000000000000c .Loc.10
-     /tmp/ccadsD4L.s:53     .text:0000000000000010 .Loc.11
-     /tmp/ccadsD4L.s:55     .text:0000000000000012 L0
-     /tmp/ccadsD4L.s:60     .text:0000000000000012 adts_enable
-     /tmp/ccadsD4L.s:62     .text:0000000000000012 .Loc.12
-     /tmp/ccadsD4L.s:63     .text:0000000000000012 L0
-     /tmp/ccadsD4L.s:68     .text:0000000000000012 .Loc.13
-     /tmp/ccadsD4L.s:72     .text:0000000000000018 .Loc.14
-     /tmp/ccadsD4L.s:75     .text:000000000000001c .Loc.15
-     /tmp/ccadsD4L.s:77     .text:000000000000001e .Loc.16
-     /tmp/ccadsD4L.s:81     .text:0000000000000022 .Loc.17
-     /tmp/ccadsD4L.s:83     .text:0000000000000024 L0
-     /tmp/ccadsD4L.s:88     .text:0000000000000024 calibrate_timer0
-     /tmp/ccadsD4L.s:90     .text:0000000000000024 .Loc.18
-     /tmp/ccadsD4L.s:91     .text:0000000000000024 L0
-     /tmp/ccadsD4L.s:96     .text:0000000000000024 .Loc.19
-     /tmp/ccadsD4L.s:99     .text:0000000000000024 .Loc.20
-     /tmp/ccadsD4L.s:101    .text:0000000000000024 .Loc.21
-     /tmp/ccadsD4L.s:102    .text:0000000000000024 .Loc.22
-     /tmp/ccadsD4L.s:106    .text:0000000000000028 .Loc.23
-     /tmp/ccadsD4L.s:107    .text:0000000000000028 .Loc.24
-     /tmp/ccadsD4L.s:110    .text:000000000000002e .Loc.25
-     /tmp/ccadsD4L.s:112    .text:0000000000000032 .Loc.26
-     /tmp/ccadsD4L.s:115    .text:0000000000000038 .Loc.27
-     /tmp/ccadsD4L.s:117    .text:0000000000000038 .Loc.28
-     /tmp/ccadsD4L.s:122    .text:0000000000000040 .Loc.29
-     /tmp/ccadsD4L.s:123    .text:0000000000000040 .Loc.30
-     /tmp/ccadsD4L.s:126    .text:0000000000000048 .Loc.31
-     /tmp/ccadsD4L.s:131    .text:000000000000004e .Loc.32
-     /tmp/ccadsD4L.s:132    .text:000000000000004e .Loc.33
-     /tmp/ccadsD4L.s:135    .text:0000000000000056 .Loc.34
-     /tmp/ccadsD4L.s:138    .text:000000000000005a .Loc.35
-     /tmp/ccadsD4L.s:139    .text:000000000000005a .Loc.36
-     /tmp/ccadsD4L.s:141    .text:000000000000005c .Loc.37
-     /tmp/ccadsD4L.s:142    .text:000000000000005c .Loc.38
-GAS LISTING /tmp/ccadsD4L.s 			page 14
+     /tmp/ccwYydSM.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccwYydSM.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccwYydSM.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccwYydSM.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccwYydSM.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccwYydSM.s:13     .text:0000000000000000 init_timer0
+     /tmp/ccwYydSM.s:16     .text:0000000000000000 .Loc.0
+     /tmp/ccwYydSM.s:17     .text:0000000000000000 L0
+     /tmp/ccwYydSM.s:22     .text:0000000000000000 .Loc.1
+     /tmp/ccwYydSM.s:23     .text:0000000000000000 .Loc.2
+     /tmp/ccwYydSM.s:26     .text:0000000000000004 .Loc.3
+     /tmp/ccwYydSM.s:27     .text:0000000000000004 .Loc.4
+     /tmp/ccwYydSM.s:30     .text:0000000000000008 .Loc.5
+     /tmp/ccwYydSM.s:31     .text:0000000000000008 .Loc.6
+     /tmp/ccwYydSM.s:34     .text:000000000000000a .Loc.7
+     /tmp/ccwYydSM.s:36     .text:000000000000000c L0
+     /tmp/ccwYydSM.s:41     .text:000000000000000c adts_disable
+     /tmp/ccwYydSM.s:43     .text:000000000000000c .Loc.8
+     /tmp/ccwYydSM.s:44     .text:000000000000000c L0
+     /tmp/ccwYydSM.s:49     .text:000000000000000c .Loc.9
+     /tmp/ccwYydSM.s:50     .text:000000000000000c .Loc.10
+     /tmp/ccwYydSM.s:53     .text:0000000000000010 .Loc.11
+     /tmp/ccwYydSM.s:55     .text:0000000000000012 L0
+     /tmp/ccwYydSM.s:60     .text:0000000000000012 adts_enable
+     /tmp/ccwYydSM.s:62     .text:0000000000000012 .Loc.12
+     /tmp/ccwYydSM.s:63     .text:0000000000000012 L0
+     /tmp/ccwYydSM.s:68     .text:0000000000000012 .Loc.13
+     /tmp/ccwYydSM.s:72     .text:0000000000000018 .Loc.14
+     /tmp/ccwYydSM.s:75     .text:000000000000001c .Loc.15
+     /tmp/ccwYydSM.s:77     .text:000000000000001e .Loc.16
+     /tmp/ccwYydSM.s:81     .text:0000000000000022 .Loc.17
+     /tmp/ccwYydSM.s:83     .text:0000000000000024 L0
+     /tmp/ccwYydSM.s:88     .text:0000000000000024 calibrate_timer0
+     /tmp/ccwYydSM.s:90     .text:0000000000000024 .Loc.18
+     /tmp/ccwYydSM.s:91     .text:0000000000000024 L0
+     /tmp/ccwYydSM.s:96     .text:0000000000000024 .Loc.19
+     /tmp/ccwYydSM.s:99     .text:0000000000000024 .Loc.20
+     /tmp/ccwYydSM.s:101    .text:0000000000000024 .Loc.21
+     /tmp/ccwYydSM.s:102    .text:0000000000000024 .Loc.22
+     /tmp/ccwYydSM.s:106    .text:0000000000000028 .Loc.23
+     /tmp/ccwYydSM.s:107    .text:0000000000000028 .Loc.24
+     /tmp/ccwYydSM.s:110    .text:000000000000002e .Loc.25
+     /tmp/ccwYydSM.s:112    .text:0000000000000032 .Loc.26
+     /tmp/ccwYydSM.s:115    .text:0000000000000038 .Loc.27
+     /tmp/ccwYydSM.s:117    .text:0000000000000038 .Loc.28
+     /tmp/ccwYydSM.s:122    .text:0000000000000040 .Loc.29
+     /tmp/ccwYydSM.s:123    .text:0000000000000040 .Loc.30
+     /tmp/ccwYydSM.s:126    .text:0000000000000048 .Loc.31
+     /tmp/ccwYydSM.s:131    .text:000000000000004e .Loc.32
+     /tmp/ccwYydSM.s:132    .text:000000000000004e .Loc.33
+     /tmp/ccwYydSM.s:135    .text:0000000000000056 .Loc.34
+     /tmp/ccwYydSM.s:138    .text:000000000000005a .Loc.35
+     /tmp/ccwYydSM.s:139    .text:000000000000005a .Loc.36
+     /tmp/ccwYydSM.s:141    .text:000000000000005c .Loc.37
+     /tmp/ccwYydSM.s:142    .text:000000000000005c .Loc.38
+GAS LISTING /tmp/ccwYydSM.s 			page 14
 
 
-     /tmp/ccadsD4L.s:145    .text:0000000000000060 .Loc.39
-     /tmp/ccadsD4L.s:147    .text:0000000000000060 .Loc.40
-     /tmp/ccadsD4L.s:148    .text:0000000000000060 .Loc.41
-     /tmp/ccadsD4L.s:150    .text:0000000000000062 .Loc.42
-     /tmp/ccadsD4L.s:153    .text:0000000000000066 .Loc.43
-     /tmp/ccadsD4L.s:154    .text:0000000000000066 .Loc.44
-     /tmp/ccadsD4L.s:156    .text:0000000000000068 .Loc.45
-     /tmp/ccadsD4L.s:157    .text:0000000000000068 .Loc.46
-     /tmp/ccadsD4L.s:160    .text:000000000000006c .Loc.47
-     /tmp/ccadsD4L.s:163    .text:0000000000000070 L0
-     /tmp/ccadsD4L.s:168    .text:0000000000000070 init_adc
-     /tmp/ccadsD4L.s:170    .text:0000000000000070 .Loc.48
-     /tmp/ccadsD4L.s:171    .text:0000000000000070 L0
-     /tmp/ccadsD4L.s:176    .text:0000000000000070 .Loc.49
-     /tmp/ccadsD4L.s:180    .text:0000000000000076 .Loc.50
-     /tmp/ccadsD4L.s:183    .text:000000000000007a .Loc.51
-     /tmp/ccadsD4L.s:185    .text:000000000000007c .Loc.52
-     /tmp/ccadsD4L.s:188    .text:0000000000000080 .Loc.53
-     /tmp/ccadsD4L.s:190    .text:0000000000000082 .Loc.54
-     /tmp/ccadsD4L.s:193    .text:0000000000000086 .Loc.55
-     /tmp/ccadsD4L.s:196    .text:000000000000008a L0
-     /tmp/ccadsD4L.s:201    .text:000000000000008a L0
+     /tmp/ccwYydSM.s:145    .text:0000000000000060 .Loc.39
+     /tmp/ccwYydSM.s:147    .text:0000000000000060 .Loc.40
+     /tmp/ccwYydSM.s:148    .text:0000000000000060 .Loc.41
+     /tmp/ccwYydSM.s:150    .text:0000000000000062 .Loc.42
+     /tmp/ccwYydSM.s:153    .text:0000000000000066 .Loc.43
+     /tmp/ccwYydSM.s:154    .text:0000000000000066 .Loc.44
+     /tmp/ccwYydSM.s:156    .text:0000000000000068 .Loc.45
+     /tmp/ccwYydSM.s:157    .text:0000000000000068 .Loc.46
+     /tmp/ccwYydSM.s:160    .text:000000000000006c .Loc.47
+     /tmp/ccwYydSM.s:163    .text:0000000000000070 L0
+     /tmp/ccwYydSM.s:168    .text:0000000000000070 init_adc
+     /tmp/ccwYydSM.s:170    .text:0000000000000070 .Loc.48
+     /tmp/ccwYydSM.s:171    .text:0000000000000070 L0
+     /tmp/ccwYydSM.s:176    .text:0000000000000070 .Loc.49
+     /tmp/ccwYydSM.s:180    .text:0000000000000076 .Loc.50
+     /tmp/ccwYydSM.s:183    .text:000000000000007a .Loc.51
+     /tmp/ccwYydSM.s:185    .text:000000000000007c .Loc.52
+     /tmp/ccwYydSM.s:188    .text:0000000000000080 .Loc.53
+     /tmp/ccwYydSM.s:190    .text:0000000000000082 .Loc.54
+     /tmp/ccwYydSM.s:193    .text:0000000000000086 .Loc.55
+     /tmp/ccwYydSM.s:196    .text:000000000000008a L0
+     /tmp/ccwYydSM.s:201    .text:000000000000008a L0
                      .debug_frame:0000000000000000 L0
-     /tmp/ccadsD4L.s:116    .text:0000000000000038 .L5
-     /tmp/ccadsD4L.s:121    .text:0000000000000040 .L6
-     /tmp/ccadsD4L.s:130    .text:000000000000004e .L7
-     /tmp/ccadsD4L.s:146    .text:0000000000000060 .L8
-     /tmp/ccadsD4L.s:321    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
-     /tmp/ccadsD4L.s:8      .text:0000000000000000 .Ltext0
-     /tmp/ccadsD4L.s:199    .text:000000000000008a .Letext0
-     /tmp/ccadsD4L.s:516    .debug_line:0000000000000000 .Ldebug_line0
-     /tmp/ccadsD4L.s:169    .text:0000000000000070 .LFB15
-     /tmp/ccadsD4L.s:197    .text:000000000000008a .LFE15
-     /tmp/ccadsD4L.s:195    .text:000000000000008a .LVL1
-     /tmp/ccadsD4L.s:89     .text:0000000000000024 .LFB14
-     /tmp/ccadsD4L.s:164    .text:0000000000000070 .LFE14
-     /tmp/ccadsD4L.s:98     .text:0000000000000024 .LBI4
-     /tmp/ccadsD4L.s:97     .text:0000000000000024 .LBB4
-     /tmp/ccadsD4L.s:105    .text:0000000000000028 .LBE4
-     /tmp/ccadsD4L.s:162    .text:0000000000000070 .LVL0
-     /tmp/ccadsD4L.s:61     .text:0000000000000012 .LFB13
-     /tmp/ccadsD4L.s:84     .text:0000000000000024 .LFE13
-     /tmp/ccadsD4L.s:14     .text:0000000000000000 .LFB11
-     /tmp/ccadsD4L.s:37     .text:000000000000000c .LFE11
-     /tmp/ccadsD4L.s:42     .text:000000000000000c .LFB12
-     /tmp/ccadsD4L.s:56     .text:0000000000000012 .LFE12
-     /tmp/ccadsD4L.s:202    .debug_info:0000000000000000 .Ldebug_info0
+     /tmp/ccwYydSM.s:116    .text:0000000000000038 .L5
+     /tmp/ccwYydSM.s:121    .text:0000000000000040 .L6
+     /tmp/ccwYydSM.s:130    .text:000000000000004e .L7
+     /tmp/ccwYydSM.s:146    .text:0000000000000060 .L8
+     /tmp/ccwYydSM.s:321    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/ccwYydSM.s:8      .text:0000000000000000 .Ltext0
+     /tmp/ccwYydSM.s:199    .text:000000000000008a .Letext0
+     /tmp/ccwYydSM.s:516    .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/ccwYydSM.s:169    .text:0000000000000070 .LFB15
+     /tmp/ccwYydSM.s:197    .text:000000000000008a .LFE15
+     /tmp/ccwYydSM.s:195    .text:000000000000008a .LVL1
+     /tmp/ccwYydSM.s:89     .text:0000000000000024 .LFB14
+     /tmp/ccwYydSM.s:164    .text:0000000000000070 .LFE14
+     /tmp/ccwYydSM.s:98     .text:0000000000000024 .LBI4
+     /tmp/ccwYydSM.s:97     .text:0000000000000024 .LBB4
+     /tmp/ccwYydSM.s:105    .text:0000000000000028 .LBE4
+     /tmp/ccwYydSM.s:162    .text:0000000000000070 .LVL0
+     /tmp/ccwYydSM.s:61     .text:0000000000000012 .LFB13
+     /tmp/ccwYydSM.s:84     .text:0000000000000024 .LFE13
+     /tmp/ccwYydSM.s:14     .text:0000000000000000 .LFB11
+     /tmp/ccwYydSM.s:37     .text:000000000000000c .LFE11
+     /tmp/ccwYydSM.s:42     .text:000000000000000c .LFB12
+     /tmp/ccwYydSM.s:56     .text:0000000000000012 .LFE12
+     /tmp/ccwYydSM.s:202    .debug_info:0000000000000000 .Ldebug_info0
 
 NO UNDEFINED SYMBOLS
