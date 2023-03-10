@@ -30,3 +30,4 @@
 #define LC2         PINA & _BV(1)
 #define LC3         PINA & _BV(2)
 
+void init_io(void);

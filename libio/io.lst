@@ -1,0 +1,408 @@
+GAS LISTING /tmp/cciGX3aJ.s 			page 1
+
+
+   1               		.file	"io.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.file 0 "/home/kaicho/Documents/Southampton/D5/lcdtest/libio" "io.c"
+  11               	.global	init_io
+  12               		.type	init_io, @function
+  13               	init_io:
+  14               	.LFB0:
+  15               		.file 1 "io.c"
+   1:io.c          **** #include <avr/io.h>
+   2:io.c          **** #include "io.h"
+   3:io.c          **** 
+   4:io.c          **** /*
+   5:io.c          ****  * 1_1  PD5 PWM     OUT
+   6:io.c          ****  * 2_1  PA3 ANALOG  IN
+   7:io.c          ****  * 2_2  PA4 ANALOG  IN
+   8:io.c          ****  * 2_3  PA5 ANALOG  IN
+   9:io.c          ****  * 2_4  PA6 ANALOG  IN
+  10:io.c          ****  * 3_1  PD0 DIGITAL OUT CBAT
+  11:io.c          ****  * 3_2  PD1 DIGITAL OUT DBAT
+  12:io.c          ****  * 3_3  PD2 DIGITAL OUT LS1
+  13:io.c          ****  * 3_4  PD3 DIGITAL OUT LS2
+  14:io.c          ****  * 3_5  PA7 DIGITAL OUT LS3
+  15:io.c          ****  * 4_1  PA0 DIGITAL IN  LC1
+  16:io.c          ****  * 4_2  PA1 DIGITAL IN  LC2 
+  17:io.c          ****  * 4_3  PA2 DIGITAL IN  LC3
+  18:io.c          ****  */
+  19:io.c          **** 
+  20:io.c          **** void init_io()
+  21:io.c          **** {
+  16               		.loc 1 21 1 view -0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+  22:io.c          ****     DDRD |= _BV(PD5);
+  22               		.loc 1 22 5 view .LVU1
+  23               		.loc 1 22 10 is_stmt 0 view .LVU2
+  24 0000 559A      		sbi 0xa,5
+  23:io.c          ****     DDRA &= ~_BV(PA3);
+  25               		.loc 1 23 5 is_stmt 1 view .LVU3
+  26               		.loc 1 23 10 is_stmt 0 view .LVU4
+  27 0002 0B98      		cbi 0x1,3
+  24:io.c          ****     DDRA &= ~_BV(PA4);
+  28               		.loc 1 24 5 is_stmt 1 view .LVU5
+  29               		.loc 1 24 10 is_stmt 0 view .LVU6
+  30 0004 0C98      		cbi 0x1,4
+  25:io.c          ****     DDRA &= ~_BV(PA5);
+  31               		.loc 1 25 5 is_stmt 1 view .LVU7
+  32               		.loc 1 25 10 is_stmt 0 view .LVU8
+GAS LISTING /tmp/cciGX3aJ.s 			page 2
+
+
+  33 0006 0D98      		cbi 0x1,5
+  26:io.c          ****     DDRA &= ~_BV(PA6);
+  34               		.loc 1 26 5 is_stmt 1 view .LVU9
+  35               		.loc 1 26 10 is_stmt 0 view .LVU10
+  36 0008 0E98      		cbi 0x1,6
+  27:io.c          ****     DDRD |= _BV(PD0);
+  37               		.loc 1 27 5 is_stmt 1 view .LVU11
+  38               		.loc 1 27 10 is_stmt 0 view .LVU12
+  39 000a 509A      		sbi 0xa,0
+  28:io.c          ****     DDRD |= _BV(PD1);
+  40               		.loc 1 28 5 is_stmt 1 view .LVU13
+  41               		.loc 1 28 10 is_stmt 0 view .LVU14
+  42 000c 519A      		sbi 0xa,1
+  29:io.c          ****     DDRD |= _BV(PD2);
+  43               		.loc 1 29 5 is_stmt 1 view .LVU15
+  44               		.loc 1 29 10 is_stmt 0 view .LVU16
+  45 000e 529A      		sbi 0xa,2
+  30:io.c          ****     DDRD |= _BV(PD3);
+  46               		.loc 1 30 5 is_stmt 1 view .LVU17
+  47               		.loc 1 30 10 is_stmt 0 view .LVU18
+  48 0010 539A      		sbi 0xa,3
+  31:io.c          ****     DDRA |= _BV(PA7);
+  49               		.loc 1 31 5 is_stmt 1 view .LVU19
+  50               		.loc 1 31 10 is_stmt 0 view .LVU20
+  51 0012 0F9A      		sbi 0x1,7
+  32:io.c          ****     DDRA &= ~_BV(PA0);
+  52               		.loc 1 32 5 is_stmt 1 view .LVU21
+  53               		.loc 1 32 10 is_stmt 0 view .LVU22
+  54 0014 0898      		cbi 0x1,0
+  33:io.c          ****     DDRA &= ~_BV(PA1);
+  55               		.loc 1 33 5 is_stmt 1 view .LVU23
+  56               		.loc 1 33 10 is_stmt 0 view .LVU24
+  57 0016 0998      		cbi 0x1,1
+  34:io.c          ****     DDRA &= ~_BV(PA2);
+  58               		.loc 1 34 5 is_stmt 1 view .LVU25
+  59               		.loc 1 34 10 is_stmt 0 view .LVU26
+  60 0018 0A98      		cbi 0x1,2
+  35:io.c          ****     PORTA = 0x80;
+  61               		.loc 1 35 5 is_stmt 1 view .LVU27
+  62               		.loc 1 35 11 is_stmt 0 view .LVU28
+  63 001a 80E8      		ldi r24,lo8(-128)
+  64 001c 82B9      		out 0x2,r24
+  65               	/* epilogue start */
+  36:io.c          **** }
+  66               		.loc 1 36 1 view .LVU29
+  67 001e 0895      		ret
+  68               		.cfi_endproc
+  69               	.LFE0:
+  70               		.size	init_io, .-init_io
+  71               	.Letext0:
+  72               		.file 2 "/usr/avr/include/stdint.h"
+  73               		.section	.debug_info,"",@progbits
+  74               	.Ldebug_info0:
+  75 0000 7900 0000 		.long	0x79
+  76 0004 0500      		.word	0x5
+  77 0006 01        		.byte	0x1
+  78 0007 04        		.byte	0x4
+GAS LISTING /tmp/cciGX3aJ.s 			page 3
+
+
+  79 0008 0000 0000 		.long	.Ldebug_abbrev0
+  80 000c 02        		.uleb128 0x2
+  81 000d 0000 0000 		.long	.LASF9
+  82 0011 1D        		.byte	0x1d
+  83 0012 0000 0000 		.long	.LASF0
+  84 0016 0000 0000 		.long	.LASF1
+  85 001a 0000 0000 		.long	.Ltext0
+  86 001e 2000 0000 		.long	.Letext0-.Ltext0
+  87 0022 0000 0000 		.long	.Ldebug_line0
+  88 0026 01        		.uleb128 0x1
+  89 0027 01        		.byte	0x1
+  90 0028 06        		.byte	0x6
+  91 0029 0000 0000 		.long	.LASF2
+  92 002d 03        		.uleb128 0x3
+  93 002e 0000 0000 		.long	.LASF10
+  94 0032 02        		.byte	0x2
+  95 0033 7E        		.byte	0x7e
+  96 0034 16        		.byte	0x16
+  97 0035 3900 0000 		.long	0x39
+  98 0039 01        		.uleb128 0x1
+  99 003a 01        		.byte	0x1
+ 100 003b 08        		.byte	0x8
+ 101 003c 0000 0000 		.long	.LASF3
+ 102 0040 04        		.uleb128 0x4
+ 103 0041 02        		.byte	0x2
+ 104 0042 05        		.byte	0x5
+ 105 0043 696E 7400 		.string	"int"
+ 106 0047 01        		.uleb128 0x1
+ 107 0048 02        		.byte	0x2
+ 108 0049 07        		.byte	0x7
+ 109 004a 0000 0000 		.long	.LASF4
+ 110 004e 01        		.uleb128 0x1
+ 111 004f 04        		.byte	0x4
+ 112 0050 05        		.byte	0x5
+ 113 0051 0000 0000 		.long	.LASF5
+ 114 0055 01        		.uleb128 0x1
+ 115 0056 04        		.byte	0x4
+ 116 0057 07        		.byte	0x7
+ 117 0058 0000 0000 		.long	.LASF6
+ 118 005c 01        		.uleb128 0x1
+ 119 005d 08        		.byte	0x8
+ 120 005e 05        		.byte	0x5
+ 121 005f 0000 0000 		.long	.LASF7
+ 122 0063 01        		.uleb128 0x1
+ 123 0064 08        		.byte	0x8
+ 124 0065 07        		.byte	0x7
+ 125 0066 0000 0000 		.long	.LASF8
+ 126 006a 05        		.uleb128 0x5
+ 127 006b 0000 0000 		.long	.LASF11
+ 128 006f 01        		.byte	0x1
+ 129 0070 14        		.byte	0x14
+ 130 0071 06        		.byte	0x6
+ 131 0072 0000 0000 		.long	.LFB0
+ 132 0076 2000 0000 		.long	.LFE0-.LFB0
+ 133 007a 01        		.uleb128 0x1
+ 134 007b 9C        		.byte	0x9c
+ 135 007c 00        		.byte	0
+GAS LISTING /tmp/cciGX3aJ.s 			page 4
+
+
+ 136               		.section	.debug_abbrev,"",@progbits
+ 137               	.Ldebug_abbrev0:
+ 138 0000 01        		.uleb128 0x1
+ 139 0001 24        		.uleb128 0x24
+ 140 0002 00        		.byte	0
+ 141 0003 0B        		.uleb128 0xb
+ 142 0004 0B        		.uleb128 0xb
+ 143 0005 3E        		.uleb128 0x3e
+ 144 0006 0B        		.uleb128 0xb
+ 145 0007 03        		.uleb128 0x3
+ 146 0008 0E        		.uleb128 0xe
+ 147 0009 00        		.byte	0
+ 148 000a 00        		.byte	0
+ 149 000b 02        		.uleb128 0x2
+ 150 000c 11        		.uleb128 0x11
+ 151 000d 01        		.byte	0x1
+ 152 000e 25        		.uleb128 0x25
+ 153 000f 0E        		.uleb128 0xe
+ 154 0010 13        		.uleb128 0x13
+ 155 0011 0B        		.uleb128 0xb
+ 156 0012 03        		.uleb128 0x3
+ 157 0013 1F        		.uleb128 0x1f
+ 158 0014 1B        		.uleb128 0x1b
+ 159 0015 1F        		.uleb128 0x1f
+ 160 0016 11        		.uleb128 0x11
+ 161 0017 01        		.uleb128 0x1
+ 162 0018 12        		.uleb128 0x12
+ 163 0019 06        		.uleb128 0x6
+ 164 001a 10        		.uleb128 0x10
+ 165 001b 17        		.uleb128 0x17
+ 166 001c 00        		.byte	0
+ 167 001d 00        		.byte	0
+ 168 001e 03        		.uleb128 0x3
+ 169 001f 16        		.uleb128 0x16
+ 170 0020 00        		.byte	0
+ 171 0021 03        		.uleb128 0x3
+ 172 0022 0E        		.uleb128 0xe
+ 173 0023 3A        		.uleb128 0x3a
+ 174 0024 0B        		.uleb128 0xb
+ 175 0025 3B        		.uleb128 0x3b
+ 176 0026 0B        		.uleb128 0xb
+ 177 0027 39        		.uleb128 0x39
+ 178 0028 0B        		.uleb128 0xb
+ 179 0029 49        		.uleb128 0x49
+ 180 002a 13        		.uleb128 0x13
+ 181 002b 00        		.byte	0
+ 182 002c 00        		.byte	0
+ 183 002d 04        		.uleb128 0x4
+ 184 002e 24        		.uleb128 0x24
+ 185 002f 00        		.byte	0
+ 186 0030 0B        		.uleb128 0xb
+ 187 0031 0B        		.uleb128 0xb
+ 188 0032 3E        		.uleb128 0x3e
+ 189 0033 0B        		.uleb128 0xb
+ 190 0034 03        		.uleb128 0x3
+ 191 0035 08        		.uleb128 0x8
+ 192 0036 00        		.byte	0
+GAS LISTING /tmp/cciGX3aJ.s 			page 5
+
+
+ 193 0037 00        		.byte	0
+ 194 0038 05        		.uleb128 0x5
+ 195 0039 2E        		.uleb128 0x2e
+ 196 003a 00        		.byte	0
+ 197 003b 3F        		.uleb128 0x3f
+ 198 003c 19        		.uleb128 0x19
+ 199 003d 03        		.uleb128 0x3
+ 200 003e 0E        		.uleb128 0xe
+ 201 003f 3A        		.uleb128 0x3a
+ 202 0040 0B        		.uleb128 0xb
+ 203 0041 3B        		.uleb128 0x3b
+ 204 0042 0B        		.uleb128 0xb
+ 205 0043 39        		.uleb128 0x39
+ 206 0044 0B        		.uleb128 0xb
+ 207 0045 27        		.uleb128 0x27
+ 208 0046 19        		.uleb128 0x19
+ 209 0047 11        		.uleb128 0x11
+ 210 0048 01        		.uleb128 0x1
+ 211 0049 12        		.uleb128 0x12
+ 212 004a 06        		.uleb128 0x6
+ 213 004b 40        		.uleb128 0x40
+ 214 004c 18        		.uleb128 0x18
+ 215 004d 7A        		.uleb128 0x7a
+ 216 004e 19        		.uleb128 0x19
+ 217 004f 00        		.byte	0
+ 218 0050 00        		.byte	0
+ 219 0051 00        		.byte	0
+ 220               		.section	.debug_aranges,"",@progbits
+ 221 0000 1C00 0000 		.long	0x1c
+ 222 0004 0200      		.word	0x2
+ 223 0006 0000 0000 		.long	.Ldebug_info0
+ 224 000a 04        		.byte	0x4
+ 225 000b 00        		.byte	0
+ 226 000c 0000      		.word	0
+ 227 000e 0000      		.word	0
+ 228 0010 0000 0000 		.long	.Ltext0
+ 229 0014 2000 0000 		.long	.Letext0-.Ltext0
+ 230 0018 0000 0000 		.long	0
+ 231 001c 0000 0000 		.long	0
+ 232               		.section	.debug_line,"",@progbits
+ 233               	.Ldebug_line0:
+ 234 0000 5001 0000 		.section	.debug_str,"MS",@progbits,1
+ 234      0500 0400 
+ 234      3300 0000 
+ 234      0201 01FB 
+ 234      0E0D 0001 
+ 235               	.LASF7:
+ 236 0000 6C6F 6E67 		.string	"long long int"
+ 236      206C 6F6E 
+ 236      6720 696E 
+ 236      7400 
+ 237               	.LASF4:
+ 238 000e 756E 7369 		.string	"unsigned int"
+ 238      676E 6564 
+ 238      2069 6E74 
+ 238      00
+ 239               	.LASF6:
+GAS LISTING /tmp/cciGX3aJ.s 			page 6
+
+
+ 240 001b 6C6F 6E67 		.string	"long unsigned int"
+ 240      2075 6E73 
+ 240      6967 6E65 
+ 240      6420 696E 
+ 240      7400 
+ 241               	.LASF8:
+ 242 002d 6C6F 6E67 		.string	"long long unsigned int"
+ 242      206C 6F6E 
+ 242      6720 756E 
+ 242      7369 676E 
+ 242      6564 2069 
+ 243               	.LASF10:
+ 244 0044 7569 6E74 		.string	"uint8_t"
+ 244      385F 7400 
+ 245               	.LASF3:
+ 246 004c 756E 7369 		.string	"unsigned char"
+ 246      676E 6564 
+ 246      2063 6861 
+ 246      7200 
+ 247               	.LASF5:
+ 248 005a 6C6F 6E67 		.string	"long int"
+ 248      2069 6E74 
+ 248      00
+ 249               	.LASF9:
+ 250 0063 474E 5520 		.string	"GNU C17 12.2.0 -mn-flash=1 -mno-skip-bug -mdouble=32 -mlong-double=64 -mmcu=avr5 -g -Os -
+ 250      4331 3720 
+ 250      3132 2E32 
+ 250      2E30 202D 
+ 250      6D6E 2D66 
+ 251               	.LASF11:
+ 252 00ee 696E 6974 		.string	"init_io"
+ 252      5F69 6F00 
+ 253               	.LASF2:
+ 254 00f6 7369 676E 		.string	"signed char"
+ 254      6564 2063 
+ 254      6861 7200 
+ 255               		.section	.debug_line_str,"MS",@progbits,1
+ 256               	.LASF1:
+ 257 0000 2F68 6F6D 		.string	"/home/kaicho/Documents/Southampton/D5/lcdtest/libio"
+ 257      652F 6B61 
+ 257      6963 686F 
+ 257      2F44 6F63 
+ 257      756D 656E 
+ 258               	.LASF0:
+ 259 0034 696F 2E63 		.string	"io.c"
+ 259      00
+ 260 0039 2F68 6F6D 		.ident	"GCC: (GNU) 12.2.0"
+ 260      652F 6B61 
+ 260      6963 686F 
+ 260      2F44 6F63 
+ 260      756D 656E 
+GAS LISTING /tmp/cciGX3aJ.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 io.c
+     /tmp/cciGX3aJ.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cciGX3aJ.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cciGX3aJ.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cciGX3aJ.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cciGX3aJ.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cciGX3aJ.s:13     .text:0000000000000000 init_io
+     /tmp/cciGX3aJ.s:16     .text:0000000000000000 .Loc.0
+     /tmp/cciGX3aJ.s:17     .text:0000000000000000 L0
+     /tmp/cciGX3aJ.s:22     .text:0000000000000000 .Loc.1
+     /tmp/cciGX3aJ.s:23     .text:0000000000000000 .Loc.2
+     /tmp/cciGX3aJ.s:25     .text:0000000000000002 .Loc.3
+     /tmp/cciGX3aJ.s:26     .text:0000000000000002 .Loc.4
+     /tmp/cciGX3aJ.s:28     .text:0000000000000004 .Loc.5
+     /tmp/cciGX3aJ.s:29     .text:0000000000000004 .Loc.6
+     /tmp/cciGX3aJ.s:31     .text:0000000000000006 .Loc.7
+     /tmp/cciGX3aJ.s:32     .text:0000000000000006 .Loc.8
+     /tmp/cciGX3aJ.s:34     .text:0000000000000008 .Loc.9
+     /tmp/cciGX3aJ.s:35     .text:0000000000000008 .Loc.10
+     /tmp/cciGX3aJ.s:37     .text:000000000000000a .Loc.11
+     /tmp/cciGX3aJ.s:38     .text:000000000000000a .Loc.12
+     /tmp/cciGX3aJ.s:40     .text:000000000000000c .Loc.13
+     /tmp/cciGX3aJ.s:41     .text:000000000000000c .Loc.14
+     /tmp/cciGX3aJ.s:43     .text:000000000000000e .Loc.15
+     /tmp/cciGX3aJ.s:44     .text:000000000000000e .Loc.16
+     /tmp/cciGX3aJ.s:46     .text:0000000000000010 .Loc.17
+     /tmp/cciGX3aJ.s:47     .text:0000000000000010 .Loc.18
+     /tmp/cciGX3aJ.s:49     .text:0000000000000012 .Loc.19
+     /tmp/cciGX3aJ.s:50     .text:0000000000000012 .Loc.20
+     /tmp/cciGX3aJ.s:52     .text:0000000000000014 .Loc.21
+     /tmp/cciGX3aJ.s:53     .text:0000000000000014 .Loc.22
+     /tmp/cciGX3aJ.s:55     .text:0000000000000016 .Loc.23
+     /tmp/cciGX3aJ.s:56     .text:0000000000000016 .Loc.24
+     /tmp/cciGX3aJ.s:58     .text:0000000000000018 .Loc.25
+     /tmp/cciGX3aJ.s:59     .text:0000000000000018 .Loc.26
+     /tmp/cciGX3aJ.s:61     .text:000000000000001a .Loc.27
+     /tmp/cciGX3aJ.s:62     .text:000000000000001a .Loc.28
+     /tmp/cciGX3aJ.s:66     .text:000000000000001e .Loc.29
+     /tmp/cciGX3aJ.s:68     .text:0000000000000020 L0
+     /tmp/cciGX3aJ.s:73     .text:0000000000000020 L0
+                     .debug_frame:0000000000000000 L0
+     /tmp/cciGX3aJ.s:137    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/cciGX3aJ.s:8      .text:0000000000000000 .Ltext0
+     /tmp/cciGX3aJ.s:71     .text:0000000000000020 .Letext0
+     /tmp/cciGX3aJ.s:233    .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/cciGX3aJ.s:14     .text:0000000000000000 .LFB0
+     /tmp/cciGX3aJ.s:69     .text:0000000000000020 .LFE0
+     /tmp/cciGX3aJ.s:74     .debug_info:0000000000000000 .Ldebug_info0
+
+NO UNDEFINED SYMBOLS

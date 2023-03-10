@@ -37,7 +37,6 @@ float32 Load3 = 1; // Current draw of load3         3 worked
 
 
 
-
 MainsReq =   (10/MainsMAX) * BusI;
 
 if(BusI + BatteryChargeI < MainsMAX){
@@ -60,7 +59,7 @@ if(~LC1 && ~LC2 && ~LC3){
 	
 }
 
-if(LoadCall1 == 1  && LoadCall2 == 0 && LoadCall3 == 0){
+if(LC1 && ~LC2 && ~LC3){
 	 //we will take the busI in the next if loop BusIdiff. If BusI < Bus
 	 if(Load1 < MainsMAX + PV + Wind){
 		 LS1_hi();
@@ -68,15 +67,14 @@ if(LoadCall1 == 1  && LoadCall2 == 0 && LoadCall3 == 0){
 }
 else LS1_lo();
 
-
-if(LoadCall1 == 0  && LoadCall2 == 1 && LoadCall3 == 0 ){
+if(~LC1 && LC2 && ~LC3 ){
 	if(Load2 < MainsMAX + PV + Wind){
 		 LS2_hi();
 	 }
 	 else LS2_lo();
 }
 
-if(LoadCall1 == 1  && LoadCall2 == 1 && LoadCall3 == 0){
+if( LC1 && LC2 == 1 && ~LC3){
 	if(Load1 + Load2 < MainsMAX + PV + Wind){
 		 LS2_hi();
 	 }
@@ -87,8 +85,7 @@ if(LoadCall1 == 1  && LoadCall2 == 1 && LoadCall3 == 0){
 	 else LS1_lo();
 }
 
-
-if(LoadCall1 == 0  && LoadCall2 == 0 && LoadCall3 == 1){
+if(~LC1 && ~LC2 && LC3){
 	if(Load3 < MainsMAX + PV + Wind){
 		LS3_hi();
 	}
@@ -96,8 +93,7 @@ if(LoadCall1 == 0  && LoadCall2 == 0 && LoadCall3 == 1){
 	
 }
 
-
-if(LoadCall1 == 1  && LoadCall2 == 0 && LoadCall3 == 1){
+if(LC1 && ~LC2 && LC3){
 	if(Load3 + Load1  < MainsMAX + PV + Wind){
 		LS3_hi();
 	}
@@ -121,7 +117,6 @@ if(LoadCall1 == 0  && LoadCall2 == 1 && LoadCall3 == 1  ){
 	else LS2_lo();
 }
 
-
 if(LoadCall1 == 1 && LoadCall2 == 1 && LoadCall3 == 1 ){
 	if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind){
 		LS3_hi();
@@ -137,5 +132,4 @@ if(LoadCall1 == 1 && LoadCall2 == 1 && LoadCall3 == 1 ){
 		LS1_hi();
 	}
 	else LS1_lo();
-
 }
