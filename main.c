@@ -4,12 +4,12 @@
 #include "liblcd/lcd.h"
 #include "liblcd/ili934x.h"
 #include "libio/io.h"
+#include "libadc/adc.h"
 // DISPLAY 240 x 320
 
 uint16_t drift = 0;
 //  An unsigned int used to regulate TIMER0 drift.
 uint16_t vbus, ibus, pvc, wtc;
-
 
 void init(){
     init_lcd();
@@ -18,10 +18,13 @@ void init(){
     init_graphics();
 }
 
+void lcd_update(uint16_t vbus, ibus, pvc, wtc){
+}
+
 int main(){
     init();
-    while(1){
-        algorithm(/*TODO*/);
+    while(1);
+    return 0;
 }
 
 ISR(TIMER0_COMPA_vect){
@@ -54,6 +57,8 @@ ISR(TIMER0_COMPA_vect){
 	pvc = ADC;
     ADCSRA |=_BV(ADATE);
     //  Fourth for PV Capacity.
+
+    lcd_update();
 
     drift++;
     //  Increment the drift supervisor.
