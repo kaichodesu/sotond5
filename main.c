@@ -6,19 +6,36 @@
 #include "libio/io.h"
 #include "libadc/adc.h"
 // DISPLAY 240 x 320
+#define PV_CALIBRATED 3.16
+#define WIND_CALIBRATED 3.23
+#define VBUS_CALIBRATED 3.10
+#define IBUS_CALIBRATED 3.33
+
+//========================================================================//
+// Scenario constants
+const uint8_t MainsMAX = 2;
+const uint8_t BatteryChargeI = 1;
+const float Load1 = 1.2;
+const float Load2 = 2;
+const float Load3 = 0.8;
+//========================================================================//
 
 uint16_t drift = 0;
 //  An unsigned int used to regulate TIMER0 drift.
-uint16_t vbus, ibus, pvc, wtc;
+uint16_t ibus, pvc, wtc;
+//  uints for initial time sensitive data storage
+float PV, Wind, BusI, MainsReq;
 
 void init(){
     init_lcd();
     set_orientation(North);
     init_io();
     init_graphics();
+    init_timer0();
+    init_adc();
 }
 
-void lcd_update(uint16_t vbus, ibus, pvc, wtc){
+void lcd_update(void){
 }
 
 int main(){
@@ -36,14 +53,14 @@ ISR(TIMER0_COMPA_vect){
     ADCSRA &=~_BV(ADATE);
     //  Disabling Auto Triggering
 	while(ADCSRA &_BV(ADSC));
-	vbus = ADC;
-    //  First conversion for the 4VAC bus.  The conversion should have already started from the Timer0 Interrupt.
+	ibus = ADC;
+    //  First conversion for the 10VAC bus.  The conversion should have already started from the Timer0 Interrupt.
 
-    ADMUX = 0x03;
+    /*ADMUX = 0x03;
     ADCSRA |=_BV(ADSC);
     while(ADCSRA &_BV(ADSC));
-	ibus = ADC;
-    //  Second conversion for the 10VAC bus.
+	vbus = ADC;
+    //  Second conversion for the 4VAC bus.*/
 
     ADMUX = 0x05;
     ADCSRA |=_BV(ADSC);
@@ -58,10 +75,115 @@ ISR(TIMER0_COMPA_vect){
     ADCSRA |=_BV(ADATE);
     //  Fourth for PV Capacity.
 
-    lcd_update();
+    PV = pvc*PV_CALIBRATED/1024;
+    Wind = wtc*WIND_CALIBRATED/1024;
+    BusI = ibus*IBUS_CALIBRATED/1024;
+
+    MainsReq =   (10/MainsMAX) * BusI;
+
+    if(BusI + BatteryChargeI < MainsMAX){
+        DBAT_lo();
+        CBAT_hi();
+    }
+    else{
+        CBAT_lo();
+        DBAT_hi();
+    }
+
+    if(MainsReq >= 10){
+        MainsReq = 10;
+    }
+
+    if(~LC1 && ~LC2 && ~LC3){
+        LS1_lo();
+        LS2_lo();
+        LS3_lo();
+
+    }
+
+    if(LC1 && ~LC2 && ~LC3){
+        //we will take the busI in the next if loop BusIdiff. If BusI < Bus
+        if(Load1 < MainsMAX + PV + Wind){
+            LS1_hi();
+        }
+    }
+    else LS1_lo();
+
+    if(~LC1 && LC2 && ~LC3 ){
+        if(Load2 < MainsMAX + PV + Wind){
+            LS2_hi();
+        }
+        else LS2_lo();
+    }
+
+    if( LC1 && LC2 == 1 && ~LC3){
+        if(Load1 + Load2 < MainsMAX + PV + Wind){
+            LS2_hi();
+        }
+        else LS2_lo();
+        if(Load1 < MainsMAX + PV + Wind){
+            LS1_hi();
+        }
+        else LS1_lo();
+    }
+
+    if(~LC1 && ~LC2 && LC3){
+        if(Load3 < MainsMAX + PV + Wind){
+            LS3_hi();
+        }
+        else LS3_lo();
+
+    }
+
+    if(LC1 && ~LC2 && LC3){
+        if(Load3 + Load1  < MainsMAX + PV + Wind){
+            LS3_hi();
+        }
+        else LS3_lo();
+
+        if(Load1 < MainsMAX + PV + Wind){
+            LS1_hi();
+        }
+        else LS1_lo();
+    }
+
+    if(~LC1 && LC2 && LC3  ){
+        if(Load2 + Load3 < MainsMAX + PV + Wind){
+            LS3_hi();
+        }
+        else LS3_lo();
+
+        if(Load2 < MainsMAX + PV + Wind){
+            LS2_hi();
+        }
+        else LS2_lo();
+    }
+
+    if(LC1 && LC2 && LC3 ){
+        if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind){
+            LS3_hi();
+        }
+        else LS3_lo();
+
+        if(Load2 + Load1 < MainsMAX + PV + Wind){
+            LS2_hi();
+        }
+        else LS2_lo();
+
+        if(Load1 < MainsMAX + PV + Wind){
+            LS1_hi();
+        }
+        else LS1_lo();
+    }
+
 
     drift++;
     //  Increment the drift supervisor.
+    if(drift%50 == 0){
+        //  Update the UI every second
+        lcd_update();
+    }
+
     if(drift > 3000){
         //  After 1 minute, recalibrate
         drift = 0;

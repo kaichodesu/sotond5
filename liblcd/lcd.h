@@ -28,18 +28,7 @@ typedef struct {
 } lcd;
 
 extern lcd display;
-
-typedef struct {
-	uint16_t left, right;
-	uint16_t top, bottom;
-} rectangle;	
-
 void init_lcd();
 void set_orientation(orientation o);
-void clear_screen();
-void fill_rectangle(rectangle r, uint16_t col);
-void fill_rectangle_indexed(rectangle r, uint16_t* col);
-void display_char(char c);
-void display_string(char *str);
 void init_graphics();
 void calibrate_graphics();
