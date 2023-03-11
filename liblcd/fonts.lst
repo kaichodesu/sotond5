@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cccPkyDu.s 			page 1
+GAS LISTING /tmp/cc5kqIpQ.s 			page 1
 
 
    1               		.file	"fonts.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
   55 004c F4CC      		.word	-13068
   56 004e 76D5      		.word	-10890
   57 0050 D7D5      		.word	-10793
-GAS LISTING /tmp/cccPkyDu.s 			page 2
+GAS LISTING /tmp/cc5kqIpQ.s 			page 2
 
 
   58 0052 96D5      		.word	-10858
@@ -118,7 +118,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  112 00be F8E5      		.word	-6664
  113 00c0 39E6      		.word	-6599
  114 00c2 39E6      		.word	-6599
-GAS LISTING /tmp/cccPkyDu.s 			page 3
+GAS LISTING /tmp/cc5kqIpQ.s 			page 3
 
 
  115 00c4 39E6      		.word	-6599
@@ -178,7 +178,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  169 0130 B7E5      		.word	-6729
  170 0132 56DD      		.word	-8874
  171 0134 91CC      		.word	-13167
-GAS LISTING /tmp/cccPkyDu.s 			page 4
+GAS LISTING /tmp/cc5kqIpQ.s 			page 4
 
 
  172 0136 0BC4      		.word	-15349
@@ -238,7 +238,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  226 01a2 D4B4      		.word	-19244
  227 01a4 7DFF      		.word	-131
  228 01a6 9EFF      		.word	-98
-GAS LISTING /tmp/cccPkyDu.s 			page 5
+GAS LISTING /tmp/cc5kqIpQ.s 			page 5
 
 
  229 01a8 9EFF      		.word	-98
@@ -298,7 +298,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  283 0214 7DF7      		.word	-2179
  284 0216 7DF7      		.word	-2179
  285 0218 FCDE      		.word	-8452
-GAS LISTING /tmp/cccPkyDu.s 			page 6
+GAS LISTING /tmp/cc5kqIpQ.s 			page 6
 
 
  286 021a 9F3E      		.word	16031
@@ -358,7 +358,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  340 0286 B7DD      		.word	-8777
  341 0288 F7ED      		.word	-4617
  342 028a FBF6      		.word	-2309
-GAS LISTING /tmp/cccPkyDu.s 			page 7
+GAS LISTING /tmp/cc5kqIpQ.s 			page 7
 
 
  343 028c 5DFF      		.word	-163
@@ -418,7 +418,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  397 02f8 79E6      		.word	-6535
  398 02fa 59DE      		.word	-8615
  399 02fc D8D5      		.word	-10792
-GAS LISTING /tmp/cccPkyDu.s 			page 8
+GAS LISTING /tmp/cc5kqIpQ.s 			page 8
 
 
  400 02fe 76D5      		.word	-10890
@@ -478,7 +478,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  454 036a D3B4      		.word	-19245
  455 036c 93C4      		.word	-15213
  456 036e F4C4      		.word	-15116
-GAS LISTING /tmp/cccPkyDu.s 			page 9
+GAS LISTING /tmp/cc5kqIpQ.s 			page 9
 
 
  457 0370 F3B4      		.word	-19213
@@ -538,7 +538,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  511 03dc BE9E      		.word	-24898
  512 03de 9F3E      		.word	16031
  513 03e0 7CAE      		.word	-20868
-GAS LISTING /tmp/cccPkyDu.s 			page 10
+GAS LISTING /tmp/cc5kqIpQ.s 			page 10
 
 
  514 03e2 B7C5      		.word	-14921
@@ -598,7 +598,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  568 044e DBF6      		.word	-2341
  569 0450 59EE      		.word	-4519
  570 0452 B6CD      		.word	-12874
-GAS LISTING /tmp/cccPkyDu.s 			page 11
+GAS LISTING /tmp/cc5kqIpQ.s 			page 11
 
 
  571 0454 97A5      		.word	-23145
@@ -658,7 +658,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  625 04c0 18E6      		.word	-6632
  626 04c2 1CF7      		.word	-2276
  627 04c4 3CFF      		.word	-196
-GAS LISTING /tmp/cccPkyDu.s 			page 12
+GAS LISTING /tmp/cc5kqIpQ.s 			page 12
 
 
  628 04c6 5CFF      		.word	-164
@@ -718,7 +718,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  682 0532 F4B4      		.word	-19212
  683 0534 59DE      		.word	-8615
  684 0536 39DE      		.word	-8647
-GAS LISTING /tmp/cccPkyDu.s 			page 13
+GAS LISTING /tmp/cc5kqIpQ.s 			page 13
 
 
  685 0538 18DE      		.word	-8680
@@ -778,7 +778,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  739 05a4 DEB6      		.word	-18722
  740 05a6 DEAE      		.word	-20770
  741 05a8 DEAE      		.word	-20770
-GAS LISTING /tmp/cccPkyDu.s 			page 14
+GAS LISTING /tmp/cc5kqIpQ.s 			page 14
 
 
  742 05aa BEAE      		.word	-20802
@@ -838,7 +838,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  796 0616 38E6      		.word	-6600
  797 0618 75D5      		.word	-10891
  798 061a 59E6      		.word	-6567
-GAS LISTING /tmp/cccPkyDu.s 			page 15
+GAS LISTING /tmp/cc5kqIpQ.s 			page 15
 
 
  799 061c BBEE      		.word	-4421
@@ -898,7 +898,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  853 0688 97D5      		.word	-10857
  854 068a B7D5      		.word	-10825
  855 068c D7D5      		.word	-10793
-GAS LISTING /tmp/cccPkyDu.s 			page 16
+GAS LISTING /tmp/cc5kqIpQ.s 			page 16
 
 
  856 068e 76CD      		.word	-12938
@@ -958,7 +958,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  910 06fa 9F3E      		.word	16031
  911 06fc 3AC6      		.word	-14790
  912 06fe 39E6      		.word	-6599
-GAS LISTING /tmp/cccPkyDu.s 			page 17
+GAS LISTING /tmp/cc5kqIpQ.s 			page 17
 
 
  913 0700 59E6      		.word	-6567
@@ -1018,7 +1018,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  967 076c 39E6      		.word	-6599
  968 076e 97DD      		.word	-8809
  969 0770 14D5      		.word	-10988
-GAS LISTING /tmp/cccPkyDu.s 			page 18
+GAS LISTING /tmp/cc5kqIpQ.s 			page 18
 
 
  970 0772 B0CC      		.word	-13136
@@ -1078,7 +1078,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1024 07de F4B4      		.word	-19212
  1025 07e0 9DFF      		.word	-99
  1026 07e2 9EFF      		.word	-98
-GAS LISTING /tmp/cccPkyDu.s 			page 19
+GAS LISTING /tmp/cc5kqIpQ.s 			page 19
 
 
  1027 07e4 9EFF      		.word	-98
@@ -1138,7 +1138,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1081 0850 BEFF      		.word	-66
  1082 0852 BEFF      		.word	-66
  1083 0854 9DFF      		.word	-99
-GAS LISTING /tmp/cccPkyDu.s 			page 20
+GAS LISTING /tmp/cc5kqIpQ.s 			page 20
 
 
  1084 0856 DBEE      		.word	-4389
@@ -1198,7 +1198,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1138 08c2 39DE      		.word	-8647
  1139 08c4 79F6      		.word	-2439
  1140 08c6 DDBE      		.word	-16675
-GAS LISTING /tmp/cccPkyDu.s 			page 21
+GAS LISTING /tmp/cc5kqIpQ.s 			page 21
 
 
  1141 08c8 9F3E      		.word	16031
@@ -1258,7 +1258,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1195 0934 DAE6      		.word	-6438
  1196 0936 BAE6      		.word	-6470
  1197 0938 F7E5      		.word	-6665
-GAS LISTING /tmp/cccPkyDu.s 			page 22
+GAS LISTING /tmp/cc5kqIpQ.s 			page 22
 
 
  1198 093a 14E5      		.word	-6892
@@ -1318,7 +1318,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1252 09a6 B3BC      		.word	-17229
  1253 09a8 D3C4      		.word	-15149
  1254 09aa 14C5      		.word	-15084
-GAS LISTING /tmp/cccPkyDu.s 			page 23
+GAS LISTING /tmp/cc5kqIpQ.s 			page 23
 
 
  1255 09ac F3BC      		.word	-17165
@@ -1378,7 +1378,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1309 0a18 9F3E      		.word	16031
  1310 0a1a 3ABE      		.word	-16838
  1311 0a1c B7C5      		.word	-14921
-GAS LISTING /tmp/cccPkyDu.s 			page 24
+GAS LISTING /tmp/cc5kqIpQ.s 			page 24
 
 
  1312 0a1e 56BD      		.word	-17066
@@ -1438,7 +1438,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1366 0a8a 5CFF      		.word	-164
  1367 0a8c DBF6      		.word	-2341
  1368 0a8e D7D5      		.word	-10793
-GAS LISTING /tmp/cccPkyDu.s 			page 25
+GAS LISTING /tmp/cc5kqIpQ.s 			page 25
 
 
  1369 0a90 F4B4      		.word	-19212
@@ -1498,7 +1498,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1423 0afc 38E6      		.word	-6600
  1424 0afe DBF6      		.word	-2341
  1425 0b00 3CFF      		.word	-196
-GAS LISTING /tmp/cccPkyDu.s 			page 26
+GAS LISTING /tmp/cc5kqIpQ.s 			page 26
 
 
  1426 0b02 3CFF      		.word	-196
@@ -1558,7 +1558,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1480 0b6e 96CD      		.word	-12906
  1481 0b70 BAEE      		.word	-4422
  1482 0b72 3CF7      		.word	-2244
-GAS LISTING /tmp/cccPkyDu.s 			page 27
+GAS LISTING /tmp/cc5kqIpQ.s 			page 27
 
 
  1483 0b74 BAEE      		.word	-4422
@@ -1618,7 +1618,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1537 0be0 9F3E      		.word	16031
  1538 0be2 9F3E      		.word	16031
  1539 0be4 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 28
+GAS LISTING /tmp/cc5kqIpQ.s 			page 28
 
 
  1540 0be6 9F3E      		.word	16031
@@ -1678,7 +1678,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1594 0c52 3CF7      		.word	-2244
  1595 0c54 39DE      		.word	-8647
  1596 0c56 59E6      		.word	-6567
-GAS LISTING /tmp/cccPkyDu.s 			page 29
+GAS LISTING /tmp/cc5kqIpQ.s 			page 29
 
 
  1597 0c58 9BD6      		.word	-10597
@@ -1738,7 +1738,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1651 0cc4 B7CD      		.word	-12873
  1652 0cc6 D7D5      		.word	-10793
  1653 0cc8 D7D5      		.word	-10793
-GAS LISTING /tmp/cccPkyDu.s 			page 30
+GAS LISTING /tmp/cc5kqIpQ.s 			page 30
 
 
  1654 0cca 56CD      		.word	-12970
@@ -1798,7 +1798,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1708 0d36 B6E5      		.word	-6730
  1709 0d38 19E6      		.word	-6631
  1710 0d3a 39E6      		.word	-6599
-GAS LISTING /tmp/cccPkyDu.s 			page 31
+GAS LISTING /tmp/cc5kqIpQ.s 			page 31
 
 
  1711 0d3c 7AE6      		.word	-6534
@@ -1858,7 +1858,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1765 0da8 9BE6      		.word	-6501
  1766 0daa F9D5      		.word	-10759
  1767 0dac D8DD      		.word	-8744
-GAS LISTING /tmp/cccPkyDu.s 			page 32
+GAS LISTING /tmp/cc5kqIpQ.s 			page 32
 
 
  1768 0dae F8DD      		.word	-8712
@@ -1918,7 +1918,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1822 0e1a 14B5      		.word	-19180
  1823 0e1c 1CEF      		.word	-4324
  1824 0e1e 9F46      		.word	18079
-GAS LISTING /tmp/cccPkyDu.s 			page 33
+GAS LISTING /tmp/cc5kqIpQ.s 			page 33
 
 
  1825 0e20 BF7E      		.word	32447
@@ -1978,7 +1978,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1879 0e8c BEFF      		.word	-66
  1880 0e8e 9DFF      		.word	-99
  1881 0e90 1CF7      		.word	-2276
-GAS LISTING /tmp/cccPkyDu.s 			page 34
+GAS LISTING /tmp/cc5kqIpQ.s 			page 34
 
 
  1882 0e92 18D6      		.word	-10728
@@ -2038,7 +2038,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1936 0efe 7AE6      		.word	-6534
  1937 0f00 FBF6      		.word	-2309
  1938 0f02 3CFF      		.word	-196
-GAS LISTING /tmp/cccPkyDu.s 			page 35
+GAS LISTING /tmp/cc5kqIpQ.s 			page 35
 
 
  1939 0f04 5DFF      		.word	-163
@@ -2098,7 +2098,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  1993 0f70 BDAE      		.word	-20803
  1994 0f72 99E6      		.word	-6503
  1995 0f74 38EE      		.word	-4552
-GAS LISTING /tmp/cccPkyDu.s 			page 36
+GAS LISTING /tmp/cc5kqIpQ.s 			page 36
 
 
  1996 0f76 D7ED      		.word	-4649
@@ -2158,7 +2158,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2050 0fe2 32CC      		.word	-13262
  2051 0fe4 DB8D      		.word	-29221
  2052 0fe6 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 37
+GAS LISTING /tmp/cc5kqIpQ.s 			page 37
 
 
  2053 0fe8 76B5      		.word	-19082
@@ -2218,7 +2218,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2107 1054 17E6      		.word	-6633
  2108 1056 55C5      		.word	-15019
  2109 1058 F4B4      		.word	-19212
-GAS LISTING /tmp/cccPkyDu.s 			page 38
+GAS LISTING /tmp/cc5kqIpQ.s 			page 38
 
 
  2110 105a D3B4      		.word	-19245
@@ -2278,7 +2278,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2164 10c6 7DFF      		.word	-131
  2165 10c8 3CFF      		.word	-196
  2166 10ca 59EE      		.word	-4519
-GAS LISTING /tmp/cccPkyDu.s 			page 39
+GAS LISTING /tmp/cc5kqIpQ.s 			page 39
 
 
  2167 10cc 35BD      		.word	-17099
@@ -2338,7 +2338,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2221 1138 38E6      		.word	-6600
  2222 113a 79EE      		.word	-4487
  2223 113c 3CFF      		.word	-196
-GAS LISTING /tmp/cccPkyDu.s 			page 40
+GAS LISTING /tmp/cc5kqIpQ.s 			page 40
 
 
  2224 113e 1CE7      		.word	-6372
@@ -2398,7 +2398,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2278 11aa 3BBE      		.word	-16837
  2279 11ac 9F46      		.word	18079
  2280 11ae BF66      		.word	26303
-GAS LISTING /tmp/cccPkyDu.s 			page 41
+GAS LISTING /tmp/cc5kqIpQ.s 			page 41
 
 
  2281 11b0 DAEE      		.word	-4390
@@ -2458,7 +2458,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2335 121c BE8E      		.word	-28994
  2336 121e BF6E      		.word	28351
  2337 1220 BF4E      		.word	20159
-GAS LISTING /tmp/cccPkyDu.s 			page 42
+GAS LISTING /tmp/cc5kqIpQ.s 			page 42
 
 
  2338 1222 BF6E      		.word	28351
@@ -2518,7 +2518,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2392 1280 6F9C      		.word	-25489
  2393 1282 F5CD      		.word	-12811
  2394 1284 B5CD      		.word	-12875
-GAS LISTING /tmp/cccPkyDu.s 			page 43
+GAS LISTING /tmp/cc5kqIpQ.s 			page 43
 
 
  2395 1286 B5CD      		.word	-12875
@@ -2578,7 +2578,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2449 12f2 12B5      		.word	-19182
  2450 12f4 D2AC      		.word	-21294
  2451 12f6 D2AC      		.word	-21294
-GAS LISTING /tmp/cccPkyDu.s 			page 44
+GAS LISTING /tmp/cc5kqIpQ.s 			page 44
 
 
  2452 12f8 F2AC      		.word	-21262
@@ -2638,7 +2638,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2506 1364 F3B4      		.word	-19213
  2507 1366 F2B4      		.word	-19214
  2508 1368 F2BC      		.word	-17166
-GAS LISTING /tmp/cccPkyDu.s 			page 45
+GAS LISTING /tmp/cc5kqIpQ.s 			page 45
 
 
  2509 136a 33BD      		.word	-17101
@@ -2698,7 +2698,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2563 13d6 D995      		.word	-27175
  2564 13d8 33BD      		.word	-17101
  2565 13da 1B76      		.word	30235
-GAS LISTING /tmp/cccPkyDu.s 			page 46
+GAS LISTING /tmp/cc5kqIpQ.s 			page 46
 
 
  2566 13dc 9F3E      		.word	16031
@@ -2758,7 +2758,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2620 1448 54BD      		.word	-17068
  2621 144a 74C5      		.word	-14988
  2622 144c 54BD      		.word	-17068
-GAS LISTING /tmp/cccPkyDu.s 			page 47
+GAS LISTING /tmp/cc5kqIpQ.s 			page 47
 
 
  2623 144e 12B5      		.word	-19182
@@ -2818,7 +2818,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2677 14ba 54BD      		.word	-17068
  2678 14bc 54BD      		.word	-17068
  2679 14be 33BD      		.word	-17101
-GAS LISTING /tmp/cccPkyDu.s 			page 48
+GAS LISTING /tmp/cc5kqIpQ.s 			page 48
 
 
  2680 14c0 33BD      		.word	-17101
@@ -2878,7 +2878,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2734 152c F4A4      		.word	-23308
  2735 152e 7F4E      		.word	20095
  2736 1530 9F46      		.word	18079
-GAS LISTING /tmp/cccPkyDu.s 			page 49
+GAS LISTING /tmp/cc5kqIpQ.s 			page 49
 
 
  2737 1532 97A5      		.word	-23145
@@ -2938,7 +2938,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2791 159e 13B5      		.word	-19181
  2792 15a0 D2B4      		.word	-19246
  2793 15a2 5D66      		.word	26205
-GAS LISTING /tmp/cccPkyDu.s 			page 50
+GAS LISTING /tmp/cc5kqIpQ.s 			page 50
 
 
  2794 15a4 9F46      		.word	18079
@@ -2998,7 +2998,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2848 1610 35B5      		.word	-19147
  2849 1612 35B5      		.word	-19147
  2850 1614 34BD      		.word	-17100
-GAS LISTING /tmp/cccPkyDu.s 			page 51
+GAS LISTING /tmp/cc5kqIpQ.s 			page 51
 
 
  2851 1616 34BD      		.word	-17100
@@ -3058,7 +3058,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2905 1682 92A4      		.word	-23406
  2906 1684 92A4      		.word	-23406
  2907 1686 B2A4      		.word	-23374
-GAS LISTING /tmp/cccPkyDu.s 			page 52
+GAS LISTING /tmp/cc5kqIpQ.s 			page 52
 
 
  2908 1688 B3B4      		.word	-19277
@@ -3118,7 +3118,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  2962 16f4 B2BC      		.word	-17230
  2963 16f6 71BC      		.word	-17295
  2964 16f8 B6CD      		.word	-12874
-GAS LISTING /tmp/cccPkyDu.s 			page 53
+GAS LISTING /tmp/cc5kqIpQ.s 			page 53
 
 
  2965 16fa 76C5      		.word	-14986
@@ -3178,7 +3178,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3019 1766 D4BC      		.word	-17196
  3020 1768 93A4      		.word	-23405
  3021 176a 5E5E      		.word	24158
-GAS LISTING /tmp/cccPkyDu.s 			page 54
+GAS LISTING /tmp/cc5kqIpQ.s 			page 54
 
 
  3022 176c 7F46      		.word	18047
@@ -3238,7 +3238,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3076 17d8 109C      		.word	-25584
  3077 17da 8F8B      		.word	-29809
  3078 17dc D09B      		.word	-25648
-GAS LISTING /tmp/cccPkyDu.s 			page 55
+GAS LISTING /tmp/cc5kqIpQ.s 			page 55
 
 
  3079 17de B08B      		.word	-29776
@@ -3298,7 +3298,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3133 184a D2AC      		.word	-21294
  3134 184c D2AC      		.word	-21294
  3135 184e F2B4      		.word	-19214
-GAS LISTING /tmp/cccPkyDu.s 			page 56
+GAS LISTING /tmp/cc5kqIpQ.s 			page 56
 
 
  3136 1850 F2B4      		.word	-19214
@@ -3358,7 +3358,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3190 18bc 9F56      		.word	22175
  3191 18be F7B5      		.word	-18953
  3192 18c0 94CD      		.word	-12908
-GAS LISTING /tmp/cccPkyDu.s 			page 57
+GAS LISTING /tmp/cc5kqIpQ.s 			page 57
 
 
  3193 18c2 74C5      		.word	-14988
@@ -3418,7 +3418,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3247 192e F2AC      		.word	-21262
  3248 1930 B1B4      		.word	-19279
  3249 1932 12B5      		.word	-19182
-GAS LISTING /tmp/cccPkyDu.s 			page 58
+GAS LISTING /tmp/cc5kqIpQ.s 			page 58
 
 
  3250 1934 33BD      		.word	-17101
@@ -3478,7 +3478,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3304 19a0 F2B4      		.word	-19214
  3305 19a2 D1B4      		.word	-19247
  3306 19a4 F2BC      		.word	-17166
-GAS LISTING /tmp/cccPkyDu.s 			page 59
+GAS LISTING /tmp/cc5kqIpQ.s 			page 59
 
 
  3307 19a6 33BD      		.word	-17101
@@ -3538,7 +3538,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3361 1a12 FA8D      		.word	-29190
  3362 1a14 33BD      		.word	-17101
  3363 1a16 91B4      		.word	-19311
-GAS LISTING /tmp/cccPkyDu.s 			page 60
+GAS LISTING /tmp/cc5kqIpQ.s 			page 60
 
 
  3364 1a18 B1B4      		.word	-19279
@@ -3598,7 +3598,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3418 1a84 54BD      		.word	-17068
  3419 1a86 33BD      		.word	-17101
  3420 1a88 33BD      		.word	-17101
-GAS LISTING /tmp/cccPkyDu.s 			page 61
+GAS LISTING /tmp/cc5kqIpQ.s 			page 61
 
 
  3421 1a8a 34B5      		.word	-19148
@@ -3658,7 +3658,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3475 1af6 9F3E      		.word	16031
  3476 1af8 9F3E      		.word	16031
  3477 1afa 5D66      		.word	26205
-GAS LISTING /tmp/cccPkyDu.s 			page 62
+GAS LISTING /tmp/cc5kqIpQ.s 			page 62
 
 
  3478 1afc 979D      		.word	-25193
@@ -3718,7 +3718,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3532 1b68 D3AC      		.word	-21293
  3533 1b6a F3AC      		.word	-21261
  3534 1b6c 7795      		.word	-27273
-GAS LISTING /tmp/cccPkyDu.s 			page 63
+GAS LISTING /tmp/cc5kqIpQ.s 			page 63
 
 
  3535 1b6e 9F46      		.word	18079
@@ -3778,7 +3778,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3589 1bda 9F3E      		.word	16031
  3590 1bdc 9F46      		.word	18079
  3591 1bde 769D      		.word	-25226
-GAS LISTING /tmp/cccPkyDu.s 			page 64
+GAS LISTING /tmp/cc5kqIpQ.s 			page 64
 
 
  3592 1be0 F3B4      		.word	-19213
@@ -3838,7 +3838,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3646 1c4c F4B4      		.word	-19212
  3647 1c4e F4B4      		.word	-19212
  3648 1c50 F4B4      		.word	-19212
-GAS LISTING /tmp/cccPkyDu.s 			page 65
+GAS LISTING /tmp/cc5kqIpQ.s 			page 65
 
 
  3649 1c52 72AC      		.word	-21390
@@ -3898,7 +3898,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3703 1cbe 92A4      		.word	-23406
  3704 1cc0 B3A4      		.word	-23373
  3705 1cc2 92A4      		.word	-23406
-GAS LISTING /tmp/cccPkyDu.s 			page 66
+GAS LISTING /tmp/cc5kqIpQ.s 			page 66
 
 
  3706 1cc4 D0CB      		.word	-13360
@@ -3958,7 +3958,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3760 1d30 9F3E      		.word	16031
  3761 1d32 FC75      		.word	30204
  3762 1d34 5BB6      		.word	-18853
-GAS LISTING /tmp/cccPkyDu.s 			page 67
+GAS LISTING /tmp/cc5kqIpQ.s 			page 67
 
 
  3763 1d36 9F3E      		.word	16031
@@ -4018,7 +4018,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3817 1da2 72A4      		.word	-23438
  3818 1da4 71A4      		.word	-23439
  3819 1da6 92A4      		.word	-23406
-GAS LISTING /tmp/cccPkyDu.s 			page 68
+GAS LISTING /tmp/cc5kqIpQ.s 			page 68
 
 
  3820 1da8 519C      		.word	-25519
@@ -4078,7 +4078,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3874 1e14 9F3E      		.word	16031
  3875 1e16 5E56      		.word	22110
  3876 1e18 FC65      		.word	26108
-GAS LISTING /tmp/cccPkyDu.s 			page 69
+GAS LISTING /tmp/cc5kqIpQ.s 			page 69
 
 
  3877 1e1a BB6D      		.word	28091
@@ -4138,7 +4138,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3931 1e86 9F3E      		.word	16031
  3932 1e88 9F3E      		.word	16031
  3933 1e8a 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 70
+GAS LISTING /tmp/cc5kqIpQ.s 			page 70
 
 
  3934 1e8c 9F3E      		.word	16031
@@ -4198,7 +4198,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  3988 1ef8 54BD      		.word	-17068
  3989 1efa B6B5      		.word	-19018
  3990 1efc 9F46      		.word	18079
-GAS LISTING /tmp/cccPkyDu.s 			page 71
+GAS LISTING /tmp/cc5kqIpQ.s 			page 71
 
 
  3991 1efe 5D76      		.word	30301
@@ -4258,7 +4258,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4045 1f6a 12BD      		.word	-17134
  4046 1f6c 6AD2      		.word	-11670
  4047 1f6e ECCA      		.word	-13588
-GAS LISTING /tmp/cccPkyDu.s 			page 72
+GAS LISTING /tmp/cc5kqIpQ.s 			page 72
 
 
  4048 1f70 54C5      		.word	-15020
@@ -4318,7 +4318,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4102 1fdc F2B4      		.word	-19214
  4103 1fde D1B4      		.word	-19247
  4104 1fe0 D2B4      		.word	-19246
-GAS LISTING /tmp/cccPkyDu.s 			page 73
+GAS LISTING /tmp/cc5kqIpQ.s 			page 73
 
 
  4105 1fe2 33BD      		.word	-17101
@@ -4378,7 +4378,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4159 204e 12B5      		.word	-19182
  4160 2050 13BD      		.word	-17133
  4161 2052 70AC      		.word	-21392
-GAS LISTING /tmp/cccPkyDu.s 			page 74
+GAS LISTING /tmp/cc5kqIpQ.s 			page 74
 
 
  4162 2054 90B4      		.word	-19312
@@ -4438,7 +4438,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4216 20c0 5D76      		.word	30301
  4217 20c2 13B5      		.word	-19181
  4218 20c4 13B5      		.word	-19181
-GAS LISTING /tmp/cccPkyDu.s 			page 75
+GAS LISTING /tmp/cc5kqIpQ.s 			page 75
 
 
  4219 20c6 13BD      		.word	-17133
@@ -4498,7 +4498,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4273 2132 F2B4      		.word	-19214
  4274 2134 D2AC      		.word	-21294
  4275 2136 D2AC      		.word	-21294
-GAS LISTING /tmp/cccPkyDu.s 			page 76
+GAS LISTING /tmp/cc5kqIpQ.s 			page 76
 
 
  4276 2138 34A5      		.word	-23244
@@ -4558,7 +4558,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4330 21a4 F3B4      		.word	-19213
  4331 21a6 14AD      		.word	-21228
  4332 21a8 34B5      		.word	-19148
-GAS LISTING /tmp/cccPkyDu.s 			page 77
+GAS LISTING /tmp/cc5kqIpQ.s 			page 77
 
 
  4333 21aa 34B5      		.word	-19148
@@ -4618,7 +4618,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4387 2216 13B5      		.word	-19181
  4388 2218 D2B4      		.word	-19246
  4389 221a F2B4      		.word	-19214
-GAS LISTING /tmp/cccPkyDu.s 			page 78
+GAS LISTING /tmp/cc5kqIpQ.s 			page 78
 
 
  4390 221c 13BD      		.word	-17133
@@ -4678,7 +4678,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4444 2288 9F4E      		.word	20127
  4445 228a 74AC      		.word	-21388
  4446 228c 74AC      		.word	-21388
-GAS LISTING /tmp/cccPkyDu.s 			page 79
+GAS LISTING /tmp/cc5kqIpQ.s 			page 79
 
 
  4447 228e 33AC      		.word	-21453
@@ -4738,7 +4738,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4501 22fa 519C      		.word	-25519
  4502 22fc 729C      		.word	-25486
  4503 22fe 0DA3      		.word	-23795
-GAS LISTING /tmp/cccPkyDu.s 			page 80
+GAS LISTING /tmp/cc5kqIpQ.s 			page 80
 
 
  4504 2300 0DCB      		.word	-13555
@@ -4798,7 +4798,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4558 236c D083      		.word	-31792
  4559 236e 72AC      		.word	-21390
  4560 2370 FBEE      		.word	-4357
-GAS LISTING /tmp/cccPkyDu.s 			page 81
+GAS LISTING /tmp/cc5kqIpQ.s 			page 81
 
 
  4561 2372 55C5      		.word	-15019
@@ -4858,7 +4858,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4615 23de 31A4      		.word	-23503
  4616 23e0 109C      		.word	-25584
  4617 23e2 519C      		.word	-25519
-GAS LISTING /tmp/cccPkyDu.s 			page 82
+GAS LISTING /tmp/cc5kqIpQ.s 			page 82
 
 
  4618 23e4 309C      		.word	-25552
@@ -4918,7 +4918,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4672 2450 529C      		.word	-25518
  4673 2452 119C      		.word	-25583
  4674 2454 119C      		.word	-25583
-GAS LISTING /tmp/cccPkyDu.s 			page 83
+GAS LISTING /tmp/cc5kqIpQ.s 			page 83
 
 
  4675 2456 D193      		.word	-27695
@@ -4978,7 +4978,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4729 24c2 F2B4      		.word	-19214
  4730 24c4 F2B4      		.word	-19214
  4731 24c6 F2B4      		.word	-19214
-GAS LISTING /tmp/cccPkyDu.s 			page 84
+GAS LISTING /tmp/cc5kqIpQ.s 			page 84
 
 
  4732 24c8 F2B4      		.word	-19214
@@ -5038,7 +5038,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4786 2534 33BD      		.word	-17101
  4787 2536 53BD      		.word	-17069
  4788 2538 55AD      		.word	-21163
-GAS LISTING /tmp/cccPkyDu.s 			page 85
+GAS LISTING /tmp/cc5kqIpQ.s 			page 85
 
 
  4789 253a 54B5      		.word	-19116
@@ -5098,7 +5098,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4843 25a6 34BD      		.word	-17100
  4844 25a8 D2B4      		.word	-19246
  4845 25aa A6C1      		.word	-15962
-GAS LISTING /tmp/cccPkyDu.s 			page 86
+GAS LISTING /tmp/cc5kqIpQ.s 			page 86
 
 
  4846 25ac 50BC      		.word	-17328
@@ -5158,7 +5158,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4900 2618 D1B4      		.word	-19247
  4901 261a D1B4      		.word	-19247
  4902 261c D2B4      		.word	-19246
-GAS LISTING /tmp/cccPkyDu.s 			page 87
+GAS LISTING /tmp/cc5kqIpQ.s 			page 87
 
 
  4903 261e 33BD      		.word	-17101
@@ -5218,7 +5218,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  4957 268a 12B5      		.word	-19182
  4958 268c 13B5      		.word	-19181
  4959 268e 4FAC      		.word	-21425
-GAS LISTING /tmp/cccPkyDu.s 			page 88
+GAS LISTING /tmp/cc5kqIpQ.s 			page 88
 
 
  4960 2690 DA7D      		.word	32218
@@ -5278,7 +5278,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5014 26fc 9F3E      		.word	16031
  5015 26fe 9F46      		.word	18079
  5016 2700 3C76      		.word	30268
-GAS LISTING /tmp/cccPkyDu.s 			page 89
+GAS LISTING /tmp/cc5kqIpQ.s 			page 89
 
 
  5017 2702 55A5      		.word	-23211
@@ -5338,7 +5338,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5071 276e F2B4      		.word	-19214
  5072 2770 B1AC      		.word	-21327
  5073 2772 B2AC      		.word	-21326
-GAS LISTING /tmp/cccPkyDu.s 			page 90
+GAS LISTING /tmp/cc5kqIpQ.s 			page 90
 
 
  5074 2774 B2AC      		.word	-21326
@@ -5398,7 +5398,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5128 27e0 9F4E      		.word	20127
  5129 27e2 7E56      		.word	22142
  5130 27e4 14AD      		.word	-21228
-GAS LISTING /tmp/cccPkyDu.s 			page 91
+GAS LISTING /tmp/cc5kqIpQ.s 			page 91
 
 
  5131 27e6 14B5      		.word	-19180
@@ -5458,7 +5458,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5185 2852 F3B4      		.word	-19213
  5186 2854 13BD      		.word	-17133
  5187 2856 98A5      		.word	-23144
-GAS LISTING /tmp/cccPkyDu.s 			page 92
+GAS LISTING /tmp/cc5kqIpQ.s 			page 92
 
 
  5188 2858 9F3E      		.word	16031
@@ -5518,7 +5518,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5242 28c4 D4B4      		.word	-19244
  5243 28c6 74AC      		.word	-21388
  5244 28c8 54AC      		.word	-21420
-GAS LISTING /tmp/cccPkyDu.s 			page 93
+GAS LISTING /tmp/cc5kqIpQ.s 			page 93
 
 
  5245 28ca 53AC      		.word	-21421
@@ -5578,7 +5578,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5299 2936 3785      		.word	-31433
  5300 2938 519C      		.word	-25519
  5301 293a C991      		.word	-28215
-GAS LISTING /tmp/cccPkyDu.s 			page 94
+GAS LISTING /tmp/cc5kqIpQ.s 			page 94
 
 
  5302 293c 2DCB      		.word	-13523
@@ -5638,7 +5638,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5356 29a8 595D      		.word	23897
  5357 29aa B07B      		.word	31664
  5358 29ac 1CF7      		.word	-2276
-GAS LISTING /tmp/cccPkyDu.s 			page 95
+GAS LISTING /tmp/cc5kqIpQ.s 			page 95
 
 
  5359 29ae B6CD      		.word	-12874
@@ -5698,7 +5698,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5413 2a1a CF9B      		.word	-25649
  5414 2a1c B584      		.word	-31563
  5415 2a1e 5E4E      		.word	20062
-GAS LISTING /tmp/cccPkyDu.s 			page 96
+GAS LISTING /tmp/cc5kqIpQ.s 			page 96
 
 
  5416 2a20 9F3E      		.word	16031
@@ -5758,7 +5758,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5470 2a8c 13B5      		.word	-19181
  5471 2a8e 13B5      		.word	-19181
  5472 2a90 D2AC      		.word	-21294
-GAS LISTING /tmp/cccPkyDu.s 			page 97
+GAS LISTING /tmp/cc5kqIpQ.s 			page 97
 
 
  5473 2a92 D2AC      		.word	-21294
@@ -5818,7 +5818,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5527 2afe F2B4      		.word	-19214
  5528 2b00 F2B4      		.word	-19214
  5529 2b02 3C6E      		.word	28220
-GAS LISTING /tmp/cccPkyDu.s 			page 98
+GAS LISTING /tmp/cc5kqIpQ.s 			page 98
 
 
  5530 2b04 9F46      		.word	18079
@@ -5878,7 +5878,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5584 2b70 33BD      		.word	-17101
  5585 2b72 33BD      		.word	-17101
  5586 2b74 53BD      		.word	-17069
-GAS LISTING /tmp/cccPkyDu.s 			page 99
+GAS LISTING /tmp/cc5kqIpQ.s 			page 99
 
 
  5587 2b76 53BD      		.word	-17069
@@ -5938,7 +5938,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5641 2be2 33B5      		.word	-19149
  5642 2be4 33BD      		.word	-17101
  5643 2be6 33BD      		.word	-17101
-GAS LISTING /tmp/cccPkyDu.s 			page 100
+GAS LISTING /tmp/cc5kqIpQ.s 			page 100
 
 
  5644 2be8 33BD      		.word	-17101
@@ -5998,7 +5998,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5698 2c54 359D      		.word	-25291
  5699 2c56 D1B4      		.word	-19247
  5700 2c58 F2C4      		.word	-15118
-GAS LISTING /tmp/cccPkyDu.s 			page 101
+GAS LISTING /tmp/cc5kqIpQ.s 			page 101
 
 
  5701 2c5a 55DD      		.word	-8875
@@ -6058,7 +6058,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5755 2cc6 13B5      		.word	-19181
  5756 2cc8 13B5      		.word	-19181
  5757 2cca B2AC      		.word	-21326
-GAS LISTING /tmp/cccPkyDu.s 			page 102
+GAS LISTING /tmp/cc5kqIpQ.s 			page 102
 
 
  5758 2ccc D2B4      		.word	-19246
@@ -6118,7 +6118,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5812 2d38 B89D      		.word	-25160
  5813 2d3a 7E66      		.word	26238
  5814 2d3c 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 103
+GAS LISTING /tmp/cc5kqIpQ.s 			page 103
 
 
  5815 2d3e 9F4E      		.word	20127
@@ -6178,7 +6178,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5869 2daa 33B5      		.word	-19149
  5870 2dac D2AC      		.word	-21294
  5871 2dae B1AC      		.word	-21327
-GAS LISTING /tmp/cccPkyDu.s 			page 104
+GAS LISTING /tmp/cc5kqIpQ.s 			page 104
 
 
  5872 2db0 B2AC      		.word	-21326
@@ -6238,7 +6238,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5926 2e1c 38D6      		.word	-10696
  5927 2e1e 18CE      		.word	-12776
  5928 2e20 34B5      		.word	-19148
-GAS LISTING /tmp/cccPkyDu.s 			page 105
+GAS LISTING /tmp/cc5kqIpQ.s 			page 105
 
 
  5929 2e22 14AD      		.word	-21228
@@ -6298,7 +6298,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  5983 2e8e F3BC      		.word	-17165
  5984 2e90 F3BC      		.word	-17165
  5985 2e92 B995      		.word	-27207
-GAS LISTING /tmp/cccPkyDu.s 			page 106
+GAS LISTING /tmp/cc5kqIpQ.s 			page 106
 
 
  5986 2e94 9F3E      		.word	16031
@@ -6358,7 +6358,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6040 2f00 53AC      		.word	-21421
  6041 2f02 54AC      		.word	-21420
  6042 2f04 54AC      		.word	-21420
-GAS LISTING /tmp/cccPkyDu.s 			page 107
+GAS LISTING /tmp/cc5kqIpQ.s 			page 107
 
 
  6043 2f06 13AC      		.word	-21485
@@ -6418,7 +6418,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6097 2f72 929C      		.word	-25454
  6098 2f74 729C      		.word	-25486
  6099 2f76 4FBB      		.word	-17585
-GAS LISTING /tmp/cccPkyDu.s 			page 108
+GAS LISTING /tmp/cc5kqIpQ.s 			page 108
 
 
  6100 2f78 0DD3      		.word	-11507
@@ -6478,7 +6478,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6154 2fe4 109C      		.word	-25584
  6155 2fe6 51A4      		.word	-23471
  6156 2fe8 FEB6      		.word	-18690
-GAS LISTING /tmp/cccPkyDu.s 			page 109
+GAS LISTING /tmp/cc5kqIpQ.s 			page 109
 
 
  6157 2fea 9F3E      		.word	16031
@@ -6538,7 +6538,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6211 3056 9F3E      		.word	16031
  6212 3058 1D56      		.word	22045
  6213 305a B484      		.word	-31564
-GAS LISTING /tmp/cccPkyDu.s 			page 110
+GAS LISTING /tmp/cc5kqIpQ.s 			page 110
 
 
  6214 305c AE9B      		.word	-25682
@@ -6598,7 +6598,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6268 30c8 F2B4      		.word	-19214
  6269 30ca 13B5      		.word	-19181
  6270 30cc 33B5      		.word	-19149
-GAS LISTING /tmp/cccPkyDu.s 			page 111
+GAS LISTING /tmp/cc5kqIpQ.s 			page 111
 
 
  6271 30ce 13B5      		.word	-19181
@@ -6658,7 +6658,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6325 313a F2B4      		.word	-19214
  6326 313c F2B4      		.word	-19214
  6327 313e F2B4      		.word	-19214
-GAS LISTING /tmp/cccPkyDu.s 			page 112
+GAS LISTING /tmp/cc5kqIpQ.s 			page 112
 
 
  6328 3140 F2B4      		.word	-19214
@@ -6718,7 +6718,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6382 31ac 76AD      		.word	-21130
  6383 31ae 53BD      		.word	-17069
  6384 31b0 74C5      		.word	-14988
-GAS LISTING /tmp/cccPkyDu.s 			page 113
+GAS LISTING /tmp/cc5kqIpQ.s 			page 113
 
 
  6385 31b2 74C5      		.word	-14988
@@ -6778,7 +6778,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6439 321e 9F3E      		.word	16031
  6440 3220 B89D      		.word	-25160
  6441 3222 54BD      		.word	-17068
-GAS LISTING /tmp/cccPkyDu.s 			page 114
+GAS LISTING /tmp/cc5kqIpQ.s 			page 114
 
 
  6442 3224 54BD      		.word	-17068
@@ -6838,7 +6838,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6496 3290 D1B4      		.word	-19247
  6497 3292 F2B4      		.word	-19214
  6498 3294 75C5      		.word	-14987
-GAS LISTING /tmp/cccPkyDu.s 			page 115
+GAS LISTING /tmp/cc5kqIpQ.s 			page 115
 
 
  6499 3296 9F76      		.word	30367
@@ -6898,7 +6898,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6553 3302 13B5      		.word	-19181
  6554 3304 33B5      		.word	-19149
  6555 3306 34B5      		.word	-19148
-GAS LISTING /tmp/cccPkyDu.s 			page 116
+GAS LISTING /tmp/cc5kqIpQ.s 			page 116
 
 
  6556 3308 34B5      		.word	-19148
@@ -6958,7 +6958,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6610 3374 33BD      		.word	-17101
  6611 3376 1B8E      		.word	-29157
  6612 3378 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 117
+GAS LISTING /tmp/cc5kqIpQ.s 			page 117
 
 
  6613 337a 55A5      		.word	-23211
@@ -7018,7 +7018,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6667 33e6 F3B4      		.word	-19213
  6668 33e8 13B5      		.word	-19181
  6669 33ea 13B5      		.word	-19181
-GAS LISTING /tmp/cccPkyDu.s 			page 118
+GAS LISTING /tmp/cc5kqIpQ.s 			page 118
 
 
  6670 33ec 34BD      		.word	-17100
@@ -7078,7 +7078,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6724 3458 1FB7      		.word	-18657
  6725 345a 3CF7      		.word	-2244
  6726 345c 55CD      		.word	-12971
-GAS LISTING /tmp/cccPkyDu.s 			page 119
+GAS LISTING /tmp/cc5kqIpQ.s 			page 119
 
 
  6727 345e D3AC      		.word	-21293
@@ -7138,7 +7138,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6781 34ca DB7D      		.word	32219
  6782 34cc DA85      		.word	-31270
  6783 34ce BA85      		.word	-31302
-GAS LISTING /tmp/cccPkyDu.s 			page 120
+GAS LISTING /tmp/cc5kqIpQ.s 			page 120
 
 
  6784 34d0 9A85      		.word	-31334
@@ -7198,7 +7198,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6838 353c F1C3      		.word	-15375
  6839 353e 13BC      		.word	-17389
  6840 3540 33B4      		.word	-19405
-GAS LISTING /tmp/cccPkyDu.s 			page 121
+GAS LISTING /tmp/cc5kqIpQ.s 			page 121
 
 
  6841 3542 13AC      		.word	-21485
@@ -7258,7 +7258,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6895 35ae 729C      		.word	-25486
  6896 35b0 52A4      		.word	-23470
  6897 35b2 6FC3      		.word	-15505
-GAS LISTING /tmp/cccPkyDu.s 			page 122
+GAS LISTING /tmp/cc5kqIpQ.s 			page 122
 
 
  6898 35b4 CCC9      		.word	-13876
@@ -7318,7 +7318,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  6952 3620 71AC      		.word	-21391
  6953 3622 50AC      		.word	-21424
  6954 3624 7DFF      		.word	-131
-GAS LISTING /tmp/cccPkyDu.s 			page 123
+GAS LISTING /tmp/cc5kqIpQ.s 			page 123
 
 
  6955 3626 7DFF      		.word	-131
@@ -7378,7 +7378,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7009 3692 AE92      		.word	-27986
  7010 3694 EB81      		.word	-32277
  7011 3696 2D93      		.word	-27859
-GAS LISTING /tmp/cccPkyDu.s 			page 124
+GAS LISTING /tmp/cc5kqIpQ.s 			page 124
 
 
  7012 3698 CFA3      		.word	-23601
@@ -7438,7 +7438,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7066 3704 13AD      		.word	-21229
  7067 3706 13B5      		.word	-19181
  7068 3708 33BD      		.word	-17101
-GAS LISTING /tmp/cccPkyDu.s 			page 125
+GAS LISTING /tmp/cc5kqIpQ.s 			page 125
 
 
  7069 370a 34B5      		.word	-19148
@@ -7498,7 +7498,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7123 3776 D2AC      		.word	-21294
  7124 3778 35A5      		.word	-23243
  7125 377a F2B4      		.word	-19214
-GAS LISTING /tmp/cccPkyDu.s 			page 126
+GAS LISTING /tmp/cc5kqIpQ.s 			page 126
 
 
  7126 377c F2B4      		.word	-19214
@@ -7558,7 +7558,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7180 37e8 54BD      		.word	-17068
  7181 37ea 9F4E      		.word	20127
  7182 37ec 9F56      		.word	22175
-GAS LISTING /tmp/cccPkyDu.s 			page 127
+GAS LISTING /tmp/cc5kqIpQ.s 			page 127
 
 
  7183 37ee 53BD      		.word	-17069
@@ -7618,7 +7618,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7237 385a 75BD      		.word	-17035
  7238 385c 54BD      		.word	-17068
  7239 385e 74BD      		.word	-17036
-GAS LISTING /tmp/cccPkyDu.s 			page 128
+GAS LISTING /tmp/cc5kqIpQ.s 			page 128
 
 
  7240 3860 54BD      		.word	-17068
@@ -7678,7 +7678,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7294 38cc F1B4      		.word	-19215
  7295 38ce 13BD      		.word	-17133
  7296 38d0 54C5      		.word	-15020
-GAS LISTING /tmp/cccPkyDu.s 			page 129
+GAS LISTING /tmp/cc5kqIpQ.s 			page 129
 
 
  7297 38d2 5DF7      		.word	-2211
@@ -7738,7 +7738,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7351 393e 33BD      		.word	-17101
  7352 3940 53BD      		.word	-17069
  7353 3942 F3AC      		.word	-21261
-GAS LISTING /tmp/cccPkyDu.s 			page 130
+GAS LISTING /tmp/cc5kqIpQ.s 			page 130
 
 
  7354 3944 34B5      		.word	-19148
@@ -7798,7 +7798,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7408 39b0 5D6E      		.word	28253
  7409 39b2 D99D      		.word	-25127
  7410 39b4 33B5      		.word	-19149
-GAS LISTING /tmp/cccPkyDu.s 			page 131
+GAS LISTING /tmp/cc5kqIpQ.s 			page 131
 
 
  7411 39b6 13B5      		.word	-19181
@@ -7858,7 +7858,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7465 3a22 34B5      		.word	-19148
  7466 3a24 54BD      		.word	-17068
  7467 3a26 75BD      		.word	-17035
-GAS LISTING /tmp/cccPkyDu.s 			page 132
+GAS LISTING /tmp/cc5kqIpQ.s 			page 132
 
 
  7468 3a28 55BD      		.word	-17067
@@ -7918,7 +7918,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7522 3a94 BEFF      		.word	-66
  7523 3a96 9DFF      		.word	-99
  7524 3a98 B7D5      		.word	-10825
-GAS LISTING /tmp/cccPkyDu.s 			page 133
+GAS LISTING /tmp/cc5kqIpQ.s 			page 133
 
 
  7525 3a9a 14B5      		.word	-19180
@@ -7978,7 +7978,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7579 3b06 F1B3      		.word	-19471
  7580 3b08 90AB      		.word	-21616
  7581 3b0a DB7D      		.word	32219
-GAS LISTING /tmp/cccPkyDu.s 			page 134
+GAS LISTING /tmp/cc5kqIpQ.s 			page 134
 
 
  7582 3b0c 9F3E      		.word	16031
@@ -8038,7 +8038,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7636 3b78 0FCB      		.word	-13553
  7637 3b7a B2C3      		.word	-15438
  7638 3b7c 13BC      		.word	-17389
-GAS LISTING /tmp/cccPkyDu.s 			page 135
+GAS LISTING /tmp/cc5kqIpQ.s 			page 135
 
 
  7639 3b7e 73BC      		.word	-17293
@@ -8098,7 +8098,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7693 3bea 93A4      		.word	-23405
  7694 3bec 31A4      		.word	-23503
  7695 3bee 2EBB      		.word	-17618
-GAS LISTING /tmp/cccPkyDu.s 			page 136
+GAS LISTING /tmp/cc5kqIpQ.s 			page 136
 
 
  7696 3bf0 EEC2      		.word	-15634
@@ -8158,7 +8158,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7750 3c5c 50B4      		.word	-19376
  7751 3c5e 0FAC      		.word	-21489
  7752 3c60 5CFF      		.word	-164
-GAS LISTING /tmp/cccPkyDu.s 			page 137
+GAS LISTING /tmp/cc5kqIpQ.s 			page 137
 
 
  7753 3c62 7DFF      		.word	-131
@@ -8218,7 +8218,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7807 3cce 979D      		.word	-25193
  7808 3cd0 C318      		.word	6339
  7809 3cd2 4120      		.word	8257
-GAS LISTING /tmp/cccPkyDu.s 			page 138
+GAS LISTING /tmp/cc5kqIpQ.s 			page 138
 
 
  7810 3cd4 4118      		.word	6209
@@ -8278,7 +8278,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7864 3d40 13BD      		.word	-17133
  7865 3d42 54BD      		.word	-17068
  7866 3d44 54BD      		.word	-17068
-GAS LISTING /tmp/cccPkyDu.s 			page 139
+GAS LISTING /tmp/cc5kqIpQ.s 			page 139
 
 
  7867 3d46 13B5      		.word	-19181
@@ -8338,7 +8338,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7921 3db2 12B5      		.word	-19182
  7922 3db4 D2B4      		.word	-19246
  7923 3db6 F2B4      		.word	-19214
-GAS LISTING /tmp/cccPkyDu.s 			page 140
+GAS LISTING /tmp/cc5kqIpQ.s 			page 140
 
 
  7924 3db8 F2B4      		.word	-19214
@@ -8398,7 +8398,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  7978 3e24 75AD      		.word	-21131
  7979 3e26 9F3E      		.word	16031
  7980 3e28 5D6E      		.word	28253
-GAS LISTING /tmp/cccPkyDu.s 			page 141
+GAS LISTING /tmp/cc5kqIpQ.s 			page 141
 
 
  7981 3e2a 33BD      		.word	-17101
@@ -8458,7 +8458,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8035 3e96 54BD      		.word	-17068
  8036 3e98 34BD      		.word	-17100
  8037 3e9a 33BD      		.word	-17101
-GAS LISTING /tmp/cccPkyDu.s 			page 142
+GAS LISTING /tmp/cc5kqIpQ.s 			page 142
 
 
  8038 3e9c 34BD      		.word	-17100
@@ -8518,7 +8518,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8092 3f08 13B5      		.word	-19181
  8093 3f0a 33BD      		.word	-17101
  8094 3f0c 33B5      		.word	-19149
-GAS LISTING /tmp/cccPkyDu.s 			page 143
+GAS LISTING /tmp/cc5kqIpQ.s 			page 143
 
 
  8095 3f0e 38D6      		.word	-10696
@@ -8578,7 +8578,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8149 3f7a 13B5      		.word	-19181
  8150 3f7c 33BD      		.word	-17101
  8151 3f7e D3AC      		.word	-21293
-GAS LISTING /tmp/cccPkyDu.s 			page 144
+GAS LISTING /tmp/cc5kqIpQ.s 			page 144
 
 
  8152 3f80 13B5      		.word	-19181
@@ -8638,7 +8638,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8206 3fec 13B5      		.word	-19181
  8207 3fee 7E56      		.word	22142
  8208 3ff0 9F4E      		.word	20127
-GAS LISTING /tmp/cccPkyDu.s 			page 145
+GAS LISTING /tmp/cc5kqIpQ.s 			page 145
 
 
  8209 3ff2 34AD      		.word	-21196
@@ -8698,7 +8698,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8263 405e 55BD      		.word	-17067
  8264 4060 96BD      		.word	-17002
  8265 4062 96BD      		.word	-17002
-GAS LISTING /tmp/cccPkyDu.s 			page 146
+GAS LISTING /tmp/cc5kqIpQ.s 			page 146
 
 
  8266 4064 75BD      		.word	-17035
@@ -8758,7 +8758,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8320 40d0 BEFF      		.word	-66
  8321 40d2 5DF7      		.word	-2211
  8322 40d4 76CD      		.word	-12938
-GAS LISTING /tmp/cccPkyDu.s 			page 147
+GAS LISTING /tmp/cc5kqIpQ.s 			page 147
 
 
  8323 40d6 B2A4      		.word	-23374
@@ -8818,7 +8818,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8377 4142 11B4      		.word	-19439
  8378 4144 11B4      		.word	-19439
  8379 4146 F0AB      		.word	-21520
-GAS LISTING /tmp/cccPkyDu.s 			page 148
+GAS LISTING /tmp/cc5kqIpQ.s 			page 148
 
 
  8380 4148 D2C4      		.word	-15150
@@ -8878,7 +8878,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8434 41b4 6DC1      		.word	-16019
  8435 41b6 F3CB      		.word	-13325
  8436 41b8 93C4      		.word	-15213
-GAS LISTING /tmp/cccPkyDu.s 			page 149
+GAS LISTING /tmp/cc5kqIpQ.s 			page 149
 
 
  8437 41ba D4C4      		.word	-15148
@@ -8938,7 +8938,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8491 4226 FAAD      		.word	-20998
  8492 4228 72AC      		.word	-21390
  8493 422a 51A4      		.word	-23471
-GAS LISTING /tmp/cccPkyDu.s 			page 150
+GAS LISTING /tmp/cc5kqIpQ.s 			page 150
 
 
  8494 422c 72AC      		.word	-21390
@@ -8998,7 +8998,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8548 4298 9F3E      		.word	16031
  8549 429a BA75      		.word	30138
  8550 429c FBF6      		.word	-2309
-GAS LISTING /tmp/cccPkyDu.s 			page 151
+GAS LISTING /tmp/cc5kqIpQ.s 			page 151
 
 
  8551 429e 9EFF      		.word	-98
@@ -9058,7 +9058,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8605 430a F2AC      		.word	-21262
  8606 430c AA72      		.word	29354
  8607 430e C340      		.word	16579
-GAS LISTING /tmp/cccPkyDu.s 			page 152
+GAS LISTING /tmp/cc5kqIpQ.s 			page 152
 
 
  8608 4310 6F9C      		.word	-25489
@@ -9118,7 +9118,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8662 437c 769D      		.word	-25226
  8663 437e 779D      		.word	-25225
  8664 4380 97A5      		.word	-23145
-GAS LISTING /tmp/cccPkyDu.s 			page 153
+GAS LISTING /tmp/cc5kqIpQ.s 			page 153
 
 
  8665 4382 1B7E      		.word	32283
@@ -9178,7 +9178,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8719 43ee 13BD      		.word	-17133
  8720 43f0 13BD      		.word	-17133
  8721 43f2 13BD      		.word	-17133
-GAS LISTING /tmp/cccPkyDu.s 			page 154
+GAS LISTING /tmp/cc5kqIpQ.s 			page 154
 
 
  8722 43f4 F3B4      		.word	-19213
@@ -9238,7 +9238,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8776 4460 33BD      		.word	-17101
  8777 4462 33BD      		.word	-17101
  8778 4464 53BD      		.word	-17069
-GAS LISTING /tmp/cccPkyDu.s 			page 155
+GAS LISTING /tmp/cc5kqIpQ.s 			page 155
 
 
  8779 4466 33BD      		.word	-17101
@@ -9298,7 +9298,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8833 44d2 3BAE      		.word	-20933
  8834 44d4 9F3E      		.word	16031
  8835 44d6 779D      		.word	-25225
-GAS LISTING /tmp/cccPkyDu.s 			page 156
+GAS LISTING /tmp/cc5kqIpQ.s 			page 156
 
 
  8836 44d8 54BD      		.word	-17068
@@ -9358,7 +9358,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8890 4544 34B5      		.word	-19148
  8891 4546 13B5      		.word	-19181
  8892 4548 34B5      		.word	-19148
-GAS LISTING /tmp/cccPkyDu.s 			page 157
+GAS LISTING /tmp/cc5kqIpQ.s 			page 157
 
 
  8893 454a 54BD      		.word	-17068
@@ -9418,7 +9418,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  8947 45b6 12B5      		.word	-19182
  8948 45b8 34BD      		.word	-17100
  8949 45ba D2AC      		.word	-21294
-GAS LISTING /tmp/cccPkyDu.s 			page 158
+GAS LISTING /tmp/cc5kqIpQ.s 			page 158
 
 
  8950 45bc D3AC      		.word	-21293
@@ -9478,7 +9478,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9004 4628 F2B4      		.word	-19214
  9005 462a 33BD      		.word	-17101
  9006 462c 13BD      		.word	-17133
-GAS LISTING /tmp/cccPkyDu.s 			page 159
+GAS LISTING /tmp/cc5kqIpQ.s 			page 159
 
 
  9007 462e 13B5      		.word	-19181
@@ -9538,7 +9538,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9061 469a 35B5      		.word	-19147
  9062 469c 35B5      		.word	-19147
  9063 469e 55BD      		.word	-17067
-GAS LISTING /tmp/cccPkyDu.s 			page 160
+GAS LISTING /tmp/cc5kqIpQ.s 			page 160
 
 
  9064 46a0 DA8D      		.word	-29222
@@ -9598,7 +9598,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9118 470c 5CF7      		.word	-2212
  9119 470e BAE6      		.word	-6470
  9120 4710 35C5      		.word	-15051
-GAS LISTING /tmp/cccPkyDu.s 			page 161
+GAS LISTING /tmp/cc5kqIpQ.s 			page 161
 
 
  9121 4712 92A4      		.word	-23406
@@ -9658,7 +9658,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9175 477e 52BC      		.word	-17326
  9176 4780 72BC      		.word	-17294
  9177 4782 B3BC      		.word	-17229
-GAS LISTING /tmp/cccPkyDu.s 			page 162
+GAS LISTING /tmp/cc5kqIpQ.s 			page 162
 
 
  9178 4784 B2BC      		.word	-17230
@@ -9718,7 +9718,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9232 47f0 789D      		.word	-25224
  9233 47f2 9F3E      		.word	16031
  9234 47f4 379D      		.word	-25289
-GAS LISTING /tmp/cccPkyDu.s 			page 163
+GAS LISTING /tmp/cc5kqIpQ.s 			page 163
 
 
  9235 47f6 D4BC      		.word	-17196
@@ -9778,7 +9778,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9289 4862 BEA6      		.word	-22850
  9290 4864 1C86      		.word	-31204
  9291 4866 DA75      		.word	30170
-GAS LISTING /tmp/cccPkyDu.s 			page 164
+GAS LISTING /tmp/cc5kqIpQ.s 			page 164
 
 
  9292 4868 BA6D      		.word	28090
@@ -9838,7 +9838,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9346 48d4 8DA3      		.word	-23667
  9347 48d6 4CA3      		.word	-23732
  9348 48d8 D2B4      		.word	-19246
-GAS LISTING /tmp/cccPkyDu.s 			page 165
+GAS LISTING /tmp/cc5kqIpQ.s 			page 165
 
 
  9349 48da D2AC      		.word	-21294
@@ -9898,7 +9898,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9403 4946 DA85      		.word	-31270
  9404 4948 9F3E      		.word	16031
  9405 494a 9F46      		.word	18079
-GAS LISTING /tmp/cccPkyDu.s 			page 166
+GAS LISTING /tmp/cc5kqIpQ.s 			page 166
 
 
  9406 494c 19B6      		.word	-18919
@@ -9958,7 +9958,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9460 49b8 F2B4      		.word	-19214
  9461 49ba 13B5      		.word	-19181
  9462 49bc 33B5      		.word	-19149
-GAS LISTING /tmp/cccPkyDu.s 			page 167
+GAS LISTING /tmp/cc5kqIpQ.s 			page 167
 
 
  9463 49be F2AC      		.word	-21262
@@ -10018,7 +10018,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9517 4a2a 56A5      		.word	-23210
  9518 4a2c 9F3E      		.word	16031
  9519 4a2e 1B7E      		.word	32283
-GAS LISTING /tmp/cccPkyDu.s 			page 168
+GAS LISTING /tmp/cc5kqIpQ.s 			page 168
 
 
  9520 4a30 F2B4      		.word	-19214
@@ -10078,7 +10078,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9574 4a9c 53BD      		.word	-17069
  9575 4a9e 75AD      		.word	-21131
  9576 4aa0 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 169
+GAS LISTING /tmp/cc5kqIpQ.s 			page 169
 
 
  9577 4aa2 3C6E      		.word	28220
@@ -10138,7 +10138,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9631 4b0e 9AF6      		.word	-2406
  9632 4b10 34C5      		.word	-15052
  9633 4b12 34BD      		.word	-17100
-GAS LISTING /tmp/cccPkyDu.s 			page 170
+GAS LISTING /tmp/cc5kqIpQ.s 			page 170
 
 
  9634 4b14 54BD      		.word	-17068
@@ -10198,7 +10198,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9688 4b80 34B5      		.word	-19148
  9689 4b82 34BD      		.word	-17100
  9690 4b84 34BD      		.word	-17100
-GAS LISTING /tmp/cccPkyDu.s 			page 171
+GAS LISTING /tmp/cc5kqIpQ.s 			page 171
 
 
  9691 4b86 33B5      		.word	-19149
@@ -10258,7 +10258,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9745 4bf2 9F3E      		.word	16031
  9746 4bf4 B89D      		.word	-25160
  9747 4bf6 788D      		.word	-29320
-GAS LISTING /tmp/cccPkyDu.s 			page 172
+GAS LISTING /tmp/cc5kqIpQ.s 			page 172
 
 
  9748 4bf8 9F3E      		.word	16031
@@ -10318,7 +10318,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9802 4c64 13B5      		.word	-19181
  9803 4c66 53BD      		.word	-17069
  9804 4c68 33BD      		.word	-17101
-GAS LISTING /tmp/cccPkyDu.s 			page 173
+GAS LISTING /tmp/cc5kqIpQ.s 			page 173
 
 
  9805 4c6a 13B5      		.word	-19181
@@ -10378,7 +10378,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9859 4cd6 55B5      		.word	-19115
  9860 4cd8 55BD      		.word	-17067
  9861 4cda 35B5      		.word	-19147
-GAS LISTING /tmp/cccPkyDu.s 			page 174
+GAS LISTING /tmp/cc5kqIpQ.s 			page 174
 
 
  9862 4cdc F4B4      		.word	-19212
@@ -10438,7 +10438,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9916 4d48 7CA6      		.word	-22916
  9917 4d4a 9F3E      		.word	16031
  9918 4d4c DA9D      		.word	-25126
-GAS LISTING /tmp/cccPkyDu.s 			page 175
+GAS LISTING /tmp/cc5kqIpQ.s 			page 175
 
 
  9919 4d4e 92A4      		.word	-23406
@@ -10498,7 +10498,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  9973 4dba 52AC      		.word	-21422
  9974 4dbc 9F46      		.word	18079
  9975 4dbe 7F4E      		.word	20095
-GAS LISTING /tmp/cccPkyDu.s 			page 176
+GAS LISTING /tmp/cc5kqIpQ.s 			page 176
 
 
  9976 4dc0 52A4      		.word	-23470
@@ -10558,7 +10558,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10030 4e2c 2CAA      		.word	-21972
  10031 4e2e 71AB      		.word	-21647
  10032 4e30 B19B      		.word	-25679
-GAS LISTING /tmp/cccPkyDu.s 			page 177
+GAS LISTING /tmp/cc5kqIpQ.s 			page 177
 
 
  10033 4e32 72A4      		.word	-23438
@@ -10618,7 +10618,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10087 4e9e 9EF7      		.word	-2146
  10088 4ea0 BCCE      		.word	-12612
  10089 4ea2 7E56      		.word	22142
-GAS LISTING /tmp/cccPkyDu.s 			page 178
+GAS LISTING /tmp/cc5kqIpQ.s 			page 178
 
 
  10090 4ea4 9F3E      		.word	16031
@@ -10657,10 +10657,10 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10123 4ee6 8DA3      		.word	-23667
  10124 4ee8 4CA3      		.word	-23732
  10125               		.stabs	"digit2:G(0,6)=ar(0,2);0;7769;(0,3)",32,0,378,0
- 10126               	.global	digit3
- 10127               		.type	digit3, @object
- 10128               		.size	digit3, 15540
- 10129               	digit3:
+ 10126               	.global	d3
+ 10127               		.type	d3, @object
+ 10128               		.size	d3, 15540
+ 10129               	d3:
  10130 4eea F6CD      		.word	-12810
  10131 4eec F6CD      		.word	-12810
  10132 4eee F6CD      		.word	-12810
@@ -10678,7 +10678,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10144 4f06 0000      		.word	0
  10145 4f08 0000      		.word	0
  10146 4f0a 0000      		.word	0
-GAS LISTING /tmp/cccPkyDu.s 			page 179
+GAS LISTING /tmp/cc5kqIpQ.s 			page 179
 
 
  10147 4f0c 0000      		.word	0
@@ -10738,7 +10738,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10201 4f78 77DE      		.word	-8585
  10202 4f7a 57DE      		.word	-8617
  10203 4f7c 36DE      		.word	-8650
-GAS LISTING /tmp/cccPkyDu.s 			page 180
+GAS LISTING /tmp/cc5kqIpQ.s 			page 180
 
 
  10204 4f7e 57DE      		.word	-8617
@@ -10798,7 +10798,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10258 4fea 9F46      		.word	18079
  10259 4fec 37C6      		.word	-14793
  10260 4fee 36DE      		.word	-8650
-GAS LISTING /tmp/cccPkyDu.s 			page 181
+GAS LISTING /tmp/cc5kqIpQ.s 			page 181
 
 
  10261 4ff0 37DE      		.word	-8649
@@ -10858,7 +10858,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10315 505c 5D86      		.word	-31139
  10316 505e 9F3E      		.word	16031
  10317 5060 D7B5      		.word	-18985
-GAS LISTING /tmp/cccPkyDu.s 			page 182
+GAS LISTING /tmp/cc5kqIpQ.s 			page 182
 
 
  10318 5062 D6CD      		.word	-12842
@@ -10918,7 +10918,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10372 50ce 17CE      		.word	-12777
  10373 50d0 D6C5      		.word	-14890
  10374 50d2 B5C5      		.word	-14923
-GAS LISTING /tmp/cccPkyDu.s 			page 183
+GAS LISTING /tmp/cc5kqIpQ.s 			page 183
 
 
  10375 50d4 B5C5      		.word	-14923
@@ -10978,7 +10978,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10429 5140 5DFF      		.word	-163
  10430 5142 3CFF      		.word	-196
  10431 5144 3CFF      		.word	-196
-GAS LISTING /tmp/cccPkyDu.s 			page 184
+GAS LISTING /tmp/cc5kqIpQ.s 			page 184
 
 
  10432 5146 DBF6      		.word	-2341
@@ -11038,7 +11038,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10486 51b2 B7B5      		.word	-19017
  10487 51b4 74C5      		.word	-14988
  10488 51b6 1B96      		.word	-27109
-GAS LISTING /tmp/cccPkyDu.s 			page 185
+GAS LISTING /tmp/cc5kqIpQ.s 			page 185
 
 
  10489 51b8 9F3E      		.word	16031
@@ -11098,7 +11098,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10543 5224 7D76      		.word	30333
  10544 5226 9F3E      		.word	16031
  10545 5228 3B8E      		.word	-29125
-GAS LISTING /tmp/cccPkyDu.s 			page 186
+GAS LISTING /tmp/cc5kqIpQ.s 			page 186
 
 
  10546 522a 95BD      		.word	-17003
@@ -11158,7 +11158,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10600 5296 FA95      		.word	-27142
  10601 5298 FA8D      		.word	-29190
  10602 529a D99D      		.word	-25127
-GAS LISTING /tmp/cccPkyDu.s 			page 187
+GAS LISTING /tmp/cc5kqIpQ.s 			page 187
 
 
  10603 529c B8A5      		.word	-23112
@@ -11218,7 +11218,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10657 5308 B6C5      		.word	-14922
  10658 530a F7CD      		.word	-12809
  10659 530c 98DE      		.word	-8552
-GAS LISTING /tmp/cccPkyDu.s 			page 188
+GAS LISTING /tmp/cc5kqIpQ.s 			page 188
 
 
  10660 530e 78DE      		.word	-8584
@@ -11278,7 +11278,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10714 537a 9F3E      		.word	16031
  10715 537c 5D86      		.word	-31139
  10716 537e 74BD      		.word	-17036
-GAS LISTING /tmp/cccPkyDu.s 			page 189
+GAS LISTING /tmp/cc5kqIpQ.s 			page 189
 
 
  10717 5380 34B5      		.word	-19148
@@ -11338,7 +11338,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10771 53ec 52BC      		.word	-17326
  10772 53ee 93BC      		.word	-17261
  10773 53f0 6EA3      		.word	-23698
-GAS LISTING /tmp/cccPkyDu.s 			page 190
+GAS LISTING /tmp/cc5kqIpQ.s 			page 190
 
 
  10774 53f2 F4C4      		.word	-15116
@@ -11398,7 +11398,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10828 545e ACAB      		.word	-21588
  10829 5460 51BC      		.word	-17327
  10830 5462 CFB3      		.word	-19505
-GAS LISTING /tmp/cccPkyDu.s 			page 191
+GAS LISTING /tmp/cc5kqIpQ.s 			page 191
 
 
  10831 5464 AFBB      		.word	-17489
@@ -11458,7 +11458,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10885 54d0 75BD      		.word	-17035
  10886 54d2 0882      		.word	-32248
  10887 54d4 0FBC      		.word	-17393
-GAS LISTING /tmp/cccPkyDu.s 			page 192
+GAS LISTING /tmp/cc5kqIpQ.s 			page 192
 
 
  10888 54d6 8DAB      		.word	-21619
@@ -11518,7 +11518,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10942 5542 9F3E      		.word	16031
  10943 5544 3D66      		.word	26173
  10944 5546 AD12      		.word	4781
-GAS LISTING /tmp/cccPkyDu.s 			page 193
+GAS LISTING /tmp/cc5kqIpQ.s 			page 193
 
 
  10945 5548 0000      		.word	0
@@ -11578,7 +11578,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  10999 55b4 37DE      		.word	-8649
  11000 55b6 36DE      		.word	-8650
  11001 55b8 16D6      		.word	-10730
-GAS LISTING /tmp/cccPkyDu.s 			page 194
+GAS LISTING /tmp/cc5kqIpQ.s 			page 194
 
 
  11002 55ba 16D6      		.word	-10730
@@ -11638,7 +11638,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11056 5626 7E76      		.word	30334
  11057 5628 9F3E      		.word	16031
  11058 562a 58CE      		.word	-12712
-GAS LISTING /tmp/cccPkyDu.s 			page 195
+GAS LISTING /tmp/cc5kqIpQ.s 			page 195
 
 
  11059 562c 77E6      		.word	-6537
@@ -11698,7 +11698,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11113 5698 B6C5      		.word	-14922
  11114 569a 9F3E      		.word	16031
  11115 569c 5C86      		.word	-31140
-GAS LISTING /tmp/cccPkyDu.s 			page 196
+GAS LISTING /tmp/cc5kqIpQ.s 			page 196
 
 
  11116 569e D5CD      		.word	-12843
@@ -11758,7 +11758,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11170 570a 17D6      		.word	-10729
  11171 570c F6CD      		.word	-12810
  11172 570e B5C5      		.word	-14923
-GAS LISTING /tmp/cccPkyDu.s 			page 197
+GAS LISTING /tmp/cc5kqIpQ.s 			page 197
 
 
  11173 5710 B5C5      		.word	-14923
@@ -11818,7 +11818,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11227 577c DEAE      		.word	-20770
  11228 577e 9F3E      		.word	16031
  11229 5780 9F5E      		.word	24223
-GAS LISTING /tmp/cccPkyDu.s 			page 198
+GAS LISTING /tmp/cc5kqIpQ.s 			page 198
 
 
  11230 5782 5BAE      		.word	-20901
@@ -11878,7 +11878,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11284 57ee 75C5      		.word	-14987
  11285 57f0 95C5      		.word	-14955
  11286 57f2 B5CD      		.word	-12875
-GAS LISTING /tmp/cccPkyDu.s 			page 199
+GAS LISTING /tmp/cc5kqIpQ.s 			page 199
 
 
  11287 57f4 95C5      		.word	-14955
@@ -11938,7 +11938,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11341 5860 7E66      		.word	26238
  11342 5862 9F3E      		.word	16031
  11343 5864 9F46      		.word	18079
-GAS LISTING /tmp/cccPkyDu.s 			page 200
+GAS LISTING /tmp/cc5kqIpQ.s 			page 200
 
 
  11344 5866 D8A5      		.word	-23080
@@ -11998,7 +11998,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11398 58d2 54B5      		.word	-19116
  11399 58d4 54B5      		.word	-19116
  11400 58d6 75BD      		.word	-17035
-GAS LISTING /tmp/cccPkyDu.s 			page 201
+GAS LISTING /tmp/cc5kqIpQ.s 			page 201
 
 
  11401 58d8 75BD      		.word	-17035
@@ -12058,7 +12058,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11455 5944 54BD      		.word	-17068
  11456 5946 CF9B      		.word	-25649
  11457 5948 B5CD      		.word	-12875
-GAS LISTING /tmp/cccPkyDu.s 			page 202
+GAS LISTING /tmp/cc5kqIpQ.s 			page 202
 
 
  11458 594a CFA3      		.word	-23601
@@ -12118,7 +12118,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11512 59b6 F4CC      		.word	-13068
  11513 59b8 56C5      		.word	-15018
  11514 59ba 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 203
+GAS LISTING /tmp/cc5kqIpQ.s 			page 203
 
 
  11515 59bc 9E7E      		.word	32414
@@ -12178,7 +12178,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11569 5a28 B0AB      		.word	-21584
  11570 5a2a 11BC      		.word	-17391
  11571 5a2c 93BC      		.word	-17261
-GAS LISTING /tmp/cccPkyDu.s 			page 204
+GAS LISTING /tmp/cc5kqIpQ.s 			page 204
 
 
  11572 5a2e 72C4      		.word	-15246
@@ -12238,7 +12238,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11626 5a9a 9F3E      		.word	16031
  11627 5a9c BB7D      		.word	32187
  11628 5a9e 52B4      		.word	-19374
-GAS LISTING /tmp/cccPkyDu.s 			page 205
+GAS LISTING /tmp/cc5kqIpQ.s 			page 205
 
 
  11629 5aa0 6DB3      		.word	-19603
@@ -12298,7 +12298,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11683 5b0c 13B5      		.word	-19181
  11684 5b0e F6CD      		.word	-12810
  11685 5b10 F6CD      		.word	-12810
-GAS LISTING /tmp/cccPkyDu.s 			page 206
+GAS LISTING /tmp/cc5kqIpQ.s 			page 206
 
 
  11686 5b12 F6CD      		.word	-12810
@@ -12358,7 +12358,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11740 5b7e 7C96      		.word	-27012
  11741 5b80 7C96      		.word	-27012
  11742 5b82 794D      		.word	19833
-GAS LISTING /tmp/cccPkyDu.s 			page 207
+GAS LISTING /tmp/cc5kqIpQ.s 			page 207
 
 
  11743 5b84 392D      		.word	11577
@@ -12418,7 +12418,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11797 5bf0 36D6      		.word	-10698
  11798 5bf2 16D6      		.word	-10730
  11799 5bf4 16D6      		.word	-10730
-GAS LISTING /tmp/cccPkyDu.s 			page 208
+GAS LISTING /tmp/cc5kqIpQ.s 			page 208
 
 
  11800 5bf6 16D6      		.word	-10730
@@ -12478,7 +12478,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11854 5c62 37DE      		.word	-8649
  11855 5c64 37DE      		.word	-8649
  11856 5c66 57E6      		.word	-6569
-GAS LISTING /tmp/cccPkyDu.s 			page 209
+GAS LISTING /tmp/cc5kqIpQ.s 			page 209
 
 
  11857 5c68 78E6      		.word	-6536
@@ -12538,7 +12538,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11911 5cd4 95C5      		.word	-14955
  11912 5cd6 95C5      		.word	-14955
  11913 5cd8 95C5      		.word	-14955
-GAS LISTING /tmp/cccPkyDu.s 			page 210
+GAS LISTING /tmp/cc5kqIpQ.s 			page 210
 
 
  11914 5cda 95C5      		.word	-14955
@@ -12598,7 +12598,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  11968 5d46 17CE      		.word	-12777
  11969 5d48 7D86      		.word	-31107
  11970 5d4a 9F46      		.word	18079
-GAS LISTING /tmp/cccPkyDu.s 			page 211
+GAS LISTING /tmp/cc5kqIpQ.s 			page 211
 
 
  11971 5d4c D7BD      		.word	-16937
@@ -12658,7 +12658,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12025 5db8 59EE      		.word	-4519
  12026 5dba 59EE      		.word	-4519
  12027 5dbc 18DE      		.word	-8680
-GAS LISTING /tmp/cccPkyDu.s 			page 212
+GAS LISTING /tmp/cc5kqIpQ.s 			page 212
 
 
  12028 5dbe F7CD      		.word	-12809
@@ -12718,7 +12718,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12082 5e2a 95C5      		.word	-14955
  12083 5e2c 95C5      		.word	-14955
  12084 5e2e B5CD      		.word	-12875
-GAS LISTING /tmp/cccPkyDu.s 			page 213
+GAS LISTING /tmp/cc5kqIpQ.s 			page 213
 
 
  12085 5e30 B5C5      		.word	-14923
@@ -12778,7 +12778,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12139 5e9c 75BD      		.word	-17035
  12140 5e9e 95C5      		.word	-14955
  12141 5ea0 75BD      		.word	-17035
-GAS LISTING /tmp/cccPkyDu.s 			page 214
+GAS LISTING /tmp/cc5kqIpQ.s 			page 214
 
 
  12142 5ea2 95C5      		.word	-14955
@@ -12838,7 +12838,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12196 5f0e 34B5      		.word	-19148
  12197 5f10 5D6E      		.word	28253
  12198 5f12 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 215
+GAS LISTING /tmp/cc5kqIpQ.s 			page 215
 
 
  12199 5f14 76B5      		.word	-19082
@@ -12898,7 +12898,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12253 5f80 F2BC      		.word	-17166
  12254 5f82 E969      		.word	27113
  12255 5f84 0769      		.word	26887
-GAS LISTING /tmp/cccPkyDu.s 			page 216
+GAS LISTING /tmp/cc5kqIpQ.s 			page 216
 
 
  12256 5f86 8558      		.word	22661
@@ -12958,7 +12958,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12310 5ff2 F4CC      		.word	-13068
  12311 5ff4 F4CC      		.word	-13068
  12312 5ff6 34BD      		.word	-17100
-GAS LISTING /tmp/cccPkyDu.s 			page 217
+GAS LISTING /tmp/cc5kqIpQ.s 			page 217
 
 
  12313 5ff8 9EFF      		.word	-98
@@ -13018,7 +13018,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12367 6064 6FAB      		.word	-21649
  12368 6066 CDA2      		.word	-23859
  12369 6068 8B9A      		.word	-25973
-GAS LISTING /tmp/cccPkyDu.s 			page 218
+GAS LISTING /tmp/cc5kqIpQ.s 			page 218
 
 
  12370 606a 6EB3      		.word	-19602
@@ -13078,7 +13078,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12424 60d6 C98A      		.word	-30007
  12425 60d8 CA82      		.word	-32054
  12426 60da AFAB      		.word	-21585
-GAS LISTING /tmp/cccPkyDu.s 			page 219
+GAS LISTING /tmp/cc5kqIpQ.s 			page 219
 
 
  12427 60dc 7E56      		.word	22142
@@ -13138,7 +13138,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12481 6148 0000      		.word	0
  12482 614a 16D6      		.word	-10730
  12483 614c F6CD      		.word	-12810
-GAS LISTING /tmp/cccPkyDu.s 			page 220
+GAS LISTING /tmp/cc5kqIpQ.s 			page 220
 
 
  12484 614e D5CD      		.word	-12843
@@ -13198,7 +13198,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12538 61ba 16D6      		.word	-10730
  12539 61bc 16D6      		.word	-10730
  12540 61be 16D6      		.word	-10730
-GAS LISTING /tmp/cccPkyDu.s 			page 221
+GAS LISTING /tmp/cc5kqIpQ.s 			page 221
 
 
  12541 61c0 317C      		.word	31793
@@ -13258,7 +13258,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12595 622c 37DE      		.word	-8649
  12596 622e 16D6      		.word	-10730
  12597 6230 37DE      		.word	-8649
-GAS LISTING /tmp/cccPkyDu.s 			page 222
+GAS LISTING /tmp/cc5kqIpQ.s 			page 222
 
 
  12598 6232 16D6      		.word	-10730
@@ -13318,7 +13318,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12652 629e 9E8E      		.word	-29026
  12653 62a0 9F3E      		.word	16031
  12654 62a2 99D6      		.word	-10599
-GAS LISTING /tmp/cccPkyDu.s 			page 223
+GAS LISTING /tmp/cc5kqIpQ.s 			page 223
 
 
  12655 62a4 78E6      		.word	-6536
@@ -13378,7 +13378,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12709 6310 B5CD      		.word	-12875
  12710 6312 95C5      		.word	-14955
  12711 6314 95C5      		.word	-14955
-GAS LISTING /tmp/cccPkyDu.s 			page 224
+GAS LISTING /tmp/cc5kqIpQ.s 			page 224
 
 
  12712 6316 95C5      		.word	-14955
@@ -13438,7 +13438,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12766 6382 3B9E      		.word	-25029
  12767 6384 1AA6      		.word	-23014
  12768 6386 19AE      		.word	-20967
-GAS LISTING /tmp/cccPkyDu.s 			page 225
+GAS LISTING /tmp/cc5kqIpQ.s 			page 225
 
 
  12769 6388 B5BD      		.word	-16971
@@ -13498,7 +13498,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12823 63f4 9F3E      		.word	16031
  12824 63f6 7E76      		.word	30334
  12825 63f8 F7B5      		.word	-18953
-GAS LISTING /tmp/cccPkyDu.s 			page 226
+GAS LISTING /tmp/cc5kqIpQ.s 			page 226
 
 
  12826 63fa D6C5      		.word	-14890
@@ -13558,7 +13558,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12880 6466 74BD      		.word	-17036
  12881 6468 74C5      		.word	-14988
  12882 646a 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 227
+GAS LISTING /tmp/cc5kqIpQ.s 			page 227
 
 
  12883 646c 9F3E      		.word	16031
@@ -13618,7 +13618,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12937 64d8 95BD      		.word	-17003
  12938 64da 95BD      		.word	-17003
  12939 64dc 75C5      		.word	-14987
-GAS LISTING /tmp/cccPkyDu.s 			page 228
+GAS LISTING /tmp/cc5kqIpQ.s 			page 228
 
 
  12940 64de 95C5      		.word	-14955
@@ -13678,7 +13678,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  12994 654a 34B5      		.word	-19148
  12995 654c 14B5      		.word	-19180
  12996 654e 34B5      		.word	-19148
-GAS LISTING /tmp/cccPkyDu.s 			page 229
+GAS LISTING /tmp/cc5kqIpQ.s 			page 229
 
 
  12997 6550 54B5      		.word	-19116
@@ -13738,7 +13738,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13051 65bc 7E66      		.word	26238
  13052 65be 7E3E      		.word	15998
  13053 65c0 E648      		.word	18662
-GAS LISTING /tmp/cccPkyDu.s 			page 230
+GAS LISTING /tmp/cc5kqIpQ.s 			page 230
 
 
  13054 65c2 6A72      		.word	29290
@@ -13798,7 +13798,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13108 662e B3AC      		.word	-21325
  13109 6630 9F4E      		.word	20127
  13110 6632 7F56      		.word	22143
-GAS LISTING /tmp/cccPkyDu.s 			page 231
+GAS LISTING /tmp/cc5kqIpQ.s 			page 231
 
 
  13111 6634 9AEE      		.word	-4454
@@ -13858,7 +13858,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13165 66a0 4679      		.word	31046
  13166 66a2 C989      		.word	-30263
  13167 66a4 E570      		.word	28901
-GAS LISTING /tmp/cccPkyDu.s 			page 232
+GAS LISTING /tmp/cc5kqIpQ.s 			page 232
 
 
  13168 66a6 C989      		.word	-30263
@@ -13918,7 +13918,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13222 6712 A99A      		.word	-25943
  13223 6714 8561      		.word	24965
  13224 6716 6E9B      		.word	-25746
-GAS LISTING /tmp/cccPkyDu.s 			page 233
+GAS LISTING /tmp/cc5kqIpQ.s 			page 233
 
 
  13225 6718 F78C      		.word	-29449
@@ -13978,7 +13978,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13279 6784 0000      		.word	0
  13280 6786 D6CD      		.word	-12842
  13281 6788 F6D5      		.word	-10762
-GAS LISTING /tmp/cccPkyDu.s 			page 234
+GAS LISTING /tmp/cc5kqIpQ.s 			page 234
 
 
  13282 678a F6D5      		.word	-10762
@@ -14038,7 +14038,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13336 67f6 16D6      		.word	-10730
  13337 67f8 16D6      		.word	-10730
  13338 67fa F6CD      		.word	-12810
-GAS LISTING /tmp/cccPkyDu.s 			page 235
+GAS LISTING /tmp/cc5kqIpQ.s 			page 235
 
 
  13339 67fc D6CD      		.word	-12842
@@ -14098,7 +14098,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13393 6868 36D6      		.word	-10698
  13394 686a 16D6      		.word	-10730
  13395 686c 17D6      		.word	-10729
-GAS LISTING /tmp/cccPkyDu.s 			page 236
+GAS LISTING /tmp/cc5kqIpQ.s 			page 236
 
 
  13396 686e 37DE      		.word	-8649
@@ -14158,7 +14158,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13450 68da 3BDE      		.word	-8645
  13451 68dc 9F3E      		.word	16031
  13452 68de 5ECF      		.word	-12450
-GAS LISTING /tmp/cccPkyDu.s 			page 237
+GAS LISTING /tmp/cc5kqIpQ.s 			page 237
 
 
  13453 68e0 7DF7      		.word	-2179
@@ -14218,7 +14218,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13507 694c B5CD      		.word	-12875
  13508 694e B5C5      		.word	-14923
  13509 6950 95C5      		.word	-14955
-GAS LISTING /tmp/cccPkyDu.s 			page 238
+GAS LISTING /tmp/cc5kqIpQ.s 			page 238
 
 
  13510 6952 B5C5      		.word	-14923
@@ -14278,7 +14278,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13564 69be 7E6E      		.word	28286
  13565 69c0 9F4E      		.word	20127
  13566 69c2 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 239
+GAS LISTING /tmp/cc5kqIpQ.s 			page 239
 
 
  13567 69c4 9F3E      		.word	16031
@@ -14338,7 +14338,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13621 6a30 D6C5      		.word	-14890
  13622 6a32 B6C5      		.word	-14922
  13623 6a34 B6C5      		.word	-14922
-GAS LISTING /tmp/cccPkyDu.s 			page 240
+GAS LISTING /tmp/cc5kqIpQ.s 			page 240
 
 
  13624 6a36 B6C5      		.word	-14922
@@ -14398,7 +14398,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13678 6aa2 74BD      		.word	-17036
  13679 6aa4 95C5      		.word	-14955
  13680 6aa6 95C5      		.word	-14955
-GAS LISTING /tmp/cccPkyDu.s 			page 241
+GAS LISTING /tmp/cc5kqIpQ.s 			page 241
 
 
  13681 6aa8 B5CD      		.word	-12875
@@ -14458,7 +14458,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13735 6b14 95BD      		.word	-17003
  13736 6b16 95BD      		.word	-17003
  13737 6b18 95C5      		.word	-14955
-GAS LISTING /tmp/cccPkyDu.s 			page 242
+GAS LISTING /tmp/cc5kqIpQ.s 			page 242
 
 
  13738 6b1a 95C5      		.word	-14955
@@ -14518,7 +14518,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13792 6b86 34B5      		.word	-19148
  13793 6b88 54B5      		.word	-19116
  13794 6b8a 54B5      		.word	-19116
-GAS LISTING /tmp/cccPkyDu.s 			page 243
+GAS LISTING /tmp/cc5kqIpQ.s 			page 243
 
 
  13795 6b8c 75BD      		.word	-17035
@@ -14578,7 +14578,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13849 6bf8 F2BC      		.word	-17166
  13850 6bfa 8B62      		.word	25227
  13851 6bfc C859      		.word	22984
-GAS LISTING /tmp/cccPkyDu.s 			page 244
+GAS LISTING /tmp/cc5kqIpQ.s 			page 244
 
 
  13852 6bfe F3A4      		.word	-23309
@@ -14638,7 +14638,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13906 6c6a 9F46      		.word	18079
  13907 6c6c 7E5E      		.word	24190
  13908 6c6e 92AC      		.word	-21358
-GAS LISTING /tmp/cccPkyDu.s 			page 245
+GAS LISTING /tmp/cc5kqIpQ.s 			page 245
 
 
  13909 6c70 34BD      		.word	-17100
@@ -14698,7 +14698,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  13963 6cdc 2671      		.word	28966
  13964 6cde 4B6A      		.word	27211
  13965 6ce0 D75C      		.word	23767
-GAS LISTING /tmp/cccPkyDu.s 			page 246
+GAS LISTING /tmp/cc5kqIpQ.s 			page 246
 
 
  13966 6ce2 7F3E      		.word	15999
@@ -14758,7 +14758,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14020 6d4e 37DE      		.word	-8649
  14021 6d50 57DE      		.word	-8617
  14022 6d52 77E6      		.word	-6537
-GAS LISTING /tmp/cccPkyDu.s 			page 247
+GAS LISTING /tmp/cc5kqIpQ.s 			page 247
 
 
  14023 6d54 77E6      		.word	-6537
@@ -14818,7 +14818,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14077 6dc0 0000      		.word	0
  14078 6dc2 D6CD      		.word	-12842
  14079 6dc4 F6D5      		.word	-10762
-GAS LISTING /tmp/cccPkyDu.s 			page 248
+GAS LISTING /tmp/cc5kqIpQ.s 			page 248
 
 
  14080 6dc6 16D6      		.word	-10730
@@ -14878,7 +14878,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14134 6e32 3AAE      		.word	-20934
  14135 6e34 9F3E      		.word	16031
  14136 6e36 D6BD      		.word	-16938
-GAS LISTING /tmp/cccPkyDu.s 			page 249
+GAS LISTING /tmp/cc5kqIpQ.s 			page 249
 
 
  14137 6e38 F6CD      		.word	-12810
@@ -14938,7 +14938,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14191 6ea4 37D6      		.word	-10697
  14192 6ea6 38BE      		.word	-16840
  14193 6ea8 9F46      		.word	18079
-GAS LISTING /tmp/cccPkyDu.s 			page 250
+GAS LISTING /tmp/cc5kqIpQ.s 			page 250
 
 
  14194 6eaa 9F5E      		.word	24223
@@ -14998,7 +14998,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14248 6f16 F8FD      		.word	-520
  14249 6f18 BBFE      		.word	-325
  14250 6f1a BEFF      		.word	-66
-GAS LISTING /tmp/cccPkyDu.s 			page 251
+GAS LISTING /tmp/cc5kqIpQ.s 			page 251
 
 
  14251 6f1c FFFF      		.word	-1
@@ -15058,7 +15058,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14305 6f88 B5C5      		.word	-14923
  14306 6f8a B5CD      		.word	-12875
  14307 6f8c B5C5      		.word	-14923
-GAS LISTING /tmp/cccPkyDu.s 			page 252
+GAS LISTING /tmp/cc5kqIpQ.s 			page 252
 
 
  14308 6f8e B5C5      		.word	-14923
@@ -15118,7 +15118,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14362 6ffa D6C5      		.word	-14890
  14363 6ffc D6C5      		.word	-14890
  14364 6ffe B6C5      		.word	-14922
-GAS LISTING /tmp/cccPkyDu.s 			page 253
+GAS LISTING /tmp/cc5kqIpQ.s 			page 253
 
 
  14365 7000 3C8E      		.word	-29124
@@ -15178,7 +15178,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14419 706c D6C5      		.word	-14890
  14420 706e B6C5      		.word	-14922
  14421 7070 75BD      		.word	-17035
-GAS LISTING /tmp/cccPkyDu.s 			page 254
+GAS LISTING /tmp/cc5kqIpQ.s 			page 254
 
 
  14422 7072 95C5      		.word	-14955
@@ -15238,7 +15238,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14476 70de 75BD      		.word	-17035
  14477 70e0 5D7E      		.word	32349
  14478 70e2 9F46      		.word	18079
-GAS LISTING /tmp/cccPkyDu.s 			page 255
+GAS LISTING /tmp/cc5kqIpQ.s 			page 255
 
 
  14479 70e4 B8AD      		.word	-21064
@@ -15298,7 +15298,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14533 7150 9F3E      		.word	16031
  14534 7152 9F3E      		.word	16031
  14535 7154 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 256
+GAS LISTING /tmp/cc5kqIpQ.s 			page 256
 
 
  14536 7156 9F3E      		.word	16031
@@ -15358,7 +15358,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14590 71c2 54B5      		.word	-19116
  14591 71c4 54B5      		.word	-19116
  14592 71c6 54B5      		.word	-19116
-GAS LISTING /tmp/cccPkyDu.s 			page 257
+GAS LISTING /tmp/cc5kqIpQ.s 			page 257
 
 
  14593 71c8 95BD      		.word	-17003
@@ -15418,7 +15418,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14647 7234 75C5      		.word	-14987
  14648 7236 896A      		.word	27273
  14649 7238 EB6A      		.word	27371
-GAS LISTING /tmp/cccPkyDu.s 			page 258
+GAS LISTING /tmp/cc5kqIpQ.s 			page 258
 
 
  14650 723a 13A5      		.word	-23277
@@ -15478,7 +15478,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14704 72a6 CF9B      		.word	-25649
  14705 72a8 54BD      		.word	-17068
  14706 72aa 91AC      		.word	-21359
-GAS LISTING /tmp/cccPkyDu.s 			page 259
+GAS LISTING /tmp/cc5kqIpQ.s 			page 259
 
 
  14707 72ac 509C      		.word	-25520
@@ -15538,7 +15538,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14761 7318 6671      		.word	29030
  14762 731a 0459      		.word	22788
  14763 731c C340      		.word	16579
-GAS LISTING /tmp/cccPkyDu.s 			page 260
+GAS LISTING /tmp/cc5kqIpQ.s 			page 260
 
 
  14764 731e 1845      		.word	17688
@@ -15598,7 +15598,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14818 738a 9F4E      		.word	20127
  14819 738c 9F3E      		.word	16031
  14820 738e 9F4E      		.word	20127
-GAS LISTING /tmp/cccPkyDu.s 			page 261
+GAS LISTING /tmp/cc5kqIpQ.s 			page 261
 
 
  14821 7390 9E76      		.word	30366
@@ -15658,7 +15658,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14875 73fc 0000      		.word	0
  14876 73fe D5CD      		.word	-12843
  14877 7400 5C8E      		.word	-29092
-GAS LISTING /tmp/cccPkyDu.s 			page 262
+GAS LISTING /tmp/cc5kqIpQ.s 			page 262
 
 
  14878 7402 9F4E      		.word	20127
@@ -15718,7 +15718,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14932 746e 16DE      		.word	-8682
  14933 7470 F6D5      		.word	-10762
  14934 7472 F7BD      		.word	-16905
-GAS LISTING /tmp/cccPkyDu.s 			page 263
+GAS LISTING /tmp/cc5kqIpQ.s 			page 263
 
 
  14935 7474 9F3E      		.word	16031
@@ -15778,7 +15778,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  14989 74e0 57DE      		.word	-8617
  14990 74e2 57DE      		.word	-8617
  14991 74e4 16D6      		.word	-10730
-GAS LISTING /tmp/cccPkyDu.s 			page 264
+GAS LISTING /tmp/cc5kqIpQ.s 			page 264
 
 
  14992 74e6 16D6      		.word	-10730
@@ -15838,7 +15838,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15046 7552 7AFE      		.word	-390
  15047 7554 DBFE      		.word	-293
  15048 7556 5DFF      		.word	-163
-GAS LISTING /tmp/cccPkyDu.s 			page 265
+GAS LISTING /tmp/cc5kqIpQ.s 			page 265
 
 
  15049 7558 BEFF      		.word	-66
@@ -15898,7 +15898,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15103 75c4 D6B5      		.word	-18986
  15104 75c6 B5C5      		.word	-14923
  15105 75c8 95C5      		.word	-14955
-GAS LISTING /tmp/cccPkyDu.s 			page 266
+GAS LISTING /tmp/cc5kqIpQ.s 			page 266
 
 
  15106 75ca B5CD      		.word	-12875
@@ -15958,7 +15958,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15160 7636 9F3E      		.word	16031
  15161 7638 7E6E      		.word	28286
  15162 763a B7B5      		.word	-19017
-GAS LISTING /tmp/cccPkyDu.s 			page 267
+GAS LISTING /tmp/cc5kqIpQ.s 			page 267
 
 
  15163 763c B6C5      		.word	-14922
@@ -16018,7 +16018,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15217 76a8 F7CD      		.word	-12809
  15218 76aa B6C5      		.word	-14922
  15219 76ac 75BD      		.word	-17035
-GAS LISTING /tmp/cccPkyDu.s 			page 268
+GAS LISTING /tmp/cc5kqIpQ.s 			page 268
 
 
  15220 76ae 75BD      		.word	-17035
@@ -16078,7 +16078,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15274 771a 75BD      		.word	-17035
  15275 771c 75BD      		.word	-17035
  15276 771e 34B5      		.word	-19148
-GAS LISTING /tmp/cccPkyDu.s 			page 269
+GAS LISTING /tmp/cc5kqIpQ.s 			page 269
 
 
  15277 7720 34B5      		.word	-19148
@@ -16138,7 +16138,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15331 778c BADE      		.word	-8518
  15332 778e 75D5      		.word	-10891
  15333 7790 D7DD      		.word	-8745
-GAS LISTING /tmp/cccPkyDu.s 			page 270
+GAS LISTING /tmp/cc5kqIpQ.s 			page 270
 
 
  15334 7792 18D6      		.word	-10728
@@ -16198,7 +16198,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15388 77fe 54B5      		.word	-19116
  15389 7800 74BD      		.word	-17036
  15390 7802 74BD      		.word	-17036
-GAS LISTING /tmp/cccPkyDu.s 			page 271
+GAS LISTING /tmp/cc5kqIpQ.s 			page 271
 
 
  15391 7804 13BD      		.word	-17133
@@ -16258,7 +16258,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15445 7870 94CD      		.word	-12908
  15446 7872 4B83      		.word	-31925
  15447 7874 2A7B      		.word	31530
-GAS LISTING /tmp/cccPkyDu.s 			page 272
+GAS LISTING /tmp/cc5kqIpQ.s 			page 272
 
 
  15448 7876 B1A4      		.word	-23375
@@ -16318,7 +16318,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15502 78e2 7F46      		.word	18047
  15503 78e4 F494      		.word	-27404
  15504 78e6 CE93      		.word	-27698
-GAS LISTING /tmp/cccPkyDu.s 			page 273
+GAS LISTING /tmp/cc5kqIpQ.s 			page 273
 
 
  15505 78e8 EA7A      		.word	31466
@@ -16378,7 +16378,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15559 7954 5E4E      		.word	20062
  15560 7956 FC55      		.word	22012
  15561 7958 D744      		.word	17623
-GAS LISTING /tmp/cccPkyDu.s 			page 274
+GAS LISTING /tmp/cc5kqIpQ.s 			page 274
 
 
  15562 795a EE42      		.word	17134
@@ -16438,7 +16438,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15616 79c6 7D8E      		.word	-29059
  15617 79c8 39C6      		.word	-14791
  15618 79ca 57DE      		.word	-8617
-GAS LISTING /tmp/cccPkyDu.s 			page 275
+GAS LISTING /tmp/cc5kqIpQ.s 			page 275
 
 
  15619 79cc 77DE      		.word	-8585
@@ -16498,7 +16498,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15673 7a38 70A4      		.word	-23440
  15674 7a3a 19A6      		.word	-23015
  15675 7a3c 7E6E      		.word	28286
-GAS LISTING /tmp/cccPkyDu.s 			page 276
+GAS LISTING /tmp/cc5kqIpQ.s 			page 276
 
 
  15676 7a3e F6CD      		.word	-12810
@@ -16558,7 +16558,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15730 7aaa 37DE      		.word	-8649
  15731 7aac 17D6      		.word	-10729
  15732 7aae 19B6      		.word	-18919
-GAS LISTING /tmp/cccPkyDu.s 			page 277
+GAS LISTING /tmp/cc5kqIpQ.s 			page 277
 
 
  15733 7ab0 9F3E      		.word	16031
@@ -16618,7 +16618,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15787 7b1c 78DE      		.word	-8584
  15788 7b1e 37DE      		.word	-8649
  15789 7b20 16D6      		.word	-10730
-GAS LISTING /tmp/cccPkyDu.s 			page 278
+GAS LISTING /tmp/cc5kqIpQ.s 			page 278
 
 
  15790 7b22 F6CD      		.word	-12810
@@ -16678,7 +16678,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15844 7b8e FBFE      		.word	-261
  15845 7b90 3DFF      		.word	-195
  15846 7b92 5DFF      		.word	-163
-GAS LISTING /tmp/cccPkyDu.s 			page 279
+GAS LISTING /tmp/cc5kqIpQ.s 			page 279
 
 
  15847 7b94 7EFF      		.word	-130
@@ -16738,7 +16738,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15901 7c00 9E5E      		.word	24222
  15902 7c02 B5CD      		.word	-12875
  15903 7c04 B5C5      		.word	-14923
-GAS LISTING /tmp/cccPkyDu.s 			page 280
+GAS LISTING /tmp/cc5kqIpQ.s 			page 280
 
 
  15904 7c06 D6CD      		.word	-12842
@@ -16798,7 +16798,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  15958 7c72 B6C5      		.word	-14922
  15959 7c74 D6C5      		.word	-14890
  15960 7c76 B6C5      		.word	-14922
-GAS LISTING /tmp/cccPkyDu.s 			page 281
+GAS LISTING /tmp/cc5kqIpQ.s 			page 281
 
 
  15961 7c78 1AA6      		.word	-23014
@@ -16858,7 +16858,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16015 7ce4 9AF6      		.word	-2406
  16016 7ce6 B6CD      		.word	-12874
  16017 7ce8 95C5      		.word	-14955
-GAS LISTING /tmp/cccPkyDu.s 			page 282
+GAS LISTING /tmp/cc5kqIpQ.s 			page 282
 
 
  16018 7cea 95C5      		.word	-14955
@@ -16918,7 +16918,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16072 7d56 75BD      		.word	-17035
  16073 7d58 75BD      		.word	-17035
  16074 7d5a 95BD      		.word	-17003
-GAS LISTING /tmp/cccPkyDu.s 			page 283
+GAS LISTING /tmp/cc5kqIpQ.s 			page 283
 
 
  16075 7d5c 95BD      		.word	-17003
@@ -16978,7 +16978,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16129 7dc8 D7D5      		.word	-10793
  16130 7dca 91C4      		.word	-15215
  16131 7dcc F3CC      		.word	-13069
-GAS LISTING /tmp/cccPkyDu.s 			page 284
+GAS LISTING /tmp/cc5kqIpQ.s 			page 284
 
 
  16132 7dce 76D5      		.word	-10890
@@ -17038,7 +17038,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16186 7e3a 3AB6      		.word	-18886
  16187 7e3c 59D6      		.word	-10663
  16188 7e3e D7D5      		.word	-10793
-GAS LISTING /tmp/cccPkyDu.s 			page 285
+GAS LISTING /tmp/cc5kqIpQ.s 			page 285
 
 
  16189 7e40 F4C4      		.word	-15116
@@ -17098,7 +17098,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16243 7eac F49C      		.word	-25356
  16244 7eae 7F46      		.word	18047
  16245 7eb0 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 286
+GAS LISTING /tmp/cc5kqIpQ.s 			page 286
 
 
  16246 7eb2 1595      		.word	-27371
@@ -17158,7 +17158,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16300 7f1e 9A65      		.word	26010
  16301 7f20 9A65      		.word	26010
  16302 7f22 5955      		.word	21849
-GAS LISTING /tmp/cccPkyDu.s 			page 287
+GAS LISTING /tmp/cc5kqIpQ.s 			page 287
 
 
  16303 7f24 5785      		.word	-31401
@@ -17218,7 +17218,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16357 7f90 484A      		.word	19016
  16358 7f92 2000      		.word	32
  16359 7f94 0000      		.word	0
-GAS LISTING /tmp/cccPkyDu.s 			page 288
+GAS LISTING /tmp/cc5kqIpQ.s 			page 288
 
 
  16360 7f96 0000      		.word	0
@@ -17278,7 +17278,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16414 8002 9F3E      		.word	16031
  16415 8004 9F3E      		.word	16031
  16416 8006 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 289
+GAS LISTING /tmp/cc5kqIpQ.s 			page 289
 
 
  16417 8008 9F3E      		.word	16031
@@ -17338,7 +17338,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16471 8074 16D6      		.word	-10730
  16472 8076 D5CD      		.word	-12843
  16473 8078 F6D5      		.word	-10762
-GAS LISTING /tmp/cccPkyDu.s 			page 290
+GAS LISTING /tmp/cc5kqIpQ.s 			page 290
 
 
  16474 807a 16D6      		.word	-10730
@@ -17398,7 +17398,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16528 80e6 F6D5      		.word	-10762
  16529 80e8 F6CD      		.word	-12810
  16530 80ea D6CD      		.word	-12842
-GAS LISTING /tmp/cccPkyDu.s 			page 291
+GAS LISTING /tmp/cc5kqIpQ.s 			page 291
 
 
  16531 80ec F6CD      		.word	-12810
@@ -17458,7 +17458,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16585 8158 DAEE      		.word	-4390
  16586 815a 37D6      		.word	-10697
  16587 815c 5BA6      		.word	-22949
-GAS LISTING /tmp/cccPkyDu.s 			page 292
+GAS LISTING /tmp/cc5kqIpQ.s 			page 292
 
 
  16588 815e 9F3E      		.word	16031
@@ -17518,7 +17518,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16642 81ca FBFE      		.word	-261
  16643 81cc 3CFF      		.word	-196
  16644 81ce 5DFF      		.word	-163
-GAS LISTING /tmp/cccPkyDu.s 			page 293
+GAS LISTING /tmp/cc5kqIpQ.s 			page 293
 
 
  16645 81d0 5DFF      		.word	-163
@@ -17578,7 +17578,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16699 823c D6CD      		.word	-12842
  16700 823e B5C5      		.word	-14923
  16701 8240 95C5      		.word	-14955
-GAS LISTING /tmp/cccPkyDu.s 			page 294
+GAS LISTING /tmp/cc5kqIpQ.s 			page 294
 
 
  16702 8242 95C5      		.word	-14955
@@ -17638,7 +17638,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16756 82ae 9F3E      		.word	16031
  16757 82b0 F8AD      		.word	-21000
  16758 82b2 B6C5      		.word	-14922
-GAS LISTING /tmp/cccPkyDu.s 			page 295
+GAS LISTING /tmp/cc5kqIpQ.s 			page 295
 
 
  16759 82b4 B6C5      		.word	-14922
@@ -17698,7 +17698,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16813 8320 F7D5      		.word	-10761
  16814 8322 95C5      		.word	-14955
  16815 8324 75BD      		.word	-17035
-GAS LISTING /tmp/cccPkyDu.s 			page 296
+GAS LISTING /tmp/cc5kqIpQ.s 			page 296
 
 
  16816 8326 75BD      		.word	-17035
@@ -17758,7 +17758,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16870 8392 54B5      		.word	-19116
  16871 8394 B6C5      		.word	-14922
  16872 8396 D6C5      		.word	-14890
-GAS LISTING /tmp/cccPkyDu.s 			page 297
+GAS LISTING /tmp/cc5kqIpQ.s 			page 297
 
 
  16873 8398 B6C5      		.word	-14922
@@ -17818,7 +17818,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16927 8404 B2C4      		.word	-15182
  16928 8406 EEBB      		.word	-17426
  16929 8408 51BC      		.word	-17327
-GAS LISTING /tmp/cccPkyDu.s 			page 298
+GAS LISTING /tmp/cc5kqIpQ.s 			page 298
 
 
  16930 840a B3C4      		.word	-15181
@@ -17878,7 +17878,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  16984 8476 39E6      		.word	-6599
  16985 8478 96DD      		.word	-8810
  16986 847a DAA5      		.word	-23078
-GAS LISTING /tmp/cccPkyDu.s 			page 299
+GAS LISTING /tmp/cc5kqIpQ.s 			page 299
 
 
  16987 847c 9F3E      		.word	16031
@@ -17938,7 +17938,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17041 84e8 2EA4      		.word	-23506
  17042 84ea 2A8B      		.word	-29910
  17043 84ec 49A3      		.word	-23735
-GAS LISTING /tmp/cccPkyDu.s 			page 300
+GAS LISTING /tmp/cc5kqIpQ.s 			page 300
 
 
  17044 84ee ACAB      		.word	-21588
@@ -17998,7 +17998,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17098 855a 9F3E      		.word	16031
  17099 855c 9F3E      		.word	16031
  17100 855e 3D6E      		.word	28221
-GAS LISTING /tmp/cccPkyDu.s 			page 301
+GAS LISTING /tmp/cc5kqIpQ.s 			page 301
 
 
  17101 8560 75BD      		.word	-17035
@@ -18058,7 +18058,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17155 85cc 9D86      		.word	-31075
  17156 85ce 9F56      		.word	22175
  17157 85d0 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 302
+GAS LISTING /tmp/cc5kqIpQ.s 			page 302
 
 
  17158 85d2 5E4E      		.word	20062
@@ -18118,7 +18118,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17212 863e 5B9E      		.word	-24997
  17213 8640 57DE      		.word	-8617
  17214 8642 57DE      		.word	-8617
-GAS LISTING /tmp/cccPkyDu.s 			page 303
+GAS LISTING /tmp/cc5kqIpQ.s 			page 303
 
 
  17215 8644 37DE      		.word	-8649
@@ -18178,7 +18178,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17269 86b0 D6CD      		.word	-12842
  17270 86b2 D6CD      		.word	-12842
  17271 86b4 F6CD      		.word	-12810
-GAS LISTING /tmp/cccPkyDu.s 			page 304
+GAS LISTING /tmp/cc5kqIpQ.s 			page 304
 
 
  17272 86b6 9F4E      		.word	20127
@@ -18238,7 +18238,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17326 8722 B5CD      		.word	-12875
  17327 8724 D6CD      		.word	-12842
  17328 8726 D6CD      		.word	-12842
-GAS LISTING /tmp/cccPkyDu.s 			page 305
+GAS LISTING /tmp/cc5kqIpQ.s 			page 305
 
 
  17329 8728 1AA6      		.word	-23014
@@ -18298,7 +18298,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17383 8794 BEFF      		.word	-66
  17384 8796 99E6      		.word	-6503
  17385 8798 17D6      		.word	-10729
-GAS LISTING /tmp/cccPkyDu.s 			page 306
+GAS LISTING /tmp/cc5kqIpQ.s 			page 306
 
 
  17386 879a 17D6      		.word	-10729
@@ -18358,7 +18358,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17440 8806 9DB6      		.word	-18787
  17441 8808 DBFE      		.word	-293
  17442 880a FCFE      		.word	-260
-GAS LISTING /tmp/cccPkyDu.s 			page 307
+GAS LISTING /tmp/cc5kqIpQ.s 			page 307
 
 
  17443 880c 1CFF      		.word	-228
@@ -18418,7 +18418,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17497 8878 95C5      		.word	-14955
  17498 887a 1A9E      		.word	-25062
  17499 887c 9F3E      		.word	16031
-GAS LISTING /tmp/cccPkyDu.s 			page 308
+GAS LISTING /tmp/cc5kqIpQ.s 			page 308
 
 
  17500 887e D9A5      		.word	-23079
@@ -18478,7 +18478,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17554 88ea 95BD      		.word	-17003
  17555 88ec 95BD      		.word	-17003
  17556 88ee 75BD      		.word	-17035
-GAS LISTING /tmp/cccPkyDu.s 			page 309
+GAS LISTING /tmp/cc5kqIpQ.s 			page 309
 
 
  17557 88f0 75BD      		.word	-17035
@@ -18538,7 +18538,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17611 895c 34B5      		.word	-19148
  17612 895e 54B5      		.word	-19116
  17613 8960 54BD      		.word	-17068
-GAS LISTING /tmp/cccPkyDu.s 			page 310
+GAS LISTING /tmp/cc5kqIpQ.s 			page 310
 
 
  17614 8962 54B5      		.word	-19116
@@ -18598,7 +18598,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17668 89ce 34B5      		.word	-19148
  17669 89d0 55BD      		.word	-17067
  17670 89d2 5D76      		.word	30301
-GAS LISTING /tmp/cccPkyDu.s 			page 311
+GAS LISTING /tmp/cc5kqIpQ.s 			page 311
 
 
  17671 89d4 9F3E      		.word	16031
@@ -18658,7 +18658,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17725 8a40 51BC      		.word	-17327
  17726 8a42 2CAB      		.word	-21716
  17727 8a44 F0B3      		.word	-19472
-GAS LISTING /tmp/cccPkyDu.s 			page 312
+GAS LISTING /tmp/cc5kqIpQ.s 			page 312
 
 
  17728 8a46 1C86      		.word	-31204
@@ -18718,7 +18718,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17782 8ab2 35CD      		.word	-13003
  17783 8ab4 F4CC      		.word	-13068
  17784 8ab6 52BC      		.word	-17326
-GAS LISTING /tmp/cccPkyDu.s 			page 313
+GAS LISTING /tmp/cc5kqIpQ.s 			page 313
 
 
  17785 8ab8 B0AB      		.word	-21584
@@ -18778,7 +18778,7 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17839 8b24 2A93      		.word	-27862
  17840 8b26 0A93      		.word	-27894
  17841 8b28 5384      		.word	-31661
-GAS LISTING /tmp/cccPkyDu.s 			page 314
+GAS LISTING /tmp/cc5kqIpQ.s 			page 314
 
 
  17842 8b2a 9F46      		.word	18079
@@ -18838,27 +18838,27 @@ GAS LISTING /tmp/cccPkyDu.s 			page 1
  17896 8b96 2C83      		.word	-31956
  17897 8b98 696A      		.word	27241
  17898 8b9a 13B5      		.word	-19181
-GAS LISTING /tmp/cccPkyDu.s 			page 315
+GAS LISTING /tmp/cc5kqIpQ.s 			page 315
 
 
  17899 8b9c 13B5      		.word	-19181
- 17900               		.stabs	"digit3:G(0,6)",32,0,5,0
+ 17900               		.stabs	"d3:G(0,7)=ar(0,2);0;7769;(0,8)=k(0,5)",32,0,3,0
  17901               		.text
  17902               		.stabs	"",100,0,0,.Letext0
  17903               	.Letext0:
  17904               		.ident	"GCC: (GNU) 11.2.0"
-GAS LISTING /tmp/cccPkyDu.s 			page 316
+GAS LISTING /tmp/cc5kqIpQ.s 			page 316
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 fonts.c
-     /tmp/cccPkyDu.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cccPkyDu.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cccPkyDu.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cccPkyDu.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cccPkyDu.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cccPkyDu.s:16     .progmem.data:0000000000000000 digit1
-     /tmp/cccPkyDu.s:2354   .progmem.data:0000000000001236 digit2
-     /tmp/cccPkyDu.s:10129  .progmem.data:0000000000004eea digit3
+     /tmp/cc5kqIpQ.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc5kqIpQ.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc5kqIpQ.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc5kqIpQ.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc5kqIpQ.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc5kqIpQ.s:16     .progmem.data:0000000000000000 digit1
+     /tmp/cc5kqIpQ.s:2354   .progmem.data:0000000000001236 digit2
+     /tmp/cc5kqIpQ.s:10129  .progmem.data:0000000000004eea d3
 
 NO UNDEFINED SYMBOLS

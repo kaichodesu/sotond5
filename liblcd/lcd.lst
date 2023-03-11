@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cc70ibLZ.s 			page 1
+GAS LISTING /tmp/ccfDWI1C.s 			page 1
 
 
    1               		.file	"lcd.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
   20:lcd.c         **** 	
   21:lcd.c         **** 	/* Configure ports */
   22:lcd.c         **** 	CTRL_DDR = 0x7F;
-GAS LISTING /tmp/cc70ibLZ.s 			page 2
+GAS LISTING /tmp/ccfDWI1C.s 			page 2
 
 
   36               		.stabn	68,0,22,.LM3-.LFBB1
@@ -118,7 +118,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
   79 0030 3105      		cpc r19,__zero_reg__
   80 0032 01F0      		breq .+2
   81 0034 00C0      		rjmp .L3
-GAS LISTING /tmp/cc70ibLZ.s 			page 3
+GAS LISTING /tmp/ccfDWI1C.s 			page 3
 
 
   34:lcd.c         **** 		display.width = LCDWIDTH;
@@ -178,7 +178,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  115 0064 4398      		cbi 0x8,3
  116 0066 439A      		sbi 0x8,3
  117 0068 15B8      		out 0x5,__zero_reg__
-GAS LISTING /tmp/cc70ibLZ.s 			page 4
+GAS LISTING /tmp/ccfDWI1C.s 			page 4
 
 
  118 006a 4398      		cbi 0x8,3
@@ -238,7 +238,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
   38:lcd.c         **** 		display.width = LCDHEIGHT;
  167               		.stabn	68,0,38,.LM21-.LFBB2
  168               	.LM21:
-GAS LISTING /tmp/cc70ibLZ.s 			page 5
+GAS LISTING /tmp/ccfDWI1C.s 			page 5
 
 
  169 00c0 2130      		cpi r18,1
@@ -298,7 +298,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  215 0108 01F0      		breq .+2
  216 010a 00C0      		rjmp .L4
   49:lcd.c         **** 		display.height = LCDWIDTH;
-GAS LISTING /tmp/cc70ibLZ.s 			page 6
+GAS LISTING /tmp/ccfDWI1C.s 			page 6
 
 
  217               		.stabn	68,0,49,.LM30-.LFBB2
@@ -358,7 +358,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  263 013c 4398      		cbi 0x8,3
  264 013e 439A      		sbi 0x8,3
   66:lcd.c         **** 	write_data16(240);
-GAS LISTING /tmp/cc70ibLZ.s 			page 7
+GAS LISTING /tmp/ccfDWI1C.s 			page 7
 
 
  265               		.stabn	68,0,66,.LM36-.LFBB3
@@ -418,7 +418,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  314 0188 C901      		movw r24,r18
   71:lcd.c         **** 	for(y = 0; y <= 79; y++){
   72:lcd.c         **** 		for(x = 0; x <= 119; x++){
-GAS LISTING /tmp/cc70ibLZ.s 			page 8
+GAS LISTING /tmp/ccfDWI1C.s 			page 8
 
 
  315               		.stabn	68,0,72,.LM42-.LFBB3
@@ -478,7 +478,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  367 01b4 A591      		lpm r26, Z+
  368 01b6 B491      		lpm r27, Z
  369               		
-GAS LISTING /tmp/cc70ibLZ.s 			page 9
+GAS LISTING /tmp/ccfDWI1C.s 			page 9
 
 
  370               	 ;  0 "" 2
@@ -538,7 +538,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  419 01e6 439A      		sbi 0x8,3
  420               	.LBB8:
   78:lcd.c         **** 			write_data16(pgm_read_word(&bg1_1[x+y*120]));
-GAS LISTING /tmp/cc70ibLZ.s 			page 10
+GAS LISTING /tmp/ccfDWI1C.s 			page 10
 
 
  421               		.stabn	68,0,78,.LM49-.LFBB3
@@ -598,7 +598,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  469               		.stabn	68,0,81,.LM53-.LFBB3
  470               	.LM53:
  471 021e 4498      		cbi 0x8,4
-GAS LISTING /tmp/cc70ibLZ.s 			page 11
+GAS LISTING /tmp/ccfDWI1C.s 			page 11
 
 
  472 0220 8AE2      		ldi r24,lo8(42)
@@ -658,7 +658,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
   87:lcd.c         **** 	write_cmd(MEMORY_WRITE);
  521               		.stabn	68,0,87,.LM59-.LFBB3
  522               	.LM59:
-GAS LISTING /tmp/cc70ibLZ.s 			page 12
+GAS LISTING /tmp/ccfDWI1C.s 			page 12
 
 
  523 026e 4498      		cbi 0x8,4
@@ -718,7 +718,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  572               	.LM63:
  573 02a0 FC01      		movw r30,r24
  574               	/* #APP */
-GAS LISTING /tmp/cc70ibLZ.s 			page 13
+GAS LISTING /tmp/ccfDWI1C.s 			page 13
 
 
  575               	 ;  91 "lcd.c" 1
@@ -778,7 +778,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  624               	/* #NOAPP */
  625               	.LBE14:
  626 02d0 B5B9      		out 0x5,r27
-GAS LISTING /tmp/cc70ibLZ.s 			page 14
+GAS LISTING /tmp/ccfDWI1C.s 			page 14
 
 
  627 02d2 4398      		cbi 0x8,3
@@ -838,7 +838,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  678 0302 5105      		cpc r21,__zero_reg__
  679 0304 01F4      		brne .L15
   88:lcd.c         **** 		for(x = 0; x <= 119; x++){
-GAS LISTING /tmp/cc70ibLZ.s 			page 15
+GAS LISTING /tmp/ccfDWI1C.s 			page 15
 
 
  680               		.stabn	68,0,88,.LM71-.LFBB3
@@ -898,7 +898,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  110:lcd.c         **** 	uint16_t x, y;
  111:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
  720               		.stabn	68,0,111,.LM76-.LFBB4
-GAS LISTING /tmp/cc70ibLZ.s 			page 16
+GAS LISTING /tmp/ccfDWI1C.s 			page 16
 
 
  721               	.LM76:
@@ -958,7 +958,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  770 0370 95B9      		out 0x5,r25
  771 0372 4398      		cbi 0x8,3
  772 0374 439A      		sbi 0x8,3
-GAS LISTING /tmp/cc70ibLZ.s 			page 17
+GAS LISTING /tmp/ccfDWI1C.s 			page 17
 
 
  117:lcd.c         **** 	write_cmd(MEMORY_WRITE);
@@ -1018,7 +1018,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  821               	/* #APP */
  822               	 ;  120 "lcd.c" 1
  823 03b8 C591      		lpm r28, Z+
-GAS LISTING /tmp/cc70ibLZ.s 			page 18
+GAS LISTING /tmp/ccfDWI1C.s 			page 18
 
 
  824 03ba D491      		lpm r29, Z
@@ -1078,7 +1078,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  876 03e8 7F4F      		sbci r23,-1
  119:lcd.c         **** 			write_data16(pgm_read_word(&digit1[(2-digit)*777+x+y*21]));
  877               		.stabn	68,0,119,.LM89-.LFBB4
-GAS LISTING /tmp/cc70ibLZ.s 			page 19
+GAS LISTING /tmp/ccfDWI1C.s 			page 19
 
 
  878               	.LM89:
@@ -1138,7 +1138,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  928               	.LBE25:
  929 0416 D5B9      		out 0x5,r29
  930 0418 4398      		cbi 0x8,3
-GAS LISTING /tmp/cc70ibLZ.s 			page 20
+GAS LISTING /tmp/ccfDWI1C.s 			page 20
 
 
  931 041a 439A      		sbi 0x8,3
@@ -1198,7 +1198,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  129:lcd.c         **** 
  130:lcd.c         **** void pwr_100(uint8_t digit){
  979               		.stabn	68,0,130,.LM97-.LFBB5
-GAS LISTING /tmp/cc70ibLZ.s 			page 21
+GAS LISTING /tmp/ccfDWI1C.s 			page 21
 
 
  980               	.LM97:
@@ -1258,7 +1258,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1027 0482 4398      		cbi 0x8,3
  1028 0484 439A      		sbi 0x8,3
  1029 0486 449A      		sbi 0x8,4
-GAS LISTING /tmp/cc70ibLZ.s 			page 22
+GAS LISTING /tmp/ccfDWI1C.s 			page 22
 
 
  138:lcd.c         **** 	write_data16(204);
@@ -1318,7 +1318,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1078 04d6 2050      		subi r18,lo8(-(digit2))
  1079 04d8 3040      		sbci r19,hi8(-(digit2))
  1080 04da DA01      		movw r26,r20
-GAS LISTING /tmp/cc70ibLZ.s 			page 23
+GAS LISTING /tmp/ccfDWI1C.s 			page 23
 
 
  1081 04dc A75F      		subi r26,-9
@@ -1378,7 +1378,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1132               	.LBE30:
  1133 0504 D5B9      		out 0x5,r29
  1134 0506 4398      		cbi 0x8,3
-GAS LISTING /tmp/cc70ibLZ.s 			page 24
+GAS LISTING /tmp/ccfDWI1C.s 			page 24
 
 
  1135 0508 439A      		sbi 0x8,3
@@ -1438,7 +1438,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1184 0536 C591      		lpm r28, Z+
  1185 0538 D491      		lpm r29, Z
  1186               		
-GAS LISTING /tmp/cc70ibLZ.s 			page 25
+GAS LISTING /tmp/ccfDWI1C.s 			page 25
 
 
  1187               	 ;  0 "" 2
@@ -1498,7 +1498,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1237 056c 4A17      		cp r20,r26
  1238 056e 5B07      		cpc r21,r27
  1239 0570 01F0      		breq .+2
-GAS LISTING /tmp/cc70ibLZ.s 			page 26
+GAS LISTING /tmp/ccfDWI1C.s 			page 26
 
 
  1240 0572 00C0      		rjmp .L31
@@ -1558,7 +1558,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1284 0594 439A      		sbi 0x8,3
  1285 0596 90EA      		ldi r25,lo8(-96)
  1286 0598 95B9      		out 0x5,r25
-GAS LISTING /tmp/cc70ibLZ.s 			page 27
+GAS LISTING /tmp/ccfDWI1C.s 			page 27
 
 
  1287 059a 4398      		cbi 0x8,3
@@ -1615,10 +1615,10 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1333               	.LBB36:
  164:lcd.c         **** 	for(y = 0; y <= 36; y++){
  165:lcd.c         **** 		for(x = 0; x <= 20; x++){
- 166:lcd.c         **** 			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
+ 166:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
  1334               		.stabn	68,0,166,.LM131-.LFBB6
  1335               	.LM131:
-GAS LISTING /tmp/cc70ibLZ.s 			page 28
+GAS LISTING /tmp/ccfDWI1C.s 			page 28
 
 
  1336 05e2 29E0      		ldi r18,lo8(9)
@@ -1639,8 +1639,8 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1351 0600 9A01      		movw r18,r20
  1352 0602 220F      		lsl r18
  1353 0604 331F      		rol r19
- 1354 0606 2050      		subi r18,lo8(-(digit3))
- 1355 0608 3040      		sbci r19,hi8(-(digit3))
+ 1354 0606 2050      		subi r18,lo8(-(d3))
+ 1355 0608 3040      		sbci r19,hi8(-(d3))
  1356 060a DA01      		movw r26,r20
  1357 060c A75F      		subi r26,-9
  1358 060e BC4F      		sbci r27,-4
@@ -1650,7 +1650,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1361               		.stabn	68,0,155,.LM132-.LFBB6
  1362               	.LM132:
  1363 0610 C901      		movw r24,r18
- 165:lcd.c         **** 			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
+ 165:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
  1364               		.stabn	68,0,165,.LM133-.LFBB6
  1365               	.LM133:
  1366 0612 70E0      		ldi r23,0
@@ -1678,7 +1678,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1388 0624 C591      		lpm r28, Z+
  1389 0626 D491      		lpm r29, Z
  1390               		
-GAS LISTING /tmp/cc70ibLZ.s 			page 29
+GAS LISTING /tmp/ccfDWI1C.s 			page 29
 
 
  1391               	 ;  0 "" 2
@@ -1688,7 +1688,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1395 062a 4398      		cbi 0x8,3
  1396 062c 439A      		sbi 0x8,3
  1397               	.LBB39:
- 167:lcd.c         **** 			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
+ 167:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
  1398               		.stabn	68,0,167,.LM135-.LFBB6
  1399               	.LM135:
  1400 062e FC01      		movw r30,r24
@@ -1716,12 +1716,12 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1422 0640 C5B9      		out 0x5,r28
  1423 0642 4398      		cbi 0x8,3
  1424 0644 439A      		sbi 0x8,3
- 165:lcd.c         **** 			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
+ 165:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
  1425               		.stabn	68,0,165,.LM136-.LFBB6
  1426               	.LM136:
  1427 0646 6F5F      		subi r22,-1
  1428 0648 7F4F      		sbci r23,-1
- 165:lcd.c         **** 			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
+ 165:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
  1429               		.stabn	68,0,165,.LM137-.LFBB6
  1430               	.LM137:
  1431 064a 0296      		adiw r24,2
@@ -1737,8 +1737,8 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1439 0656 60E0      		ldi r22,0
  1440               	.L41:
  1441               	.LBB41:
- 170:lcd.c         **** 			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
-GAS LISTING /tmp/cc70ibLZ.s 			page 30
+ 170:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+GAS LISTING /tmp/ccfDWI1C.s 			page 30
 
 
  1442               		.stabn	68,0,170,.LM139-.LFBB6
@@ -1769,7 +1769,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1467 066c 4398      		cbi 0x8,3
  1468 066e 439A      		sbi 0x8,3
  1469               	.LBB43:
- 171:lcd.c         **** 			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
+ 171:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
  1470               		.stabn	68,0,171,.LM140-.LFBB6
  1471               	.LM140:
  1472 0670 FC01      		movw r30,r24
@@ -1797,15 +1797,15 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1494 0682 C5B9      		out 0x5,r28
  1495 0684 4398      		cbi 0x8,3
  1496 0686 439A      		sbi 0x8,3
- 169:lcd.c         **** 			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
-GAS LISTING /tmp/cc70ibLZ.s 			page 31
+ 169:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+GAS LISTING /tmp/ccfDWI1C.s 			page 31
 
 
  1497               		.stabn	68,0,169,.LM141-.LFBB6
  1498               	.LM141:
  1499 0688 6F5F      		subi r22,-1
  1500 068a 7F4F      		sbci r23,-1
- 169:lcd.c         **** 			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
+ 169:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
  1501               		.stabn	68,0,169,.LM142-.LFBB6
  1502               	.LM142:
  1503 068c 0296      		adiw r24,2
@@ -1858,7 +1858,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1540               	.LM146:
  1541 06aa 4498      		cbi 0x8,4
  1542 06ac 9AE2      		ldi r25,lo8(42)
-GAS LISTING /tmp/cc70ibLZ.s 			page 32
+GAS LISTING /tmp/ccfDWI1C.s 			page 32
 
 
  1543 06ae 95B9      		out 0x5,r25
@@ -1918,7 +1918,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1591               		.stabn	68,0,186,.LM152-.LFBB7
  1592               	.LM152:
  1593 06fa 4498      		cbi 0x8,4
-GAS LISTING /tmp/cc70ibLZ.s 			page 33
+GAS LISTING /tmp/ccfDWI1C.s 			page 33
 
 
  1594 06fc 9CE2      		ldi r25,lo8(44)
@@ -1978,7 +1978,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1643               	 ;  0 "" 2
  1644               	/* #NOAPP */
  1645               	.LBE46:
-GAS LISTING /tmp/cc70ibLZ.s 			page 34
+GAS LISTING /tmp/ccfDWI1C.s 			page 34
 
 
  1646 0734 A5B9      		out 0x5,r26
@@ -2038,7 +2038,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1694               		.stabn	68,0,194,.LM161-.LFBB7
  1695               	.LM161:
  1696 0764 FC01      		movw r30,r24
-GAS LISTING /tmp/cc70ibLZ.s 			page 35
+GAS LISTING /tmp/ccfDWI1C.s 			page 35
 
 
  1697               	/* #APP */
@@ -2098,7 +2098,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1749               		.stabn	68,0,193,.LM163-.LFBB7
  1750               	.LM163:
  1751 0794 4F5F      		subi r20,-1
-GAS LISTING /tmp/cc70ibLZ.s 			page 36
+GAS LISTING /tmp/ccfDWI1C.s 			page 36
 
 
  1752 0796 5F4F      		sbci r21,-1
@@ -2158,7 +2158,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1787               	.LBE53:
  1788 07ba B5B9      		out 0x5,r27
  1789 07bc 4398      		cbi 0x8,3
-GAS LISTING /tmp/cc70ibLZ.s 			page 37
+GAS LISTING /tmp/ccfDWI1C.s 			page 37
 
 
  1790 07be 439A      		sbi 0x8,3
@@ -2218,7 +2218,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1841 07ee 01F4      		brne .L52
  1842 07f0 C901      		movw r24,r18
  205:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
-GAS LISTING /tmp/cc70ibLZ.s 			page 38
+GAS LISTING /tmp/ccfDWI1C.s 			page 38
 
 
  1843               		.stabn	68,0,205,.LM171-.LFBB7
@@ -2278,7 +2278,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1895 081c A591      		lpm r26, Z+
  1896 081e B491      		lpm r27, Z
  1897               		
-GAS LISTING /tmp/cc70ibLZ.s 			page 39
+GAS LISTING /tmp/ccfDWI1C.s 			page 39
 
 
  1898               	 ;  0 "" 2
@@ -2338,7 +2338,7 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1947 000a E420      		.word	8420
  1948 000c 99FF      		.word	-103
  1949               		.stabs	"display:G(0,9)=(0,10)=s14width:(0,6),0,16;height:(0,6),16,16;orient:(0,5),32,16;x:(0,6),48
-GAS LISTING /tmp/cc70ibLZ.s 			page 40
+GAS LISTING /tmp/ccfDWI1C.s 			page 40
 
 
  1950               		.stabs	"lcd:t(0,9)",128,0,29,0
@@ -2347,24 +2347,24 @@ GAS LISTING /tmp/cc70ibLZ.s 			page 1
  1953               	.Letext0:
  1954               		.ident	"GCC: (GNU) 11.2.0"
  1955               	.global __do_copy_data
-GAS LISTING /tmp/cc70ibLZ.s 			page 41
+GAS LISTING /tmp/ccfDWI1C.s 			page 41
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 lcd.c
-     /tmp/cc70ibLZ.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc70ibLZ.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc70ibLZ.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc70ibLZ.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc70ibLZ.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc70ibLZ.s:18     .text:0000000000000000 init_lcd
-     /tmp/cc70ibLZ.s:55     .text:0000000000000018 set_orientation
-     /tmp/cc70ibLZ.s:1941   .data:0000000000000000 display
-     /tmp/cc70ibLZ.s:241    .text:0000000000000128 init_graphics
-     /tmp/cc70ibLZ.s:702    .text:000000000000031a pwr_kw
-     /tmp/cc70ibLZ.s:978    .text:000000000000044a pwr_100
-     /tmp/cc70ibLZ.s:1254   .text:000000000000057a pwr_10
-     /tmp/cc70ibLZ.s:1531   .text:00000000000006aa bat_pwr
+     /tmp/ccfDWI1C.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccfDWI1C.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccfDWI1C.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccfDWI1C.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccfDWI1C.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccfDWI1C.s:18     .text:0000000000000000 init_lcd
+     /tmp/ccfDWI1C.s:55     .text:0000000000000018 set_orientation
+     /tmp/ccfDWI1C.s:1941   .data:0000000000000000 display
+     /tmp/ccfDWI1C.s:241    .text:0000000000000128 init_graphics
+     /tmp/ccfDWI1C.s:702    .text:000000000000031a pwr_kw
+     /tmp/ccfDWI1C.s:978    .text:000000000000044a pwr_100
+     /tmp/ccfDWI1C.s:1254   .text:000000000000057a pwr_10
+     /tmp/ccfDWI1C.s:1531   .text:00000000000006aa bat_pwr
 
 UNDEFINED SYMBOLS
 init_display_controller
@@ -2372,7 +2372,7 @@ bg1_1
 bg1_2
 digit1
 digit2
-digit3
+d3
 BATDRN
 BATCHR
 __do_copy_data

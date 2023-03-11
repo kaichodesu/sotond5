@@ -163,12 +163,12 @@ void pwr_10(uint8_t digit){
 	write_cmd(MEMORY_WRITE);
 	for(y = 0; y <= 36; y++){
 		for(x = 0; x <= 20; x++){
-			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
-			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
+			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
 		}
 		for(x = 0; x <= 20; x++){
-			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
-			write_data16(pgm_read_word(&digit3[(9-digit)*777+x+y*21]));
+			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
 		}
 	}
 }
