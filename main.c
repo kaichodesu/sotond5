@@ -2,7 +2,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <math.h>
-//#include "liblcd/lcd.h"
+#include "liblcd/lcd.h"
 #include "liblcd/ili934x.h"
 #include "libio/io.h"
 #include "libadc/adc.h"
@@ -29,12 +29,12 @@ uint16_t ibus, pvc, wtc;
 float PV, Wind, BusI, MainsReq;
 
 void init(){
-    //init_lcd();
-    //set_orientation(North);
+    init_lcd();
+    set_orientation(North);
     init_io();
-    //init_graphics();
-    init_timer0();
-    init_adc();
+    init_graphics();
+    //init_timer0();
+    //init_adc();
 }
 
 void lcd_update(void){
@@ -43,15 +43,35 @@ void lcd_update(void){
 int main(){
     init();
     while(1){
-        LS3_lo();
-        if(sync){
-            LS3_hi();
-            cli();
+        /*if(sync){
             sync = false;
+            TIMSK0 &= ~_BV(OCIE0A);
+            //  Disable TIMER0 Interrupt
             adts_disable();
-            while(!adc_rdy);
+            //  Enable free running mode on the ADC.
+            while(adc_rdy == 0);
+            BusI = ADC;
             adc_rdy = false;
-            sei();
+
+            TIMSK0 |= _BV(OCIE0A);
+            //  Re-enable the TIMER0 Interrupt.
+        }*/
+
+        int i;
+
+        bat_pwr(true);
+
+        _delay_ms(5000);
+
+        bat_pwr(false);
+
+        _delay_ms(5000);
+
+        for(i = 0; i < 11; i++){
+            pwr_kw(i);
+            pwr_10(i);
+            pwr_100(i);
+            _delay_ms(5000);
         }
     }
     return 0;

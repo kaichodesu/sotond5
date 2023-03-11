@@ -4,6 +4,7 @@
  */
  
 #include <stdint.h>
+#include <stdbool.h>
 
 #define LCDWIDTH	240
 #define LCDHEIGHT	320
@@ -31,4 +32,7 @@ extern lcd display;
 void init_lcd();
 void set_orientation(orientation o);
 void init_graphics();
-void calibrate_graphics();
+void bat_pwr(bool state);
+void pwr_kw(uint8_t digit);
+void pwr_10(uint8_t digit);
+void pwr_100(uint8_t digit);

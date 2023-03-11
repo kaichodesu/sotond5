@@ -6,7 +6,7 @@ MCU_FREQ=12000000
 PROJECTNAME=liblcd
 
 # Source files
-PRJSRC=lcd.c ili934x.c graphics.c
+PRJSRC=lcd.c ili934x.c graphics.c fonts.c
 
 # Optimization level, 
 OPTLEVEL=s
