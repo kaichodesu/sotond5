@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccKKcqn2.s 			page 1
+GAS LISTING /tmp/cciukrpu.s 			page 1
 
 
    1               		.file	"adc.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
   38               		.loc 1 17 1 view .LVU9
   39 000e 0895      		ret
   40               		.cfi_endproc
-GAS LISTING /tmp/ccKKcqn2.s 			page 2
+GAS LISTING /tmp/cciukrpu.s 			page 2
 
 
   41               	.LFE11:
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
   86 0026 0895      		ret
   87               		.cfi_endproc
   88               	.LFE13:
-GAS LISTING /tmp/ccKKcqn2.s 			page 3
+GAS LISTING /tmp/cciukrpu.s 			page 3
 
 
   89               		.size	adts_enable, .-adts_enable
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
   35:adc.c         ****     adts_disable();
  135               		.loc 1 35 5 is_stmt 1 view .LVU28
  136               	.LBB4:
-GAS LISTING /tmp/ccKKcqn2.s 			page 4
+GAS LISTING /tmp/cciukrpu.s 			page 4
 
 
  137               	.LBI4:
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  177 0084 16BC      		out 0x26,__zero_reg__
   47:adc.c         ****     adts_enable();
  178               		.loc 1 47 5 is_stmt 1 view .LVU45
-GAS LISTING /tmp/ccKKcqn2.s 			page 5
+GAS LISTING /tmp/cciukrpu.s 			page 5
 
 
  179 0086 0E94 0000 		call adts_enable
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  221               		.loc 1 59 5 view .LVU60
  222               	/* #APP */
  223               	 ;  59 "adc.c" 1
-GAS LISTING /tmp/ccKKcqn2.s 			page 6
+GAS LISTING /tmp/cciukrpu.s 			page 6
 
 
  224 00a6 7894      		sei
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  272 0029 0000 0000 		.long	.LASF2
  273 002d 03        		.uleb128 0x3
  274 002e 0000 0000 		.long	.LASF4
-GAS LISTING /tmp/ccKKcqn2.s 			page 7
+GAS LISTING /tmp/cciukrpu.s 			page 7
 
 
  275 0032 7E        		.byte	0x7e
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  329 009e 01        		.uleb128 0x1
  330 009f 9C        		.byte	0x9c
  331 00a0 AE00 0000 		.long	0xae
-GAS LISTING /tmp/ccKKcqn2.s 			page 8
+GAS LISTING /tmp/cciukrpu.s 			page 8
 
 
  332 00a4 09        		.uleb128 0x9
@@ -478,7 +478,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  386 011c 9C        		.byte	0x9c
  387 011d 0D        		.uleb128 0xd
  388 011e 0301 0000 		.long	0x103
-GAS LISTING /tmp/ccKKcqn2.s 			page 9
+GAS LISTING /tmp/cciukrpu.s 			page 9
 
 
  389 0122 0000 0000 		.long	.LFB12
@@ -538,7 +538,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  443 002f 39        		.uleb128 0x39
  444 0030 21        		.uleb128 0x21
  445 0031 16        		.sleb128 22
-GAS LISTING /tmp/ccKKcqn2.s 			page 10
+GAS LISTING /tmp/cciukrpu.s 			page 10
 
 
  446 0032 49        		.uleb128 0x49
@@ -598,7 +598,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  500 0068 00        		.byte	0
  501 0069 0B        		.uleb128 0xb
  502 006a 0B        		.uleb128 0xb
-GAS LISTING /tmp/ccKKcqn2.s 			page 11
+GAS LISTING /tmp/cciukrpu.s 			page 11
 
 
  503 006b 3E        		.uleb128 0x3e
@@ -658,7 +658,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  557 00a3 12        		.uleb128 0x12
  558 00a4 06        		.uleb128 0x6
  559 00a5 58        		.uleb128 0x58
-GAS LISTING /tmp/ccKKcqn2.s 			page 12
+GAS LISTING /tmp/cciukrpu.s 			page 12
 
 
  560 00a6 0B        		.uleb128 0xb
@@ -718,7 +718,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  614 0006 0000 0000 		.long	.Ldebug_info0
  615 000a 04        		.byte	0x4
  616 000b 00        		.byte	0
-GAS LISTING /tmp/ccKKcqn2.s 			page 13
+GAS LISTING /tmp/cciukrpu.s 			page 13
 
 
  617 000c 0000      		.word	0
@@ -778,7 +778,7 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  642               	.LASF10:
  643 00eb 6C6F 6E67 		.string	"long long unsigned int"
  643      206C 6F6E 
-GAS LISTING /tmp/ccKKcqn2.s 			page 14
+GAS LISTING /tmp/cciukrpu.s 			page 14
 
 
  643      6720 756E 
@@ -835,135 +835,135 @@ GAS LISTING /tmp/ccKKcqn2.s 			page 1
  668      6963 686F 
  668      2F44 6F63 
  668      756D 656E 
-GAS LISTING /tmp/ccKKcqn2.s 			page 15
+GAS LISTING /tmp/cciukrpu.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 adc.c
-     /tmp/ccKKcqn2.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccKKcqn2.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccKKcqn2.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccKKcqn2.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccKKcqn2.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccKKcqn2.s:13     .text:0000000000000000 init_timer0
-     /tmp/ccKKcqn2.s:16     .text:0000000000000000 .Loc.0
-     /tmp/ccKKcqn2.s:17     .text:0000000000000000 L0
-     /tmp/ccKKcqn2.s:22     .text:0000000000000000 .Loc.1
-     /tmp/ccKKcqn2.s:23     .text:0000000000000000 .Loc.2
-     /tmp/ccKKcqn2.s:26     .text:0000000000000004 .Loc.3
-     /tmp/ccKKcqn2.s:27     .text:0000000000000004 .Loc.4
-     /tmp/ccKKcqn2.s:30     .text:0000000000000008 .Loc.5
-     /tmp/ccKKcqn2.s:31     .text:0000000000000008 .Loc.6
-     /tmp/ccKKcqn2.s:33     .text:000000000000000a .Loc.7
-     /tmp/ccKKcqn2.s:34     .text:000000000000000a .Loc.8
-     /tmp/ccKKcqn2.s:38     .text:000000000000000e .Loc.9
-     /tmp/ccKKcqn2.s:40     .text:0000000000000010 L0
-     /tmp/ccKKcqn2.s:45     .text:0000000000000010 adts_disable
-     /tmp/ccKKcqn2.s:47     .text:0000000000000010 .Loc.10
-     /tmp/ccKKcqn2.s:48     .text:0000000000000010 L0
-     /tmp/ccKKcqn2.s:53     .text:0000000000000010 .Loc.11
-     /tmp/ccKKcqn2.s:54     .text:0000000000000010 .Loc.12
-     /tmp/ccKKcqn2.s:57     .text:0000000000000014 .Loc.13
-     /tmp/ccKKcqn2.s:59     .text:0000000000000016 L0
-     /tmp/ccKKcqn2.s:64     .text:0000000000000016 adts_enable
-     /tmp/ccKKcqn2.s:66     .text:0000000000000016 .Loc.14
-     /tmp/ccKKcqn2.s:67     .text:0000000000000016 L0
-     /tmp/ccKKcqn2.s:72     .text:0000000000000016 .Loc.15
-     /tmp/ccKKcqn2.s:76     .text:000000000000001c .Loc.16
-     /tmp/ccKKcqn2.s:79     .text:0000000000000020 .Loc.17
-     /tmp/ccKKcqn2.s:81     .text:0000000000000022 .Loc.18
-     /tmp/ccKKcqn2.s:85     .text:0000000000000026 .Loc.19
-     /tmp/ccKKcqn2.s:87     .text:0000000000000028 L0
-     /tmp/ccKKcqn2.s:92     .text:0000000000000028 __vector_24
-     /tmp/ccKKcqn2.s:94     .text:0000000000000028 .Loc.20
-     /tmp/ccKKcqn2.s:95     .text:0000000000000028 L0
+     /tmp/cciukrpu.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cciukrpu.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cciukrpu.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cciukrpu.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cciukrpu.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cciukrpu.s:13     .text:0000000000000000 init_timer0
+     /tmp/cciukrpu.s:16     .text:0000000000000000 .Loc.0
+     /tmp/cciukrpu.s:17     .text:0000000000000000 L0
+     /tmp/cciukrpu.s:22     .text:0000000000000000 .Loc.1
+     /tmp/cciukrpu.s:23     .text:0000000000000000 .Loc.2
+     /tmp/cciukrpu.s:26     .text:0000000000000004 .Loc.3
+     /tmp/cciukrpu.s:27     .text:0000000000000004 .Loc.4
+     /tmp/cciukrpu.s:30     .text:0000000000000008 .Loc.5
+     /tmp/cciukrpu.s:31     .text:0000000000000008 .Loc.6
+     /tmp/cciukrpu.s:33     .text:000000000000000a .Loc.7
+     /tmp/cciukrpu.s:34     .text:000000000000000a .Loc.8
+     /tmp/cciukrpu.s:38     .text:000000000000000e .Loc.9
+     /tmp/cciukrpu.s:40     .text:0000000000000010 L0
+     /tmp/cciukrpu.s:45     .text:0000000000000010 adts_disable
+     /tmp/cciukrpu.s:47     .text:0000000000000010 .Loc.10
+     /tmp/cciukrpu.s:48     .text:0000000000000010 L0
+     /tmp/cciukrpu.s:53     .text:0000000000000010 .Loc.11
+     /tmp/cciukrpu.s:54     .text:0000000000000010 .Loc.12
+     /tmp/cciukrpu.s:57     .text:0000000000000014 .Loc.13
+     /tmp/cciukrpu.s:59     .text:0000000000000016 L0
+     /tmp/cciukrpu.s:64     .text:0000000000000016 adts_enable
+     /tmp/cciukrpu.s:66     .text:0000000000000016 .Loc.14
+     /tmp/cciukrpu.s:67     .text:0000000000000016 L0
+     /tmp/cciukrpu.s:72     .text:0000000000000016 .Loc.15
+     /tmp/cciukrpu.s:76     .text:000000000000001c .Loc.16
+     /tmp/cciukrpu.s:79     .text:0000000000000020 .Loc.17
+     /tmp/cciukrpu.s:81     .text:0000000000000022 .Loc.18
+     /tmp/cciukrpu.s:85     .text:0000000000000026 .Loc.19
+     /tmp/cciukrpu.s:87     .text:0000000000000028 L0
+     /tmp/cciukrpu.s:92     .text:0000000000000028 __vector_24
+     /tmp/cciukrpu.s:94     .text:0000000000000028 .Loc.20
+     /tmp/cciukrpu.s:95     .text:0000000000000028 L0
                             *ABS*:0000000000000001 __gcc_isr.n_pushed.001
-     /tmp/ccKKcqn2.s:104    .text:000000000000002c .Loc.21
-     /tmp/ccKKcqn2.s:105    .text:000000000000002c .Loc.22
-     /tmp/ccKKcqn2.s:108    .text:0000000000000034 .Loc.23
-     /tmp/ccKKcqn2.s:249    .bss:0000000000000000 adc_read
-     /tmp/ccKKcqn2.s:112    .text:000000000000003c .Loc.24
-     /tmp/ccKKcqn2.s:117    .text:0000000000000042 L0
-     /tmp/ccKKcqn2.s:122    .text:0000000000000042 calibrate_timer0
-     /tmp/ccKKcqn2.s:124    .text:0000000000000042 .Loc.25
-     /tmp/ccKKcqn2.s:125    .text:0000000000000042 L0
-     /tmp/ccKKcqn2.s:130    .text:0000000000000042 .Loc.26
-     /tmp/ccKKcqn2.s:132    .text:0000000000000046 .Loc.27
-     /tmp/ccKKcqn2.s:135    .text:000000000000004c .Loc.28
-     /tmp/ccKKcqn2.s:138    .text:000000000000004c .Loc.29
-     /tmp/ccKKcqn2.s:140    .text:000000000000004c .Loc.30
-     /tmp/ccKKcqn2.s:141    .text:000000000000004c .Loc.31
-     /tmp/ccKKcqn2.s:145    .text:0000000000000050 .Loc.32
-     /tmp/ccKKcqn2.s:146    .text:0000000000000050 .Loc.33
-GAS LISTING /tmp/ccKKcqn2.s 			page 16
+     /tmp/cciukrpu.s:104    .text:000000000000002c .Loc.21
+     /tmp/cciukrpu.s:105    .text:000000000000002c .Loc.22
+     /tmp/cciukrpu.s:108    .text:0000000000000034 .Loc.23
+     /tmp/cciukrpu.s:249    .bss:0000000000000000 adc_read
+     /tmp/cciukrpu.s:112    .text:000000000000003c .Loc.24
+     /tmp/cciukrpu.s:117    .text:0000000000000042 L0
+     /tmp/cciukrpu.s:122    .text:0000000000000042 calibrate_timer0
+     /tmp/cciukrpu.s:124    .text:0000000000000042 .Loc.25
+     /tmp/cciukrpu.s:125    .text:0000000000000042 L0
+     /tmp/cciukrpu.s:130    .text:0000000000000042 .Loc.26
+     /tmp/cciukrpu.s:132    .text:0000000000000046 .Loc.27
+     /tmp/cciukrpu.s:135    .text:000000000000004c .Loc.28
+     /tmp/cciukrpu.s:138    .text:000000000000004c .Loc.29
+     /tmp/cciukrpu.s:140    .text:000000000000004c .Loc.30
+     /tmp/cciukrpu.s:141    .text:000000000000004c .Loc.31
+     /tmp/cciukrpu.s:145    .text:0000000000000050 .Loc.32
+     /tmp/cciukrpu.s:146    .text:0000000000000050 .Loc.33
+GAS LISTING /tmp/cciukrpu.s 			page 16
 
 
-     /tmp/ccKKcqn2.s:149    .text:0000000000000056 .Loc.34
-     /tmp/ccKKcqn2.s:151    .text:000000000000005a .Loc.35
-     /tmp/ccKKcqn2.s:154    .text:0000000000000060 .Loc.36
-     /tmp/ccKKcqn2.s:156    .text:0000000000000064 .Loc.37
-     /tmp/ccKKcqn2.s:159    .text:000000000000006a .Loc.38
-     /tmp/ccKKcqn2.s:161    .text:000000000000006a .Loc.39
-     /tmp/ccKKcqn2.s:162    .text:000000000000006a .Loc.40
-     /tmp/ccKKcqn2.s:169    .text:0000000000000078 .Loc.41
-     /tmp/ccKKcqn2.s:170    .text:0000000000000078 .Loc.42
-     /tmp/ccKKcqn2.s:175    .text:0000000000000084 .Loc.43
-     /tmp/ccKKcqn2.s:176    .text:0000000000000084 .Loc.44
-     /tmp/ccKKcqn2.s:178    .text:0000000000000086 .Loc.45
-     /tmp/ccKKcqn2.s:181    .text:000000000000008a .Loc.46
-     /tmp/ccKKcqn2.s:182    .text:000000000000008a .Loc.47
-     /tmp/ccKKcqn2.s:186    .text:0000000000000094 .Loc.48
-     /tmp/ccKKcqn2.s:187    .text:0000000000000094 .Loc.49
-     /tmp/ccKKcqn2.s:190    .text:0000000000000098 .Loc.50
-     /tmp/ccKKcqn2.s:192    .text:0000000000000098 .Loc.51
-     /tmp/ccKKcqn2.s:193    .text:0000000000000098 .Loc.52
-     /tmp/ccKKcqn2.s:195    .text:000000000000009a .Loc.53
-     /tmp/ccKKcqn2.s:198    .text:000000000000009e .Loc.54
-     /tmp/ccKKcqn2.s:199    .text:000000000000009e .Loc.55
-     /tmp/ccKKcqn2.s:201    .text:00000000000000a0 .Loc.56
-     /tmp/ccKKcqn2.s:202    .text:00000000000000a0 .Loc.57
-     /tmp/ccKKcqn2.s:206    .text:00000000000000a4 .Loc.58
-     /tmp/ccKKcqn2.s:208    .text:00000000000000a6 L0
-     /tmp/ccKKcqn2.s:213    .text:00000000000000a6 init_adc
-     /tmp/ccKKcqn2.s:215    .text:00000000000000a6 .Loc.59
-     /tmp/ccKKcqn2.s:216    .text:00000000000000a6 L0
-     /tmp/ccKKcqn2.s:221    .text:00000000000000a6 .Loc.60
-     /tmp/ccKKcqn2.s:226    .text:00000000000000a8 .Loc.61
-     /tmp/ccKKcqn2.s:231    .text:00000000000000ae .Loc.62
-     /tmp/ccKKcqn2.s:234    .text:00000000000000b2 .Loc.63
-     /tmp/ccKKcqn2.s:236    .text:00000000000000b4 .Loc.64
-     /tmp/ccKKcqn2.s:239    .text:00000000000000b8 .Loc.65
-     /tmp/ccKKcqn2.s:242    .text:00000000000000bc L0
-     /tmp/ccKKcqn2.s:254    .text:00000000000000bc L0
+     /tmp/cciukrpu.s:149    .text:0000000000000056 .Loc.34
+     /tmp/cciukrpu.s:151    .text:000000000000005a .Loc.35
+     /tmp/cciukrpu.s:154    .text:0000000000000060 .Loc.36
+     /tmp/cciukrpu.s:156    .text:0000000000000064 .Loc.37
+     /tmp/cciukrpu.s:159    .text:000000000000006a .Loc.38
+     /tmp/cciukrpu.s:161    .text:000000000000006a .Loc.39
+     /tmp/cciukrpu.s:162    .text:000000000000006a .Loc.40
+     /tmp/cciukrpu.s:169    .text:0000000000000078 .Loc.41
+     /tmp/cciukrpu.s:170    .text:0000000000000078 .Loc.42
+     /tmp/cciukrpu.s:175    .text:0000000000000084 .Loc.43
+     /tmp/cciukrpu.s:176    .text:0000000000000084 .Loc.44
+     /tmp/cciukrpu.s:178    .text:0000000000000086 .Loc.45
+     /tmp/cciukrpu.s:181    .text:000000000000008a .Loc.46
+     /tmp/cciukrpu.s:182    .text:000000000000008a .Loc.47
+     /tmp/cciukrpu.s:186    .text:0000000000000094 .Loc.48
+     /tmp/cciukrpu.s:187    .text:0000000000000094 .Loc.49
+     /tmp/cciukrpu.s:190    .text:0000000000000098 .Loc.50
+     /tmp/cciukrpu.s:192    .text:0000000000000098 .Loc.51
+     /tmp/cciukrpu.s:193    .text:0000000000000098 .Loc.52
+     /tmp/cciukrpu.s:195    .text:000000000000009a .Loc.53
+     /tmp/cciukrpu.s:198    .text:000000000000009e .Loc.54
+     /tmp/cciukrpu.s:199    .text:000000000000009e .Loc.55
+     /tmp/cciukrpu.s:201    .text:00000000000000a0 .Loc.56
+     /tmp/cciukrpu.s:202    .text:00000000000000a0 .Loc.57
+     /tmp/cciukrpu.s:206    .text:00000000000000a4 .Loc.58
+     /tmp/cciukrpu.s:208    .text:00000000000000a6 L0
+     /tmp/cciukrpu.s:213    .text:00000000000000a6 init_adc
+     /tmp/cciukrpu.s:215    .text:00000000000000a6 .Loc.59
+     /tmp/cciukrpu.s:216    .text:00000000000000a6 L0
+     /tmp/cciukrpu.s:221    .text:00000000000000a6 .Loc.60
+     /tmp/cciukrpu.s:226    .text:00000000000000a8 .Loc.61
+     /tmp/cciukrpu.s:231    .text:00000000000000ae .Loc.62
+     /tmp/cciukrpu.s:234    .text:00000000000000b2 .Loc.63
+     /tmp/cciukrpu.s:236    .text:00000000000000b4 .Loc.64
+     /tmp/cciukrpu.s:239    .text:00000000000000b8 .Loc.65
+     /tmp/cciukrpu.s:242    .text:00000000000000bc L0
+     /tmp/cciukrpu.s:254    .text:00000000000000bc L0
                      .debug_frame:0000000000000000 L0
-     /tmp/ccKKcqn2.s:160    .text:000000000000006a .L6
-     /tmp/ccKKcqn2.s:168    .text:0000000000000078 .L7
-     /tmp/ccKKcqn2.s:191    .text:0000000000000098 .L8
-     /tmp/ccKKcqn2.s:395    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
-     /tmp/ccKKcqn2.s:8      .text:0000000000000000 .Ltext0
-     /tmp/ccKKcqn2.s:252    .text:00000000000000bc .Letext0
-     /tmp/ccKKcqn2.s:624    .debug_line:0000000000000000 .Ldebug_line0
-     /tmp/ccKKcqn2.s:214    .text:00000000000000a6 .LFB16
-     /tmp/ccKKcqn2.s:243    .text:00000000000000bc .LFE16
-     /tmp/ccKKcqn2.s:241    .text:00000000000000bc .LVL1
-     /tmp/ccKKcqn2.s:123    .text:0000000000000042 .LFB15
-     /tmp/ccKKcqn2.s:209    .text:00000000000000a6 .LFE15
-     /tmp/ccKKcqn2.s:137    .text:000000000000004c .LBI4
-     /tmp/ccKKcqn2.s:136    .text:000000000000004c .LBB4
-     /tmp/ccKKcqn2.s:144    .text:0000000000000050 .LBE4
-     /tmp/ccKKcqn2.s:180    .text:000000000000008a .LVL0
-     /tmp/ccKKcqn2.s:93     .text:0000000000000028 .LFB14
-     /tmp/ccKKcqn2.s:118    .text:0000000000000042 .LFE14
-     /tmp/ccKKcqn2.s:65     .text:0000000000000016 .LFB13
-GAS LISTING /tmp/ccKKcqn2.s 			page 17
+     /tmp/cciukrpu.s:160    .text:000000000000006a .L6
+     /tmp/cciukrpu.s:168    .text:0000000000000078 .L7
+     /tmp/cciukrpu.s:191    .text:0000000000000098 .L8
+     /tmp/cciukrpu.s:395    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/cciukrpu.s:8      .text:0000000000000000 .Ltext0
+     /tmp/cciukrpu.s:252    .text:00000000000000bc .Letext0
+     /tmp/cciukrpu.s:624    .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/cciukrpu.s:214    .text:00000000000000a6 .LFB16
+     /tmp/cciukrpu.s:243    .text:00000000000000bc .LFE16
+     /tmp/cciukrpu.s:241    .text:00000000000000bc .LVL1
+     /tmp/cciukrpu.s:123    .text:0000000000000042 .LFB15
+     /tmp/cciukrpu.s:209    .text:00000000000000a6 .LFE15
+     /tmp/cciukrpu.s:137    .text:000000000000004c .LBI4
+     /tmp/cciukrpu.s:136    .text:000000000000004c .LBB4
+     /tmp/cciukrpu.s:144    .text:0000000000000050 .LBE4
+     /tmp/cciukrpu.s:180    .text:000000000000008a .LVL0
+     /tmp/cciukrpu.s:93     .text:0000000000000028 .LFB14
+     /tmp/cciukrpu.s:118    .text:0000000000000042 .LFE14
+     /tmp/cciukrpu.s:65     .text:0000000000000016 .LFB13
+GAS LISTING /tmp/cciukrpu.s 			page 17
 
 
-     /tmp/ccKKcqn2.s:88     .text:0000000000000028 .LFE13
-     /tmp/ccKKcqn2.s:14     .text:0000000000000000 .LFB11
-     /tmp/ccKKcqn2.s:41     .text:0000000000000010 .LFE11
-     /tmp/ccKKcqn2.s:46     .text:0000000000000010 .LFB12
-     /tmp/ccKKcqn2.s:60     .text:0000000000000016 .LFE12
-     /tmp/ccKKcqn2.s:255    .debug_info:0000000000000000 .Ldebug_info0
+     /tmp/cciukrpu.s:88     .text:0000000000000028 .LFE13
+     /tmp/cciukrpu.s:14     .text:0000000000000000 .LFB11
+     /tmp/cciukrpu.s:41     .text:0000000000000010 .LFE11
+     /tmp/cciukrpu.s:46     .text:0000000000000010 .LFB12
+     /tmp/cciukrpu.s:60     .text:0000000000000016 .LFE12
+     /tmp/cciukrpu.s:255    .debug_info:0000000000000000 .Ldebug_info0
 
 UNDEFINED SYMBOLS
 __do_clear_bss
