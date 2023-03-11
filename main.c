@@ -1,7 +1,8 @@
+#include <stdbool.h>
 #include <avr/io.h>
 #include <util/delay.h>
 #include <math.h>
-#include "liblcd/lcd.h"
+//#include "liblcd/lcd.h"
 #include "liblcd/ili934x.h"
 #include "libio/io.h"
 #include "libadc/adc.h"
@@ -41,21 +42,34 @@ void lcd_update(void){
 
 int main(){
     init();
-    while(1);
+    while(1){
+        LS3_lo();
+        if(sync){
+            LS3_hi();
+            cli();
+            sync = false;
+            adts_disable();
+            while(!adc_rdy);
+            adc_rdy = false;
+            sei();
+        }
+    }
     return 0;
 }
 
-ISR(TIMER0_COMPA_vect){
-    cli();
+/*ISR(TIMER0_COMPA_vect){
+    sync = true;
+    LS3_hi();
     //  Disable interrupts during this routine.
     //  While it generally is not advisable to run long code in ISRs, we only have one interrupt and are using the ISR as a main clock, so it
     //  should be fine for this application.
-    ADCSRA &=~_BV(ADATE);
+    //adts_disable();
     //  Disabling Auto Triggering
-	while(ADCSRA &_BV(ADSC));
-    ibus = ADC;
+	//while(ADCSRA &_BV(ADSC));
+    //ibus = ADC;
+    //LS3_hi();
     //  First conversion for the 10VAC bus.  The conversion should have already started from the Timer0 Interrupt.
-
+*/
     /*ADMUX = 0x03;
     ADCSRA |=_BV(ADSC);
     while(ADCSRA &_BV(ADSC));
@@ -193,7 +207,6 @@ ISR(TIMER0_COMPA_vect){
         //  After 1 minute, recalibrate
         drift = 0;
         calibrate_timer0();
-    }*/
-    sei();
+    }
     //  Enable interrupts to prepare for the next conversion.
-}
+}*/

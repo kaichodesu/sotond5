@@ -2,16 +2,19 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
+#include <stdbool.h>
 #include "../libio/io.h"
 
 volatile uint16_t adc_read;
+volatile bool calibrating, adc_rdy, sync;
 
 void init_timer0(void)
 {
 	TCCR0A = 0x02; // set timer0 to CTC mode with 1024 prescaler
 	TCCR0B = 0x05;
 	TCNT0 = 0;
-    OCR0A = 116;
+    OCR0A = 234;
+    TIMSK0 = 0;
 
 	//set prescaler to 1024, count up to 116 (OCR0A),
 }
@@ -26,11 +29,20 @@ void adts_enable(void){
 }
 
 ISR(ADC_vect){
-    adc_read = ADC;
+    if(calibrating)
+        adc_read = ADC;
+    else
+        adc_rdy = true;
+    // a flag for the main loop
+}
+
+ISR(TIMER0_COMPA_vect){
+    sync = true;
 }
 
 void calibrate_timer0(void)
 {
+    calibrating = true;
     ADCSRA |= _BV(ADIE);
     adts_disable();
     //  Turn off OCR0A triggering if it is enabled.
@@ -44,15 +56,18 @@ void calibrate_timer0(void)
 	while(adc_read > 10){}
     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
     TCNT0 = 0;
+    OCR0A = 176;
     adts_enable();
     ADCSRA &= ~_BV(ADIE);
+    TIMSK0 |= _BV(OCIE0A);
+    //ADCSRA &= ~_BV(ADIE);
     //  Reset timer 0 and turn off ADC interrupts
-    OCR0A = 88; //made this 1 value larger than necessary to prevent interrupt
-	while(TCNT0 < 87); //here we have reached a peak
-
+	while(!sync); //here we have reached a peak
 	TCNT0 = 0; //reset timer count
-	OCR0A = 116;//output compare 1 cycle after the peak
-
+	OCR0A = 234;//output compare 1 cycle after the peak
+	sync = false;
+    ADCSRA |= _BV(ADIE);
+	calibrating = false;
 }
 
 void init_adc(void){
