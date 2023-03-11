@@ -38,6 +38,7 @@ void init(){
 }
 
 void lcd_update(void){
+
 }
 
 void lcd_test(void){
