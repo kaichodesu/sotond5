@@ -50,11 +50,10 @@ ISR(TIMER0_COMPA_vect){
     //  Disable interrupts during this routine.
     //  While it generally is not advisable to run long code in ISRs, we only have one interrupt and are using the ISR as a main clock, so it
     //  should be fine for this application.
-    adts_disable();
     ADCSRA &=~_BV(ADATE);
     //  Disabling Auto Triggering
 	while(ADCSRA &_BV(ADSC));
-	//ibus = ADC;
+    ibus = ADC;
     //  First conversion for the 10VAC bus.  The conversion should have already started from the Timer0 Interrupt.
 
     /*ADMUX = 0x03;

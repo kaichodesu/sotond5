@@ -4,6 +4,8 @@
 #include <avr/interrupt.h>
 #include "../libio/io.h"
 
+volatile uint16_t adc_read;
+
 void init_timer0(void)
 {
 	TCCR0A = 0x02; // set timer0 to CTC mode with 1024 prescaler
@@ -23,38 +25,42 @@ void adts_enable(void){
 	ADCSRB |=_BV(ADTS0);
 }
 
+ISR(ADC_vect){
+    adc_read = ADC;
+}
+
 void calibrate_timer0(void)
 {
+    ADCSRA |= _BV(ADIE);
     adts_disable();
     //  Turn off OCR0A triggering if it is enabled.
-	ADMUX = 0x05;
+	ADMUX = 0x06;
     //  Select PA4 as the ADC source.
+    ADCSRA |=_BV(ADATE);
     ADCSRA |= _BV(ADSC);
     //  start conversions in free running mode
-	while(ADCSRA &_BV(ADSC));
-    ADCSRA |=_BV(ADATE);
-    //  wait for first conversion to complete
-	while(ADC < 100);
-    //  Waiting for the ADC to rise into the rectified waveform.
-	while(ADC > 100);
-    LS3_hi();
+    while(adc_read < 100){}
+        //  Waiting for the ADC to rise into the rectified waveform.
+	while(adc_read > 10){}
     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
     TCNT0 = 0;
-    //  Reset timer 0.
+    adts_enable();
+    ADCSRA &= ~_BV(ADIE);
+    //  Reset timer 0 and turn off ADC interrupts
     OCR0A = 88; //made this 1 value larger than necessary to prevent interrupt
 	while(TCNT0 < 87); //here we have reached a peak
 
 	TCNT0 = 0; //reset timer count
 	OCR0A = 116;//output compare 1 cycle after the peak
 
-	adts_enable();
 }
 
 void init_adc(void){
-    ADCSRA |=_BV(ADPS2) |_BV(ADPS1);
-    ADCSRA |=_BV(ADEN);
-    //  Enable ADC
-	//  ADCSRA |=_BV(ADATE);
+    sei();
+    ADCSRA |= _BV(ADPS2) |_BV(ADPS1);
+    //  ADC ~200kHz
+    ADCSRA |= _BV(ADEN);
+    //  Enable ADC and ADC Interrupt
     //  Enable Auto triggering
     calibrate_timer0();
 }
