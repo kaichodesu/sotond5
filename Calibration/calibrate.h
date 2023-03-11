@@ -11,7 +11,10 @@
 void init_adc(void);
 void cannel_adc(uint8_t c);
 uint16_t read_adc(void);
-void displayAnalogueInput();
+void displayBusV();
+void displayBusI();
+void displayWind();
+void displayPV();
 void digital();
 
 #endif /* calibrate_h */

@@ -5,6 +5,7 @@
 #include "liblcd/ili934x.h"
 #include "libio/io.h"
 #include "libadc/adc.h"
+#include <avr/interrupt.h>
 // DISPLAY 240 x 320
 #define PV_CALIBRATED 3.16
 #define WIND_CALIBRATED 3.23

@@ -3,56 +3,132 @@
 //In the main program we initialise the ADC
 //Select the PIN we want (busv, busi, wind, pv) and send it to the channel_adc function
 //We do this for all the analogue inputs
-//Then we call the displayAnalogueInput function and display the desired value
 void init_adc(void)
 {
+    ADMUX = 0;
+    ADCSRA = _BV(ADEN) | 6;
     
-    ADCSRA |=_BV(ADPS2) |_BV(ADPS1);
-    ADMUX |= 0x00;
-    ADCSRA |=_BV(ADSC);
-    ADCSRA |=_BV(ADEN);
+    //ADCSRA = 0x86;
+    
+    //ADCSRA |=_BV(ADPS2) |_BV(ADPS1);
+    //ADMUX |= 0x00;
+    //ADCSRA |=_BV(ADSC);
+    //ADCSRA |=_BV(ADEN);
 }
 void cannel_adc(uint8_t c)
 {
     ADMUX |= c;
-/*
-    if(c==1)
-    {
-        ADMUX |= 0x08;
-    }
-    else if(c==2)
-    {
-        ADMUX |= 0x10;
-    }
-    else if(c==3)
-    {
-        ADMUX |= 0x20;
-    }
-    else if(c==4)
-    {
-        ADMUX |= 0x40;
-    }
-*/
-    
 }
 
 uint16_t read_adc(void)
 {
-    
     ADCSRA|= _BV(ADSC);
     while(ADCSRA &= _BV(ADSC));
     return ADC
 }
-//Problem to figure out: since the display string function only writes to a single position on the display, the values will overwrite each other, therefore need to shift the position after we write each analogue input value
-void displayAnalogueInput()
+//concatenate strings
+void displayBusV()
 {
     uint16_t result;
     float voltage;
+    char str1[100] = "BusV: ";
     result = read_adc();
     voltage = (3.3*result)/1024.0;
     char val[MAX];
     gcvt(voltage, 6, val);
-    displayString(val);
+    char str_res[100];
+    int i = 0, j = 0;
+    while (str1[i] != '\0') {
+        str_res[j] = str1[i];
+        i++;
+        j++;
+    }
+    i = 0;
+    while (val[i] != '\0') {
+        str3[j] = val[i];
+        i++;
+        j++;
+    }
+    str3[j] = '\0';
+    display_string(str3);
+}
+
+void displayBusI()
+{
+    uint16_t result;
+    float current;
+    char str1[100] = "  BusI: ";
+    result = read_adc();
+    current = (3.3*result)/1024.0;
+    char val[MAX];
+    gcvt(current, 6, val);
+    char str_res[100];
+    int i = 0, j = 0;
+    while (str1[i] != '\0') {
+        str_res[j] = str1[i];
+        i++;
+        j++;
+    }
+    i = 0;
+    while (val[i] != '\0') {
+        str3[j] = val[i];
+        i++;
+        j++;
+    }
+    str3[j] = '\0';
+    display_string(str3);
+}
+
+void displayWind()
+{
+    uint16_t result;
+    float wind;
+    char str1[100] = "  Wind: ";
+    result = read_adc();
+    wind = (3.3*result)/1024.0;
+    char val[MAX];
+    gcvt(wind, 6, val);
+    char str_res[100];
+    int i = 0, j = 0;
+    while (str1[i] != '\0') {
+        str_res[j] = str1[i];
+        i++;
+        j++;
+    }
+    i = 0;
+    while (val[i] != '\0') {
+        str3[j] = val[i];
+        i++;
+        j++;
+    }
+    str3[j] = '\0';
+    display_string(str3);
+}
+
+void displayPV()
+{
+    uint16_t result;
+    float pv;
+    char str1[100] = "  PV: ";
+    result = read_adc();
+    pv = (3.3*result)/1024.0;
+    char val[MAX];
+    gcvt(pv, 6, val);
+    char str_res[100];
+    int i = 0, j = 0;
+    while (str1[i] != '\0') {
+        str_res[j] = str1[i];
+        i++;
+        j++;
+    }
+    i = 0;
+    while (val[i] != '\0') {
+        str3[j] = val[i];
+        i++;
+        j++;
+    }
+    str3[j] = '\0';
+    display_string(str3);
 }
 
 void digital()

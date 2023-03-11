@@ -3,7 +3,7 @@ MCU=atmega644p
 MCU_FREQ=12000000 
 
 # Name of our project
-PROJECTNAME=io
+PROJECTNAME=libio
 
 # Source files
 PRJSRC=io.c
