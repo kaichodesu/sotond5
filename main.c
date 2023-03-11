@@ -28,10 +28,10 @@ uint16_t ibus, pvc, wtc;
 float PV, Wind, BusI, MainsReq;
 
 void init(){
-    init_lcd();
-    set_orientation(North);
+    //init_lcd();
+    //set_orientation(North);
     init_io();
-    init_graphics();
+    //init_graphics();
     init_timer0();
     init_adc();
 }
@@ -54,7 +54,7 @@ ISR(TIMER0_COMPA_vect){
     ADCSRA &=~_BV(ADATE);
     //  Disabling Auto Triggering
 	while(ADCSRA &_BV(ADSC));
-	ibus = ADC;
+	//ibus = ADC;
     //  First conversion for the 10VAC bus.  The conversion should have already started from the Timer0 Interrupt.
 
     /*ADMUX = 0x03;
@@ -63,6 +63,9 @@ ISR(TIMER0_COMPA_vect){
 	vbus = ADC;
     //  Second conversion for the 4VAC bus.*/
 
+    //====
+
+    /*
     ADMUX = 0x05;
     ADCSRA |=_BV(ADSC);
     while(ADCSRA &_BV(ADSC));
@@ -82,8 +85,9 @@ ISR(TIMER0_COMPA_vect){
     BusI = ibus*IBUS_CALIBRATED/1024;
 
     MainsReq =   (10/MainsMAX) * BusI;
+*/
 
-    if(BusI + BatteryChargeI < MainsMAX){
+    /*if(BusI + BatteryChargeI < MainsMAX){
         DBAT_lo();
         CBAT_hi();
     }
@@ -177,9 +181,9 @@ ISR(TIMER0_COMPA_vect){
         }
         else LS1_lo();
     }
-
-
-    drift++;
+*/
+/*
+    drift++
     //  Increment the drift supervisor.
     if(drift%50 == 0){
         //  Update the UI every second
@@ -190,7 +194,7 @@ ISR(TIMER0_COMPA_vect){
         //  After 1 minute, recalibrate
         drift = 0;
         calibrate_timer0();
-    }
+    }*/
     sei();
     //  Enable interrupts to prepare for the next conversion.
 }

@@ -32,5 +32,5 @@ void init_io()
     DDRA &= ~_BV(PA0);
     DDRA &= ~_BV(PA1);
     DDRA &= ~_BV(PA2);
-    PORTA = 0x80;
+    PORTA = 0x00;
 }
