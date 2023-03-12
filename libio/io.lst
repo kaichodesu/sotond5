@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cc5jDPxi.s 			page 1
+GAS LISTING /tmp/cc4U0iv0.s 			page 1
 
 
    1               		.file	"io.c"
@@ -24,10 +24,10 @@ GAS LISTING /tmp/cc5jDPxi.s 			page 1
    3:io.c          **** 
    4:io.c          **** /*
    5:io.c          ****  * 1_1  PD5 PWM     OUT
-   6:io.c          ****  * 2_1  PA3 ANALOG  IN
-   7:io.c          ****  * 2_2  PA4 ANALOG  IN
-   8:io.c          ****  * 2_3  PA5 ANALOG  IN
-   9:io.c          ****  * 2_4  PA6 ANALOG  IN
+   6:io.c          ****  * 2_1  PA5 ANALOG  IN  IBUS
+   7:io.c          ****  * 2_2  PA6 ANALOG  IN  VBUS
+   8:io.c          ****  * 2_3  PA3 ANALOG  IN  WIND
+   9:io.c          ****  * 2_4  PA4 ANALOG  IN  PV
   10:io.c          ****  * 3_1  PD0 DIGITAL OUT CBAT
   11:io.c          ****  * 3_2  PD1 DIGITAL OUT DBAT
   12:io.c          ****  * 3_3  PD2 DIGITAL OUT LS1
@@ -58,7 +58,7 @@ GAS LISTING /tmp/cc5jDPxi.s 			page 1
   24:io.c          ****     DDRA &= ~_BV(PA4);
   32               		.stabn	68,0,24,.LM3-.LFBB1
   33               	.LM3:
-GAS LISTING /tmp/cc5jDPxi.s 			page 2
+GAS LISTING /tmp/cc4U0iv0.s 			page 2
 
 
   34 0004 0C98      		cbi 0x1,4
@@ -117,16 +117,16 @@ GAS LISTING /tmp/cc5jDPxi.s 			page 1
   75               		.stabs	"",100,0,0,.Letext0
   76               	.Letext0:
   77               		.ident	"GCC: (GNU) 11.2.0"
-GAS LISTING /tmp/cc5jDPxi.s 			page 3
+GAS LISTING /tmp/cc4U0iv0.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 io.c
-     /tmp/cc5jDPxi.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc5jDPxi.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc5jDPxi.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc5jDPxi.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc5jDPxi.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc5jDPxi.s:18     .text:0000000000000000 init_io
+     /tmp/cc4U0iv0.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc4U0iv0.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc4U0iv0.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc4U0iv0.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc4U0iv0.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc4U0iv0.s:18     .text:0000000000000000 init_io
 
 NO UNDEFINED SYMBOLS

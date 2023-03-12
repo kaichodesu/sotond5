@@ -2,6 +2,7 @@
 #define WIND_CALIBRATED 3.23
 #define VBUS_CALIBRATED 3.10
 #define IBUS_CALIBRATED 3.33
+#define F_CPU 12000000UL
 
 #include <avr/interrupt.h>
 #include <stdbool.h>
@@ -17,21 +18,29 @@
 #include "mainsreq/mainsreq.h"
 // DISPLAY 240 x 320
 
+
 uint16_t ibus, pvc, wtc;
 uint16_t drift = 0;
 //  An unsigned int used to regulate TIMER0 drift.
 
-bool battery_pwr_state[2] = {0,0};
+bool battery_pwr_state[2] = {false,false};
 uint8_t power_kw_digit[2] = {0,0};
 uint8_t power_10_digit[2] = {0,0};
 uint8_t power_100_digit[2] = {0,0};
 uint8_t bar_value_sun[2] = {0,0};
 uint8_t bar_value_wind[2] = {0,0};
+char string[3];
+uint8_t wind_pwr;
+uint8_t pv_pwr;
+float power;
+uint8_t power1, power10, power100;
 
 
 
 
 void init(){
+    TIMER0_TOP = 233;
+    OFFSET = 176;
     init_lcd();
     set_orientation(North);
     init_io();
@@ -43,17 +52,13 @@ void init(){
 
 
 void lcd_update(void){
+    wind_pwr = (Wind/1) * 94;
+    pv_pwr = (PV/3) * 94;
+	power = BusI * 300/1000;
+	power1 = (uint8_t) power % 10;
+	power10 = (uint8_t) (power * 10) % 10;
+	power100 = (uint8_t) (power * 100) % 10;
 
-    char string[3];
-    float power = BusI * 240/1000;
-    uint8_t wind_pwr = (Wind/1) * 94;
-    uint8_t pv_pwr = (PV/3) * 94;
-
-	sprintf(string, "%f", power); //
-
-	uint8_t power1 = (uint8_t)atoi(string[0]);
-	uint8_t power10 = (uint8_t) atoi(string[1]);
-	uint8_t power100 = (uint8_t)atoi( string[2]);
 	power_kw_digit[0] = power_kw_digit[1];  //used to make present-state become previous-state
 	power_10_digit[0] = power_10_digit[1];
 	power_100_digit[0] = power_100_digit[1];
@@ -117,6 +122,7 @@ void lcd_update(void){
 
 	bar_value_wind[1] = wind_pwr;
 	bar_value_sun[1] = pv_pwr;
+
 	if(power_kw_digit[0] != power_kw_digit[1] )
 	{
 		pwr_kw(power_kw_digit[1]);
@@ -155,10 +161,10 @@ int main(){
     init();
     while(1){
         if(sync){
-
+            LS1_hi();
             //  ADMUX preset to PA6
 
-            TCCR2B = 0x01;
+            //TCCR2B = 0x01;
             //  Starting the ADCMUX timer.
             sync = false;
             TIMSK0 &= ~_BV(OCIE0A);
@@ -181,6 +187,9 @@ int main(){
             //  Reading Wind Capacity
             //while(adc_mux_rdy == 0);
             ADMUX = 0x03;
+
+            _delay_ms(2);
+
             ADCSRA |=_BV(ADSC);
             //adc_mux_rdy = false;
             //  We change ADMUX while the current conversion is taking place
@@ -190,6 +199,7 @@ int main(){
             Wind = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
 
+            _delay_ms(2);
 
             //  Reading PV Capacity
             //while(adc_mux_rdy == 0);
@@ -208,15 +218,22 @@ int main(){
 
             PWM((uint8_t)round((MainsReq/10)*255));
 
+            drift++;
+            LS1_lo();
+
             lcd_update();
 
-            TIMSK0 |= _BV(OCIE0A);
-            adts_enable();
-            ADCSRA |=_BV(ADATE);
-            ADCSRA |=_BV(ADSC);
-            //  Re-enable the TIMER0 Interrupt.
-            //  Turning Auto Triggering back on.
-
+            if (drift%250 == 0){
+                calibrate_timer0();
+            }
+            else{
+                TIMSK0 |= _BV(OCIE0A);
+                adts_enable();
+                ADCSRA |=_BV(ADATE);
+                ADCSRA |=_BV(ADSC);
+                //  Re-enable the TIMER0 Interrupt.
+                //  Turning Auto Triggering back on.
+            }
         }
 
     }

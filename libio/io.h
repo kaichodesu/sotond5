@@ -20,7 +20,7 @@
 #define LS1_hi()	PORTD |= _BV(2)
 #define LS2_lo()	PORTD &= ~_BV(3)
 #define LS2_hi()	PORTD |= _BV(3)
-#define LS3_lo()	PORTA &= ~_BV(7)
+#define LS3_lo()	PORTA &= ~_BV(7)  /*TODO*/
 #define LS3_hi()	PORTA |= _BV(7)
 #define CBAT_lo()	PORTD &= ~_BV(0)
 #define CBAT_hi()	PORTD |= _BV(0)

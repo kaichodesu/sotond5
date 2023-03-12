@@ -7,8 +7,8 @@
 
 volatile uint16_t adc_read;
 volatile bool calibrating, adc_rdy, sync, adc_mux_rdy;
-uint8_t TIMER0_TOP = 234;
-uint8_t OFFSET = 176;
+uint8_t TIMER0_TOP;
+uint8_t OFFSET;
 //  TOP value used to fine tune the phase delay to capture the mains AC phase.
 
 void init_timers(void)
@@ -63,7 +63,7 @@ void calibrate_timer0(void)
     ADCSRA |=_BV(ADATE);
     ADCSRA |= _BV(ADSC);
     //  start conversions in free running mode
-    while(adc_read < 100){}
+    while(adc_read < 10){}
         //  Waiting for the ADC to rise into the rectified waveform.
 	while(adc_read > 10){}
     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
@@ -85,7 +85,7 @@ void calibrate_timer0(void)
 
 void init_adc(void){
     sei();
-    ADCSRA |= _BV(ADPS2) |_BV(ADPS1);
+    ADCSRA |= _BV(ADPS2) |_BV(ADPS1)|_BV(ADPS0);
     //  ADC ~200kHz
     ADCSRA |= _BV(ADEN);
     //  Enable ADC
