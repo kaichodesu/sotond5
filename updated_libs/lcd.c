@@ -2,7 +2,7 @@
  * Licence: This work is licensed under the Creative Commons Attribution License.
  *           View this license at http://creativecommons.org/about/licenses/
  */
-
+ 
 #include "ili934x.h"
 #include "graphics.h"
 #include "fonts.h"
@@ -17,12 +17,12 @@ void init_lcd()
 	/* It will be re-enabled after a power cycle if the JTAGEN fuse is set. */
 	MCUCR |= (1<<JTD);
 	MCUCR |= (1<<JTD);
-
+	
 	/* Configure ports */
 	CTRL_DDR = 0x7F;
 	// PIN 7 on the control port is an input.
 	DATA_DDR = 0xFF;
-
+	
 	init_display_controller();
 }
 
@@ -30,7 +30,7 @@ void set_orientation(orientation o)
 {
 	display.orient = o;
 	write_cmd(MEMORY_ACCESS_CONTROL);
-	if (o==North) {
+	if (o==North) { 
 		display.width = LCDWIDTH;
 		display.height = LCDHEIGHT;
 		write_data(0x48);
@@ -181,37 +181,37 @@ void LC3_red(void)
 
 void LS1_green(void)
 {
-	rectangle LC1 = {206,210,18,22};
+	rectangle LC1 = {136,140,18,22};
 	fill_rectangle(LC1,GREEN);
 }
 
 void LS1_red(void)
 {
-	rectangle LC1 = {206,210,18,22};
+	rectangle LC1 = {136,140,18,22};
 	fill_rectangle(LC1,RED);
 }
 
 void LS2_green(void)
 {
-	rectangle LC2 = {206,210,50,54};
+	rectangle LC2 = {136,140,50,54};
 	fill_rectangle(LC2,GREEN);
 }
 
 void LS2_red(void)
 {
-	rectangle LC2 = {206,210,50,54};
+	rectangle LC2 = {136,140,50,54};
 	fill_rectangle(LC2,RED);
 }
 
 void LS3_green(void)
 {
-	rectangle LC3 = {206,210,80,84};
+	rectangle LC3 = {136,140,80,84};
 	fill_rectangle(LC3,GREEN);
 }
 
 void LS3_red(void)
 {
-	rectangle LC3 = {206,210,80,84};
+	rectangle LC3 = {136,140,80,84};
 	fill_rectangle(LC3,RED);
 }
 
@@ -219,36 +219,36 @@ void LS3_red(void)
 
 void pwr_bar_wind(uint8_t pwr)
 {
-
+	
 	rectangle blue = {90,91,172,180};
 	rectangle white = {91,92,172,180};
 
 	if(pwr > 94)
 		pwr = 94;
-
+	
 	blue.right = 90 + pwr;
-
+	
 	white.left = blue.right;
-	white.right = 184;
-
+	white.right = 184; 
+	
 	fill_rectangle(blue, 0x3E9F);
 	fill_rectangle(white, WHITE);
 }
 
 void pwr_bar_sun(uint8_t pwr)
 {
-
+	
 	rectangle blue = {90,91,120,128};
 	rectangle white = {91,92,120,128};
 
 	if(pwr > 94)
 		pwr = 94;
-
+	
 	blue.right = 90 + pwr ;
-
+	
 	white.left = blue.right;
-	white.right = 184;
-
+	white.right = 184; 
+	
 	fill_rectangle(blue, 0x3E9F);
 	fill_rectangle(white, WHITE);
 }

@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccmoyNbC.s 			page 1
+GAS LISTING /tmp/ccYDBJxV.s 			page 1
 
 
    1               		.file	"adc.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccmoyNbC.s 			page 1
   19:adc.c         ****     OCR0A = TIMER0_TOP;
   37               		.stabn	68,0,19,.LM4-.LFBB1
   38               	.LM4:
-GAS LISTING /tmp/ccmoyNbC.s 			page 2
+GAS LISTING /tmp/ccYDBJxV.s 			page 2
 
 
   39 000a 9091 0000 		lds r25,TIMER0_TOP
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccmoyNbC.s 			page 1
   80               	.LM13:
   81 002c 0895      		ret
   82               		.size	adts_disable, .-adts_disable
-GAS LISTING /tmp/ccmoyNbC.s 			page 3
+GAS LISTING /tmp/ccYDBJxV.s 			page 3
 
 
   83               	.Lscope2:
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccmoyNbC.s 			page 1
   40:adc.c         ****     adc_read = ADC;
  130               		.stabn	68,0,40,.LM19-.LFBB4
  131               	.LM19:
-GAS LISTING /tmp/ccmoyNbC.s 			page 4
+GAS LISTING /tmp/ccYDBJxV.s 			page 4
 
 
  132 0044 8091 7800 		lds r24,120
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccmoyNbC.s 			page 1
  179               		.type	__vector_9, @function
  180               	__vector_9:
   48:adc.c         **** 
-GAS LISTING /tmp/ccmoyNbC.s 			page 5
+GAS LISTING /tmp/ccYDBJxV.s 			page 5
 
 
   49:adc.c         **** ISR(TIMER2_COMPA_vect){
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccmoyNbC.s 			page 1
  222 0090 8091 7A00 		lds r24,122
  223 0094 8860      		ori r24,lo8(8)
  224 0096 8093 7A00 		sts 122,r24
-GAS LISTING /tmp/ccmoyNbC.s 			page 6
+GAS LISTING /tmp/ccYDBJxV.s 			page 6
 
 
  225               	.LBB4:
@@ -311,10 +311,10 @@ GAS LISTING /tmp/ccmoyNbC.s 			page 1
  231               	.LBE4:
   59:adc.c         ****     adts_disable();
   60:adc.c         ****     //  Turn off OCR0A triggering if it is enabled.
-  61:adc.c         **** 	ADMUX = 0x05;
+  61:adc.c         **** 	ADMUX = 0x06;
  232               		.stabn	68,0,61,.LM34-.LFBB7
  233               	.LM34:
- 234 009e 85E0      		ldi r24,lo8(5)
+ 234 009e 86E0      		ldi r24,lo8(6)
  235 00a0 8093 7C00 		sts 124,r24
   62:adc.c         ****     //  Select PA5 as the ADC source.
   63:adc.c         ****     ADCSRA |=_BV(ADATE);
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccmoyNbC.s 			page 1
  265               	.LM40:
  266 00d4 8091 0000 		lds r24,OFFSET
  267 00d8 87BD      		out 0x27,r24
-GAS LISTING /tmp/ccmoyNbC.s 			page 7
+GAS LISTING /tmp/ccYDBJxV.s 			page 7
 
 
   72:adc.c         ****     adts_enable();
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccmoyNbC.s 			page 1
  309               		.stabn	68,0,84,.LM51-.LFBB7
  310               	.LM51:
  311 0118 0895      		ret
-GAS LISTING /tmp/ccmoyNbC.s 			page 8
+GAS LISTING /tmp/ccYDBJxV.s 			page 8
 
 
  312               		.size	calibrate_timer0, .-calibrate_timer0
@@ -478,7 +478,7 @@ GAS LISTING /tmp/ccmoyNbC.s 			page 1
  358               	.global	TIMER0_TOP
  359               		.type	TIMER0_TOP, @object
  360               		.size	TIMER0_TOP, 1
-GAS LISTING /tmp/ccmoyNbC.s 			page 9
+GAS LISTING /tmp/ccYDBJxV.s 			page 9
 
 
  361               	TIMER0_TOP:
@@ -522,34 +522,34 @@ GAS LISTING /tmp/ccmoyNbC.s 			page 1
  399               		.ident	"GCC: (GNU) 11.2.0"
  400               	.global __do_copy_data
  401               	.global __do_clear_bss
-GAS LISTING /tmp/ccmoyNbC.s 			page 10
+GAS LISTING /tmp/ccYDBJxV.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 adc.c
-     /tmp/ccmoyNbC.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccmoyNbC.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccmoyNbC.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccmoyNbC.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccmoyNbC.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccmoyNbC.s:18     .text:0000000000000000 init_timers
-     /tmp/ccmoyNbC.s:361    .data:0000000000000001 TIMER0_TOP
-     /tmp/ccmoyNbC.s:67     .text:0000000000000028 adts_disable
-     /tmp/ccmoyNbC.s:88     .text:000000000000002e adts_enable
-     /tmp/ccmoyNbC.s:120    .text:0000000000000040 __vector_24
+     /tmp/ccYDBJxV.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccYDBJxV.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccYDBJxV.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccYDBJxV.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccYDBJxV.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccYDBJxV.s:18     .text:0000000000000000 init_timers
+     /tmp/ccYDBJxV.s:361    .data:0000000000000001 TIMER0_TOP
+     /tmp/ccYDBJxV.s:67     .text:0000000000000028 adts_disable
+     /tmp/ccYDBJxV.s:88     .text:000000000000002e adts_enable
+     /tmp/ccYDBJxV.s:120    .text:0000000000000040 __vector_24
                             *ABS*:0000000000000001 __gcc_isr.n_pushed.001
-     /tmp/ccmoyNbC.s:393    .bss:0000000000000004 adc_read
-     /tmp/ccmoyNbC.s:381    .bss:0000000000000002 adc_rdy
-     /tmp/ccmoyNbC.s:155    .text:0000000000000060 __vector_16
+     /tmp/ccYDBJxV.s:393    .bss:0000000000000004 adc_read
+     /tmp/ccYDBJxV.s:381    .bss:0000000000000002 adc_rdy
+     /tmp/ccYDBJxV.s:155    .text:0000000000000060 __vector_16
                             *ABS*:0000000000000001 __gcc_isr.n_pushed.002
-     /tmp/ccmoyNbC.s:375    .bss:0000000000000001 sync
-     /tmp/ccmoyNbC.s:180    .text:000000000000006c __vector_9
+     /tmp/ccYDBJxV.s:375    .bss:0000000000000001 sync
+     /tmp/ccYDBJxV.s:180    .text:000000000000006c __vector_9
                             *ABS*:0000000000000003 __gcc_isr.n_pushed.003
-     /tmp/ccmoyNbC.s:368    .bss:0000000000000000 adc_mux_rdy
-     /tmp/ccmoyNbC.s:208    .text:000000000000008a calibrate_timer0
-     /tmp/ccmoyNbC.s:387    .bss:0000000000000003 calibrating
-     /tmp/ccmoyNbC.s:355    .data:0000000000000000 OFFSET
-     /tmp/ccmoyNbC.s:318    .text:000000000000011a init_adc
+     /tmp/ccYDBJxV.s:368    .bss:0000000000000000 adc_mux_rdy
+     /tmp/ccYDBJxV.s:208    .text:000000000000008a calibrate_timer0
+     /tmp/ccYDBJxV.s:387    .bss:0000000000000003 calibrating
+     /tmp/ccYDBJxV.s:355    .data:0000000000000000 OFFSET
+     /tmp/ccYDBJxV.s:318    .text:000000000000011a init_adc
 
 UNDEFINED SYMBOLS
 __do_copy_data

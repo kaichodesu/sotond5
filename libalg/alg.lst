@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccYUyj0V.s 			page 1
+GAS LISTING /tmp/ccMmGyz8.s 			page 1
 
 
    1               		.file	"alg.c"
@@ -14,1150 +14,1671 @@ GAS LISTING /tmp/ccYUyj0V.s 			page 1
   11               		.stabs	"gcc2_compiled.",60,0,0,0
   12               	.global	__mulsf3
   13               	.global	__addsf3
-  14               	.global	__ltsf2
-  15               	.global	__gesf2
-  16               	.global	__gtsf2
-  17               		.stabs	"algorithm:F(0,1)=(0,1)",36,0,17,algorithm
-  18               		.stabs	"uint8_t:t(0,2)=(0,3)=@s8;r(0,3);0;255;",128,0,126,0
-  19               		.stabs	"void:t(0,1)",128,0,0,0
-  20               		.stabs	"unsigned char:t(0,3)",128,0,0,0
-  21               	.global	algorithm
-  22               		.type	algorithm, @function
-  23               	algorithm:
+  14               	.global	__gtsf2
+  15               		.stabs	"algorithm:F(0,1)=(0,1)",36,0,18,algorithm
+  16               		.stabs	"uint8_t:t(0,2)=(0,3)=@s8;r(0,3);0;255;",128,0,126,0
+  17               		.stabs	"void:t(0,1)",128,0,0,0
+  18               		.stabs	"unsigned char:t(0,3)",128,0,0,0
+  19               	.global	algorithm
+  20               		.type	algorithm, @function
+  21               	algorithm:
    1:alg.c         **** #include <stdbool.h>
    2:alg.c         **** #include <math.h>
    3:alg.c         **** #include "../libio/io.h"
-   4:alg.c         **** 
-   5:alg.c         **** //========================================================================//
-   6:alg.c         **** // Scenario constants
-   7:alg.c         **** const uint8_t MainsMAX = 2;
-   8:alg.c         **** const uint8_t BatteryChargeI = 1;
-   9:alg.c         **** const float Load1 = 1.2;
-  10:alg.c         **** const float Load2 = 2;
-  11:alg.c         **** const float Load3 = 0.8;
-  12:alg.c         **** //========================================================================//
-  13:alg.c         **** 
-  14:alg.c         **** //  uints for initial time sensitive data storage
-  15:alg.c         **** float PV, Wind, BusI, MainsReq;
-  16:alg.c         **** 
-  17:alg.c         **** void algorithm(void){
-  24               		.stabn	68,0,17,.LM0-.LFBB1
-  25               	.LM0:
-  26               	.LFBB1:
-  27 0000 CF93      		push r28
-  28 0002 DF93      		push r29
-  29 0004 00D0      		rcall .
-  30 0006 00D0      		rcall .
-  31 0008 CDB7      		in r28,__SP_L__
-  32 000a DEB7      		in r29,__SP_H__
-  33               	/* prologue: function */
-  34               	/* frame size = 4 */
-  35               	/* stack size = 6 */
-  36               	.L__stack_usage = 6
-  18:alg.c         ****     MainsReq =   (10/MainsMAX) * BusI;
-  37               		.stabn	68,0,18,.LM1-.LFBB1
-  38               	.LM1:
-  39 000c 8091 0000 		lds r24,BusI
-GAS LISTING /tmp/ccYUyj0V.s 			page 2
+   4:alg.c         **** #include "../liblcd/lcd.h"
+   5:alg.c         **** 
+   6:alg.c         **** //========================================================================//
+   7:alg.c         **** // Scenario constants
+   8:alg.c         **** const uint8_t MainsMAX = 2;
+   9:alg.c         **** const uint8_t BatteryChargeI = 1;
+  10:alg.c         **** const float Load1 = 1.2;
+  11:alg.c         **** const float Load2 = 2;
+  12:alg.c         **** const float Load3 = 0.8;
+  13:alg.c         **** //========================================================================//
+  14:alg.c         **** 
+  15:alg.c         **** //  uints for initial time sensitive data storage
+  16:alg.c         **** float PV, Wind, BusI, MainsReq;
+  17:alg.c         **** 
+  18:alg.c         **** void algorithm(void){
+  22               		.stabn	68,0,18,.LM0-.LFBB1
+  23               	.LM0:
+  24               	.LFBB1:
+  25 0000 CF93      		push r28
+  26 0002 DF93      		push r29
+  27 0004 00D0      		rcall .
+  28 0006 00D0      		rcall .
+  29 0008 CDB7      		in r28,__SP_L__
+  30 000a DEB7      		in r29,__SP_H__
+  31               	/* prologue: function */
+  32               	/* frame size = 4 */
+  33               	/* stack size = 6 */
+  34               	.L__stack_usage = 6
+  19:alg.c         ****     MainsReq =   (10/MainsMAX) * BusI;
+  35               		.stabn	68,0,19,.LM1-.LFBB1
+  36               	.LM1:
+  37 000c 20E0      		ldi r18,0
+  38 000e 30E0      		ldi r19,0
+GAS LISTING /tmp/ccMmGyz8.s 			page 2
 
 
-  40 0010 9091 0000 		lds r25,BusI+1
-  41 0014 A091 0000 		lds r26,BusI+2
-  42 0018 B091 0000 		lds r27,BusI+3
-  43 001c 8983      		std Y+1,r24
-  44 001e 9A83      		std Y+2,r25
-  45 0020 AB83      		std Y+3,r26
-  46 0022 BC83      		std Y+4,r27
-  47 0024 20E0      		ldi r18,0
-  48 0026 30E0      		ldi r19,0
-  49 0028 40EA      		ldi r20,lo8(-96)
-  50 002a 50E4      		ldi r21,lo8(64)
-  51 002c BC01      		movw r22,r24
-  52 002e CD01      		movw r24,r26
-  53 0030 0E94 0000 		call __mulsf3
-  54 0034 6093 0000 		sts MainsReq,r22
-  55 0038 7093 0000 		sts MainsReq+1,r23
-  56 003c 8093 0000 		sts MainsReq+2,r24
-  57 0040 9093 0000 		sts MainsReq+3,r25
-  19:alg.c         ****             if(BusI + BatteryChargeI < MainsMAX){
-  58               		.stabn	68,0,19,.LM2-.LFBB1
-  59               	.LM2:
-  60 0044 20E0      		ldi r18,0
-  61 0046 30E0      		ldi r19,0
-  62 0048 40E8      		ldi r20,lo8(-128)
-  63 004a 5FE3      		ldi r21,lo8(63)
-  64 004c 6981      		ldd r22,Y+1
-  65 004e 7A81      		ldd r23,Y+2
-  66 0050 8B81      		ldd r24,Y+3
-  67 0052 9C81      		ldd r25,Y+4
-  68 0054 0E94 0000 		call __addsf3
-  69               		.stabn	68,0,19,.LM3-.LFBB1
-  70               	.LM3:
-  71 0058 20E0      		ldi r18,0
-  72 005a 30E0      		ldi r19,0
-  73 005c 40E0      		ldi r20,0
-  74 005e 50E4      		ldi r21,lo8(64)
-  75 0060 6983      		std Y+1,r22
-  76 0062 7A83      		std Y+2,r23
-  77 0064 8B83      		std Y+3,r24
-  78 0066 9C83      		std Y+4,r25
-  79 0068 6981      		ldd r22,Y+1
-  80 006a 7A81      		ldd r23,Y+2
-  81 006c 8B81      		ldd r24,Y+3
-  82 006e 9C81      		ldd r25,Y+4
-  83 0070 0E94 0000 		call __ltsf2
-  84 0074 87FF      		sbrs r24,7
-  85 0076 00C0      		rjmp .L94
-  20:alg.c         ****                 DBAT_lo();
-  86               		.stabn	68,0,20,.LM4-.LFBB1
-  87               	.LM4:
-  88 0078 5998      		cbi 0xb,1
-  21:alg.c         ****                 CBAT_hi();
-  89               		.stabn	68,0,21,.LM5-.LFBB1
-  90               	.LM5:
-  91 007a 589A      		sbi 0xb,0
-  92               	.L4:
-  22:alg.c         ****             }
-GAS LISTING /tmp/ccYUyj0V.s 			page 3
+  39 0010 40EA      		ldi r20,lo8(-96)
+  40 0012 50E4      		ldi r21,lo8(64)
+  41 0014 6091 0000 		lds r22,BusI
+  42 0018 7091 0000 		lds r23,BusI+1
+  43 001c 8091 0000 		lds r24,BusI+2
+  44 0020 9091 0000 		lds r25,BusI+3
+  45 0024 0E94 0000 		call __mulsf3
+  46 0028 6093 0000 		sts MainsReq,r22
+  47 002c 7093 0000 		sts MainsReq+1,r23
+  48 0030 8093 0000 		sts MainsReq+2,r24
+  49 0034 9093 0000 		sts MainsReq+3,r25
+  20:alg.c         ****             if(~LC1 && ~LC2 && ~LC3){
+  50               		.stabn	68,0,20,.LM2-.LFBB1
+  51               	.LM2:
+  52 0038 0099      		sbic 0,0
+  53 003a 00C0      		rjmp .L2
+  54               		.stabn	68,0,20,.LM3-.LFBB1
+  55               	.LM3:
+  56 003c 0199      		sbic 0,1
+  57 003e 00C0      		rjmp .L2
+  58               		.stabn	68,0,20,.LM4-.LFBB1
+  59               	.LM4:
+  60 0040 0299      		sbic 0,2
+  61 0042 00C0      		rjmp .L2
+  21:alg.c         ****                 LS1_lo();
+  62               		.stabn	68,0,21,.LM5-.LFBB1
+  63               	.LM5:
+  64 0044 5A98      		cbi 0xb,2
+  22:alg.c         ****                 LS2_lo();
+  65               		.stabn	68,0,22,.LM6-.LFBB1
+  66               	.LM6:
+  67 0046 5B98      		cbi 0xb,3
+  23:alg.c         ****                 LS3_lo();
+  68               		.stabn	68,0,23,.LM7-.LFBB1
+  69               	.LM7:
+  70 0048 1798      		cbi 0x2,7
+  24:alg.c         **** 
+  25:alg.c         **** 				LC1_red();
+  71               		.stabn	68,0,25,.LM8-.LFBB1
+  72               	.LM8:
+  73 004a 0E94 0000 		call LC1_red
+  26:alg.c         **** 				LC2_red();
+  74               		.stabn	68,0,26,.LM9-.LFBB1
+  75               	.LM9:
+  76 004e 0E94 0000 		call LC2_red
+  27:alg.c         **** 				LC3_red();
+  77               		.stabn	68,0,27,.LM10-.LFBB1
+  78               	.LM10:
+  79 0052 0E94 0000 		call LC3_red
+  28:alg.c         **** 
+  29:alg.c         **** 				LS1_red();
+  80               		.stabn	68,0,29,.LM11-.LFBB1
+  81               	.LM11:
+  82 0056 0E94 0000 		call LS1_red
+  30:alg.c         **** 				LS2_red();
+  83               		.stabn	68,0,30,.LM12-.LFBB1
+  84               	.LM12:
+GAS LISTING /tmp/ccMmGyz8.s 			page 3
 
 
-  23:alg.c         ****             else{
-  24:alg.c         ****                 CBAT_lo();
-  25:alg.c         ****                 DBAT_hi();
-  26:alg.c         ****             }
-  27:alg.c         **** 
-  28:alg.c         ****             if(MainsReq >= 10){
-  93               		.stabn	68,0,28,.LM6-.LFBB1
-  94               	.LM6:
-  95 007c 20E0      		ldi r18,0
-  96 007e 30E0      		ldi r19,0
-  97 0080 40E2      		ldi r20,lo8(32)
-  98 0082 51E4      		ldi r21,lo8(65)
-  99 0084 6091 0000 		lds r22,MainsReq
- 100 0088 7091 0000 		lds r23,MainsReq+1
- 101 008c 8091 0000 		lds r24,MainsReq+2
- 102 0090 9091 0000 		lds r25,MainsReq+3
- 103 0094 0E94 0000 		call __gesf2
- 104 0098 87FD      		sbrc r24,7
- 105 009a 00C0      		rjmp .L5
-  29:alg.c         ****                 MainsReq = 10;
- 106               		.stabn	68,0,29,.LM7-.LFBB1
- 107               	.LM7:
- 108 009c 80E0      		ldi r24,0
- 109 009e 90E0      		ldi r25,0
- 110 00a0 A0E2      		ldi r26,lo8(32)
- 111 00a2 B1E4      		ldi r27,lo8(65)
- 112 00a4 8093 0000 		sts MainsReq,r24
- 113 00a8 9093 0000 		sts MainsReq+1,r25
- 114 00ac A093 0000 		sts MainsReq+2,r26
- 115 00b0 B093 0000 		sts MainsReq+3,r27
- 116               	.L5:
-  30:alg.c         ****             }
-  31:alg.c         **** 
-  32:alg.c         ****             if(~LC1 && ~LC2 && ~LC3){
- 117               		.stabn	68,0,32,.LM8-.LFBB1
- 118               	.LM8:
- 119 00b4 0099      		sbic 0,0
- 120 00b6 00C0      		rjmp .L7
- 121               		.stabn	68,0,32,.LM9-.LFBB1
- 122               	.LM9:
- 123 00b8 0199      		sbic 0,1
- 124 00ba 00C0      		rjmp .L7
- 125               		.stabn	68,0,32,.LM10-.LFBB1
- 126               	.LM10:
- 127 00bc 0299      		sbic 0,2
- 128 00be 00C0      		rjmp .L7
-  33:alg.c         ****                 LS1_lo();
- 129               		.stabn	68,0,33,.LM11-.LFBB1
- 130               	.LM11:
- 131 00c0 5A98      		cbi 0xb,2
-  34:alg.c         ****                 LS2_lo();
- 132               		.stabn	68,0,34,.LM12-.LFBB1
- 133               	.LM12:
- 134 00c2 5B98      		cbi 0xb,3
-  35:alg.c         ****                 LS3_lo();
- 135               		.stabn	68,0,35,.LM13-.LFBB1
- 136               	.LM13:
-GAS LISTING /tmp/ccYUyj0V.s 			page 4
+  85 005a 0E94 0000 		call LS2_red
+  31:alg.c         **** 				LS3_red();
+  86               		.stabn	68,0,31,.LM13-.LFBB1
+  87               	.LM13:
+  88 005e 0E94 0000 		call LS3_red
+  89               	.L2:
+  32:alg.c         **** 
+  33:alg.c         ****             }
+  34:alg.c         **** 
+  35:alg.c         ****             if(LC1 && ~LC2 && ~LC3){
+  90               		.stabn	68,0,35,.LM14-.LFBB1
+  91               	.LM14:
+  92 0062 009B      		sbis 0,0
+  93 0064 00C0      		rjmp .L3
+  94               		.stabn	68,0,35,.LM15-.LFBB1
+  95               	.LM15:
+  96 0066 0199      		sbic 0,1
+  97 0068 00C0      		rjmp .L3
+  98               		.stabn	68,0,35,.LM16-.LFBB1
+  99               	.LM16:
+ 100 006a 0299      		sbic 0,2
+ 101 006c 00C0      		rjmp .L3
+  36:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
+ 102               		.stabn	68,0,36,.LM17-.LFBB1
+ 103               	.LM17:
+ 104 006e 20E0      		ldi r18,0
+ 105 0070 30E0      		ldi r19,0
+ 106 0072 40E0      		ldi r20,0
+ 107 0074 50E4      		ldi r21,lo8(64)
+ 108 0076 6091 0000 		lds r22,PV
+ 109 007a 7091 0000 		lds r23,PV+1
+ 110 007e 8091 0000 		lds r24,PV+2
+ 111 0082 9091 0000 		lds r25,PV+3
+ 112 0086 0E94 0000 		call __addsf3
+ 113               		.stabn	68,0,36,.LM18-.LFBB1
+ 114               	.LM18:
+ 115 008a 2091 0000 		lds r18,Wind
+ 116 008e 3091 0000 		lds r19,Wind+1
+ 117 0092 4091 0000 		lds r20,Wind+2
+ 118 0096 5091 0000 		lds r21,Wind+3
+ 119 009a 6983      		std Y+1,r22
+ 120 009c 7A83      		std Y+2,r23
+ 121 009e 8B83      		std Y+3,r24
+ 122 00a0 9C83      		std Y+4,r25
+ 123 00a2 6981      		ldd r22,Y+1
+ 124 00a4 7A81      		ldd r23,Y+2
+ 125 00a6 8B81      		ldd r24,Y+3
+ 126 00a8 9C81      		ldd r25,Y+4
+ 127 00aa 0E94 0000 		call __addsf3
+ 128               		.stabn	68,0,36,.LM19-.LFBB1
+ 129               	.LM19:
+ 130 00ae 2AE9      		ldi r18,lo8(-102)
+ 131 00b0 39E9      		ldi r19,lo8(-103)
+ 132 00b2 49E9      		ldi r20,lo8(-103)
+ 133 00b4 5FE3      		ldi r21,lo8(63)
+ 134 00b6 6983      		std Y+1,r22
+ 135 00b8 7A83      		std Y+2,r23
+GAS LISTING /tmp/ccMmGyz8.s 			page 4
 
 
- 137 00c4 1798      		cbi 0x2,7
- 138               	.L7:
-  36:alg.c         **** 
-  37:alg.c         ****             }
-  38:alg.c         **** 
-  39:alg.c         ****             if(LC1 && ~LC2 && ~LC3){
- 139               		.stabn	68,0,39,.LM14-.LFBB1
- 140               	.LM14:
- 141 00c6 009B      		sbis 0,0
- 142 00c8 00C0      		rjmp .L8
- 143               		.stabn	68,0,39,.LM15-.LFBB1
- 144               	.LM15:
- 145 00ca 0199      		sbic 0,1
- 146 00cc 00C0      		rjmp .L8
- 147               		.stabn	68,0,39,.LM16-.LFBB1
- 148               	.LM16:
- 149 00ce 0299      		sbic 0,2
- 150 00d0 00C0      		rjmp .L8
-  40:alg.c         ****                 //we will take the busI in the next if loop BusIdiff. If BusI < Bus
-  41:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
- 151               		.stabn	68,0,41,.LM17-.LFBB1
- 152               	.LM17:
- 153 00d2 20E0      		ldi r18,0
- 154 00d4 30E0      		ldi r19,0
- 155 00d6 40E0      		ldi r20,0
- 156 00d8 50E4      		ldi r21,lo8(64)
- 157 00da 6091 0000 		lds r22,PV
- 158 00de 7091 0000 		lds r23,PV+1
- 159 00e2 8091 0000 		lds r24,PV+2
- 160 00e6 9091 0000 		lds r25,PV+3
- 161 00ea 0E94 0000 		call __addsf3
- 162               		.stabn	68,0,41,.LM18-.LFBB1
- 163               	.LM18:
- 164 00ee 2091 0000 		lds r18,Wind
- 165 00f2 3091 0000 		lds r19,Wind+1
- 166 00f6 4091 0000 		lds r20,Wind+2
- 167 00fa 5091 0000 		lds r21,Wind+3
- 168 00fe 6983      		std Y+1,r22
- 169 0100 7A83      		std Y+2,r23
- 170 0102 8B83      		std Y+3,r24
- 171 0104 9C83      		std Y+4,r25
- 172 0106 6981      		ldd r22,Y+1
- 173 0108 7A81      		ldd r23,Y+2
- 174 010a 8B81      		ldd r24,Y+3
- 175 010c 9C81      		ldd r25,Y+4
- 176 010e 0E94 0000 		call __addsf3
- 177               		.stabn	68,0,41,.LM19-.LFBB1
- 178               	.LM19:
- 179 0112 2AE9      		ldi r18,lo8(-102)
- 180 0114 39E9      		ldi r19,lo8(-103)
- 181 0116 49E9      		ldi r20,lo8(-103)
- 182 0118 5FE3      		ldi r21,lo8(63)
- 183 011a 6983      		std Y+1,r22
- 184 011c 7A83      		std Y+2,r23
- 185 011e 8B83      		std Y+3,r24
- 186 0120 9C83      		std Y+4,r25
- 187 0122 6981      		ldd r22,Y+1
-GAS LISTING /tmp/ccYUyj0V.s 			page 5
-
-
- 188 0124 7A81      		ldd r23,Y+2
- 189 0126 8B81      		ldd r24,Y+3
- 190 0128 9C81      		ldd r25,Y+4
- 191 012a 0E94 0000 		call __gtsf2
- 192 012e 1816      		cp __zero_reg__,r24
- 193 0130 04F4      		brge .L9
-  42:alg.c         ****                     LS1_hi();
- 194               		.stabn	68,0,42,.LM20-.LFBB1
- 195               	.LM20:
- 196 0132 5A9A      		sbi 0xb,2
- 197               	.L9:
-  43:alg.c         ****                 }
-  44:alg.c         ****             }
-  45:alg.c         ****             else LS1_lo();
+ 136 00ba 8B83      		std Y+3,r24
+ 137 00bc 9C83      		std Y+4,r25
+ 138 00be 6981      		ldd r22,Y+1
+ 139 00c0 7A81      		ldd r23,Y+2
+ 140 00c2 8B81      		ldd r24,Y+3
+ 141 00c4 9C81      		ldd r25,Y+4
+ 142 00c6 0E94 0000 		call __gtsf2
+ 143 00ca 1816      		cp __zero_reg__,r24
+ 144 00cc 04F0      		brlt .+2
+ 145 00ce 00C0      		rjmp .L87
+  37:alg.c         ****                     LS1_hi();
+ 146               		.stabn	68,0,37,.LM20-.LFBB1
+ 147               	.LM20:
+ 148 00d0 5A9A      		sbi 0xb,2
+  38:alg.c         **** 					LC1_green();
+ 149               		.stabn	68,0,38,.LM21-.LFBB1
+ 150               	.LM21:
+ 151 00d2 0E94 0000 		call LC1_green
+  39:alg.c         **** 					LC2_red();
+ 152               		.stabn	68,0,39,.LM22-.LFBB1
+ 153               	.LM22:
+ 154 00d6 0E94 0000 		call LC2_red
+  40:alg.c         **** 					LC3_red();
+ 155               		.stabn	68,0,40,.LM23-.LFBB1
+ 156               	.LM23:
+ 157 00da 0E94 0000 		call LC3_red
+  41:alg.c         **** 
+  42:alg.c         **** 					LS1_green();
+ 158               		.stabn	68,0,42,.LM24-.LFBB1
+ 159               	.LM24:
+ 160 00de 0E94 0000 		call LS1_green
+ 161               	.L99:
+  43:alg.c         **** 					LS2_red();
+  44:alg.c         **** 					LS3_red();
+  45:alg.c         ****                 }
   46:alg.c         **** 
-  47:alg.c         ****             if(~LC1 && LC2 && ~LC3 ){
- 198               		.stabn	68,0,47,.LM21-.LFBB1
- 199               	.LM21:
- 200 0134 0099      		sbic 0,0
- 201 0136 00C0      		rjmp .L11
- 202               		.stabn	68,0,47,.LM22-.LFBB1
- 203               	.LM22:
- 204 0138 019B      		sbis 0,1
- 205 013a 00C0      		rjmp .L11
- 206               		.stabn	68,0,47,.LM23-.LFBB1
- 207               	.LM23:
- 208 013c 0299      		sbic 0,2
- 209 013e 00C0      		rjmp .L11
-  48:alg.c         ****                 if(Load2 < MainsMAX + PV + Wind){
- 210               		.stabn	68,0,48,.LM24-.LFBB1
- 211               	.LM24:
- 212 0140 20E0      		ldi r18,0
- 213 0142 30E0      		ldi r19,0
- 214 0144 40E0      		ldi r20,0
- 215 0146 50E4      		ldi r21,lo8(64)
- 216 0148 6091 0000 		lds r22,PV
- 217 014c 7091 0000 		lds r23,PV+1
- 218 0150 8091 0000 		lds r24,PV+2
- 219 0154 9091 0000 		lds r25,PV+3
- 220 0158 0E94 0000 		call __addsf3
- 221               		.stabn	68,0,48,.LM25-.LFBB1
- 222               	.LM25:
- 223 015c 2091 0000 		lds r18,Wind
- 224 0160 3091 0000 		lds r19,Wind+1
- 225 0164 4091 0000 		lds r20,Wind+2
- 226 0168 5091 0000 		lds r21,Wind+3
- 227 016c 6983      		std Y+1,r22
- 228 016e 7A83      		std Y+2,r23
- 229 0170 8B83      		std Y+3,r24
- 230 0172 9C83      		std Y+4,r25
- 231 0174 6981      		ldd r22,Y+1
- 232 0176 7A81      		ldd r23,Y+2
- 233 0178 8B81      		ldd r24,Y+3
- 234 017a 9C81      		ldd r25,Y+4
- 235 017c 0E94 0000 		call __addsf3
- 236               		.stabn	68,0,48,.LM26-.LFBB1
- 237               	.LM26:
-GAS LISTING /tmp/ccYUyj0V.s 			page 6
-
-
- 238 0180 20E0      		ldi r18,0
- 239 0182 30E0      		ldi r19,0
- 240 0184 40E0      		ldi r20,0
- 241 0186 50E4      		ldi r21,lo8(64)
- 242 0188 6983      		std Y+1,r22
- 243 018a 7A83      		std Y+2,r23
- 244 018c 8B83      		std Y+3,r24
- 245 018e 9C83      		std Y+4,r25
- 246 0190 6981      		ldd r22,Y+1
- 247 0192 7A81      		ldd r23,Y+2
- 248 0194 8B81      		ldd r24,Y+3
- 249 0196 9C81      		ldd r25,Y+4
- 250 0198 0E94 0000 		call __gtsf2
- 251 019c 1816      		cp __zero_reg__,r24
- 252 019e 04F0      		brlt .+2
- 253 01a0 00C0      		rjmp .L95
-  49:alg.c         ****                     LS2_hi();
- 254               		.stabn	68,0,49,.LM27-.LFBB1
- 255               	.LM27:
- 256 01a2 5B9A      		sbi 0xb,3
- 257               	.L11:
-  50:alg.c         ****                 }
-  51:alg.c         ****                 else LS2_lo();
-  52:alg.c         ****             }
+  47:alg.c         ****             else {
+  48:alg.c         **** 				LS1_lo();
+  49:alg.c         **** 
+  50:alg.c         **** 				LC1_green();
+  51:alg.c         **** 				LC2_red();
+  52:alg.c         **** 				LC3_red();
   53:alg.c         **** 
-  54:alg.c         ****             if( LC1 && LC2 && ~LC3){
- 258               		.stabn	68,0,54,.LM28-.LFBB1
- 259               	.LM28:
- 260 01a4 009B      		sbis 0,0
- 261 01a6 00C0      		rjmp .L14
- 262               		.stabn	68,0,54,.LM29-.LFBB1
- 263               	.LM29:
- 264 01a8 019B      		sbis 0,1
- 265 01aa 00C0      		rjmp .L14
- 266               		.stabn	68,0,54,.LM30-.LFBB1
- 267               	.LM30:
- 268 01ac 0299      		sbic 0,2
- 269 01ae 00C0      		rjmp .L14
-  55:alg.c         ****                 if(Load1 + Load2 < MainsMAX + PV + Wind){
- 270               		.stabn	68,0,55,.LM31-.LFBB1
- 271               	.LM31:
- 272 01b0 20E0      		ldi r18,0
- 273 01b2 30E0      		ldi r19,0
- 274 01b4 40E0      		ldi r20,0
- 275 01b6 50E4      		ldi r21,lo8(64)
- 276 01b8 6091 0000 		lds r22,PV
- 277 01bc 7091 0000 		lds r23,PV+1
- 278 01c0 8091 0000 		lds r24,PV+2
- 279 01c4 9091 0000 		lds r25,PV+3
- 280 01c8 0E94 0000 		call __addsf3
- 281               		.stabn	68,0,55,.LM32-.LFBB1
- 282               	.LM32:
- 283 01cc 2091 0000 		lds r18,Wind
- 284 01d0 3091 0000 		lds r19,Wind+1
- 285 01d4 4091 0000 		lds r20,Wind+2
- 286 01d8 5091 0000 		lds r21,Wind+3
- 287 01dc 6983      		std Y+1,r22
-GAS LISTING /tmp/ccYUyj0V.s 			page 7
+  54:alg.c         **** 				LS1_red();
+  55:alg.c         **** 				LS2_red();
+ 162               		.stabn	68,0,55,.LM25-.LFBB1
+ 163               	.LM25:
+ 164 00e2 0E94 0000 		call LS2_red
+  56:alg.c         **** 				LS3_red();
+ 165               		.stabn	68,0,56,.LM26-.LFBB1
+ 166               	.LM26:
+ 167 00e6 0E94 0000 		call LS3_red
+ 168               	.L3:
+  57:alg.c         **** 			}
+  58:alg.c         **** 			}
+  59:alg.c         **** 
+  60:alg.c         ****             if(~LC1 && LC2 && ~LC3 ){
+GAS LISTING /tmp/ccMmGyz8.s 			page 5
 
 
- 288 01de 7A83      		std Y+2,r23
- 289 01e0 8B83      		std Y+3,r24
- 290 01e2 9C83      		std Y+4,r25
- 291 01e4 6981      		ldd r22,Y+1
- 292 01e6 7A81      		ldd r23,Y+2
- 293 01e8 8B81      		ldd r24,Y+3
- 294 01ea 9C81      		ldd r25,Y+4
- 295 01ec 0E94 0000 		call __addsf3
- 296               		.stabn	68,0,55,.LM33-.LFBB1
- 297               	.LM33:
- 298 01f0 2DEC      		ldi r18,lo8(-51)
- 299 01f2 3CEC      		ldi r19,lo8(-52)
- 300 01f4 4CE4      		ldi r20,lo8(76)
- 301 01f6 50E4      		ldi r21,lo8(64)
- 302 01f8 6983      		std Y+1,r22
- 303 01fa 7A83      		std Y+2,r23
- 304 01fc 8B83      		std Y+3,r24
- 305 01fe 9C83      		std Y+4,r25
- 306 0200 6981      		ldd r22,Y+1
- 307 0202 7A81      		ldd r23,Y+2
- 308 0204 8B81      		ldd r24,Y+3
- 309 0206 9C81      		ldd r25,Y+4
- 310 0208 0E94 0000 		call __gtsf2
- 311 020c 1816      		cp __zero_reg__,r24
- 312 020e 04F0      		brlt .+2
- 313 0210 00C0      		rjmp .L96
-  56:alg.c         ****                     LS2_hi();
- 314               		.stabn	68,0,56,.LM34-.LFBB1
- 315               	.LM34:
- 316 0212 5B9A      		sbi 0xb,3
- 317               	.L17:
-  57:alg.c         ****                 }
-  58:alg.c         ****                 else LS2_lo();
-  59:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
- 318               		.stabn	68,0,59,.LM35-.LFBB1
- 319               	.LM35:
- 320 0214 20E0      		ldi r18,0
- 321 0216 30E0      		ldi r19,0
- 322 0218 40E0      		ldi r20,0
- 323 021a 50E4      		ldi r21,lo8(64)
- 324 021c 6091 0000 		lds r22,PV
- 325 0220 7091 0000 		lds r23,PV+1
- 326 0224 8091 0000 		lds r24,PV+2
- 327 0228 9091 0000 		lds r25,PV+3
- 328 022c 0E94 0000 		call __addsf3
- 329               		.stabn	68,0,59,.LM36-.LFBB1
- 330               	.LM36:
- 331 0230 2091 0000 		lds r18,Wind
- 332 0234 3091 0000 		lds r19,Wind+1
- 333 0238 4091 0000 		lds r20,Wind+2
- 334 023c 5091 0000 		lds r21,Wind+3
- 335 0240 6983      		std Y+1,r22
- 336 0242 7A83      		std Y+2,r23
- 337 0244 8B83      		std Y+3,r24
- 338 0246 9C83      		std Y+4,r25
- 339 0248 6981      		ldd r22,Y+1
- 340 024a 7A81      		ldd r23,Y+2
-GAS LISTING /tmp/ccYUyj0V.s 			page 8
+ 169               		.stabn	68,0,60,.LM27-.LFBB1
+ 170               	.LM27:
+ 171 00ea 0099      		sbic 0,0
+ 172 00ec 00C0      		rjmp .L6
+ 173               		.stabn	68,0,60,.LM28-.LFBB1
+ 174               	.LM28:
+ 175 00ee 019B      		sbis 0,1
+ 176 00f0 00C0      		rjmp .L6
+ 177               		.stabn	68,0,60,.LM29-.LFBB1
+ 178               	.LM29:
+ 179 00f2 0299      		sbic 0,2
+ 180 00f4 00C0      		rjmp .L6
+  61:alg.c         ****                 if(Load2 < MainsMAX + PV + Wind){
+ 181               		.stabn	68,0,61,.LM30-.LFBB1
+ 182               	.LM30:
+ 183 00f6 20E0      		ldi r18,0
+ 184 00f8 30E0      		ldi r19,0
+ 185 00fa 40E0      		ldi r20,0
+ 186 00fc 50E4      		ldi r21,lo8(64)
+ 187 00fe 6091 0000 		lds r22,PV
+ 188 0102 7091 0000 		lds r23,PV+1
+ 189 0106 8091 0000 		lds r24,PV+2
+ 190 010a 9091 0000 		lds r25,PV+3
+ 191 010e 0E94 0000 		call __addsf3
+ 192               		.stabn	68,0,61,.LM31-.LFBB1
+ 193               	.LM31:
+ 194 0112 2091 0000 		lds r18,Wind
+ 195 0116 3091 0000 		lds r19,Wind+1
+ 196 011a 4091 0000 		lds r20,Wind+2
+ 197 011e 5091 0000 		lds r21,Wind+3
+ 198 0122 6983      		std Y+1,r22
+ 199 0124 7A83      		std Y+2,r23
+ 200 0126 8B83      		std Y+3,r24
+ 201 0128 9C83      		std Y+4,r25
+ 202 012a 6981      		ldd r22,Y+1
+ 203 012c 7A81      		ldd r23,Y+2
+ 204 012e 8B81      		ldd r24,Y+3
+ 205 0130 9C81      		ldd r25,Y+4
+ 206 0132 0E94 0000 		call __addsf3
+ 207               		.stabn	68,0,61,.LM32-.LFBB1
+ 208               	.LM32:
+ 209 0136 20E0      		ldi r18,0
+ 210 0138 30E0      		ldi r19,0
+ 211 013a 40E0      		ldi r20,0
+ 212 013c 50E4      		ldi r21,lo8(64)
+ 213 013e 6983      		std Y+1,r22
+ 214 0140 7A83      		std Y+2,r23
+ 215 0142 8B83      		std Y+3,r24
+ 216 0144 9C83      		std Y+4,r25
+ 217 0146 6981      		ldd r22,Y+1
+ 218 0148 7A81      		ldd r23,Y+2
+ 219 014a 8B81      		ldd r24,Y+3
+ 220 014c 9C81      		ldd r25,Y+4
+ 221 014e 0E94 0000 		call __gtsf2
+ 222 0152 1816      		cp __zero_reg__,r24
+ 223 0154 04F0      		brlt .+2
+ 224 0156 00C0      		rjmp .L88
+GAS LISTING /tmp/ccMmGyz8.s 			page 6
 
 
- 341 024c 8B81      		ldd r24,Y+3
- 342 024e 9C81      		ldd r25,Y+4
- 343 0250 0E94 0000 		call __addsf3
- 344               		.stabn	68,0,59,.LM37-.LFBB1
- 345               	.LM37:
- 346 0254 2AE9      		ldi r18,lo8(-102)
- 347 0256 39E9      		ldi r19,lo8(-103)
- 348 0258 49E9      		ldi r20,lo8(-103)
- 349 025a 5FE3      		ldi r21,lo8(63)
- 350 025c 6983      		std Y+1,r22
- 351 025e 7A83      		std Y+2,r23
- 352 0260 8B83      		std Y+3,r24
- 353 0262 9C83      		std Y+4,r25
- 354 0264 6981      		ldd r22,Y+1
- 355 0266 7A81      		ldd r23,Y+2
- 356 0268 8B81      		ldd r24,Y+3
- 357 026a 9C81      		ldd r25,Y+4
- 358 026c 0E94 0000 		call __gtsf2
- 359 0270 1816      		cp __zero_reg__,r24
- 360 0272 04F0      		brlt .+2
- 361 0274 00C0      		rjmp .L97
-  60:alg.c         ****                     LS1_hi();
- 362               		.stabn	68,0,60,.LM38-.LFBB1
- 363               	.LM38:
- 364 0276 5A9A      		sbi 0xb,2
- 365               	.L14:
-  61:alg.c         ****                 }
-  62:alg.c         ****                 else LS1_lo();
-  63:alg.c         ****             }
-  64:alg.c         **** 
-  65:alg.c         ****             if(~LC1 && ~LC2 && LC3){
- 366               		.stabn	68,0,65,.LM39-.LFBB1
- 367               	.LM39:
- 368 0278 0099      		sbic 0,0
- 369 027a 00C0      		rjmp .L20
- 370               		.stabn	68,0,65,.LM40-.LFBB1
- 371               	.LM40:
- 372 027c 0199      		sbic 0,1
- 373 027e 00C0      		rjmp .L20
- 374               		.stabn	68,0,65,.LM41-.LFBB1
- 375               	.LM41:
- 376 0280 029B      		sbis 0,2
- 377 0282 00C0      		rjmp .L20
-  66:alg.c         ****                 if(Load3 < MainsMAX + PV + Wind){
- 378               		.stabn	68,0,66,.LM42-.LFBB1
- 379               	.LM42:
- 380 0284 20E0      		ldi r18,0
- 381 0286 30E0      		ldi r19,0
- 382 0288 40E0      		ldi r20,0
- 383 028a 50E4      		ldi r21,lo8(64)
- 384 028c 6091 0000 		lds r22,PV
- 385 0290 7091 0000 		lds r23,PV+1
- 386 0294 8091 0000 		lds r24,PV+2
- 387 0298 9091 0000 		lds r25,PV+3
- 388 029c 0E94 0000 		call __addsf3
- 389               		.stabn	68,0,66,.LM43-.LFBB1
- 390               	.LM43:
-GAS LISTING /tmp/ccYUyj0V.s 			page 9
-
-
- 391 02a0 2091 0000 		lds r18,Wind
- 392 02a4 3091 0000 		lds r19,Wind+1
- 393 02a8 4091 0000 		lds r20,Wind+2
- 394 02ac 5091 0000 		lds r21,Wind+3
- 395 02b0 6983      		std Y+1,r22
- 396 02b2 7A83      		std Y+2,r23
- 397 02b4 8B83      		std Y+3,r24
- 398 02b6 9C83      		std Y+4,r25
- 399 02b8 6981      		ldd r22,Y+1
- 400 02ba 7A81      		ldd r23,Y+2
- 401 02bc 8B81      		ldd r24,Y+3
- 402 02be 9C81      		ldd r25,Y+4
- 403 02c0 0E94 0000 		call __addsf3
- 404               		.stabn	68,0,66,.LM44-.LFBB1
- 405               	.LM44:
- 406 02c4 2DEC      		ldi r18,lo8(-51)
- 407 02c6 3CEC      		ldi r19,lo8(-52)
- 408 02c8 4CE4      		ldi r20,lo8(76)
- 409 02ca 5FE3      		ldi r21,lo8(63)
- 410 02cc 6983      		std Y+1,r22
- 411 02ce 7A83      		std Y+2,r23
- 412 02d0 8B83      		std Y+3,r24
- 413 02d2 9C83      		std Y+4,r25
- 414 02d4 6981      		ldd r22,Y+1
- 415 02d6 7A81      		ldd r23,Y+2
- 416 02d8 8B81      		ldd r24,Y+3
- 417 02da 9C81      		ldd r25,Y+4
- 418 02dc 0E94 0000 		call __gtsf2
- 419 02e0 1816      		cp __zero_reg__,r24
- 420 02e2 04F0      		brlt .+2
- 421 02e4 00C0      		rjmp .L98
-  67:alg.c         ****                     LS3_hi();
- 422               		.stabn	68,0,67,.LM45-.LFBB1
- 423               	.LM45:
- 424 02e6 179A      		sbi 0x2,7
- 425               	.L20:
-  68:alg.c         ****                 }
-  69:alg.c         ****                 else LS3_lo();
-  70:alg.c         ****             }
-  71:alg.c         **** 
-  72:alg.c         ****             if(LC1 && ~LC2 && LC3){
- 426               		.stabn	68,0,72,.LM46-.LFBB1
- 427               	.LM46:
- 428 02e8 009B      		sbis 0,0
- 429 02ea 00C0      		rjmp .L23
- 430               		.stabn	68,0,72,.LM47-.LFBB1
- 431               	.LM47:
- 432 02ec 0199      		sbic 0,1
- 433 02ee 00C0      		rjmp .L23
- 434               		.stabn	68,0,72,.LM48-.LFBB1
- 435               	.LM48:
- 436 02f0 029B      		sbis 0,2
- 437 02f2 00C0      		rjmp .L23
-  73:alg.c         ****                 if(Load3 + Load1  < MainsMAX + PV + Wind){
- 438               		.stabn	68,0,73,.LM49-.LFBB1
- 439               	.LM49:
- 440 02f4 20E0      		ldi r18,0
-GAS LISTING /tmp/ccYUyj0V.s 			page 10
-
-
- 441 02f6 30E0      		ldi r19,0
- 442 02f8 40E0      		ldi r20,0
- 443 02fa 50E4      		ldi r21,lo8(64)
- 444 02fc 6091 0000 		lds r22,PV
- 445 0300 7091 0000 		lds r23,PV+1
- 446 0304 8091 0000 		lds r24,PV+2
- 447 0308 9091 0000 		lds r25,PV+3
- 448 030c 0E94 0000 		call __addsf3
- 449               		.stabn	68,0,73,.LM50-.LFBB1
- 450               	.LM50:
- 451 0310 2091 0000 		lds r18,Wind
- 452 0314 3091 0000 		lds r19,Wind+1
- 453 0318 4091 0000 		lds r20,Wind+2
- 454 031c 5091 0000 		lds r21,Wind+3
- 455 0320 6983      		std Y+1,r22
- 456 0322 7A83      		std Y+2,r23
- 457 0324 8B83      		std Y+3,r24
- 458 0326 9C83      		std Y+4,r25
- 459 0328 6981      		ldd r22,Y+1
- 460 032a 7A81      		ldd r23,Y+2
- 461 032c 8B81      		ldd r24,Y+3
- 462 032e 9C81      		ldd r25,Y+4
- 463 0330 0E94 0000 		call __addsf3
- 464               		.stabn	68,0,73,.LM51-.LFBB1
- 465               	.LM51:
- 466 0334 20E0      		ldi r18,0
- 467 0336 30E0      		ldi r19,0
- 468 0338 40E0      		ldi r20,0
- 469 033a 50E4      		ldi r21,lo8(64)
- 470 033c 6983      		std Y+1,r22
- 471 033e 7A83      		std Y+2,r23
- 472 0340 8B83      		std Y+3,r24
- 473 0342 9C83      		std Y+4,r25
- 474 0344 6981      		ldd r22,Y+1
- 475 0346 7A81      		ldd r23,Y+2
- 476 0348 8B81      		ldd r24,Y+3
- 477 034a 9C81      		ldd r25,Y+4
- 478 034c 0E94 0000 		call __gtsf2
- 479 0350 1816      		cp __zero_reg__,r24
- 480 0352 04F0      		brlt .+2
- 481 0354 00C0      		rjmp .L99
-  74:alg.c         ****                     LS3_hi();
- 482               		.stabn	68,0,74,.LM52-.LFBB1
- 483               	.LM52:
- 484 0356 179A      		sbi 0x2,7
- 485               	.L26:
-  75:alg.c         ****                 }
-  76:alg.c         ****                 else LS3_lo();
-  77:alg.c         **** 
-  78:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
- 486               		.stabn	68,0,78,.LM53-.LFBB1
- 487               	.LM53:
- 488 0358 20E0      		ldi r18,0
- 489 035a 30E0      		ldi r19,0
- 490 035c 40E0      		ldi r20,0
- 491 035e 50E4      		ldi r21,lo8(64)
- 492 0360 6091 0000 		lds r22,PV
-GAS LISTING /tmp/ccYUyj0V.s 			page 11
-
-
- 493 0364 7091 0000 		lds r23,PV+1
- 494 0368 8091 0000 		lds r24,PV+2
- 495 036c 9091 0000 		lds r25,PV+3
- 496 0370 0E94 0000 		call __addsf3
- 497               		.stabn	68,0,78,.LM54-.LFBB1
- 498               	.LM54:
- 499 0374 2091 0000 		lds r18,Wind
- 500 0378 3091 0000 		lds r19,Wind+1
- 501 037c 4091 0000 		lds r20,Wind+2
- 502 0380 5091 0000 		lds r21,Wind+3
- 503 0384 6983      		std Y+1,r22
- 504 0386 7A83      		std Y+2,r23
- 505 0388 8B83      		std Y+3,r24
- 506 038a 9C83      		std Y+4,r25
- 507 038c 6981      		ldd r22,Y+1
- 508 038e 7A81      		ldd r23,Y+2
- 509 0390 8B81      		ldd r24,Y+3
- 510 0392 9C81      		ldd r25,Y+4
- 511 0394 0E94 0000 		call __addsf3
- 512               		.stabn	68,0,78,.LM55-.LFBB1
- 513               	.LM55:
- 514 0398 2AE9      		ldi r18,lo8(-102)
- 515 039a 39E9      		ldi r19,lo8(-103)
- 516 039c 49E9      		ldi r20,lo8(-103)
- 517 039e 5FE3      		ldi r21,lo8(63)
- 518 03a0 6983      		std Y+1,r22
- 519 03a2 7A83      		std Y+2,r23
- 520 03a4 8B83      		std Y+3,r24
- 521 03a6 9C83      		std Y+4,r25
- 522 03a8 6981      		ldd r22,Y+1
- 523 03aa 7A81      		ldd r23,Y+2
- 524 03ac 8B81      		ldd r24,Y+3
- 525 03ae 9C81      		ldd r25,Y+4
- 526 03b0 0E94 0000 		call __gtsf2
- 527 03b4 1816      		cp __zero_reg__,r24
- 528 03b6 04F0      		brlt .+2
- 529 03b8 00C0      		rjmp .L100
-  79:alg.c         ****                     LS1_hi();
- 530               		.stabn	68,0,79,.LM56-.LFBB1
- 531               	.LM56:
- 532 03ba 5A9A      		sbi 0xb,2
- 533               	.L23:
-  80:alg.c         ****                 }
-  81:alg.c         ****                 else LS1_lo();
-  82:alg.c         ****             }
+  62:alg.c         ****                     LS2_hi();
+ 225               		.stabn	68,0,62,.LM33-.LFBB1
+ 226               	.LM33:
+ 227 0158 5B9A      		sbi 0xb,3
+  63:alg.c         **** 
+  64:alg.c         **** 					LC1_red();
+ 228               		.stabn	68,0,64,.LM34-.LFBB1
+ 229               	.LM34:
+ 230 015a 0E94 0000 		call LC1_red
+  65:alg.c         **** 					LC2_green();
+ 231               		.stabn	68,0,65,.LM35-.LFBB1
+ 232               	.LM35:
+ 233 015e 0E94 0000 		call LC2_green
+  66:alg.c         **** 					LC3_red();
+ 234               		.stabn	68,0,66,.LM36-.LFBB1
+ 235               	.LM36:
+ 236 0162 0E94 0000 		call LC3_red
+  67:alg.c         **** 
+  68:alg.c         **** 					LS1_red();
+ 237               		.stabn	68,0,68,.LM37-.LFBB1
+ 238               	.LM37:
+ 239 0166 0E94 0000 		call LS1_red
+  69:alg.c         **** 					LS2_green();
+ 240               		.stabn	68,0,69,.LM38-.LFBB1
+ 241               	.LM38:
+ 242 016a 0E94 0000 		call LS2_green
+ 243               	.L100:
+  70:alg.c         **** 					LS3_red();
+  71:alg.c         ****                 }
+  72:alg.c         ****                 else{
+  73:alg.c         **** 					LS2_lo();
+  74:alg.c         **** 
+  75:alg.c         **** 					LC1_red();
+  76:alg.c         **** 					LC2_green();
+  77:alg.c         **** 					LC3_red();
+  78:alg.c         **** 
+  79:alg.c         **** 					LS1_red();
+  80:alg.c         **** 					LS2_red();
+  81:alg.c         **** 					LS3_red();
+ 244               		.stabn	68,0,81,.LM39-.LFBB1
+ 245               	.LM39:
+ 246 016e 0E94 0000 		call LS3_red
+ 247               	.L6:
+  82:alg.c         **** 
   83:alg.c         **** 
-  84:alg.c         ****             if(~LC1 && LC2 && LC3  ){
- 534               		.stabn	68,0,84,.LM57-.LFBB1
- 535               	.LM57:
- 536 03bc 0099      		sbic 0,0
- 537 03be 00C0      		rjmp .L29
- 538               		.stabn	68,0,84,.LM58-.LFBB1
- 539               	.LM58:
- 540 03c0 019B      		sbis 0,1
- 541 03c2 00C0      		rjmp .L29
- 542               		.stabn	68,0,84,.LM59-.LFBB1
- 543               	.LM59:
-GAS LISTING /tmp/ccYUyj0V.s 			page 12
+  84:alg.c         **** 				}
+  85:alg.c         ****             }
+  86:alg.c         **** 
+  87:alg.c         ****             if( LC1 && LC2 && ~LC3){
+ 248               		.stabn	68,0,87,.LM40-.LFBB1
+ 249               	.LM40:
+ 250 0172 009B      		sbis 0,0
+ 251 0174 00C0      		rjmp .L9
+ 252               		.stabn	68,0,87,.LM41-.LFBB1
+ 253               	.LM41:
+ 254 0176 019B      		sbis 0,1
+ 255 0178 00C0      		rjmp .L9
+GAS LISTING /tmp/ccMmGyz8.s 			page 7
 
 
- 544 03c4 029B      		sbis 0,2
- 545 03c6 00C0      		rjmp .L29
-  85:alg.c         ****                 if(Load2 + Load3 < MainsMAX + PV + Wind){
- 546               		.stabn	68,0,85,.LM60-.LFBB1
- 547               	.LM60:
- 548 03c8 20E0      		ldi r18,0
- 549 03ca 30E0      		ldi r19,0
- 550 03cc 40E0      		ldi r20,0
- 551 03ce 50E4      		ldi r21,lo8(64)
- 552 03d0 6091 0000 		lds r22,PV
- 553 03d4 7091 0000 		lds r23,PV+1
- 554 03d8 8091 0000 		lds r24,PV+2
- 555 03dc 9091 0000 		lds r25,PV+3
- 556 03e0 0E94 0000 		call __addsf3
- 557               		.stabn	68,0,85,.LM61-.LFBB1
- 558               	.LM61:
- 559 03e4 2091 0000 		lds r18,Wind
- 560 03e8 3091 0000 		lds r19,Wind+1
- 561 03ec 4091 0000 		lds r20,Wind+2
- 562 03f0 5091 0000 		lds r21,Wind+3
- 563 03f4 6983      		std Y+1,r22
- 564 03f6 7A83      		std Y+2,r23
- 565 03f8 8B83      		std Y+3,r24
- 566 03fa 9C83      		std Y+4,r25
- 567 03fc 6981      		ldd r22,Y+1
- 568 03fe 7A81      		ldd r23,Y+2
- 569 0400 8B81      		ldd r24,Y+3
- 570 0402 9C81      		ldd r25,Y+4
- 571 0404 0E94 0000 		call __addsf3
- 572               		.stabn	68,0,85,.LM62-.LFBB1
- 573               	.LM62:
- 574 0408 23E3      		ldi r18,lo8(51)
- 575 040a 33E3      		ldi r19,lo8(51)
- 576 040c 43E3      		ldi r20,lo8(51)
- 577 040e 50E4      		ldi r21,lo8(64)
- 578 0410 6983      		std Y+1,r22
- 579 0412 7A83      		std Y+2,r23
- 580 0414 8B83      		std Y+3,r24
- 581 0416 9C83      		std Y+4,r25
- 582 0418 6981      		ldd r22,Y+1
- 583 041a 7A81      		ldd r23,Y+2
- 584 041c 8B81      		ldd r24,Y+3
- 585 041e 9C81      		ldd r25,Y+4
- 586 0420 0E94 0000 		call __gtsf2
- 587 0424 1816      		cp __zero_reg__,r24
- 588 0426 04F0      		brlt .+2
- 589 0428 00C0      		rjmp .L101
-  86:alg.c         ****                     LS3_hi();
- 590               		.stabn	68,0,86,.LM63-.LFBB1
- 591               	.LM63:
- 592 042a 179A      		sbi 0x2,7
- 593               	.L32:
-  87:alg.c         ****                 }
-  88:alg.c         ****                 else LS3_lo();
-  89:alg.c         **** 
-  90:alg.c         ****                 if(Load2 < MainsMAX + PV + Wind){
- 594               		.stabn	68,0,90,.LM64-.LFBB1
-GAS LISTING /tmp/ccYUyj0V.s 			page 13
+ 256               		.stabn	68,0,87,.LM42-.LFBB1
+ 257               	.LM42:
+ 258 017a 0299      		sbic 0,2
+ 259 017c 00C0      		rjmp .L9
+  88:alg.c         ****                 if(Load1 + Load2 < MainsMAX + PV + Wind){
+ 260               		.stabn	68,0,88,.LM43-.LFBB1
+ 261               	.LM43:
+ 262 017e 20E0      		ldi r18,0
+ 263 0180 30E0      		ldi r19,0
+ 264 0182 40E0      		ldi r20,0
+ 265 0184 50E4      		ldi r21,lo8(64)
+ 266 0186 6091 0000 		lds r22,PV
+ 267 018a 7091 0000 		lds r23,PV+1
+ 268 018e 8091 0000 		lds r24,PV+2
+ 269 0192 9091 0000 		lds r25,PV+3
+ 270 0196 0E94 0000 		call __addsf3
+ 271               		.stabn	68,0,88,.LM44-.LFBB1
+ 272               	.LM44:
+ 273 019a 2091 0000 		lds r18,Wind
+ 274 019e 3091 0000 		lds r19,Wind+1
+ 275 01a2 4091 0000 		lds r20,Wind+2
+ 276 01a6 5091 0000 		lds r21,Wind+3
+ 277 01aa 6983      		std Y+1,r22
+ 278 01ac 7A83      		std Y+2,r23
+ 279 01ae 8B83      		std Y+3,r24
+ 280 01b0 9C83      		std Y+4,r25
+ 281 01b2 6981      		ldd r22,Y+1
+ 282 01b4 7A81      		ldd r23,Y+2
+ 283 01b6 8B81      		ldd r24,Y+3
+ 284 01b8 9C81      		ldd r25,Y+4
+ 285 01ba 0E94 0000 		call __addsf3
+ 286               		.stabn	68,0,88,.LM45-.LFBB1
+ 287               	.LM45:
+ 288 01be 2DEC      		ldi r18,lo8(-51)
+ 289 01c0 3CEC      		ldi r19,lo8(-52)
+ 290 01c2 4CE4      		ldi r20,lo8(76)
+ 291 01c4 50E4      		ldi r21,lo8(64)
+ 292 01c6 6983      		std Y+1,r22
+ 293 01c8 7A83      		std Y+2,r23
+ 294 01ca 8B83      		std Y+3,r24
+ 295 01cc 9C83      		std Y+4,r25
+ 296 01ce 6981      		ldd r22,Y+1
+ 297 01d0 7A81      		ldd r23,Y+2
+ 298 01d2 8B81      		ldd r24,Y+3
+ 299 01d4 9C81      		ldd r25,Y+4
+ 300 01d6 0E94 0000 		call __gtsf2
+ 301 01da 1816      		cp __zero_reg__,r24
+ 302 01dc 04F0      		brlt .+2
+ 303 01de 00C0      		rjmp .L89
+  89:alg.c         ****                     LS2_hi();
+ 304               		.stabn	68,0,89,.LM46-.LFBB1
+ 305               	.LM46:
+ 306 01e0 5B9A      		sbi 0xb,3
+  90:alg.c         **** 
+  91:alg.c         **** 					LC1_green();
+ 307               		.stabn	68,0,91,.LM47-.LFBB1
+ 308               	.LM47:
+GAS LISTING /tmp/ccMmGyz8.s 			page 8
 
 
- 595               	.LM64:
- 596 042c 20E0      		ldi r18,0
- 597 042e 30E0      		ldi r19,0
- 598 0430 40E0      		ldi r20,0
- 599 0432 50E4      		ldi r21,lo8(64)
- 600 0434 6091 0000 		lds r22,PV
- 601 0438 7091 0000 		lds r23,PV+1
- 602 043c 8091 0000 		lds r24,PV+2
- 603 0440 9091 0000 		lds r25,PV+3
- 604 0444 0E94 0000 		call __addsf3
- 605               		.stabn	68,0,90,.LM65-.LFBB1
- 606               	.LM65:
- 607 0448 2091 0000 		lds r18,Wind
- 608 044c 3091 0000 		lds r19,Wind+1
- 609 0450 4091 0000 		lds r20,Wind+2
- 610 0454 5091 0000 		lds r21,Wind+3
- 611 0458 6983      		std Y+1,r22
- 612 045a 7A83      		std Y+2,r23
- 613 045c 8B83      		std Y+3,r24
- 614 045e 9C83      		std Y+4,r25
- 615 0460 6981      		ldd r22,Y+1
- 616 0462 7A81      		ldd r23,Y+2
- 617 0464 8B81      		ldd r24,Y+3
- 618 0466 9C81      		ldd r25,Y+4
- 619 0468 0E94 0000 		call __addsf3
- 620               		.stabn	68,0,90,.LM66-.LFBB1
- 621               	.LM66:
- 622 046c 20E0      		ldi r18,0
- 623 046e 30E0      		ldi r19,0
- 624 0470 40E0      		ldi r20,0
- 625 0472 50E4      		ldi r21,lo8(64)
- 626 0474 6983      		std Y+1,r22
- 627 0476 7A83      		std Y+2,r23
- 628 0478 8B83      		std Y+3,r24
- 629 047a 9C83      		std Y+4,r25
- 630 047c 6981      		ldd r22,Y+1
- 631 047e 7A81      		ldd r23,Y+2
- 632 0480 8B81      		ldd r24,Y+3
- 633 0482 9C81      		ldd r25,Y+4
- 634 0484 0E94 0000 		call __gtsf2
- 635 0488 1816      		cp __zero_reg__,r24
- 636 048a 04F0      		brlt .+2
- 637 048c 00C0      		rjmp .L102
-  91:alg.c         ****                     LS2_hi();
- 638               		.stabn	68,0,91,.LM67-.LFBB1
- 639               	.LM67:
- 640 048e 5B9A      		sbi 0xb,3
- 641               	.L29:
-  92:alg.c         ****                 }
-  93:alg.c         ****                 else LS2_lo();
-  94:alg.c         ****             }
-  95:alg.c         **** 
-  96:alg.c         ****             if(LC1 && LC2 && LC3 ){
- 642               		.stabn	68,0,96,.LM68-.LFBB1
- 643               	.LM68:
- 644 0490 009B      		sbis 0,0
- 645 0492 00C0      		rjmp .L1
-GAS LISTING /tmp/ccYUyj0V.s 			page 14
-
-
- 646               		.stabn	68,0,96,.LM69-.LFBB1
- 647               	.LM69:
- 648 0494 019B      		sbis 0,1
- 649 0496 00C0      		rjmp .L1
- 650               		.stabn	68,0,96,.LM70-.LFBB1
- 651               	.LM70:
- 652 0498 029B      		sbis 0,2
- 653 049a 00C0      		rjmp .L1
-  97:alg.c         ****                 if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind){
- 654               		.stabn	68,0,97,.LM71-.LFBB1
- 655               	.LM71:
- 656 049c 20E0      		ldi r18,0
- 657 049e 30E0      		ldi r19,0
- 658 04a0 40E0      		ldi r20,0
- 659 04a2 50E4      		ldi r21,lo8(64)
- 660 04a4 6091 0000 		lds r22,PV
- 661 04a8 7091 0000 		lds r23,PV+1
- 662 04ac 8091 0000 		lds r24,PV+2
- 663 04b0 9091 0000 		lds r25,PV+3
- 664 04b4 0E94 0000 		call __addsf3
- 665               		.stabn	68,0,97,.LM72-.LFBB1
- 666               	.LM72:
- 667 04b8 2091 0000 		lds r18,Wind
- 668 04bc 3091 0000 		lds r19,Wind+1
- 669 04c0 4091 0000 		lds r20,Wind+2
- 670 04c4 5091 0000 		lds r21,Wind+3
- 671 04c8 6983      		std Y+1,r22
- 672 04ca 7A83      		std Y+2,r23
- 673 04cc 8B83      		std Y+3,r24
- 674 04ce 9C83      		std Y+4,r25
- 675 04d0 6981      		ldd r22,Y+1
- 676 04d2 7A81      		ldd r23,Y+2
- 677 04d4 8B81      		ldd r24,Y+3
- 678 04d6 9C81      		ldd r25,Y+4
- 679 04d8 0E94 0000 		call __addsf3
- 680               		.stabn	68,0,97,.LM73-.LFBB1
- 681               	.LM73:
- 682 04dc 20E0      		ldi r18,0
- 683 04de 30E0      		ldi r19,0
- 684 04e0 40E8      		ldi r20,lo8(-128)
- 685 04e2 50E4      		ldi r21,lo8(64)
- 686 04e4 6983      		std Y+1,r22
- 687 04e6 7A83      		std Y+2,r23
- 688 04e8 8B83      		std Y+3,r24
- 689 04ea 9C83      		std Y+4,r25
- 690 04ec 6981      		ldd r22,Y+1
- 691 04ee 7A81      		ldd r23,Y+2
- 692 04f0 8B81      		ldd r24,Y+3
- 693 04f2 9C81      		ldd r25,Y+4
- 694 04f4 0E94 0000 		call __gtsf2
- 695 04f8 1816      		cp __zero_reg__,r24
- 696 04fa 04F0      		brlt .+2
- 697 04fc 00C0      		rjmp .L103
-  98:alg.c         ****                     LS3_hi();
- 698               		.stabn	68,0,98,.LM74-.LFBB1
- 699               	.LM74:
- 700 04fe 179A      		sbi 0x2,7
-GAS LISTING /tmp/ccYUyj0V.s 			page 15
-
-
- 701               	.L38:
-  99:alg.c         ****                 }
- 100:alg.c         ****                 else LS3_lo();
+ 309 01e2 0E94 0000 		call LC1_green
+  92:alg.c         **** 					LC2_green();
+ 310               		.stabn	68,0,92,.LM48-.LFBB1
+ 311               	.LM48:
+ 312 01e6 0E94 0000 		call LC2_green
+  93:alg.c         **** 					LC3_red();
+ 313               		.stabn	68,0,93,.LM49-.LFBB1
+ 314               	.LM49:
+ 315 01ea 0E94 0000 		call LC3_red
+  94:alg.c         **** 
+  95:alg.c         **** 					LS1_green();
+ 316               		.stabn	68,0,95,.LM50-.LFBB1
+ 317               	.LM50:
+ 318 01ee 0E94 0000 		call LS1_green
+  96:alg.c         **** 					LS2_green();
+ 319               		.stabn	68,0,96,.LM51-.LFBB1
+ 320               	.LM51:
+ 321 01f2 0E94 0000 		call LS2_green
+ 322               	.L101:
+  97:alg.c         **** 					LS3_red();
+  98:alg.c         ****                 }
+  99:alg.c         ****                 else{
+ 100:alg.c         **** 					LS2_lo();
  101:alg.c         **** 
- 102:alg.c         ****                 if(Load2 + Load1 < MainsMAX + PV + Wind){
- 702               		.stabn	68,0,102,.LM75-.LFBB1
- 703               	.LM75:
- 704 0500 20E0      		ldi r18,0
- 705 0502 30E0      		ldi r19,0
- 706 0504 40E0      		ldi r20,0
- 707 0506 50E4      		ldi r21,lo8(64)
- 708 0508 6091 0000 		lds r22,PV
- 709 050c 7091 0000 		lds r23,PV+1
- 710 0510 8091 0000 		lds r24,PV+2
- 711 0514 9091 0000 		lds r25,PV+3
- 712 0518 0E94 0000 		call __addsf3
- 713               		.stabn	68,0,102,.LM76-.LFBB1
- 714               	.LM76:
- 715 051c 2091 0000 		lds r18,Wind
- 716 0520 3091 0000 		lds r19,Wind+1
- 717 0524 4091 0000 		lds r20,Wind+2
- 718 0528 5091 0000 		lds r21,Wind+3
- 719 052c 6983      		std Y+1,r22
- 720 052e 7A83      		std Y+2,r23
- 721 0530 8B83      		std Y+3,r24
- 722 0532 9C83      		std Y+4,r25
- 723 0534 6981      		ldd r22,Y+1
- 724 0536 7A81      		ldd r23,Y+2
- 725 0538 8B81      		ldd r24,Y+3
- 726 053a 9C81      		ldd r25,Y+4
- 727 053c 0E94 0000 		call __addsf3
- 728               		.stabn	68,0,102,.LM77-.LFBB1
- 729               	.LM77:
- 730 0540 2DEC      		ldi r18,lo8(-51)
- 731 0542 3CEC      		ldi r19,lo8(-52)
- 732 0544 4CE4      		ldi r20,lo8(76)
- 733 0546 50E4      		ldi r21,lo8(64)
- 734 0548 6983      		std Y+1,r22
- 735 054a 7A83      		std Y+2,r23
- 736 054c 8B83      		std Y+3,r24
- 737 054e 9C83      		std Y+4,r25
- 738 0550 6981      		ldd r22,Y+1
- 739 0552 7A81      		ldd r23,Y+2
- 740 0554 8B81      		ldd r24,Y+3
- 741 0556 9C81      		ldd r25,Y+4
- 742 0558 0E94 0000 		call __gtsf2
- 743 055c 1816      		cp __zero_reg__,r24
- 744 055e 04F0      		brlt .+2
- 745 0560 00C0      		rjmp .L104
- 103:alg.c         ****                     LS2_hi();
- 746               		.stabn	68,0,103,.LM78-.LFBB1
- 747               	.LM78:
- 748 0562 5B9A      		sbi 0xb,3
- 749               	.L41:
- 104:alg.c         ****                 }
- 105:alg.c         ****                 else LS2_lo();
- 106:alg.c         **** 
-GAS LISTING /tmp/ccYUyj0V.s 			page 16
-
-
- 107:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
- 750               		.stabn	68,0,107,.LM79-.LFBB1
- 751               	.LM79:
- 752 0564 20E0      		ldi r18,0
- 753 0566 30E0      		ldi r19,0
- 754 0568 40E0      		ldi r20,0
- 755 056a 50E4      		ldi r21,lo8(64)
- 756 056c 6091 0000 		lds r22,PV
- 757 0570 7091 0000 		lds r23,PV+1
- 758 0574 8091 0000 		lds r24,PV+2
- 759 0578 9091 0000 		lds r25,PV+3
- 760 057c 0E94 0000 		call __addsf3
- 761               		.stabn	68,0,107,.LM80-.LFBB1
- 762               	.LM80:
- 763 0580 2091 0000 		lds r18,Wind
- 764 0584 3091 0000 		lds r19,Wind+1
- 765 0588 4091 0000 		lds r20,Wind+2
- 766 058c 5091 0000 		lds r21,Wind+3
- 767 0590 6983      		std Y+1,r22
- 768 0592 7A83      		std Y+2,r23
- 769 0594 8B83      		std Y+3,r24
- 770 0596 9C83      		std Y+4,r25
- 771 0598 6981      		ldd r22,Y+1
- 772 059a 7A81      		ldd r23,Y+2
- 773 059c 8B81      		ldd r24,Y+3
- 774 059e 9C81      		ldd r25,Y+4
- 775 05a0 0E94 0000 		call __addsf3
- 776               		.stabn	68,0,107,.LM81-.LFBB1
- 777               	.LM81:
- 778 05a4 2AE9      		ldi r18,lo8(-102)
- 779 05a6 39E9      		ldi r19,lo8(-103)
- 780 05a8 49E9      		ldi r20,lo8(-103)
- 781 05aa 5FE3      		ldi r21,lo8(63)
- 782 05ac 6983      		std Y+1,r22
- 783 05ae 7A83      		std Y+2,r23
- 784 05b0 8B83      		std Y+3,r24
- 785 05b2 9C83      		std Y+4,r25
- 786 05b4 6981      		ldd r22,Y+1
- 787 05b6 7A81      		ldd r23,Y+2
- 788 05b8 8B81      		ldd r24,Y+3
- 789 05ba 9C81      		ldd r25,Y+4
- 790 05bc 0E94 0000 		call __gtsf2
- 791 05c0 1816      		cp __zero_reg__,r24
- 792 05c2 04F4      		brge .L105
- 108:alg.c         ****                     LS1_hi();
- 793               		.stabn	68,0,108,.LM82-.LFBB1
- 794               	.LM82:
- 795 05c4 5A9A      		sbi 0xb,2
- 796               	.L1:
- 797               	/* epilogue start */
- 109:alg.c         ****                 }
- 110:alg.c         ****                 else LS1_lo();
- 111:alg.c         ****             }
- 112:alg.c         **** }
- 798               		.stabn	68,0,112,.LM83-.LFBB1
- 799               	.LM83:
- 800 05c6 0F90      		pop __tmp_reg__
-GAS LISTING /tmp/ccYUyj0V.s 			page 17
-
-
- 801 05c8 0F90      		pop __tmp_reg__
- 802 05ca 0F90      		pop __tmp_reg__
- 803 05cc 0F90      		pop __tmp_reg__
- 804 05ce DF91      		pop r29
- 805 05d0 CF91      		pop r28
- 806 05d2 0895      		ret
- 807               	.L94:
-  24:alg.c         ****                 DBAT_hi();
- 808               		.stabn	68,0,24,.LM84-.LFBB1
- 809               	.LM84:
- 810 05d4 5898      		cbi 0xb,0
-  25:alg.c         ****             }
- 811               		.stabn	68,0,25,.LM85-.LFBB1
- 812               	.LM85:
- 813 05d6 599A      		sbi 0xb,1
- 814 05d8 00C0      		rjmp .L4
- 815               	.L8:
-  45:alg.c         **** 
- 816               		.stabn	68,0,45,.LM86-.LFBB1
- 817               	.LM86:
- 818 05da 5A98      		cbi 0xb,2
- 819 05dc 00C0      		rjmp .L9
- 820               	.L95:
-  51:alg.c         ****             }
- 821               		.stabn	68,0,51,.LM87-.LFBB1
- 822               	.LM87:
- 823 05de 5B98      		cbi 0xb,3
- 824 05e0 00C0      		rjmp .L11
- 825               	.L96:
-  58:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
- 826               		.stabn	68,0,58,.LM88-.LFBB1
- 827               	.LM88:
- 828 05e2 5B98      		cbi 0xb,3
- 829 05e4 00C0      		rjmp .L17
- 830               	.L97:
-  62:alg.c         ****             }
- 831               		.stabn	68,0,62,.LM89-.LFBB1
- 832               	.LM89:
- 833 05e6 5A98      		cbi 0xb,2
- 834 05e8 00C0      		rjmp .L14
- 835               	.L98:
-  69:alg.c         ****             }
- 836               		.stabn	68,0,69,.LM90-.LFBB1
- 837               	.LM90:
- 838 05ea 1798      		cbi 0x2,7
- 839 05ec 00C0      		rjmp .L20
- 840               	.L99:
-  76:alg.c         **** 
- 841               		.stabn	68,0,76,.LM91-.LFBB1
- 842               	.LM91:
- 843 05ee 1798      		cbi 0x2,7
- 844 05f0 00C0      		rjmp .L26
- 845               	.L100:
-  81:alg.c         ****             }
- 846               		.stabn	68,0,81,.LM92-.LFBB1
- 847               	.LM92:
- 848 05f2 5A98      		cbi 0xb,2
-GAS LISTING /tmp/ccYUyj0V.s 			page 18
-
-
- 849 05f4 00C0      		rjmp .L23
- 850               	.L101:
-  88:alg.c         **** 
- 851               		.stabn	68,0,88,.LM93-.LFBB1
- 852               	.LM93:
- 853 05f6 1798      		cbi 0x2,7
- 854 05f8 00C0      		rjmp .L32
- 855               	.L102:
-  93:alg.c         ****             }
- 856               		.stabn	68,0,93,.LM94-.LFBB1
- 857               	.LM94:
- 858 05fa 5B98      		cbi 0xb,3
- 859 05fc 00C0      		rjmp .L29
- 860               	.L103:
- 100:alg.c         **** 
- 861               		.stabn	68,0,100,.LM95-.LFBB1
- 862               	.LM95:
- 863 05fe 1798      		cbi 0x2,7
- 864 0600 00C0      		rjmp .L38
- 865               	.L104:
+ 102:alg.c         **** 					LC1_green();
+ 103:alg.c         **** 					LC2_green();
+ 104:alg.c         **** 					LC3_red();
  105:alg.c         **** 
- 866               		.stabn	68,0,105,.LM96-.LFBB1
- 867               	.LM96:
- 868 0602 5B98      		cbi 0xb,3
- 869 0604 00C0      		rjmp .L41
- 870               	.L105:
- 110:alg.c         ****             }
- 871               		.stabn	68,0,110,.LM97-.LFBB1
- 872               	.LM97:
- 873 0606 5A98      		cbi 0xb,2
- 874               		.stabn	68,0,112,.LM98-.LFBB1
- 875               	.LM98:
- 876 0608 00C0      		rjmp .L1
- 877               		.size	algorithm, .-algorithm
- 878               	.Lscope1:
- 879               		.stabs	"",36,0,0,.Lscope1-.LFBB1
- 880               	.global	MainsReq
- 881               		.section .bss
- 882               		.type	MainsReq, @object
- 883               		.size	MainsReq, 4
- 884               	MainsReq:
- 885 0000 0000 0000 		.zero	4
- 886               		.stabs	"MainsReq:G(0,4)=r(0,0);4;0;",32,0,15,0
- 887               		.stabs	"float:t(0,4)",128,0,0,0
- 888               	.global	BusI
- 889               		.type	BusI, @object
- 890               		.size	BusI, 4
- 891               	BusI:
- 892 0004 0000 0000 		.zero	4
- 893               		.stabs	"BusI:G(0,4)",32,0,15,0
- 894               	.global	Wind
- 895               		.type	Wind, @object
- 896               		.size	Wind, 4
- 897               	Wind:
- 898 0008 0000 0000 		.zero	4
- 899               		.stabs	"Wind:G(0,4)",32,0,15,0
- 900               	.global	PV
-GAS LISTING /tmp/ccYUyj0V.s 			page 19
+ 106:alg.c         **** 					LS1_green();
+ 107:alg.c         **** 					LS2_red();
+ 108:alg.c         **** 					LS3_red();
+ 323               		.stabn	68,0,108,.LM52-.LFBB1
+ 324               	.LM52:
+ 325 01f6 0E94 0000 		call LS3_red
+ 109:alg.c         **** 
+ 110:alg.c         **** 
+ 111:alg.c         **** 				}
+ 112:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
+ 326               		.stabn	68,0,112,.LM53-.LFBB1
+ 327               	.LM53:
+ 328 01fa 20E0      		ldi r18,0
+ 329 01fc 30E0      		ldi r19,0
+ 330 01fe 40E0      		ldi r20,0
+ 331 0200 50E4      		ldi r21,lo8(64)
+ 332 0202 6091 0000 		lds r22,PV
+ 333 0206 7091 0000 		lds r23,PV+1
+ 334 020a 8091 0000 		lds r24,PV+2
+ 335 020e 9091 0000 		lds r25,PV+3
+ 336 0212 0E94 0000 		call __addsf3
+ 337               		.stabn	68,0,112,.LM54-.LFBB1
+ 338               	.LM54:
+ 339 0216 2091 0000 		lds r18,Wind
+ 340 021a 3091 0000 		lds r19,Wind+1
+ 341 021e 4091 0000 		lds r20,Wind+2
+ 342 0222 5091 0000 		lds r21,Wind+3
+ 343 0226 6983      		std Y+1,r22
+ 344 0228 7A83      		std Y+2,r23
+GAS LISTING /tmp/ccMmGyz8.s 			page 9
 
 
- 901               		.type	PV, @object
- 902               		.size	PV, 4
- 903               	PV:
- 904 000c 0000 0000 		.zero	4
- 905               		.stabs	"PV:G(0,4)",32,0,15,0
- 906               	.global	Load3
- 907               		.section	.rodata
- 908               		.type	Load3, @object
- 909               		.size	Load3, 4
- 910               	Load3:
- 911 0000 CD        		.byte	-51
- 912 0001 CC        		.byte	-52
- 913 0002 4C        		.byte	76
- 914 0003 3F        		.byte	63
- 915               		.stabs	"Load3:G(0,5)=k(0,4)",32,0,11,0
- 916               	.global	Load2
- 917               		.type	Load2, @object
- 918               		.size	Load2, 4
- 919               	Load2:
- 920 0004 00        		.byte	0
- 921 0005 00        		.byte	0
- 922 0006 00        		.byte	0
- 923 0007 40        		.byte	64
- 924               		.stabs	"Load2:G(0,5)",32,0,10,0
- 925               	.global	Load1
- 926               		.type	Load1, @object
- 927               		.size	Load1, 4
- 928               	Load1:
- 929 0008 9A        		.byte	-102
- 930 0009 99        		.byte	-103
- 931 000a 99        		.byte	-103
- 932 000b 3F        		.byte	63
- 933               		.stabs	"Load1:G(0,5)",32,0,9,0
- 934               	.global	BatteryChargeI
- 935               		.type	BatteryChargeI, @object
- 936               		.size	BatteryChargeI, 1
- 937               	BatteryChargeI:
- 938 000c 01        		.byte	1
- 939               		.stabs	"BatteryChargeI:G(0,6)=k(0,2)",32,0,8,0
- 940               	.global	MainsMAX
- 941               		.type	MainsMAX, @object
- 942               		.size	MainsMAX, 1
- 943               	MainsMAX:
- 944 000d 02        		.byte	2
- 945               		.stabs	"MainsMAX:G(0,6)",32,0,7,0
- 946               		.text
- 947               		.stabs	"",100,0,0,.Letext0
- 948               	.Letext0:
- 949               		.ident	"GCC: (GNU) 11.2.0"
- 950               	.global __do_copy_data
- 951               	.global __do_clear_bss
-GAS LISTING /tmp/ccYUyj0V.s 			page 20
+ 345 022a 8B83      		std Y+3,r24
+ 346 022c 9C83      		std Y+4,r25
+ 347 022e 6981      		ldd r22,Y+1
+ 348 0230 7A81      		ldd r23,Y+2
+ 349 0232 8B81      		ldd r24,Y+3
+ 350 0234 9C81      		ldd r25,Y+4
+ 351 0236 0E94 0000 		call __addsf3
+ 352               		.stabn	68,0,112,.LM55-.LFBB1
+ 353               	.LM55:
+ 354 023a 2AE9      		ldi r18,lo8(-102)
+ 355 023c 39E9      		ldi r19,lo8(-103)
+ 356 023e 49E9      		ldi r20,lo8(-103)
+ 357 0240 5FE3      		ldi r21,lo8(63)
+ 358 0242 6983      		std Y+1,r22
+ 359 0244 7A83      		std Y+2,r23
+ 360 0246 8B83      		std Y+3,r24
+ 361 0248 9C83      		std Y+4,r25
+ 362 024a 6981      		ldd r22,Y+1
+ 363 024c 7A81      		ldd r23,Y+2
+ 364 024e 8B81      		ldd r24,Y+3
+ 365 0250 9C81      		ldd r25,Y+4
+ 366 0252 0E94 0000 		call __gtsf2
+ 367 0256 1816      		cp __zero_reg__,r24
+ 368 0258 04F0      		brlt .+2
+ 369 025a 00C0      		rjmp .L90
+ 113:alg.c         ****                     LS1_hi();
+ 370               		.stabn	68,0,113,.LM56-.LFBB1
+ 371               	.LM56:
+ 372 025c 5A9A      		sbi 0xb,2
+ 114:alg.c         **** 
+ 115:alg.c         **** 					LC1_green();
+ 373               		.stabn	68,0,115,.LM57-.LFBB1
+ 374               	.LM57:
+ 375 025e 0E94 0000 		call LC1_green
+ 116:alg.c         **** 					LS1_green();
+ 376               		.stabn	68,0,116,.LM58-.LFBB1
+ 377               	.LM58:
+ 378 0262 0E94 0000 		call LS1_green
+ 379               	.L9:
+ 117:alg.c         ****                 }
+ 118:alg.c         ****                 else {
+ 119:alg.c         **** 					LS1_lo();
+ 120:alg.c         **** 
+ 121:alg.c         **** 					LS1_red();
+ 122:alg.c         **** 				}
+ 123:alg.c         ****             }
+ 124:alg.c         **** 
+ 125:alg.c         ****             if(~LC1 && ~LC2 && LC3){
+ 380               		.stabn	68,0,125,.LM59-.LFBB1
+ 381               	.LM59:
+ 382 0266 0099      		sbic 0,0
+ 383 0268 00C0      		rjmp .L15
+ 384               		.stabn	68,0,125,.LM60-.LFBB1
+ 385               	.LM60:
+ 386 026a 0199      		sbic 0,1
+ 387 026c 00C0      		rjmp .L15
+ 388               		.stabn	68,0,125,.LM61-.LFBB1
+GAS LISTING /tmp/ccMmGyz8.s 			page 10
+
+
+ 389               	.LM61:
+ 390 026e 029B      		sbis 0,2
+ 391 0270 00C0      		rjmp .L15
+ 126:alg.c         ****                 if(Load3 < MainsMAX + PV + Wind){
+ 392               		.stabn	68,0,126,.LM62-.LFBB1
+ 393               	.LM62:
+ 394 0272 20E0      		ldi r18,0
+ 395 0274 30E0      		ldi r19,0
+ 396 0276 40E0      		ldi r20,0
+ 397 0278 50E4      		ldi r21,lo8(64)
+ 398 027a 6091 0000 		lds r22,PV
+ 399 027e 7091 0000 		lds r23,PV+1
+ 400 0282 8091 0000 		lds r24,PV+2
+ 401 0286 9091 0000 		lds r25,PV+3
+ 402 028a 0E94 0000 		call __addsf3
+ 403               		.stabn	68,0,126,.LM63-.LFBB1
+ 404               	.LM63:
+ 405 028e 2091 0000 		lds r18,Wind
+ 406 0292 3091 0000 		lds r19,Wind+1
+ 407 0296 4091 0000 		lds r20,Wind+2
+ 408 029a 5091 0000 		lds r21,Wind+3
+ 409 029e 6983      		std Y+1,r22
+ 410 02a0 7A83      		std Y+2,r23
+ 411 02a2 8B83      		std Y+3,r24
+ 412 02a4 9C83      		std Y+4,r25
+ 413 02a6 6981      		ldd r22,Y+1
+ 414 02a8 7A81      		ldd r23,Y+2
+ 415 02aa 8B81      		ldd r24,Y+3
+ 416 02ac 9C81      		ldd r25,Y+4
+ 417 02ae 0E94 0000 		call __addsf3
+ 418               		.stabn	68,0,126,.LM64-.LFBB1
+ 419               	.LM64:
+ 420 02b2 2DEC      		ldi r18,lo8(-51)
+ 421 02b4 3CEC      		ldi r19,lo8(-52)
+ 422 02b6 4CE4      		ldi r20,lo8(76)
+ 423 02b8 5FE3      		ldi r21,lo8(63)
+ 424 02ba 6983      		std Y+1,r22
+ 425 02bc 7A83      		std Y+2,r23
+ 426 02be 8B83      		std Y+3,r24
+ 427 02c0 9C83      		std Y+4,r25
+ 428 02c2 6981      		ldd r22,Y+1
+ 429 02c4 7A81      		ldd r23,Y+2
+ 430 02c6 8B81      		ldd r24,Y+3
+ 431 02c8 9C81      		ldd r25,Y+4
+ 432 02ca 0E94 0000 		call __gtsf2
+ 433 02ce 1816      		cp __zero_reg__,r24
+ 434 02d0 04F0      		brlt .+2
+ 435 02d2 00C0      		rjmp .L91
+ 127:alg.c         ****                     LS3_hi();
+ 436               		.stabn	68,0,127,.LM65-.LFBB1
+ 437               	.LM65:
+ 438 02d4 179A      		sbi 0x2,7
+ 128:alg.c         **** 
+ 129:alg.c         **** 					LC1_red();
+ 439               		.stabn	68,0,129,.LM66-.LFBB1
+ 440               	.LM66:
+ 441 02d6 0E94 0000 		call LC1_red
+GAS LISTING /tmp/ccMmGyz8.s 			page 11
+
+
+ 130:alg.c         **** 					LC2_red();
+ 442               		.stabn	68,0,130,.LM67-.LFBB1
+ 443               	.LM67:
+ 444 02da 0E94 0000 		call LC2_red
+ 131:alg.c         **** 					LC3_green();
+ 445               		.stabn	68,0,131,.LM68-.LFBB1
+ 446               	.LM68:
+ 447 02de 0E94 0000 		call LC3_green
+ 132:alg.c         **** 
+ 133:alg.c         **** 					LS1_red();
+ 448               		.stabn	68,0,133,.LM69-.LFBB1
+ 449               	.LM69:
+ 450 02e2 0E94 0000 		call LS1_red
+ 134:alg.c         **** 					LS2_red();
+ 451               		.stabn	68,0,134,.LM70-.LFBB1
+ 452               	.LM70:
+ 453 02e6 0E94 0000 		call LS2_red
+ 135:alg.c         **** 					LS3_green();
+ 454               		.stabn	68,0,135,.LM71-.LFBB1
+ 455               	.LM71:
+ 456 02ea 0E94 0000 		call LS3_green
+ 457               	.L15:
+ 136:alg.c         ****                 }
+ 137:alg.c         ****                 else{
+ 138:alg.c         **** 					LS3_lo();
+ 139:alg.c         **** 
+ 140:alg.c         **** 					LC1_red();
+ 141:alg.c         **** 					LC2_red();
+ 142:alg.c         **** 					LC3_green();
+ 143:alg.c         **** 
+ 144:alg.c         **** 					LS1_red();
+ 145:alg.c         **** 					LS2_red();
+ 146:alg.c         **** 					LS3_red();
+ 147:alg.c         **** 
+ 148:alg.c         **** 
+ 149:alg.c         **** 				}
+ 150:alg.c         **** 
+ 151:alg.c         ****             }
+ 152:alg.c         **** 
+ 153:alg.c         ****             if(LC1 && ~LC2 && LC3){
+ 458               		.stabn	68,0,153,.LM72-.LFBB1
+ 459               	.LM72:
+ 460 02ee 009B      		sbis 0,0
+ 461 02f0 00C0      		rjmp .L18
+ 462               		.stabn	68,0,153,.LM73-.LFBB1
+ 463               	.LM73:
+ 464 02f2 0199      		sbic 0,1
+ 465 02f4 00C0      		rjmp .L18
+ 466               		.stabn	68,0,153,.LM74-.LFBB1
+ 467               	.LM74:
+ 468 02f6 029B      		sbis 0,2
+ 469 02f8 00C0      		rjmp .L18
+ 154:alg.c         ****                 if(Load3 + Load1  < MainsMAX + PV + Wind){
+ 470               		.stabn	68,0,154,.LM75-.LFBB1
+ 471               	.LM75:
+ 472 02fa 20E0      		ldi r18,0
+ 473 02fc 30E0      		ldi r19,0
+GAS LISTING /tmp/ccMmGyz8.s 			page 12
+
+
+ 474 02fe 40E0      		ldi r20,0
+ 475 0300 50E4      		ldi r21,lo8(64)
+ 476 0302 6091 0000 		lds r22,PV
+ 477 0306 7091 0000 		lds r23,PV+1
+ 478 030a 8091 0000 		lds r24,PV+2
+ 479 030e 9091 0000 		lds r25,PV+3
+ 480 0312 0E94 0000 		call __addsf3
+ 481               		.stabn	68,0,154,.LM76-.LFBB1
+ 482               	.LM76:
+ 483 0316 2091 0000 		lds r18,Wind
+ 484 031a 3091 0000 		lds r19,Wind+1
+ 485 031e 4091 0000 		lds r20,Wind+2
+ 486 0322 5091 0000 		lds r21,Wind+3
+ 487 0326 6983      		std Y+1,r22
+ 488 0328 7A83      		std Y+2,r23
+ 489 032a 8B83      		std Y+3,r24
+ 490 032c 9C83      		std Y+4,r25
+ 491 032e 6981      		ldd r22,Y+1
+ 492 0330 7A81      		ldd r23,Y+2
+ 493 0332 8B81      		ldd r24,Y+3
+ 494 0334 9C81      		ldd r25,Y+4
+ 495 0336 0E94 0000 		call __addsf3
+ 496               		.stabn	68,0,154,.LM77-.LFBB1
+ 497               	.LM77:
+ 498 033a 20E0      		ldi r18,0
+ 499 033c 30E0      		ldi r19,0
+ 500 033e 40E0      		ldi r20,0
+ 501 0340 50E4      		ldi r21,lo8(64)
+ 502 0342 6983      		std Y+1,r22
+ 503 0344 7A83      		std Y+2,r23
+ 504 0346 8B83      		std Y+3,r24
+ 505 0348 9C83      		std Y+4,r25
+ 506 034a 6981      		ldd r22,Y+1
+ 507 034c 7A81      		ldd r23,Y+2
+ 508 034e 8B81      		ldd r24,Y+3
+ 509 0350 9C81      		ldd r25,Y+4
+ 510 0352 0E94 0000 		call __gtsf2
+ 511 0356 1816      		cp __zero_reg__,r24
+ 512 0358 04F0      		brlt .+2
+ 513 035a 00C0      		rjmp .L92
+ 155:alg.c         ****                     LS3_hi();
+ 514               		.stabn	68,0,155,.LM78-.LFBB1
+ 515               	.LM78:
+ 516 035c 179A      		sbi 0x2,7
+ 156:alg.c         **** 
+ 157:alg.c         **** 					LC1_green();
+ 517               		.stabn	68,0,157,.LM79-.LFBB1
+ 518               	.LM79:
+ 519 035e 0E94 0000 		call LC1_green
+ 158:alg.c         **** 					LC2_red();
+ 520               		.stabn	68,0,158,.LM80-.LFBB1
+ 521               	.LM80:
+ 522 0362 0E94 0000 		call LC2_red
+ 159:alg.c         **** 					LC3_green();
+ 523               		.stabn	68,0,159,.LM81-.LFBB1
+ 524               	.LM81:
+ 525 0366 0E94 0000 		call LC3_green
+GAS LISTING /tmp/ccMmGyz8.s 			page 13
+
+
+ 160:alg.c         **** 
+ 161:alg.c         **** 					LS1_green();
+ 526               		.stabn	68,0,161,.LM82-.LFBB1
+ 527               	.LM82:
+ 528 036a 0E94 0000 		call LS1_green
+ 162:alg.c         **** 					LS2_red();
+ 529               		.stabn	68,0,162,.LM83-.LFBB1
+ 530               	.LM83:
+ 531 036e 0E94 0000 		call LS2_red
+ 163:alg.c         **** 					LS3_green();
+ 532               		.stabn	68,0,163,.LM84-.LFBB1
+ 533               	.LM84:
+ 534 0372 0E94 0000 		call LS3_green
+ 535               	.L21:
+ 164:alg.c         ****                 }
+ 165:alg.c         ****                 else {
+ 166:alg.c         **** 					LS3_lo();
+ 167:alg.c         **** 
+ 168:alg.c         **** 					LC1_green();
+ 169:alg.c         **** 					LC2_red();
+ 170:alg.c         **** 					LC3_green();
+ 171:alg.c         **** 
+ 172:alg.c         **** 					LS1_green();
+ 173:alg.c         **** 					LS2_red();
+ 174:alg.c         **** 					LS3_red();
+ 175:alg.c         **** 
+ 176:alg.c         **** 
+ 177:alg.c         **** 
+ 178:alg.c         **** 				}
+ 179:alg.c         **** 
+ 180:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
+ 536               		.stabn	68,0,180,.LM85-.LFBB1
+ 537               	.LM85:
+ 538 0376 20E0      		ldi r18,0
+ 539 0378 30E0      		ldi r19,0
+ 540 037a 40E0      		ldi r20,0
+ 541 037c 50E4      		ldi r21,lo8(64)
+ 542 037e 6091 0000 		lds r22,PV
+ 543 0382 7091 0000 		lds r23,PV+1
+ 544 0386 8091 0000 		lds r24,PV+2
+ 545 038a 9091 0000 		lds r25,PV+3
+ 546 038e 0E94 0000 		call __addsf3
+ 547               		.stabn	68,0,180,.LM86-.LFBB1
+ 548               	.LM86:
+ 549 0392 2091 0000 		lds r18,Wind
+ 550 0396 3091 0000 		lds r19,Wind+1
+ 551 039a 4091 0000 		lds r20,Wind+2
+ 552 039e 5091 0000 		lds r21,Wind+3
+ 553 03a2 6983      		std Y+1,r22
+ 554 03a4 7A83      		std Y+2,r23
+ 555 03a6 8B83      		std Y+3,r24
+ 556 03a8 9C83      		std Y+4,r25
+ 557 03aa 6981      		ldd r22,Y+1
+ 558 03ac 7A81      		ldd r23,Y+2
+ 559 03ae 8B81      		ldd r24,Y+3
+ 560 03b0 9C81      		ldd r25,Y+4
+ 561 03b2 0E94 0000 		call __addsf3
+GAS LISTING /tmp/ccMmGyz8.s 			page 14
+
+
+ 562               		.stabn	68,0,180,.LM87-.LFBB1
+ 563               	.LM87:
+ 564 03b6 2AE9      		ldi r18,lo8(-102)
+ 565 03b8 39E9      		ldi r19,lo8(-103)
+ 566 03ba 49E9      		ldi r20,lo8(-103)
+ 567 03bc 5FE3      		ldi r21,lo8(63)
+ 568 03be 6983      		std Y+1,r22
+ 569 03c0 7A83      		std Y+2,r23
+ 570 03c2 8B83      		std Y+3,r24
+ 571 03c4 9C83      		std Y+4,r25
+ 572 03c6 6981      		ldd r22,Y+1
+ 573 03c8 7A81      		ldd r23,Y+2
+ 574 03ca 8B81      		ldd r24,Y+3
+ 575 03cc 9C81      		ldd r25,Y+4
+ 576 03ce 0E94 0000 		call __gtsf2
+ 577 03d2 1816      		cp __zero_reg__,r24
+ 578 03d4 04F0      		brlt .+2
+ 579 03d6 00C0      		rjmp .L93
+ 181:alg.c         ****                     LS1_hi();
+ 580               		.stabn	68,0,181,.LM88-.LFBB1
+ 581               	.LM88:
+ 582 03d8 5A9A      		sbi 0xb,2
+ 182:alg.c         **** 
+ 183:alg.c         **** 					LC1_green();
+ 583               		.stabn	68,0,183,.LM89-.LFBB1
+ 584               	.LM89:
+ 585 03da 0E94 0000 		call LC1_green
+ 184:alg.c         **** 					LS1_green();
+ 586               		.stabn	68,0,184,.LM90-.LFBB1
+ 587               	.LM90:
+ 588 03de 0E94 0000 		call LS1_green
+ 589               	.L18:
+ 185:alg.c         ****                 }
+ 186:alg.c         ****                 else{
+ 187:alg.c         **** 					LS1_lo();
+ 188:alg.c         **** 
+ 189:alg.c         **** 					LC1_green();
+ 190:alg.c         **** 					LS1_red();
+ 191:alg.c         **** 				}
+ 192:alg.c         ****             }
+ 193:alg.c         **** 
+ 194:alg.c         ****             if(~LC1 && LC2 && LC3  ){
+ 590               		.stabn	68,0,194,.LM91-.LFBB1
+ 591               	.LM91:
+ 592 03e2 0099      		sbic 0,0
+ 593 03e4 00C0      		rjmp .L24
+ 594               		.stabn	68,0,194,.LM92-.LFBB1
+ 595               	.LM92:
+ 596 03e6 019B      		sbis 0,1
+ 597 03e8 00C0      		rjmp .L24
+ 598               		.stabn	68,0,194,.LM93-.LFBB1
+ 599               	.LM93:
+ 600 03ea 029B      		sbis 0,2
+ 601 03ec 00C0      		rjmp .L24
+ 195:alg.c         ****                 if(Load2 + Load3 < MainsMAX + PV + Wind){
+ 602               		.stabn	68,0,195,.LM94-.LFBB1
+ 603               	.LM94:
+GAS LISTING /tmp/ccMmGyz8.s 			page 15
+
+
+ 604 03ee 20E0      		ldi r18,0
+ 605 03f0 30E0      		ldi r19,0
+ 606 03f2 40E0      		ldi r20,0
+ 607 03f4 50E4      		ldi r21,lo8(64)
+ 608 03f6 6091 0000 		lds r22,PV
+ 609 03fa 7091 0000 		lds r23,PV+1
+ 610 03fe 8091 0000 		lds r24,PV+2
+ 611 0402 9091 0000 		lds r25,PV+3
+ 612 0406 0E94 0000 		call __addsf3
+ 613               		.stabn	68,0,195,.LM95-.LFBB1
+ 614               	.LM95:
+ 615 040a 2091 0000 		lds r18,Wind
+ 616 040e 3091 0000 		lds r19,Wind+1
+ 617 0412 4091 0000 		lds r20,Wind+2
+ 618 0416 5091 0000 		lds r21,Wind+3
+ 619 041a 6983      		std Y+1,r22
+ 620 041c 7A83      		std Y+2,r23
+ 621 041e 8B83      		std Y+3,r24
+ 622 0420 9C83      		std Y+4,r25
+ 623 0422 6981      		ldd r22,Y+1
+ 624 0424 7A81      		ldd r23,Y+2
+ 625 0426 8B81      		ldd r24,Y+3
+ 626 0428 9C81      		ldd r25,Y+4
+ 627 042a 0E94 0000 		call __addsf3
+ 628               		.stabn	68,0,195,.LM96-.LFBB1
+ 629               	.LM96:
+ 630 042e 23E3      		ldi r18,lo8(51)
+ 631 0430 33E3      		ldi r19,lo8(51)
+ 632 0432 43E3      		ldi r20,lo8(51)
+ 633 0434 50E4      		ldi r21,lo8(64)
+ 634 0436 6983      		std Y+1,r22
+ 635 0438 7A83      		std Y+2,r23
+ 636 043a 8B83      		std Y+3,r24
+ 637 043c 9C83      		std Y+4,r25
+ 638 043e 6981      		ldd r22,Y+1
+ 639 0440 7A81      		ldd r23,Y+2
+ 640 0442 8B81      		ldd r24,Y+3
+ 641 0444 9C81      		ldd r25,Y+4
+ 642 0446 0E94 0000 		call __gtsf2
+ 643 044a 1816      		cp __zero_reg__,r24
+ 644 044c 04F0      		brlt .+2
+ 645 044e 00C0      		rjmp .L94
+ 196:alg.c         ****                     LS3_hi();
+ 646               		.stabn	68,0,196,.LM97-.LFBB1
+ 647               	.LM97:
+ 648 0450 179A      		sbi 0x2,7
+ 197:alg.c         **** 
+ 198:alg.c         **** 					LC1_red();
+ 649               		.stabn	68,0,198,.LM98-.LFBB1
+ 650               	.LM98:
+ 651 0452 0E94 0000 		call LC1_red
+ 199:alg.c         **** 					LC2_green();
+ 652               		.stabn	68,0,199,.LM99-.LFBB1
+ 653               	.LM99:
+ 654 0456 0E94 0000 		call LC2_green
+ 200:alg.c         **** 					LC3_green();
+ 655               		.stabn	68,0,200,.LM100-.LFBB1
+GAS LISTING /tmp/ccMmGyz8.s 			page 16
+
+
+ 656               	.LM100:
+ 657 045a 0E94 0000 		call LC3_green
+ 201:alg.c         **** 
+ 202:alg.c         **** 					LS1_red();
+ 658               		.stabn	68,0,202,.LM101-.LFBB1
+ 659               	.LM101:
+ 660 045e 0E94 0000 		call LS1_red
+ 203:alg.c         **** 					LS2_green();
+ 661               		.stabn	68,0,203,.LM102-.LFBB1
+ 662               	.LM102:
+ 663 0462 0E94 0000 		call LS2_green
+ 204:alg.c         **** 					LS3_green();
+ 664               		.stabn	68,0,204,.LM103-.LFBB1
+ 665               	.LM103:
+ 666 0466 0E94 0000 		call LS3_green
+ 667               	.L27:
+ 205:alg.c         ****                 }
+ 206:alg.c         ****                 else {
+ 207:alg.c         **** 					LS3_lo();
+ 208:alg.c         **** 
+ 209:alg.c         **** 					LC1_red();
+ 210:alg.c         **** 					LC2_green();
+ 211:alg.c         **** 					LC3_green();
+ 212:alg.c         **** 
+ 213:alg.c         **** 					LS1_red();
+ 214:alg.c         **** 					LS2_green();
+ 215:alg.c         **** 					LS3_red();
+ 216:alg.c         **** 
+ 217:alg.c         **** 				}
+ 218:alg.c         **** 
+ 219:alg.c         ****                 if(Load2 < MainsMAX + PV + Wind){
+ 668               		.stabn	68,0,219,.LM104-.LFBB1
+ 669               	.LM104:
+ 670 046a 20E0      		ldi r18,0
+ 671 046c 30E0      		ldi r19,0
+ 672 046e 40E0      		ldi r20,0
+ 673 0470 50E4      		ldi r21,lo8(64)
+ 674 0472 6091 0000 		lds r22,PV
+ 675 0476 7091 0000 		lds r23,PV+1
+ 676 047a 8091 0000 		lds r24,PV+2
+ 677 047e 9091 0000 		lds r25,PV+3
+ 678 0482 0E94 0000 		call __addsf3
+ 679               		.stabn	68,0,219,.LM105-.LFBB1
+ 680               	.LM105:
+ 681 0486 2091 0000 		lds r18,Wind
+ 682 048a 3091 0000 		lds r19,Wind+1
+ 683 048e 4091 0000 		lds r20,Wind+2
+ 684 0492 5091 0000 		lds r21,Wind+3
+ 685 0496 6983      		std Y+1,r22
+ 686 0498 7A83      		std Y+2,r23
+ 687 049a 8B83      		std Y+3,r24
+ 688 049c 9C83      		std Y+4,r25
+ 689 049e 6981      		ldd r22,Y+1
+ 690 04a0 7A81      		ldd r23,Y+2
+ 691 04a2 8B81      		ldd r24,Y+3
+ 692 04a4 9C81      		ldd r25,Y+4
+ 693 04a6 0E94 0000 		call __addsf3
+GAS LISTING /tmp/ccMmGyz8.s 			page 17
+
+
+ 694               		.stabn	68,0,219,.LM106-.LFBB1
+ 695               	.LM106:
+ 696 04aa 20E0      		ldi r18,0
+ 697 04ac 30E0      		ldi r19,0
+ 698 04ae 40E0      		ldi r20,0
+ 699 04b0 50E4      		ldi r21,lo8(64)
+ 700 04b2 6983      		std Y+1,r22
+ 701 04b4 7A83      		std Y+2,r23
+ 702 04b6 8B83      		std Y+3,r24
+ 703 04b8 9C83      		std Y+4,r25
+ 704 04ba 6981      		ldd r22,Y+1
+ 705 04bc 7A81      		ldd r23,Y+2
+ 706 04be 8B81      		ldd r24,Y+3
+ 707 04c0 9C81      		ldd r25,Y+4
+ 708 04c2 0E94 0000 		call __gtsf2
+ 709 04c6 1816      		cp __zero_reg__,r24
+ 710 04c8 04F0      		brlt .+2
+ 711 04ca 00C0      		rjmp .L95
+ 220:alg.c         ****                     LS2_hi();
+ 712               		.stabn	68,0,220,.LM107-.LFBB1
+ 713               	.LM107:
+ 714 04cc 5B9A      		sbi 0xb,3
+ 221:alg.c         **** 
+ 222:alg.c         **** 					LC2_green();
+ 715               		.stabn	68,0,222,.LM108-.LFBB1
+ 716               	.LM108:
+ 717 04ce 0E94 0000 		call LC2_green
+ 223:alg.c         **** 					LS2_green();
+ 718               		.stabn	68,0,223,.LM109-.LFBB1
+ 719               	.LM109:
+ 720 04d2 0E94 0000 		call LS2_green
+ 721               	.L24:
+ 224:alg.c         **** 
+ 225:alg.c         **** 
+ 226:alg.c         ****                 }
+ 227:alg.c         ****                 else{
+ 228:alg.c         **** 					LS2_lo();
+ 229:alg.c         **** 
+ 230:alg.c         **** 					LC2_green();
+ 231:alg.c         **** 					LS2_red();
+ 232:alg.c         **** 				}
+ 233:alg.c         ****             }
+ 234:alg.c         **** 
+ 235:alg.c         ****             if(LC1 && LC2 && LC3 ){
+ 722               		.stabn	68,0,235,.LM110-.LFBB1
+ 723               	.LM110:
+ 724 04d6 009B      		sbis 0,0
+ 725 04d8 00C0      		rjmp .L1
+ 726               		.stabn	68,0,235,.LM111-.LFBB1
+ 727               	.LM111:
+ 728 04da 019B      		sbis 0,1
+ 729 04dc 00C0      		rjmp .L1
+ 730               		.stabn	68,0,235,.LM112-.LFBB1
+ 731               	.LM112:
+ 732 04de 029B      		sbis 0,2
+ 733 04e0 00C0      		rjmp .L1
+ 236:alg.c         ****                 if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind){
+GAS LISTING /tmp/ccMmGyz8.s 			page 18
+
+
+ 734               		.stabn	68,0,236,.LM113-.LFBB1
+ 735               	.LM113:
+ 736 04e2 20E0      		ldi r18,0
+ 737 04e4 30E0      		ldi r19,0
+ 738 04e6 40E0      		ldi r20,0
+ 739 04e8 50E4      		ldi r21,lo8(64)
+ 740 04ea 6091 0000 		lds r22,PV
+ 741 04ee 7091 0000 		lds r23,PV+1
+ 742 04f2 8091 0000 		lds r24,PV+2
+ 743 04f6 9091 0000 		lds r25,PV+3
+ 744 04fa 0E94 0000 		call __addsf3
+ 745               		.stabn	68,0,236,.LM114-.LFBB1
+ 746               	.LM114:
+ 747 04fe 2091 0000 		lds r18,Wind
+ 748 0502 3091 0000 		lds r19,Wind+1
+ 749 0506 4091 0000 		lds r20,Wind+2
+ 750 050a 5091 0000 		lds r21,Wind+3
+ 751 050e 6983      		std Y+1,r22
+ 752 0510 7A83      		std Y+2,r23
+ 753 0512 8B83      		std Y+3,r24
+ 754 0514 9C83      		std Y+4,r25
+ 755 0516 6981      		ldd r22,Y+1
+ 756 0518 7A81      		ldd r23,Y+2
+ 757 051a 8B81      		ldd r24,Y+3
+ 758 051c 9C81      		ldd r25,Y+4
+ 759 051e 0E94 0000 		call __addsf3
+ 760               		.stabn	68,0,236,.LM115-.LFBB1
+ 761               	.LM115:
+ 762 0522 20E0      		ldi r18,0
+ 763 0524 30E0      		ldi r19,0
+ 764 0526 40E8      		ldi r20,lo8(-128)
+ 765 0528 50E4      		ldi r21,lo8(64)
+ 766 052a 6983      		std Y+1,r22
+ 767 052c 7A83      		std Y+2,r23
+ 768 052e 8B83      		std Y+3,r24
+ 769 0530 9C83      		std Y+4,r25
+ 770 0532 6981      		ldd r22,Y+1
+ 771 0534 7A81      		ldd r23,Y+2
+ 772 0536 8B81      		ldd r24,Y+3
+ 773 0538 9C81      		ldd r25,Y+4
+ 774 053a 0E94 0000 		call __gtsf2
+ 775 053e 1816      		cp __zero_reg__,r24
+ 776 0540 04F0      		brlt .+2
+ 777 0542 00C0      		rjmp .L96
+ 237:alg.c         ****                     LS3_hi();
+ 778               		.stabn	68,0,237,.LM116-.LFBB1
+ 779               	.LM116:
+ 780 0544 179A      		sbi 0x2,7
+ 238:alg.c         **** 
+ 239:alg.c         **** 					LC1_green();
+ 781               		.stabn	68,0,239,.LM117-.LFBB1
+ 782               	.LM117:
+ 783 0546 0E94 0000 		call LC1_green
+ 240:alg.c         **** 					LC2_green();
+ 784               		.stabn	68,0,240,.LM118-.LFBB1
+ 785               	.LM118:
+ 786 054a 0E94 0000 		call LC2_green
+GAS LISTING /tmp/ccMmGyz8.s 			page 19
+
+
+ 241:alg.c         **** 					LC3_green();
+ 787               		.stabn	68,0,241,.LM119-.LFBB1
+ 788               	.LM119:
+ 789 054e 0E94 0000 		call LC3_green
+ 242:alg.c         **** 
+ 243:alg.c         **** 					LS1_green();
+ 790               		.stabn	68,0,243,.LM120-.LFBB1
+ 791               	.LM120:
+ 792 0552 0E94 0000 		call LS1_green
+ 244:alg.c         **** 					LS2_green();
+ 793               		.stabn	68,0,244,.LM121-.LFBB1
+ 794               	.LM121:
+ 795 0556 0E94 0000 		call LS2_green
+ 245:alg.c         **** 					LS3_green();
+ 796               		.stabn	68,0,245,.LM122-.LFBB1
+ 797               	.LM122:
+ 798 055a 0E94 0000 		call LS3_green
+ 799               	.L33:
+ 246:alg.c         ****                 }
+ 247:alg.c         ****                 else {
+ 248:alg.c         **** 					LS3_lo();
+ 249:alg.c         **** 
+ 250:alg.c         **** 					LC1_green();
+ 251:alg.c         **** 					LC2_green();
+ 252:alg.c         **** 					LC3_green();
+ 253:alg.c         **** 
+ 254:alg.c         **** 					LS1_green();
+ 255:alg.c         **** 					LS2_green();
+ 256:alg.c         **** 					LS3_red();
+ 257:alg.c         **** 
+ 258:alg.c         **** 				}
+ 259:alg.c         **** 
+ 260:alg.c         **** 
+ 261:alg.c         ****                 if(Load2 + Load1 < MainsMAX + PV + Wind){
+ 800               		.stabn	68,0,261,.LM123-.LFBB1
+ 801               	.LM123:
+ 802 055e 20E0      		ldi r18,0
+ 803 0560 30E0      		ldi r19,0
+ 804 0562 40E0      		ldi r20,0
+ 805 0564 50E4      		ldi r21,lo8(64)
+ 806 0566 6091 0000 		lds r22,PV
+ 807 056a 7091 0000 		lds r23,PV+1
+ 808 056e 8091 0000 		lds r24,PV+2
+ 809 0572 9091 0000 		lds r25,PV+3
+ 810 0576 0E94 0000 		call __addsf3
+ 811               		.stabn	68,0,261,.LM124-.LFBB1
+ 812               	.LM124:
+ 813 057a 2091 0000 		lds r18,Wind
+ 814 057e 3091 0000 		lds r19,Wind+1
+ 815 0582 4091 0000 		lds r20,Wind+2
+ 816 0586 5091 0000 		lds r21,Wind+3
+ 817 058a 6983      		std Y+1,r22
+ 818 058c 7A83      		std Y+2,r23
+ 819 058e 8B83      		std Y+3,r24
+ 820 0590 9C83      		std Y+4,r25
+ 821 0592 6981      		ldd r22,Y+1
+ 822 0594 7A81      		ldd r23,Y+2
+GAS LISTING /tmp/ccMmGyz8.s 			page 20
+
+
+ 823 0596 8B81      		ldd r24,Y+3
+ 824 0598 9C81      		ldd r25,Y+4
+ 825 059a 0E94 0000 		call __addsf3
+ 826               		.stabn	68,0,261,.LM125-.LFBB1
+ 827               	.LM125:
+ 828 059e 2DEC      		ldi r18,lo8(-51)
+ 829 05a0 3CEC      		ldi r19,lo8(-52)
+ 830 05a2 4CE4      		ldi r20,lo8(76)
+ 831 05a4 50E4      		ldi r21,lo8(64)
+ 832 05a6 6983      		std Y+1,r22
+ 833 05a8 7A83      		std Y+2,r23
+ 834 05aa 8B83      		std Y+3,r24
+ 835 05ac 9C83      		std Y+4,r25
+ 836 05ae 6981      		ldd r22,Y+1
+ 837 05b0 7A81      		ldd r23,Y+2
+ 838 05b2 8B81      		ldd r24,Y+3
+ 839 05b4 9C81      		ldd r25,Y+4
+ 840 05b6 0E94 0000 		call __gtsf2
+ 841 05ba 1816      		cp __zero_reg__,r24
+ 842 05bc 04F0      		brlt .+2
+ 843 05be 00C0      		rjmp .L97
+ 262:alg.c         ****                     LS2_hi();
+ 844               		.stabn	68,0,262,.LM126-.LFBB1
+ 845               	.LM126:
+ 846 05c0 5B9A      		sbi 0xb,3
+ 263:alg.c         **** 
+ 264:alg.c         **** 					LC2_green();
+ 847               		.stabn	68,0,264,.LM127-.LFBB1
+ 848               	.LM127:
+ 849 05c2 0E94 0000 		call LC2_green
+ 265:alg.c         **** 					LS2_green();
+ 850               		.stabn	68,0,265,.LM128-.LFBB1
+ 851               	.LM128:
+ 852 05c6 0E94 0000 		call LS2_green
+ 853               	.L36:
+ 266:alg.c         **** 
+ 267:alg.c         **** 
+ 268:alg.c         ****                 }
+ 269:alg.c         ****                 else{
+ 270:alg.c         **** 					LS2_lo();
+ 271:alg.c         **** 
+ 272:alg.c         **** 					LC2_green();
+ 273:alg.c         **** 					LS2_red();
+ 274:alg.c         **** 
+ 275:alg.c         **** 				}
+ 276:alg.c         **** 
+ 277:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
+ 854               		.stabn	68,0,277,.LM129-.LFBB1
+ 855               	.LM129:
+ 856 05ca 20E0      		ldi r18,0
+ 857 05cc 30E0      		ldi r19,0
+ 858 05ce 40E0      		ldi r20,0
+ 859 05d0 50E4      		ldi r21,lo8(64)
+ 860 05d2 6091 0000 		lds r22,PV
+ 861 05d6 7091 0000 		lds r23,PV+1
+ 862 05da 8091 0000 		lds r24,PV+2
+ 863 05de 9091 0000 		lds r25,PV+3
+GAS LISTING /tmp/ccMmGyz8.s 			page 21
+
+
+ 864 05e2 0E94 0000 		call __addsf3
+ 865               		.stabn	68,0,277,.LM130-.LFBB1
+ 866               	.LM130:
+ 867 05e6 2091 0000 		lds r18,Wind
+ 868 05ea 3091 0000 		lds r19,Wind+1
+ 869 05ee 4091 0000 		lds r20,Wind+2
+ 870 05f2 5091 0000 		lds r21,Wind+3
+ 871 05f6 6983      		std Y+1,r22
+ 872 05f8 7A83      		std Y+2,r23
+ 873 05fa 8B83      		std Y+3,r24
+ 874 05fc 9C83      		std Y+4,r25
+ 875 05fe 6981      		ldd r22,Y+1
+ 876 0600 7A81      		ldd r23,Y+2
+ 877 0602 8B81      		ldd r24,Y+3
+ 878 0604 9C81      		ldd r25,Y+4
+ 879 0606 0E94 0000 		call __addsf3
+ 880               		.stabn	68,0,277,.LM131-.LFBB1
+ 881               	.LM131:
+ 882 060a 2AE9      		ldi r18,lo8(-102)
+ 883 060c 39E9      		ldi r19,lo8(-103)
+ 884 060e 49E9      		ldi r20,lo8(-103)
+ 885 0610 5FE3      		ldi r21,lo8(63)
+ 886 0612 6983      		std Y+1,r22
+ 887 0614 7A83      		std Y+2,r23
+ 888 0616 8B83      		std Y+3,r24
+ 889 0618 9C83      		std Y+4,r25
+ 890 061a 6981      		ldd r22,Y+1
+ 891 061c 7A81      		ldd r23,Y+2
+ 892 061e 8B81      		ldd r24,Y+3
+ 893 0620 9C81      		ldd r25,Y+4
+ 894 0622 0E94 0000 		call __gtsf2
+ 895 0626 1816      		cp __zero_reg__,r24
+ 896 0628 04F0      		brlt .+2
+ 897 062a 00C0      		rjmp .L98
+ 278:alg.c         ****                     LS1_hi();
+ 898               		.stabn	68,0,278,.LM132-.LFBB1
+ 899               	.LM132:
+ 900 062c 5A9A      		sbi 0xb,2
+ 279:alg.c         **** 
+ 280:alg.c         **** 					LC1_green();
+ 901               		.stabn	68,0,280,.LM133-.LFBB1
+ 902               	.LM133:
+ 903 062e 0E94 0000 		call LC1_green
+ 904               	/* epilogue start */
+ 281:alg.c         **** 					LS1_green();
+ 282:alg.c         **** 
+ 283:alg.c         ****                 }
+ 284:alg.c         ****                 else{
+ 285:alg.c         **** 					LS1_lo();
+ 286:alg.c         **** 
+ 287:alg.c         **** 					LC1_green();
+ 288:alg.c         **** 					LS1_red();
+ 289:alg.c         **** 				}
+ 290:alg.c         ****             }
+ 291:alg.c         **** }
+ 905               		.stabn	68,0,291,.LM134-.LFBB1
+ 906               	.LM134:
+GAS LISTING /tmp/ccMmGyz8.s 			page 22
+
+
+ 907 0632 0F90      		pop __tmp_reg__
+ 908 0634 0F90      		pop __tmp_reg__
+ 909 0636 0F90      		pop __tmp_reg__
+ 910 0638 0F90      		pop __tmp_reg__
+ 911 063a DF91      		pop r29
+ 912 063c CF91      		pop r28
+ 281:alg.c         **** 					LS1_green();
+ 913               		.stabn	68,0,281,.LM135-.LFBB1
+ 914               	.LM135:
+ 915 063e 0C94 0000 		jmp LS1_green
+ 916               	.L87:
+  48:alg.c         **** 
+ 917               		.stabn	68,0,48,.LM136-.LFBB1
+ 918               	.LM136:
+ 919 0642 5A98      		cbi 0xb,2
+  50:alg.c         **** 				LC2_red();
+ 920               		.stabn	68,0,50,.LM137-.LFBB1
+ 921               	.LM137:
+ 922 0644 0E94 0000 		call LC1_green
+  51:alg.c         **** 				LC3_red();
+ 923               		.stabn	68,0,51,.LM138-.LFBB1
+ 924               	.LM138:
+ 925 0648 0E94 0000 		call LC2_red
+  52:alg.c         **** 
+ 926               		.stabn	68,0,52,.LM139-.LFBB1
+ 927               	.LM139:
+ 928 064c 0E94 0000 		call LC3_red
+  54:alg.c         **** 				LS2_red();
+ 929               		.stabn	68,0,54,.LM140-.LFBB1
+ 930               	.LM140:
+ 931 0650 0E94 0000 		call LS1_red
+ 932 0654 00C0      		rjmp .L99
+ 933               	.L88:
+  73:alg.c         **** 
+ 934               		.stabn	68,0,73,.LM141-.LFBB1
+ 935               	.LM141:
+ 936 0656 5B98      		cbi 0xb,3
+  75:alg.c         **** 					LC2_green();
+ 937               		.stabn	68,0,75,.LM142-.LFBB1
+ 938               	.LM142:
+ 939 0658 0E94 0000 		call LC1_red
+  76:alg.c         **** 					LC3_red();
+ 940               		.stabn	68,0,76,.LM143-.LFBB1
+ 941               	.LM143:
+ 942 065c 0E94 0000 		call LC2_green
+  77:alg.c         **** 
+ 943               		.stabn	68,0,77,.LM144-.LFBB1
+ 944               	.LM144:
+ 945 0660 0E94 0000 		call LC3_red
+  79:alg.c         **** 					LS2_red();
+ 946               		.stabn	68,0,79,.LM145-.LFBB1
+ 947               	.LM145:
+ 948 0664 0E94 0000 		call LS1_red
+  80:alg.c         **** 					LS3_red();
+ 949               		.stabn	68,0,80,.LM146-.LFBB1
+ 950               	.LM146:
+ 951 0668 0E94 0000 		call LS2_red
+GAS LISTING /tmp/ccMmGyz8.s 			page 23
+
+
+ 952 066c 00C0      		rjmp .L100
+ 953               	.L89:
+ 100:alg.c         **** 
+ 954               		.stabn	68,0,100,.LM147-.LFBB1
+ 955               	.LM147:
+ 956 066e 5B98      		cbi 0xb,3
+ 102:alg.c         **** 					LC2_green();
+ 957               		.stabn	68,0,102,.LM148-.LFBB1
+ 958               	.LM148:
+ 959 0670 0E94 0000 		call LC1_green
+ 103:alg.c         **** 					LC3_red();
+ 960               		.stabn	68,0,103,.LM149-.LFBB1
+ 961               	.LM149:
+ 962 0674 0E94 0000 		call LC2_green
+ 104:alg.c         **** 
+ 963               		.stabn	68,0,104,.LM150-.LFBB1
+ 964               	.LM150:
+ 965 0678 0E94 0000 		call LC3_red
+ 106:alg.c         **** 					LS2_red();
+ 966               		.stabn	68,0,106,.LM151-.LFBB1
+ 967               	.LM151:
+ 968 067c 0E94 0000 		call LS1_green
+ 107:alg.c         **** 					LS3_red();
+ 969               		.stabn	68,0,107,.LM152-.LFBB1
+ 970               	.LM152:
+ 971 0680 0E94 0000 		call LS2_red
+ 972 0684 00C0      		rjmp .L101
+ 973               	.L90:
+ 119:alg.c         **** 
+ 974               		.stabn	68,0,119,.LM153-.LFBB1
+ 975               	.LM153:
+ 976 0686 5A98      		cbi 0xb,2
+ 121:alg.c         **** 				}
+ 977               		.stabn	68,0,121,.LM154-.LFBB1
+ 978               	.LM154:
+ 979 0688 0E94 0000 		call LS1_red
+ 980 068c 00C0      		rjmp .L9
+ 981               	.L91:
+ 138:alg.c         **** 
+ 982               		.stabn	68,0,138,.LM155-.LFBB1
+ 983               	.LM155:
+ 984 068e 1798      		cbi 0x2,7
+ 140:alg.c         **** 					LC2_red();
+ 985               		.stabn	68,0,140,.LM156-.LFBB1
+ 986               	.LM156:
+ 987 0690 0E94 0000 		call LC1_red
+ 141:alg.c         **** 					LC3_green();
+ 988               		.stabn	68,0,141,.LM157-.LFBB1
+ 989               	.LM157:
+ 990 0694 0E94 0000 		call LC2_red
+ 142:alg.c         **** 
+ 991               		.stabn	68,0,142,.LM158-.LFBB1
+ 992               	.LM158:
+ 993 0698 0E94 0000 		call LC3_green
+ 144:alg.c         **** 					LS2_red();
+ 994               		.stabn	68,0,144,.LM159-.LFBB1
+ 995               	.LM159:
+GAS LISTING /tmp/ccMmGyz8.s 			page 24
+
+
+ 996 069c 0E94 0000 		call LS1_red
+ 145:alg.c         **** 					LS3_red();
+ 997               		.stabn	68,0,145,.LM160-.LFBB1
+ 998               	.LM160:
+ 999 06a0 0E94 0000 		call LS2_red
+ 146:alg.c         **** 
+ 1000               		.stabn	68,0,146,.LM161-.LFBB1
+ 1001               	.LM161:
+ 1002 06a4 0E94 0000 		call LS3_red
+ 1003 06a8 00C0      		rjmp .L15
+ 1004               	.L92:
+ 166:alg.c         **** 
+ 1005               		.stabn	68,0,166,.LM162-.LFBB1
+ 1006               	.LM162:
+ 1007 06aa 1798      		cbi 0x2,7
+ 168:alg.c         **** 					LC2_red();
+ 1008               		.stabn	68,0,168,.LM163-.LFBB1
+ 1009               	.LM163:
+ 1010 06ac 0E94 0000 		call LC1_green
+ 169:alg.c         **** 					LC3_green();
+ 1011               		.stabn	68,0,169,.LM164-.LFBB1
+ 1012               	.LM164:
+ 1013 06b0 0E94 0000 		call LC2_red
+ 170:alg.c         **** 
+ 1014               		.stabn	68,0,170,.LM165-.LFBB1
+ 1015               	.LM165:
+ 1016 06b4 0E94 0000 		call LC3_green
+ 172:alg.c         **** 					LS2_red();
+ 1017               		.stabn	68,0,172,.LM166-.LFBB1
+ 1018               	.LM166:
+ 1019 06b8 0E94 0000 		call LS1_green
+ 173:alg.c         **** 					LS3_red();
+ 1020               		.stabn	68,0,173,.LM167-.LFBB1
+ 1021               	.LM167:
+ 1022 06bc 0E94 0000 		call LS2_red
+ 174:alg.c         **** 
+ 1023               		.stabn	68,0,174,.LM168-.LFBB1
+ 1024               	.LM168:
+ 1025 06c0 0E94 0000 		call LS3_red
+ 1026 06c4 00C0      		rjmp .L21
+ 1027               	.L93:
+ 187:alg.c         **** 
+ 1028               		.stabn	68,0,187,.LM169-.LFBB1
+ 1029               	.LM169:
+ 1030 06c6 5A98      		cbi 0xb,2
+ 189:alg.c         **** 					LS1_red();
+ 1031               		.stabn	68,0,189,.LM170-.LFBB1
+ 1032               	.LM170:
+ 1033 06c8 0E94 0000 		call LC1_green
+ 190:alg.c         **** 				}
+ 1034               		.stabn	68,0,190,.LM171-.LFBB1
+ 1035               	.LM171:
+ 1036 06cc 0E94 0000 		call LS1_red
+ 1037 06d0 00C0      		rjmp .L18
+ 1038               	.L94:
+ 207:alg.c         **** 
+ 1039               		.stabn	68,0,207,.LM172-.LFBB1
+GAS LISTING /tmp/ccMmGyz8.s 			page 25
+
+
+ 1040               	.LM172:
+ 1041 06d2 1798      		cbi 0x2,7
+ 209:alg.c         **** 					LC2_green();
+ 1042               		.stabn	68,0,209,.LM173-.LFBB1
+ 1043               	.LM173:
+ 1044 06d4 0E94 0000 		call LC1_red
+ 210:alg.c         **** 					LC3_green();
+ 1045               		.stabn	68,0,210,.LM174-.LFBB1
+ 1046               	.LM174:
+ 1047 06d8 0E94 0000 		call LC2_green
+ 211:alg.c         **** 
+ 1048               		.stabn	68,0,211,.LM175-.LFBB1
+ 1049               	.LM175:
+ 1050 06dc 0E94 0000 		call LC3_green
+ 213:alg.c         **** 					LS2_green();
+ 1051               		.stabn	68,0,213,.LM176-.LFBB1
+ 1052               	.LM176:
+ 1053 06e0 0E94 0000 		call LS1_red
+ 214:alg.c         **** 					LS3_red();
+ 1054               		.stabn	68,0,214,.LM177-.LFBB1
+ 1055               	.LM177:
+ 1056 06e4 0E94 0000 		call LS2_green
+ 215:alg.c         **** 
+ 1057               		.stabn	68,0,215,.LM178-.LFBB1
+ 1058               	.LM178:
+ 1059 06e8 0E94 0000 		call LS3_red
+ 1060 06ec 00C0      		rjmp .L27
+ 1061               	.L95:
+ 228:alg.c         **** 
+ 1062               		.stabn	68,0,228,.LM179-.LFBB1
+ 1063               	.LM179:
+ 1064 06ee 5B98      		cbi 0xb,3
+ 230:alg.c         **** 					LS2_red();
+ 1065               		.stabn	68,0,230,.LM180-.LFBB1
+ 1066               	.LM180:
+ 1067 06f0 0E94 0000 		call LC2_green
+ 231:alg.c         **** 				}
+ 1068               		.stabn	68,0,231,.LM181-.LFBB1
+ 1069               	.LM181:
+ 1070 06f4 0E94 0000 		call LS2_red
+ 1071 06f8 00C0      		rjmp .L24
+ 1072               	.L96:
+ 248:alg.c         **** 
+ 1073               		.stabn	68,0,248,.LM182-.LFBB1
+ 1074               	.LM182:
+ 1075 06fa 1798      		cbi 0x2,7
+ 250:alg.c         **** 					LC2_green();
+ 1076               		.stabn	68,0,250,.LM183-.LFBB1
+ 1077               	.LM183:
+ 1078 06fc 0E94 0000 		call LC1_green
+ 251:alg.c         **** 					LC3_green();
+ 1079               		.stabn	68,0,251,.LM184-.LFBB1
+ 1080               	.LM184:
+ 1081 0700 0E94 0000 		call LC2_green
+ 252:alg.c         **** 
+ 1082               		.stabn	68,0,252,.LM185-.LFBB1
+ 1083               	.LM185:
+GAS LISTING /tmp/ccMmGyz8.s 			page 26
+
+
+ 1084 0704 0E94 0000 		call LC3_green
+ 254:alg.c         **** 					LS2_green();
+ 1085               		.stabn	68,0,254,.LM186-.LFBB1
+ 1086               	.LM186:
+ 1087 0708 0E94 0000 		call LS1_green
+ 255:alg.c         **** 					LS3_red();
+ 1088               		.stabn	68,0,255,.LM187-.LFBB1
+ 1089               	.LM187:
+ 1090 070c 0E94 0000 		call LS2_green
+ 256:alg.c         **** 
+ 1091               		.stabn	68,0,256,.LM188-.LFBB1
+ 1092               	.LM188:
+ 1093 0710 0E94 0000 		call LS3_red
+ 1094 0714 00C0      		rjmp .L33
+ 1095               	.L97:
+ 270:alg.c         **** 
+ 1096               		.stabn	68,0,270,.LM189-.LFBB1
+ 1097               	.LM189:
+ 1098 0716 5B98      		cbi 0xb,3
+ 272:alg.c         **** 					LS2_red();
+ 1099               		.stabn	68,0,272,.LM190-.LFBB1
+ 1100               	.LM190:
+ 1101 0718 0E94 0000 		call LC2_green
+ 273:alg.c         **** 
+ 1102               		.stabn	68,0,273,.LM191-.LFBB1
+ 1103               	.LM191:
+ 1104 071c 0E94 0000 		call LS2_red
+ 1105 0720 00C0      		rjmp .L36
+ 1106               	.L98:
+ 285:alg.c         **** 
+ 1107               		.stabn	68,0,285,.LM192-.LFBB1
+ 1108               	.LM192:
+ 1109 0722 5A98      		cbi 0xb,2
+ 287:alg.c         **** 					LS1_red();
+ 1110               		.stabn	68,0,287,.LM193-.LFBB1
+ 1111               	.LM193:
+ 1112 0724 0E94 0000 		call LC1_green
+ 1113               	/* epilogue start */
+ 1114               		.stabn	68,0,291,.LM194-.LFBB1
+ 1115               	.LM194:
+ 1116 0728 0F90      		pop __tmp_reg__
+ 1117 072a 0F90      		pop __tmp_reg__
+ 1118 072c 0F90      		pop __tmp_reg__
+ 1119 072e 0F90      		pop __tmp_reg__
+ 1120 0730 DF91      		pop r29
+ 1121 0732 CF91      		pop r28
+ 288:alg.c         **** 				}
+ 1122               		.stabn	68,0,288,.LM195-.LFBB1
+ 1123               	.LM195:
+ 1124 0734 0C94 0000 		jmp LS1_red
+ 1125               	.L1:
+ 1126               	/* epilogue start */
+ 1127               		.stabn	68,0,291,.LM196-.LFBB1
+ 1128               	.LM196:
+ 1129 0738 0F90      		pop __tmp_reg__
+ 1130 073a 0F90      		pop __tmp_reg__
+ 1131 073c 0F90      		pop __tmp_reg__
+GAS LISTING /tmp/ccMmGyz8.s 			page 27
+
+
+ 1132 073e 0F90      		pop __tmp_reg__
+ 1133 0740 DF91      		pop r29
+ 1134 0742 CF91      		pop r28
+ 1135 0744 0895      		ret
+ 1136               		.size	algorithm, .-algorithm
+ 1137               	.Lscope1:
+ 1138               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 1139               	.global	MainsReq
+ 1140               		.section .bss
+ 1141               		.type	MainsReq, @object
+ 1142               		.size	MainsReq, 4
+ 1143               	MainsReq:
+ 1144 0000 0000 0000 		.zero	4
+ 1145               		.stabs	"MainsReq:G(0,4)=r(0,0);4;0;",32,0,16,0
+ 1146               		.stabs	"float:t(0,4)",128,0,0,0
+ 1147               	.global	BusI
+ 1148               		.type	BusI, @object
+ 1149               		.size	BusI, 4
+ 1150               	BusI:
+ 1151 0004 0000 0000 		.zero	4
+ 1152               		.stabs	"BusI:G(0,4)",32,0,16,0
+ 1153               	.global	Wind
+ 1154               		.type	Wind, @object
+ 1155               		.size	Wind, 4
+ 1156               	Wind:
+ 1157 0008 0000 0000 		.zero	4
+ 1158               		.stabs	"Wind:G(0,4)",32,0,16,0
+ 1159               	.global	PV
+ 1160               		.type	PV, @object
+ 1161               		.size	PV, 4
+ 1162               	PV:
+ 1163 000c 0000 0000 		.zero	4
+ 1164               		.stabs	"PV:G(0,4)",32,0,16,0
+ 1165               	.global	Load3
+ 1166               		.section	.rodata
+ 1167               		.type	Load3, @object
+ 1168               		.size	Load3, 4
+ 1169               	Load3:
+ 1170 0000 CD        		.byte	-51
+ 1171 0001 CC        		.byte	-52
+ 1172 0002 4C        		.byte	76
+ 1173 0003 3F        		.byte	63
+ 1174               		.stabs	"Load3:G(0,5)=k(0,4)",32,0,12,0
+ 1175               	.global	Load2
+ 1176               		.type	Load2, @object
+ 1177               		.size	Load2, 4
+ 1178               	Load2:
+ 1179 0004 00        		.byte	0
+ 1180 0005 00        		.byte	0
+ 1181 0006 00        		.byte	0
+ 1182 0007 40        		.byte	64
+ 1183               		.stabs	"Load2:G(0,5)",32,0,11,0
+ 1184               	.global	Load1
+ 1185               		.type	Load1, @object
+ 1186               		.size	Load1, 4
+ 1187               	Load1:
+ 1188 0008 9A        		.byte	-102
+GAS LISTING /tmp/ccMmGyz8.s 			page 28
+
+
+ 1189 0009 99        		.byte	-103
+ 1190 000a 99        		.byte	-103
+ 1191 000b 3F        		.byte	63
+ 1192               		.stabs	"Load1:G(0,5)",32,0,10,0
+ 1193               	.global	BatteryChargeI
+ 1194               		.type	BatteryChargeI, @object
+ 1195               		.size	BatteryChargeI, 1
+ 1196               	BatteryChargeI:
+ 1197 000c 01        		.byte	1
+ 1198               		.stabs	"BatteryChargeI:G(0,6)=k(0,2)",32,0,9,0
+ 1199               	.global	MainsMAX
+ 1200               		.type	MainsMAX, @object
+ 1201               		.size	MainsMAX, 1
+ 1202               	MainsMAX:
+ 1203 000d 02        		.byte	2
+ 1204               		.stabs	"MainsMAX:G(0,6)",32,0,8,0
+ 1205               		.text
+ 1206               		.stabs	"",100,0,0,.Letext0
+ 1207               	.Letext0:
+ 1208               		.ident	"GCC: (GNU) 11.2.0"
+ 1209               	.global __do_copy_data
+ 1210               	.global __do_clear_bss
+GAS LISTING /tmp/ccMmGyz8.s 			page 29
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 alg.c
-     /tmp/ccYUyj0V.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccYUyj0V.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccYUyj0V.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccYUyj0V.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccYUyj0V.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccYUyj0V.s:23     .text:0000000000000000 algorithm
-     /tmp/ccYUyj0V.s:891    .bss:0000000000000004 BusI
-     /tmp/ccYUyj0V.s:884    .bss:0000000000000000 MainsReq
-     /tmp/ccYUyj0V.s:903    .bss:000000000000000c PV
-     /tmp/ccYUyj0V.s:897    .bss:0000000000000008 Wind
-     /tmp/ccYUyj0V.s:910    .rodata:0000000000000000 Load3
-     /tmp/ccYUyj0V.s:919    .rodata:0000000000000004 Load2
-     /tmp/ccYUyj0V.s:928    .rodata:0000000000000008 Load1
-     /tmp/ccYUyj0V.s:937    .rodata:000000000000000c BatteryChargeI
-     /tmp/ccYUyj0V.s:943    .rodata:000000000000000d MainsMAX
+     /tmp/ccMmGyz8.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccMmGyz8.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccMmGyz8.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccMmGyz8.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccMmGyz8.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccMmGyz8.s:21     .text:0000000000000000 algorithm
+     /tmp/ccMmGyz8.s:1150   .bss:0000000000000004 BusI
+     /tmp/ccMmGyz8.s:1143   .bss:0000000000000000 MainsReq
+     /tmp/ccMmGyz8.s:1162   .bss:000000000000000c PV
+     /tmp/ccMmGyz8.s:1156   .bss:0000000000000008 Wind
+     /tmp/ccMmGyz8.s:1169   .rodata:0000000000000000 Load3
+     /tmp/ccMmGyz8.s:1178   .rodata:0000000000000004 Load2
+     /tmp/ccMmGyz8.s:1187   .rodata:0000000000000008 Load1
+     /tmp/ccMmGyz8.s:1196   .rodata:000000000000000c BatteryChargeI
+     /tmp/ccMmGyz8.s:1202   .rodata:000000000000000d MainsMAX
 
 UNDEFINED SYMBOLS
 __mulsf3
 __addsf3
-__ltsf2
-__gesf2
 __gtsf2
+LC1_red
+LC2_red
+LC3_red
+LS1_red
+LS2_red
+LS3_red
+LC1_green
+LS1_green
+LC2_green
+LS2_green
+LC3_green
+LS3_green
 __do_copy_data
 __do_clear_bss

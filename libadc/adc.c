@@ -58,7 +58,7 @@ void calibrate_timer0(void)
     ADCSRA |= _BV(ADIE);
     adts_disable();
     //  Turn off OCR0A triggering if it is enabled.
-	ADMUX = 0x05;
+	ADMUX = 0x06;
     //  Select PA5 as the ADC source.
     ADCSRA |=_BV(ADATE);
     ADCSRA |= _BV(ADSC);

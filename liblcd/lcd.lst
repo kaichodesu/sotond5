@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccq2xQMg.s 			page 1
+GAS LISTING /tmp/ccj7iC5P.s 			page 1
 
 
    1               		.file	"lcd.c"
@@ -23,7 +23,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
    2:lcd.c         ****  * Licence: This work is licensed under the Creative Commons Attribution License.
    3:lcd.c         ****  *           View this license at http://creativecommons.org/about/licenses/
    4:lcd.c         ****  */
-   5:lcd.c         ****  
+   5:lcd.c         **** 
    6:lcd.c         **** #include "ili934x.h"
    7:lcd.c         **** #include "graphics.h"
    8:lcd.c         **** #include "fonts.h"
@@ -55,10 +55,10 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
   33 0006 85B7      		in r24,0x35
   34 0008 8068      		ori r24,lo8(-128)
   35 000a 85BF      		out 0x35,r24
-  20:lcd.c         **** 	
+  20:lcd.c         **** 
   21:lcd.c         **** 	/* Configure ports */
   22:lcd.c         **** 	CTRL_DDR = 0x7F;
-GAS LISTING /tmp/ccq2xQMg.s 			page 2
+GAS LISTING /tmp/ccj7iC5P.s 			page 2
 
 
   36               		.stabn	68,0,22,.LM3-.LFBB1
@@ -71,7 +71,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
   41               	.LM4:
   42 0010 8FEF      		ldi r24,lo8(-1)
   43 0012 84B9      		out 0x4,r24
-  25:lcd.c         **** 	
+  25:lcd.c         **** 
   26:lcd.c         **** 	init_display_controller();
   44               		.stabn	68,0,26,.LM5-.LFBB1
   45               	.LM5:
@@ -111,14 +111,14 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
   73 0028 4398      		cbi 0x8,3
   74 002a 439A      		sbi 0x8,3
   75 002c 449A      		sbi 0x8,4
-  33:lcd.c         **** 	if (o==North) { 
+  33:lcd.c         **** 	if (o==North) {
   76               		.stabn	68,0,33,.LM9-.LFBB2
   77               	.LM9:
   78 002e 2115      		cp r18,__zero_reg__
   79 0030 3105      		cpc r19,__zero_reg__
   80 0032 01F0      		breq .+2
   81 0034 00C0      		rjmp .L3
-GAS LISTING /tmp/ccq2xQMg.s 			page 3
+GAS LISTING /tmp/ccj7iC5P.s 			page 3
 
 
   34:lcd.c         **** 		display.width = LCDWIDTH;
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  115 0064 4398      		cbi 0x8,3
  116 0066 439A      		sbi 0x8,3
  117 0068 15B8      		out 0x5,__zero_reg__
-GAS LISTING /tmp/ccq2xQMg.s 			page 4
+GAS LISTING /tmp/ccj7iC5P.s 			page 4
 
 
  118 006a 4398      		cbi 0x8,3
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
   38:lcd.c         **** 		display.width = LCDHEIGHT;
  167               		.stabn	68,0,38,.LM21-.LFBB2
  168               	.LM21:
-GAS LISTING /tmp/ccq2xQMg.s 			page 5
+GAS LISTING /tmp/ccj7iC5P.s 			page 5
 
 
  169 00c0 2130      		cpi r18,1
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  215 0108 01F0      		breq .+2
  216 010a 00C0      		rjmp .L4
   49:lcd.c         **** 		display.height = LCDWIDTH;
-GAS LISTING /tmp/ccq2xQMg.s 			page 6
+GAS LISTING /tmp/ccj7iC5P.s 			page 6
 
 
  217               		.stabn	68,0,49,.LM30-.LFBB2
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  263 013c 4398      		cbi 0x8,3
  264 013e 439A      		sbi 0x8,3
   66:lcd.c         **** 	write_data16(240);
-GAS LISTING /tmp/ccq2xQMg.s 			page 7
+GAS LISTING /tmp/ccj7iC5P.s 			page 7
 
 
  265               		.stabn	68,0,66,.LM36-.LFBB3
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  314 0188 C901      		movw r24,r18
   71:lcd.c         **** 	for(y = 0; y <= 79; y++){
   72:lcd.c         **** 		for(x = 0; x <= 119; x++){
-GAS LISTING /tmp/ccq2xQMg.s 			page 8
+GAS LISTING /tmp/ccj7iC5P.s 			page 8
 
 
  315               		.stabn	68,0,72,.LM42-.LFBB3
@@ -478,7 +478,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  367 01b4 A591      		lpm r26, Z+
  368 01b6 B491      		lpm r27, Z
  369               		
-GAS LISTING /tmp/ccq2xQMg.s 			page 9
+GAS LISTING /tmp/ccj7iC5P.s 			page 9
 
 
  370               	 ;  0 "" 2
@@ -538,7 +538,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  419 01e6 439A      		sbi 0x8,3
  420               	.LBB8:
   78:lcd.c         **** 			write_data16(pgm_read_word(&bg1_1[x+y*120]));
-GAS LISTING /tmp/ccq2xQMg.s 			page 10
+GAS LISTING /tmp/ccj7iC5P.s 			page 10
 
 
  421               		.stabn	68,0,78,.LM49-.LFBB3
@@ -598,7 +598,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  469               		.stabn	68,0,81,.LM53-.LFBB3
  470               	.LM53:
  471 021e 4498      		cbi 0x8,4
-GAS LISTING /tmp/ccq2xQMg.s 			page 11
+GAS LISTING /tmp/ccj7iC5P.s 			page 11
 
 
  472 0220 8AE2      		ldi r24,lo8(42)
@@ -658,7 +658,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
   87:lcd.c         **** 	write_cmd(MEMORY_WRITE);
  521               		.stabn	68,0,87,.LM59-.LFBB3
  522               	.LM59:
-GAS LISTING /tmp/ccq2xQMg.s 			page 12
+GAS LISTING /tmp/ccj7iC5P.s 			page 12
 
 
  523 026e 4498      		cbi 0x8,4
@@ -718,7 +718,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  572               	.LM63:
  573 02a0 FC01      		movw r30,r24
  574               	/* #APP */
-GAS LISTING /tmp/ccq2xQMg.s 			page 13
+GAS LISTING /tmp/ccj7iC5P.s 			page 13
 
 
  575               	 ;  91 "lcd.c" 1
@@ -778,7 +778,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  624               	/* #NOAPP */
  625               	.LBE14:
  626 02d0 B5B9      		out 0x5,r27
-GAS LISTING /tmp/ccq2xQMg.s 			page 14
+GAS LISTING /tmp/ccj7iC5P.s 			page 14
 
 
  627 02d2 4398      		cbi 0x8,3
@@ -838,7 +838,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  678 0302 5105      		cpc r21,__zero_reg__
  679 0304 01F4      		brne .L15
   88:lcd.c         **** 		for(x = 0; x <= 119; x++){
-GAS LISTING /tmp/ccq2xQMg.s 			page 15
+GAS LISTING /tmp/ccj7iC5P.s 			page 15
 
 
  680               		.stabn	68,0,88,.LM71-.LFBB3
@@ -898,7 +898,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  110:lcd.c         **** 	uint16_t x, y;
  111:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
  720               		.stabn	68,0,111,.LM76-.LFBB4
-GAS LISTING /tmp/ccq2xQMg.s 			page 16
+GAS LISTING /tmp/ccj7iC5P.s 			page 16
 
 
  721               	.LM76:
@@ -958,7 +958,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  770 0370 95B9      		out 0x5,r25
  771 0372 4398      		cbi 0x8,3
  772 0374 439A      		sbi 0x8,3
-GAS LISTING /tmp/ccq2xQMg.s 			page 17
+GAS LISTING /tmp/ccj7iC5P.s 			page 17
 
 
  117:lcd.c         **** 	write_cmd(MEMORY_WRITE);
@@ -1018,7 +1018,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  821               	/* #APP */
  822               	 ;  120 "lcd.c" 1
  823 03b8 C591      		lpm r28, Z+
-GAS LISTING /tmp/ccq2xQMg.s 			page 18
+GAS LISTING /tmp/ccj7iC5P.s 			page 18
 
 
  824 03ba D491      		lpm r29, Z
@@ -1078,7 +1078,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  876 03e8 7F4F      		sbci r23,-1
  119:lcd.c         **** 			write_data16(pgm_read_word(&digit1[(2-digit)*777+x+y*21]));
  877               		.stabn	68,0,119,.LM89-.LFBB4
-GAS LISTING /tmp/ccq2xQMg.s 			page 19
+GAS LISTING /tmp/ccj7iC5P.s 			page 19
 
 
  878               	.LM89:
@@ -1138,7 +1138,7 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  928               	.LBE25:
  929 0416 D5B9      		out 0x5,r29
  930 0418 4398      		cbi 0x8,3
-GAS LISTING /tmp/ccq2xQMg.s 			page 20
+GAS LISTING /tmp/ccj7iC5P.s 			page 20
 
 
  931 041a 439A      		sbi 0x8,3
@@ -1190,2355 +1190,2657 @@ GAS LISTING /tmp/ccq2xQMg.s 			page 1
  971               		.size	pwr_kw, .-pwr_kw
  972               	.Lscope4:
  973               		.stabs	"",36,0,0,.Lscope4-.LFBB4
- 974               		.stabs	"pwr_100:F(0,1)",36,0,131,pwr_100
- 975               		.stabs	"digit:P(0,2)",64,0,131,24
- 976               	.global	pwr_100
- 977               		.type	pwr_100, @function
- 978               	pwr_100:
+ 974               		.stabs	"fill_rectangle:F(0,1)",36,0,130,fill_rectangle
+ 975               		.stabs	"r:p(0,8)=(0,9)=s8left:(0,6),0,16;right:(0,6),16,16;top:(0,6),32,16;bottom:(0,6),48,16;;",1
+ 976               	.global	fill_rectangle
+ 977               		.type	fill_rectangle, @function
+ 978               	fill_rectangle:
  129:lcd.c         **** 
- 130:lcd.c         **** 
- 131:lcd.c         **** void pwr_100(uint8_t digit){
-GAS LISTING /tmp/ccq2xQMg.s 			page 21
+ 130:lcd.c         **** void fill_rectangle(rectangle r, uint16_t col)
+ 131:lcd.c         **** {
+GAS LISTING /tmp/ccj7iC5P.s 			page 21
 
 
  979               		.stabn	68,0,131,.LM97-.LFBB5
  980               	.LM97:
  981               	.LFBB5:
- 982 044a CF93      		push r28
- 983 044c DF93      		push r29
- 984               	/* prologue: function */
- 985               	/* frame size = 0 */
- 986               	/* stack size = 2 */
- 987               	.L__stack_usage = 2
- 132:lcd.c         **** 	if(digit >= 10)
- 988               		.stabn	68,0,132,.LM98-.LFBB5
- 989               	.LM98:
- 990 044e 8A30      		cpi r24,lo8(10)
- 991 0450 00F0      		brlo .L30
- 133:lcd.c         **** 		digit = 0;
- 992               		.stabn	68,0,133,.LM99-.LFBB5
- 993               	.LM99:
- 994 0452 80E0      		ldi r24,0
- 995               	.L30:
- 134:lcd.c         **** 	uint16_t x, y;
- 135:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
- 996               		.stabn	68,0,135,.LM100-.LFBB5
- 997               	.LM100:
- 998 0454 4498      		cbi 0x8,4
- 999 0456 9AE2      		ldi r25,lo8(42)
- 1000 0458 95B9      		out 0x5,r25
- 1001 045a 4398      		cbi 0x8,3
- 1002 045c 439A      		sbi 0x8,3
- 1003 045e 449A      		sbi 0x8,4
- 136:lcd.c         **** 	write_data16(110);
- 1004               		.stabn	68,0,136,.LM101-.LFBB5
- 1005               	.LM101:
- 1006 0460 15B8      		out 0x5,__zero_reg__
- 1007 0462 4398      		cbi 0x8,3
- 1008 0464 439A      		sbi 0x8,3
- 1009 0466 9EE6      		ldi r25,lo8(110)
- 1010 0468 95B9      		out 0x5,r25
- 1011 046a 4398      		cbi 0x8,3
- 1012 046c 439A      		sbi 0x8,3
- 137:lcd.c         **** 	write_data16(151);
- 1013               		.stabn	68,0,137,.LM102-.LFBB5
- 1014               	.LM102:
- 1015 046e 15B8      		out 0x5,__zero_reg__
- 1016 0470 4398      		cbi 0x8,3
- 1017 0472 439A      		sbi 0x8,3
- 1018 0474 97E9      		ldi r25,lo8(-105)
- 1019 0476 95B9      		out 0x5,r25
- 1020 0478 4398      		cbi 0x8,3
- 1021 047a 439A      		sbi 0x8,3
- 138:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
- 1022               		.stabn	68,0,138,.LM103-.LFBB5
- 1023               	.LM103:
- 1024 047c 4498      		cbi 0x8,4
- 1025 047e 9BE2      		ldi r25,lo8(43)
- 1026 0480 95B9      		out 0x5,r25
- 1027 0482 4398      		cbi 0x8,3
- 1028 0484 439A      		sbi 0x8,3
-GAS LISTING /tmp/ccq2xQMg.s 			page 22
+ 982 044a 0F93      		push r16
+ 983 044c 1F93      		push r17
+ 984 044e CF93      		push r28
+ 985 0450 DF93      		push r29
+ 986 0452 CDB7      		in r28,__SP_L__
+ 987 0454 DEB7      		in r29,__SP_H__
+ 988 0456 2897      		sbiw r28,8
+ 989 0458 0FB6      		in __tmp_reg__,__SREG__
+ 990 045a F894      		cli
+ 991 045c DEBF      		out __SP_H__,r29
+ 992 045e 0FBE      		out __SREG__,__tmp_reg__
+ 993 0460 CDBF      		out __SP_L__,r28
+ 994               	/* prologue: function */
+ 995               	/* frame size = 8 */
+ 996               	/* stack size = 12 */
+ 997               	.L__stack_usage = 12
+ 998 0462 2983      		std Y+1,r18
+ 999 0464 3A83      		std Y+2,r19
+ 1000 0466 4B83      		std Y+3,r20
+ 1001 0468 5C83      		std Y+4,r21
+ 1002 046a 462F      		mov r20,r22
+ 1003 046c 6D83      		std Y+5,r22
+ 1004 046e 572F      		mov r21,r23
+ 1005 0470 7E83      		std Y+6,r23
+ 1006 0472 8F83      		std Y+7,r24
+ 1007 0474 9887      		std Y+8,r25
+ 1008 0476 8981      		ldd r24,Y+1
+ 1009 0478 9A81      		ldd r25,Y+2
+ 1010 047a 6B81      		ldd r22,Y+3
+ 1011 047c 7C81      		ldd r23,Y+4
+ 1012 047e EF81      		ldd r30,Y+7
+ 1013 0480 F885      		ldd r31,Y+8
+ 132:lcd.c         **** 	uint16_t x, y;
+ 133:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
+ 1014               		.stabn	68,0,133,.LM98-.LFBB5
+ 1015               	.LM98:
+ 1016 0482 4498      		cbi 0x8,4
+ 1017 0484 2AE2      		ldi r18,lo8(42)
+ 1018 0486 25B9      		out 0x5,r18
+ 1019 0488 4398      		cbi 0x8,3
+ 1020 048a 439A      		sbi 0x8,3
+ 1021 048c 449A      		sbi 0x8,4
+ 134:lcd.c         **** 	write_data16(r.left);
+ 1022               		.stabn	68,0,134,.LM99-.LFBB5
+ 1023               	.LM99:
+ 1024 048e 95B9      		out 0x5,r25
+ 1025 0490 4398      		cbi 0x8,3
+ 1026 0492 439A      		sbi 0x8,3
+ 1027 0494 85B9      		out 0x5,r24
+ 1028 0496 4398      		cbi 0x8,3
+ 1029 0498 439A      		sbi 0x8,3
+ 135:lcd.c         **** 	write_data16(r.right);
+ 1030               		.stabn	68,0,135,.LM100-.LFBB5
+ 1031               	.LM100:
+GAS LISTING /tmp/ccj7iC5P.s 			page 22
 
 
- 1029 0486 449A      		sbi 0x8,4
- 139:lcd.c         **** 	write_data16(204);
- 1030               		.stabn	68,0,139,.LM104-.LFBB5
- 1031               	.LM104:
- 1032 0488 15B8      		out 0x5,__zero_reg__
- 1033 048a 4398      		cbi 0x8,3
- 1034 048c 439A      		sbi 0x8,3
- 1035 048e 9CEC      		ldi r25,lo8(-52)
- 1036 0490 95B9      		out 0x5,r25
- 1037 0492 4398      		cbi 0x8,3
- 1038 0494 439A      		sbi 0x8,3
- 140:lcd.c         **** 	write_data16(277);
- 1039               		.stabn	68,0,140,.LM105-.LFBB5
- 1040               	.LM105:
- 1041 0496 91E0      		ldi r25,lo8(1)
- 1042 0498 95B9      		out 0x5,r25
- 1043 049a 4398      		cbi 0x8,3
- 1044 049c 439A      		sbi 0x8,3
- 1045 049e 95E1      		ldi r25,lo8(21)
- 1046 04a0 95B9      		out 0x5,r25
- 1047 04a2 4398      		cbi 0x8,3
- 1048 04a4 439A      		sbi 0x8,3
- 141:lcd.c         **** 	write_cmd(MEMORY_WRITE);
- 1049               		.stabn	68,0,141,.LM106-.LFBB5
- 1050               	.LM106:
- 1051 04a6 4498      		cbi 0x8,4
- 1052 04a8 9CE2      		ldi r25,lo8(44)
- 1053 04aa 95B9      		out 0x5,r25
- 1054 04ac 4398      		cbi 0x8,3
- 1055 04ae 439A      		sbi 0x8,3
- 1056 04b0 449A      		sbi 0x8,4
- 1057               	.LBB27:
- 142:lcd.c         **** 	for(y = 0; y <= 36; y++){
- 143:lcd.c         **** 		for(x = 0; x <= 20; x++){
- 144:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
- 1058               		.stabn	68,0,144,.LM107-.LFBB5
- 1059               	.LM107:
- 1060 04b2 29E0      		ldi r18,lo8(9)
- 1061 04b4 30E0      		ldi r19,0
- 1062 04b6 A901      		movw r20,r18
- 1063 04b8 481B      		sub r20,r24
- 1064 04ba 5109      		sbc r21,__zero_reg__
- 1065 04bc CA01      		movw r24,r20
- 1066 04be 29E0      		ldi r18,lo8(9)
- 1067 04c0 33E0      		ldi r19,lo8(3)
- 1068 04c2 829F      		mul r24,r18
- 1069 04c4 A001      		movw r20,r0
- 1070 04c6 839F      		mul r24,r19
- 1071 04c8 500D      		add r21,r0
- 1072 04ca 929F      		mul r25,r18
- 1073 04cc 500D      		add r21,r0
- 1074 04ce 1124      		clr r1
- 1075 04d0 9A01      		movw r18,r20
- 1076 04d2 220F      		lsl r18
- 1077 04d4 331F      		rol r19
- 1078 04d6 2050      		subi r18,lo8(-(digit2))
- 1079 04d8 3040      		sbci r19,hi8(-(digit2))
-GAS LISTING /tmp/ccq2xQMg.s 			page 23
+ 1032 049a 75B9      		out 0x5,r23
+ 1033 049c 4398      		cbi 0x8,3
+ 1034 049e 439A      		sbi 0x8,3
+ 1035 04a0 65B9      		out 0x5,r22
+ 1036 04a2 4398      		cbi 0x8,3
+ 1037 04a4 439A      		sbi 0x8,3
+ 136:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
+ 1038               		.stabn	68,0,136,.LM101-.LFBB5
+ 1039               	.LM101:
+ 1040 04a6 4498      		cbi 0x8,4
+ 1041 04a8 2BE2      		ldi r18,lo8(43)
+ 1042 04aa 25B9      		out 0x5,r18
+ 1043 04ac 4398      		cbi 0x8,3
+ 1044 04ae 439A      		sbi 0x8,3
+ 1045 04b0 449A      		sbi 0x8,4
+ 137:lcd.c         **** 	write_data16(r.top);
+ 1046               		.stabn	68,0,137,.LM102-.LFBB5
+ 1047               	.LM102:
+ 1048 04b2 55B9      		out 0x5,r21
+ 1049 04b4 4398      		cbi 0x8,3
+ 1050 04b6 439A      		sbi 0x8,3
+ 1051 04b8 45B9      		out 0x5,r20
+ 1052 04ba 4398      		cbi 0x8,3
+ 1053 04bc 439A      		sbi 0x8,3
+ 138:lcd.c         **** 	write_data16(r.bottom);
+ 1054               		.stabn	68,0,138,.LM103-.LFBB5
+ 1055               	.LM103:
+ 1056 04be F5B9      		out 0x5,r31
+ 1057 04c0 4398      		cbi 0x8,3
+ 1058 04c2 439A      		sbi 0x8,3
+ 1059 04c4 E5B9      		out 0x5,r30
+ 1060 04c6 4398      		cbi 0x8,3
+ 1061 04c8 439A      		sbi 0x8,3
+ 139:lcd.c         **** 	write_cmd(MEMORY_WRITE);
+ 1062               		.stabn	68,0,139,.LM104-.LFBB5
+ 1063               	.LM104:
+ 1064 04ca 4498      		cbi 0x8,4
+ 1065 04cc 2CE2      		ldi r18,lo8(44)
+ 1066 04ce 25B9      		out 0x5,r18
+ 1067 04d0 4398      		cbi 0x8,3
+ 1068 04d2 439A      		sbi 0x8,3
+ 1069 04d4 449A      		sbi 0x8,4
+ 1070               	.L30:
+ 140:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
+ 1071               		.stabn	68,0,140,.LM105-.LFBB5
+ 1072               	.LM105:
+ 1073 04d6 6817      		cp r22,r24
+ 1074 04d8 7907      		cpc r23,r25
+ 1075 04da 00F4      		brsh .L33
+ 1076               	/* epilogue start */
+ 141:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
+ 142:lcd.c         **** 			write_data16(col);
+ 143:lcd.c         **** }
+ 1077               		.stabn	68,0,143,.LM106-.LFBB5
+ 1078               	.LM106:
+ 1079 04dc 2896      		adiw r28,8
+ 1080 04de 0FB6      		in __tmp_reg__,__SREG__
+GAS LISTING /tmp/ccj7iC5P.s 			page 23
 
 
- 1080 04da DA01      		movw r26,r20
- 1081 04dc A75F      		subi r26,-9
- 1082 04de BC4F      		sbci r27,-4
- 1083               	.L31:
- 1084               	.LBE27:
- 133:lcd.c         **** 	uint16_t x, y;
- 1085               		.stabn	68,0,133,.LM108-.LFBB5
- 1086               	.LM108:
- 1087 04e0 C901      		movw r24,r18
- 143:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
- 1088               		.stabn	68,0,143,.LM109-.LFBB5
- 1089               	.LM109:
- 1090 04e2 70E0      		ldi r23,0
- 1091 04e4 60E0      		ldi r22,0
- 1092               	.L32:
- 1093               	.LBB28:
- 1094               		.stabn	68,0,144,.LM110-.LFBB5
- 1095               	.LM110:
- 1096 04e6 FC01      		movw r30,r24
- 1097               	/* #APP */
- 1098               	 ;  144 "lcd.c" 1
- 1099 04e8 C591      		lpm r28, Z+
- 1100 04ea D491      		lpm r29, Z
- 1101               		
- 1102               	 ;  0 "" 2
- 1103               	/* #NOAPP */
- 1104               	.LBE28:
- 1105 04ec D5B9      		out 0x5,r29
- 1106 04ee 4398      		cbi 0x8,3
- 1107 04f0 439A      		sbi 0x8,3
- 1108               	.LBB29:
- 1109 04f2 FC01      		movw r30,r24
- 1110               	/* #APP */
- 1111               	 ;  144 "lcd.c" 1
- 1112 04f4 C591      		lpm r28, Z+
- 1113 04f6 D491      		lpm r29, Z
- 1114               		
- 1115               	 ;  0 "" 2
- 1116               	/* #NOAPP */
- 1117               	.LBE29:
- 1118 04f8 C5B9      		out 0x5,r28
- 1119 04fa 4398      		cbi 0x8,3
- 1120 04fc 439A      		sbi 0x8,3
- 1121               	.LBB30:
- 145:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
- 1122               		.stabn	68,0,145,.LM111-.LFBB5
- 1123               	.LM111:
- 1124 04fe FC01      		movw r30,r24
- 1125               	/* #APP */
- 1126               	 ;  145 "lcd.c" 1
- 1127 0500 C591      		lpm r28, Z+
- 1128 0502 D491      		lpm r29, Z
- 1129               		
- 1130               	 ;  0 "" 2
- 1131               	/* #NOAPP */
- 1132               	.LBE30:
- 1133 0504 D5B9      		out 0x5,r29
-GAS LISTING /tmp/ccq2xQMg.s 			page 24
+ 1081 04e0 F894      		cli
+ 1082 04e2 DEBF      		out __SP_H__,r29
+ 1083 04e4 0FBE      		out __SREG__,__tmp_reg__
+ 1084 04e6 CDBF      		out __SP_L__,r28
+ 1085 04e8 DF91      		pop r29
+ 1086 04ea CF91      		pop r28
+ 1087 04ec 1F91      		pop r17
+ 1088 04ee 0F91      		pop r16
+ 1089 04f0 0895      		ret
+ 1090               	.L31:
+ 142:lcd.c         **** }
+ 1091               		.stabn	68,0,142,.LM107-.LFBB5
+ 1092               	.LM107:
+ 1093 04f2 15B9      		out 0x5,r17
+ 1094 04f4 4398      		cbi 0x8,3
+ 1095 04f6 439A      		sbi 0x8,3
+ 1096 04f8 05B9      		out 0x5,r16
+ 1097 04fa 4398      		cbi 0x8,3
+ 1098 04fc 439A      		sbi 0x8,3
+ 141:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
+ 1099               		.stabn	68,0,141,.LM108-.LFBB5
+ 1100               	.LM108:
+ 1101 04fe 2F5F      		subi r18,-1
+ 1102 0500 3F4F      		sbci r19,-1
+ 1103               	.L32:
+ 141:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
+ 1104               		.stabn	68,0,141,.LM109-.LFBB5
+ 1105               	.LM109:
+ 1106 0502 E217      		cp r30,r18
+ 1107 0504 F307      		cpc r31,r19
+ 1108 0506 00F4      		brsh .L31
+ 140:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
+ 1109               		.stabn	68,0,140,.LM110-.LFBB5
+ 1110               	.LM110:
+ 1111 0508 0196      		adiw r24,1
+ 1112 050a 00C0      		rjmp .L30
+ 1113               	.L33:
+ 141:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
+ 1114               		.stabn	68,0,141,.LM111-.LFBB5
+ 1115               	.LM111:
+ 1116 050c 9A01      		movw r18,r20
+ 1117 050e 00C0      		rjmp .L32
+ 1118               		.size	fill_rectangle, .-fill_rectangle
+ 1119               		.stabs	"x:r(0,6)",64,0,132,24
+ 1120               		.stabs	"y:r(0,6)",64,0,132,18
+ 1121               		.stabn	192,0,0,.LFBB5-.LFBB5
+ 1122               		.stabn	224,0,0,.Lscope5-.LFBB5
+ 1123               	.Lscope5:
+ 1124               		.stabs	"",36,0,0,.Lscope5-.LFBB5
+ 1125               		.section	.rodata
+ 1126               	.LC0:
+ 1127 0000 1800      		.word	24
+ 1128 0002 1C00      		.word	28
+ 1129 0004 1200      		.word	18
+ 1130 0006 1600      		.word	22
+ 1131               		.text
+ 1132               		.stabs	"LC1_green:F(0,1)",36,0,145,LC1_green
+GAS LISTING /tmp/ccj7iC5P.s 			page 24
 
 
- 1134 0506 4398      		cbi 0x8,3
- 1135 0508 439A      		sbi 0x8,3
- 1136               	.LBB31:
- 1137 050a FC01      		movw r30,r24
- 1138               	/* #APP */
- 1139               	 ;  145 "lcd.c" 1
- 1140 050c C591      		lpm r28, Z+
- 1141 050e D491      		lpm r29, Z
- 1142               		
- 1143               	 ;  0 "" 2
- 1144               	/* #NOAPP */
- 1145               	.LBE31:
- 1146 0510 C5B9      		out 0x5,r28
- 1147 0512 4398      		cbi 0x8,3
- 1148 0514 439A      		sbi 0x8,3
- 143:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
- 1149               		.stabn	68,0,143,.LM112-.LFBB5
- 1150               	.LM112:
- 1151 0516 6F5F      		subi r22,-1
- 1152 0518 7F4F      		sbci r23,-1
- 143:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
- 1153               		.stabn	68,0,143,.LM113-.LFBB5
- 1154               	.LM113:
- 1155 051a 0296      		adiw r24,2
- 1156 051c 6531      		cpi r22,21
- 1157 051e 7105      		cpc r23,__zero_reg__
- 1158 0520 01F4      		brne .L32
- 1159 0522 C901      		movw r24,r18
- 146:lcd.c         **** 		}
- 147:lcd.c         **** 		for(x = 0; x <= 20; x++){
- 1160               		.stabn	68,0,147,.LM114-.LFBB5
- 1161               	.LM114:
- 1162 0524 70E0      		ldi r23,0
- 1163 0526 60E0      		ldi r22,0
- 1164               	.L33:
- 1165               	.LBB32:
- 148:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
- 1166               		.stabn	68,0,148,.LM115-.LFBB5
- 1167               	.LM115:
- 1168 0528 FC01      		movw r30,r24
- 1169               	/* #APP */
- 1170               	 ;  148 "lcd.c" 1
- 1171 052a C591      		lpm r28, Z+
- 1172 052c D491      		lpm r29, Z
- 1173               		
- 1174               	 ;  0 "" 2
- 1175               	/* #NOAPP */
- 1176               	.LBE32:
- 1177 052e D5B9      		out 0x5,r29
- 1178 0530 4398      		cbi 0x8,3
- 1179 0532 439A      		sbi 0x8,3
- 1180               	.LBB33:
- 1181 0534 FC01      		movw r30,r24
- 1182               	/* #APP */
- 1183               	 ;  148 "lcd.c" 1
- 1184 0536 C591      		lpm r28, Z+
- 1185 0538 D491      		lpm r29, Z
-GAS LISTING /tmp/ccq2xQMg.s 			page 25
+ 1133               	.global	LC1_green
+ 1134               		.type	LC1_green, @function
+ 1135               	LC1_green:
+ 144:lcd.c         **** 
+ 145:lcd.c         **** void LC1_green(void)
+ 146:lcd.c         **** {
+ 1136               		.stabn	68,0,146,.LM112-.LFBB6
+ 1137               	.LM112:
+ 1138               	.LFBB6:
+ 1139 0510 0F93      		push r16
+ 1140 0512 1F93      		push r17
+ 1141 0514 CF93      		push r28
+ 1142 0516 DF93      		push r29
+ 1143 0518 CDB7      		in r28,__SP_L__
+ 1144 051a DEB7      		in r29,__SP_H__
+ 1145 051c 2897      		sbiw r28,8
+ 1146 051e 0FB6      		in __tmp_reg__,__SREG__
+ 1147 0520 F894      		cli
+ 1148 0522 DEBF      		out __SP_H__,r29
+ 1149 0524 0FBE      		out __SREG__,__tmp_reg__
+ 1150 0526 CDBF      		out __SP_L__,r28
+ 1151               	/* prologue: function */
+ 1152               	/* frame size = 8 */
+ 1153               	/* stack size = 12 */
+ 1154               	.L__stack_usage = 12
+ 147:lcd.c         **** 	rectangle LC1 = {24,28,18,22};
+ 1155               		.stabn	68,0,147,.LM113-.LFBB6
+ 1156               	.LM113:
+ 1157 0528 88E0      		ldi r24,lo8(8)
+ 1158 052a E0E0      		ldi r30,lo8(.LC0)
+ 1159 052c F0E0      		ldi r31,hi8(.LC0)
+ 1160 052e DE01      		movw r26,r28
+ 1161 0530 1196      		adiw r26,1
+ 1162               		0:
+ 1163 0532 0190      		ld r0,Z+
+ 1164 0534 0D92      		st X+,r0
+ 1165 0536 8A95      		dec r24
+ 1166 0538 01F4      		brne 0b
+ 148:lcd.c         **** 	fill_rectangle(LC1,GREEN);
+ 1167               		.stabn	68,0,148,.LM114-.LFBB6
+ 1168               	.LM114:
+ 1169 053a 00EE      		ldi r16,lo8(-32)
+ 1170 053c 17E0      		ldi r17,lo8(7)
+ 1171 053e 2981      		ldd r18,Y+1
+ 1172 0540 3A81      		ldd r19,Y+2
+ 1173 0542 4B81      		ldd r20,Y+3
+ 1174 0544 5C81      		ldd r21,Y+4
+ 1175 0546 6D81      		ldd r22,Y+5
+ 1176 0548 7E81      		ldd r23,Y+6
+ 1177 054a 8F81      		ldd r24,Y+7
+ 1178 054c 9885      		ldd r25,Y+8
+ 1179 054e 0E94 0000 		call fill_rectangle
+ 1180               	/* epilogue start */
+ 149:lcd.c         **** }
+ 1181               		.stabn	68,0,149,.LM115-.LFBB6
+ 1182               	.LM115:
+ 1183 0552 2896      		adiw r28,8
+GAS LISTING /tmp/ccj7iC5P.s 			page 25
 
 
- 1186               		
- 1187               	 ;  0 "" 2
- 1188               	/* #NOAPP */
- 1189               	.LBE33:
- 1190 053a C5B9      		out 0x5,r28
- 1191 053c 4398      		cbi 0x8,3
- 1192 053e 439A      		sbi 0x8,3
- 1193               	.LBB34:
- 149:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
- 1194               		.stabn	68,0,149,.LM116-.LFBB5
- 1195               	.LM116:
- 1196 0540 FC01      		movw r30,r24
- 1197               	/* #APP */
- 1198               	 ;  149 "lcd.c" 1
- 1199 0542 C591      		lpm r28, Z+
- 1200 0544 D491      		lpm r29, Z
- 1201               		
- 1202               	 ;  0 "" 2
- 1203               	/* #NOAPP */
- 1204               	.LBE34:
- 1205 0546 D5B9      		out 0x5,r29
- 1206 0548 4398      		cbi 0x8,3
- 1207 054a 439A      		sbi 0x8,3
- 1208               	.LBB35:
- 1209 054c FC01      		movw r30,r24
- 1210               	/* #APP */
- 1211               	 ;  149 "lcd.c" 1
- 1212 054e C591      		lpm r28, Z+
- 1213 0550 D491      		lpm r29, Z
- 1214               		
- 1215               	 ;  0 "" 2
- 1216               	/* #NOAPP */
- 1217               	.LBE35:
- 1218 0552 C5B9      		out 0x5,r28
- 1219 0554 4398      		cbi 0x8,3
- 1220 0556 439A      		sbi 0x8,3
- 147:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
- 1221               		.stabn	68,0,147,.LM117-.LFBB5
- 1222               	.LM117:
- 1223 0558 6F5F      		subi r22,-1
- 1224 055a 7F4F      		sbci r23,-1
- 147:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
- 1225               		.stabn	68,0,147,.LM118-.LFBB5
- 1226               	.LM118:
- 1227 055c 0296      		adiw r24,2
- 1228 055e 6531      		cpi r22,21
- 1229 0560 7105      		cpc r23,__zero_reg__
- 1230 0562 01F4      		brne .L33
- 142:lcd.c         **** 		for(x = 0; x <= 20; x++){
- 1231               		.stabn	68,0,142,.LM119-.LFBB5
- 1232               	.LM119:
- 1233 0564 265D      		subi r18,-42
- 1234 0566 3F4F      		sbci r19,-1
- 1235 0568 4B5E      		subi r20,-21
- 1236 056a 5F4F      		sbci r21,-1
- 1237 056c 4A17      		cp r20,r26
- 1238 056e 5B07      		cpc r21,r27
-GAS LISTING /tmp/ccq2xQMg.s 			page 26
+ 1184 0554 0FB6      		in __tmp_reg__,__SREG__
+ 1185 0556 F894      		cli
+ 1186 0558 DEBF      		out __SP_H__,r29
+ 1187 055a 0FBE      		out __SREG__,__tmp_reg__
+ 1188 055c CDBF      		out __SP_L__,r28
+ 1189 055e DF91      		pop r29
+ 1190 0560 CF91      		pop r28
+ 1191 0562 1F91      		pop r17
+ 1192 0564 0F91      		pop r16
+ 1193 0566 0895      		ret
+ 1194               		.size	LC1_green, .-LC1_green
+ 1195               		.stabs	"LC1:(0,8)",128,0,147,1
+ 1196               		.stabs	"rectangle:t(0,8)",128,0,34,0
+ 1197               		.stabn	192,0,0,.LFBB6-.LFBB6
+ 1198               		.stabn	224,0,0,.Lscope6-.LFBB6
+ 1199               	.Lscope6:
+ 1200               		.stabs	"",36,0,0,.Lscope6-.LFBB6
+ 1201               		.stabs	"LC1_red:F(0,1)",36,0,151,LC1_red
+ 1202               	.global	LC1_red
+ 1203               		.type	LC1_red, @function
+ 1204               	LC1_red:
+ 150:lcd.c         **** 
+ 151:lcd.c         **** void LC1_red(void)
+ 152:lcd.c         **** {
+ 1205               		.stabn	68,0,152,.LM116-.LFBB7
+ 1206               	.LM116:
+ 1207               	.LFBB7:
+ 1208 0568 0F93      		push r16
+ 1209 056a 1F93      		push r17
+ 1210 056c CF93      		push r28
+ 1211 056e DF93      		push r29
+ 1212 0570 CDB7      		in r28,__SP_L__
+ 1213 0572 DEB7      		in r29,__SP_H__
+ 1214 0574 2897      		sbiw r28,8
+ 1215 0576 0FB6      		in __tmp_reg__,__SREG__
+ 1216 0578 F894      		cli
+ 1217 057a DEBF      		out __SP_H__,r29
+ 1218 057c 0FBE      		out __SREG__,__tmp_reg__
+ 1219 057e CDBF      		out __SP_L__,r28
+ 1220               	/* prologue: function */
+ 1221               	/* frame size = 8 */
+ 1222               	/* stack size = 12 */
+ 1223               	.L__stack_usage = 12
+ 153:lcd.c         **** 	rectangle LC1 = {24,28,18,22};
+ 1224               		.stabn	68,0,153,.LM117-.LFBB7
+ 1225               	.LM117:
+ 1226 0580 88E0      		ldi r24,lo8(8)
+ 1227 0582 E0E0      		ldi r30,lo8(.LC0)
+ 1228 0584 F0E0      		ldi r31,hi8(.LC0)
+ 1229 0586 DE01      		movw r26,r28
+ 1230 0588 1196      		adiw r26,1
+ 1231               		0:
+ 1232 058a 0190      		ld r0,Z+
+ 1233 058c 0D92      		st X+,r0
+ 1234 058e 8A95      		dec r24
+ 1235 0590 01F4      		brne 0b
+ 154:lcd.c         **** 	fill_rectangle(LC1,RED);
+GAS LISTING /tmp/ccj7iC5P.s 			page 26
 
 
- 1239 0570 01F0      		breq .+2
- 1240 0572 00C0      		rjmp .L31
- 1241               	/* epilogue start */
- 150:lcd.c         **** 		}
- 151:lcd.c         **** 	}
- 152:lcd.c         **** }
- 1242               		.stabn	68,0,152,.LM120-.LFBB5
- 1243               	.LM120:
- 1244 0574 DF91      		pop r29
- 1245 0576 CF91      		pop r28
- 1246 0578 0895      		ret
- 1247               		.size	pwr_100, .-pwr_100
- 1248               	.Lscope5:
- 1249               		.stabs	"",36,0,0,.Lscope5-.LFBB5
- 1250               		.stabs	"pwr_10:F(0,1)",36,0,154,pwr_10
- 1251               		.stabs	"digit:P(0,2)",64,0,154,24
- 1252               	.global	pwr_10
- 1253               		.type	pwr_10, @function
- 1254               	pwr_10:
- 153:lcd.c         **** 
- 154:lcd.c         **** void pwr_10(uint8_t digit){
- 1255               		.stabn	68,0,154,.LM121-.LFBB6
- 1256               	.LM121:
- 1257               	.LFBB6:
- 1258 057a CF93      		push r28
- 1259 057c DF93      		push r29
- 1260               	/* prologue: function */
- 1261               	/* frame size = 0 */
- 1262               	/* stack size = 2 */
- 1263               	.L__stack_usage = 2
- 155:lcd.c         **** 	if(digit >= 10)
- 1264               		.stabn	68,0,155,.LM122-.LFBB6
- 1265               	.LM122:
- 1266 057e 8A30      		cpi r24,lo8(10)
- 1267 0580 00F0      		brlo .L38
- 156:lcd.c         **** 		digit = 0;
- 1268               		.stabn	68,0,156,.LM123-.LFBB6
- 1269               	.LM123:
- 1270 0582 80E0      		ldi r24,0
- 1271               	.L38:
- 157:lcd.c         **** 	uint16_t x, y;
- 158:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
- 1272               		.stabn	68,0,158,.LM124-.LFBB6
- 1273               	.LM124:
- 1274 0584 4498      		cbi 0x8,4
- 1275 0586 9AE2      		ldi r25,lo8(42)
- 1276 0588 95B9      		out 0x5,r25
- 1277 058a 4398      		cbi 0x8,3
- 1278 058c 439A      		sbi 0x8,3
- 1279 058e 449A      		sbi 0x8,4
- 159:lcd.c         **** 	write_data16(160);
- 1280               		.stabn	68,0,159,.LM125-.LFBB6
- 1281               	.LM125:
- 1282 0590 15B8      		out 0x5,__zero_reg__
- 1283 0592 4398      		cbi 0x8,3
- 1284 0594 439A      		sbi 0x8,3
- 1285 0596 90EA      		ldi r25,lo8(-96)
-GAS LISTING /tmp/ccq2xQMg.s 			page 27
+ 1236               		.stabn	68,0,154,.LM118-.LFBB7
+ 1237               	.LM118:
+ 1238 0592 00E0      		ldi r16,0
+ 1239 0594 18EF      		ldi r17,lo8(-8)
+ 1240 0596 2981      		ldd r18,Y+1
+ 1241 0598 3A81      		ldd r19,Y+2
+ 1242 059a 4B81      		ldd r20,Y+3
+ 1243 059c 5C81      		ldd r21,Y+4
+ 1244 059e 6D81      		ldd r22,Y+5
+ 1245 05a0 7E81      		ldd r23,Y+6
+ 1246 05a2 8F81      		ldd r24,Y+7
+ 1247 05a4 9885      		ldd r25,Y+8
+ 1248 05a6 0E94 0000 		call fill_rectangle
+ 1249               	/* epilogue start */
+ 155:lcd.c         **** }
+ 1250               		.stabn	68,0,155,.LM119-.LFBB7
+ 1251               	.LM119:
+ 1252 05aa 2896      		adiw r28,8
+ 1253 05ac 0FB6      		in __tmp_reg__,__SREG__
+ 1254 05ae F894      		cli
+ 1255 05b0 DEBF      		out __SP_H__,r29
+ 1256 05b2 0FBE      		out __SREG__,__tmp_reg__
+ 1257 05b4 CDBF      		out __SP_L__,r28
+ 1258 05b6 DF91      		pop r29
+ 1259 05b8 CF91      		pop r28
+ 1260 05ba 1F91      		pop r17
+ 1261 05bc 0F91      		pop r16
+ 1262 05be 0895      		ret
+ 1263               		.size	LC1_red, .-LC1_red
+ 1264               		.stabs	"LC1:(0,8)",128,0,153,1
+ 1265               		.stabn	192,0,0,.LFBB7-.LFBB7
+ 1266               		.stabn	224,0,0,.Lscope7-.LFBB7
+ 1267               	.Lscope7:
+ 1268               		.stabs	"",36,0,0,.Lscope7-.LFBB7
+ 1269               		.section	.rodata
+ 1270               	.LC1:
+ 1271 0008 1800      		.word	24
+ 1272 000a 1C00      		.word	28
+ 1273 000c 3200      		.word	50
+ 1274 000e 3600      		.word	54
+ 1275               		.text
+ 1276               		.stabs	"LC2_green:F(0,1)",36,0,157,LC2_green
+ 1277               	.global	LC2_green
+ 1278               		.type	LC2_green, @function
+ 1279               	LC2_green:
+ 156:lcd.c         **** 
+ 157:lcd.c         **** void LC2_green(void)
+ 158:lcd.c         **** {
+ 1280               		.stabn	68,0,158,.LM120-.LFBB8
+ 1281               	.LM120:
+ 1282               	.LFBB8:
+ 1283 05c0 0F93      		push r16
+ 1284 05c2 1F93      		push r17
+ 1285 05c4 CF93      		push r28
+ 1286 05c6 DF93      		push r29
+ 1287 05c8 CDB7      		in r28,__SP_L__
+ 1288 05ca DEB7      		in r29,__SP_H__
+GAS LISTING /tmp/ccj7iC5P.s 			page 27
 
 
- 1286 0598 95B9      		out 0x5,r25
- 1287 059a 4398      		cbi 0x8,3
- 1288 059c 439A      		sbi 0x8,3
- 160:lcd.c         **** 	write_data16(201);
- 1289               		.stabn	68,0,160,.LM126-.LFBB6
- 1290               	.LM126:
- 1291 059e 15B8      		out 0x5,__zero_reg__
- 1292 05a0 4398      		cbi 0x8,3
- 1293 05a2 439A      		sbi 0x8,3
- 1294 05a4 99EC      		ldi r25,lo8(-55)
- 1295 05a6 95B9      		out 0x5,r25
- 1296 05a8 4398      		cbi 0x8,3
- 1297 05aa 439A      		sbi 0x8,3
- 161:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
- 1298               		.stabn	68,0,161,.LM127-.LFBB6
- 1299               	.LM127:
- 1300 05ac 4498      		cbi 0x8,4
- 1301 05ae 9BE2      		ldi r25,lo8(43)
- 1302 05b0 95B9      		out 0x5,r25
- 1303 05b2 4398      		cbi 0x8,3
- 1304 05b4 439A      		sbi 0x8,3
- 1305 05b6 449A      		sbi 0x8,4
- 162:lcd.c         **** 	write_data16(204);
- 1306               		.stabn	68,0,162,.LM128-.LFBB6
- 1307               	.LM128:
- 1308 05b8 15B8      		out 0x5,__zero_reg__
- 1309 05ba 4398      		cbi 0x8,3
- 1310 05bc 439A      		sbi 0x8,3
- 1311 05be 9CEC      		ldi r25,lo8(-52)
- 1312 05c0 95B9      		out 0x5,r25
- 1313 05c2 4398      		cbi 0x8,3
- 1314 05c4 439A      		sbi 0x8,3
- 163:lcd.c         **** 	write_data16(277);
- 1315               		.stabn	68,0,163,.LM129-.LFBB6
- 1316               	.LM129:
- 1317 05c6 91E0      		ldi r25,lo8(1)
- 1318 05c8 95B9      		out 0x5,r25
- 1319 05ca 4398      		cbi 0x8,3
- 1320 05cc 439A      		sbi 0x8,3
- 1321 05ce 95E1      		ldi r25,lo8(21)
- 1322 05d0 95B9      		out 0x5,r25
- 1323 05d2 4398      		cbi 0x8,3
- 1324 05d4 439A      		sbi 0x8,3
- 164:lcd.c         **** 	write_cmd(MEMORY_WRITE);
- 1325               		.stabn	68,0,164,.LM130-.LFBB6
- 1326               	.LM130:
- 1327 05d6 4498      		cbi 0x8,4
- 1328 05d8 9CE2      		ldi r25,lo8(44)
- 1329 05da 95B9      		out 0x5,r25
- 1330 05dc 4398      		cbi 0x8,3
- 1331 05de 439A      		sbi 0x8,3
- 1332 05e0 449A      		sbi 0x8,4
- 1333               	.LBB36:
- 165:lcd.c         **** 	for(y = 0; y <= 36; y++){
- 166:lcd.c         **** 		for(x = 0; x <= 20; x++){
- 167:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
- 1334               		.stabn	68,0,167,.LM131-.LFBB6
-GAS LISTING /tmp/ccq2xQMg.s 			page 28
+ 1289 05cc 2897      		sbiw r28,8
+ 1290 05ce 0FB6      		in __tmp_reg__,__SREG__
+ 1291 05d0 F894      		cli
+ 1292 05d2 DEBF      		out __SP_H__,r29
+ 1293 05d4 0FBE      		out __SREG__,__tmp_reg__
+ 1294 05d6 CDBF      		out __SP_L__,r28
+ 1295               	/* prologue: function */
+ 1296               	/* frame size = 8 */
+ 1297               	/* stack size = 12 */
+ 1298               	.L__stack_usage = 12
+ 159:lcd.c         **** 	rectangle LC2 = {24,28,50,54};
+ 1299               		.stabn	68,0,159,.LM121-.LFBB8
+ 1300               	.LM121:
+ 1301 05d8 88E0      		ldi r24,lo8(8)
+ 1302 05da E0E0      		ldi r30,lo8(.LC1)
+ 1303 05dc F0E0      		ldi r31,hi8(.LC1)
+ 1304 05de DE01      		movw r26,r28
+ 1305 05e0 1196      		adiw r26,1
+ 1306               		0:
+ 1307 05e2 0190      		ld r0,Z+
+ 1308 05e4 0D92      		st X+,r0
+ 1309 05e6 8A95      		dec r24
+ 1310 05e8 01F4      		brne 0b
+ 160:lcd.c         **** 	fill_rectangle(LC2,GREEN);
+ 1311               		.stabn	68,0,160,.LM122-.LFBB8
+ 1312               	.LM122:
+ 1313 05ea 00EE      		ldi r16,lo8(-32)
+ 1314 05ec 17E0      		ldi r17,lo8(7)
+ 1315 05ee 2981      		ldd r18,Y+1
+ 1316 05f0 3A81      		ldd r19,Y+2
+ 1317 05f2 4B81      		ldd r20,Y+3
+ 1318 05f4 5C81      		ldd r21,Y+4
+ 1319 05f6 6D81      		ldd r22,Y+5
+ 1320 05f8 7E81      		ldd r23,Y+6
+ 1321 05fa 8F81      		ldd r24,Y+7
+ 1322 05fc 9885      		ldd r25,Y+8
+ 1323 05fe 0E94 0000 		call fill_rectangle
+ 1324               	/* epilogue start */
+ 161:lcd.c         **** }
+ 1325               		.stabn	68,0,161,.LM123-.LFBB8
+ 1326               	.LM123:
+ 1327 0602 2896      		adiw r28,8
+ 1328 0604 0FB6      		in __tmp_reg__,__SREG__
+ 1329 0606 F894      		cli
+ 1330 0608 DEBF      		out __SP_H__,r29
+ 1331 060a 0FBE      		out __SREG__,__tmp_reg__
+ 1332 060c CDBF      		out __SP_L__,r28
+ 1333 060e DF91      		pop r29
+ 1334 0610 CF91      		pop r28
+ 1335 0612 1F91      		pop r17
+ 1336 0614 0F91      		pop r16
+ 1337 0616 0895      		ret
+ 1338               		.size	LC2_green, .-LC2_green
+ 1339               		.stabs	"LC2:(0,8)",128,0,159,1
+ 1340               		.stabn	192,0,0,.LFBB8-.LFBB8
+ 1341               		.stabn	224,0,0,.Lscope8-.LFBB8
+ 1342               	.Lscope8:
+GAS LISTING /tmp/ccj7iC5P.s 			page 28
 
 
- 1335               	.LM131:
- 1336 05e2 29E0      		ldi r18,lo8(9)
- 1337 05e4 30E0      		ldi r19,0
- 1338 05e6 A901      		movw r20,r18
- 1339 05e8 481B      		sub r20,r24
- 1340 05ea 5109      		sbc r21,__zero_reg__
- 1341 05ec CA01      		movw r24,r20
- 1342 05ee 29E0      		ldi r18,lo8(9)
- 1343 05f0 33E0      		ldi r19,lo8(3)
- 1344 05f2 829F      		mul r24,r18
- 1345 05f4 A001      		movw r20,r0
- 1346 05f6 839F      		mul r24,r19
- 1347 05f8 500D      		add r21,r0
- 1348 05fa 929F      		mul r25,r18
- 1349 05fc 500D      		add r21,r0
- 1350 05fe 1124      		clr r1
- 1351 0600 9A01      		movw r18,r20
- 1352 0602 220F      		lsl r18
- 1353 0604 331F      		rol r19
- 1354 0606 2050      		subi r18,lo8(-(d3))
- 1355 0608 3040      		sbci r19,hi8(-(d3))
- 1356 060a DA01      		movw r26,r20
- 1357 060c A75F      		subi r26,-9
- 1358 060e BC4F      		sbci r27,-4
- 1359               	.L39:
- 1360               	.LBE36:
- 156:lcd.c         **** 	uint16_t x, y;
- 1361               		.stabn	68,0,156,.LM132-.LFBB6
- 1362               	.LM132:
- 1363 0610 C901      		movw r24,r18
- 166:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
- 1364               		.stabn	68,0,166,.LM133-.LFBB6
- 1365               	.LM133:
- 1366 0612 70E0      		ldi r23,0
- 1367 0614 60E0      		ldi r22,0
- 1368               	.L40:
- 1369               	.LBB37:
- 1370               		.stabn	68,0,167,.LM134-.LFBB6
- 1371               	.LM134:
- 1372 0616 FC01      		movw r30,r24
- 1373               	/* #APP */
- 1374               	 ;  167 "lcd.c" 1
- 1375 0618 C591      		lpm r28, Z+
- 1376 061a D491      		lpm r29, Z
- 1377               		
- 1378               	 ;  0 "" 2
- 1379               	/* #NOAPP */
- 1380               	.LBE37:
- 1381 061c D5B9      		out 0x5,r29
- 1382 061e 4398      		cbi 0x8,3
- 1383 0620 439A      		sbi 0x8,3
- 1384               	.LBB38:
- 1385 0622 FC01      		movw r30,r24
- 1386               	/* #APP */
- 1387               	 ;  167 "lcd.c" 1
- 1388 0624 C591      		lpm r28, Z+
- 1389 0626 D491      		lpm r29, Z
-GAS LISTING /tmp/ccq2xQMg.s 			page 29
+ 1343               		.stabs	"",36,0,0,.Lscope8-.LFBB8
+ 1344               		.stabs	"LC2_red:F(0,1)",36,0,163,LC2_red
+ 1345               	.global	LC2_red
+ 1346               		.type	LC2_red, @function
+ 1347               	LC2_red:
+ 162:lcd.c         **** 
+ 163:lcd.c         **** void LC2_red(void)
+ 164:lcd.c         **** {
+ 1348               		.stabn	68,0,164,.LM124-.LFBB9
+ 1349               	.LM124:
+ 1350               	.LFBB9:
+ 1351 0618 0F93      		push r16
+ 1352 061a 1F93      		push r17
+ 1353 061c CF93      		push r28
+ 1354 061e DF93      		push r29
+ 1355 0620 CDB7      		in r28,__SP_L__
+ 1356 0622 DEB7      		in r29,__SP_H__
+ 1357 0624 2897      		sbiw r28,8
+ 1358 0626 0FB6      		in __tmp_reg__,__SREG__
+ 1359 0628 F894      		cli
+ 1360 062a DEBF      		out __SP_H__,r29
+ 1361 062c 0FBE      		out __SREG__,__tmp_reg__
+ 1362 062e CDBF      		out __SP_L__,r28
+ 1363               	/* prologue: function */
+ 1364               	/* frame size = 8 */
+ 1365               	/* stack size = 12 */
+ 1366               	.L__stack_usage = 12
+ 165:lcd.c         **** 	rectangle LC2 = {24,28,50,54};
+ 1367               		.stabn	68,0,165,.LM125-.LFBB9
+ 1368               	.LM125:
+ 1369 0630 88E0      		ldi r24,lo8(8)
+ 1370 0632 E0E0      		ldi r30,lo8(.LC1)
+ 1371 0634 F0E0      		ldi r31,hi8(.LC1)
+ 1372 0636 DE01      		movw r26,r28
+ 1373 0638 1196      		adiw r26,1
+ 1374               		0:
+ 1375 063a 0190      		ld r0,Z+
+ 1376 063c 0D92      		st X+,r0
+ 1377 063e 8A95      		dec r24
+ 1378 0640 01F4      		brne 0b
+ 166:lcd.c         **** 	fill_rectangle(LC2,RED);
+ 1379               		.stabn	68,0,166,.LM126-.LFBB9
+ 1380               	.LM126:
+ 1381 0642 00E0      		ldi r16,0
+ 1382 0644 18EF      		ldi r17,lo8(-8)
+ 1383 0646 2981      		ldd r18,Y+1
+ 1384 0648 3A81      		ldd r19,Y+2
+ 1385 064a 4B81      		ldd r20,Y+3
+ 1386 064c 5C81      		ldd r21,Y+4
+ 1387 064e 6D81      		ldd r22,Y+5
+ 1388 0650 7E81      		ldd r23,Y+6
+ 1389 0652 8F81      		ldd r24,Y+7
+ 1390 0654 9885      		ldd r25,Y+8
+ 1391 0656 0E94 0000 		call fill_rectangle
+ 1392               	/* epilogue start */
+ 167:lcd.c         **** }
+ 1393               		.stabn	68,0,167,.LM127-.LFBB9
+GAS LISTING /tmp/ccj7iC5P.s 			page 29
 
 
- 1390               		
- 1391               	 ;  0 "" 2
- 1392               	/* #NOAPP */
- 1393               	.LBE38:
- 1394 0628 C5B9      		out 0x5,r28
- 1395 062a 4398      		cbi 0x8,3
- 1396 062c 439A      		sbi 0x8,3
- 1397               	.LBB39:
- 168:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
- 1398               		.stabn	68,0,168,.LM135-.LFBB6
- 1399               	.LM135:
- 1400 062e FC01      		movw r30,r24
- 1401               	/* #APP */
- 1402               	 ;  168 "lcd.c" 1
- 1403 0630 C591      		lpm r28, Z+
- 1404 0632 D491      		lpm r29, Z
- 1405               		
- 1406               	 ;  0 "" 2
- 1407               	/* #NOAPP */
- 1408               	.LBE39:
- 1409 0634 D5B9      		out 0x5,r29
- 1410 0636 4398      		cbi 0x8,3
- 1411 0638 439A      		sbi 0x8,3
- 1412               	.LBB40:
- 1413 063a FC01      		movw r30,r24
- 1414               	/* #APP */
- 1415               	 ;  168 "lcd.c" 1
- 1416 063c C591      		lpm r28, Z+
- 1417 063e D491      		lpm r29, Z
- 1418               		
- 1419               	 ;  0 "" 2
- 1420               	/* #NOAPP */
- 1421               	.LBE40:
- 1422 0640 C5B9      		out 0x5,r28
- 1423 0642 4398      		cbi 0x8,3
- 1424 0644 439A      		sbi 0x8,3
- 166:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
- 1425               		.stabn	68,0,166,.LM136-.LFBB6
- 1426               	.LM136:
- 1427 0646 6F5F      		subi r22,-1
- 1428 0648 7F4F      		sbci r23,-1
- 166:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
- 1429               		.stabn	68,0,166,.LM137-.LFBB6
- 1430               	.LM137:
- 1431 064a 0296      		adiw r24,2
- 1432 064c 6531      		cpi r22,21
- 1433 064e 7105      		cpc r23,__zero_reg__
- 1434 0650 01F4      		brne .L40
- 1435 0652 C901      		movw r24,r18
- 169:lcd.c         **** 		}
- 170:lcd.c         **** 		for(x = 0; x <= 20; x++){
- 1436               		.stabn	68,0,170,.LM138-.LFBB6
- 1437               	.LM138:
- 1438 0654 70E0      		ldi r23,0
- 1439 0656 60E0      		ldi r22,0
- 1440               	.L41:
- 1441               	.LBB41:
-GAS LISTING /tmp/ccq2xQMg.s 			page 30
+ 1394               	.LM127:
+ 1395 065a 2896      		adiw r28,8
+ 1396 065c 0FB6      		in __tmp_reg__,__SREG__
+ 1397 065e F894      		cli
+ 1398 0660 DEBF      		out __SP_H__,r29
+ 1399 0662 0FBE      		out __SREG__,__tmp_reg__
+ 1400 0664 CDBF      		out __SP_L__,r28
+ 1401 0666 DF91      		pop r29
+ 1402 0668 CF91      		pop r28
+ 1403 066a 1F91      		pop r17
+ 1404 066c 0F91      		pop r16
+ 1405 066e 0895      		ret
+ 1406               		.size	LC2_red, .-LC2_red
+ 1407               		.stabs	"LC2:(0,8)",128,0,165,1
+ 1408               		.stabn	192,0,0,.LFBB9-.LFBB9
+ 1409               		.stabn	224,0,0,.Lscope9-.LFBB9
+ 1410               	.Lscope9:
+ 1411               		.stabs	"",36,0,0,.Lscope9-.LFBB9
+ 1412               		.section	.rodata
+ 1413               	.LC2:
+ 1414 0010 1800      		.word	24
+ 1415 0012 1C00      		.word	28
+ 1416 0014 5000      		.word	80
+ 1417 0016 5400      		.word	84
+ 1418               		.text
+ 1419               		.stabs	"LC3_green:F(0,1)",36,0,169,LC3_green
+ 1420               	.global	LC3_green
+ 1421               		.type	LC3_green, @function
+ 1422               	LC3_green:
+ 168:lcd.c         **** 
+ 169:lcd.c         **** void LC3_green(void)
+ 170:lcd.c         **** {
+ 1423               		.stabn	68,0,170,.LM128-.LFBB10
+ 1424               	.LM128:
+ 1425               	.LFBB10:
+ 1426 0670 0F93      		push r16
+ 1427 0672 1F93      		push r17
+ 1428 0674 CF93      		push r28
+ 1429 0676 DF93      		push r29
+ 1430 0678 CDB7      		in r28,__SP_L__
+ 1431 067a DEB7      		in r29,__SP_H__
+ 1432 067c 2897      		sbiw r28,8
+ 1433 067e 0FB6      		in __tmp_reg__,__SREG__
+ 1434 0680 F894      		cli
+ 1435 0682 DEBF      		out __SP_H__,r29
+ 1436 0684 0FBE      		out __SREG__,__tmp_reg__
+ 1437 0686 CDBF      		out __SP_L__,r28
+ 1438               	/* prologue: function */
+ 1439               	/* frame size = 8 */
+ 1440               	/* stack size = 12 */
+ 1441               	.L__stack_usage = 12
+ 171:lcd.c         **** 	rectangle LC3 = {24,28,80,84};
+ 1442               		.stabn	68,0,171,.LM129-.LFBB10
+ 1443               	.LM129:
+ 1444 0688 88E0      		ldi r24,lo8(8)
+ 1445 068a E0E0      		ldi r30,lo8(.LC2)
+ 1446 068c F0E0      		ldi r31,hi8(.LC2)
+GAS LISTING /tmp/ccj7iC5P.s 			page 30
 
 
- 171:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
- 1442               		.stabn	68,0,171,.LM139-.LFBB6
- 1443               	.LM139:
- 1444 0658 FC01      		movw r30,r24
- 1445               	/* #APP */
- 1446               	 ;  171 "lcd.c" 1
- 1447 065a C591      		lpm r28, Z+
- 1448 065c D491      		lpm r29, Z
- 1449               		
- 1450               	 ;  0 "" 2
- 1451               	/* #NOAPP */
- 1452               	.LBE41:
- 1453 065e D5B9      		out 0x5,r29
- 1454 0660 4398      		cbi 0x8,3
- 1455 0662 439A      		sbi 0x8,3
- 1456               	.LBB42:
- 1457 0664 FC01      		movw r30,r24
- 1458               	/* #APP */
- 1459               	 ;  171 "lcd.c" 1
- 1460 0666 C591      		lpm r28, Z+
- 1461 0668 D491      		lpm r29, Z
- 1462               		
- 1463               	 ;  0 "" 2
- 1464               	/* #NOAPP */
- 1465               	.LBE42:
- 1466 066a C5B9      		out 0x5,r28
- 1467 066c 4398      		cbi 0x8,3
- 1468 066e 439A      		sbi 0x8,3
- 1469               	.LBB43:
- 172:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
- 1470               		.stabn	68,0,172,.LM140-.LFBB6
- 1471               	.LM140:
- 1472 0670 FC01      		movw r30,r24
- 1473               	/* #APP */
- 1474               	 ;  172 "lcd.c" 1
- 1475 0672 C591      		lpm r28, Z+
- 1476 0674 D491      		lpm r29, Z
- 1477               		
- 1478               	 ;  0 "" 2
- 1479               	/* #NOAPP */
- 1480               	.LBE43:
- 1481 0676 D5B9      		out 0x5,r29
- 1482 0678 4398      		cbi 0x8,3
- 1483 067a 439A      		sbi 0x8,3
- 1484               	.LBB44:
- 1485 067c FC01      		movw r30,r24
- 1486               	/* #APP */
- 1487               	 ;  172 "lcd.c" 1
- 1488 067e C591      		lpm r28, Z+
- 1489 0680 D491      		lpm r29, Z
- 1490               		
- 1491               	 ;  0 "" 2
- 1492               	/* #NOAPP */
- 1493               	.LBE44:
- 1494 0682 C5B9      		out 0x5,r28
- 1495 0684 4398      		cbi 0x8,3
- 1496 0686 439A      		sbi 0x8,3
-GAS LISTING /tmp/ccq2xQMg.s 			page 31
+ 1447 068e DE01      		movw r26,r28
+ 1448 0690 1196      		adiw r26,1
+ 1449               		0:
+ 1450 0692 0190      		ld r0,Z+
+ 1451 0694 0D92      		st X+,r0
+ 1452 0696 8A95      		dec r24
+ 1453 0698 01F4      		brne 0b
+ 172:lcd.c         **** 	fill_rectangle(LC3,GREEN);
+ 1454               		.stabn	68,0,172,.LM130-.LFBB10
+ 1455               	.LM130:
+ 1456 069a 00EE      		ldi r16,lo8(-32)
+ 1457 069c 17E0      		ldi r17,lo8(7)
+ 1458 069e 2981      		ldd r18,Y+1
+ 1459 06a0 3A81      		ldd r19,Y+2
+ 1460 06a2 4B81      		ldd r20,Y+3
+ 1461 06a4 5C81      		ldd r21,Y+4
+ 1462 06a6 6D81      		ldd r22,Y+5
+ 1463 06a8 7E81      		ldd r23,Y+6
+ 1464 06aa 8F81      		ldd r24,Y+7
+ 1465 06ac 9885      		ldd r25,Y+8
+ 1466 06ae 0E94 0000 		call fill_rectangle
+ 1467               	/* epilogue start */
+ 173:lcd.c         **** }
+ 1468               		.stabn	68,0,173,.LM131-.LFBB10
+ 1469               	.LM131:
+ 1470 06b2 2896      		adiw r28,8
+ 1471 06b4 0FB6      		in __tmp_reg__,__SREG__
+ 1472 06b6 F894      		cli
+ 1473 06b8 DEBF      		out __SP_H__,r29
+ 1474 06ba 0FBE      		out __SREG__,__tmp_reg__
+ 1475 06bc CDBF      		out __SP_L__,r28
+ 1476 06be DF91      		pop r29
+ 1477 06c0 CF91      		pop r28
+ 1478 06c2 1F91      		pop r17
+ 1479 06c4 0F91      		pop r16
+ 1480 06c6 0895      		ret
+ 1481               		.size	LC3_green, .-LC3_green
+ 1482               		.stabs	"LC3:(0,8)",128,0,171,1
+ 1483               		.stabn	192,0,0,.LFBB10-.LFBB10
+ 1484               		.stabn	224,0,0,.Lscope10-.LFBB10
+ 1485               	.Lscope10:
+ 1486               		.stabs	"",36,0,0,.Lscope10-.LFBB10
+ 1487               		.stabs	"LC3_red:F(0,1)",36,0,175,LC3_red
+ 1488               	.global	LC3_red
+ 1489               		.type	LC3_red, @function
+ 1490               	LC3_red:
+ 174:lcd.c         **** 
+ 175:lcd.c         **** void LC3_red(void)
+ 176:lcd.c         **** {
+ 1491               		.stabn	68,0,176,.LM132-.LFBB11
+ 1492               	.LM132:
+ 1493               	.LFBB11:
+ 1494 06c8 0F93      		push r16
+ 1495 06ca 1F93      		push r17
+ 1496 06cc CF93      		push r28
+ 1497 06ce DF93      		push r29
+ 1498 06d0 CDB7      		in r28,__SP_L__
+GAS LISTING /tmp/ccj7iC5P.s 			page 31
 
 
- 170:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
- 1497               		.stabn	68,0,170,.LM141-.LFBB6
- 1498               	.LM141:
- 1499 0688 6F5F      		subi r22,-1
- 1500 068a 7F4F      		sbci r23,-1
- 170:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
- 1501               		.stabn	68,0,170,.LM142-.LFBB6
- 1502               	.LM142:
- 1503 068c 0296      		adiw r24,2
- 1504 068e 6531      		cpi r22,21
- 1505 0690 7105      		cpc r23,__zero_reg__
- 1506 0692 01F4      		brne .L41
- 165:lcd.c         **** 		for(x = 0; x <= 20; x++){
- 1507               		.stabn	68,0,165,.LM143-.LFBB6
- 1508               	.LM143:
- 1509 0694 265D      		subi r18,-42
- 1510 0696 3F4F      		sbci r19,-1
- 1511 0698 4B5E      		subi r20,-21
- 1512 069a 5F4F      		sbci r21,-1
- 1513 069c 4A17      		cp r20,r26
- 1514 069e 5B07      		cpc r21,r27
- 1515 06a0 01F0      		breq .+2
- 1516 06a2 00C0      		rjmp .L39
- 1517               	/* epilogue start */
- 173:lcd.c         **** 		}
- 174:lcd.c         **** 	}
- 175:lcd.c         **** }
- 1518               		.stabn	68,0,175,.LM144-.LFBB6
- 1519               	.LM144:
- 1520 06a4 DF91      		pop r29
- 1521 06a6 CF91      		pop r28
- 1522 06a8 0895      		ret
- 1523               		.size	pwr_10, .-pwr_10
- 1524               	.Lscope6:
- 1525               		.stabs	"",36,0,0,.Lscope6-.LFBB6
- 1526               		.stabs	"bat_pwr:F(0,1)",36,0,177,bat_pwr
- 1527               		.stabs	"state:P(0,8)=@s8;-16;",64,0,177,24
- 1528               		.stabs	"_Bool:t(0,8)",128,0,0,0
- 1529               	.global	bat_pwr
- 1530               		.type	bat_pwr, @function
- 1531               	bat_pwr:
- 176:lcd.c         **** 
- 177:lcd.c         **** void bat_pwr(bool state){
- 1532               		.stabn	68,0,177,.LM145-.LFBB7
- 1533               	.LM145:
- 1534               	.LFBB7:
- 1535               	/* prologue: function */
- 1536               	/* frame size = 0 */
- 1537               	/* stack size = 0 */
- 1538               	.L__stack_usage = 0
- 178:lcd.c         **** 	//  14px wide, 25px tall
- 179:lcd.c         **** 	//  Anchoring to coordinate (106, 28)
- 180:lcd.c         **** 	uint16_t x, y;
- 181:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
- 1539               		.stabn	68,0,181,.LM146-.LFBB7
- 1540               	.LM146:
- 1541 06aa 4498      		cbi 0x8,4
-GAS LISTING /tmp/ccq2xQMg.s 			page 32
+ 1499 06d2 DEB7      		in r29,__SP_H__
+ 1500 06d4 2897      		sbiw r28,8
+ 1501 06d6 0FB6      		in __tmp_reg__,__SREG__
+ 1502 06d8 F894      		cli
+ 1503 06da DEBF      		out __SP_H__,r29
+ 1504 06dc 0FBE      		out __SREG__,__tmp_reg__
+ 1505 06de CDBF      		out __SP_L__,r28
+ 1506               	/* prologue: function */
+ 1507               	/* frame size = 8 */
+ 1508               	/* stack size = 12 */
+ 1509               	.L__stack_usage = 12
+ 177:lcd.c         **** 	rectangle LC3 = {24,28,80,84};
+ 1510               		.stabn	68,0,177,.LM133-.LFBB11
+ 1511               	.LM133:
+ 1512 06e0 88E0      		ldi r24,lo8(8)
+ 1513 06e2 E0E0      		ldi r30,lo8(.LC2)
+ 1514 06e4 F0E0      		ldi r31,hi8(.LC2)
+ 1515 06e6 DE01      		movw r26,r28
+ 1516 06e8 1196      		adiw r26,1
+ 1517               		0:
+ 1518 06ea 0190      		ld r0,Z+
+ 1519 06ec 0D92      		st X+,r0
+ 1520 06ee 8A95      		dec r24
+ 1521 06f0 01F4      		brne 0b
+ 178:lcd.c         **** 	fill_rectangle(LC3,RED);
+ 1522               		.stabn	68,0,178,.LM134-.LFBB11
+ 1523               	.LM134:
+ 1524 06f2 00E0      		ldi r16,0
+ 1525 06f4 18EF      		ldi r17,lo8(-8)
+ 1526 06f6 2981      		ldd r18,Y+1
+ 1527 06f8 3A81      		ldd r19,Y+2
+ 1528 06fa 4B81      		ldd r20,Y+3
+ 1529 06fc 5C81      		ldd r21,Y+4
+ 1530 06fe 6D81      		ldd r22,Y+5
+ 1531 0700 7E81      		ldd r23,Y+6
+ 1532 0702 8F81      		ldd r24,Y+7
+ 1533 0704 9885      		ldd r25,Y+8
+ 1534 0706 0E94 0000 		call fill_rectangle
+ 1535               	/* epilogue start */
+ 179:lcd.c         **** }
+ 1536               		.stabn	68,0,179,.LM135-.LFBB11
+ 1537               	.LM135:
+ 1538 070a 2896      		adiw r28,8
+ 1539 070c 0FB6      		in __tmp_reg__,__SREG__
+ 1540 070e F894      		cli
+ 1541 0710 DEBF      		out __SP_H__,r29
+ 1542 0712 0FBE      		out __SREG__,__tmp_reg__
+ 1543 0714 CDBF      		out __SP_L__,r28
+ 1544 0716 DF91      		pop r29
+ 1545 0718 CF91      		pop r28
+ 1546 071a 1F91      		pop r17
+ 1547 071c 0F91      		pop r16
+ 1548 071e 0895      		ret
+ 1549               		.size	LC3_red, .-LC3_red
+ 1550               		.stabs	"LC3:(0,8)",128,0,177,1
+ 1551               		.stabn	192,0,0,.LFBB11-.LFBB11
+ 1552               		.stabn	224,0,0,.Lscope11-.LFBB11
+GAS LISTING /tmp/ccj7iC5P.s 			page 32
 
 
- 1542 06ac 9AE2      		ldi r25,lo8(42)
- 1543 06ae 95B9      		out 0x5,r25
- 1544 06b0 4398      		cbi 0x8,3
- 1545 06b2 439A      		sbi 0x8,3
- 1546 06b4 449A      		sbi 0x8,4
- 182:lcd.c         **** 	write_data16(106);
- 1547               		.stabn	68,0,182,.LM147-.LFBB7
- 1548               	.LM147:
- 1549 06b6 15B8      		out 0x5,__zero_reg__
- 1550 06b8 4398      		cbi 0x8,3
- 1551 06ba 439A      		sbi 0x8,3
- 1552 06bc 9AE6      		ldi r25,lo8(106)
- 1553 06be 95B9      		out 0x5,r25
- 1554 06c0 4398      		cbi 0x8,3
- 1555 06c2 439A      		sbi 0x8,3
- 183:lcd.c         **** 	write_data16(133);
- 1556               		.stabn	68,0,183,.LM148-.LFBB7
- 1557               	.LM148:
- 1558 06c4 15B8      		out 0x5,__zero_reg__
- 1559 06c6 4398      		cbi 0x8,3
- 1560 06c8 439A      		sbi 0x8,3
- 1561 06ca 95E8      		ldi r25,lo8(-123)
- 1562 06cc 95B9      		out 0x5,r25
- 1563 06ce 4398      		cbi 0x8,3
- 1564 06d0 439A      		sbi 0x8,3
- 184:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
- 1565               		.stabn	68,0,184,.LM149-.LFBB7
- 1566               	.LM149:
- 1567 06d2 4498      		cbi 0x8,4
- 1568 06d4 9BE2      		ldi r25,lo8(43)
- 1569 06d6 95B9      		out 0x5,r25
- 1570 06d8 4398      		cbi 0x8,3
- 1571 06da 439A      		sbi 0x8,3
- 1572 06dc 449A      		sbi 0x8,4
- 185:lcd.c         **** 	write_data16(28);
- 1573               		.stabn	68,0,185,.LM150-.LFBB7
- 1574               	.LM150:
- 1575 06de 15B8      		out 0x5,__zero_reg__
- 1576 06e0 4398      		cbi 0x8,3
- 1577 06e2 439A      		sbi 0x8,3
- 1578 06e4 9CE1      		ldi r25,lo8(28)
- 1579 06e6 95B9      		out 0x5,r25
- 1580 06e8 4398      		cbi 0x8,3
- 1581 06ea 439A      		sbi 0x8,3
- 186:lcd.c         **** 	write_data16(77);
- 1582               		.stabn	68,0,186,.LM151-.LFBB7
- 1583               	.LM151:
- 1584 06ec 15B8      		out 0x5,__zero_reg__
- 1585 06ee 4398      		cbi 0x8,3
- 1586 06f0 439A      		sbi 0x8,3
- 1587 06f2 9DE4      		ldi r25,lo8(77)
- 1588 06f4 95B9      		out 0x5,r25
- 1589 06f6 4398      		cbi 0x8,3
- 1590 06f8 439A      		sbi 0x8,3
- 187:lcd.c         **** 	write_cmd(MEMORY_WRITE);
- 1591               		.stabn	68,0,187,.LM152-.LFBB7
- 1592               	.LM152:
-GAS LISTING /tmp/ccq2xQMg.s 			page 33
+ 1553               	.Lscope11:
+ 1554               		.stabs	"",36,0,0,.Lscope11-.LFBB11
+ 1555               		.section	.rodata
+ 1556               	.LC3:
+ 1557 0018 CE00      		.word	206
+ 1558 001a D200      		.word	210
+ 1559 001c 1200      		.word	18
+ 1560 001e 1600      		.word	22
+ 1561               		.text
+ 1562               		.stabs	"LS1_green:F(0,1)",36,0,182,LS1_green
+ 1563               	.global	LS1_green
+ 1564               		.type	LS1_green, @function
+ 1565               	LS1_green:
+ 180:lcd.c         **** 
+ 181:lcd.c         **** 
+ 182:lcd.c         **** void LS1_green(void)
+ 183:lcd.c         **** {
+ 1566               		.stabn	68,0,183,.LM136-.LFBB12
+ 1567               	.LM136:
+ 1568               	.LFBB12:
+ 1569 0720 0F93      		push r16
+ 1570 0722 1F93      		push r17
+ 1571 0724 CF93      		push r28
+ 1572 0726 DF93      		push r29
+ 1573 0728 CDB7      		in r28,__SP_L__
+ 1574 072a DEB7      		in r29,__SP_H__
+ 1575 072c 2897      		sbiw r28,8
+ 1576 072e 0FB6      		in __tmp_reg__,__SREG__
+ 1577 0730 F894      		cli
+ 1578 0732 DEBF      		out __SP_H__,r29
+ 1579 0734 0FBE      		out __SREG__,__tmp_reg__
+ 1580 0736 CDBF      		out __SP_L__,r28
+ 1581               	/* prologue: function */
+ 1582               	/* frame size = 8 */
+ 1583               	/* stack size = 12 */
+ 1584               	.L__stack_usage = 12
+ 184:lcd.c         **** 	rectangle LC1 = {206,210,18,22};
+ 1585               		.stabn	68,0,184,.LM137-.LFBB12
+ 1586               	.LM137:
+ 1587 0738 88E0      		ldi r24,lo8(8)
+ 1588 073a E0E0      		ldi r30,lo8(.LC3)
+ 1589 073c F0E0      		ldi r31,hi8(.LC3)
+ 1590 073e DE01      		movw r26,r28
+ 1591 0740 1196      		adiw r26,1
+ 1592               		0:
+ 1593 0742 0190      		ld r0,Z+
+ 1594 0744 0D92      		st X+,r0
+ 1595 0746 8A95      		dec r24
+ 1596 0748 01F4      		brne 0b
+ 185:lcd.c         **** 	fill_rectangle(LC1,GREEN);
+ 1597               		.stabn	68,0,185,.LM138-.LFBB12
+ 1598               	.LM138:
+ 1599 074a 00EE      		ldi r16,lo8(-32)
+ 1600 074c 17E0      		ldi r17,lo8(7)
+ 1601 074e 2981      		ldd r18,Y+1
+ 1602 0750 3A81      		ldd r19,Y+2
+ 1603 0752 4B81      		ldd r20,Y+3
+GAS LISTING /tmp/ccj7iC5P.s 			page 33
 
 
- 1593 06fa 4498      		cbi 0x8,4
- 1594 06fc 9CE2      		ldi r25,lo8(44)
- 1595 06fe 95B9      		out 0x5,r25
- 1596 0700 4398      		cbi 0x8,3
- 1597 0702 439A      		sbi 0x8,3
- 1598 0704 449A      		sbi 0x8,4
- 1599 0706 20E0      		ldi r18,lo8(BATDRN)
- 1600 0708 30E0      		ldi r19,hi8(BATDRN)
- 188:lcd.c         **** 	if(state){
- 1601               		.stabn	68,0,188,.LM153-.LFBB7
- 1602               	.LM153:
- 1603 070a 70E0      		ldi r23,0
- 1604 070c 60E0      		ldi r22,0
- 1605 070e 8823      		tst r24
- 1606 0710 01F4      		brne .+2
- 1607 0712 00C0      		rjmp .L47
- 1608 0714 20E0      		ldi r18,lo8(BATCHR)
- 1609 0716 30E0      		ldi r19,hi8(BATCHR)
- 1610 0718 70E0      		ldi r23,0
- 1611 071a 60E0      		ldi r22,0
- 1612               	.L48:
- 177:lcd.c         **** 	//  14px wide, 25px tall
- 1613               		.stabn	68,0,177,.LM154-.LFBB7
- 1614               	.LM154:
- 1615 071c C901      		movw r24,r18
- 189:lcd.c         **** 		for(y = 0; y <= 24; y++){
- 190:lcd.c         **** 			for(x = 0; x <= 13; x++){
- 1616               		.stabn	68,0,190,.LM155-.LFBB7
- 1617               	.LM155:
- 1618 071e 50E0      		ldi r21,0
- 1619 0720 40E0      		ldi r20,0
- 1620               	.L49:
- 1621               	.LBB45:
- 191:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
- 1622               		.stabn	68,0,191,.LM156-.LFBB7
- 1623               	.LM156:
- 1624 0722 FC01      		movw r30,r24
- 1625               	/* #APP */
- 1626               	 ;  191 "lcd.c" 1
- 1627 0724 A591      		lpm r26, Z+
- 1628 0726 B491      		lpm r27, Z
- 1629               		
- 1630               	 ;  0 "" 2
- 1631               	/* #NOAPP */
- 1632               	.LBE45:
- 1633 0728 B5B9      		out 0x5,r27
- 1634 072a 4398      		cbi 0x8,3
- 1635 072c 439A      		sbi 0x8,3
- 1636               	.LBB46:
- 1637 072e FC01      		movw r30,r24
- 1638               	/* #APP */
- 1639               	 ;  191 "lcd.c" 1
- 1640 0730 A591      		lpm r26, Z+
- 1641 0732 B491      		lpm r27, Z
- 1642               		
- 1643               	 ;  0 "" 2
- 1644               	/* #NOAPP */
-GAS LISTING /tmp/ccq2xQMg.s 			page 34
+ 1604 0754 5C81      		ldd r21,Y+4
+ 1605 0756 6D81      		ldd r22,Y+5
+ 1606 0758 7E81      		ldd r23,Y+6
+ 1607 075a 8F81      		ldd r24,Y+7
+ 1608 075c 9885      		ldd r25,Y+8
+ 1609 075e 0E94 0000 		call fill_rectangle
+ 1610               	/* epilogue start */
+ 186:lcd.c         **** }
+ 1611               		.stabn	68,0,186,.LM139-.LFBB12
+ 1612               	.LM139:
+ 1613 0762 2896      		adiw r28,8
+ 1614 0764 0FB6      		in __tmp_reg__,__SREG__
+ 1615 0766 F894      		cli
+ 1616 0768 DEBF      		out __SP_H__,r29
+ 1617 076a 0FBE      		out __SREG__,__tmp_reg__
+ 1618 076c CDBF      		out __SP_L__,r28
+ 1619 076e DF91      		pop r29
+ 1620 0770 CF91      		pop r28
+ 1621 0772 1F91      		pop r17
+ 1622 0774 0F91      		pop r16
+ 1623 0776 0895      		ret
+ 1624               		.size	LS1_green, .-LS1_green
+ 1625               		.stabs	"LC1:(0,8)",128,0,184,1
+ 1626               		.stabn	192,0,0,.LFBB12-.LFBB12
+ 1627               		.stabn	224,0,0,.Lscope12-.LFBB12
+ 1628               	.Lscope12:
+ 1629               		.stabs	"",36,0,0,.Lscope12-.LFBB12
+ 1630               		.stabs	"LS1_red:F(0,1)",36,0,188,LS1_red
+ 1631               	.global	LS1_red
+ 1632               		.type	LS1_red, @function
+ 1633               	LS1_red:
+ 187:lcd.c         **** 
+ 188:lcd.c         **** void LS1_red(void)
+ 189:lcd.c         **** {
+ 1634               		.stabn	68,0,189,.LM140-.LFBB13
+ 1635               	.LM140:
+ 1636               	.LFBB13:
+ 1637 0778 0F93      		push r16
+ 1638 077a 1F93      		push r17
+ 1639 077c CF93      		push r28
+ 1640 077e DF93      		push r29
+ 1641 0780 CDB7      		in r28,__SP_L__
+ 1642 0782 DEB7      		in r29,__SP_H__
+ 1643 0784 2897      		sbiw r28,8
+ 1644 0786 0FB6      		in __tmp_reg__,__SREG__
+ 1645 0788 F894      		cli
+ 1646 078a DEBF      		out __SP_H__,r29
+ 1647 078c 0FBE      		out __SREG__,__tmp_reg__
+ 1648 078e CDBF      		out __SP_L__,r28
+ 1649               	/* prologue: function */
+ 1650               	/* frame size = 8 */
+ 1651               	/* stack size = 12 */
+ 1652               	.L__stack_usage = 12
+ 190:lcd.c         **** 	rectangle LC1 = {206,210,18,22};
+ 1653               		.stabn	68,0,190,.LM141-.LFBB13
+ 1654               	.LM141:
+ 1655 0790 88E0      		ldi r24,lo8(8)
+GAS LISTING /tmp/ccj7iC5P.s 			page 34
 
 
- 1645               	.LBE46:
- 1646 0734 A5B9      		out 0x5,r26
- 1647 0736 4398      		cbi 0x8,3
- 1648 0738 439A      		sbi 0x8,3
- 1649               	.LBB47:
- 192:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
- 1650               		.stabn	68,0,192,.LM157-.LFBB7
- 1651               	.LM157:
- 1652 073a FC01      		movw r30,r24
- 1653               	/* #APP */
- 1654               	 ;  192 "lcd.c" 1
- 1655 073c A591      		lpm r26, Z+
- 1656 073e B491      		lpm r27, Z
- 1657               		
- 1658               	 ;  0 "" 2
- 1659               	/* #NOAPP */
- 1660               	.LBE47:
- 1661 0740 B5B9      		out 0x5,r27
- 1662 0742 4398      		cbi 0x8,3
- 1663 0744 439A      		sbi 0x8,3
- 1664               	.LBB48:
- 1665 0746 FC01      		movw r30,r24
- 1666               	/* #APP */
- 1667               	 ;  192 "lcd.c" 1
- 1668 0748 A591      		lpm r26, Z+
- 1669 074a B491      		lpm r27, Z
- 1670               		
- 1671               	 ;  0 "" 2
- 1672               	/* #NOAPP */
- 1673               	.LBE48:
- 1674 074c A5B9      		out 0x5,r26
- 1675 074e 4398      		cbi 0x8,3
- 1676 0750 439A      		sbi 0x8,3
- 190:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
- 1677               		.stabn	68,0,190,.LM158-.LFBB7
- 1678               	.LM158:
- 1679 0752 4F5F      		subi r20,-1
- 1680 0754 5F4F      		sbci r21,-1
- 190:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
- 1681               		.stabn	68,0,190,.LM159-.LFBB7
- 1682               	.LM159:
- 1683 0756 0296      		adiw r24,2
- 1684 0758 4E30      		cpi r20,14
- 1685 075a 5105      		cpc r21,__zero_reg__
- 1686 075c 01F4      		brne .L49
- 1687 075e C901      		movw r24,r18
- 193:lcd.c         **** 			}
- 194:lcd.c         **** 			for(x = 0; x <= 13; x++){
- 1688               		.stabn	68,0,194,.LM160-.LFBB7
- 1689               	.LM160:
- 1690 0760 50E0      		ldi r21,0
- 1691 0762 40E0      		ldi r20,0
- 1692               	.L50:
- 1693               	.LBB49:
- 195:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
- 1694               		.stabn	68,0,195,.LM161-.LFBB7
- 1695               	.LM161:
-GAS LISTING /tmp/ccq2xQMg.s 			page 35
+ 1656 0792 E0E0      		ldi r30,lo8(.LC3)
+ 1657 0794 F0E0      		ldi r31,hi8(.LC3)
+ 1658 0796 DE01      		movw r26,r28
+ 1659 0798 1196      		adiw r26,1
+ 1660               		0:
+ 1661 079a 0190      		ld r0,Z+
+ 1662 079c 0D92      		st X+,r0
+ 1663 079e 8A95      		dec r24
+ 1664 07a0 01F4      		brne 0b
+ 191:lcd.c         **** 	fill_rectangle(LC1,RED);
+ 1665               		.stabn	68,0,191,.LM142-.LFBB13
+ 1666               	.LM142:
+ 1667 07a2 00E0      		ldi r16,0
+ 1668 07a4 18EF      		ldi r17,lo8(-8)
+ 1669 07a6 2981      		ldd r18,Y+1
+ 1670 07a8 3A81      		ldd r19,Y+2
+ 1671 07aa 4B81      		ldd r20,Y+3
+ 1672 07ac 5C81      		ldd r21,Y+4
+ 1673 07ae 6D81      		ldd r22,Y+5
+ 1674 07b0 7E81      		ldd r23,Y+6
+ 1675 07b2 8F81      		ldd r24,Y+7
+ 1676 07b4 9885      		ldd r25,Y+8
+ 1677 07b6 0E94 0000 		call fill_rectangle
+ 1678               	/* epilogue start */
+ 192:lcd.c         **** }
+ 1679               		.stabn	68,0,192,.LM143-.LFBB13
+ 1680               	.LM143:
+ 1681 07ba 2896      		adiw r28,8
+ 1682 07bc 0FB6      		in __tmp_reg__,__SREG__
+ 1683 07be F894      		cli
+ 1684 07c0 DEBF      		out __SP_H__,r29
+ 1685 07c2 0FBE      		out __SREG__,__tmp_reg__
+ 1686 07c4 CDBF      		out __SP_L__,r28
+ 1687 07c6 DF91      		pop r29
+ 1688 07c8 CF91      		pop r28
+ 1689 07ca 1F91      		pop r17
+ 1690 07cc 0F91      		pop r16
+ 1691 07ce 0895      		ret
+ 1692               		.size	LS1_red, .-LS1_red
+ 1693               		.stabs	"LC1:(0,8)",128,0,190,1
+ 1694               		.stabn	192,0,0,.LFBB13-.LFBB13
+ 1695               		.stabn	224,0,0,.Lscope13-.LFBB13
+ 1696               	.Lscope13:
+ 1697               		.stabs	"",36,0,0,.Lscope13-.LFBB13
+ 1698               		.section	.rodata
+ 1699               	.LC4:
+ 1700 0020 CE00      		.word	206
+ 1701 0022 D200      		.word	210
+ 1702 0024 3200      		.word	50
+ 1703 0026 3600      		.word	54
+ 1704               		.text
+ 1705               		.stabs	"LS2_green:F(0,1)",36,0,194,LS2_green
+ 1706               	.global	LS2_green
+ 1707               		.type	LS2_green, @function
+ 1708               	LS2_green:
+ 193:lcd.c         **** 
+ 194:lcd.c         **** void LS2_green(void)
+GAS LISTING /tmp/ccj7iC5P.s 			page 35
 
 
- 1696 0764 FC01      		movw r30,r24
- 1697               	/* #APP */
- 1698               	 ;  195 "lcd.c" 1
- 1699 0766 A591      		lpm r26, Z+
- 1700 0768 B491      		lpm r27, Z
- 1701               		
- 1702               	 ;  0 "" 2
- 1703               	/* #NOAPP */
- 1704               	.LBE49:
- 1705 076a B5B9      		out 0x5,r27
- 1706 076c 4398      		cbi 0x8,3
- 1707 076e 439A      		sbi 0x8,3
- 1708               	.LBB50:
- 1709 0770 FC01      		movw r30,r24
- 1710               	/* #APP */
- 1711               	 ;  195 "lcd.c" 1
- 1712 0772 A591      		lpm r26, Z+
- 1713 0774 B491      		lpm r27, Z
- 1714               		
- 1715               	 ;  0 "" 2
- 1716               	/* #NOAPP */
- 1717               	.LBE50:
- 1718 0776 A5B9      		out 0x5,r26
- 1719 0778 4398      		cbi 0x8,3
- 1720 077a 439A      		sbi 0x8,3
- 1721               	.LBB51:
- 196:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
- 1722               		.stabn	68,0,196,.LM162-.LFBB7
- 1723               	.LM162:
- 1724 077c FC01      		movw r30,r24
- 1725               	/* #APP */
- 1726               	 ;  196 "lcd.c" 1
- 1727 077e A591      		lpm r26, Z+
- 1728 0780 B491      		lpm r27, Z
- 1729               		
- 1730               	 ;  0 "" 2
- 1731               	/* #NOAPP */
- 1732               	.LBE51:
- 1733 0782 B5B9      		out 0x5,r27
- 1734 0784 4398      		cbi 0x8,3
- 1735 0786 439A      		sbi 0x8,3
- 1736               	.LBB52:
- 1737 0788 FC01      		movw r30,r24
- 1738               	/* #APP */
- 1739               	 ;  196 "lcd.c" 1
- 1740 078a A591      		lpm r26, Z+
- 1741 078c B491      		lpm r27, Z
- 1742               		
- 1743               	 ;  0 "" 2
- 1744               	/* #NOAPP */
- 1745               	.LBE52:
- 1746 078e A5B9      		out 0x5,r26
- 1747 0790 4398      		cbi 0x8,3
- 1748 0792 439A      		sbi 0x8,3
- 194:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
- 1749               		.stabn	68,0,194,.LM163-.LFBB7
- 1750               	.LM163:
-GAS LISTING /tmp/ccq2xQMg.s 			page 36
+ 195:lcd.c         **** {
+ 1709               		.stabn	68,0,195,.LM144-.LFBB14
+ 1710               	.LM144:
+ 1711               	.LFBB14:
+ 1712 07d0 0F93      		push r16
+ 1713 07d2 1F93      		push r17
+ 1714 07d4 CF93      		push r28
+ 1715 07d6 DF93      		push r29
+ 1716 07d8 CDB7      		in r28,__SP_L__
+ 1717 07da DEB7      		in r29,__SP_H__
+ 1718 07dc 2897      		sbiw r28,8
+ 1719 07de 0FB6      		in __tmp_reg__,__SREG__
+ 1720 07e0 F894      		cli
+ 1721 07e2 DEBF      		out __SP_H__,r29
+ 1722 07e4 0FBE      		out __SREG__,__tmp_reg__
+ 1723 07e6 CDBF      		out __SP_L__,r28
+ 1724               	/* prologue: function */
+ 1725               	/* frame size = 8 */
+ 1726               	/* stack size = 12 */
+ 1727               	.L__stack_usage = 12
+ 196:lcd.c         **** 	rectangle LC2 = {206,210,50,54};
+ 1728               		.stabn	68,0,196,.LM145-.LFBB14
+ 1729               	.LM145:
+ 1730 07e8 88E0      		ldi r24,lo8(8)
+ 1731 07ea E0E0      		ldi r30,lo8(.LC4)
+ 1732 07ec F0E0      		ldi r31,hi8(.LC4)
+ 1733 07ee DE01      		movw r26,r28
+ 1734 07f0 1196      		adiw r26,1
+ 1735               		0:
+ 1736 07f2 0190      		ld r0,Z+
+ 1737 07f4 0D92      		st X+,r0
+ 1738 07f6 8A95      		dec r24
+ 1739 07f8 01F4      		brne 0b
+ 197:lcd.c         **** 	fill_rectangle(LC2,GREEN);
+ 1740               		.stabn	68,0,197,.LM146-.LFBB14
+ 1741               	.LM146:
+ 1742 07fa 00EE      		ldi r16,lo8(-32)
+ 1743 07fc 17E0      		ldi r17,lo8(7)
+ 1744 07fe 2981      		ldd r18,Y+1
+ 1745 0800 3A81      		ldd r19,Y+2
+ 1746 0802 4B81      		ldd r20,Y+3
+ 1747 0804 5C81      		ldd r21,Y+4
+ 1748 0806 6D81      		ldd r22,Y+5
+ 1749 0808 7E81      		ldd r23,Y+6
+ 1750 080a 8F81      		ldd r24,Y+7
+ 1751 080c 9885      		ldd r25,Y+8
+ 1752 080e 0E94 0000 		call fill_rectangle
+ 1753               	/* epilogue start */
+ 198:lcd.c         **** }
+ 1754               		.stabn	68,0,198,.LM147-.LFBB14
+ 1755               	.LM147:
+ 1756 0812 2896      		adiw r28,8
+ 1757 0814 0FB6      		in __tmp_reg__,__SREG__
+ 1758 0816 F894      		cli
+ 1759 0818 DEBF      		out __SP_H__,r29
+ 1760 081a 0FBE      		out __SREG__,__tmp_reg__
+ 1761 081c CDBF      		out __SP_L__,r28
+GAS LISTING /tmp/ccj7iC5P.s 			page 36
 
 
- 1751 0794 4F5F      		subi r20,-1
- 1752 0796 5F4F      		sbci r21,-1
- 194:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
- 1753               		.stabn	68,0,194,.LM164-.LFBB7
- 1754               	.LM164:
- 1755 0798 0296      		adiw r24,2
- 1756 079a 4E30      		cpi r20,14
- 1757 079c 5105      		cpc r21,__zero_reg__
- 1758 079e 01F4      		brne .L50
- 189:lcd.c         **** 			for(x = 0; x <= 13; x++){
- 1759               		.stabn	68,0,189,.LM165-.LFBB7
- 1760               	.LM165:
- 1761 07a0 245E      		subi r18,-28
- 1762 07a2 3F4F      		sbci r19,-1
- 1763 07a4 625F      		subi r22,-14
- 1764 07a6 7F4F      		sbci r23,-1
- 1765 07a8 6E35      		cpi r22,94
- 1766 07aa 81E0      		ldi r24,1
- 1767 07ac 7807      		cpc r23,r24
- 1768 07ae 01F0      		breq .+2
- 1769 07b0 00C0      		rjmp .L48
- 1770               	.L45:
- 1771               	/* epilogue start */
- 197:lcd.c         **** 			}
- 198:lcd.c         **** 		}
- 199:lcd.c         **** 	}
- 200:lcd.c         **** 	else {
- 201:lcd.c         **** 		for(y = 0; y <= 24; y++){
- 202:lcd.c         **** 			for(x = 0; x <= 13; x++){
- 203:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 204:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 205:lcd.c         **** 			}
- 206:lcd.c         **** 			for(x = 0; x <= 13; x++){
- 207:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 208:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 209:lcd.c         **** 			}
- 210:lcd.c         **** 		}
- 211:lcd.c         **** 	}
- 212:lcd.c         **** }
- 1772               		.stabn	68,0,212,.LM166-.LFBB7
- 1773               	.LM166:
- 1774 07b2 0895      		ret
- 1775               	.L52:
- 1776               	.LBB53:
- 203:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 1777               		.stabn	68,0,203,.LM167-.LFBB7
- 1778               	.LM167:
- 1779 07b4 FC01      		movw r30,r24
- 1780               	/* #APP */
- 1781               	 ;  203 "lcd.c" 1
- 1782 07b6 A591      		lpm r26, Z+
- 1783 07b8 B491      		lpm r27, Z
- 1784               		
- 1785               	 ;  0 "" 2
- 1786               	/* #NOAPP */
- 1787               	.LBE53:
- 1788 07ba B5B9      		out 0x5,r27
-GAS LISTING /tmp/ccq2xQMg.s 			page 37
+ 1762 081e DF91      		pop r29
+ 1763 0820 CF91      		pop r28
+ 1764 0822 1F91      		pop r17
+ 1765 0824 0F91      		pop r16
+ 1766 0826 0895      		ret
+ 1767               		.size	LS2_green, .-LS2_green
+ 1768               		.stabs	"LC2:(0,8)",128,0,196,1
+ 1769               		.stabn	192,0,0,.LFBB14-.LFBB14
+ 1770               		.stabn	224,0,0,.Lscope14-.LFBB14
+ 1771               	.Lscope14:
+ 1772               		.stabs	"",36,0,0,.Lscope14-.LFBB14
+ 1773               		.stabs	"LS2_red:F(0,1)",36,0,200,LS2_red
+ 1774               	.global	LS2_red
+ 1775               		.type	LS2_red, @function
+ 1776               	LS2_red:
+ 199:lcd.c         **** 
+ 200:lcd.c         **** void LS2_red(void)
+ 201:lcd.c         **** {
+ 1777               		.stabn	68,0,201,.LM148-.LFBB15
+ 1778               	.LM148:
+ 1779               	.LFBB15:
+ 1780 0828 0F93      		push r16
+ 1781 082a 1F93      		push r17
+ 1782 082c CF93      		push r28
+ 1783 082e DF93      		push r29
+ 1784 0830 CDB7      		in r28,__SP_L__
+ 1785 0832 DEB7      		in r29,__SP_H__
+ 1786 0834 2897      		sbiw r28,8
+ 1787 0836 0FB6      		in __tmp_reg__,__SREG__
+ 1788 0838 F894      		cli
+ 1789 083a DEBF      		out __SP_H__,r29
+ 1790 083c 0FBE      		out __SREG__,__tmp_reg__
+ 1791 083e CDBF      		out __SP_L__,r28
+ 1792               	/* prologue: function */
+ 1793               	/* frame size = 8 */
+ 1794               	/* stack size = 12 */
+ 1795               	.L__stack_usage = 12
+ 202:lcd.c         **** 	rectangle LC2 = {206,210,50,54};
+ 1796               		.stabn	68,0,202,.LM149-.LFBB15
+ 1797               	.LM149:
+ 1798 0840 88E0      		ldi r24,lo8(8)
+ 1799 0842 E0E0      		ldi r30,lo8(.LC4)
+ 1800 0844 F0E0      		ldi r31,hi8(.LC4)
+ 1801 0846 DE01      		movw r26,r28
+ 1802 0848 1196      		adiw r26,1
+ 1803               		0:
+ 1804 084a 0190      		ld r0,Z+
+ 1805 084c 0D92      		st X+,r0
+ 1806 084e 8A95      		dec r24
+ 1807 0850 01F4      		brne 0b
+ 203:lcd.c         **** 	fill_rectangle(LC2,RED);
+ 1808               		.stabn	68,0,203,.LM150-.LFBB15
+ 1809               	.LM150:
+ 1810 0852 00E0      		ldi r16,0
+ 1811 0854 18EF      		ldi r17,lo8(-8)
+ 1812 0856 2981      		ldd r18,Y+1
+ 1813 0858 3A81      		ldd r19,Y+2
+GAS LISTING /tmp/ccj7iC5P.s 			page 37
 
 
- 1789 07bc 4398      		cbi 0x8,3
- 1790 07be 439A      		sbi 0x8,3
- 1791               	.LBB54:
- 1792 07c0 FC01      		movw r30,r24
- 1793               	/* #APP */
- 1794               	 ;  203 "lcd.c" 1
- 1795 07c2 A591      		lpm r26, Z+
- 1796 07c4 B491      		lpm r27, Z
- 1797               		
- 1798               	 ;  0 "" 2
- 1799               	/* #NOAPP */
- 1800               	.LBE54:
- 1801 07c6 A5B9      		out 0x5,r26
- 1802 07c8 4398      		cbi 0x8,3
- 1803 07ca 439A      		sbi 0x8,3
- 1804               	.LBB55:
- 204:lcd.c         **** 			}
- 1805               		.stabn	68,0,204,.LM168-.LFBB7
- 1806               	.LM168:
- 1807 07cc FC01      		movw r30,r24
- 1808               	/* #APP */
- 1809               	 ;  204 "lcd.c" 1
- 1810 07ce A591      		lpm r26, Z+
- 1811 07d0 B491      		lpm r27, Z
- 1812               		
- 1813               	 ;  0 "" 2
- 1814               	/* #NOAPP */
- 1815               	.LBE55:
- 1816 07d2 B5B9      		out 0x5,r27
- 1817 07d4 4398      		cbi 0x8,3
- 1818 07d6 439A      		sbi 0x8,3
- 1819               	.LBB56:
- 1820 07d8 FC01      		movw r30,r24
- 1821               	/* #APP */
- 1822               	 ;  204 "lcd.c" 1
- 1823 07da A591      		lpm r26, Z+
- 1824 07dc B491      		lpm r27, Z
- 1825               		
- 1826               	 ;  0 "" 2
- 1827               	/* #NOAPP */
- 1828               	.LBE56:
- 1829 07de A5B9      		out 0x5,r26
- 1830 07e0 4398      		cbi 0x8,3
- 1831 07e2 439A      		sbi 0x8,3
- 202:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 1832               		.stabn	68,0,202,.LM169-.LFBB7
- 1833               	.LM169:
- 1834 07e4 4F5F      		subi r20,-1
- 1835 07e6 5F4F      		sbci r21,-1
- 202:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 1836               		.stabn	68,0,202,.LM170-.LFBB7
- 1837               	.LM170:
- 1838 07e8 0296      		adiw r24,2
- 1839 07ea 4E30      		cpi r20,14
- 1840 07ec 5105      		cpc r21,__zero_reg__
- 1841 07ee 01F4      		brne .L52
- 1842 07f0 C901      		movw r24,r18
-GAS LISTING /tmp/ccq2xQMg.s 			page 38
+ 1814 085a 4B81      		ldd r20,Y+3
+ 1815 085c 5C81      		ldd r21,Y+4
+ 1816 085e 6D81      		ldd r22,Y+5
+ 1817 0860 7E81      		ldd r23,Y+6
+ 1818 0862 8F81      		ldd r24,Y+7
+ 1819 0864 9885      		ldd r25,Y+8
+ 1820 0866 0E94 0000 		call fill_rectangle
+ 1821               	/* epilogue start */
+ 204:lcd.c         **** }
+ 1822               		.stabn	68,0,204,.LM151-.LFBB15
+ 1823               	.LM151:
+ 1824 086a 2896      		adiw r28,8
+ 1825 086c 0FB6      		in __tmp_reg__,__SREG__
+ 1826 086e F894      		cli
+ 1827 0870 DEBF      		out __SP_H__,r29
+ 1828 0872 0FBE      		out __SREG__,__tmp_reg__
+ 1829 0874 CDBF      		out __SP_L__,r28
+ 1830 0876 DF91      		pop r29
+ 1831 0878 CF91      		pop r28
+ 1832 087a 1F91      		pop r17
+ 1833 087c 0F91      		pop r16
+ 1834 087e 0895      		ret
+ 1835               		.size	LS2_red, .-LS2_red
+ 1836               		.stabs	"LC2:(0,8)",128,0,202,1
+ 1837               		.stabn	192,0,0,.LFBB15-.LFBB15
+ 1838               		.stabn	224,0,0,.Lscope15-.LFBB15
+ 1839               	.Lscope15:
+ 1840               		.stabs	"",36,0,0,.Lscope15-.LFBB15
+ 1841               		.section	.rodata
+ 1842               	.LC5:
+ 1843 0028 CE00      		.word	206
+ 1844 002a D200      		.word	210
+ 1845 002c 5000      		.word	80
+ 1846 002e 5400      		.word	84
+ 1847               		.text
+ 1848               		.stabs	"LS3_green:F(0,1)",36,0,206,LS3_green
+ 1849               	.global	LS3_green
+ 1850               		.type	LS3_green, @function
+ 1851               	LS3_green:
+ 205:lcd.c         **** 
+ 206:lcd.c         **** void LS3_green(void)
+ 207:lcd.c         **** {
+ 1852               		.stabn	68,0,207,.LM152-.LFBB16
+ 1853               	.LM152:
+ 1854               	.LFBB16:
+ 1855 0880 0F93      		push r16
+ 1856 0882 1F93      		push r17
+ 1857 0884 CF93      		push r28
+ 1858 0886 DF93      		push r29
+ 1859 0888 CDB7      		in r28,__SP_L__
+ 1860 088a DEB7      		in r29,__SP_H__
+ 1861 088c 2897      		sbiw r28,8
+ 1862 088e 0FB6      		in __tmp_reg__,__SREG__
+ 1863 0890 F894      		cli
+ 1864 0892 DEBF      		out __SP_H__,r29
+ 1865 0894 0FBE      		out __SREG__,__tmp_reg__
+ 1866 0896 CDBF      		out __SP_L__,r28
+GAS LISTING /tmp/ccj7iC5P.s 			page 38
 
 
- 206:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 1843               		.stabn	68,0,206,.LM171-.LFBB7
- 1844               	.LM171:
- 1845 07f2 50E0      		ldi r21,0
- 1846 07f4 40E0      		ldi r20,0
- 1847               	.L53:
- 1848               	.LBB57:
- 207:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 1849               		.stabn	68,0,207,.LM172-.LFBB7
- 1850               	.LM172:
- 1851 07f6 FC01      		movw r30,r24
- 1852               	/* #APP */
- 1853               	 ;  207 "lcd.c" 1
- 1854 07f8 A591      		lpm r26, Z+
- 1855 07fa B491      		lpm r27, Z
- 1856               		
- 1857               	 ;  0 "" 2
- 1858               	/* #NOAPP */
- 1859               	.LBE57:
- 1860 07fc B5B9      		out 0x5,r27
- 1861 07fe 4398      		cbi 0x8,3
- 1862 0800 439A      		sbi 0x8,3
- 1863               	.LBB58:
- 1864 0802 FC01      		movw r30,r24
- 1865               	/* #APP */
- 1866               	 ;  207 "lcd.c" 1
- 1867 0804 A591      		lpm r26, Z+
- 1868 0806 B491      		lpm r27, Z
- 1869               		
- 1870               	 ;  0 "" 2
- 1871               	/* #NOAPP */
- 1872               	.LBE58:
- 1873 0808 A5B9      		out 0x5,r26
- 1874 080a 4398      		cbi 0x8,3
- 1875 080c 439A      		sbi 0x8,3
- 1876               	.LBB59:
- 208:lcd.c         **** 			}
- 1877               		.stabn	68,0,208,.LM173-.LFBB7
- 1878               	.LM173:
- 1879 080e FC01      		movw r30,r24
- 1880               	/* #APP */
- 1881               	 ;  208 "lcd.c" 1
- 1882 0810 A591      		lpm r26, Z+
- 1883 0812 B491      		lpm r27, Z
- 1884               		
- 1885               	 ;  0 "" 2
- 1886               	/* #NOAPP */
- 1887               	.LBE59:
- 1888 0814 B5B9      		out 0x5,r27
- 1889 0816 4398      		cbi 0x8,3
- 1890 0818 439A      		sbi 0x8,3
- 1891               	.LBB60:
- 1892 081a FC01      		movw r30,r24
- 1893               	/* #APP */
- 1894               	 ;  208 "lcd.c" 1
- 1895 081c A591      		lpm r26, Z+
- 1896 081e B491      		lpm r27, Z
-GAS LISTING /tmp/ccq2xQMg.s 			page 39
+ 1867               	/* prologue: function */
+ 1868               	/* frame size = 8 */
+ 1869               	/* stack size = 12 */
+ 1870               	.L__stack_usage = 12
+ 208:lcd.c         **** 	rectangle LC3 = {206,210,80,84};
+ 1871               		.stabn	68,0,208,.LM153-.LFBB16
+ 1872               	.LM153:
+ 1873 0898 88E0      		ldi r24,lo8(8)
+ 1874 089a E0E0      		ldi r30,lo8(.LC5)
+ 1875 089c F0E0      		ldi r31,hi8(.LC5)
+ 1876 089e DE01      		movw r26,r28
+ 1877 08a0 1196      		adiw r26,1
+ 1878               		0:
+ 1879 08a2 0190      		ld r0,Z+
+ 1880 08a4 0D92      		st X+,r0
+ 1881 08a6 8A95      		dec r24
+ 1882 08a8 01F4      		brne 0b
+ 209:lcd.c         **** 	fill_rectangle(LC3,GREEN);
+ 1883               		.stabn	68,0,209,.LM154-.LFBB16
+ 1884               	.LM154:
+ 1885 08aa 00EE      		ldi r16,lo8(-32)
+ 1886 08ac 17E0      		ldi r17,lo8(7)
+ 1887 08ae 2981      		ldd r18,Y+1
+ 1888 08b0 3A81      		ldd r19,Y+2
+ 1889 08b2 4B81      		ldd r20,Y+3
+ 1890 08b4 5C81      		ldd r21,Y+4
+ 1891 08b6 6D81      		ldd r22,Y+5
+ 1892 08b8 7E81      		ldd r23,Y+6
+ 1893 08ba 8F81      		ldd r24,Y+7
+ 1894 08bc 9885      		ldd r25,Y+8
+ 1895 08be 0E94 0000 		call fill_rectangle
+ 1896               	/* epilogue start */
+ 210:lcd.c         **** }
+ 1897               		.stabn	68,0,210,.LM155-.LFBB16
+ 1898               	.LM155:
+ 1899 08c2 2896      		adiw r28,8
+ 1900 08c4 0FB6      		in __tmp_reg__,__SREG__
+ 1901 08c6 F894      		cli
+ 1902 08c8 DEBF      		out __SP_H__,r29
+ 1903 08ca 0FBE      		out __SREG__,__tmp_reg__
+ 1904 08cc CDBF      		out __SP_L__,r28
+ 1905 08ce DF91      		pop r29
+ 1906 08d0 CF91      		pop r28
+ 1907 08d2 1F91      		pop r17
+ 1908 08d4 0F91      		pop r16
+ 1909 08d6 0895      		ret
+ 1910               		.size	LS3_green, .-LS3_green
+ 1911               		.stabs	"LC3:(0,8)",128,0,208,1
+ 1912               		.stabn	192,0,0,.LFBB16-.LFBB16
+ 1913               		.stabn	224,0,0,.Lscope16-.LFBB16
+ 1914               	.Lscope16:
+ 1915               		.stabs	"",36,0,0,.Lscope16-.LFBB16
+ 1916               		.stabs	"LS3_red:F(0,1)",36,0,212,LS3_red
+ 1917               	.global	LS3_red
+ 1918               		.type	LS3_red, @function
+ 1919               	LS3_red:
+ 211:lcd.c         **** 
+GAS LISTING /tmp/ccj7iC5P.s 			page 39
 
 
- 1897               		
- 1898               	 ;  0 "" 2
- 1899               	/* #NOAPP */
- 1900               	.LBE60:
- 1901 0820 A5B9      		out 0x5,r26
- 1902 0822 4398      		cbi 0x8,3
- 1903 0824 439A      		sbi 0x8,3
- 206:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 1904               		.stabn	68,0,206,.LM174-.LFBB7
- 1905               	.LM174:
- 1906 0826 4F5F      		subi r20,-1
- 1907 0828 5F4F      		sbci r21,-1
- 206:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 1908               		.stabn	68,0,206,.LM175-.LFBB7
- 1909               	.LM175:
- 1910 082a 0296      		adiw r24,2
- 1911 082c 4E30      		cpi r20,14
- 1912 082e 5105      		cpc r21,__zero_reg__
- 1913 0830 01F4      		brne .L53
- 201:lcd.c         **** 			for(x = 0; x <= 13; x++){
- 1914               		.stabn	68,0,201,.LM176-.LFBB7
- 1915               	.LM176:
- 1916 0832 245E      		subi r18,-28
- 1917 0834 3F4F      		sbci r19,-1
- 1918 0836 625F      		subi r22,-14
- 1919 0838 7F4F      		sbci r23,-1
- 1920 083a 6E35      		cpi r22,94
- 1921 083c 81E0      		ldi r24,1
- 1922 083e 7807      		cpc r23,r24
- 1923 0840 01F4      		brne .+2
- 1924 0842 00C0      		rjmp .L45
- 1925               	.L47:
- 188:lcd.c         **** 		for(y = 0; y <= 24; y++){
- 1926               		.stabn	68,0,188,.LM177-.LFBB7
- 1927               	.LM177:
- 1928 0844 C901      		movw r24,r18
- 202:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
- 1929               		.stabn	68,0,202,.LM178-.LFBB7
- 1930               	.LM178:
- 1931 0846 50E0      		ldi r21,0
- 1932 0848 40E0      		ldi r20,0
- 1933 084a 00C0      		rjmp .L52
- 1934               		.size	bat_pwr, .-bat_pwr
- 1935               	.Lscope7:
- 1936               		.stabs	"",36,0,0,.Lscope7-.LFBB7
- 1937               		.stabs	"fill_rectangle:F(0,1)",36,0,214,fill_rectangle
- 1938               		.stabs	"r:p(0,9)=(0,10)=s8left:(0,6),0,16;right:(0,6),16,16;top:(0,6),32,16;bottom:(0,6),48,16;;",
- 1939               	.global	fill_rectangle
- 1940               		.type	fill_rectangle, @function
- 1941               	fill_rectangle:
- 213:lcd.c         **** 
- 214:lcd.c         **** void fill_rectangle(rectangle r, uint16_t col)
- 215:lcd.c         **** {
- 1942               		.stabn	68,0,215,.LM179-.LFBB8
- 1943               	.LM179:
- 1944               	.LFBB8:
- 1945 084c 0F93      		push r16
-GAS LISTING /tmp/ccq2xQMg.s 			page 40
+ 212:lcd.c         **** void LS3_red(void)
+ 213:lcd.c         **** {
+ 1920               		.stabn	68,0,213,.LM156-.LFBB17
+ 1921               	.LM156:
+ 1922               	.LFBB17:
+ 1923 08d8 0F93      		push r16
+ 1924 08da 1F93      		push r17
+ 1925 08dc CF93      		push r28
+ 1926 08de DF93      		push r29
+ 1927 08e0 CDB7      		in r28,__SP_L__
+ 1928 08e2 DEB7      		in r29,__SP_H__
+ 1929 08e4 2897      		sbiw r28,8
+ 1930 08e6 0FB6      		in __tmp_reg__,__SREG__
+ 1931 08e8 F894      		cli
+ 1932 08ea DEBF      		out __SP_H__,r29
+ 1933 08ec 0FBE      		out __SREG__,__tmp_reg__
+ 1934 08ee CDBF      		out __SP_L__,r28
+ 1935               	/* prologue: function */
+ 1936               	/* frame size = 8 */
+ 1937               	/* stack size = 12 */
+ 1938               	.L__stack_usage = 12
+ 214:lcd.c         **** 	rectangle LC3 = {206,210,80,84};
+ 1939               		.stabn	68,0,214,.LM157-.LFBB17
+ 1940               	.LM157:
+ 1941 08f0 88E0      		ldi r24,lo8(8)
+ 1942 08f2 E0E0      		ldi r30,lo8(.LC5)
+ 1943 08f4 F0E0      		ldi r31,hi8(.LC5)
+ 1944 08f6 DE01      		movw r26,r28
+ 1945 08f8 1196      		adiw r26,1
+ 1946               		0:
+ 1947 08fa 0190      		ld r0,Z+
+ 1948 08fc 0D92      		st X+,r0
+ 1949 08fe 8A95      		dec r24
+ 1950 0900 01F4      		brne 0b
+ 215:lcd.c         **** 	fill_rectangle(LC3,RED);
+ 1951               		.stabn	68,0,215,.LM158-.LFBB17
+ 1952               	.LM158:
+ 1953 0902 00E0      		ldi r16,0
+ 1954 0904 18EF      		ldi r17,lo8(-8)
+ 1955 0906 2981      		ldd r18,Y+1
+ 1956 0908 3A81      		ldd r19,Y+2
+ 1957 090a 4B81      		ldd r20,Y+3
+ 1958 090c 5C81      		ldd r21,Y+4
+ 1959 090e 6D81      		ldd r22,Y+5
+ 1960 0910 7E81      		ldd r23,Y+6
+ 1961 0912 8F81      		ldd r24,Y+7
+ 1962 0914 9885      		ldd r25,Y+8
+ 1963 0916 0E94 0000 		call fill_rectangle
+ 1964               	/* epilogue start */
+ 216:lcd.c         **** }
+ 1965               		.stabn	68,0,216,.LM159-.LFBB17
+ 1966               	.LM159:
+ 1967 091a 2896      		adiw r28,8
+ 1968 091c 0FB6      		in __tmp_reg__,__SREG__
+ 1969 091e F894      		cli
+ 1970 0920 DEBF      		out __SP_H__,r29
+ 1971 0922 0FBE      		out __SREG__,__tmp_reg__
+GAS LISTING /tmp/ccj7iC5P.s 			page 40
 
 
- 1946 084e 1F93      		push r17
- 1947 0850 CF93      		push r28
- 1948 0852 DF93      		push r29
- 1949 0854 CDB7      		in r28,__SP_L__
- 1950 0856 DEB7      		in r29,__SP_H__
- 1951 0858 2897      		sbiw r28,8
- 1952 085a 0FB6      		in __tmp_reg__,__SREG__
- 1953 085c F894      		cli
- 1954 085e DEBF      		out __SP_H__,r29
- 1955 0860 0FBE      		out __SREG__,__tmp_reg__
- 1956 0862 CDBF      		out __SP_L__,r28
- 1957               	/* prologue: function */
- 1958               	/* frame size = 8 */
- 1959               	/* stack size = 12 */
- 1960               	.L__stack_usage = 12
- 1961 0864 2983      		std Y+1,r18
- 1962 0866 3A83      		std Y+2,r19
- 1963 0868 4B83      		std Y+3,r20
- 1964 086a 5C83      		std Y+4,r21
- 1965 086c 462F      		mov r20,r22
- 1966 086e 6D83      		std Y+5,r22
- 1967 0870 572F      		mov r21,r23
- 1968 0872 7E83      		std Y+6,r23
- 1969 0874 8F83      		std Y+7,r24
- 1970 0876 9887      		std Y+8,r25
- 1971 0878 8981      		ldd r24,Y+1
- 1972 087a 9A81      		ldd r25,Y+2
- 1973 087c 6B81      		ldd r22,Y+3
- 1974 087e 7C81      		ldd r23,Y+4
- 1975 0880 EF81      		ldd r30,Y+7
- 1976 0882 F885      		ldd r31,Y+8
- 216:lcd.c         **** 	uint16_t x, y;
- 217:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
- 1977               		.stabn	68,0,217,.LM180-.LFBB8
- 1978               	.LM180:
- 1979 0884 4498      		cbi 0x8,4
- 1980 0886 2AE2      		ldi r18,lo8(42)
- 1981 0888 25B9      		out 0x5,r18
- 1982 088a 4398      		cbi 0x8,3
- 1983 088c 439A      		sbi 0x8,3
- 1984 088e 449A      		sbi 0x8,4
- 218:lcd.c         **** 	write_data16(r.left);
- 1985               		.stabn	68,0,218,.LM181-.LFBB8
- 1986               	.LM181:
- 1987 0890 95B9      		out 0x5,r25
- 1988 0892 4398      		cbi 0x8,3
- 1989 0894 439A      		sbi 0x8,3
- 1990 0896 85B9      		out 0x5,r24
- 1991 0898 4398      		cbi 0x8,3
- 1992 089a 439A      		sbi 0x8,3
- 219:lcd.c         **** 	write_data16(r.right);
- 1993               		.stabn	68,0,219,.LM182-.LFBB8
- 1994               	.LM182:
- 1995 089c 75B9      		out 0x5,r23
- 1996 089e 4398      		cbi 0x8,3
- 1997 08a0 439A      		sbi 0x8,3
- 1998 08a2 65B9      		out 0x5,r22
-GAS LISTING /tmp/ccq2xQMg.s 			page 41
+ 1972 0924 CDBF      		out __SP_L__,r28
+ 1973 0926 DF91      		pop r29
+ 1974 0928 CF91      		pop r28
+ 1975 092a 1F91      		pop r17
+ 1976 092c 0F91      		pop r16
+ 1977 092e 0895      		ret
+ 1978               		.size	LS3_red, .-LS3_red
+ 1979               		.stabs	"LC3:(0,8)",128,0,214,1
+ 1980               		.stabn	192,0,0,.LFBB17-.LFBB17
+ 1981               		.stabn	224,0,0,.Lscope17-.LFBB17
+ 1982               	.Lscope17:
+ 1983               		.stabs	"",36,0,0,.Lscope17-.LFBB17
+ 1984               		.section	.rodata
+ 1985               	.LC6:
+ 1986 0030 5A00      		.word	90
+ 1987 0032 5B00      		.word	91
+ 1988 0034 AC00      		.word	172
+ 1989 0036 B400      		.word	180
+ 1990               	.LC7:
+ 1991 0038 5B00      		.word	91
+ 1992 003a 5C00      		.word	92
+ 1993 003c AC00      		.word	172
+ 1994 003e B400      		.word	180
+ 1995               		.text
+ 1996               		.stabs	"pwr_bar_wind:F(0,1)",36,0,220,pwr_bar_wind
+ 1997               		.stabs	"pwr:P(0,2)",64,0,220,24
+ 1998               	.global	pwr_bar_wind
+ 1999               		.type	pwr_bar_wind, @function
+ 2000               	pwr_bar_wind:
+ 217:lcd.c         **** 
+ 218:lcd.c         **** 
+ 219:lcd.c         **** 
+ 220:lcd.c         **** void pwr_bar_wind(uint8_t pwr)
+ 221:lcd.c         **** {
+ 2001               		.stabn	68,0,221,.LM160-.LFBB18
+ 2002               	.LM160:
+ 2003               	.LFBB18:
+ 2004 0930 0F93      		push r16
+ 2005 0932 1F93      		push r17
+ 2006 0934 CF93      		push r28
+ 2007 0936 DF93      		push r29
+ 2008 0938 CDB7      		in r28,__SP_L__
+ 2009 093a DEB7      		in r29,__SP_H__
+ 2010 093c 6097      		sbiw r28,16
+ 2011 093e 0FB6      		in __tmp_reg__,__SREG__
+ 2012 0940 F894      		cli
+ 2013 0942 DEBF      		out __SP_H__,r29
+ 2014 0944 0FBE      		out __SREG__,__tmp_reg__
+ 2015 0946 CDBF      		out __SP_L__,r28
+ 2016               	/* prologue: function */
+ 2017               	/* frame size = 16 */
+ 2018               	/* stack size = 20 */
+ 2019               	.L__stack_usage = 20
+ 222:lcd.c         **** 
+ 223:lcd.c         **** 	rectangle blue = {90,91,172,180};
+ 2020               		.stabn	68,0,223,.LM161-.LFBB18
+ 2021               	.LM161:
+GAS LISTING /tmp/ccj7iC5P.s 			page 41
 
 
- 1999 08a4 4398      		cbi 0x8,3
- 2000 08a6 439A      		sbi 0x8,3
- 220:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
- 2001               		.stabn	68,0,220,.LM183-.LFBB8
- 2002               	.LM183:
- 2003 08a8 4498      		cbi 0x8,4
- 2004 08aa 2BE2      		ldi r18,lo8(43)
- 2005 08ac 25B9      		out 0x5,r18
- 2006 08ae 4398      		cbi 0x8,3
- 2007 08b0 439A      		sbi 0x8,3
- 2008 08b2 449A      		sbi 0x8,4
- 221:lcd.c         **** 	write_data16(r.top);
- 2009               		.stabn	68,0,221,.LM184-.LFBB8
- 2010               	.LM184:
- 2011 08b4 55B9      		out 0x5,r21
- 2012 08b6 4398      		cbi 0x8,3
- 2013 08b8 439A      		sbi 0x8,3
- 2014 08ba 45B9      		out 0x5,r20
- 2015 08bc 4398      		cbi 0x8,3
- 2016 08be 439A      		sbi 0x8,3
- 222:lcd.c         **** 	write_data16(r.bottom);
- 2017               		.stabn	68,0,222,.LM185-.LFBB8
- 2018               	.LM185:
- 2019 08c0 F5B9      		out 0x5,r31
- 2020 08c2 4398      		cbi 0x8,3
- 2021 08c4 439A      		sbi 0x8,3
- 2022 08c6 E5B9      		out 0x5,r30
- 2023 08c8 4398      		cbi 0x8,3
- 2024 08ca 439A      		sbi 0x8,3
- 223:lcd.c         **** 	write_cmd(MEMORY_WRITE);
- 2025               		.stabn	68,0,223,.LM186-.LFBB8
- 2026               	.LM186:
- 2027 08cc 4498      		cbi 0x8,4
- 2028 08ce 2CE2      		ldi r18,lo8(44)
- 2029 08d0 25B9      		out 0x5,r18
- 2030 08d2 4398      		cbi 0x8,3
- 2031 08d4 439A      		sbi 0x8,3
- 2032 08d6 449A      		sbi 0x8,4
- 2033               	.L65:
- 224:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
- 2034               		.stabn	68,0,224,.LM187-.LFBB8
- 2035               	.LM187:
- 2036 08d8 6817      		cp r22,r24
- 2037 08da 7907      		cpc r23,r25
- 2038 08dc 00F4      		brsh .L68
- 2039               	/* epilogue start */
- 225:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
- 226:lcd.c         **** 			write_data16(col);
- 227:lcd.c         **** }
- 2040               		.stabn	68,0,227,.LM188-.LFBB8
- 2041               	.LM188:
- 2042 08de 2896      		adiw r28,8
- 2043 08e0 0FB6      		in __tmp_reg__,__SREG__
- 2044 08e2 F894      		cli
- 2045 08e4 DEBF      		out __SP_H__,r29
- 2046 08e6 0FBE      		out __SREG__,__tmp_reg__
- 2047 08e8 CDBF      		out __SP_L__,r28
-GAS LISTING /tmp/ccq2xQMg.s 			page 42
-
-
- 2048 08ea DF91      		pop r29
- 2049 08ec CF91      		pop r28
- 2050 08ee 1F91      		pop r17
- 2051 08f0 0F91      		pop r16
- 2052 08f2 0895      		ret
- 2053               	.L66:
- 226:lcd.c         **** }
- 2054               		.stabn	68,0,226,.LM189-.LFBB8
- 2055               	.LM189:
- 2056 08f4 15B9      		out 0x5,r17
- 2057 08f6 4398      		cbi 0x8,3
- 2058 08f8 439A      		sbi 0x8,3
- 2059 08fa 05B9      		out 0x5,r16
- 2060 08fc 4398      		cbi 0x8,3
- 2061 08fe 439A      		sbi 0x8,3
- 225:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
- 2062               		.stabn	68,0,225,.LM190-.LFBB8
- 2063               	.LM190:
- 2064 0900 2F5F      		subi r18,-1
- 2065 0902 3F4F      		sbci r19,-1
- 2066               	.L67:
- 225:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
- 2067               		.stabn	68,0,225,.LM191-.LFBB8
- 2068               	.LM191:
- 2069 0904 E217      		cp r30,r18
- 2070 0906 F307      		cpc r31,r19
- 2071 0908 00F4      		brsh .L66
- 224:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
- 2072               		.stabn	68,0,224,.LM192-.LFBB8
- 2073               	.LM192:
- 2074 090a 0196      		adiw r24,1
- 2075 090c 00C0      		rjmp .L65
- 2076               	.L68:
- 225:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
- 2077               		.stabn	68,0,225,.LM193-.LFBB8
- 2078               	.LM193:
- 2079 090e 9A01      		movw r18,r20
- 2080 0910 00C0      		rjmp .L67
- 2081               		.size	fill_rectangle, .-fill_rectangle
- 2082               		.stabs	"x:r(0,6)",64,0,216,24
- 2083               		.stabs	"y:r(0,6)",64,0,216,18
- 2084               		.stabn	192,0,0,.LFBB8-.LFBB8
- 2085               		.stabn	224,0,0,.Lscope8-.LFBB8
- 2086               	.Lscope8:
- 2087               		.stabs	"",36,0,0,.Lscope8-.LFBB8
- 2088               		.section	.rodata
- 2089               	.LC0:
- 2090 0000 1800      		.word	24
- 2091 0002 1C00      		.word	28
- 2092 0004 1200      		.word	18
- 2093 0006 1600      		.word	22
- 2094               		.text
- 2095               		.stabs	"LC1_green:F(0,1)",36,0,229,LC1_green
- 2096               	.global	LC1_green
- 2097               		.type	LC1_green, @function
- 2098               	LC1_green:
+ 2022 0948 98E0      		ldi r25,lo8(8)
+ 2023 094a E0E0      		ldi r30,lo8(.LC6)
+ 2024 094c F0E0      		ldi r31,hi8(.LC6)
+ 2025 094e DE01      		movw r26,r28
+ 2026 0950 1996      		adiw r26,9
+ 2027               		0:
+ 2028 0952 0190      		ld r0,Z+
+ 2029 0954 0D92      		st X+,r0
+ 2030 0956 9A95      		dec r25
+ 2031 0958 01F4      		brne 0b
+ 224:lcd.c         **** 	rectangle white = {91,92,172,180};
+ 2032               		.stabn	68,0,224,.LM162-.LFBB18
+ 2033               	.LM162:
+ 2034 095a 98E0      		ldi r25,lo8(8)
+ 2035 095c E0E0      		ldi r30,lo8(.LC7)
+ 2036 095e F0E0      		ldi r31,hi8(.LC7)
+ 2037 0960 DE01      		movw r26,r28
+ 2038 0962 1196      		adiw r26,1
+ 2039               		0:
+ 2040 0964 0190      		ld r0,Z+
+ 2041 0966 0D92      		st X+,r0
+ 2042 0968 9A95      		dec r25
+ 2043 096a 01F4      		brne 0b
+ 225:lcd.c         **** 
+ 226:lcd.c         **** 	if(pwr > 94)
+ 227:lcd.c         **** 		pwr = 94;
  228:lcd.c         **** 
-GAS LISTING /tmp/ccq2xQMg.s 			page 43
+ 229:lcd.c         **** 	blue.right = 90 + pwr;
+ 2044               		.stabn	68,0,229,.LM163-.LFBB18
+ 2045               	.LM163:
+ 2046 096c 8F35      		cpi r24,lo8(95)
+ 2047 096e 00F0      		brlo .L47
+ 2048 0970 8EE5      		ldi r24,lo8(94)
+ 2049               	.L47:
+ 2050 0972 865A      		subi r24,lo8(-(90))
+ 2051 0974 90E0      		ldi r25,0
+ 230:lcd.c         **** 
+ 231:lcd.c         **** 	white.left = blue.right;
+ 2052               		.stabn	68,0,231,.LM164-.LFBB18
+ 2053               	.LM164:
+ 2054 0976 9A83      		std Y+2,r25
+ 2055 0978 8983      		std Y+1,r24
+ 232:lcd.c         **** 	white.right = 184;
+ 2056               		.stabn	68,0,232,.LM165-.LFBB18
+ 2057               	.LM165:
+ 2058 097a 28EB      		ldi r18,lo8(-72)
+ 2059 097c 30E0      		ldi r19,0
+ 2060 097e 3C83      		std Y+4,r19
+ 2061 0980 2B83      		std Y+3,r18
+ 233:lcd.c         **** 
+ 234:lcd.c         **** 	fill_rectangle(blue, 0x3E9F);
+ 2062               		.stabn	68,0,234,.LM166-.LFBB18
+ 2063               	.LM166:
+ 2064 0982 AC01      		movw r20,r24
+ 2065 0984 0FE9      		ldi r16,lo8(-97)
+ 2066 0986 1EE3      		ldi r17,lo8(62)
+ 2067 0988 2985      		ldd r18,Y+9
+GAS LISTING /tmp/ccj7iC5P.s 			page 42
 
 
- 229:lcd.c         **** void LC1_green(void)
- 230:lcd.c         **** {
- 2099               		.stabn	68,0,230,.LM194-.LFBB9
- 2100               	.LM194:
- 2101               	.LFBB9:
- 2102 0912 0F93      		push r16
- 2103 0914 1F93      		push r17
- 2104 0916 CF93      		push r28
- 2105 0918 DF93      		push r29
- 2106 091a CDB7      		in r28,__SP_L__
- 2107 091c DEB7      		in r29,__SP_H__
- 2108 091e 2897      		sbiw r28,8
- 2109 0920 0FB6      		in __tmp_reg__,__SREG__
- 2110 0922 F894      		cli
- 2111 0924 DEBF      		out __SP_H__,r29
- 2112 0926 0FBE      		out __SREG__,__tmp_reg__
- 2113 0928 CDBF      		out __SP_L__,r28
- 2114               	/* prologue: function */
- 2115               	/* frame size = 8 */
- 2116               	/* stack size = 12 */
- 2117               	.L__stack_usage = 12
- 231:lcd.c         **** 	rectangle LC1 = {24,28,18,22};
- 2118               		.stabn	68,0,231,.LM195-.LFBB9
- 2119               	.LM195:
- 2120 092a 88E0      		ldi r24,lo8(8)
- 2121 092c E0E0      		ldi r30,lo8(.LC0)
- 2122 092e F0E0      		ldi r31,hi8(.LC0)
- 2123 0930 DE01      		movw r26,r28
- 2124 0932 1196      		adiw r26,1
- 2125               		0:
- 2126 0934 0190      		ld r0,Z+
- 2127 0936 0D92      		st X+,r0
- 2128 0938 8A95      		dec r24
- 2129 093a 01F4      		brne 0b
- 232:lcd.c         **** 	fill_rectangle(LC1,GREEN);
- 2130               		.stabn	68,0,232,.LM196-.LFBB9
- 2131               	.LM196:
- 2132 093c 00EE      		ldi r16,lo8(-32)
- 2133 093e 17E0      		ldi r17,lo8(7)
- 2134 0940 2981      		ldd r18,Y+1
- 2135 0942 3A81      		ldd r19,Y+2
- 2136 0944 4B81      		ldd r20,Y+3
- 2137 0946 5C81      		ldd r21,Y+4
- 2138 0948 6D81      		ldd r22,Y+5
- 2139 094a 7E81      		ldd r23,Y+6
- 2140 094c 8F81      		ldd r24,Y+7
- 2141 094e 9885      		ldd r25,Y+8
- 2142 0950 0E94 0000 		call fill_rectangle
- 2143               	/* epilogue start */
- 233:lcd.c         **** }
- 2144               		.stabn	68,0,233,.LM197-.LFBB9
- 2145               	.LM197:
- 2146 0954 2896      		adiw r28,8
- 2147 0956 0FB6      		in __tmp_reg__,__SREG__
- 2148 0958 F894      		cli
- 2149 095a DEBF      		out __SP_H__,r29
- 2150 095c 0FBE      		out __SREG__,__tmp_reg__
-GAS LISTING /tmp/ccq2xQMg.s 			page 44
+ 2068 098a 3A85      		ldd r19,Y+10
+ 2069 098c 6D85      		ldd r22,Y+13
+ 2070 098e 7E85      		ldd r23,Y+14
+ 2071 0990 8F85      		ldd r24,Y+15
+ 2072 0992 9889      		ldd r25,Y+16
+ 2073 0994 0E94 0000 		call fill_rectangle
+ 235:lcd.c         **** 	fill_rectangle(white, WHITE);
+ 2074               		.stabn	68,0,235,.LM167-.LFBB18
+ 2075               	.LM167:
+ 2076 0998 0FEF      		ldi r16,lo8(-1)
+ 2077 099a 1FEF      		ldi r17,lo8(-1)
+ 2078 099c 2981      		ldd r18,Y+1
+ 2079 099e 3A81      		ldd r19,Y+2
+ 2080 09a0 4B81      		ldd r20,Y+3
+ 2081 09a2 5C81      		ldd r21,Y+4
+ 2082 09a4 6D81      		ldd r22,Y+5
+ 2083 09a6 7E81      		ldd r23,Y+6
+ 2084 09a8 8F81      		ldd r24,Y+7
+ 2085 09aa 9885      		ldd r25,Y+8
+ 2086 09ac 0E94 0000 		call fill_rectangle
+ 2087               	/* epilogue start */
+ 236:lcd.c         **** }
+ 2088               		.stabn	68,0,236,.LM168-.LFBB18
+ 2089               	.LM168:
+ 2090 09b0 6096      		adiw r28,16
+ 2091 09b2 0FB6      		in __tmp_reg__,__SREG__
+ 2092 09b4 F894      		cli
+ 2093 09b6 DEBF      		out __SP_H__,r29
+ 2094 09b8 0FBE      		out __SREG__,__tmp_reg__
+ 2095 09ba CDBF      		out __SP_L__,r28
+ 2096 09bc DF91      		pop r29
+ 2097 09be CF91      		pop r28
+ 2098 09c0 1F91      		pop r17
+ 2099 09c2 0F91      		pop r16
+ 2100 09c4 0895      		ret
+ 2101               		.size	pwr_bar_wind, .-pwr_bar_wind
+ 2102               		.stabs	"blue:(0,8)",128,0,223,9
+ 2103               		.stabs	"white:(0,8)",128,0,224,1
+ 2104               		.stabn	192,0,0,.LFBB18-.LFBB18
+ 2105               		.stabn	224,0,0,.Lscope18-.LFBB18
+ 2106               	.Lscope18:
+ 2107               		.stabs	"",36,0,0,.Lscope18-.LFBB18
+ 2108               		.section	.rodata
+ 2109               	.LC8:
+ 2110 0040 5A00      		.word	90
+ 2111 0042 5B00      		.word	91
+ 2112 0044 7800      		.word	120
+ 2113 0046 8000      		.word	128
+ 2114               	.LC9:
+ 2115 0048 5B00      		.word	91
+ 2116 004a 5C00      		.word	92
+ 2117 004c 7800      		.word	120
+ 2118 004e 8000      		.word	128
+ 2119               		.text
+ 2120               		.stabs	"pwr_bar_sun:F(0,1)",36,0,238,pwr_bar_sun
+ 2121               		.stabs	"pwr:P(0,2)",64,0,238,24
+ 2122               	.global	pwr_bar_sun
+GAS LISTING /tmp/ccj7iC5P.s 			page 43
 
 
- 2151 095e CDBF      		out __SP_L__,r28
- 2152 0960 DF91      		pop r29
- 2153 0962 CF91      		pop r28
- 2154 0964 1F91      		pop r17
- 2155 0966 0F91      		pop r16
- 2156 0968 0895      		ret
- 2157               		.size	LC1_green, .-LC1_green
- 2158               		.stabs	"LC1:(0,9)",128,0,231,1
- 2159               		.stabs	"rectangle:t(0,9)",128,0,34,0
- 2160               		.stabn	192,0,0,.LFBB9-.LFBB9
- 2161               		.stabn	224,0,0,.Lscope9-.LFBB9
- 2162               	.Lscope9:
- 2163               		.stabs	"",36,0,0,.Lscope9-.LFBB9
- 2164               		.stabs	"LC1_red:F(0,1)",36,0,235,LC1_red
- 2165               	.global	LC1_red
- 2166               		.type	LC1_red, @function
- 2167               	LC1_red:
- 234:lcd.c         **** 
- 235:lcd.c         **** void LC1_red(void)
- 236:lcd.c         **** {
- 2168               		.stabn	68,0,236,.LM198-.LFBB10
- 2169               	.LM198:
- 2170               	.LFBB10:
- 2171 096a 0F93      		push r16
- 2172 096c 1F93      		push r17
- 2173 096e CF93      		push r28
- 2174 0970 DF93      		push r29
- 2175 0972 CDB7      		in r28,__SP_L__
- 2176 0974 DEB7      		in r29,__SP_H__
- 2177 0976 2897      		sbiw r28,8
- 2178 0978 0FB6      		in __tmp_reg__,__SREG__
- 2179 097a F894      		cli
- 2180 097c DEBF      		out __SP_H__,r29
- 2181 097e 0FBE      		out __SREG__,__tmp_reg__
- 2182 0980 CDBF      		out __SP_L__,r28
- 2183               	/* prologue: function */
- 2184               	/* frame size = 8 */
- 2185               	/* stack size = 12 */
- 2186               	.L__stack_usage = 12
- 237:lcd.c         **** 	rectangle LC1 = {24,28,18,22};
- 2187               		.stabn	68,0,237,.LM199-.LFBB10
- 2188               	.LM199:
- 2189 0982 88E0      		ldi r24,lo8(8)
- 2190 0984 E0E0      		ldi r30,lo8(.LC0)
- 2191 0986 F0E0      		ldi r31,hi8(.LC0)
- 2192 0988 DE01      		movw r26,r28
- 2193 098a 1196      		adiw r26,1
- 2194               		0:
- 2195 098c 0190      		ld r0,Z+
- 2196 098e 0D92      		st X+,r0
- 2197 0990 8A95      		dec r24
- 2198 0992 01F4      		brne 0b
- 238:lcd.c         **** 	fill_rectangle(LC1,RED);
- 2199               		.stabn	68,0,238,.LM200-.LFBB10
- 2200               	.LM200:
- 2201 0994 00E0      		ldi r16,0
- 2202 0996 18EF      		ldi r17,lo8(-8)
-GAS LISTING /tmp/ccq2xQMg.s 			page 45
-
-
- 2203 0998 2981      		ldd r18,Y+1
- 2204 099a 3A81      		ldd r19,Y+2
- 2205 099c 4B81      		ldd r20,Y+3
- 2206 099e 5C81      		ldd r21,Y+4
- 2207 09a0 6D81      		ldd r22,Y+5
- 2208 09a2 7E81      		ldd r23,Y+6
- 2209 09a4 8F81      		ldd r24,Y+7
- 2210 09a6 9885      		ldd r25,Y+8
- 2211 09a8 0E94 0000 		call fill_rectangle
- 2212               	/* epilogue start */
- 239:lcd.c         **** }
- 2213               		.stabn	68,0,239,.LM201-.LFBB10
- 2214               	.LM201:
- 2215 09ac 2896      		adiw r28,8
- 2216 09ae 0FB6      		in __tmp_reg__,__SREG__
- 2217 09b0 F894      		cli
- 2218 09b2 DEBF      		out __SP_H__,r29
- 2219 09b4 0FBE      		out __SREG__,__tmp_reg__
- 2220 09b6 CDBF      		out __SP_L__,r28
- 2221 09b8 DF91      		pop r29
- 2222 09ba CF91      		pop r28
- 2223 09bc 1F91      		pop r17
- 2224 09be 0F91      		pop r16
- 2225 09c0 0895      		ret
- 2226               		.size	LC1_red, .-LC1_red
- 2227               		.stabs	"LC1:(0,9)",128,0,237,1
- 2228               		.stabn	192,0,0,.LFBB10-.LFBB10
- 2229               		.stabn	224,0,0,.Lscope10-.LFBB10
- 2230               	.Lscope10:
- 2231               		.stabs	"",36,0,0,.Lscope10-.LFBB10
- 2232               		.section	.rodata
- 2233               	.LC1:
- 2234 0008 1800      		.word	24
- 2235 000a 1C00      		.word	28
- 2236 000c 3200      		.word	50
- 2237 000e 3600      		.word	54
- 2238               		.text
- 2239               		.stabs	"LC2_green:F(0,1)",36,0,241,LC2_green
- 2240               	.global	LC2_green
- 2241               		.type	LC2_green, @function
- 2242               	LC2_green:
+ 2123               		.type	pwr_bar_sun, @function
+ 2124               	pwr_bar_sun:
+ 237:lcd.c         **** 
+ 238:lcd.c         **** void pwr_bar_sun(uint8_t pwr)
+ 239:lcd.c         **** {
+ 2125               		.stabn	68,0,239,.LM169-.LFBB19
+ 2126               	.LM169:
+ 2127               	.LFBB19:
+ 2128 09c6 0F93      		push r16
+ 2129 09c8 1F93      		push r17
+ 2130 09ca CF93      		push r28
+ 2131 09cc DF93      		push r29
+ 2132 09ce CDB7      		in r28,__SP_L__
+ 2133 09d0 DEB7      		in r29,__SP_H__
+ 2134 09d2 6097      		sbiw r28,16
+ 2135 09d4 0FB6      		in __tmp_reg__,__SREG__
+ 2136 09d6 F894      		cli
+ 2137 09d8 DEBF      		out __SP_H__,r29
+ 2138 09da 0FBE      		out __SREG__,__tmp_reg__
+ 2139 09dc CDBF      		out __SP_L__,r28
+ 2140               	/* prologue: function */
+ 2141               	/* frame size = 16 */
+ 2142               	/* stack size = 20 */
+ 2143               	.L__stack_usage = 20
  240:lcd.c         **** 
- 241:lcd.c         **** void LC2_green(void)
- 242:lcd.c         **** {
- 2243               		.stabn	68,0,242,.LM202-.LFBB11
- 2244               	.LM202:
- 2245               	.LFBB11:
- 2246 09c2 0F93      		push r16
- 2247 09c4 1F93      		push r17
- 2248 09c6 CF93      		push r28
- 2249 09c8 DF93      		push r29
- 2250 09ca CDB7      		in r28,__SP_L__
- 2251 09cc DEB7      		in r29,__SP_H__
- 2252 09ce 2897      		sbiw r28,8
- 2253 09d0 0FB6      		in __tmp_reg__,__SREG__
- 2254 09d2 F894      		cli
- 2255 09d4 DEBF      		out __SP_H__,r29
-GAS LISTING /tmp/ccq2xQMg.s 			page 46
-
-
- 2256 09d6 0FBE      		out __SREG__,__tmp_reg__
- 2257 09d8 CDBF      		out __SP_L__,r28
- 2258               	/* prologue: function */
- 2259               	/* frame size = 8 */
- 2260               	/* stack size = 12 */
- 2261               	.L__stack_usage = 12
- 243:lcd.c         **** 	rectangle LC2 = {24,28,50,54};
- 2262               		.stabn	68,0,243,.LM203-.LFBB11
- 2263               	.LM203:
- 2264 09da 88E0      		ldi r24,lo8(8)
- 2265 09dc E0E0      		ldi r30,lo8(.LC1)
- 2266 09de F0E0      		ldi r31,hi8(.LC1)
- 2267 09e0 DE01      		movw r26,r28
- 2268 09e2 1196      		adiw r26,1
- 2269               		0:
- 2270 09e4 0190      		ld r0,Z+
- 2271 09e6 0D92      		st X+,r0
- 2272 09e8 8A95      		dec r24
- 2273 09ea 01F4      		brne 0b
- 244:lcd.c         **** 	fill_rectangle(LC2,GREEN);
- 2274               		.stabn	68,0,244,.LM204-.LFBB11
- 2275               	.LM204:
- 2276 09ec 00EE      		ldi r16,lo8(-32)
- 2277 09ee 17E0      		ldi r17,lo8(7)
- 2278 09f0 2981      		ldd r18,Y+1
- 2279 09f2 3A81      		ldd r19,Y+2
- 2280 09f4 4B81      		ldd r20,Y+3
- 2281 09f6 5C81      		ldd r21,Y+4
- 2282 09f8 6D81      		ldd r22,Y+5
- 2283 09fa 7E81      		ldd r23,Y+6
- 2284 09fc 8F81      		ldd r24,Y+7
- 2285 09fe 9885      		ldd r25,Y+8
- 2286 0a00 0E94 0000 		call fill_rectangle
- 2287               	/* epilogue start */
- 245:lcd.c         **** }
- 2288               		.stabn	68,0,245,.LM205-.LFBB11
- 2289               	.LM205:
- 2290 0a04 2896      		adiw r28,8
- 2291 0a06 0FB6      		in __tmp_reg__,__SREG__
- 2292 0a08 F894      		cli
- 2293 0a0a DEBF      		out __SP_H__,r29
- 2294 0a0c 0FBE      		out __SREG__,__tmp_reg__
- 2295 0a0e CDBF      		out __SP_L__,r28
- 2296 0a10 DF91      		pop r29
- 2297 0a12 CF91      		pop r28
- 2298 0a14 1F91      		pop r17
- 2299 0a16 0F91      		pop r16
- 2300 0a18 0895      		ret
- 2301               		.size	LC2_green, .-LC2_green
- 2302               		.stabs	"LC2:(0,9)",128,0,243,1
- 2303               		.stabn	192,0,0,.LFBB11-.LFBB11
- 2304               		.stabn	224,0,0,.Lscope11-.LFBB11
- 2305               	.Lscope11:
- 2306               		.stabs	"",36,0,0,.Lscope11-.LFBB11
- 2307               		.stabs	"LC2_red:F(0,1)",36,0,247,LC2_red
- 2308               	.global	LC2_red
- 2309               		.type	LC2_red, @function
-GAS LISTING /tmp/ccq2xQMg.s 			page 47
-
-
- 2310               	LC2_red:
+ 241:lcd.c         **** 	rectangle blue = {90,91,120,128};
+ 2144               		.stabn	68,0,241,.LM170-.LFBB19
+ 2145               	.LM170:
+ 2146 09de 98E0      		ldi r25,lo8(8)
+ 2147 09e0 E0E0      		ldi r30,lo8(.LC8)
+ 2148 09e2 F0E0      		ldi r31,hi8(.LC8)
+ 2149 09e4 DE01      		movw r26,r28
+ 2150 09e6 1996      		adiw r26,9
+ 2151               		0:
+ 2152 09e8 0190      		ld r0,Z+
+ 2153 09ea 0D92      		st X+,r0
+ 2154 09ec 9A95      		dec r25
+ 2155 09ee 01F4      		brne 0b
+ 242:lcd.c         **** 	rectangle white = {91,92,120,128};
+ 2156               		.stabn	68,0,242,.LM171-.LFBB19
+ 2157               	.LM171:
+ 2158 09f0 98E0      		ldi r25,lo8(8)
+ 2159 09f2 E0E0      		ldi r30,lo8(.LC9)
+ 2160 09f4 F0E0      		ldi r31,hi8(.LC9)
+ 2161 09f6 DE01      		movw r26,r28
+ 2162 09f8 1196      		adiw r26,1
+ 2163               		0:
+ 2164 09fa 0190      		ld r0,Z+
+ 2165 09fc 0D92      		st X+,r0
+ 2166 09fe 9A95      		dec r25
+ 2167 0a00 01F4      		brne 0b
+ 243:lcd.c         **** 
+ 244:lcd.c         **** 	if(pwr > 94)
+ 245:lcd.c         **** 		pwr = 94;
  246:lcd.c         **** 
- 247:lcd.c         **** void LC2_red(void)
- 248:lcd.c         **** {
- 2311               		.stabn	68,0,248,.LM206-.LFBB12
- 2312               	.LM206:
- 2313               	.LFBB12:
- 2314 0a1a 0F93      		push r16
- 2315 0a1c 1F93      		push r17
- 2316 0a1e CF93      		push r28
- 2317 0a20 DF93      		push r29
- 2318 0a22 CDB7      		in r28,__SP_L__
- 2319 0a24 DEB7      		in r29,__SP_H__
- 2320 0a26 2897      		sbiw r28,8
- 2321 0a28 0FB6      		in __tmp_reg__,__SREG__
- 2322 0a2a F894      		cli
- 2323 0a2c DEBF      		out __SP_H__,r29
- 2324 0a2e 0FBE      		out __SREG__,__tmp_reg__
- 2325 0a30 CDBF      		out __SP_L__,r28
- 2326               	/* prologue: function */
- 2327               	/* frame size = 8 */
- 2328               	/* stack size = 12 */
- 2329               	.L__stack_usage = 12
- 249:lcd.c         **** 	rectangle LC2 = {24,28,50,54};
- 2330               		.stabn	68,0,249,.LM207-.LFBB12
- 2331               	.LM207:
- 2332 0a32 88E0      		ldi r24,lo8(8)
- 2333 0a34 E0E0      		ldi r30,lo8(.LC1)
- 2334 0a36 F0E0      		ldi r31,hi8(.LC1)
- 2335 0a38 DE01      		movw r26,r28
- 2336 0a3a 1196      		adiw r26,1
- 2337               		0:
- 2338 0a3c 0190      		ld r0,Z+
- 2339 0a3e 0D92      		st X+,r0
- 2340 0a40 8A95      		dec r24
- 2341 0a42 01F4      		brne 0b
- 250:lcd.c         **** 	fill_rectangle(LC2,RED);
- 2342               		.stabn	68,0,250,.LM208-.LFBB12
- 2343               	.LM208:
- 2344 0a44 00E0      		ldi r16,0
- 2345 0a46 18EF      		ldi r17,lo8(-8)
- 2346 0a48 2981      		ldd r18,Y+1
- 2347 0a4a 3A81      		ldd r19,Y+2
- 2348 0a4c 4B81      		ldd r20,Y+3
- 2349 0a4e 5C81      		ldd r21,Y+4
- 2350 0a50 6D81      		ldd r22,Y+5
- 2351 0a52 7E81      		ldd r23,Y+6
- 2352 0a54 8F81      		ldd r24,Y+7
- 2353 0a56 9885      		ldd r25,Y+8
- 2354 0a58 0E94 0000 		call fill_rectangle
- 2355               	/* epilogue start */
- 251:lcd.c         **** }
- 2356               		.stabn	68,0,251,.LM209-.LFBB12
- 2357               	.LM209:
- 2358 0a5c 2896      		adiw r28,8
- 2359 0a5e 0FB6      		in __tmp_reg__,__SREG__
- 2360 0a60 F894      		cli
-GAS LISTING /tmp/ccq2xQMg.s 			page 48
+ 247:lcd.c         **** 	blue.right = 90 + pwr ;
+ 2168               		.stabn	68,0,247,.LM172-.LFBB19
+GAS LISTING /tmp/ccj7iC5P.s 			page 44
 
 
- 2361 0a62 DEBF      		out __SP_H__,r29
- 2362 0a64 0FBE      		out __SREG__,__tmp_reg__
- 2363 0a66 CDBF      		out __SP_L__,r28
- 2364 0a68 DF91      		pop r29
- 2365 0a6a CF91      		pop r28
- 2366 0a6c 1F91      		pop r17
- 2367 0a6e 0F91      		pop r16
- 2368 0a70 0895      		ret
- 2369               		.size	LC2_red, .-LC2_red
- 2370               		.stabs	"LC2:(0,9)",128,0,249,1
- 2371               		.stabn	192,0,0,.LFBB12-.LFBB12
- 2372               		.stabn	224,0,0,.Lscope12-.LFBB12
- 2373               	.Lscope12:
- 2374               		.stabs	"",36,0,0,.Lscope12-.LFBB12
- 2375               		.section	.rodata
- 2376               	.LC2:
- 2377 0010 1800      		.word	24
- 2378 0012 1C00      		.word	28
- 2379 0014 5000      		.word	80
- 2380 0016 5400      		.word	84
- 2381               		.text
- 2382               		.stabs	"LC3_green:F(0,1)",36,0,253,LC3_green
- 2383               	.global	LC3_green
- 2384               		.type	LC3_green, @function
- 2385               	LC3_green:
- 252:lcd.c         **** 
- 253:lcd.c         **** void LC3_green(void)
- 254:lcd.c         **** {
- 2386               		.stabn	68,0,254,.LM210-.LFBB13
- 2387               	.LM210:
- 2388               	.LFBB13:
- 2389 0a72 0F93      		push r16
- 2390 0a74 1F93      		push r17
- 2391 0a76 CF93      		push r28
- 2392 0a78 DF93      		push r29
- 2393 0a7a CDB7      		in r28,__SP_L__
- 2394 0a7c DEB7      		in r29,__SP_H__
- 2395 0a7e 2897      		sbiw r28,8
- 2396 0a80 0FB6      		in __tmp_reg__,__SREG__
- 2397 0a82 F894      		cli
- 2398 0a84 DEBF      		out __SP_H__,r29
- 2399 0a86 0FBE      		out __SREG__,__tmp_reg__
- 2400 0a88 CDBF      		out __SP_L__,r28
- 2401               	/* prologue: function */
- 2402               	/* frame size = 8 */
- 2403               	/* stack size = 12 */
- 2404               	.L__stack_usage = 12
- 255:lcd.c         **** 	rectangle LC3 = {24,28,80,84};
- 2405               		.stabn	68,0,255,.LM211-.LFBB13
- 2406               	.LM211:
- 2407 0a8a 88E0      		ldi r24,lo8(8)
- 2408 0a8c E0E0      		ldi r30,lo8(.LC2)
- 2409 0a8e F0E0      		ldi r31,hi8(.LC2)
- 2410 0a90 DE01      		movw r26,r28
- 2411 0a92 1196      		adiw r26,1
- 2412               		0:
- 2413 0a94 0190      		ld r0,Z+
-GAS LISTING /tmp/ccq2xQMg.s 			page 49
+ 2169               	.LM172:
+ 2170 0a02 8F35      		cpi r24,lo8(95)
+ 2171 0a04 00F0      		brlo .L49
+ 2172 0a06 8EE5      		ldi r24,lo8(94)
+ 2173               	.L49:
+ 2174 0a08 865A      		subi r24,lo8(-(90))
+ 2175 0a0a 90E0      		ldi r25,0
+ 248:lcd.c         **** 
+ 249:lcd.c         **** 	white.left = blue.right;
+ 2176               		.stabn	68,0,249,.LM173-.LFBB19
+ 2177               	.LM173:
+ 2178 0a0c 9A83      		std Y+2,r25
+ 2179 0a0e 8983      		std Y+1,r24
+ 250:lcd.c         **** 	white.right = 184;
+ 2180               		.stabn	68,0,250,.LM174-.LFBB19
+ 2181               	.LM174:
+ 2182 0a10 28EB      		ldi r18,lo8(-72)
+ 2183 0a12 30E0      		ldi r19,0
+ 2184 0a14 3C83      		std Y+4,r19
+ 2185 0a16 2B83      		std Y+3,r18
+ 251:lcd.c         **** 
+ 252:lcd.c         **** 	fill_rectangle(blue, 0x3E9F);
+ 2186               		.stabn	68,0,252,.LM175-.LFBB19
+ 2187               	.LM175:
+ 2188 0a18 AC01      		movw r20,r24
+ 2189 0a1a 0FE9      		ldi r16,lo8(-97)
+ 2190 0a1c 1EE3      		ldi r17,lo8(62)
+ 2191 0a1e 2985      		ldd r18,Y+9
+ 2192 0a20 3A85      		ldd r19,Y+10
+ 2193 0a22 6D85      		ldd r22,Y+13
+ 2194 0a24 7E85      		ldd r23,Y+14
+ 2195 0a26 8F85      		ldd r24,Y+15
+ 2196 0a28 9889      		ldd r25,Y+16
+ 2197 0a2a 0E94 0000 		call fill_rectangle
+ 253:lcd.c         **** 	fill_rectangle(white, WHITE);
+ 2198               		.stabn	68,0,253,.LM176-.LFBB19
+ 2199               	.LM176:
+ 2200 0a2e 0FEF      		ldi r16,lo8(-1)
+ 2201 0a30 1FEF      		ldi r17,lo8(-1)
+ 2202 0a32 2981      		ldd r18,Y+1
+ 2203 0a34 3A81      		ldd r19,Y+2
+ 2204 0a36 4B81      		ldd r20,Y+3
+ 2205 0a38 5C81      		ldd r21,Y+4
+ 2206 0a3a 6D81      		ldd r22,Y+5
+ 2207 0a3c 7E81      		ldd r23,Y+6
+ 2208 0a3e 8F81      		ldd r24,Y+7
+ 2209 0a40 9885      		ldd r25,Y+8
+ 2210 0a42 0E94 0000 		call fill_rectangle
+ 2211               	/* epilogue start */
+ 254:lcd.c         **** }
+ 2212               		.stabn	68,0,254,.LM177-.LFBB19
+ 2213               	.LM177:
+ 2214 0a46 6096      		adiw r28,16
+ 2215 0a48 0FB6      		in __tmp_reg__,__SREG__
+ 2216 0a4a F894      		cli
+ 2217 0a4c DEBF      		out __SP_H__,r29
+ 2218 0a4e 0FBE      		out __SREG__,__tmp_reg__
+GAS LISTING /tmp/ccj7iC5P.s 			page 45
 
 
- 2414 0a96 0D92      		st X+,r0
- 2415 0a98 8A95      		dec r24
- 2416 0a9a 01F4      		brne 0b
- 256:lcd.c         **** 	fill_rectangle(LC3,GREEN);
- 2417               		.stabn	68,0,256,.LM212-.LFBB13
- 2418               	.LM212:
- 2419 0a9c 00EE      		ldi r16,lo8(-32)
- 2420 0a9e 17E0      		ldi r17,lo8(7)
- 2421 0aa0 2981      		ldd r18,Y+1
- 2422 0aa2 3A81      		ldd r19,Y+2
- 2423 0aa4 4B81      		ldd r20,Y+3
- 2424 0aa6 5C81      		ldd r21,Y+4
- 2425 0aa8 6D81      		ldd r22,Y+5
- 2426 0aaa 7E81      		ldd r23,Y+6
- 2427 0aac 8F81      		ldd r24,Y+7
- 2428 0aae 9885      		ldd r25,Y+8
- 2429 0ab0 0E94 0000 		call fill_rectangle
- 2430               	/* epilogue start */
- 257:lcd.c         **** }
- 2431               		.stabn	68,0,257,.LM213-.LFBB13
- 2432               	.LM213:
- 2433 0ab4 2896      		adiw r28,8
- 2434 0ab6 0FB6      		in __tmp_reg__,__SREG__
- 2435 0ab8 F894      		cli
- 2436 0aba DEBF      		out __SP_H__,r29
- 2437 0abc 0FBE      		out __SREG__,__tmp_reg__
- 2438 0abe CDBF      		out __SP_L__,r28
- 2439 0ac0 DF91      		pop r29
- 2440 0ac2 CF91      		pop r28
- 2441 0ac4 1F91      		pop r17
- 2442 0ac6 0F91      		pop r16
- 2443 0ac8 0895      		ret
- 2444               		.size	LC3_green, .-LC3_green
- 2445               		.stabs	"LC3:(0,9)",128,0,255,1
- 2446               		.stabn	192,0,0,.LFBB13-.LFBB13
- 2447               		.stabn	224,0,0,.Lscope13-.LFBB13
- 2448               	.Lscope13:
- 2449               		.stabs	"",36,0,0,.Lscope13-.LFBB13
- 2450               		.stabs	"LC3_red:F(0,1)",36,0,259,LC3_red
- 2451               	.global	LC3_red
- 2452               		.type	LC3_red, @function
- 2453               	LC3_red:
- 258:lcd.c         **** 
- 259:lcd.c         **** void LC3_red(void)
- 260:lcd.c         **** {
- 2454               		.stabn	68,0,260,.LM214-.LFBB14
- 2455               	.LM214:
- 2456               	.LFBB14:
- 2457 0aca 0F93      		push r16
- 2458 0acc 1F93      		push r17
- 2459 0ace CF93      		push r28
- 2460 0ad0 DF93      		push r29
- 2461 0ad2 CDB7      		in r28,__SP_L__
- 2462 0ad4 DEB7      		in r29,__SP_H__
- 2463 0ad6 2897      		sbiw r28,8
- 2464 0ad8 0FB6      		in __tmp_reg__,__SREG__
- 2465 0ada F894      		cli
-GAS LISTING /tmp/ccq2xQMg.s 			page 50
+ 2219 0a50 CDBF      		out __SP_L__,r28
+ 2220 0a52 DF91      		pop r29
+ 2221 0a54 CF91      		pop r28
+ 2222 0a56 1F91      		pop r17
+ 2223 0a58 0F91      		pop r16
+ 2224 0a5a 0895      		ret
+ 2225               		.size	pwr_bar_sun, .-pwr_bar_sun
+ 2226               		.stabs	"blue:(0,8)",128,0,241,9
+ 2227               		.stabs	"white:(0,8)",128,0,242,1
+ 2228               		.stabn	192,0,0,.LFBB19-.LFBB19
+ 2229               		.stabn	224,0,0,.Lscope19-.LFBB19
+ 2230               	.Lscope19:
+ 2231               		.stabs	"",36,0,0,.Lscope19-.LFBB19
+ 2232               		.stabs	"pwr_100:F(0,1)",36,0,256,pwr_100
+ 2233               		.stabs	"digit:P(0,2)",64,0,256,24
+ 2234               	.global	pwr_100
+ 2235               		.type	pwr_100, @function
+ 2236               	pwr_100:
+ 255:lcd.c         **** 
+ 256:lcd.c         **** void pwr_100(uint8_t digit){
+ 2237               		.stabn	68,0,256,.LM178-.LFBB20
+ 2238               	.LM178:
+ 2239               	.LFBB20:
+ 2240 0a5c CF93      		push r28
+ 2241 0a5e DF93      		push r29
+ 2242               	/* prologue: function */
+ 2243               	/* frame size = 0 */
+ 2244               	/* stack size = 2 */
+ 2245               	.L__stack_usage = 2
+ 257:lcd.c         **** 	if(digit >= 10)
+ 2246               		.stabn	68,0,257,.LM179-.LFBB20
+ 2247               	.LM179:
+ 2248 0a60 8A30      		cpi r24,lo8(10)
+ 2249 0a62 00F0      		brlo .L51
+ 258:lcd.c         **** 		digit = 0;
+ 2250               		.stabn	68,0,258,.LM180-.LFBB20
+ 2251               	.LM180:
+ 2252 0a64 80E0      		ldi r24,0
+ 2253               	.L51:
+ 259:lcd.c         **** 	uint16_t x, y;
+ 260:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
+ 2254               		.stabn	68,0,260,.LM181-.LFBB20
+ 2255               	.LM181:
+ 2256 0a66 4498      		cbi 0x8,4
+ 2257 0a68 9AE2      		ldi r25,lo8(42)
+ 2258 0a6a 95B9      		out 0x5,r25
+ 2259 0a6c 4398      		cbi 0x8,3
+ 2260 0a6e 439A      		sbi 0x8,3
+ 2261 0a70 449A      		sbi 0x8,4
+ 261:lcd.c         **** 	write_data16(110);
+ 2262               		.stabn	68,0,261,.LM182-.LFBB20
+ 2263               	.LM182:
+ 2264 0a72 15B8      		out 0x5,__zero_reg__
+ 2265 0a74 4398      		cbi 0x8,3
+ 2266 0a76 439A      		sbi 0x8,3
+ 2267 0a78 9EE6      		ldi r25,lo8(110)
+ 2268 0a7a 95B9      		out 0x5,r25
+GAS LISTING /tmp/ccj7iC5P.s 			page 46
 
 
- 2466 0adc DEBF      		out __SP_H__,r29
- 2467 0ade 0FBE      		out __SREG__,__tmp_reg__
- 2468 0ae0 CDBF      		out __SP_L__,r28
- 2469               	/* prologue: function */
- 2470               	/* frame size = 8 */
- 2471               	/* stack size = 12 */
- 2472               	.L__stack_usage = 12
- 261:lcd.c         **** 	rectangle LC3 = {24,28,80,84};
- 2473               		.stabn	68,0,261,.LM215-.LFBB14
- 2474               	.LM215:
- 2475 0ae2 88E0      		ldi r24,lo8(8)
- 2476 0ae4 E0E0      		ldi r30,lo8(.LC2)
- 2477 0ae6 F0E0      		ldi r31,hi8(.LC2)
- 2478 0ae8 DE01      		movw r26,r28
- 2479 0aea 1196      		adiw r26,1
- 2480               		0:
- 2481 0aec 0190      		ld r0,Z+
- 2482 0aee 0D92      		st X+,r0
- 2483 0af0 8A95      		dec r24
- 2484 0af2 01F4      		brne 0b
- 262:lcd.c         **** 	fill_rectangle(LC3,RED);
- 2485               		.stabn	68,0,262,.LM216-.LFBB14
- 2486               	.LM216:
- 2487 0af4 00E0      		ldi r16,0
- 2488 0af6 18EF      		ldi r17,lo8(-8)
- 2489 0af8 2981      		ldd r18,Y+1
- 2490 0afa 3A81      		ldd r19,Y+2
- 2491 0afc 4B81      		ldd r20,Y+3
- 2492 0afe 5C81      		ldd r21,Y+4
- 2493 0b00 6D81      		ldd r22,Y+5
- 2494 0b02 7E81      		ldd r23,Y+6
- 2495 0b04 8F81      		ldd r24,Y+7
- 2496 0b06 9885      		ldd r25,Y+8
- 2497 0b08 0E94 0000 		call fill_rectangle
- 2498               	/* epilogue start */
- 263:lcd.c         **** }
- 2499               		.stabn	68,0,263,.LM217-.LFBB14
- 2500               	.LM217:
- 2501 0b0c 2896      		adiw r28,8
- 2502 0b0e 0FB6      		in __tmp_reg__,__SREG__
- 2503 0b10 F894      		cli
- 2504 0b12 DEBF      		out __SP_H__,r29
- 2505 0b14 0FBE      		out __SREG__,__tmp_reg__
- 2506 0b16 CDBF      		out __SP_L__,r28
- 2507 0b18 DF91      		pop r29
- 2508 0b1a CF91      		pop r28
- 2509 0b1c 1F91      		pop r17
- 2510 0b1e 0F91      		pop r16
- 2511 0b20 0895      		ret
- 2512               		.size	LC3_red, .-LC3_red
- 2513               		.stabs	"LC3:(0,9)",128,0,261,1
- 2514               		.stabn	192,0,0,.LFBB14-.LFBB14
- 2515               		.stabn	224,0,0,.Lscope14-.LFBB14
- 2516               	.Lscope14:
- 2517               		.stabs	"",36,0,0,.Lscope14-.LFBB14
- 2518               		.section	.rodata
- 2519               	.LC3:
-GAS LISTING /tmp/ccq2xQMg.s 			page 51
+ 2269 0a7c 4398      		cbi 0x8,3
+ 2270 0a7e 439A      		sbi 0x8,3
+ 262:lcd.c         **** 	write_data16(151);
+ 2271               		.stabn	68,0,262,.LM183-.LFBB20
+ 2272               	.LM183:
+ 2273 0a80 15B8      		out 0x5,__zero_reg__
+ 2274 0a82 4398      		cbi 0x8,3
+ 2275 0a84 439A      		sbi 0x8,3
+ 2276 0a86 97E9      		ldi r25,lo8(-105)
+ 2277 0a88 95B9      		out 0x5,r25
+ 2278 0a8a 4398      		cbi 0x8,3
+ 2279 0a8c 439A      		sbi 0x8,3
+ 263:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
+ 2280               		.stabn	68,0,263,.LM184-.LFBB20
+ 2281               	.LM184:
+ 2282 0a8e 4498      		cbi 0x8,4
+ 2283 0a90 9BE2      		ldi r25,lo8(43)
+ 2284 0a92 95B9      		out 0x5,r25
+ 2285 0a94 4398      		cbi 0x8,3
+ 2286 0a96 439A      		sbi 0x8,3
+ 2287 0a98 449A      		sbi 0x8,4
+ 264:lcd.c         **** 	write_data16(204);
+ 2288               		.stabn	68,0,264,.LM185-.LFBB20
+ 2289               	.LM185:
+ 2290 0a9a 15B8      		out 0x5,__zero_reg__
+ 2291 0a9c 4398      		cbi 0x8,3
+ 2292 0a9e 439A      		sbi 0x8,3
+ 2293 0aa0 9CEC      		ldi r25,lo8(-52)
+ 2294 0aa2 95B9      		out 0x5,r25
+ 2295 0aa4 4398      		cbi 0x8,3
+ 2296 0aa6 439A      		sbi 0x8,3
+ 265:lcd.c         **** 	write_data16(277);
+ 2297               		.stabn	68,0,265,.LM186-.LFBB20
+ 2298               	.LM186:
+ 2299 0aa8 91E0      		ldi r25,lo8(1)
+ 2300 0aaa 95B9      		out 0x5,r25
+ 2301 0aac 4398      		cbi 0x8,3
+ 2302 0aae 439A      		sbi 0x8,3
+ 2303 0ab0 95E1      		ldi r25,lo8(21)
+ 2304 0ab2 95B9      		out 0x5,r25
+ 2305 0ab4 4398      		cbi 0x8,3
+ 2306 0ab6 439A      		sbi 0x8,3
+ 266:lcd.c         **** 	write_cmd(MEMORY_WRITE);
+ 2307               		.stabn	68,0,266,.LM187-.LFBB20
+ 2308               	.LM187:
+ 2309 0ab8 4498      		cbi 0x8,4
+ 2310 0aba 9CE2      		ldi r25,lo8(44)
+ 2311 0abc 95B9      		out 0x5,r25
+ 2312 0abe 4398      		cbi 0x8,3
+ 2313 0ac0 439A      		sbi 0x8,3
+ 2314 0ac2 449A      		sbi 0x8,4
+ 2315               	.LBB27:
+ 267:lcd.c         **** 	for(y = 0; y <= 36; y++){
+ 268:lcd.c         **** 		for(x = 0; x <= 20; x++){
+ 269:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
+ 2316               		.stabn	68,0,269,.LM188-.LFBB20
+ 2317               	.LM188:
+GAS LISTING /tmp/ccj7iC5P.s 			page 47
 
 
- 2520 0018 8800      		.word	136
- 2521 001a 8C00      		.word	140
- 2522 001c 1200      		.word	18
- 2523 001e 1600      		.word	22
- 2524               		.text
- 2525               		.stabs	"LS1_green:F(0,1)",36,0,266,LS1_green
- 2526               	.global	LS1_green
- 2527               		.type	LS1_green, @function
- 2528               	LS1_green:
- 264:lcd.c         **** 
- 265:lcd.c         **** 
- 266:lcd.c         **** void LS1_green(void)
- 267:lcd.c         **** {
- 2529               		.stabn	68,0,267,.LM218-.LFBB15
- 2530               	.LM218:
- 2531               	.LFBB15:
- 2532 0b22 0F93      		push r16
- 2533 0b24 1F93      		push r17
- 2534 0b26 CF93      		push r28
- 2535 0b28 DF93      		push r29
- 2536 0b2a CDB7      		in r28,__SP_L__
- 2537 0b2c DEB7      		in r29,__SP_H__
- 2538 0b2e 2897      		sbiw r28,8
- 2539 0b30 0FB6      		in __tmp_reg__,__SREG__
- 2540 0b32 F894      		cli
- 2541 0b34 DEBF      		out __SP_H__,r29
- 2542 0b36 0FBE      		out __SREG__,__tmp_reg__
- 2543 0b38 CDBF      		out __SP_L__,r28
- 2544               	/* prologue: function */
- 2545               	/* frame size = 8 */
- 2546               	/* stack size = 12 */
- 2547               	.L__stack_usage = 12
- 268:lcd.c         **** 	rectangle LC1 = {136,140,18,22};
- 2548               		.stabn	68,0,268,.LM219-.LFBB15
- 2549               	.LM219:
- 2550 0b3a 88E0      		ldi r24,lo8(8)
- 2551 0b3c E0E0      		ldi r30,lo8(.LC3)
- 2552 0b3e F0E0      		ldi r31,hi8(.LC3)
- 2553 0b40 DE01      		movw r26,r28
- 2554 0b42 1196      		adiw r26,1
- 2555               		0:
- 2556 0b44 0190      		ld r0,Z+
- 2557 0b46 0D92      		st X+,r0
- 2558 0b48 8A95      		dec r24
- 2559 0b4a 01F4      		brne 0b
- 269:lcd.c         **** 	fill_rectangle(LC1,GREEN);
- 2560               		.stabn	68,0,269,.LM220-.LFBB15
- 2561               	.LM220:
- 2562 0b4c 00EE      		ldi r16,lo8(-32)
- 2563 0b4e 17E0      		ldi r17,lo8(7)
- 2564 0b50 2981      		ldd r18,Y+1
- 2565 0b52 3A81      		ldd r19,Y+2
- 2566 0b54 4B81      		ldd r20,Y+3
- 2567 0b56 5C81      		ldd r21,Y+4
- 2568 0b58 6D81      		ldd r22,Y+5
- 2569 0b5a 7E81      		ldd r23,Y+6
- 2570 0b5c 8F81      		ldd r24,Y+7
-GAS LISTING /tmp/ccq2xQMg.s 			page 52
+ 2318 0ac4 29E0      		ldi r18,lo8(9)
+ 2319 0ac6 30E0      		ldi r19,0
+ 2320 0ac8 A901      		movw r20,r18
+ 2321 0aca 481B      		sub r20,r24
+ 2322 0acc 5109      		sbc r21,__zero_reg__
+ 2323 0ace CA01      		movw r24,r20
+ 2324 0ad0 29E0      		ldi r18,lo8(9)
+ 2325 0ad2 33E0      		ldi r19,lo8(3)
+ 2326 0ad4 829F      		mul r24,r18
+ 2327 0ad6 A001      		movw r20,r0
+ 2328 0ad8 839F      		mul r24,r19
+ 2329 0ada 500D      		add r21,r0
+ 2330 0adc 929F      		mul r25,r18
+ 2331 0ade 500D      		add r21,r0
+ 2332 0ae0 1124      		clr r1
+ 2333 0ae2 9A01      		movw r18,r20
+ 2334 0ae4 220F      		lsl r18
+ 2335 0ae6 331F      		rol r19
+ 2336 0ae8 2050      		subi r18,lo8(-(digit2))
+ 2337 0aea 3040      		sbci r19,hi8(-(digit2))
+ 2338 0aec DA01      		movw r26,r20
+ 2339 0aee A75F      		subi r26,-9
+ 2340 0af0 BC4F      		sbci r27,-4
+ 2341               	.L52:
+ 2342               	.LBE27:
+ 258:lcd.c         **** 	uint16_t x, y;
+ 2343               		.stabn	68,0,258,.LM189-.LFBB20
+ 2344               	.LM189:
+ 2345 0af2 C901      		movw r24,r18
+ 268:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
+ 2346               		.stabn	68,0,268,.LM190-.LFBB20
+ 2347               	.LM190:
+ 2348 0af4 70E0      		ldi r23,0
+ 2349 0af6 60E0      		ldi r22,0
+ 2350               	.L53:
+ 2351               	.LBB28:
+ 2352               		.stabn	68,0,269,.LM191-.LFBB20
+ 2353               	.LM191:
+ 2354 0af8 FC01      		movw r30,r24
+ 2355               	/* #APP */
+ 2356               	 ;  269 "lcd.c" 1
+ 2357 0afa C591      		lpm r28, Z+
+ 2358 0afc D491      		lpm r29, Z
+ 2359               		
+ 2360               	 ;  0 "" 2
+ 2361               	/* #NOAPP */
+ 2362               	.LBE28:
+ 2363 0afe D5B9      		out 0x5,r29
+ 2364 0b00 4398      		cbi 0x8,3
+ 2365 0b02 439A      		sbi 0x8,3
+ 2366               	.LBB29:
+ 2367 0b04 FC01      		movw r30,r24
+ 2368               	/* #APP */
+ 2369               	 ;  269 "lcd.c" 1
+ 2370 0b06 C591      		lpm r28, Z+
+ 2371 0b08 D491      		lpm r29, Z
+ 2372               		
+GAS LISTING /tmp/ccj7iC5P.s 			page 48
 
 
- 2571 0b5e 9885      		ldd r25,Y+8
- 2572 0b60 0E94 0000 		call fill_rectangle
- 2573               	/* epilogue start */
- 270:lcd.c         **** }
- 2574               		.stabn	68,0,270,.LM221-.LFBB15
- 2575               	.LM221:
- 2576 0b64 2896      		adiw r28,8
- 2577 0b66 0FB6      		in __tmp_reg__,__SREG__
- 2578 0b68 F894      		cli
- 2579 0b6a DEBF      		out __SP_H__,r29
- 2580 0b6c 0FBE      		out __SREG__,__tmp_reg__
- 2581 0b6e CDBF      		out __SP_L__,r28
- 2582 0b70 DF91      		pop r29
- 2583 0b72 CF91      		pop r28
- 2584 0b74 1F91      		pop r17
- 2585 0b76 0F91      		pop r16
- 2586 0b78 0895      		ret
- 2587               		.size	LS1_green, .-LS1_green
- 2588               		.stabs	"LC1:(0,9)",128,0,268,1
- 2589               		.stabn	192,0,0,.LFBB15-.LFBB15
- 2590               		.stabn	224,0,0,.Lscope15-.LFBB15
- 2591               	.Lscope15:
- 2592               		.stabs	"",36,0,0,.Lscope15-.LFBB15
- 2593               		.stabs	"LS1_red:F(0,1)",36,0,272,LS1_red
- 2594               	.global	LS1_red
- 2595               		.type	LS1_red, @function
- 2596               	LS1_red:
- 271:lcd.c         **** 
- 272:lcd.c         **** void LS1_red(void)
- 273:lcd.c         **** {
- 2597               		.stabn	68,0,273,.LM222-.LFBB16
- 2598               	.LM222:
- 2599               	.LFBB16:
- 2600 0b7a 0F93      		push r16
- 2601 0b7c 1F93      		push r17
- 2602 0b7e CF93      		push r28
- 2603 0b80 DF93      		push r29
- 2604 0b82 CDB7      		in r28,__SP_L__
- 2605 0b84 DEB7      		in r29,__SP_H__
- 2606 0b86 2897      		sbiw r28,8
- 2607 0b88 0FB6      		in __tmp_reg__,__SREG__
- 2608 0b8a F894      		cli
- 2609 0b8c DEBF      		out __SP_H__,r29
- 2610 0b8e 0FBE      		out __SREG__,__tmp_reg__
- 2611 0b90 CDBF      		out __SP_L__,r28
- 2612               	/* prologue: function */
- 2613               	/* frame size = 8 */
- 2614               	/* stack size = 12 */
- 2615               	.L__stack_usage = 12
- 274:lcd.c         **** 	rectangle LC1 = {136,140,18,22};
- 2616               		.stabn	68,0,274,.LM223-.LFBB16
- 2617               	.LM223:
- 2618 0b92 88E0      		ldi r24,lo8(8)
- 2619 0b94 E0E0      		ldi r30,lo8(.LC3)
- 2620 0b96 F0E0      		ldi r31,hi8(.LC3)
- 2621 0b98 DE01      		movw r26,r28
- 2622 0b9a 1196      		adiw r26,1
-GAS LISTING /tmp/ccq2xQMg.s 			page 53
+ 2373               	 ;  0 "" 2
+ 2374               	/* #NOAPP */
+ 2375               	.LBE29:
+ 2376 0b0a C5B9      		out 0x5,r28
+ 2377 0b0c 4398      		cbi 0x8,3
+ 2378 0b0e 439A      		sbi 0x8,3
+ 2379               	.LBB30:
+ 270:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
+ 2380               		.stabn	68,0,270,.LM192-.LFBB20
+ 2381               	.LM192:
+ 2382 0b10 FC01      		movw r30,r24
+ 2383               	/* #APP */
+ 2384               	 ;  270 "lcd.c" 1
+ 2385 0b12 C591      		lpm r28, Z+
+ 2386 0b14 D491      		lpm r29, Z
+ 2387               		
+ 2388               	 ;  0 "" 2
+ 2389               	/* #NOAPP */
+ 2390               	.LBE30:
+ 2391 0b16 D5B9      		out 0x5,r29
+ 2392 0b18 4398      		cbi 0x8,3
+ 2393 0b1a 439A      		sbi 0x8,3
+ 2394               	.LBB31:
+ 2395 0b1c FC01      		movw r30,r24
+ 2396               	/* #APP */
+ 2397               	 ;  270 "lcd.c" 1
+ 2398 0b1e C591      		lpm r28, Z+
+ 2399 0b20 D491      		lpm r29, Z
+ 2400               		
+ 2401               	 ;  0 "" 2
+ 2402               	/* #NOAPP */
+ 2403               	.LBE31:
+ 2404 0b22 C5B9      		out 0x5,r28
+ 2405 0b24 4398      		cbi 0x8,3
+ 2406 0b26 439A      		sbi 0x8,3
+ 268:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
+ 2407               		.stabn	68,0,268,.LM193-.LFBB20
+ 2408               	.LM193:
+ 2409 0b28 6F5F      		subi r22,-1
+ 2410 0b2a 7F4F      		sbci r23,-1
+ 268:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
+ 2411               		.stabn	68,0,268,.LM194-.LFBB20
+ 2412               	.LM194:
+ 2413 0b2c 0296      		adiw r24,2
+ 2414 0b2e 6531      		cpi r22,21
+ 2415 0b30 7105      		cpc r23,__zero_reg__
+ 2416 0b32 01F4      		brne .L53
+ 2417 0b34 C901      		movw r24,r18
+ 271:lcd.c         **** 		}
+ 272:lcd.c         **** 		for(x = 0; x <= 20; x++){
+ 2418               		.stabn	68,0,272,.LM195-.LFBB20
+ 2419               	.LM195:
+ 2420 0b36 70E0      		ldi r23,0
+ 2421 0b38 60E0      		ldi r22,0
+ 2422               	.L54:
+ 2423               	.LBB32:
+ 273:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
+GAS LISTING /tmp/ccj7iC5P.s 			page 49
 
 
- 2623               		0:
- 2624 0b9c 0190      		ld r0,Z+
- 2625 0b9e 0D92      		st X+,r0
- 2626 0ba0 8A95      		dec r24
- 2627 0ba2 01F4      		brne 0b
- 275:lcd.c         **** 	fill_rectangle(LC1,RED);
- 2628               		.stabn	68,0,275,.LM224-.LFBB16
- 2629               	.LM224:
- 2630 0ba4 00E0      		ldi r16,0
- 2631 0ba6 18EF      		ldi r17,lo8(-8)
- 2632 0ba8 2981      		ldd r18,Y+1
- 2633 0baa 3A81      		ldd r19,Y+2
- 2634 0bac 4B81      		ldd r20,Y+3
- 2635 0bae 5C81      		ldd r21,Y+4
- 2636 0bb0 6D81      		ldd r22,Y+5
- 2637 0bb2 7E81      		ldd r23,Y+6
- 2638 0bb4 8F81      		ldd r24,Y+7
- 2639 0bb6 9885      		ldd r25,Y+8
- 2640 0bb8 0E94 0000 		call fill_rectangle
- 2641               	/* epilogue start */
- 276:lcd.c         **** }
- 2642               		.stabn	68,0,276,.LM225-.LFBB16
- 2643               	.LM225:
- 2644 0bbc 2896      		adiw r28,8
- 2645 0bbe 0FB6      		in __tmp_reg__,__SREG__
- 2646 0bc0 F894      		cli
- 2647 0bc2 DEBF      		out __SP_H__,r29
- 2648 0bc4 0FBE      		out __SREG__,__tmp_reg__
- 2649 0bc6 CDBF      		out __SP_L__,r28
- 2650 0bc8 DF91      		pop r29
- 2651 0bca CF91      		pop r28
- 2652 0bcc 1F91      		pop r17
- 2653 0bce 0F91      		pop r16
- 2654 0bd0 0895      		ret
- 2655               		.size	LS1_red, .-LS1_red
- 2656               		.stabs	"LC1:(0,9)",128,0,274,1
- 2657               		.stabn	192,0,0,.LFBB16-.LFBB16
- 2658               		.stabn	224,0,0,.Lscope16-.LFBB16
- 2659               	.Lscope16:
- 2660               		.stabs	"",36,0,0,.Lscope16-.LFBB16
- 2661               		.section	.rodata
- 2662               	.LC4:
- 2663 0020 8800      		.word	136
- 2664 0022 8C00      		.word	140
- 2665 0024 3200      		.word	50
- 2666 0026 3600      		.word	54
- 2667               		.text
- 2668               		.stabs	"LS2_green:F(0,1)",36,0,278,LS2_green
- 2669               	.global	LS2_green
- 2670               		.type	LS2_green, @function
- 2671               	LS2_green:
- 277:lcd.c         **** 
- 278:lcd.c         **** void LS2_green(void)
- 279:lcd.c         **** {
- 2672               		.stabn	68,0,279,.LM226-.LFBB17
- 2673               	.LM226:
- 2674               	.LFBB17:
-GAS LISTING /tmp/ccq2xQMg.s 			page 54
+ 2424               		.stabn	68,0,273,.LM196-.LFBB20
+ 2425               	.LM196:
+ 2426 0b3a FC01      		movw r30,r24
+ 2427               	/* #APP */
+ 2428               	 ;  273 "lcd.c" 1
+ 2429 0b3c C591      		lpm r28, Z+
+ 2430 0b3e D491      		lpm r29, Z
+ 2431               		
+ 2432               	 ;  0 "" 2
+ 2433               	/* #NOAPP */
+ 2434               	.LBE32:
+ 2435 0b40 D5B9      		out 0x5,r29
+ 2436 0b42 4398      		cbi 0x8,3
+ 2437 0b44 439A      		sbi 0x8,3
+ 2438               	.LBB33:
+ 2439 0b46 FC01      		movw r30,r24
+ 2440               	/* #APP */
+ 2441               	 ;  273 "lcd.c" 1
+ 2442 0b48 C591      		lpm r28, Z+
+ 2443 0b4a D491      		lpm r29, Z
+ 2444               		
+ 2445               	 ;  0 "" 2
+ 2446               	/* #NOAPP */
+ 2447               	.LBE33:
+ 2448 0b4c C5B9      		out 0x5,r28
+ 2449 0b4e 4398      		cbi 0x8,3
+ 2450 0b50 439A      		sbi 0x8,3
+ 2451               	.LBB34:
+ 274:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
+ 2452               		.stabn	68,0,274,.LM197-.LFBB20
+ 2453               	.LM197:
+ 2454 0b52 FC01      		movw r30,r24
+ 2455               	/* #APP */
+ 2456               	 ;  274 "lcd.c" 1
+ 2457 0b54 C591      		lpm r28, Z+
+ 2458 0b56 D491      		lpm r29, Z
+ 2459               		
+ 2460               	 ;  0 "" 2
+ 2461               	/* #NOAPP */
+ 2462               	.LBE34:
+ 2463 0b58 D5B9      		out 0x5,r29
+ 2464 0b5a 4398      		cbi 0x8,3
+ 2465 0b5c 439A      		sbi 0x8,3
+ 2466               	.LBB35:
+ 2467 0b5e FC01      		movw r30,r24
+ 2468               	/* #APP */
+ 2469               	 ;  274 "lcd.c" 1
+ 2470 0b60 C591      		lpm r28, Z+
+ 2471 0b62 D491      		lpm r29, Z
+ 2472               		
+ 2473               	 ;  0 "" 2
+ 2474               	/* #NOAPP */
+ 2475               	.LBE35:
+ 2476 0b64 C5B9      		out 0x5,r28
+ 2477 0b66 4398      		cbi 0x8,3
+ 2478 0b68 439A      		sbi 0x8,3
+ 272:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
+GAS LISTING /tmp/ccj7iC5P.s 			page 50
 
 
- 2675 0bd2 0F93      		push r16
- 2676 0bd4 1F93      		push r17
- 2677 0bd6 CF93      		push r28
- 2678 0bd8 DF93      		push r29
- 2679 0bda CDB7      		in r28,__SP_L__
- 2680 0bdc DEB7      		in r29,__SP_H__
- 2681 0bde 2897      		sbiw r28,8
- 2682 0be0 0FB6      		in __tmp_reg__,__SREG__
- 2683 0be2 F894      		cli
- 2684 0be4 DEBF      		out __SP_H__,r29
- 2685 0be6 0FBE      		out __SREG__,__tmp_reg__
- 2686 0be8 CDBF      		out __SP_L__,r28
- 2687               	/* prologue: function */
- 2688               	/* frame size = 8 */
- 2689               	/* stack size = 12 */
- 2690               	.L__stack_usage = 12
- 280:lcd.c         **** 	rectangle LC2 = {136,140,50,54};
- 2691               		.stabn	68,0,280,.LM227-.LFBB17
- 2692               	.LM227:
- 2693 0bea 88E0      		ldi r24,lo8(8)
- 2694 0bec E0E0      		ldi r30,lo8(.LC4)
- 2695 0bee F0E0      		ldi r31,hi8(.LC4)
- 2696 0bf0 DE01      		movw r26,r28
- 2697 0bf2 1196      		adiw r26,1
- 2698               		0:
- 2699 0bf4 0190      		ld r0,Z+
- 2700 0bf6 0D92      		st X+,r0
- 2701 0bf8 8A95      		dec r24
- 2702 0bfa 01F4      		brne 0b
- 281:lcd.c         **** 	fill_rectangle(LC2,GREEN);
- 2703               		.stabn	68,0,281,.LM228-.LFBB17
- 2704               	.LM228:
- 2705 0bfc 00EE      		ldi r16,lo8(-32)
- 2706 0bfe 17E0      		ldi r17,lo8(7)
- 2707 0c00 2981      		ldd r18,Y+1
- 2708 0c02 3A81      		ldd r19,Y+2
- 2709 0c04 4B81      		ldd r20,Y+3
- 2710 0c06 5C81      		ldd r21,Y+4
- 2711 0c08 6D81      		ldd r22,Y+5
- 2712 0c0a 7E81      		ldd r23,Y+6
- 2713 0c0c 8F81      		ldd r24,Y+7
- 2714 0c0e 9885      		ldd r25,Y+8
- 2715 0c10 0E94 0000 		call fill_rectangle
- 2716               	/* epilogue start */
- 282:lcd.c         **** }
- 2717               		.stabn	68,0,282,.LM229-.LFBB17
- 2718               	.LM229:
- 2719 0c14 2896      		adiw r28,8
- 2720 0c16 0FB6      		in __tmp_reg__,__SREG__
- 2721 0c18 F894      		cli
- 2722 0c1a DEBF      		out __SP_H__,r29
- 2723 0c1c 0FBE      		out __SREG__,__tmp_reg__
- 2724 0c1e CDBF      		out __SP_L__,r28
- 2725 0c20 DF91      		pop r29
- 2726 0c22 CF91      		pop r28
- 2727 0c24 1F91      		pop r17
- 2728 0c26 0F91      		pop r16
-GAS LISTING /tmp/ccq2xQMg.s 			page 55
+ 2479               		.stabn	68,0,272,.LM198-.LFBB20
+ 2480               	.LM198:
+ 2481 0b6a 6F5F      		subi r22,-1
+ 2482 0b6c 7F4F      		sbci r23,-1
+ 272:lcd.c         **** 			write_data16(pgm_read_word(&digit2[(9-digit)*777+x+y*21]));
+ 2483               		.stabn	68,0,272,.LM199-.LFBB20
+ 2484               	.LM199:
+ 2485 0b6e 0296      		adiw r24,2
+ 2486 0b70 6531      		cpi r22,21
+ 2487 0b72 7105      		cpc r23,__zero_reg__
+ 2488 0b74 01F4      		brne .L54
+ 267:lcd.c         **** 		for(x = 0; x <= 20; x++){
+ 2489               		.stabn	68,0,267,.LM200-.LFBB20
+ 2490               	.LM200:
+ 2491 0b76 265D      		subi r18,-42
+ 2492 0b78 3F4F      		sbci r19,-1
+ 2493 0b7a 4B5E      		subi r20,-21
+ 2494 0b7c 5F4F      		sbci r21,-1
+ 2495 0b7e 4A17      		cp r20,r26
+ 2496 0b80 5B07      		cpc r21,r27
+ 2497 0b82 01F0      		breq .+2
+ 2498 0b84 00C0      		rjmp .L52
+ 2499               	/* epilogue start */
+ 275:lcd.c         **** 		}
+ 276:lcd.c         **** 	}
+ 277:lcd.c         **** }
+ 2500               		.stabn	68,0,277,.LM201-.LFBB20
+ 2501               	.LM201:
+ 2502 0b86 DF91      		pop r29
+ 2503 0b88 CF91      		pop r28
+ 2504 0b8a 0895      		ret
+ 2505               		.size	pwr_100, .-pwr_100
+ 2506               	.Lscope20:
+ 2507               		.stabs	"",36,0,0,.Lscope20-.LFBB20
+ 2508               		.stabs	"pwr_10:F(0,1)",36,0,279,pwr_10
+ 2509               		.stabs	"digit:P(0,2)",64,0,279,24
+ 2510               	.global	pwr_10
+ 2511               		.type	pwr_10, @function
+ 2512               	pwr_10:
+ 278:lcd.c         **** 
+ 279:lcd.c         **** void pwr_10(uint8_t digit){
+ 2513               		.stabn	68,0,279,.LM202-.LFBB21
+ 2514               	.LM202:
+ 2515               	.LFBB21:
+ 2516 0b8c CF93      		push r28
+ 2517 0b8e DF93      		push r29
+ 2518               	/* prologue: function */
+ 2519               	/* frame size = 0 */
+ 2520               	/* stack size = 2 */
+ 2521               	.L__stack_usage = 2
+ 280:lcd.c         **** 	if(digit >= 10)
+ 2522               		.stabn	68,0,280,.LM203-.LFBB21
+ 2523               	.LM203:
+ 2524 0b90 8A30      		cpi r24,lo8(10)
+ 2525 0b92 00F0      		brlo .L59
+ 281:lcd.c         **** 		digit = 0;
+ 2526               		.stabn	68,0,281,.LM204-.LFBB21
+GAS LISTING /tmp/ccj7iC5P.s 			page 51
 
 
- 2729 0c28 0895      		ret
- 2730               		.size	LS2_green, .-LS2_green
- 2731               		.stabs	"LC2:(0,9)",128,0,280,1
- 2732               		.stabn	192,0,0,.LFBB17-.LFBB17
- 2733               		.stabn	224,0,0,.Lscope17-.LFBB17
- 2734               	.Lscope17:
- 2735               		.stabs	"",36,0,0,.Lscope17-.LFBB17
- 2736               		.stabs	"LS2_red:F(0,1)",36,0,284,LS2_red
- 2737               	.global	LS2_red
- 2738               		.type	LS2_red, @function
- 2739               	LS2_red:
- 283:lcd.c         **** 
- 284:lcd.c         **** void LS2_red(void)
- 285:lcd.c         **** {
- 2740               		.stabn	68,0,285,.LM230-.LFBB18
- 2741               	.LM230:
- 2742               	.LFBB18:
- 2743 0c2a 0F93      		push r16
- 2744 0c2c 1F93      		push r17
- 2745 0c2e CF93      		push r28
- 2746 0c30 DF93      		push r29
- 2747 0c32 CDB7      		in r28,__SP_L__
- 2748 0c34 DEB7      		in r29,__SP_H__
- 2749 0c36 2897      		sbiw r28,8
- 2750 0c38 0FB6      		in __tmp_reg__,__SREG__
- 2751 0c3a F894      		cli
- 2752 0c3c DEBF      		out __SP_H__,r29
- 2753 0c3e 0FBE      		out __SREG__,__tmp_reg__
- 2754 0c40 CDBF      		out __SP_L__,r28
- 2755               	/* prologue: function */
- 2756               	/* frame size = 8 */
- 2757               	/* stack size = 12 */
- 2758               	.L__stack_usage = 12
- 286:lcd.c         **** 	rectangle LC2 = {136,140,50,54};
- 2759               		.stabn	68,0,286,.LM231-.LFBB18
- 2760               	.LM231:
- 2761 0c42 88E0      		ldi r24,lo8(8)
- 2762 0c44 E0E0      		ldi r30,lo8(.LC4)
- 2763 0c46 F0E0      		ldi r31,hi8(.LC4)
- 2764 0c48 DE01      		movw r26,r28
- 2765 0c4a 1196      		adiw r26,1
- 2766               		0:
- 2767 0c4c 0190      		ld r0,Z+
- 2768 0c4e 0D92      		st X+,r0
- 2769 0c50 8A95      		dec r24
- 2770 0c52 01F4      		brne 0b
- 287:lcd.c         **** 	fill_rectangle(LC2,RED);
- 2771               		.stabn	68,0,287,.LM232-.LFBB18
- 2772               	.LM232:
- 2773 0c54 00E0      		ldi r16,0
- 2774 0c56 18EF      		ldi r17,lo8(-8)
- 2775 0c58 2981      		ldd r18,Y+1
- 2776 0c5a 3A81      		ldd r19,Y+2
- 2777 0c5c 4B81      		ldd r20,Y+3
- 2778 0c5e 5C81      		ldd r21,Y+4
- 2779 0c60 6D81      		ldd r22,Y+5
- 2780 0c62 7E81      		ldd r23,Y+6
-GAS LISTING /tmp/ccq2xQMg.s 			page 56
+ 2527               	.LM204:
+ 2528 0b94 80E0      		ldi r24,0
+ 2529               	.L59:
+ 282:lcd.c         **** 	uint16_t x, y;
+ 283:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
+ 2530               		.stabn	68,0,283,.LM205-.LFBB21
+ 2531               	.LM205:
+ 2532 0b96 4498      		cbi 0x8,4
+ 2533 0b98 9AE2      		ldi r25,lo8(42)
+ 2534 0b9a 95B9      		out 0x5,r25
+ 2535 0b9c 4398      		cbi 0x8,3
+ 2536 0b9e 439A      		sbi 0x8,3
+ 2537 0ba0 449A      		sbi 0x8,4
+ 284:lcd.c         **** 	write_data16(160);
+ 2538               		.stabn	68,0,284,.LM206-.LFBB21
+ 2539               	.LM206:
+ 2540 0ba2 15B8      		out 0x5,__zero_reg__
+ 2541 0ba4 4398      		cbi 0x8,3
+ 2542 0ba6 439A      		sbi 0x8,3
+ 2543 0ba8 90EA      		ldi r25,lo8(-96)
+ 2544 0baa 95B9      		out 0x5,r25
+ 2545 0bac 4398      		cbi 0x8,3
+ 2546 0bae 439A      		sbi 0x8,3
+ 285:lcd.c         **** 	write_data16(201);
+ 2547               		.stabn	68,0,285,.LM207-.LFBB21
+ 2548               	.LM207:
+ 2549 0bb0 15B8      		out 0x5,__zero_reg__
+ 2550 0bb2 4398      		cbi 0x8,3
+ 2551 0bb4 439A      		sbi 0x8,3
+ 2552 0bb6 99EC      		ldi r25,lo8(-55)
+ 2553 0bb8 95B9      		out 0x5,r25
+ 2554 0bba 4398      		cbi 0x8,3
+ 2555 0bbc 439A      		sbi 0x8,3
+ 286:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
+ 2556               		.stabn	68,0,286,.LM208-.LFBB21
+ 2557               	.LM208:
+ 2558 0bbe 4498      		cbi 0x8,4
+ 2559 0bc0 9BE2      		ldi r25,lo8(43)
+ 2560 0bc2 95B9      		out 0x5,r25
+ 2561 0bc4 4398      		cbi 0x8,3
+ 2562 0bc6 439A      		sbi 0x8,3
+ 2563 0bc8 449A      		sbi 0x8,4
+ 287:lcd.c         **** 	write_data16(204);
+ 2564               		.stabn	68,0,287,.LM209-.LFBB21
+ 2565               	.LM209:
+ 2566 0bca 15B8      		out 0x5,__zero_reg__
+ 2567 0bcc 4398      		cbi 0x8,3
+ 2568 0bce 439A      		sbi 0x8,3
+ 2569 0bd0 9CEC      		ldi r25,lo8(-52)
+ 2570 0bd2 95B9      		out 0x5,r25
+ 2571 0bd4 4398      		cbi 0x8,3
+ 2572 0bd6 439A      		sbi 0x8,3
+ 288:lcd.c         **** 	write_data16(277);
+ 2573               		.stabn	68,0,288,.LM210-.LFBB21
+ 2574               	.LM210:
+ 2575 0bd8 91E0      		ldi r25,lo8(1)
+ 2576 0bda 95B9      		out 0x5,r25
+GAS LISTING /tmp/ccj7iC5P.s 			page 52
 
 
- 2781 0c64 8F81      		ldd r24,Y+7
- 2782 0c66 9885      		ldd r25,Y+8
- 2783 0c68 0E94 0000 		call fill_rectangle
- 2784               	/* epilogue start */
- 288:lcd.c         **** }
- 2785               		.stabn	68,0,288,.LM233-.LFBB18
- 2786               	.LM233:
- 2787 0c6c 2896      		adiw r28,8
- 2788 0c6e 0FB6      		in __tmp_reg__,__SREG__
- 2789 0c70 F894      		cli
- 2790 0c72 DEBF      		out __SP_H__,r29
- 2791 0c74 0FBE      		out __SREG__,__tmp_reg__
- 2792 0c76 CDBF      		out __SP_L__,r28
- 2793 0c78 DF91      		pop r29
- 2794 0c7a CF91      		pop r28
- 2795 0c7c 1F91      		pop r17
- 2796 0c7e 0F91      		pop r16
- 2797 0c80 0895      		ret
- 2798               		.size	LS2_red, .-LS2_red
- 2799               		.stabs	"LC2:(0,9)",128,0,286,1
- 2800               		.stabn	192,0,0,.LFBB18-.LFBB18
- 2801               		.stabn	224,0,0,.Lscope18-.LFBB18
- 2802               	.Lscope18:
- 2803               		.stabs	"",36,0,0,.Lscope18-.LFBB18
- 2804               		.section	.rodata
- 2805               	.LC5:
- 2806 0028 8800      		.word	136
- 2807 002a 8C00      		.word	140
- 2808 002c 5000      		.word	80
- 2809 002e 5400      		.word	84
- 2810               		.text
- 2811               		.stabs	"LS3_green:F(0,1)",36,0,290,LS3_green
- 2812               	.global	LS3_green
- 2813               		.type	LS3_green, @function
- 2814               	LS3_green:
- 289:lcd.c         **** 
- 290:lcd.c         **** void LS3_green(void)
- 291:lcd.c         **** {
- 2815               		.stabn	68,0,291,.LM234-.LFBB19
- 2816               	.LM234:
- 2817               	.LFBB19:
- 2818 0c82 0F93      		push r16
- 2819 0c84 1F93      		push r17
- 2820 0c86 CF93      		push r28
- 2821 0c88 DF93      		push r29
- 2822 0c8a CDB7      		in r28,__SP_L__
- 2823 0c8c DEB7      		in r29,__SP_H__
- 2824 0c8e 2897      		sbiw r28,8
- 2825 0c90 0FB6      		in __tmp_reg__,__SREG__
- 2826 0c92 F894      		cli
- 2827 0c94 DEBF      		out __SP_H__,r29
- 2828 0c96 0FBE      		out __SREG__,__tmp_reg__
- 2829 0c98 CDBF      		out __SP_L__,r28
- 2830               	/* prologue: function */
- 2831               	/* frame size = 8 */
- 2832               	/* stack size = 12 */
- 2833               	.L__stack_usage = 12
-GAS LISTING /tmp/ccq2xQMg.s 			page 57
+ 2577 0bdc 4398      		cbi 0x8,3
+ 2578 0bde 439A      		sbi 0x8,3
+ 2579 0be0 95E1      		ldi r25,lo8(21)
+ 2580 0be2 95B9      		out 0x5,r25
+ 2581 0be4 4398      		cbi 0x8,3
+ 2582 0be6 439A      		sbi 0x8,3
+ 289:lcd.c         **** 	write_cmd(MEMORY_WRITE);
+ 2583               		.stabn	68,0,289,.LM211-.LFBB21
+ 2584               	.LM211:
+ 2585 0be8 4498      		cbi 0x8,4
+ 2586 0bea 9CE2      		ldi r25,lo8(44)
+ 2587 0bec 95B9      		out 0x5,r25
+ 2588 0bee 4398      		cbi 0x8,3
+ 2589 0bf0 439A      		sbi 0x8,3
+ 2590 0bf2 449A      		sbi 0x8,4
+ 2591               	.LBB36:
+ 290:lcd.c         **** 	for(y = 0; y <= 36; y++){
+ 291:lcd.c         **** 		for(x = 0; x <= 20; x++){
+ 292:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+ 2592               		.stabn	68,0,292,.LM212-.LFBB21
+ 2593               	.LM212:
+ 2594 0bf4 29E0      		ldi r18,lo8(9)
+ 2595 0bf6 30E0      		ldi r19,0
+ 2596 0bf8 A901      		movw r20,r18
+ 2597 0bfa 481B      		sub r20,r24
+ 2598 0bfc 5109      		sbc r21,__zero_reg__
+ 2599 0bfe CA01      		movw r24,r20
+ 2600 0c00 29E0      		ldi r18,lo8(9)
+ 2601 0c02 33E0      		ldi r19,lo8(3)
+ 2602 0c04 829F      		mul r24,r18
+ 2603 0c06 A001      		movw r20,r0
+ 2604 0c08 839F      		mul r24,r19
+ 2605 0c0a 500D      		add r21,r0
+ 2606 0c0c 929F      		mul r25,r18
+ 2607 0c0e 500D      		add r21,r0
+ 2608 0c10 1124      		clr r1
+ 2609 0c12 9A01      		movw r18,r20
+ 2610 0c14 220F      		lsl r18
+ 2611 0c16 331F      		rol r19
+ 2612 0c18 2050      		subi r18,lo8(-(d3))
+ 2613 0c1a 3040      		sbci r19,hi8(-(d3))
+ 2614 0c1c DA01      		movw r26,r20
+ 2615 0c1e A75F      		subi r26,-9
+ 2616 0c20 BC4F      		sbci r27,-4
+ 2617               	.L60:
+ 2618               	.LBE36:
+ 281:lcd.c         **** 	uint16_t x, y;
+ 2619               		.stabn	68,0,281,.LM213-.LFBB21
+ 2620               	.LM213:
+ 2621 0c22 C901      		movw r24,r18
+ 291:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+ 2622               		.stabn	68,0,291,.LM214-.LFBB21
+ 2623               	.LM214:
+ 2624 0c24 70E0      		ldi r23,0
+ 2625 0c26 60E0      		ldi r22,0
+ 2626               	.L61:
+ 2627               	.LBB37:
+GAS LISTING /tmp/ccj7iC5P.s 			page 53
 
 
- 292:lcd.c         **** 	rectangle LC3 = {136,140,80,84};
- 2834               		.stabn	68,0,292,.LM235-.LFBB19
- 2835               	.LM235:
- 2836 0c9a 88E0      		ldi r24,lo8(8)
- 2837 0c9c E0E0      		ldi r30,lo8(.LC5)
- 2838 0c9e F0E0      		ldi r31,hi8(.LC5)
- 2839 0ca0 DE01      		movw r26,r28
- 2840 0ca2 1196      		adiw r26,1
- 2841               		0:
- 2842 0ca4 0190      		ld r0,Z+
- 2843 0ca6 0D92      		st X+,r0
- 2844 0ca8 8A95      		dec r24
- 2845 0caa 01F4      		brne 0b
- 293:lcd.c         **** 	fill_rectangle(LC3,GREEN);
- 2846               		.stabn	68,0,293,.LM236-.LFBB19
- 2847               	.LM236:
- 2848 0cac 00EE      		ldi r16,lo8(-32)
- 2849 0cae 17E0      		ldi r17,lo8(7)
- 2850 0cb0 2981      		ldd r18,Y+1
- 2851 0cb2 3A81      		ldd r19,Y+2
- 2852 0cb4 4B81      		ldd r20,Y+3
- 2853 0cb6 5C81      		ldd r21,Y+4
- 2854 0cb8 6D81      		ldd r22,Y+5
- 2855 0cba 7E81      		ldd r23,Y+6
- 2856 0cbc 8F81      		ldd r24,Y+7
- 2857 0cbe 9885      		ldd r25,Y+8
- 2858 0cc0 0E94 0000 		call fill_rectangle
- 2859               	/* epilogue start */
- 294:lcd.c         **** }
- 2860               		.stabn	68,0,294,.LM237-.LFBB19
- 2861               	.LM237:
- 2862 0cc4 2896      		adiw r28,8
- 2863 0cc6 0FB6      		in __tmp_reg__,__SREG__
- 2864 0cc8 F894      		cli
- 2865 0cca DEBF      		out __SP_H__,r29
- 2866 0ccc 0FBE      		out __SREG__,__tmp_reg__
- 2867 0cce CDBF      		out __SP_L__,r28
- 2868 0cd0 DF91      		pop r29
- 2869 0cd2 CF91      		pop r28
- 2870 0cd4 1F91      		pop r17
- 2871 0cd6 0F91      		pop r16
- 2872 0cd8 0895      		ret
- 2873               		.size	LS3_green, .-LS3_green
- 2874               		.stabs	"LC3:(0,9)",128,0,292,1
- 2875               		.stabn	192,0,0,.LFBB19-.LFBB19
- 2876               		.stabn	224,0,0,.Lscope19-.LFBB19
- 2877               	.Lscope19:
- 2878               		.stabs	"",36,0,0,.Lscope19-.LFBB19
- 2879               		.stabs	"LS3_red:F(0,1)",36,0,296,LS3_red
- 2880               	.global	LS3_red
- 2881               		.type	LS3_red, @function
- 2882               	LS3_red:
- 295:lcd.c         **** 
- 296:lcd.c         **** void LS3_red(void)
- 297:lcd.c         **** {
- 2883               		.stabn	68,0,297,.LM238-.LFBB20
- 2884               	.LM238:
-GAS LISTING /tmp/ccq2xQMg.s 			page 58
+ 2628               		.stabn	68,0,292,.LM215-.LFBB21
+ 2629               	.LM215:
+ 2630 0c28 FC01      		movw r30,r24
+ 2631               	/* #APP */
+ 2632               	 ;  292 "lcd.c" 1
+ 2633 0c2a C591      		lpm r28, Z+
+ 2634 0c2c D491      		lpm r29, Z
+ 2635               		
+ 2636               	 ;  0 "" 2
+ 2637               	/* #NOAPP */
+ 2638               	.LBE37:
+ 2639 0c2e D5B9      		out 0x5,r29
+ 2640 0c30 4398      		cbi 0x8,3
+ 2641 0c32 439A      		sbi 0x8,3
+ 2642               	.LBB38:
+ 2643 0c34 FC01      		movw r30,r24
+ 2644               	/* #APP */
+ 2645               	 ;  292 "lcd.c" 1
+ 2646 0c36 C591      		lpm r28, Z+
+ 2647 0c38 D491      		lpm r29, Z
+ 2648               		
+ 2649               	 ;  0 "" 2
+ 2650               	/* #NOAPP */
+ 2651               	.LBE38:
+ 2652 0c3a C5B9      		out 0x5,r28
+ 2653 0c3c 4398      		cbi 0x8,3
+ 2654 0c3e 439A      		sbi 0x8,3
+ 2655               	.LBB39:
+ 293:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+ 2656               		.stabn	68,0,293,.LM216-.LFBB21
+ 2657               	.LM216:
+ 2658 0c40 FC01      		movw r30,r24
+ 2659               	/* #APP */
+ 2660               	 ;  293 "lcd.c" 1
+ 2661 0c42 C591      		lpm r28, Z+
+ 2662 0c44 D491      		lpm r29, Z
+ 2663               		
+ 2664               	 ;  0 "" 2
+ 2665               	/* #NOAPP */
+ 2666               	.LBE39:
+ 2667 0c46 D5B9      		out 0x5,r29
+ 2668 0c48 4398      		cbi 0x8,3
+ 2669 0c4a 439A      		sbi 0x8,3
+ 2670               	.LBB40:
+ 2671 0c4c FC01      		movw r30,r24
+ 2672               	/* #APP */
+ 2673               	 ;  293 "lcd.c" 1
+ 2674 0c4e C591      		lpm r28, Z+
+ 2675 0c50 D491      		lpm r29, Z
+ 2676               		
+ 2677               	 ;  0 "" 2
+ 2678               	/* #NOAPP */
+ 2679               	.LBE40:
+ 2680 0c52 C5B9      		out 0x5,r28
+ 2681 0c54 4398      		cbi 0x8,3
+ 2682 0c56 439A      		sbi 0x8,3
+ 291:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+GAS LISTING /tmp/ccj7iC5P.s 			page 54
 
 
- 2885               	.LFBB20:
- 2886 0cda 0F93      		push r16
- 2887 0cdc 1F93      		push r17
- 2888 0cde CF93      		push r28
- 2889 0ce0 DF93      		push r29
- 2890 0ce2 CDB7      		in r28,__SP_L__
- 2891 0ce4 DEB7      		in r29,__SP_H__
- 2892 0ce6 2897      		sbiw r28,8
- 2893 0ce8 0FB6      		in __tmp_reg__,__SREG__
- 2894 0cea F894      		cli
- 2895 0cec DEBF      		out __SP_H__,r29
- 2896 0cee 0FBE      		out __SREG__,__tmp_reg__
- 2897 0cf0 CDBF      		out __SP_L__,r28
- 2898               	/* prologue: function */
- 2899               	/* frame size = 8 */
- 2900               	/* stack size = 12 */
- 2901               	.L__stack_usage = 12
- 298:lcd.c         **** 	rectangle LC3 = {136,140,80,84};
- 2902               		.stabn	68,0,298,.LM239-.LFBB20
- 2903               	.LM239:
- 2904 0cf2 88E0      		ldi r24,lo8(8)
- 2905 0cf4 E0E0      		ldi r30,lo8(.LC5)
- 2906 0cf6 F0E0      		ldi r31,hi8(.LC5)
- 2907 0cf8 DE01      		movw r26,r28
- 2908 0cfa 1196      		adiw r26,1
- 2909               		0:
- 2910 0cfc 0190      		ld r0,Z+
- 2911 0cfe 0D92      		st X+,r0
- 2912 0d00 8A95      		dec r24
- 2913 0d02 01F4      		brne 0b
- 299:lcd.c         **** 	fill_rectangle(LC3,RED);
- 2914               		.stabn	68,0,299,.LM240-.LFBB20
- 2915               	.LM240:
- 2916 0d04 00E0      		ldi r16,0
- 2917 0d06 18EF      		ldi r17,lo8(-8)
- 2918 0d08 2981      		ldd r18,Y+1
- 2919 0d0a 3A81      		ldd r19,Y+2
- 2920 0d0c 4B81      		ldd r20,Y+3
- 2921 0d0e 5C81      		ldd r21,Y+4
- 2922 0d10 6D81      		ldd r22,Y+5
- 2923 0d12 7E81      		ldd r23,Y+6
- 2924 0d14 8F81      		ldd r24,Y+7
- 2925 0d16 9885      		ldd r25,Y+8
- 2926 0d18 0E94 0000 		call fill_rectangle
- 2927               	/* epilogue start */
+ 2683               		.stabn	68,0,291,.LM217-.LFBB21
+ 2684               	.LM217:
+ 2685 0c58 6F5F      		subi r22,-1
+ 2686 0c5a 7F4F      		sbci r23,-1
+ 291:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+ 2687               		.stabn	68,0,291,.LM218-.LFBB21
+ 2688               	.LM218:
+ 2689 0c5c 0296      		adiw r24,2
+ 2690 0c5e 6531      		cpi r22,21
+ 2691 0c60 7105      		cpc r23,__zero_reg__
+ 2692 0c62 01F4      		brne .L61
+ 2693 0c64 C901      		movw r24,r18
+ 294:lcd.c         **** 		}
+ 295:lcd.c         **** 		for(x = 0; x <= 20; x++){
+ 2694               		.stabn	68,0,295,.LM219-.LFBB21
+ 2695               	.LM219:
+ 2696 0c66 70E0      		ldi r23,0
+ 2697 0c68 60E0      		ldi r22,0
+ 2698               	.L62:
+ 2699               	.LBB41:
+ 296:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+ 2700               		.stabn	68,0,296,.LM220-.LFBB21
+ 2701               	.LM220:
+ 2702 0c6a FC01      		movw r30,r24
+ 2703               	/* #APP */
+ 2704               	 ;  296 "lcd.c" 1
+ 2705 0c6c C591      		lpm r28, Z+
+ 2706 0c6e D491      		lpm r29, Z
+ 2707               		
+ 2708               	 ;  0 "" 2
+ 2709               	/* #NOAPP */
+ 2710               	.LBE41:
+ 2711 0c70 D5B9      		out 0x5,r29
+ 2712 0c72 4398      		cbi 0x8,3
+ 2713 0c74 439A      		sbi 0x8,3
+ 2714               	.LBB42:
+ 2715 0c76 FC01      		movw r30,r24
+ 2716               	/* #APP */
+ 2717               	 ;  296 "lcd.c" 1
+ 2718 0c78 C591      		lpm r28, Z+
+ 2719 0c7a D491      		lpm r29, Z
+ 2720               		
+ 2721               	 ;  0 "" 2
+ 2722               	/* #NOAPP */
+ 2723               	.LBE42:
+ 2724 0c7c C5B9      		out 0x5,r28
+ 2725 0c7e 4398      		cbi 0x8,3
+ 2726 0c80 439A      		sbi 0x8,3
+ 2727               	.LBB43:
+ 297:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+ 2728               		.stabn	68,0,297,.LM221-.LFBB21
+ 2729               	.LM221:
+ 2730 0c82 FC01      		movw r30,r24
+ 2731               	/* #APP */
+ 2732               	 ;  297 "lcd.c" 1
+ 2733 0c84 C591      		lpm r28, Z+
+ 2734 0c86 D491      		lpm r29, Z
+GAS LISTING /tmp/ccj7iC5P.s 			page 55
+
+
+ 2735               		
+ 2736               	 ;  0 "" 2
+ 2737               	/* #NOAPP */
+ 2738               	.LBE43:
+ 2739 0c88 D5B9      		out 0x5,r29
+ 2740 0c8a 4398      		cbi 0x8,3
+ 2741 0c8c 439A      		sbi 0x8,3
+ 2742               	.LBB44:
+ 2743 0c8e FC01      		movw r30,r24
+ 2744               	/* #APP */
+ 2745               	 ;  297 "lcd.c" 1
+ 2746 0c90 C591      		lpm r28, Z+
+ 2747 0c92 D491      		lpm r29, Z
+ 2748               		
+ 2749               	 ;  0 "" 2
+ 2750               	/* #NOAPP */
+ 2751               	.LBE44:
+ 2752 0c94 C5B9      		out 0x5,r28
+ 2753 0c96 4398      		cbi 0x8,3
+ 2754 0c98 439A      		sbi 0x8,3
+ 295:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+ 2755               		.stabn	68,0,295,.LM222-.LFBB21
+ 2756               	.LM222:
+ 2757 0c9a 6F5F      		subi r22,-1
+ 2758 0c9c 7F4F      		sbci r23,-1
+ 295:lcd.c         **** 			write_data16(pgm_read_word(&d3[(9-digit)*777+x+y*21]));
+ 2759               		.stabn	68,0,295,.LM223-.LFBB21
+ 2760               	.LM223:
+ 2761 0c9e 0296      		adiw r24,2
+ 2762 0ca0 6531      		cpi r22,21
+ 2763 0ca2 7105      		cpc r23,__zero_reg__
+ 2764 0ca4 01F4      		brne .L62
+ 290:lcd.c         **** 		for(x = 0; x <= 20; x++){
+ 2765               		.stabn	68,0,290,.LM224-.LFBB21
+ 2766               	.LM224:
+ 2767 0ca6 265D      		subi r18,-42
+ 2768 0ca8 3F4F      		sbci r19,-1
+ 2769 0caa 4B5E      		subi r20,-21
+ 2770 0cac 5F4F      		sbci r21,-1
+ 2771 0cae 4A17      		cp r20,r26
+ 2772 0cb0 5B07      		cpc r21,r27
+ 2773 0cb2 01F0      		breq .+2
+ 2774 0cb4 00C0      		rjmp .L60
+ 2775               	/* epilogue start */
+ 298:lcd.c         **** 		}
+ 299:lcd.c         **** 	}
  300:lcd.c         **** }
- 2928               		.stabn	68,0,300,.LM241-.LFBB20
- 2929               	.LM241:
- 2930 0d1c 2896      		adiw r28,8
- 2931 0d1e 0FB6      		in __tmp_reg__,__SREG__
- 2932 0d20 F894      		cli
- 2933 0d22 DEBF      		out __SP_H__,r29
- 2934 0d24 0FBE      		out __SREG__,__tmp_reg__
- 2935 0d26 CDBF      		out __SP_L__,r28
- 2936 0d28 DF91      		pop r29
- 2937 0d2a CF91      		pop r28
- 2938 0d2c 1F91      		pop r17
-GAS LISTING /tmp/ccq2xQMg.s 			page 59
+ 2776               		.stabn	68,0,300,.LM225-.LFBB21
+ 2777               	.LM225:
+ 2778 0cb6 DF91      		pop r29
+ 2779 0cb8 CF91      		pop r28
+ 2780 0cba 0895      		ret
+ 2781               		.size	pwr_10, .-pwr_10
+ 2782               	.Lscope21:
+ 2783               		.stabs	"",36,0,0,.Lscope21-.LFBB21
+ 2784               		.stabs	"bat_pwr:F(0,1)",36,0,302,bat_pwr
+ 2785               		.stabs	"state:P(0,10)=@s8;-16;",64,0,302,24
+GAS LISTING /tmp/ccj7iC5P.s 			page 56
 
 
- 2939 0d2e 0F91      		pop r16
- 2940 0d30 0895      		ret
- 2941               		.size	LS3_red, .-LS3_red
- 2942               		.stabs	"LC3:(0,9)",128,0,298,1
- 2943               		.stabn	192,0,0,.LFBB20-.LFBB20
- 2944               		.stabn	224,0,0,.Lscope20-.LFBB20
- 2945               	.Lscope20:
- 2946               		.stabs	"",36,0,0,.Lscope20-.LFBB20
- 2947               	.global	display
- 2948               		.data
- 2949               		.type	display, @object
- 2950               		.size	display, 14
- 2951               	display:
- 2952 0000 F000      		.word	240
- 2953 0002 4001      		.word	320
- 2954 0004 0000      		.word	0
- 2955 0006 0000      		.word	0
- 2956 0008 0000      		.word	0
- 2957 000a E420      		.word	8420
- 2958 000c 99FF      		.word	-103
- 2959               		.stabs	"display:G(0,11)=(0,12)=s14width:(0,6),0,16;height:(0,6),16,16;orient:(0,5),32,16;x:(0,6),4
- 2960               		.stabs	"lcd:t(0,11)",128,0,29,0
- 2961               		.text
- 2962               		.stabs	"",100,0,0,.Letext0
- 2963               	.Letext0:
- 2964               		.ident	"GCC: (GNU) 11.2.0"
- 2965               	.global __do_copy_data
-GAS LISTING /tmp/ccq2xQMg.s 			page 60
+ 2786               		.stabs	"_Bool:t(0,10)",128,0,0,0
+ 2787               	.global	bat_pwr
+ 2788               		.type	bat_pwr, @function
+ 2789               	bat_pwr:
+ 301:lcd.c         **** 
+ 302:lcd.c         **** void bat_pwr(bool state){
+ 2790               		.stabn	68,0,302,.LM226-.LFBB22
+ 2791               	.LM226:
+ 2792               	.LFBB22:
+ 2793               	/* prologue: function */
+ 2794               	/* frame size = 0 */
+ 2795               	/* stack size = 0 */
+ 2796               	.L__stack_usage = 0
+ 303:lcd.c         **** 	//  14px wide, 25px tall
+ 304:lcd.c         **** 	//  Anchoring to coordinate (106, 28)
+ 305:lcd.c         **** 	uint16_t x, y;
+ 306:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
+ 2797               		.stabn	68,0,306,.LM227-.LFBB22
+ 2798               	.LM227:
+ 2799 0cbc 4498      		cbi 0x8,4
+ 2800 0cbe 9AE2      		ldi r25,lo8(42)
+ 2801 0cc0 95B9      		out 0x5,r25
+ 2802 0cc2 4398      		cbi 0x8,3
+ 2803 0cc4 439A      		sbi 0x8,3
+ 2804 0cc6 449A      		sbi 0x8,4
+ 307:lcd.c         **** 	write_data16(106);
+ 2805               		.stabn	68,0,307,.LM228-.LFBB22
+ 2806               	.LM228:
+ 2807 0cc8 15B8      		out 0x5,__zero_reg__
+ 2808 0cca 4398      		cbi 0x8,3
+ 2809 0ccc 439A      		sbi 0x8,3
+ 2810 0cce 9AE6      		ldi r25,lo8(106)
+ 2811 0cd0 95B9      		out 0x5,r25
+ 2812 0cd2 4398      		cbi 0x8,3
+ 2813 0cd4 439A      		sbi 0x8,3
+ 308:lcd.c         **** 	write_data16(133);
+ 2814               		.stabn	68,0,308,.LM229-.LFBB22
+ 2815               	.LM229:
+ 2816 0cd6 15B8      		out 0x5,__zero_reg__
+ 2817 0cd8 4398      		cbi 0x8,3
+ 2818 0cda 439A      		sbi 0x8,3
+ 2819 0cdc 95E8      		ldi r25,lo8(-123)
+ 2820 0cde 95B9      		out 0x5,r25
+ 2821 0ce0 4398      		cbi 0x8,3
+ 2822 0ce2 439A      		sbi 0x8,3
+ 309:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
+ 2823               		.stabn	68,0,309,.LM230-.LFBB22
+ 2824               	.LM230:
+ 2825 0ce4 4498      		cbi 0x8,4
+ 2826 0ce6 9BE2      		ldi r25,lo8(43)
+ 2827 0ce8 95B9      		out 0x5,r25
+ 2828 0cea 4398      		cbi 0x8,3
+ 2829 0cec 439A      		sbi 0x8,3
+ 2830 0cee 449A      		sbi 0x8,4
+ 310:lcd.c         **** 	write_data16(28);
+ 2831               		.stabn	68,0,310,.LM231-.LFBB22
+ 2832               	.LM231:
+GAS LISTING /tmp/ccj7iC5P.s 			page 57
+
+
+ 2833 0cf0 15B8      		out 0x5,__zero_reg__
+ 2834 0cf2 4398      		cbi 0x8,3
+ 2835 0cf4 439A      		sbi 0x8,3
+ 2836 0cf6 9CE1      		ldi r25,lo8(28)
+ 2837 0cf8 95B9      		out 0x5,r25
+ 2838 0cfa 4398      		cbi 0x8,3
+ 2839 0cfc 439A      		sbi 0x8,3
+ 311:lcd.c         **** 	write_data16(77);
+ 2840               		.stabn	68,0,311,.LM232-.LFBB22
+ 2841               	.LM232:
+ 2842 0cfe 15B8      		out 0x5,__zero_reg__
+ 2843 0d00 4398      		cbi 0x8,3
+ 2844 0d02 439A      		sbi 0x8,3
+ 2845 0d04 9DE4      		ldi r25,lo8(77)
+ 2846 0d06 95B9      		out 0x5,r25
+ 2847 0d08 4398      		cbi 0x8,3
+ 2848 0d0a 439A      		sbi 0x8,3
+ 312:lcd.c         **** 	write_cmd(MEMORY_WRITE);
+ 2849               		.stabn	68,0,312,.LM233-.LFBB22
+ 2850               	.LM233:
+ 2851 0d0c 4498      		cbi 0x8,4
+ 2852 0d0e 9CE2      		ldi r25,lo8(44)
+ 2853 0d10 95B9      		out 0x5,r25
+ 2854 0d12 4398      		cbi 0x8,3
+ 2855 0d14 439A      		sbi 0x8,3
+ 2856 0d16 449A      		sbi 0x8,4
+ 2857 0d18 20E0      		ldi r18,lo8(BATDRN)
+ 2858 0d1a 30E0      		ldi r19,hi8(BATDRN)
+ 313:lcd.c         **** 	if(state){
+ 2859               		.stabn	68,0,313,.LM234-.LFBB22
+ 2860               	.LM234:
+ 2861 0d1c 70E0      		ldi r23,0
+ 2862 0d1e 60E0      		ldi r22,0
+ 2863 0d20 8823      		tst r24
+ 2864 0d22 01F4      		brne .+2
+ 2865 0d24 00C0      		rjmp .L68
+ 2866 0d26 20E0      		ldi r18,lo8(BATCHR)
+ 2867 0d28 30E0      		ldi r19,hi8(BATCHR)
+ 2868 0d2a 70E0      		ldi r23,0
+ 2869 0d2c 60E0      		ldi r22,0
+ 2870               	.L69:
+ 302:lcd.c         **** 	//  14px wide, 25px tall
+ 2871               		.stabn	68,0,302,.LM235-.LFBB22
+ 2872               	.LM235:
+ 2873 0d2e C901      		movw r24,r18
+ 314:lcd.c         **** 		for(y = 0; y <= 24; y++){
+ 315:lcd.c         **** 			for(x = 0; x <= 13; x++){
+ 2874               		.stabn	68,0,315,.LM236-.LFBB22
+ 2875               	.LM236:
+ 2876 0d30 50E0      		ldi r21,0
+ 2877 0d32 40E0      		ldi r20,0
+ 2878               	.L70:
+ 2879               	.LBB45:
+ 316:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
+ 2880               		.stabn	68,0,316,.LM237-.LFBB22
+ 2881               	.LM237:
+ 2882 0d34 FC01      		movw r30,r24
+GAS LISTING /tmp/ccj7iC5P.s 			page 58
+
+
+ 2883               	/* #APP */
+ 2884               	 ;  316 "lcd.c" 1
+ 2885 0d36 A591      		lpm r26, Z+
+ 2886 0d38 B491      		lpm r27, Z
+ 2887               		
+ 2888               	 ;  0 "" 2
+ 2889               	/* #NOAPP */
+ 2890               	.LBE45:
+ 2891 0d3a B5B9      		out 0x5,r27
+ 2892 0d3c 4398      		cbi 0x8,3
+ 2893 0d3e 439A      		sbi 0x8,3
+ 2894               	.LBB46:
+ 2895 0d40 FC01      		movw r30,r24
+ 2896               	/* #APP */
+ 2897               	 ;  316 "lcd.c" 1
+ 2898 0d42 A591      		lpm r26, Z+
+ 2899 0d44 B491      		lpm r27, Z
+ 2900               		
+ 2901               	 ;  0 "" 2
+ 2902               	/* #NOAPP */
+ 2903               	.LBE46:
+ 2904 0d46 A5B9      		out 0x5,r26
+ 2905 0d48 4398      		cbi 0x8,3
+ 2906 0d4a 439A      		sbi 0x8,3
+ 2907               	.LBB47:
+ 317:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
+ 2908               		.stabn	68,0,317,.LM238-.LFBB22
+ 2909               	.LM238:
+ 2910 0d4c FC01      		movw r30,r24
+ 2911               	/* #APP */
+ 2912               	 ;  317 "lcd.c" 1
+ 2913 0d4e A591      		lpm r26, Z+
+ 2914 0d50 B491      		lpm r27, Z
+ 2915               		
+ 2916               	 ;  0 "" 2
+ 2917               	/* #NOAPP */
+ 2918               	.LBE47:
+ 2919 0d52 B5B9      		out 0x5,r27
+ 2920 0d54 4398      		cbi 0x8,3
+ 2921 0d56 439A      		sbi 0x8,3
+ 2922               	.LBB48:
+ 2923 0d58 FC01      		movw r30,r24
+ 2924               	/* #APP */
+ 2925               	 ;  317 "lcd.c" 1
+ 2926 0d5a A591      		lpm r26, Z+
+ 2927 0d5c B491      		lpm r27, Z
+ 2928               		
+ 2929               	 ;  0 "" 2
+ 2930               	/* #NOAPP */
+ 2931               	.LBE48:
+ 2932 0d5e A5B9      		out 0x5,r26
+ 2933 0d60 4398      		cbi 0x8,3
+ 2934 0d62 439A      		sbi 0x8,3
+ 315:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
+ 2935               		.stabn	68,0,315,.LM239-.LFBB22
+ 2936               	.LM239:
+ 2937 0d64 4F5F      		subi r20,-1
+GAS LISTING /tmp/ccj7iC5P.s 			page 59
+
+
+ 2938 0d66 5F4F      		sbci r21,-1
+ 315:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
+ 2939               		.stabn	68,0,315,.LM240-.LFBB22
+ 2940               	.LM240:
+ 2941 0d68 0296      		adiw r24,2
+ 2942 0d6a 4E30      		cpi r20,14
+ 2943 0d6c 5105      		cpc r21,__zero_reg__
+ 2944 0d6e 01F4      		brne .L70
+ 2945 0d70 C901      		movw r24,r18
+ 318:lcd.c         **** 			}
+ 319:lcd.c         **** 			for(x = 0; x <= 13; x++){
+ 2946               		.stabn	68,0,319,.LM241-.LFBB22
+ 2947               	.LM241:
+ 2948 0d72 50E0      		ldi r21,0
+ 2949 0d74 40E0      		ldi r20,0
+ 2950               	.L71:
+ 2951               	.LBB49:
+ 320:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
+ 2952               		.stabn	68,0,320,.LM242-.LFBB22
+ 2953               	.LM242:
+ 2954 0d76 FC01      		movw r30,r24
+ 2955               	/* #APP */
+ 2956               	 ;  320 "lcd.c" 1
+ 2957 0d78 A591      		lpm r26, Z+
+ 2958 0d7a B491      		lpm r27, Z
+ 2959               		
+ 2960               	 ;  0 "" 2
+ 2961               	/* #NOAPP */
+ 2962               	.LBE49:
+ 2963 0d7c B5B9      		out 0x5,r27
+ 2964 0d7e 4398      		cbi 0x8,3
+ 2965 0d80 439A      		sbi 0x8,3
+ 2966               	.LBB50:
+ 2967 0d82 FC01      		movw r30,r24
+ 2968               	/* #APP */
+ 2969               	 ;  320 "lcd.c" 1
+ 2970 0d84 A591      		lpm r26, Z+
+ 2971 0d86 B491      		lpm r27, Z
+ 2972               		
+ 2973               	 ;  0 "" 2
+ 2974               	/* #NOAPP */
+ 2975               	.LBE50:
+ 2976 0d88 A5B9      		out 0x5,r26
+ 2977 0d8a 4398      		cbi 0x8,3
+ 2978 0d8c 439A      		sbi 0x8,3
+ 2979               	.LBB51:
+ 321:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
+ 2980               		.stabn	68,0,321,.LM243-.LFBB22
+ 2981               	.LM243:
+ 2982 0d8e FC01      		movw r30,r24
+ 2983               	/* #APP */
+ 2984               	 ;  321 "lcd.c" 1
+ 2985 0d90 A591      		lpm r26, Z+
+ 2986 0d92 B491      		lpm r27, Z
+ 2987               		
+ 2988               	 ;  0 "" 2
+ 2989               	/* #NOAPP */
+GAS LISTING /tmp/ccj7iC5P.s 			page 60
+
+
+ 2990               	.LBE51:
+ 2991 0d94 B5B9      		out 0x5,r27
+ 2992 0d96 4398      		cbi 0x8,3
+ 2993 0d98 439A      		sbi 0x8,3
+ 2994               	.LBB52:
+ 2995 0d9a FC01      		movw r30,r24
+ 2996               	/* #APP */
+ 2997               	 ;  321 "lcd.c" 1
+ 2998 0d9c A591      		lpm r26, Z+
+ 2999 0d9e B491      		lpm r27, Z
+ 3000               		
+ 3001               	 ;  0 "" 2
+ 3002               	/* #NOAPP */
+ 3003               	.LBE52:
+ 3004 0da0 A5B9      		out 0x5,r26
+ 3005 0da2 4398      		cbi 0x8,3
+ 3006 0da4 439A      		sbi 0x8,3
+ 319:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
+ 3007               		.stabn	68,0,319,.LM244-.LFBB22
+ 3008               	.LM244:
+ 3009 0da6 4F5F      		subi r20,-1
+ 3010 0da8 5F4F      		sbci r21,-1
+ 319:lcd.c         **** 				write_data16(pgm_read_word_near(&BATCHR[x+y*14]));
+ 3011               		.stabn	68,0,319,.LM245-.LFBB22
+ 3012               	.LM245:
+ 3013 0daa 0296      		adiw r24,2
+ 3014 0dac 4E30      		cpi r20,14
+ 3015 0dae 5105      		cpc r21,__zero_reg__
+ 3016 0db0 01F4      		brne .L71
+ 314:lcd.c         **** 			for(x = 0; x <= 13; x++){
+ 3017               		.stabn	68,0,314,.LM246-.LFBB22
+ 3018               	.LM246:
+ 3019 0db2 245E      		subi r18,-28
+ 3020 0db4 3F4F      		sbci r19,-1
+ 3021 0db6 625F      		subi r22,-14
+ 3022 0db8 7F4F      		sbci r23,-1
+ 3023 0dba 6E35      		cpi r22,94
+ 3024 0dbc 81E0      		ldi r24,1
+ 3025 0dbe 7807      		cpc r23,r24
+ 3026 0dc0 01F0      		breq .+2
+ 3027 0dc2 00C0      		rjmp .L69
+ 3028               	.L66:
+ 3029               	/* epilogue start */
+ 322:lcd.c         **** 			}
+ 323:lcd.c         **** 		}
+ 324:lcd.c         **** 	}
+ 325:lcd.c         **** 	else {
+ 326:lcd.c         **** 		for(y = 0; y <= 24; y++){
+ 327:lcd.c         **** 			for(x = 0; x <= 13; x++){
+ 328:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 329:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 330:lcd.c         **** 			}
+ 331:lcd.c         **** 			for(x = 0; x <= 13; x++){
+ 332:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 333:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 334:lcd.c         **** 			}
+ 335:lcd.c         **** 		}
+GAS LISTING /tmp/ccj7iC5P.s 			page 61
+
+
+ 336:lcd.c         **** 	}
+ 337:lcd.c         **** }
+ 3030               		.stabn	68,0,337,.LM247-.LFBB22
+ 3031               	.LM247:
+ 3032 0dc4 0895      		ret
+ 3033               	.L73:
+ 3034               	.LBB53:
+ 328:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 3035               		.stabn	68,0,328,.LM248-.LFBB22
+ 3036               	.LM248:
+ 3037 0dc6 FC01      		movw r30,r24
+ 3038               	/* #APP */
+ 3039               	 ;  328 "lcd.c" 1
+ 3040 0dc8 A591      		lpm r26, Z+
+ 3041 0dca B491      		lpm r27, Z
+ 3042               		
+ 3043               	 ;  0 "" 2
+ 3044               	/* #NOAPP */
+ 3045               	.LBE53:
+ 3046 0dcc B5B9      		out 0x5,r27
+ 3047 0dce 4398      		cbi 0x8,3
+ 3048 0dd0 439A      		sbi 0x8,3
+ 3049               	.LBB54:
+ 3050 0dd2 FC01      		movw r30,r24
+ 3051               	/* #APP */
+ 3052               	 ;  328 "lcd.c" 1
+ 3053 0dd4 A591      		lpm r26, Z+
+ 3054 0dd6 B491      		lpm r27, Z
+ 3055               		
+ 3056               	 ;  0 "" 2
+ 3057               	/* #NOAPP */
+ 3058               	.LBE54:
+ 3059 0dd8 A5B9      		out 0x5,r26
+ 3060 0dda 4398      		cbi 0x8,3
+ 3061 0ddc 439A      		sbi 0x8,3
+ 3062               	.LBB55:
+ 329:lcd.c         **** 			}
+ 3063               		.stabn	68,0,329,.LM249-.LFBB22
+ 3064               	.LM249:
+ 3065 0dde FC01      		movw r30,r24
+ 3066               	/* #APP */
+ 3067               	 ;  329 "lcd.c" 1
+ 3068 0de0 A591      		lpm r26, Z+
+ 3069 0de2 B491      		lpm r27, Z
+ 3070               		
+ 3071               	 ;  0 "" 2
+ 3072               	/* #NOAPP */
+ 3073               	.LBE55:
+ 3074 0de4 B5B9      		out 0x5,r27
+ 3075 0de6 4398      		cbi 0x8,3
+ 3076 0de8 439A      		sbi 0x8,3
+ 3077               	.LBB56:
+ 3078 0dea FC01      		movw r30,r24
+ 3079               	/* #APP */
+ 3080               	 ;  329 "lcd.c" 1
+ 3081 0dec A591      		lpm r26, Z+
+ 3082 0dee B491      		lpm r27, Z
+GAS LISTING /tmp/ccj7iC5P.s 			page 62
+
+
+ 3083               		
+ 3084               	 ;  0 "" 2
+ 3085               	/* #NOAPP */
+ 3086               	.LBE56:
+ 3087 0df0 A5B9      		out 0x5,r26
+ 3088 0df2 4398      		cbi 0x8,3
+ 3089 0df4 439A      		sbi 0x8,3
+ 327:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 3090               		.stabn	68,0,327,.LM250-.LFBB22
+ 3091               	.LM250:
+ 3092 0df6 4F5F      		subi r20,-1
+ 3093 0df8 5F4F      		sbci r21,-1
+ 327:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 3094               		.stabn	68,0,327,.LM251-.LFBB22
+ 3095               	.LM251:
+ 3096 0dfa 0296      		adiw r24,2
+ 3097 0dfc 4E30      		cpi r20,14
+ 3098 0dfe 5105      		cpc r21,__zero_reg__
+ 3099 0e00 01F4      		brne .L73
+ 3100 0e02 C901      		movw r24,r18
+ 331:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 3101               		.stabn	68,0,331,.LM252-.LFBB22
+ 3102               	.LM252:
+ 3103 0e04 50E0      		ldi r21,0
+ 3104 0e06 40E0      		ldi r20,0
+ 3105               	.L74:
+ 3106               	.LBB57:
+ 332:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 3107               		.stabn	68,0,332,.LM253-.LFBB22
+ 3108               	.LM253:
+ 3109 0e08 FC01      		movw r30,r24
+ 3110               	/* #APP */
+ 3111               	 ;  332 "lcd.c" 1
+ 3112 0e0a A591      		lpm r26, Z+
+ 3113 0e0c B491      		lpm r27, Z
+ 3114               		
+ 3115               	 ;  0 "" 2
+ 3116               	/* #NOAPP */
+ 3117               	.LBE57:
+ 3118 0e0e B5B9      		out 0x5,r27
+ 3119 0e10 4398      		cbi 0x8,3
+ 3120 0e12 439A      		sbi 0x8,3
+ 3121               	.LBB58:
+ 3122 0e14 FC01      		movw r30,r24
+ 3123               	/* #APP */
+ 3124               	 ;  332 "lcd.c" 1
+ 3125 0e16 A591      		lpm r26, Z+
+ 3126 0e18 B491      		lpm r27, Z
+ 3127               		
+ 3128               	 ;  0 "" 2
+ 3129               	/* #NOAPP */
+ 3130               	.LBE58:
+ 3131 0e1a A5B9      		out 0x5,r26
+ 3132 0e1c 4398      		cbi 0x8,3
+ 3133 0e1e 439A      		sbi 0x8,3
+ 3134               	.LBB59:
+ 333:lcd.c         **** 			}
+GAS LISTING /tmp/ccj7iC5P.s 			page 63
+
+
+ 3135               		.stabn	68,0,333,.LM254-.LFBB22
+ 3136               	.LM254:
+ 3137 0e20 FC01      		movw r30,r24
+ 3138               	/* #APP */
+ 3139               	 ;  333 "lcd.c" 1
+ 3140 0e22 A591      		lpm r26, Z+
+ 3141 0e24 B491      		lpm r27, Z
+ 3142               		
+ 3143               	 ;  0 "" 2
+ 3144               	/* #NOAPP */
+ 3145               	.LBE59:
+ 3146 0e26 B5B9      		out 0x5,r27
+ 3147 0e28 4398      		cbi 0x8,3
+ 3148 0e2a 439A      		sbi 0x8,3
+ 3149               	.LBB60:
+ 3150 0e2c FC01      		movw r30,r24
+ 3151               	/* #APP */
+ 3152               	 ;  333 "lcd.c" 1
+ 3153 0e2e A591      		lpm r26, Z+
+ 3154 0e30 B491      		lpm r27, Z
+ 3155               		
+ 3156               	 ;  0 "" 2
+ 3157               	/* #NOAPP */
+ 3158               	.LBE60:
+ 3159 0e32 A5B9      		out 0x5,r26
+ 3160 0e34 4398      		cbi 0x8,3
+ 3161 0e36 439A      		sbi 0x8,3
+ 331:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 3162               		.stabn	68,0,331,.LM255-.LFBB22
+ 3163               	.LM255:
+ 3164 0e38 4F5F      		subi r20,-1
+ 3165 0e3a 5F4F      		sbci r21,-1
+ 331:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+ 3166               		.stabn	68,0,331,.LM256-.LFBB22
+ 3167               	.LM256:
+ 3168 0e3c 0296      		adiw r24,2
+ 3169 0e3e 4E30      		cpi r20,14
+ 3170 0e40 5105      		cpc r21,__zero_reg__
+ 3171 0e42 01F4      		brne .L74
+ 326:lcd.c         **** 			for(x = 0; x <= 13; x++){
+ 3172               		.stabn	68,0,326,.LM257-.LFBB22
+ 3173               	.LM257:
+ 3174 0e44 245E      		subi r18,-28
+ 3175 0e46 3F4F      		sbci r19,-1
+ 3176 0e48 625F      		subi r22,-14
+ 3177 0e4a 7F4F      		sbci r23,-1
+ 3178 0e4c 6E35      		cpi r22,94
+ 3179 0e4e 81E0      		ldi r24,1
+ 3180 0e50 7807      		cpc r23,r24
+ 3181 0e52 01F4      		brne .+2
+ 3182 0e54 00C0      		rjmp .L66
+ 3183               	.L68:
+ 313:lcd.c         **** 		for(y = 0; y <= 24; y++){
+ 3184               		.stabn	68,0,313,.LM258-.LFBB22
+ 3185               	.LM258:
+ 3186 0e56 C901      		movw r24,r18
+ 327:lcd.c         **** 				write_data16(pgm_read_word_near(&BATDRN[x+y*14]));
+GAS LISTING /tmp/ccj7iC5P.s 			page 64
+
+
+ 3187               		.stabn	68,0,327,.LM259-.LFBB22
+ 3188               	.LM259:
+ 3189 0e58 50E0      		ldi r21,0
+ 3190 0e5a 40E0      		ldi r20,0
+ 3191 0e5c 00C0      		rjmp .L73
+ 3192               		.size	bat_pwr, .-bat_pwr
+ 3193               	.Lscope22:
+ 3194               		.stabs	"",36,0,0,.Lscope22-.LFBB22
+ 3195               	.global	display
+ 3196               		.data
+ 3197               		.type	display, @object
+ 3198               		.size	display, 14
+ 3199               	display:
+ 3200 0000 F000      		.word	240
+ 3201 0002 4001      		.word	320
+ 3202 0004 0000      		.word	0
+ 3203 0006 0000      		.word	0
+ 3204 0008 0000      		.word	0
+ 3205 000a E420      		.word	8420
+ 3206 000c 99FF      		.word	-103
+ 3207               		.stabs	"display:G(0,11)=(0,12)=s14width:(0,6),0,16;height:(0,6),16,16;orient:(0,5),32,16;x:(0,6),4
+ 3208               		.stabs	"lcd:t(0,11)",128,0,29,0
+ 3209               		.text
+ 3210               		.stabs	"",100,0,0,.Letext0
+ 3211               	.Letext0:
+ 3212               		.ident	"GCC: (GNU) 11.2.0"
+ 3213               	.global __do_copy_data
+GAS LISTING /tmp/ccj7iC5P.s 			page 65
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 lcd.c
-     /tmp/ccq2xQMg.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccq2xQMg.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccq2xQMg.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccq2xQMg.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccq2xQMg.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccq2xQMg.s:18     .text:0000000000000000 init_lcd
-     /tmp/ccq2xQMg.s:55     .text:0000000000000018 set_orientation
-     /tmp/ccq2xQMg.s:2951   .data:0000000000000000 display
-     /tmp/ccq2xQMg.s:241    .text:0000000000000128 init_graphics
-     /tmp/ccq2xQMg.s:702    .text:000000000000031a pwr_kw
-     /tmp/ccq2xQMg.s:978    .text:000000000000044a pwr_100
-     /tmp/ccq2xQMg.s:1254   .text:000000000000057a pwr_10
-     /tmp/ccq2xQMg.s:1531   .text:00000000000006aa bat_pwr
-     /tmp/ccq2xQMg.s:1941   .text:000000000000084c fill_rectangle
-     /tmp/ccq2xQMg.s:2098   .text:0000000000000912 LC1_green
-     /tmp/ccq2xQMg.s:2167   .text:000000000000096a LC1_red
-     /tmp/ccq2xQMg.s:2242   .text:00000000000009c2 LC2_green
-     /tmp/ccq2xQMg.s:2310   .text:0000000000000a1a LC2_red
-     /tmp/ccq2xQMg.s:2385   .text:0000000000000a72 LC3_green
-     /tmp/ccq2xQMg.s:2453   .text:0000000000000aca LC3_red
-     /tmp/ccq2xQMg.s:2528   .text:0000000000000b22 LS1_green
-     /tmp/ccq2xQMg.s:2596   .text:0000000000000b7a LS1_red
-     /tmp/ccq2xQMg.s:2671   .text:0000000000000bd2 LS2_green
-     /tmp/ccq2xQMg.s:2739   .text:0000000000000c2a LS2_red
-     /tmp/ccq2xQMg.s:2814   .text:0000000000000c82 LS3_green
-     /tmp/ccq2xQMg.s:2882   .text:0000000000000cda LS3_red
+     /tmp/ccj7iC5P.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccj7iC5P.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccj7iC5P.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccj7iC5P.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccj7iC5P.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccj7iC5P.s:18     .text:0000000000000000 init_lcd
+     /tmp/ccj7iC5P.s:55     .text:0000000000000018 set_orientation
+     /tmp/ccj7iC5P.s:3199   .data:0000000000000000 display
+     /tmp/ccj7iC5P.s:241    .text:0000000000000128 init_graphics
+     /tmp/ccj7iC5P.s:702    .text:000000000000031a pwr_kw
+     /tmp/ccj7iC5P.s:978    .text:000000000000044a fill_rectangle
+     /tmp/ccj7iC5P.s:1135   .text:0000000000000510 LC1_green
+     /tmp/ccj7iC5P.s:1204   .text:0000000000000568 LC1_red
+     /tmp/ccj7iC5P.s:1279   .text:00000000000005c0 LC2_green
+     /tmp/ccj7iC5P.s:1347   .text:0000000000000618 LC2_red
+     /tmp/ccj7iC5P.s:1422   .text:0000000000000670 LC3_green
+     /tmp/ccj7iC5P.s:1490   .text:00000000000006c8 LC3_red
+     /tmp/ccj7iC5P.s:1565   .text:0000000000000720 LS1_green
+     /tmp/ccj7iC5P.s:1633   .text:0000000000000778 LS1_red
+     /tmp/ccj7iC5P.s:1708   .text:00000000000007d0 LS2_green
+     /tmp/ccj7iC5P.s:1776   .text:0000000000000828 LS2_red
+     /tmp/ccj7iC5P.s:1851   .text:0000000000000880 LS3_green
+     /tmp/ccj7iC5P.s:1919   .text:00000000000008d8 LS3_red
+     /tmp/ccj7iC5P.s:2000   .text:0000000000000930 pwr_bar_wind
+     /tmp/ccj7iC5P.s:2124   .text:00000000000009c6 pwr_bar_sun
+     /tmp/ccj7iC5P.s:2236   .text:0000000000000a5c pwr_100
+     /tmp/ccj7iC5P.s:2512   .text:0000000000000b8c pwr_10
+     /tmp/ccj7iC5P.s:2789   .text:0000000000000cbc bat_pwr
 
 UNDEFINED SYMBOLS
 init_display_controller

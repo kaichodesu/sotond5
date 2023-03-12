@@ -2,7 +2,7 @@
  * Licence: This work is licensed under the Creative Commons Attribution License.
  *           View this license at http://creativecommons.org/about/licenses/
  */
-
+ 
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -12,12 +12,12 @@
 /* Colour definitions RGB565 */
 #define WHITE       0xFFFF
 #define BLACK       0x0000
-#define BLUE        0x001F
-#define GREEN       0x07E0
-#define CYAN        0x07FF
-#define RED         0xF800
-#define MAGENTA     0xF81F
-#define YELLOW      0xFFE0
+#define BLUE        0x001F      
+#define GREEN       0x07E0      
+#define CYAN        0x07FF      
+#define RED         0xF800      
+#define MAGENTA     0xF81F      
+#define YELLOW      0xFFE0      
 
 typedef enum {North, West, South, East} orientation;
 
@@ -31,7 +31,7 @@ typedef struct {
 typedef struct {
 	uint16_t left, right;
 	uint16_t top, bottom;
-} rectangle;
+} rectangle;	
 
 extern lcd display;
 void fill_rectangle(rectangle r, uint16_t col);
@@ -50,9 +50,3 @@ void LC3_green(void);
 void LC3_red(void);
 void pwr_bar_wind(uint8_t pwr);
 void pwr_bar_sun(uint8_t pwr);
-void LS1_green(void);
-void LS1_red(void);
-void LS2_green(void);
-void LS2_red(void);
-void LS3_green(void);
-void LS3_red(void);

@@ -8,6 +8,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <math.h>
+#include <stdio.h>
 #include "liblcd/lcd.h"
 #include "liblcd/ili934x.h"
 #include "libio/io.h"
@@ -20,6 +21,16 @@ uint16_t ibus, pvc, wtc;
 uint16_t drift = 0;
 //  An unsigned int used to regulate TIMER0 drift.
 
+bool battery_pwr_state[2] = {0,0};
+uint8_t power_kw_digit[2] = {0,0};
+uint8_t power_10_digit[2] = {0,0};
+uint8_t power_100_digit[2] = {0,0};
+uint8_t bar_value_sun[2] = {0,0};
+uint8_t bar_value_wind[2] = {0,0};
+
+
+
+
 void init(){
     init_lcd();
     set_orientation(North);
@@ -30,32 +41,122 @@ void init(){
     init_PWM();
 }
 
+
 void lcd_update(void){
 
+    char string[3];
+    float power = BusI * 240/1000;
+    uint8_t wind_pwr = (Wind/1) * 94;
+    uint8_t pv_pwr = (PV/3) * 94;
+
+	sprintf(string, "%f", power); //
+
+	uint8_t power1 = (uint8_t)atoi(string[0]);
+	uint8_t power10 = (uint8_t) atoi(string[1]);
+	uint8_t power100 = (uint8_t)atoi( string[2]);
+	power_kw_digit[0] = power_kw_digit[1];  //used to make present-state become previous-state
+	power_10_digit[0] = power_10_digit[1];
+	power_100_digit[0] = power_100_digit[1];
+	bar_value_wind[0] = bar_value_wind[1];
+	bar_value_sun[0] = bar_value_sun[1];
+
+	if(PINA &=_BV(0))
+	{
+		LC1_green();
+	}
+	else
+		LC1_red();
+
+	if(PINA &=_BV(1))
+	{
+		LC2_green();
+	}
+	else
+		LC2_red();
+
+	if(PINA &=_BV(2))
+	{
+		LC3_green();
+	}
+	else
+		LC3_red();
+
+	if(PIND &=_BV(2))
+	{
+		LS1_green();
+	}
+	else
+		LS1_red();
+
+	if(PIND &=_BV(3))
+	{
+		LS2_green();
+	}
+	else
+		LS2_red();
+
+	if(PINA &=_BV(7))
+	{
+		LS3_green();
+	}
+	else
+		LS3_red();
+
+
+
+	if(PIND &=_BV(1)) // replace with pin value
+	{
+		battery_pwr_state[1] = 0;
+	}
+	else
+		battery_pwr_state[1] = 1;
+
+	power_kw_digit[1] = power1;
+	power_10_digit[1] = power10;
+	power_100_digit[1] = power100;
+
+	bar_value_wind[1] = wind_pwr;
+	bar_value_sun[1] = pv_pwr;
+	if(power_kw_digit[0] != power_kw_digit[1] )
+	{
+		pwr_kw(power_kw_digit[1]);
+	}
+
+	if(power_10_digit[0] != power_10_digit[1])
+	{
+		pwr_10(power_10_digit[1]);
+	}
+
+	if(power_100_digit[0] != power_100_digit[1])
+	{
+		pwr_100(power_100_digit[1]);
+	}
+
+	if(battery_pwr_state[0] != battery_pwr_state[1]);
+	{
+		bat_pwr(battery_pwr_state[1]);
+	}
+
+	if(bar_value_sun[0] != bar_value_sun[1])
+	{
+		pwr_bar_sun(pv_pwr);
+	}
+
+	if(bar_value_wind[0] != bar_value_wind[1])
+	{
+		pwr_bar_wind(wind_pwr);
+	}
+
+
 }
 
-void lcd_test(void){
-    int i;
-        for(i = 0; i < 10; i++){
-            bat_pwr(i%2);
-            pwr_kw(i%3);
-            pwr_10(i);
-            pwr_100(i);
-            _delay_ms(1000);
-        }
-}
 
 int main(){
     init();
-    uint16_t pwm = 127;
     while(1){
         if(sync){
 
-            LS3_hi();
-        if (pwm >=255)
-            pwm = 0;
-        PWM(pwm);
-        pwm++;
+            //  ADMUX preset to PA6
 
             TCCR2B = 0x01;
             //  Starting the ADCMUX timer.
@@ -63,50 +164,56 @@ int main(){
             TIMSK0 &= ~_BV(OCIE0A);
             //  Disable TIMER0 Interrupt
             adts_disable();
-            //  Enable Free Running Mode
+            ADCSRA &=~_BV(ADATE);
+            //  Disable auto triggering.
 
             //  Reading IBUS value.
-            while(adc_mux_rdy == 0);
-            ADMUX = 0x03;
-            adc_mux_rdy = false;
+            //while(adc_mux_rdy == 0);
+            //ADMUX = 0x03;
+            //adc_mux_rdy = false;
             //  We change ADMUX while the current conversion is taking place
             while(adc_rdy == 0);
-            TCCR2B = 0x01;
-            //  Start the ADCMUX timer for the next conversion
-            BusI = adc_read;
             adc_rdy = false;
+            //TCCR2B = 0x01;
+            //  Start the ADCMUX timer for the next conversion
+            BusI = adc_read*IBUS_CALIBRATED/1024;
 
             //  Reading Wind Capacity
-            while(adc_mux_rdy == 0);
-            ADMUX = 0x04;
-            adc_mux_rdy = false;
+            //while(adc_mux_rdy == 0);
+            ADMUX = 0x03;
+            ADCSRA |=_BV(ADSC);
+            //adc_mux_rdy = false;
             //  We change ADMUX while the current conversion is taking place
             while(adc_rdy == 0);
-            TCCR2B = 0x01;
+            //TCCR2B = 0x01;
             //  Start the ADCMUX timer for the next conversion
-            wtc = adc_read;
+            Wind = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
+
 
             //  Reading PV Capacity
-            while(adc_mux_rdy == 0);
-            ADMUX = 0x05;
-            adc_mux_rdy = false;
+            //while(adc_mux_rdy == 0);
+            //ADMUX = 0x06;
+            //adc_mux_rdy = false;
             //  We change ADMUX while the current conversion is taking place
+            ADMUX = 0x04;
+            ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            pvc = adc_read;
+            PV = adc_read*PV_CALIBRATED/1024;
             adc_rdy = false;
 
-            PV = pvc*PV_CALIBRATED/1024;
-            Wind = wtc*WIND_CALIBRATED/1024;
-            BusI = ibus*IBUS_CALIBRATED/1024;
+            ADMUX = 0x06;
 
-            // algorithm();
+            algorithm();
 
-            LS3_lo();
+            PWM((uint8_t)round((MainsReq/10)*255));
+
+            lcd_update();
 
             TIMSK0 |= _BV(OCIE0A);
             adts_enable();
             ADCSRA |=_BV(ADATE);
+            ADCSRA |=_BV(ADSC);
             //  Re-enable the TIMER0 Interrupt.
             //  Turning Auto Triggering back on.
 
