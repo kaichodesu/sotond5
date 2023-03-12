@@ -33,7 +33,7 @@ void init(){
     set_orientation(North);
     init_io();
     init_graphics();
-    init_timer0();
+    init_timers();
     init_adc();
 }
 
@@ -56,16 +56,26 @@ int main(){
     init();
     while(1){
         if(sync){
+
+            LS3_hi();
+
+            TCCR2B = 0x01;
+            //  Starting the ADCMUX timer.
             sync = false;
             TIMSK0 &= ~_BV(OCIE0A);
             //  Disable TIMER0 Interrupt
             adts_disable();
-            while(adc_rdy == 0);
-            ADCSRA |=_BV(ADATE);
-            //  Disable Autotriggering
-            BusI = ADC;
-            adc_rdy = false;
+            //  Enable Free Running Mode
 
+            while(adc_mux_rdy == 0);
+            ADMUX = 0x03;
+            adc_mux_rdy = false;
+            //  We change ADMUX while the current conversion is taking place
+
+            while(adc_rdy == 0);
+            BusI = adc_read;
+            adc_rdy = false;
+            /*
             ADMUX = 0x03;
             ADCSRA |=_BV(ADSC);
             while(ADCSRA &_BV(ADSC));
@@ -76,8 +86,13 @@ int main(){
             ADCSRA |=_BV(ADSC);
             while(ADCSRA &_BV(ADSC));
             pvc = ADC;
+            */
+            LS3_lo();
+
+
             //  Fourth for PV Capacity.
 
+            /*
             PV = pvc*PV_CALIBRATED/1024;
             Wind = wtc*WIND_CALIBRATED/1024;
             BusI = ibus*IBUS_CALIBRATED/1024;
@@ -178,11 +193,14 @@ int main(){
                 else LS1_lo();
             }
 
+            */
+
             TIMSK0 |= _BV(OCIE0A);
             adts_enable();
             ADCSRA |=_BV(ADATE);
             //  Re-enable the TIMER0 Interrupt.
             //  Turning Auto Triggering back on.
+
         }
 
     }

@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccEcWHIK.s 			page 1
+GAS LISTING /tmp/ccnEDwfR.s 			page 1
 
 
    1               		.file	"adc.c"
@@ -12,7 +12,7 @@ GAS LISTING /tmp/ccEcWHIK.s 			page 1
    9               		.text
   10               	.Ltext0:
   11               		.stabs	"gcc2_compiled.",60,0,0,0
-  12               		.stabs	"init_timer0:F(0,1)=(0,1)",36,0,13,init_timer0
+  12               		.stabs	"init_timer0:F(0,1)=(0,1)",36,0,14,init_timer0
   13               		.stabs	"uint8_t:t(0,2)=(0,3)=@s8;r(0,3);0;255;",128,0,126,0
   14               		.stabs	"void:t(0,1)",128,0,0,0
   15               		.stabs	"unsigned char:t(0,3)",128,0,0,0
@@ -28,466 +28,461 @@ GAS LISTING /tmp/ccEcWHIK.s 			page 1
    7:adc.c         **** 
    8:adc.c         **** volatile uint16_t adc_read;
    9:adc.c         **** volatile bool calibrating, adc_rdy, sync;
-  10:adc.c         **** const uint8_t OFFSET = 176;
-  11:adc.c         **** //  TOP value used to fine tune the phase delay to capture the mains AC phase.
-  12:adc.c         **** 
-  13:adc.c         **** void init_timer0(void)
-  14:adc.c         **** {
-  19               		.stabn	68,0,14,.LM0-.LFBB1
+  10:adc.c         **** uint8_t TIMER0_TOP = 234;
+  11:adc.c         **** uint8_t OFFSET = 176;
+  12:adc.c         **** //  TOP value used to fine tune the phase delay to capture the mains AC phase.
+  13:adc.c         **** 
+  14:adc.c         **** void init_timer0(void)
+  15:adc.c         **** {
+  19               		.stabn	68,0,15,.LM0-.LFBB1
   20               	.LM0:
   21               	.LFBB1:
   22               	/* prologue: function */
   23               	/* frame size = 0 */
   24               	/* stack size = 0 */
   25               	.L__stack_usage = 0
-  15:adc.c         **** 	TCCR0A = 0x02; // set timer0 to CTC mode with 1024 prescaler
-  26               		.stabn	68,0,15,.LM1-.LFBB1
+  16:adc.c         **** 	TCCR0A = 0x02; // set timer0 to CTC mode with 1024 prescaler
+  26               		.stabn	68,0,16,.LM1-.LFBB1
   27               	.LM1:
   28 0000 82E0      		ldi r24,lo8(2)
   29 0002 84BD      		out 0x24,r24
-  16:adc.c         **** 	TCCR0B = 0x05;
-  30               		.stabn	68,0,16,.LM2-.LFBB1
+  17:adc.c         **** 	TCCR0B = 0x05;
+  30               		.stabn	68,0,17,.LM2-.LFBB1
   31               	.LM2:
   32 0004 85E0      		ldi r24,lo8(5)
   33 0006 85BD      		out 0x25,r24
-  17:adc.c         **** 	TCNT0 = 0;
-  34               		.stabn	68,0,17,.LM3-.LFBB1
+  18:adc.c         **** 	TCNT0 = 0;
+  34               		.stabn	68,0,18,.LM3-.LFBB1
   35               	.LM3:
   36 0008 16BC      		out 0x26,__zero_reg__
-  18:adc.c         ****     OCR0A = 234;
-  37               		.stabn	68,0,18,.LM4-.LFBB1
+  19:adc.c         ****     OCR0A = TIMER0_TOP;
+  37               		.stabn	68,0,19,.LM4-.LFBB1
   38               	.LM4:
-  39 000a 8AEE      		ldi r24,lo8(-22)
-GAS LISTING /tmp/ccEcWHIK.s 			page 2
+GAS LISTING /tmp/ccnEDwfR.s 			page 2
 
 
-  40 000c 87BD      		out 0x27,r24
-  19:adc.c         ****     TIMSK0 = 0;
-  41               		.stabn	68,0,19,.LM5-.LFBB1
+  39 000a 8091 0000 		lds r24,TIMER0_TOP
+  40 000e 87BD      		out 0x27,r24
+  20:adc.c         ****     TIMSK0 = 0;
+  41               		.stabn	68,0,20,.LM5-.LFBB1
   42               	.LM5:
-  43 000e 1092 6E00 		sts 110,__zero_reg__
+  43 0010 1092 6E00 		sts 110,__zero_reg__
   44               	/* epilogue start */
-  20:adc.c         **** 
-  21:adc.c         **** 	//set prescaler to 1024, count up to 116 (OCR0A),
-  22:adc.c         **** }
-  45               		.stabn	68,0,22,.LM6-.LFBB1
+  21:adc.c         **** 
+  22:adc.c         **** 	//set prescaler to 1024, count up to 116 (OCR0A),
+  23:adc.c         **** }
+  45               		.stabn	68,0,23,.LM6-.LFBB1
   46               	.LM6:
-  47 0012 0895      		ret
+  47 0014 0895      		ret
   48               		.size	init_timer0, .-init_timer0
   49               	.Lscope1:
   50               		.stabs	"",36,0,0,.Lscope1-.LFBB1
-  51               		.stabs	"adts_disable:F(0,1)",36,0,24,adts_disable
+  51               		.stabs	"adts_disable:F(0,1)",36,0,25,adts_disable
   52               	.global	adts_disable
   53               		.type	adts_disable, @function
   54               	adts_disable:
-  23:adc.c         **** 
-  24:adc.c         **** void adts_disable(void){
-  55               		.stabn	68,0,24,.LM7-.LFBB2
+  24:adc.c         **** 
+  25:adc.c         **** void adts_disable(void){
+  55               		.stabn	68,0,25,.LM7-.LFBB2
   56               	.LM7:
   57               	.LFBB2:
   58               	/* prologue: function */
   59               	/* frame size = 0 */
   60               	/* stack size = 0 */
   61               	.L__stack_usage = 0
-  25:adc.c         ****     ADCSRB = 0;
-  62               		.stabn	68,0,25,.LM8-.LFBB2
+  26:adc.c         ****     ADCSRB = 0;
+  62               		.stabn	68,0,26,.LM8-.LFBB2
   63               	.LM8:
-  64 0014 1092 7B00 		sts 123,__zero_reg__
+  64 0016 1092 7B00 		sts 123,__zero_reg__
   65               	/* epilogue start */
-  26:adc.c         **** }
-  66               		.stabn	68,0,26,.LM9-.LFBB2
+  27:adc.c         **** }
+  66               		.stabn	68,0,27,.LM9-.LFBB2
   67               	.LM9:
-  68 0018 0895      		ret
+  68 001a 0895      		ret
   69               		.size	adts_disable, .-adts_disable
   70               	.Lscope2:
   71               		.stabs	"",36,0,0,.Lscope2-.LFBB2
-  72               		.stabs	"adts_enable:F(0,1)",36,0,28,adts_enable
+  72               		.stabs	"adts_enable:F(0,1)",36,0,29,adts_enable
   73               	.global	adts_enable
   74               		.type	adts_enable, @function
   75               	adts_enable:
-  27:adc.c         **** 
-  28:adc.c         **** void adts_enable(void){
-  76               		.stabn	68,0,28,.LM10-.LFBB3
+  28:adc.c         **** 
+  29:adc.c         **** void adts_enable(void){
+  76               		.stabn	68,0,29,.LM10-.LFBB3
   77               	.LM10:
   78               	.LFBB3:
   79               	/* prologue: function */
   80               	/* frame size = 0 */
   81               	/* stack size = 0 */
   82               	.L__stack_usage = 0
-  29:adc.c         ****     ADCSRB |=_BV(ADTS1);
-  83               		.stabn	68,0,29,.LM11-.LFBB3
+  30:adc.c         ****     ADCSRB |=_BV(ADTS1);
+  83               		.stabn	68,0,30,.LM11-.LFBB3
   84               	.LM11:
-  85 001a EBE7      		ldi r30,lo8(123)
-GAS LISTING /tmp/ccEcWHIK.s 			page 3
+GAS LISTING /tmp/ccnEDwfR.s 			page 3
 
 
-  86 001c F0E0      		ldi r31,0
-  87 001e 8081      		ld r24,Z
-  88 0020 8260      		ori r24,lo8(2)
-  89 0022 8083      		st Z,r24
-  30:adc.c         **** 	ADCSRB |=_BV(ADTS0);
-  90               		.stabn	68,0,30,.LM12-.LFBB3
+  85 001c EBE7      		ldi r30,lo8(123)
+  86 001e F0E0      		ldi r31,0
+  87 0020 8081      		ld r24,Z
+  88 0022 8260      		ori r24,lo8(2)
+  89 0024 8083      		st Z,r24
+  31:adc.c         **** 	ADCSRB |=_BV(ADTS0);
+  90               		.stabn	68,0,31,.LM12-.LFBB3
   91               	.LM12:
-  92 0024 8081      		ld r24,Z
-  93 0026 8160      		ori r24,lo8(1)
-  94 0028 8083      		st Z,r24
+  92 0026 8081      		ld r24,Z
+  93 0028 8160      		ori r24,lo8(1)
+  94 002a 8083      		st Z,r24
   95               	/* epilogue start */
-  31:adc.c         **** }
-  96               		.stabn	68,0,31,.LM13-.LFBB3
+  32:adc.c         **** }
+  96               		.stabn	68,0,32,.LM13-.LFBB3
   97               	.LM13:
-  98 002a 0895      		ret
+  98 002c 0895      		ret
   99               		.size	adts_enable, .-adts_enable
  100               	.Lscope3:
  101               		.stabs	"",36,0,0,.Lscope3-.LFBB3
- 102               		.stabs	"__vector_24:F(0,1)",36,0,33,__vector_24
+ 102               		.stabs	"__vector_24:F(0,1)",36,0,34,__vector_24
  103               		.stabs	"uint16_t:t(0,4)=(0,5)=r(0,5);0;0177777;",128,0,128,0
  104               		.stabs	"unsigned int:t(0,5)",128,0,0,0
  105               	.global	__vector_24
  106               		.type	__vector_24, @function
  107               	__vector_24:
-  32:adc.c         **** 
-  33:adc.c         **** ISR(ADC_vect){
- 108               		.stabn	68,0,33,.LM14-.LFBB4
+  33:adc.c         **** 
+  34:adc.c         **** ISR(ADC_vect){
+ 108               		.stabn	68,0,34,.LM14-.LFBB4
  109               	.LM14:
  110               	.LFBB4:
- 111 002c 8F93 8FB7 		__gcc_isr 1
- 111      8F93 
- 112 0032 9F93      		push r25
+ 111 002e 8F93      		__gcc_isr 1
+ 112 0030 9F93      		push r25
  113               	/* prologue: Signal */
  114               	/* frame size = 0 */
  115               	/* stack size = 1...5 */
  116               	.L__stack_usage = 1 + __gcc_isr.n_pushed
-  34:adc.c         ****     if(calibrating)
- 117               		.stabn	68,0,34,.LM15-.LFBB4
+  35:adc.c         ****     adc_read = ADC;
+ 117               		.stabn	68,0,35,.LM15-.LFBB4
  118               	.LM15:
- 119 0034 8091 0000 		lds r24,calibrating
- 120               		.stabn	68,0,34,.LM16-.LFBB4
- 121               	.LM16:
- 122 0038 8823      		tst r24
- 123 003a 01F0      		breq .L5
-  35:adc.c         ****         adc_read = ADC;
- 124               		.stabn	68,0,35,.LM17-.LFBB4
- 125               	.LM17:
- 126 003c 8091 7800 		lds r24,120
- 127 0040 9091 7900 		lds r25,120+1
- 128               		.stabn	68,0,35,.LM18-.LFBB4
- 129               	.LM18:
- 130 0044 9093 0000 		sts adc_read+1,r25
- 131 0048 8093 0000 		sts adc_read,r24
- 132               	.L4:
- 133               	/* epilogue start */
-  36:adc.c         ****     else
-  37:adc.c         ****         adc_rdy = true;
-GAS LISTING /tmp/ccEcWHIK.s 			page 4
-
-
-  38:adc.c         ****     // a flag for the main loop
-  39:adc.c         **** }
- 134               		.stabn	68,0,39,.LM19-.LFBB4
- 135               	.LM19:
- 136 004c 9F91      		pop r25
- 137 004e 8F91 8FBF 		__gcc_isr 2
- 137      8F91 
- 138 0054 1895      		reti
- 139               	.L5:
+ 119 0032 8091 7800 		lds r24,120
+ 120 0036 9091 7900 		lds r25,120+1
+ 121               		.stabn	68,0,35,.LM16-.LFBB4
+ 122               	.LM16:
+ 123 003a 9093 0000 		sts adc_read+1,r25
+ 124 003e 8093 0000 		sts adc_read,r24
+  36:adc.c         ****     adc_rdy = true;
+ 125               		.stabn	68,0,36,.LM17-.LFBB4
+ 126               	.LM17:
+ 127 0042 81E0      		ldi r24,lo8(1)
+ 128 0044 8093 0000 		sts adc_rdy,r24
+ 129               	/* epilogue start */
   37:adc.c         ****     // a flag for the main loop
- 140               		.stabn	68,0,37,.LM20-.LFBB4
- 141               	.LM20:
- 142 0056 81E0      		ldi r24,lo8(1)
- 143 0058 8093 0000 		sts adc_rdy,r24
- 144               		.stabn	68,0,39,.LM21-.LFBB4
- 145               	.LM21:
- 146 005c 00C0      		rjmp .L4
- 147               		__gcc_isr 0,r24
- 148               		.size	__vector_24, .-__vector_24
- 149               	.Lscope4:
- 150               		.stabs	"",36,0,0,.Lscope4-.LFBB4
- 151               		.stabs	"__vector_16:F(0,1)",36,0,41,__vector_16
- 152               	.global	__vector_16
- 153               		.type	__vector_16, @function
- 154               	__vector_16:
-  40:adc.c         **** 
-  41:adc.c         **** ISR(TIMER0_COMPA_vect){
- 155               		.stabn	68,0,41,.LM22-.LFBB5
- 156               	.LM22:
- 157               	.LFBB5:
- 158 005e 8F93      		__gcc_isr 1
- 159               	/* prologue: Signal */
- 160               	/* frame size = 0 */
- 161               	/* stack size = 0...4 */
- 162               	.L__stack_usage = 0 + __gcc_isr.n_pushed
-  42:adc.c         ****     sync = true;
- 163               		.stabn	68,0,42,.LM23-.LFBB5
- 164               	.LM23:
- 165 0060 81E0      		ldi r24,lo8(1)
- 166 0062 8093 0000 		sts sync,r24
- 167               	/* epilogue start */
-  43:adc.c         **** }
- 168               		.stabn	68,0,43,.LM24-.LFBB5
- 169               	.LM24:
- 170 0066 8F91      		__gcc_isr 2
- 171 0068 1895      		reti
- 172               		__gcc_isr 0,r24
- 173               		.size	__vector_16, .-__vector_16
- 174               	.Lscope5:
- 175               		.stabs	"",36,0,0,.Lscope5-.LFBB5
- 176               		.stabs	"calibrate_timer0:F(0,1)",36,0,45,calibrate_timer0
- 177               	.global	calibrate_timer0
- 178               		.type	calibrate_timer0, @function
- 179               	calibrate_timer0:
-  44:adc.c         **** 
-  45:adc.c         **** void calibrate_timer0(void)
-  46:adc.c         **** {
-GAS LISTING /tmp/ccEcWHIK.s 			page 5
+  38:adc.c         **** }
+ 130               		.stabn	68,0,38,.LM18-.LFBB4
+ 131               	.LM18:
+ 132 0048 9F91      		pop r25
+ 133 004a 8F91      		__gcc_isr 2
+GAS LISTING /tmp/ccnEDwfR.s 			page 4
 
 
- 180               		.stabn	68,0,46,.LM25-.LFBB6
- 181               	.LM25:
- 182               	.LFBB6:
- 183               	/* prologue: function */
- 184               	/* frame size = 0 */
- 185               	/* stack size = 0 */
- 186               	.L__stack_usage = 0
-  47:adc.c         ****     calibrating = true;
- 187               		.stabn	68,0,47,.LM26-.LFBB6
- 188               	.LM26:
- 189 006a 81E0      		ldi r24,lo8(1)
- 190 006c 8093 0000 		sts calibrating,r24
-  48:adc.c         ****     ADCSRA |= _BV(ADIE);
- 191               		.stabn	68,0,48,.LM27-.LFBB6
- 192               	.LM27:
- 193 0070 8091 7A00 		lds r24,122
- 194 0074 8860      		ori r24,lo8(8)
- 195 0076 8093 7A00 		sts 122,r24
- 196               	.LBB4:
- 197               	.LBB5:
-  25:adc.c         **** }
- 198               		.stabn	68,0,25,.LM28-.LFBB6
- 199               	.LM28:
- 200 007a 1092 7B00 		sts 123,__zero_reg__
- 201               	.LBE5:
- 202               	.LBE4:
-  49:adc.c         ****     adts_disable();
-  50:adc.c         ****     //  Turn off OCR0A triggering if it is enabled.
-  51:adc.c         **** 	ADMUX = 0x06;
- 203               		.stabn	68,0,51,.LM29-.LFBB6
- 204               	.LM29:
- 205 007e 86E0      		ldi r24,lo8(6)
- 206 0080 8093 7C00 		sts 124,r24
-  52:adc.c         ****     //  Select PA4 as the ADC source.
-  53:adc.c         ****     ADCSRA |=_BV(ADATE);
- 207               		.stabn	68,0,53,.LM30-.LFBB6
- 208               	.LM30:
- 209 0084 8091 7A00 		lds r24,122
- 210 0088 8062      		ori r24,lo8(32)
- 211 008a 8093 7A00 		sts 122,r24
-  54:adc.c         ****     ADCSRA |= _BV(ADSC);
- 212               		.stabn	68,0,54,.LM31-.LFBB6
- 213               	.LM31:
- 214 008e 8091 7A00 		lds r24,122
- 215 0092 8064      		ori r24,lo8(64)
- 216 0094 8093 7A00 		sts 122,r24
- 217               	.L9:
-  55:adc.c         ****     //  start conversions in free running mode
-  56:adc.c         ****     while(adc_read < 100){}
- 218               		.stabn	68,0,56,.LM32-.LFBB6
- 219               	.LM32:
- 220 0098 8091 0000 		lds r24,adc_read
- 221 009c 9091 0000 		lds r25,adc_read+1
- 222 00a0 8436      		cpi r24,100
- 223 00a2 9105      		cpc r25,__zero_reg__
- 224 00a4 00F0      		brlo .L9
- 225               	.L10:
-GAS LISTING /tmp/ccEcWHIK.s 			page 6
+ 134 004c 1895      		reti
+ 135               		__gcc_isr 0,r24
+ 136               		.size	__vector_24, .-__vector_24
+ 137               	.Lscope4:
+ 138               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 139               		.stabs	"__vector_16:F(0,1)",36,0,40,__vector_16
+ 140               	.global	__vector_16
+ 141               		.type	__vector_16, @function
+ 142               	__vector_16:
+  39:adc.c         **** 
+  40:adc.c         **** ISR(TIMER0_COMPA_vect){
+ 143               		.stabn	68,0,40,.LM19-.LFBB5
+ 144               	.LM19:
+ 145               	.LFBB5:
+ 146 004e 8F93      		__gcc_isr 1
+ 147               	/* prologue: Signal */
+ 148               	/* frame size = 0 */
+ 149               	/* stack size = 0...4 */
+ 150               	.L__stack_usage = 0 + __gcc_isr.n_pushed
+  41:adc.c         ****     sync = true;
+ 151               		.stabn	68,0,41,.LM20-.LFBB5
+ 152               	.LM20:
+ 153 0050 81E0      		ldi r24,lo8(1)
+ 154 0052 8093 0000 		sts sync,r24
+ 155               	/* epilogue start */
+  42:adc.c         **** }
+ 156               		.stabn	68,0,42,.LM21-.LFBB5
+ 157               	.LM21:
+ 158 0056 8F91      		__gcc_isr 2
+ 159 0058 1895      		reti
+ 160               		__gcc_isr 0,r24
+ 161               		.size	__vector_16, .-__vector_16
+ 162               	.Lscope5:
+ 163               		.stabs	"",36,0,0,.Lscope5-.LFBB5
+ 164               		.stabs	"calibrate_timer0:F(0,1)",36,0,44,calibrate_timer0
+ 165               	.global	calibrate_timer0
+ 166               		.type	calibrate_timer0, @function
+ 167               	calibrate_timer0:
+  43:adc.c         **** 
+  44:adc.c         **** void calibrate_timer0(void)
+  45:adc.c         **** {
+ 168               		.stabn	68,0,45,.LM22-.LFBB6
+ 169               	.LM22:
+ 170               	.LFBB6:
+ 171               	/* prologue: function */
+ 172               	/* frame size = 0 */
+ 173               	/* stack size = 0 */
+ 174               	.L__stack_usage = 0
+  46:adc.c         ****     calibrating = true;
+ 175               		.stabn	68,0,46,.LM23-.LFBB6
+ 176               	.LM23:
+ 177 005a 81E0      		ldi r24,lo8(1)
+ 178 005c 8093 0000 		sts calibrating,r24
+  47:adc.c         ****     ADCSRA |= _BV(ADIE);
+ 179               		.stabn	68,0,47,.LM24-.LFBB6
+ 180               	.LM24:
+ 181 0060 8091 7A00 		lds r24,122
+GAS LISTING /tmp/ccnEDwfR.s 			page 5
 
 
-  57:adc.c         ****         //  Waiting for the ADC to rise into the rectified waveform.
-  58:adc.c         **** 	while(adc_read > 10){}
- 226               		.stabn	68,0,58,.LM33-.LFBB6
- 227               	.LM33:
- 228 00a6 8091 0000 		lds r24,adc_read
- 229 00aa 9091 0000 		lds r25,adc_read+1
- 230 00ae 0B97      		sbiw r24,11
- 231 00b0 00F4      		brsh .L10
-  59:adc.c         ****     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
-  60:adc.c         ****     TCNT0 = 0;
- 232               		.stabn	68,0,60,.LM34-.LFBB6
- 233               	.LM34:
- 234 00b2 16BC      		out 0x26,__zero_reg__
-  61:adc.c         ****     OCR0A = OFFSET;
- 235               		.stabn	68,0,61,.LM35-.LFBB6
+ 182 0064 8860      		ori r24,lo8(8)
+ 183 0066 8093 7A00 		sts 122,r24
+ 184               	.LBB4:
+ 185               	.LBB5:
+  26:adc.c         **** }
+ 186               		.stabn	68,0,26,.LM25-.LFBB6
+ 187               	.LM25:
+ 188 006a 1092 7B00 		sts 123,__zero_reg__
+ 189               	.LBE5:
+ 190               	.LBE4:
+  48:adc.c         ****     adts_disable();
+  49:adc.c         ****     //  Turn off OCR0A triggering if it is enabled.
+  50:adc.c         **** 	ADMUX = 0x05;
+ 191               		.stabn	68,0,50,.LM26-.LFBB6
+ 192               	.LM26:
+ 193 006e 85E0      		ldi r24,lo8(5)
+ 194 0070 8093 7C00 		sts 124,r24
+  51:adc.c         ****     //  Select PA5 as the ADC source.
+  52:adc.c         ****     ADCSRA |=_BV(ADATE);
+ 195               		.stabn	68,0,52,.LM27-.LFBB6
+ 196               	.LM27:
+ 197 0074 8091 7A00 		lds r24,122
+ 198 0078 8062      		ori r24,lo8(32)
+ 199 007a 8093 7A00 		sts 122,r24
+  53:adc.c         ****     ADCSRA |= _BV(ADSC);
+ 200               		.stabn	68,0,53,.LM28-.LFBB6
+ 201               	.LM28:
+ 202 007e 8091 7A00 		lds r24,122
+ 203 0082 8064      		ori r24,lo8(64)
+ 204 0084 8093 7A00 		sts 122,r24
+ 205               	.L7:
+  54:adc.c         ****     //  start conversions in free running mode
+  55:adc.c         ****     while(adc_read < 100){}
+ 206               		.stabn	68,0,55,.LM29-.LFBB6
+ 207               	.LM29:
+ 208 0088 8091 0000 		lds r24,adc_read
+ 209 008c 9091 0000 		lds r25,adc_read+1
+ 210 0090 8436      		cpi r24,100
+ 211 0092 9105      		cpc r25,__zero_reg__
+ 212 0094 00F0      		brlo .L7
+ 213               	.L8:
+  56:adc.c         ****         //  Waiting for the ADC to rise into the rectified waveform.
+  57:adc.c         **** 	while(adc_read > 10){}
+ 214               		.stabn	68,0,57,.LM30-.LFBB6
+ 215               	.LM30:
+ 216 0096 8091 0000 		lds r24,adc_read
+ 217 009a 9091 0000 		lds r25,adc_read+1
+ 218 009e 0B97      		sbiw r24,11
+ 219 00a0 00F4      		brsh .L8
+  58:adc.c         ****     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
+  59:adc.c         ****     TCNT0 = 0;
+ 220               		.stabn	68,0,59,.LM31-.LFBB6
+ 221               	.LM31:
+ 222 00a2 16BC      		out 0x26,__zero_reg__
+  60:adc.c         ****     OCR0A = OFFSET;
+ 223               		.stabn	68,0,60,.LM32-.LFBB6
+ 224               	.LM32:
+GAS LISTING /tmp/ccnEDwfR.s 			page 6
+
+
+ 225 00a4 8091 0000 		lds r24,OFFSET
+ 226 00a8 87BD      		out 0x27,r24
+  61:adc.c         ****     adts_enable();
+ 227               		.stabn	68,0,61,.LM33-.LFBB6
+ 228               	.LM33:
+ 229 00aa 0E94 0000 		call adts_enable
+  62:adc.c         ****     ADCSRA &= ~_BV(ADIE);
+ 230               		.stabn	68,0,62,.LM34-.LFBB6
+ 231               	.LM34:
+ 232 00ae 8091 7A00 		lds r24,122
+ 233 00b2 877F      		andi r24,lo8(-9)
+ 234 00b4 8093 7A00 		sts 122,r24
+  63:adc.c         ****     TIMSK0 |= _BV(OCIE0A);
+ 235               		.stabn	68,0,63,.LM35-.LFBB6
  236               	.LM35:
- 237 00b4 80EB      		ldi r24,lo8(-80)
- 238 00b6 87BD      		out 0x27,r24
-  62:adc.c         ****     adts_enable();
- 239               		.stabn	68,0,62,.LM36-.LFBB6
- 240               	.LM36:
- 241 00b8 0E94 0000 		call adts_enable
-  63:adc.c         ****     ADCSRA &= ~_BV(ADIE);
- 242               		.stabn	68,0,63,.LM37-.LFBB6
- 243               	.LM37:
- 244 00bc 8091 7A00 		lds r24,122
- 245 00c0 877F      		andi r24,lo8(-9)
- 246 00c2 8093 7A00 		sts 122,r24
-  64:adc.c         ****     TIMSK0 |= _BV(OCIE0A);
- 247               		.stabn	68,0,64,.LM38-.LFBB6
- 248               	.LM38:
- 249 00c6 8091 6E00 		lds r24,110
- 250 00ca 8260      		ori r24,lo8(2)
- 251 00cc 8093 6E00 		sts 110,r24
- 252               	.L11:
-  65:adc.c         ****     //ADCSRA &= ~_BV(ADIE);
-  66:adc.c         ****     //  Reset timer 0 and turn off ADC interrupts
-  67:adc.c         **** 	while(!sync); //here we have reached a peak
- 253               		.stabn	68,0,67,.LM39-.LFBB6
+ 237 00b8 8091 6E00 		lds r24,110
+ 238 00bc 8260      		ori r24,lo8(2)
+ 239 00be 8093 6E00 		sts 110,r24
+ 240               	.L9:
+  64:adc.c         ****     //ADCSRA &= ~_BV(ADIE);
+  65:adc.c         ****     //  Reset timer 0 and turn off ADC interrupts
+  66:adc.c         **** 	while(!sync); //here we have reached a peak
+ 241               		.stabn	68,0,66,.LM36-.LFBB6
+ 242               	.LM36:
+ 243 00c2 8091 0000 		lds r24,sync
+ 244 00c6 8823      		tst r24
+ 245 00c8 01F0      		breq .L9
+  67:adc.c         **** 	TCNT0 = 0; //reset timer count
+ 246               		.stabn	68,0,67,.LM37-.LFBB6
+ 247               	.LM37:
+ 248 00ca 16BC      		out 0x26,__zero_reg__
+  68:adc.c         **** 	OCR0A = TIMER0_TOP;//output compare 1 cycle after the peak
+ 249               		.stabn	68,0,68,.LM38-.LFBB6
+ 250               	.LM38:
+ 251 00cc 8091 0000 		lds r24,TIMER0_TOP
+ 252 00d0 87BD      		out 0x27,r24
+  69:adc.c         **** 	sync = false;
+ 253               		.stabn	68,0,69,.LM39-.LFBB6
  254               	.LM39:
- 255 00d0 8091 0000 		lds r24,sync
- 256 00d4 8823      		tst r24
- 257 00d6 01F0      		breq .L11
-  68:adc.c         **** 	TCNT0 = 0; //reset timer count
- 258               		.stabn	68,0,68,.LM40-.LFBB6
- 259               	.LM40:
- 260 00d8 16BC      		out 0x26,__zero_reg__
-  69:adc.c         **** 	OCR0A = 234;//output compare 1 cycle after the peak
- 261               		.stabn	68,0,69,.LM41-.LFBB6
+ 255 00d2 1092 0000 		sts sync,__zero_reg__
+  70:adc.c         ****     ADCSRA |= _BV(ADIE);
+ 256               		.stabn	68,0,70,.LM40-.LFBB6
+ 257               	.LM40:
+ 258 00d6 8091 7A00 		lds r24,122
+ 259 00da 8860      		ori r24,lo8(8)
+ 260 00dc 8093 7A00 		sts 122,r24
+  71:adc.c         **** 	calibrating = false;
+ 261               		.stabn	68,0,71,.LM41-.LFBB6
  262               	.LM41:
- 263 00da 8AEE      		ldi r24,lo8(-22)
- 264 00dc 87BD      		out 0x27,r24
-  70:adc.c         **** 	sync = false;
- 265               		.stabn	68,0,70,.LM42-.LFBB6
- 266               	.LM42:
- 267 00de 1092 0000 		sts sync,__zero_reg__
-  71:adc.c         ****     ADCSRA |= _BV(ADIE);
-GAS LISTING /tmp/ccEcWHIK.s 			page 7
-
-
- 268               		.stabn	68,0,71,.LM43-.LFBB6
- 269               	.LM43:
- 270 00e2 8091 7A00 		lds r24,122
- 271 00e6 8860      		ori r24,lo8(8)
- 272 00e8 8093 7A00 		sts 122,r24
-  72:adc.c         **** 	calibrating = false;
- 273               		.stabn	68,0,72,.LM44-.LFBB6
- 274               	.LM44:
- 275 00ec 1092 0000 		sts calibrating,__zero_reg__
- 276               	/* epilogue start */
+ 263 00e0 1092 0000 		sts calibrating,__zero_reg__
+  72:adc.c         ****     adc_rdy = false;
+ 264               		.stabn	68,0,72,.LM42-.LFBB6
+ 265               	.LM42:
+ 266 00e4 1092 0000 		sts adc_rdy,__zero_reg__
+ 267               	/* epilogue start */
   73:adc.c         **** }
- 277               		.stabn	68,0,73,.LM45-.LFBB6
- 278               	.LM45:
- 279 00f0 0895      		ret
- 280               		.size	calibrate_timer0, .-calibrate_timer0
- 281               	.Lscope6:
- 282               		.stabs	"",36,0,0,.Lscope6-.LFBB6
- 283               		.stabs	"init_adc:F(0,1)",36,0,75,init_adc
- 284               	.global	init_adc
- 285               		.type	init_adc, @function
- 286               	init_adc:
+ 268               		.stabn	68,0,73,.LM43-.LFBB6
+GAS LISTING /tmp/ccnEDwfR.s 			page 7
+
+
+ 269               	.LM43:
+ 270 00e8 0895      		ret
+ 271               		.size	calibrate_timer0, .-calibrate_timer0
+ 272               	.Lscope6:
+ 273               		.stabs	"",36,0,0,.Lscope6-.LFBB6
+ 274               		.stabs	"init_adc:F(0,1)",36,0,75,init_adc
+ 275               	.global	init_adc
+ 276               		.type	init_adc, @function
+ 277               	init_adc:
   74:adc.c         **** 
   75:adc.c         **** void init_adc(void){
- 287               		.stabn	68,0,75,.LM46-.LFBB7
- 288               	.LM46:
- 289               	.LFBB7:
- 290               	/* prologue: function */
- 291               	/* frame size = 0 */
- 292               	/* stack size = 0 */
- 293               	.L__stack_usage = 0
+ 278               		.stabn	68,0,75,.LM44-.LFBB7
+ 279               	.LM44:
+ 280               	.LFBB7:
+ 281               	/* prologue: function */
+ 282               	/* frame size = 0 */
+ 283               	/* stack size = 0 */
+ 284               	.L__stack_usage = 0
   76:adc.c         ****     sei();
- 294               		.stabn	68,0,76,.LM47-.LFBB7
- 295               	.LM47:
- 296               	/* #APP */
- 297               	 ;  76 "adc.c" 1
- 298 00f2 7894      		sei
- 299               	 ;  0 "" 2
+ 285               		.stabn	68,0,76,.LM45-.LFBB7
+ 286               	.LM45:
+ 287               	/* #APP */
+ 288               	 ;  76 "adc.c" 1
+ 289 00ea 7894      		sei
+ 290               	 ;  0 "" 2
   77:adc.c         ****     ADCSRA |= _BV(ADPS2) |_BV(ADPS1);
- 300               		.stabn	68,0,77,.LM48-.LFBB7
- 301               	.LM48:
- 302               	/* #NOAPP */
- 303 00f4 EAE7      		ldi r30,lo8(122)
- 304 00f6 F0E0      		ldi r31,0
- 305 00f8 8081      		ld r24,Z
- 306 00fa 8660      		ori r24,lo8(6)
- 307 00fc 8083      		st Z,r24
+ 291               		.stabn	68,0,77,.LM46-.LFBB7
+ 292               	.LM46:
+ 293               	/* #NOAPP */
+ 294 00ec EAE7      		ldi r30,lo8(122)
+ 295 00ee F0E0      		ldi r31,0
+ 296 00f0 8081      		ld r24,Z
+ 297 00f2 8660      		ori r24,lo8(6)
+ 298 00f4 8083      		st Z,r24
   78:adc.c         ****     //  ADC ~200kHz
   79:adc.c         ****     ADCSRA |= _BV(ADEN);
- 308               		.stabn	68,0,79,.LM49-.LFBB7
- 309               	.LM49:
- 310 00fe 8081      		ld r24,Z
- 311 0100 8068      		ori r24,lo8(-128)
- 312 0102 8083      		st Z,r24
+ 299               		.stabn	68,0,79,.LM47-.LFBB7
+ 300               	.LM47:
+ 301 00f6 8081      		ld r24,Z
+ 302 00f8 8068      		ori r24,lo8(-128)
+ 303 00fa 8083      		st Z,r24
   80:adc.c         ****     //  Enable ADC
   81:adc.c         ****     calibrate_timer0();
- 313               		.stabn	68,0,81,.LM50-.LFBB7
- 314               	.LM50:
-GAS LISTING /tmp/ccEcWHIK.s 			page 8
+ 304               		.stabn	68,0,81,.LM48-.LFBB7
+ 305               	.LM48:
+ 306 00fc 0C94 0000 		jmp calibrate_timer0
+ 307               		.size	init_adc, .-init_adc
+ 308               	.Lscope7:
+ 309               		.stabs	"",36,0,0,.Lscope7-.LFBB7
+ 310               	.global	OFFSET
+ 311               		.data
+ 312               		.type	OFFSET, @object
+ 313               		.size	OFFSET, 1
+ 314               	OFFSET:
+ 315 0000 B0        		.byte	-80
+ 316               		.stabs	"OFFSET:G(0,2)",32,0,11,0
+ 317               	.global	TIMER0_TOP
+GAS LISTING /tmp/ccnEDwfR.s 			page 8
 
 
- 315 0104 0C94 0000 		jmp calibrate_timer0
- 316               		.size	init_adc, .-init_adc
- 317               	.Lscope7:
- 318               		.stabs	"",36,0,0,.Lscope7-.LFBB7
- 319               	.global	OFFSET
- 320               		.section	.rodata
- 321               		.type	OFFSET, @object
- 322               		.size	OFFSET, 1
- 323               	OFFSET:
- 324 0000 B0        		.byte	-80
- 325               		.stabs	"OFFSET:G(0,6)=k(0,2)",32,0,10,0
- 326               	.global	sync
- 327               		.section .bss
- 328               		.type	sync, @object
- 329               		.size	sync, 1
- 330               	sync:
- 331 0000 00        		.zero	1
- 332               		.stabs	"sync:G(0,7)=B(0,8)=@s8;-16;",32,0,9,0
- 333               		.stabs	"_Bool:t(0,8)",128,0,0,0
- 334               	.global	adc_rdy
- 335               		.type	adc_rdy, @object
- 336               		.size	adc_rdy, 1
- 337               	adc_rdy:
- 338 0001 00        		.zero	1
- 339               		.stabs	"adc_rdy:G(0,7)",32,0,9,0
- 340               	.global	calibrating
- 341               		.type	calibrating, @object
- 342               		.size	calibrating, 1
- 343               	calibrating:
- 344 0002 00        		.zero	1
- 345               		.stabs	"calibrating:G(0,7)",32,0,9,0
- 346               	.global	adc_read
- 347               		.type	adc_read, @object
- 348               		.size	adc_read, 2
- 349               	adc_read:
- 350 0003 0000      		.zero	2
- 351               		.stabs	"adc_read:G(0,9)=B(0,4)",32,0,8,0
- 352               		.text
- 353               		.stabs	"",100,0,0,.Letext0
- 354               	.Letext0:
- 355               		.ident	"GCC: (GNU) 11.2.0"
- 356               	.global __do_copy_data
- 357               	.global __do_clear_bss
-GAS LISTING /tmp/ccEcWHIK.s 			page 9
+ 318               		.type	TIMER0_TOP, @object
+ 319               		.size	TIMER0_TOP, 1
+ 320               	TIMER0_TOP:
+ 321 0001 EA        		.byte	-22
+ 322               		.stabs	"TIMER0_TOP:G(0,2)",32,0,10,0
+ 323               	.global	sync
+ 324               		.section .bss
+ 325               		.type	sync, @object
+ 326               		.size	sync, 1
+ 327               	sync:
+ 328 0000 00        		.zero	1
+ 329               		.stabs	"sync:G(0,6)=B(0,7)=@s8;-16;",32,0,9,0
+ 330               		.stabs	"_Bool:t(0,7)",128,0,0,0
+ 331               	.global	adc_rdy
+ 332               		.type	adc_rdy, @object
+ 333               		.size	adc_rdy, 1
+ 334               	adc_rdy:
+ 335 0001 00        		.zero	1
+ 336               		.stabs	"adc_rdy:G(0,6)",32,0,9,0
+ 337               	.global	calibrating
+ 338               		.type	calibrating, @object
+ 339               		.size	calibrating, 1
+ 340               	calibrating:
+ 341 0002 00        		.zero	1
+ 342               		.stabs	"calibrating:G(0,6)",32,0,9,0
+ 343               	.global	adc_read
+ 344               		.type	adc_read, @object
+ 345               		.size	adc_read, 2
+ 346               	adc_read:
+ 347 0003 0000      		.zero	2
+ 348               		.stabs	"adc_read:G(0,8)=B(0,4)",32,0,8,0
+ 349               		.text
+ 350               		.stabs	"",100,0,0,.Letext0
+ 351               	.Letext0:
+ 352               		.ident	"GCC: (GNU) 11.2.0"
+ 353               	.global __do_copy_data
+ 354               	.global __do_clear_bss
+GAS LISTING /tmp/ccnEDwfR.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 adc.c
-     /tmp/ccEcWHIK.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccEcWHIK.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccEcWHIK.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccEcWHIK.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccEcWHIK.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccEcWHIK.s:18     .text:0000000000000000 init_timer0
-     /tmp/ccEcWHIK.s:54     .text:0000000000000014 adts_disable
-     /tmp/ccEcWHIK.s:75     .text:000000000000001a adts_enable
-     /tmp/ccEcWHIK.s:107    .text:000000000000002c __vector_24
-                            *ABS*:0000000000000002 __gcc_isr.n_pushed.001
-     /tmp/ccEcWHIK.s:343    .bss:0000000000000002 calibrating
-     /tmp/ccEcWHIK.s:349    .bss:0000000000000003 adc_read
-     /tmp/ccEcWHIK.s:337    .bss:0000000000000001 adc_rdy
-     /tmp/ccEcWHIK.s:154    .text:000000000000005e __vector_16
+     /tmp/ccnEDwfR.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccnEDwfR.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccnEDwfR.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccnEDwfR.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccnEDwfR.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccnEDwfR.s:18     .text:0000000000000000 init_timer0
+     /tmp/ccnEDwfR.s:320    .data:0000000000000001 TIMER0_TOP
+     /tmp/ccnEDwfR.s:54     .text:0000000000000016 adts_disable
+     /tmp/ccnEDwfR.s:75     .text:000000000000001c adts_enable
+     /tmp/ccnEDwfR.s:107    .text:000000000000002e __vector_24
+                            *ABS*:0000000000000001 __gcc_isr.n_pushed.001
+     /tmp/ccnEDwfR.s:346    .bss:0000000000000003 adc_read
+     /tmp/ccnEDwfR.s:334    .bss:0000000000000001 adc_rdy
+     /tmp/ccnEDwfR.s:142    .text:000000000000004e __vector_16
                             *ABS*:0000000000000001 __gcc_isr.n_pushed.002
-     /tmp/ccEcWHIK.s:330    .bss:0000000000000000 sync
-     /tmp/ccEcWHIK.s:179    .text:000000000000006a calibrate_timer0
-     /tmp/ccEcWHIK.s:286    .text:00000000000000f2 init_adc
-     /tmp/ccEcWHIK.s:323    .rodata:0000000000000000 OFFSET
+     /tmp/ccnEDwfR.s:327    .bss:0000000000000000 sync
+     /tmp/ccnEDwfR.s:167    .text:000000000000005a calibrate_timer0
+     /tmp/ccnEDwfR.s:340    .bss:0000000000000002 calibrating
+     /tmp/ccnEDwfR.s:314    .data:0000000000000000 OFFSET
+     /tmp/ccnEDwfR.s:277    .text:00000000000000ea init_adc
 
 UNDEFINED SYMBOLS
 __do_copy_data

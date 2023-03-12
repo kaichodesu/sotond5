@@ -28,7 +28,13 @@ typedef struct {
 	uint16_t foreground, background;
 } lcd;
 
+typedef struct {
+	uint16_t left, right;
+	uint16_t top, bottom;
+} rectangle;	
+
 extern lcd display;
+void fill_rectangle(rectangle r, uint16_t col);
 void init_lcd();
 void set_orientation(orientation o);
 void init_graphics();
@@ -36,3 +42,9 @@ void bat_pwr(bool state);
 void pwr_kw(uint8_t digit);
 void pwr_10(uint8_t digit);
 void pwr_100(uint8_t digit);
+void LC1_green(void);
+void LC1_red(void);
+void LC2_green(void);
+void LC2_red(void);
+void LC3_green(void);
+void LC3_red(void);
