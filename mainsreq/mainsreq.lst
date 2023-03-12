@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccdy1fxA.s 			page 1
+GAS LISTING /tmp/ccIMFxGa.s 			page 1
 
 
    1               		.file	"mainsreq.c"
@@ -7,449 +7,104 @@ GAS LISTING /tmp/ccdy1fxA.s 			page 1
    4               	__SREG__ = 0x3f
    5               	__tmp_reg__ = 0
    6               	__zero_reg__ = 1
-   7               		.text
-   8               	.Ltext0:
-   9               		.cfi_sections	.debug_frame
-  10               		.file 0 "/home/kaicho/Documents/Southampton/D5/lcdtest/mainsreq" "mainsreq.c"
-  11               	.global	init_PWM
-  12               		.type	init_PWM, @function
-  13               	init_PWM:
-  14               	.LFB4:
-  15               		.file 1 "mainsreq.c"
+   7               		.stabs	"/home/kaicho/Southampton/sotond5/sotond5/mainsreq/",100,0,2,.Ltext0
+   8               		.stabs	"mainsreq.c",100,0,2,.Ltext0
+   9               		.text
+  10               	.Ltext0:
+  11               		.stabs	"gcc2_compiled.",60,0,0,0
+  12               		.stabs	"init_PWM:F(0,1)=(0,1)",36,0,5,init_PWM
+  13               		.stabs	"uint8_t:t(0,2)=(0,3)=@s8;r(0,3);0;255;",128,0,126,0
+  14               		.stabs	"void:t(0,1)",128,0,0,0
+  15               		.stabs	"unsigned char:t(0,3)",128,0,0,0
+  16               	.global	init_PWM
+  17               		.type	init_PWM, @function
+  18               	init_PWM:
    1:mainsreq.c    **** #include "mainsreq.h"
-   2:mainsreq.c    **** //PWM-----------------------------------------------------
-   3:mainsreq.c    **** void init_PWM(void)
-   4:mainsreq.c    **** {
-  16               		.loc 1 4 1 view -0
-  17               		.cfi_startproc
-  18               	/* prologue: function */
-  19               	/* frame size = 0 */
-  20               	/* stack size = 0 */
-  21               	.L__stack_usage = 0
-   5:mainsreq.c    **** 	DDRD |= _BV(PD5);
-  22               		.loc 1 5 2 view .LVU1
-  23               		.loc 1 5 7 is_stmt 0 view .LVU2
-  24 0000 559A      		sbi 0xa,5
-   6:mainsreq.c    **** 	TCCR1A = _BV(COM1A0)
-  25               		.loc 1 6 2 is_stmt 1 view .LVU3
-  26               		.loc 1 6 9 is_stmt 0 view .LVU4
-  27 0002 81E4      		ldi r24,lo8(65)
-  28 0004 8093 8000 		sts 128,r24
-   7:mainsreq.c    **** 		 |_BV(WGM10);
-   8:mainsreq.c    **** 	TCCR1B = _BV(WGM13)
-  29               		.loc 1 8 2 is_stmt 1 view .LVU5
-  30               		.loc 1 8 9 is_stmt 0 view .LVU6
-  31 0008 82E1      		ldi r24,lo8(18)
-  32 000a 8093 8100 		sts 129,r24
-  33               	/* epilogue start */
-   9:mainsreq.c    **** 		 | _BV(CS11);
-  10:mainsreq.c    **** }
-  34               		.loc 1 10 1 view .LVU7
-  35 000e 0895      		ret
-  36               		.cfi_endproc
-  37               	.LFE4:
-  38               		.size	init_PWM, .-init_PWM
-  39               	.global	PWM
-  40               		.type	PWM, @function
-  41               	PWM:
-  42               	.LVL0:
-  43               	.LFB5:
-  11:mainsreq.c    **** 
-  12:mainsreq.c    **** void PWM(uint16_t duty_cycle)
-  13:mainsreq.c    **** {
-  44               		.loc 1 13 1 is_stmt 1 view -0
-GAS LISTING /tmp/ccdy1fxA.s 			page 2
+   2:mainsreq.c    **** #include <avr/interrupt.h>
+   3:mainsreq.c    **** 
+   4:mainsreq.c    **** //PWM-----------------------------------------------------
+   5:mainsreq.c    **** void init_PWM(void)
+   6:mainsreq.c    **** {
+  19               		.stabn	68,0,6,.LM0-.LFBB1
+  20               	.LM0:
+  21               	.LFBB1:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	/* stack size = 0 */
+  25               	.L__stack_usage = 0
+   7:mainsreq.c    **** 	DDRD |= _BV(PD5);
+  26               		.stabn	68,0,7,.LM1-.LFBB1
+  27               	.LM1:
+  28 0000 559A      		sbi 0xa,5
+   8:mainsreq.c    **** 	TCCR1A = _BV(COM1A1)|_BV(WGM10)|_BV(WGM12);
+  29               		.stabn	68,0,8,.LM2-.LFBB1
+  30               	.LM2:
+  31 0002 89E8      		ldi r24,lo8(-119)
+  32 0004 8093 8000 		sts 128,r24
+   9:mainsreq.c    **** 	//  Fast PWM
+  10:mainsreq.c    **** 	TCCR1B = _BV(CS10);
+  33               		.stabn	68,0,10,.LM3-.LFBB1
+  34               	.LM3:
+  35 0008 81E0      		ldi r24,lo8(1)
+  36 000a 8093 8100 		sts 129,r24
+  37               	/* epilogue start */
+  11:mainsreq.c    **** }
+  38               		.stabn	68,0,11,.LM4-.LFBB1
+  39               	.LM4:
+  40 000e 0895      		ret
+  41               		.size	init_PWM, .-init_PWM
+  42               	.Lscope1:
+  43               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+  44               		.stabs	"PWM:F(0,1)",36,0,13,PWM
+  45               		.stabs	"uint16_t:t(0,4)=(0,5)=r(0,5);0;0177777;",128,0,128,0
+  46               		.stabs	"unsigned int:t(0,5)",128,0,0,0
+GAS LISTING /tmp/ccIMFxGa.s 			page 2
 
 
-  45               		.cfi_startproc
-  46               	/* prologue: function */
-  47               	/* frame size = 0 */
-  48               	/* stack size = 0 */
-  49               	.L__stack_usage = 0
-  14:mainsreq.c    ****     OCR1A = (uint16_t) duty_cycle;
-  50               		.loc 1 14 5 view .LVU9
-  51               		.loc 1 14 11 is_stmt 0 view .LVU10
-  52 0010 9093 8900 		sts 136+1,r25
-  53 0014 8093 8800 		sts 136,r24
-  54               	/* epilogue start */
-  15:mainsreq.c    **** }
-  55               		.loc 1 15 1 view .LVU11
-  56 0018 0895      		ret
-  57               		.cfi_endproc
-  58               	.LFE5:
-  59               		.size	PWM, .-PWM
-  60               	.Letext0:
-  61               		.file 2 "/usr/avr/include/stdint.h"
-  62               		.section	.debug_info,"",@progbits
-  63               	.Ldebug_info0:
-  64 0000 B200 0000 		.long	0xb2
-  65 0004 0500      		.word	0x5
-  66 0006 01        		.byte	0x1
-  67 0007 04        		.byte	0x4
-  68 0008 0000 0000 		.long	.Ldebug_abbrev0
-  69 000c 03        		.uleb128 0x3
-  70 000d 0000 0000 		.long	.LASF12
-  71 0011 1D        		.byte	0x1d
-  72 0012 0000 0000 		.long	.LASF0
-  73 0016 0000 0000 		.long	.LASF1
-  74 001a 0000 0000 		.long	.Ltext0
-  75 001e 1A00 0000 		.long	.Letext0-.Ltext0
-  76 0022 0000 0000 		.long	.Ldebug_line0
-  77 0026 01        		.uleb128 0x1
-  78 0027 02        		.byte	0x2
-  79 0028 07        		.byte	0x7
-  80 0029 0000 0000 		.long	.LASF2
-  81 002d 04        		.uleb128 0x4
-  82 002e 02        		.byte	0x2
-  83 002f 05        		.byte	0x5
-  84 0030 696E 7400 		.string	"int"
-  85 0034 01        		.uleb128 0x1
-  86 0035 04        		.byte	0x4
-  87 0036 05        		.byte	0x5
-  88 0037 0000 0000 		.long	.LASF3
-  89 003b 01        		.uleb128 0x1
-  90 003c 01        		.byte	0x1
-  91 003d 08        		.byte	0x8
-  92 003e 0000 0000 		.long	.LASF4
-  93 0042 01        		.uleb128 0x1
-  94 0043 01        		.byte	0x1
-  95 0044 06        		.byte	0x6
-  96 0045 0000 0000 		.long	.LASF5
-  97 0049 02        		.uleb128 0x2
-  98 004a 0000 0000 		.long	.LASF7
-  99 004e 7E        		.byte	0x7e
-GAS LISTING /tmp/ccdy1fxA.s 			page 3
-
-
- 100 004f 5300 0000 		.long	0x53
- 101 0053 01        		.uleb128 0x1
- 102 0054 01        		.byte	0x1
- 103 0055 08        		.byte	0x8
- 104 0056 0000 0000 		.long	.LASF6
- 105 005a 02        		.uleb128 0x2
- 106 005b 0000 0000 		.long	.LASF8
- 107 005f 80        		.byte	0x80
- 108 0060 2600 0000 		.long	0x26
- 109 0064 01        		.uleb128 0x1
- 110 0065 04        		.byte	0x4
- 111 0066 07        		.byte	0x7
- 112 0067 0000 0000 		.long	.LASF9
- 113 006b 01        		.uleb128 0x1
- 114 006c 08        		.byte	0x8
- 115 006d 05        		.byte	0x5
- 116 006e 0000 0000 		.long	.LASF10
- 117 0072 01        		.uleb128 0x1
- 118 0073 08        		.byte	0x8
- 119 0074 07        		.byte	0x7
- 120 0075 0000 0000 		.long	.LASF11
- 121 0079 05        		.uleb128 0x5
- 122 007a 5057 4D00 		.string	"PWM"
- 123 007e 01        		.byte	0x1
- 124 007f 0C        		.byte	0xc
- 125 0080 06        		.byte	0x6
- 126 0081 0000 0000 		.long	.LFB5
- 127 0085 0A00 0000 		.long	.LFE5-.LFB5
- 128 0089 01        		.uleb128 0x1
- 129 008a 9C        		.byte	0x9c
- 130 008b A300 0000 		.long	0xa3
- 131 008f 06        		.uleb128 0x6
- 132 0090 0000 0000 		.long	.LASF13
- 133 0094 01        		.byte	0x1
- 134 0095 0C        		.byte	0xc
- 135 0096 13        		.byte	0x13
- 136 0097 5A00 0000 		.long	0x5a
- 137 009b 06        		.uleb128 0x6
- 138 009c 68        		.byte	0x68
- 139 009d 93        		.byte	0x93
- 140 009e 01        		.uleb128 0x1
- 141 009f 69        		.byte	0x69
- 142 00a0 93        		.byte	0x93
- 143 00a1 01        		.uleb128 0x1
- 144 00a2 00        		.byte	0
- 145 00a3 07        		.uleb128 0x7
- 146 00a4 0000 0000 		.long	.LASF14
- 147 00a8 01        		.byte	0x1
- 148 00a9 03        		.byte	0x3
- 149 00aa 06        		.byte	0x6
- 150 00ab 0000 0000 		.long	.LFB4
- 151 00af 1000 0000 		.long	.LFE4-.LFB4
- 152 00b3 01        		.uleb128 0x1
- 153 00b4 9C        		.byte	0x9c
- 154 00b5 00        		.byte	0
- 155               		.section	.debug_abbrev,"",@progbits
- 156               	.Ldebug_abbrev0:
-GAS LISTING /tmp/ccdy1fxA.s 			page 4
-
-
- 157 0000 01        		.uleb128 0x1
- 158 0001 24        		.uleb128 0x24
- 159 0002 00        		.byte	0
- 160 0003 0B        		.uleb128 0xb
- 161 0004 0B        		.uleb128 0xb
- 162 0005 3E        		.uleb128 0x3e
- 163 0006 0B        		.uleb128 0xb
- 164 0007 03        		.uleb128 0x3
- 165 0008 0E        		.uleb128 0xe
- 166 0009 00        		.byte	0
- 167 000a 00        		.byte	0
- 168 000b 02        		.uleb128 0x2
- 169 000c 16        		.uleb128 0x16
- 170 000d 00        		.byte	0
- 171 000e 03        		.uleb128 0x3
- 172 000f 0E        		.uleb128 0xe
- 173 0010 3A        		.uleb128 0x3a
- 174 0011 21        		.uleb128 0x21
- 175 0012 02        		.sleb128 2
- 176 0013 3B        		.uleb128 0x3b
- 177 0014 0B        		.uleb128 0xb
- 178 0015 39        		.uleb128 0x39
- 179 0016 21        		.uleb128 0x21
- 180 0017 16        		.sleb128 22
- 181 0018 49        		.uleb128 0x49
- 182 0019 13        		.uleb128 0x13
- 183 001a 00        		.byte	0
- 184 001b 00        		.byte	0
- 185 001c 03        		.uleb128 0x3
- 186 001d 11        		.uleb128 0x11
- 187 001e 01        		.byte	0x1
- 188 001f 25        		.uleb128 0x25
- 189 0020 0E        		.uleb128 0xe
- 190 0021 13        		.uleb128 0x13
- 191 0022 0B        		.uleb128 0xb
- 192 0023 03        		.uleb128 0x3
- 193 0024 1F        		.uleb128 0x1f
- 194 0025 1B        		.uleb128 0x1b
- 195 0026 1F        		.uleb128 0x1f
- 196 0027 11        		.uleb128 0x11
- 197 0028 01        		.uleb128 0x1
- 198 0029 12        		.uleb128 0x12
- 199 002a 06        		.uleb128 0x6
- 200 002b 10        		.uleb128 0x10
- 201 002c 17        		.uleb128 0x17
- 202 002d 00        		.byte	0
- 203 002e 00        		.byte	0
- 204 002f 04        		.uleb128 0x4
- 205 0030 24        		.uleb128 0x24
- 206 0031 00        		.byte	0
- 207 0032 0B        		.uleb128 0xb
- 208 0033 0B        		.uleb128 0xb
- 209 0034 3E        		.uleb128 0x3e
- 210 0035 0B        		.uleb128 0xb
- 211 0036 03        		.uleb128 0x3
- 212 0037 08        		.uleb128 0x8
- 213 0038 00        		.byte	0
-GAS LISTING /tmp/ccdy1fxA.s 			page 5
-
-
- 214 0039 00        		.byte	0
- 215 003a 05        		.uleb128 0x5
- 216 003b 2E        		.uleb128 0x2e
- 217 003c 01        		.byte	0x1
- 218 003d 3F        		.uleb128 0x3f
- 219 003e 19        		.uleb128 0x19
- 220 003f 03        		.uleb128 0x3
- 221 0040 08        		.uleb128 0x8
- 222 0041 3A        		.uleb128 0x3a
- 223 0042 0B        		.uleb128 0xb
- 224 0043 3B        		.uleb128 0x3b
- 225 0044 0B        		.uleb128 0xb
- 226 0045 39        		.uleb128 0x39
- 227 0046 0B        		.uleb128 0xb
- 228 0047 27        		.uleb128 0x27
- 229 0048 19        		.uleb128 0x19
- 230 0049 11        		.uleb128 0x11
- 231 004a 01        		.uleb128 0x1
- 232 004b 12        		.uleb128 0x12
- 233 004c 06        		.uleb128 0x6
- 234 004d 40        		.uleb128 0x40
- 235 004e 18        		.uleb128 0x18
- 236 004f 7A        		.uleb128 0x7a
- 237 0050 19        		.uleb128 0x19
- 238 0051 01        		.uleb128 0x1
- 239 0052 13        		.uleb128 0x13
- 240 0053 00        		.byte	0
- 241 0054 00        		.byte	0
- 242 0055 06        		.uleb128 0x6
- 243 0056 05        		.uleb128 0x5
- 244 0057 00        		.byte	0
- 245 0058 03        		.uleb128 0x3
- 246 0059 0E        		.uleb128 0xe
- 247 005a 3A        		.uleb128 0x3a
- 248 005b 0B        		.uleb128 0xb
- 249 005c 3B        		.uleb128 0x3b
- 250 005d 0B        		.uleb128 0xb
- 251 005e 39        		.uleb128 0x39
- 252 005f 0B        		.uleb128 0xb
- 253 0060 49        		.uleb128 0x49
- 254 0061 13        		.uleb128 0x13
- 255 0062 02        		.uleb128 0x2
- 256 0063 18        		.uleb128 0x18
- 257 0064 00        		.byte	0
- 258 0065 00        		.byte	0
- 259 0066 07        		.uleb128 0x7
- 260 0067 2E        		.uleb128 0x2e
- 261 0068 00        		.byte	0
- 262 0069 3F        		.uleb128 0x3f
- 263 006a 19        		.uleb128 0x19
- 264 006b 03        		.uleb128 0x3
- 265 006c 0E        		.uleb128 0xe
- 266 006d 3A        		.uleb128 0x3a
- 267 006e 0B        		.uleb128 0xb
- 268 006f 3B        		.uleb128 0x3b
- 269 0070 0B        		.uleb128 0xb
- 270 0071 39        		.uleb128 0x39
-GAS LISTING /tmp/ccdy1fxA.s 			page 6
-
-
- 271 0072 0B        		.uleb128 0xb
- 272 0073 27        		.uleb128 0x27
- 273 0074 19        		.uleb128 0x19
- 274 0075 11        		.uleb128 0x11
- 275 0076 01        		.uleb128 0x1
- 276 0077 12        		.uleb128 0x12
- 277 0078 06        		.uleb128 0x6
- 278 0079 40        		.uleb128 0x40
- 279 007a 18        		.uleb128 0x18
- 280 007b 7A        		.uleb128 0x7a
- 281 007c 19        		.uleb128 0x19
- 282 007d 00        		.byte	0
- 283 007e 00        		.byte	0
- 284 007f 00        		.byte	0
- 285               		.section	.debug_aranges,"",@progbits
- 286 0000 1C00 0000 		.long	0x1c
- 287 0004 0200      		.word	0x2
- 288 0006 0000 0000 		.long	.Ldebug_info0
- 289 000a 04        		.byte	0x4
- 290 000b 00        		.byte	0
- 291 000c 0000      		.word	0
- 292 000e 0000      		.word	0
- 293 0010 0000 0000 		.long	.Ltext0
- 294 0014 1A00 0000 		.long	.Letext0-.Ltext0
- 295 0018 0000 0000 		.long	0
- 296 001c 0000 0000 		.long	0
- 297               		.section	.debug_line,"",@progbits
- 298               	.Ldebug_line0:
- 299 0000 AA00 0000 		.section	.debug_str,"MS",@progbits,1
- 299      0500 0400 
- 299      3300 0000 
- 299      0201 01FB 
- 299      0E0D 0001 
- 300               	.LASF2:
- 301 0000 756E 7369 		.string	"unsigned int"
- 301      676E 6564 
- 301      2069 6E74 
- 301      00
- 302               	.LASF7:
- 303 000d 7569 6E74 		.string	"uint8_t"
- 303      385F 7400 
- 304               	.LASF9:
- 305 0015 6C6F 6E67 		.string	"long unsigned int"
- 305      2075 6E73 
- 305      6967 6E65 
- 305      6420 696E 
- 305      7400 
- 306               	.LASF5:
- 307 0027 7369 676E 		.string	"signed char"
- 307      6564 2063 
- 307      6861 7200 
- 308               	.LASF14:
- 309 0033 696E 6974 		.string	"init_PWM"
- 309      5F50 574D 
- 309      00
- 310               	.LASF12:
- 311 003c 474E 5520 		.string	"GNU C17 12.2.0 -mn-flash=1 -mno-skip-bug -mdouble=32 -mlong-double=64 -mmcu=avr5 -g -Os -
-GAS LISTING /tmp/ccdy1fxA.s 			page 7
-
-
- 311      4331 3720 
- 311      3132 2E32 
- 311      2E30 202D 
- 311      6D6E 2D66 
- 312               	.LASF11:
- 313 00c7 6C6F 6E67 		.string	"long long unsigned int"
- 313      206C 6F6E 
- 313      6720 756E 
- 313      7369 676E 
- 313      6564 2069 
- 314               	.LASF8:
- 315 00de 7569 6E74 		.string	"uint16_t"
- 315      3136 5F74 
- 315      00
- 316               	.LASF6:
- 317 00e7 756E 7369 		.string	"unsigned char"
- 317      676E 6564 
- 317      2063 6861 
- 317      7200 
- 318               	.LASF3:
- 319 00f5 6C6F 6E67 		.string	"long int"
- 319      2069 6E74 
- 319      00
- 320               	.LASF13:
- 321 00fe 6475 7479 		.string	"duty_cycle"
- 321      5F63 7963 
- 321      6C65 00
- 322               	.LASF4:
- 323 0109 6368 6172 		.string	"char"
- 323      00
- 324               	.LASF10:
- 325 010e 6C6F 6E67 		.string	"long long int"
- 325      206C 6F6E 
- 325      6720 696E 
- 325      7400 
- 326               		.section	.debug_line_str,"MS",@progbits,1
- 327               	.LASF1:
- 328 0000 2F68 6F6D 		.string	"/home/kaicho/Documents/Southampton/D5/lcdtest/mainsreq"
- 328      652F 6B61 
- 328      6963 686F 
- 328      2F44 6F63 
- 328      756D 656E 
- 329               	.LASF0:
- 330 0037 6D61 696E 		.string	"mainsreq.c"
- 330      7372 6571 
- 330      2E63 00
- 331 0042 2F68 6F6D 		.ident	"GCC: (GNU) 12.2.0"
- 331      652F 6B61 
- 331      6963 686F 
- 331      2F44 6F63 
- 331      756D 656E 
-GAS LISTING /tmp/ccdy1fxA.s 			page 8
+  47               		.stabs	"duty_cycle:P(0,2)",64,0,13,24
+  48               	.global	PWM
+  49               		.type	PWM, @function
+  50               	PWM:
+  12:mainsreq.c    **** 
+  13:mainsreq.c    **** void PWM(uint8_t duty_cycle)
+  14:mainsreq.c    **** {
+  51               		.stabn	68,0,14,.LM5-.LFBB2
+  52               	.LM5:
+  53               	.LFBB2:
+  54               	/* prologue: function */
+  55               	/* frame size = 0 */
+  56               	/* stack size = 0 */
+  57               	.L__stack_usage = 0
+  15:mainsreq.c    ****     OCR1A = (uint8_t) duty_cycle;
+  58               		.stabn	68,0,15,.LM6-.LFBB2
+  59               	.LM6:
+  60 0010 90E0      		ldi r25,0
+  61               		.stabn	68,0,15,.LM7-.LFBB2
+  62               	.LM7:
+  63 0012 9093 8900 		sts 136+1,r25
+  64 0016 8093 8800 		sts 136,r24
+  65               	/* epilogue start */
+  16:mainsreq.c    **** }
+  66               		.stabn	68,0,16,.LM8-.LFBB2
+  67               	.LM8:
+  68 001a 0895      		ret
+  69               		.size	PWM, .-PWM
+  70               	.Lscope2:
+  71               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+  72               		.stabs	"",100,0,0,.Letext0
+  73               	.Letext0:
+  74               		.ident	"GCC: (GNU) 11.2.0"
+GAS LISTING /tmp/ccIMFxGa.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 mainsreq.c
-     /tmp/ccdy1fxA.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccdy1fxA.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccdy1fxA.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccdy1fxA.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccdy1fxA.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccdy1fxA.s:13     .text:0000000000000000 init_PWM
-     /tmp/ccdy1fxA.s:16     .text:0000000000000000 .Loc.0
-     /tmp/ccdy1fxA.s:17     .text:0000000000000000 L0
-     /tmp/ccdy1fxA.s:22     .text:0000000000000000 .Loc.1
-     /tmp/ccdy1fxA.s:23     .text:0000000000000000 .Loc.2
-     /tmp/ccdy1fxA.s:25     .text:0000000000000002 .Loc.3
-     /tmp/ccdy1fxA.s:26     .text:0000000000000002 .Loc.4
-     /tmp/ccdy1fxA.s:29     .text:0000000000000008 .Loc.5
-     /tmp/ccdy1fxA.s:30     .text:0000000000000008 .Loc.6
-     /tmp/ccdy1fxA.s:34     .text:000000000000000e .Loc.7
-     /tmp/ccdy1fxA.s:36     .text:0000000000000010 L0
-     /tmp/ccdy1fxA.s:41     .text:0000000000000010 PWM
-     /tmp/ccdy1fxA.s:44     .text:0000000000000010 .Loc.8
-     /tmp/ccdy1fxA.s:45     .text:0000000000000010 L0
-     /tmp/ccdy1fxA.s:50     .text:0000000000000010 .Loc.9
-     /tmp/ccdy1fxA.s:51     .text:0000000000000010 .Loc.10
-     /tmp/ccdy1fxA.s:55     .text:0000000000000018 .Loc.11
-     /tmp/ccdy1fxA.s:57     .text:000000000000001a L0
-     /tmp/ccdy1fxA.s:62     .text:000000000000001a L0
-                     .debug_frame:0000000000000000 L0
-     /tmp/ccdy1fxA.s:156    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
-     /tmp/ccdy1fxA.s:8      .text:0000000000000000 .Ltext0
-     /tmp/ccdy1fxA.s:60     .text:000000000000001a .Letext0
-     /tmp/ccdy1fxA.s:298    .debug_line:0000000000000000 .Ldebug_line0
-     /tmp/ccdy1fxA.s:43     .text:0000000000000010 .LFB5
-     /tmp/ccdy1fxA.s:58     .text:000000000000001a .LFE5
-     /tmp/ccdy1fxA.s:14     .text:0000000000000000 .LFB4
-     /tmp/ccdy1fxA.s:37     .text:0000000000000010 .LFE4
-     /tmp/ccdy1fxA.s:63     .debug_info:0000000000000000 .Ldebug_info0
+     /tmp/ccIMFxGa.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccIMFxGa.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccIMFxGa.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccIMFxGa.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccIMFxGa.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccIMFxGa.s:18     .text:0000000000000000 init_PWM
+     /tmp/ccIMFxGa.s:50     .text:0000000000000010 PWM
 
 NO UNDEFINED SYMBOLS

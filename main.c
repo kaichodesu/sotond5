@@ -1,3 +1,9 @@
+#define PV_CALIBRATED 3.16
+#define WIND_CALIBRATED 3.23
+#define VBUS_CALIBRATED 3.10
+#define IBUS_CALIBRATED 3.33
+
+#include <avr/interrupt.h>
 #include <stdbool.h>
 #include <avr/io.h>
 #include <util/delay.h>
@@ -6,27 +12,13 @@
 #include "liblcd/ili934x.h"
 #include "libio/io.h"
 #include "libadc/adc.h"
-#include <avr/interrupt.h>
+#include "libalg/alg.h"
+#include "mainsreq/mainsreq.h"
 // DISPLAY 240 x 320
-#define PV_CALIBRATED 3.16
-#define WIND_CALIBRATED 3.23
-#define VBUS_CALIBRATED 3.10
-#define IBUS_CALIBRATED 3.33
 
-//========================================================================//
-// Scenario constants
-const uint8_t MainsMAX = 2;
-const uint8_t BatteryChargeI = 1;
-const float Load1 = 1.2;
-const float Load2 = 2;
-const float Load3 = 0.8;
-//========================================================================//
-
+uint16_t ibus, pvc, wtc;
 uint16_t drift = 0;
 //  An unsigned int used to regulate TIMER0 drift.
-uint16_t ibus, pvc, wtc;
-//  uints for initial time sensitive data storage
-float PV, Wind, BusI, MainsReq;
 
 void init(){
     init_lcd();
@@ -35,6 +27,7 @@ void init(){
     init_graphics();
     init_timers();
     init_adc();
+    init_PWM();
 }
 
 void lcd_update(void){
@@ -54,10 +47,15 @@ void lcd_test(void){
 
 int main(){
     init();
+    uint16_t pwm = 127;
     while(1){
         if(sync){
 
             LS3_hi();
+        if (pwm >=255)
+            pwm = 0;
+        PWM(pwm);
+        pwm++;
 
             TCCR2B = 0x01;
             //  Starting the ADCMUX timer.
@@ -67,133 +65,44 @@ int main(){
             adts_disable();
             //  Enable Free Running Mode
 
+            //  Reading IBUS value.
             while(adc_mux_rdy == 0);
             ADMUX = 0x03;
             adc_mux_rdy = false;
             //  We change ADMUX while the current conversion is taking place
-
             while(adc_rdy == 0);
+            TCCR2B = 0x01;
+            //  Start the ADCMUX timer for the next conversion
             BusI = adc_read;
             adc_rdy = false;
-            /*
-            ADMUX = 0x03;
-            ADCSRA |=_BV(ADSC);
-            while(ADCSRA &_BV(ADSC));
-            wtc = ADC;
-            //  Third for Wind Turbine Capacity.
 
+            //  Reading Wind Capacity
+            while(adc_mux_rdy == 0);
             ADMUX = 0x04;
-            ADCSRA |=_BV(ADSC);
-            while(ADCSRA &_BV(ADSC));
-            pvc = ADC;
-            */
-            LS3_lo();
+            adc_mux_rdy = false;
+            //  We change ADMUX while the current conversion is taking place
+            while(adc_rdy == 0);
+            TCCR2B = 0x01;
+            //  Start the ADCMUX timer for the next conversion
+            wtc = adc_read;
+            adc_rdy = false;
 
+            //  Reading PV Capacity
+            while(adc_mux_rdy == 0);
+            ADMUX = 0x05;
+            adc_mux_rdy = false;
+            //  We change ADMUX while the current conversion is taking place
+            while(adc_rdy == 0);
+            pvc = adc_read;
+            adc_rdy = false;
 
-            //  Fourth for PV Capacity.
-
-            /*
             PV = pvc*PV_CALIBRATED/1024;
             Wind = wtc*WIND_CALIBRATED/1024;
             BusI = ibus*IBUS_CALIBRATED/1024;
 
-            MainsReq =   (10/MainsMAX) * BusI;
+            // algorithm();
 
-            if(BusI + BatteryChargeI < MainsMAX){
-                DBAT_lo();
-                CBAT_hi();
-            }
-            else{
-                CBAT_lo();
-                DBAT_hi();
-            }
-
-            if(MainsReq >= 10){
-                MainsReq = 10;
-            }
-
-            if(~LC1 && ~LC2 && ~LC3){
-                LS1_lo();
-                LS2_lo();
-                LS3_lo();
-
-            }
-
-            if(LC1 && ~LC2 && ~LC3){
-                //we will take the busI in the next if loop BusIdiff. If BusI < Bus
-                if(Load1 < MainsMAX + PV + Wind){
-                    LS1_hi();
-                }
-            }
-            else LS1_lo();
-
-            if(~LC1 && LC2 && ~LC3 ){
-                if(Load2 < MainsMAX + PV + Wind){
-                    LS2_hi();
-                }
-                else LS2_lo();
-            }
-
-            if( LC1 && LC2 && ~LC3){
-                if(Load1 + Load2 < MainsMAX + PV + Wind){
-                    LS2_hi();
-                }
-                else LS2_lo();
-                if(Load1 < MainsMAX + PV + Wind){
-                    LS1_hi();
-                }
-                else LS1_lo();
-            }
-
-            if(~LC1 && ~LC2 && LC3){
-                if(Load3 < MainsMAX + PV + Wind){
-                    LS3_hi();
-                }
-                else LS3_lo();
-            }
-
-            if(LC1 && ~LC2 && LC3){
-                if(Load3 + Load1  < MainsMAX + PV + Wind){
-                    LS3_hi();
-                }
-                else LS3_lo();
-
-                if(Load1 < MainsMAX + PV + Wind){
-                    LS1_hi();
-                }
-                else LS1_lo();
-            }
-
-            if(~LC1 && LC2 && LC3  ){
-                if(Load2 + Load3 < MainsMAX + PV + Wind){
-                    LS3_hi();
-                }
-                else LS3_lo();
-
-                if(Load2 < MainsMAX + PV + Wind){
-                    LS2_hi();
-                }
-                else LS2_lo();
-            }
-
-            if(LC1 && LC2 && LC3 ){
-                if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind){
-                    LS3_hi();
-                }
-                else LS3_lo();
-
-                if(Load2 + Load1 < MainsMAX + PV + Wind){
-                    LS2_hi();
-                }
-                else LS2_lo();
-
-                if(Load1 < MainsMAX + PV + Wind){
-                    LS1_hi();
-                }
-                else LS1_lo();
-            }
-
-            */
+            LS3_lo();
 
             TIMSK0 |= _BV(OCIE0A);
             adts_enable();
