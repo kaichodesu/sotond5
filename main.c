@@ -22,6 +22,8 @@
 uint16_t ibus, pvc, wtc;
 uint16_t drift = 0;
 //  An unsigned int used to regulate TIMER0 drift.
+uint16_t watchdog = 0;
+
 
 bool battery_pwr_state[2] = {false,false};
 uint8_t power_kw_digit[2] = {0,0};
@@ -34,6 +36,7 @@ uint8_t wind_pwr;
 uint8_t pv_pwr;
 float power;
 uint8_t power1, power10, power100;
+float ibusarray[5], windarray[5], pvarray[5];
 
 
 
@@ -45,23 +48,22 @@ void init(){
     set_orientation(North);
     init_io();
     init_graphics();
-    kamimashita();
-    init_timers();
+    //kamimashita();
     init_adc();
     init_PWM();
-    init_graphics();
-    init_adc();
+    //init_graphics();
+    //init_adc();
 }
 
 
 void lcd_update(void){
     //  We only want to draw to pixels that have changed.
-    wind_pwr = round((Wind/3.3) * 94);
-    pv_pwr = round((PV/3.3) * 94);
+    wind_pwr = round((Wind/3) * 94);
+    pv_pwr = round((PV) * 94);
 	power = BusI * 300/1000;
-	power1 = (uint8_t) round(power);
-	power10 = ((uint8_t) round(power * 10)) % 10;
-	power100 = ((uint8_t) round(power * 100)) % 10;
+	power1 = (uint8_t) floor(power);
+	power10 = ((uint8_t) round(power * 100)) % 10;
+	power100 = ((uint8_t) floor(power * 10)) % 10;
 
 	power_kw_digit[0] = power_kw_digit[1];  //used to make present-state become previous-state
 	power_10_digit[0] = power_10_digit[1];
@@ -129,7 +131,7 @@ void lcd_update(void){
 
 	if(power_kw_digit[0] != power_kw_digit[1] )
 	{
-		pwr_kw(power_10_digit[1]);
+		pwr_kw(power_kw_digit[1]);
 	}
 
     if(battery_pwr_state[0] != battery_pwr_state[1]);
@@ -149,7 +151,7 @@ void lcd_update(void){
 
 	if(power_100_digit[0] != power_100_digit[1])
 	{
-		pwr_100(power_10_digit[1]);
+		pwr_100(power_100_digit[1]);
 	}
 
 	if(bar_value_wind[0] != bar_value_wind[1])
@@ -189,24 +191,27 @@ int main(){
                 adc_rdy = false;
                 //TCCR2B = 0x01;
                 //  Start the ADCMUX timer for the next conversion
-                BusI = adc_read*IBUS_CALIBRATED/1024;
+                ibusarray[0] = adc_read*IBUS_CALIBRATED/1024;
                 adc_rdy = false;
                 ADCSRA |=_BV(ADSC);
                 //adc_mux_rdy = false;
                 //  We change ADMUX while the current conversion is taking place
                 while(adc_rdy == 0);
-                //TCCR2B = 0x01;
-                //  Start the ADCMUX timer for the next conversion
-                BusI = adc_read*IBUS_CALIBRATED/1024;
+                ibusarray[1] = adc_read*IBUS_CALIBRATED/1024;
                 adc_rdy = false;
                 ADCSRA |=_BV(ADSC);
-                //adc_mux_rdy = false;
-                //  We change ADMUX while the current conversion is taking place
                 while(adc_rdy == 0);
-                //TCCR2B = 0x01;
-                //  Start the ADCMUX timer for the next conversion
                 adc_rdy = false;
-                BusI = adc_read*IBUS_CALIBRATED/1024;
+                ibusarray[2] = adc_read*IBUS_CALIBRATED/1024;
+                ADCSRA |=_BV(ADSC);
+                while(adc_rdy == 0);
+                adc_rdy = false;
+                ibusarray[3] = adc_read*IBUS_CALIBRATED/1024;
+                ADCSRA |=_BV(ADSC);
+                while(adc_rdy == 0);
+                adc_rdy = false;
+                ibusarray[4] = adc_read*IBUS_CALIBRATED/1024;
+                BusI = (ibusarray[0] +ibusarray[1] +ibusarray[2] +ibusarray[3] +ibusarray[4])/5;
             }
 
             //  Reading Wind Capacity==========================================
@@ -218,32 +223,25 @@ int main(){
             while(adc_rdy == 0);
             //TCCR2B = 0x01;
             //  Start the ADCMUX timer for the next conversion
-            Wind = adc_read*WIND_CALIBRATED/1024;
+            windarray[0] = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
-            //adc_mux_rdy = false;
-            //  We change ADMUX while the current conversion is taking place
             while(adc_rdy == 0);
-            //TCCR2B = 0x01;
-            //  Start the ADCMUX timer for the next conversion
-            Wind = adc_read*WIND_CALIBRATED/1024;
+            windarray[1] = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
-            //adc_mux_rdy = false;
-            //  We change ADMUX while the current conversion is taking place
             while(adc_rdy == 0);
-            //TCCR2B = 0x01;
-            //  Start the ADCMUX timer for the next conversion
-            Wind = adc_read*WIND_CALIBRATED/1024;
+            windarray[2] = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
-            //adc_mux_rdy = false;
-            //  We change ADMUX while the current conversion is taking place
             while(adc_rdy == 0);
-            //TCCR2B = 0x01;
-            //  Start the ADCMUX timer for the next conversion
-            Wind = adc_read*WIND_CALIBRATED/1024;
+            windarray[3] = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
+            ADCSRA |=_BV(ADSC);
+            while(adc_rdy == 0);
+            windarray[4] = adc_read*WIND_CALIBRATED/1024;
+            adc_rdy = false;
+            Wind = (windarray[0] + windarray[1] + windarray[2] + windarray[3] + windarray[4])/5;
 
             //==================================================================
             //  Reading PV Capacity
@@ -254,12 +252,25 @@ int main(){
             ADMUX = 0x04;
             ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            PV = adc_read*PV_CALIBRATED/1024;
+            pvarray[0] = adc_read*PV_CALIBRATED/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            PV = adc_read*PV_CALIBRATED/1024;
+            pvarray[1] = adc_read*PV_CALIBRATED/1024;
             adc_rdy = false;
+            ADCSRA |=_BV(ADSC);
+            while(adc_rdy == 0);
+            pvarray[2] = adc_read*PV_CALIBRATED/1024;
+            adc_rdy = false;
+            ADCSRA |=_BV(ADSC);
+            while(adc_rdy == 0);
+            pvarray[3] = adc_read*PV_CALIBRATED/1024;
+            adc_rdy = false;
+            ADCSRA |=_BV(ADSC);
+            while(adc_rdy == 0);
+            pvarray[4] = adc_read*PV_CALIBRATED/1024;
+            adc_rdy = false;
+            PV = (pvarray[0] + pvarray[1] + pvarray[2] + pvarray[3] + pvarray[4])/5;
 
             //==================================================================
 
@@ -270,7 +281,8 @@ int main(){
 
             algorithm();
 
-            PWM((uint8_t)round((MainsReq/10)*255));
+            //PWM((uint8_t)round((MainsReq/10)*255));
+            PWM(255);
 
             drift++;
 
@@ -278,14 +290,13 @@ int main(){
                 lcd_update();
                 //  Runs the screen at 50Hz.
 
-            /*if (drift == 1 | drift == 3 | drift == 5 | drift == 7){
-                TIMER0_TOP = 233;
+            if (drift == 1){
+                OCR0A = 233;
             }
-            if (drift == 2 | drift == 4 | drift == 6){
-                TIMER0_TOP = 234;
-            }*/
-            if (drift == 8)
+            if (drift == 8){
                 drift = 0;
+                OCR0A = 236;
+            }
 
             TIMSK0 |= _BV(OCIE0A);
             adts_enable();

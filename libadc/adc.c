@@ -16,7 +16,6 @@ void init_timers(void)
 	TCCR0A = 0x02; // set timer0 to CTC mode with 1024 prescaler
 	TCCR0B = 0x05;
 	TCNT0 = 0;
-    OCR0A = TIMER0_TOP;
     TIMSK0 = 0;
 
     TCCR2A = 0x02;
@@ -58,25 +57,26 @@ void calibrate_timer0(void)
     ADCSRA |= _BV(ADIE);
     adts_disable();
     //  Turn off OCR0A triggering if it is enabled.
-	ADMUX = 0x06;
+	ADMUX = 0x05;
     //  Select PA5 as the ADC source.
     ADCSRA |=_BV(ADATE);
     ADCSRA |= _BV(ADSC);
     //  start conversions in free running mode
-    while(adc_read <= 1){}
+    while(adc_read <= 20){}
         //  Waiting for the ADC to rise into the rectified waveform.
 	while(adc_read > 0){}
     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
-    TCNT0 = 0;
     OCR0A = OFFSET;
+    init_timers();
     adts_enable();
+    ADMUX = 0x06;
     ADCSRA &= ~_BV(ADIE);
     TIMSK0 |= _BV(OCIE0A);
     //ADCSRA &= ~_BV(ADIE);
     //  Reset timer 0 and turn off ADC interrupts
-	while(!sync); //here we have reached a peak
+	while(sync == false); //here we have reached a peak
 	TCNT0 = 0; //reset timer count
-	TCCR0B = 0x04;
+	TCCR0B = 0x05;
 	OCR0A = TIMER0_TOP;//output compare 1 cycle after the peak
 	sync = false;
     ADCSRA |= _BV(ADIE);
