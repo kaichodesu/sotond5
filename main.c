@@ -129,7 +129,12 @@ void lcd_update(void){
 
 	if(power_kw_digit[0] != power_kw_digit[1] )
 	{
-		pwr_kw(power_kw_digit[1]);
+		pwr_kw(power_10_digit[1]);
+	}
+
+    if(battery_pwr_state[0] != battery_pwr_state[1]);
+	{
+		bat_pwr(battery_pwr_state[1]);
 	}
 
 	if(power_10_digit[0] != power_10_digit[1])
@@ -137,19 +142,14 @@ void lcd_update(void){
 		pwr_10(power_10_digit[1]);
 	}
 
-	if(power_100_digit[0] != power_100_digit[1])
-	{
-		pwr_100(power_100_digit[1]);
-	}
-
-	if(battery_pwr_state[0] != battery_pwr_state[1]);
-	{
-		bat_pwr(battery_pwr_state[1]);
-	}
-
 	if(bar_value_sun[0] != bar_value_sun[1])
 	{
 		pwr_bar_sun(pv_pwr);
+    }
+
+	if(power_100_digit[0] != power_100_digit[1])
+	{
+		pwr_100(power_10_digit[1]);
 	}
 
 	if(bar_value_wind[0] != bar_value_wind[1])

@@ -54,219 +54,6 @@
 //  Dammit AVR why dont you include standard library functions.
 //  The 1284P supports LPM and ELPM but its not in iom1284p.h ;(
 
-lcd display = {LCDWIDTH, LCDHEIGHT, North, 0, 0, 0x20E4, 0xFF99};
-
-void init_lcd()
-{
-	/* Disable JTAG in software, so that it does not interfere with Port C  */
-	/* It will be re-enabled after a power cycle if the JTAGEN fuse is set. */
-	MCUCR |= (1<<JTD);
-	MCUCR |= (1<<JTD);
-
-	/* Configure ports */
-	CTRL_DDR = 0x7F;
-	// PIN 7 on the control port is an input.
-	DATA_DDR = 0xFF;
-
-	init_display_controller();
-}
-
-void set_orientation(orientation o)
-{
-	display.orient = o;
-	write_cmd(MEMORY_ACCESS_CONTROL);
-	if (o==North) {
-		display.width = LCDWIDTH;
-		display.height = LCDHEIGHT;
-		write_data(0x48);
-	}
-	else if (o==West) {
-		display.width = LCDHEIGHT;
-		display.height = LCDWIDTH;
-		write_data(0xE8);
-	}
-	else if (o==South) {
-		display.width = LCDWIDTH;
-		display.height = LCDHEIGHT;
-		write_data(0x88);
-	}
-	else if (o==East) {
-		display.width = LCDHEIGHT;
-		display.height = LCDWIDTH;
-		write_data(0x28);
-	}
-	write_cmd(COLUMN_ADDRESS_SET);
-	write_data16(0);
-	write_data16(display.width-1);
-	write_cmd(PAGE_ADDRESS_SET);
-	write_data16(0);
-	write_data16(display.height-1);
-}
-
-void init_graphics()
-{
-	uint16_t x, y;
-	write_cmd(COLUMN_ADDRESS_SET);
-	write_data16(0);
-	write_data16(240);
-	write_cmd(PAGE_ADDRESS_SET);
-	write_data16(0);
-	write_data16(160);
-	write_cmd(MEMORY_WRITE);
-	for(y = 0; y <= 79; y++){
-		for(x = 0; x <= 119; x++){
-			write_data16( pgm_read_word( &(bg1_1[x+y*120])));
-			write_data16( pgm_read_word( &(bg1_1[x+y*120])));
-		}
-		for(x = 0; x <= 119; x++){
-			write_data16( pgm_read_word( &(bg1_1[x+y*120])));
-			write_data16( pgm_read_word( &(bg1_1[x+y*120])));
-		}
-	}
-	write_cmd(COLUMN_ADDRESS_SET);
-	write_data16(0);
-	write_data16(240);
-	write_cmd(PAGE_ADDRESS_SET);
-	write_data16(160);
-	write_data16(320);
-	write_cmd(MEMORY_WRITE);
-	for(y = 0; y <= 79; y++){
-		for(x = 0; x <= 119; x++){
-			write_data16( pgm_read_word( &(bg1_2[x+y*120])));
-			write_data16( pgm_read_word( &(bg1_2[x+y*120])));
-		}
-		for(x = 0; x <= 119; x++){
-			write_data16( pgm_read_word( &(bg1_2[x+y*120])));
-			write_data16( pgm_read_word( &(bg1_2[x+y*120])));
-		}
-	}
-}
-
-void fill_rectangle(rectangle r, uint16_t col)
-{
-	uint16_t x, y;
-	write_cmd(COLUMN_ADDRESS_SET);
-	write_data16(r.left);
-	write_data16(r.right);
-	write_cmd(PAGE_ADDRESS_SET);
-	write_data16(r.top);
-	write_data16(r.bottom);
-	write_cmd(MEMORY_WRITE);
-	for(x=r.left; x<=r.right; x++)
-		for(y=r.top; y<=r.bottom; y++)
-			write_data16(col);
-}
-
-void LC1_green(void)
-{
-	rectangle LC1 = {24,28,18,22};
-	fill_rectangle(LC1,GREEN);
-}
-
-void LC1_red(void)
-{
-	rectangle LC1 = {24,28,18,22};
-	fill_rectangle(LC1,RED);
-}
-
-void LC2_green(void)
-{
-	rectangle LC2 = {24,28,50,54};
-	fill_rectangle(LC2,GREEN);
-}
-
-void LC2_red(void)
-{
-	rectangle LC2 = {24,28,50,54};
-	fill_rectangle(LC2,RED);
-}
-
-void LC3_green(void)
-{
-	rectangle LC3 = {24,28,80,84};
-	fill_rectangle(LC3,GREEN);
-}
-
-void LC3_red(void)
-{
-	rectangle LC3 = {24,28,80,84};
-	fill_rectangle(LC3,RED);
-}
-
-
-void LS1_green(void)
-{
-	rectangle LC1 = {212,216,18,22};
-	fill_rectangle(LC1,GREEN);
-}
-
-void LS1_red(void)
-{
-	rectangle LC1 = {212,216,18,22};
-	fill_rectangle(LC1,RED);
-}
-
-void LS2_green(void)
-{
-	rectangle LC2 = {212,216,50,54};
-	fill_rectangle(LC2,GREEN);
-}
-
-void LS2_red(void)
-{
-	rectangle LC2 = {212,216,50,54};
-	fill_rectangle(LC2,RED);
-}
-
-void LS3_green(void)
-{
-	rectangle LC3 = {212,216,80,84};
-	fill_rectangle(LC3,GREEN);
-}
-
-void LS3_red(void)
-{
-	rectangle LC3 = {212,216,80,84};
-	fill_rectangle(LC3,RED);
-}
-
-
-
-void pwr_bar_wind(uint8_t pwr)
-{
-
-	rectangle blue = {90,91,172,182};
-	rectangle white = {91,92,172,182};
-
-	if(pwr > 94)
-		pwr = 94;
-
-	blue.right = 90 + pwr;
-
-	white.left = blue.right;
-	white.right = 184;
-
-	fill_rectangle(blue, 0x3E9F);
-	fill_rectangle(white, WHITE);
-}
-
-void pwr_bar_sun(uint8_t pwr)
-{
-
-	rectangle blue = {90,91,120,130};
-	rectangle white = {91,92,120,130};
-
-	if(pwr > 94)
-		pwr = 94;
-
-	blue.right = 90 + pwr ;
-
-	white.left = blue.right;
-	white.right = 184;
-
-	fill_rectangle(blue, 0x3E9F);
-	fill_rectangle(white, WHITE);
-}
 
 //  Three Digits, digit 1 = kW
 //  Digit 2 = 100s of W
@@ -404,5 +191,220 @@ void kamimashita()
 			write_data16(pgm_read_word_far(address + 2*(x+y*160)));
 		}
 	}
+}
+
+
+void init_graphics()
+{
+	uint16_t x, y;
+	write_cmd(COLUMN_ADDRESS_SET);
+	write_data16(0);
+	write_data16(240);
+	write_cmd(PAGE_ADDRESS_SET);
+	write_data16(0);
+	write_data16(160);
+	write_cmd(MEMORY_WRITE);
+	for(y = 0; y <= 79; y++){
+		for(x = 0; x <= 119; x++){
+			write_data16( pgm_read_word( &(bg1_1[x+y*120])));
+			write_data16( pgm_read_word( &(bg1_1[x+y*120])));
+		}
+		for(x = 0; x <= 119; x++){
+			write_data16( pgm_read_word( &(bg1_1[x+y*120])));
+			write_data16( pgm_read_word( &(bg1_1[x+y*120])));
+		}
+	}
+	write_cmd(COLUMN_ADDRESS_SET);
+	write_data16(0);
+	write_data16(240);
+	write_cmd(PAGE_ADDRESS_SET);
+	write_data16(160);
+	write_data16(320);
+	write_cmd(MEMORY_WRITE);
+	for(y = 0; y <= 79; y++){
+		for(x = 0; x <= 119; x++){
+			write_data16( pgm_read_word( &(bg1_2[x+y*120])));
+			write_data16( pgm_read_word( &(bg1_2[x+y*120])));
+		}
+		for(x = 0; x <= 119; x++){
+			write_data16( pgm_read_word( &(bg1_2[x+y*120])));
+			write_data16( pgm_read_word( &(bg1_2[x+y*120])));
+		}
+	}
+}
+
+lcd display = {LCDWIDTH, LCDHEIGHT, North, 0, 0, 0x20E4, 0xFF99};
+
+void init_lcd()
+{
+	/* Disable JTAG in software, so that it does not interfere with Port C  */
+	/* It will be re-enabled after a power cycle if the JTAGEN fuse is set. */
+	MCUCR |= (1<<JTD);
+	MCUCR |= (1<<JTD);
+
+	/* Configure ports */
+	CTRL_DDR = 0x7F;
+	// PIN 7 on the control port is an input.
+	DATA_DDR = 0xFF;
+
+	init_display_controller();
+}
+
+void set_orientation(orientation o)
+{
+	display.orient = o;
+	write_cmd(MEMORY_ACCESS_CONTROL);
+	if (o==North) {
+		display.width = LCDWIDTH;
+		display.height = LCDHEIGHT;
+		write_data(0x48);
+	}
+	else if (o==West) {
+		display.width = LCDHEIGHT;
+		display.height = LCDWIDTH;
+		write_data(0xE8);
+	}
+	else if (o==South) {
+		display.width = LCDWIDTH;
+		display.height = LCDHEIGHT;
+		write_data(0x88);
+	}
+	else if (o==East) {
+		display.width = LCDHEIGHT;
+		display.height = LCDWIDTH;
+		write_data(0x28);
+	}
+	write_cmd(COLUMN_ADDRESS_SET);
+	write_data16(0);
+	write_data16(display.width-1);
+	write_cmd(PAGE_ADDRESS_SET);
+	write_data16(0);
+	write_data16(display.height-1);
+}
+
+void fill_rectangle(rectangle r, uint16_t col)
+{
+	uint16_t x, y;
+	write_cmd(COLUMN_ADDRESS_SET);
+	write_data16(r.left);
+	write_data16(r.right);
+	write_cmd(PAGE_ADDRESS_SET);
+	write_data16(r.top);
+	write_data16(r.bottom);
+	write_cmd(MEMORY_WRITE);
+	for(x=r.left; x<=r.right; x++)
+		for(y=r.top; y<=r.bottom; y++)
+			write_data16(col);
+}
+
+void LC1_green(void)
+{
+	rectangle LC1 = {24,28,18,22};
+	fill_rectangle(LC1,GREEN);
+}
+
+void LC1_red(void)
+{
+	rectangle LC1 = {24,28,18,22};
+	fill_rectangle(LC1,RED);
+}
+
+void LC2_green(void)
+{
+	rectangle LC2 = {24,28,50,54};
+	fill_rectangle(LC2,GREEN);
+}
+
+void LC2_red(void)
+{
+	rectangle LC2 = {24,28,50,54};
+	fill_rectangle(LC2,RED);
+}
+
+void LC3_green(void)
+{
+	rectangle LC3 = {24,28,80,84};
+	fill_rectangle(LC3,GREEN);
+}
+
+void LC3_red(void)
+{
+	rectangle LC3 = {24,28,80,84};
+	fill_rectangle(LC3,RED);
+}
+
+
+void LS1_green(void)
+{
+	rectangle LC1 = {212,216,18,22};
+	fill_rectangle(LC1,GREEN);
+}
+
+void LS1_red(void)
+{
+	rectangle LC1 = {212,216,18,22};
+	fill_rectangle(LC1,RED);
+}
+
+void LS2_green(void)
+{
+	rectangle LC2 = {212,216,50,54};
+	fill_rectangle(LC2,GREEN);
+}
+
+void LS2_red(void)
+{
+	rectangle LC2 = {212,216,50,54};
+	fill_rectangle(LC2,RED);
+}
+
+void LS3_green(void)
+{
+	rectangle LC3 = {212,216,80,84};
+	fill_rectangle(LC3,GREEN);
+}
+
+void LS3_red(void)
+{
+	rectangle LC3 = {212,216,80,84};
+	fill_rectangle(LC3,RED);
+}
+
+
+
+void pwr_bar_wind(uint8_t pwr)
+{
+
+	rectangle blue = {90,91,173,182};
+	rectangle white = {91,92,173,182};
+
+	if(pwr > 94)
+		pwr = 94;
+
+	blue.right = 90 + pwr;
+
+	white.left = blue.right;
+	white.right = 184;
+
+	fill_rectangle(blue, 0x3E9F);
+	fill_rectangle(white, WHITE);
+}
+
+void pwr_bar_sun(uint8_t pwr)
+{
+
+	rectangle blue = {90,91,121,130};
+	rectangle white = {91,92,121,130};
+
+	if(pwr > 94)
+		pwr = 94;
+
+	blue.right = 90 + pwr ;
+
+	white.left = blue.right;
+	white.right = 184;
+
+	fill_rectangle(blue, 0x3E9F);
+	fill_rectangle(white, WHITE);
 }
 
