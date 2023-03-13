@@ -2,6 +2,7 @@
 #include <math.h>
 #include "../libio/io.h"
 #include "../liblcd/lcd.h"
+#include "../mainsreq/mainsreq.h"
 
 //========================================================================//
 // Scenario constants
@@ -16,69 +17,40 @@ const float Load3 = 0.8;
 float PV, Wind, BusI, MainsReq;
 
 void algorithm(void){
-    MainsReq =   (10/MainsMAX) * BusI;
+
+	if(BusI + BatteryChargeI < MainsMAX + PV + Wind)
+{
+CBAT_hi();
+DBAT_lo();
+}
+else{
+CBAT_lo();
+DBAT_hi();
+}
             if(~LC1 && ~LC2 && ~LC3){
                 LS1_lo();
                 LS2_lo();
                 LS3_lo();
-
-				LC1_red();
-				LC2_red();
-				LC3_red();
-
-				LS1_red();
-				LS2_red();
-				LS3_red();
 
             }
 
             if(LC1 && ~LC2 && ~LC3){
                 if(Load1 < MainsMAX + PV + Wind){
                     LS1_hi();
-					LC1_green();
-					LC2_red();
-					LC3_red();
-
-					LS1_green();
-					LS2_red();
-					LS3_red();
+					PWM()
                 }
 
             else {
 				LS1_lo();
-
-				LC1_green();
-				LC2_red();
-				LC3_red();
-
-				LS1_red();
-				LS2_red();
-				LS3_red();
 			}
 			}
 
             if(~LC1 && LC2 && ~LC3 ){
                 if(Load2 < MainsMAX + PV + Wind){
                     LS2_hi();
-
-					LC1_red();
-					LC2_green();
-					LC3_red();
-
-					LS1_red();
-					LS2_green();
-					LS3_red();
                 }
                 else{
 					LS2_lo();
-
-					LC1_red();
-					LC2_green();
-					LC3_red();
-
-					LS1_red();
-					LS2_red();
-					LS3_red();
 
 
 				}
@@ -87,65 +59,24 @@ void algorithm(void){
             if( LC1 && LC2 && ~LC3){
                 if(Load1 + Load2 < MainsMAX + PV + Wind){
                     LS2_hi();
-
-					LC1_green();
-					LC2_green();
-					LC3_red();
-
-					LS1_green();
-					LS2_green();
-					LS3_red();
                 }
                 else{
 					LS2_lo();
-
-					LC1_green();
-					LC2_green();
-					LC3_red();
-
-					LS1_green();
-					LS2_red();
-					LS3_red();
-
-
 				}
                 if(Load1 < MainsMAX + PV + Wind){
                     LS1_hi();
-
-					LC1_green();
-					LS1_green();
                 }
                 else {
 					LS1_lo();
-
-					LS1_red();
 				}
             }
 
             if(~LC1 && ~LC2 && LC3){
                 if(Load3 < MainsMAX + PV + Wind){
                     LS3_hi();
-
-					LC1_red();
-					LC2_red();
-					LC3_green();
-
-					LS1_red();
-					LS2_red();
-					LS3_green();
                 }
                 else{
 					LS3_lo();
-
-					LC1_red();
-					LC2_red();
-					LC3_green();
-
-					LS1_red();
-					LS2_red();
-					LS3_red();
-
-
 				}
 
             }
@@ -153,107 +84,42 @@ void algorithm(void){
             if(LC1 && ~LC2 && LC3){
                 if(Load3 + Load1  < MainsMAX + PV + Wind){
                     LS3_hi();
-
-					LC1_green();
-					LC2_red();
-					LC3_green();
-
-					LS1_green();
-					LS2_red();
-					LS3_green();
                 }
                 else {
 					LS3_lo();
-
-					LC1_green();
-					LC2_red();
-					LC3_green();
-
-					LS1_green();
-					LS2_red();
-					LS3_red();
-
-
-
 				}
 
                 if(Load1 < MainsMAX + PV + Wind){
                     LS1_hi();
-
-					LC1_green();
-					LS1_green();
                 }
                 else{
 					LS1_lo();
-
-					LC1_green();
-					LS1_red();
 				}
             }
 
             if(~LC1 && LC2 && LC3  ){
                 if(Load2 + Load3 < MainsMAX + PV + Wind){
                     LS3_hi();
-
-					LC1_red();
-					LC2_green();
-					LC3_green();
-
-					LS1_red();
-					LS2_green();
-					LS3_green();
                 }
                 else {
 					LS3_lo();
-
-					LC1_red();
-					LC2_green();
-					LC3_green();
-
-					LS1_red();
-					LS2_green();
-					LS3_red();
 
 				}
 
                 if(Load2 < MainsMAX + PV + Wind){
                     LS2_hi();
-
-					LC2_green();
-					LS2_green();
-
-
                 }
                 else{
 					LS2_lo();
-
-					LC2_green();
-					LS2_red();
 				}
             }
 
             if(LC1 && LC2 && LC3 ){
                 if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind){
                     LS3_hi();
-
-					LC1_green();
-					LC2_green();
-					LC3_green();
-
-					LS1_green();
-					LS2_green();
-					LS3_green();
                 }
                 else {
 					LS3_lo();
-
-					LC1_green();
-					LC2_green();
-					LC3_green();
-
-					LS1_green();
-					LS2_green();
-					LS3_red();
 
 				}
 
@@ -261,31 +127,18 @@ void algorithm(void){
                 if(Load2 + Load1 < MainsMAX + PV + Wind){
                     LS2_hi();
 
-					LC2_green();
-					LS2_green();
-
-
-                }
+				}
                 else{
 					LS2_lo();
-
-					LC2_green();
-					LS2_red();
 
 				}
 
                 if(Load1 < MainsMAX + PV + Wind){
                     LS1_hi();
 
-					LC1_green();
-					LS1_green();
-
                 }
                 else{
 					LS1_lo();
-
-					LC1_green();
-					LS1_red();
 				}
             }
 }

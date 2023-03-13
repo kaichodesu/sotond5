@@ -1,7 +1,7 @@
-#define PV_CALIBRATED 3.16
-#define WIND_CALIBRATED 3.23
+#define PV_CALIBRATED 4.4
+#define WIND_CALIBRATED 3.79
 #define VBUS_CALIBRATED 3.10
-#define IBUS_CALIBRATED 3.33
+#define IBUS_CALIBRATED 5
 #define F_CPU 12000000UL
 
 #include <avr/interrupt.h>
@@ -36,7 +36,7 @@ uint8_t wind_pwr;
 uint8_t pv_pwr;
 float power;
 uint8_t power1, power10, power100;
-float ibusarray[5], windarray[5], pvarray[5];
+float ibusarray[20], windarray[20], pvarray[20];
 
 
 
@@ -168,7 +168,6 @@ int main(){
     init();
     while(1){
         if(sync){
-            LS1_hi();
             //  ADMUX preset to PA6
 
             //TCCR2B = 0x01;
@@ -186,7 +185,7 @@ int main(){
             //adc_mux_rdy = false;
             //  We change ADMUX while the current conversion is taking place
 
-            if (drift == 0 || drift == 4){
+
                 while(adc_rdy == 0);
                 adc_rdy = false;
                 //TCCR2B = 0x01;
@@ -196,23 +195,18 @@ int main(){
                 ADCSRA |=_BV(ADSC);
                 //adc_mux_rdy = false;
                 //  We change ADMUX while the current conversion is taking place
+                for(i = 1; i <=10; i++){
                 while(adc_rdy == 0);
-                ibusarray[1] = adc_read*IBUS_CALIBRATED/1024;
+                ibusarray[i] = adc_read*IBUS_CALIBRATED/1024;
                 adc_rdy = false;
                 ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                adc_rdy = false;
-                ibusarray[2] = adc_read*IBUS_CALIBRATED/1024;
-                ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                adc_rdy = false;
-                ibusarray[3] = adc_read*IBUS_CALIBRATED/1024;
-                ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                adc_rdy = false;
-                ibusarray[4] = adc_read*IBUS_CALIBRATED/1024;
-                BusI = (ibusarray[0] +ibusarray[1] +ibusarray[2] +ibusarray[3] +ibusarray[4])/5;
-            }
+                }
+                BusI = 0;
+                for(i = 0; i <= 10; i++){
+                    BusI = BusI + ibusarray[i];
+                }
+                BusI = BusI/10;
+
 
             //  Reading Wind Capacity==========================================
             //while(adc_mux_rdy == 0);
@@ -223,23 +217,23 @@ int main(){
             while(adc_rdy == 0);
             //TCCR2B = 0x01;
             //  Start the ADCMUX timer for the next conversion
-            windarray[0] = adc_read*WIND_CALIBRATED/1024;
+            windarray[0] = adc_read*WIND_CALIBRATED*3.3/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            windarray[1] = adc_read*WIND_CALIBRATED/1024;
+            windarray[1] = adc_read*WIND_CALIBRATED*3.3/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            windarray[2] = adc_read*WIND_CALIBRATED/1024;
+            windarray[2] = adc_read*WIND_CALIBRATED*3.3/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            windarray[3] = adc_read*WIND_CALIBRATED/1024;
+            windarray[3] = adc_read*WIND_CALIBRATED*3.3/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            windarray[4] = adc_read*WIND_CALIBRATED/1024;
+            windarray[4] = adc_read*WIND_CALIBRATED*3.3/1024;
             adc_rdy = false;
             Wind = (windarray[0] + windarray[1] + windarray[2] + windarray[3] + windarray[4])/5;
 
@@ -279,14 +273,17 @@ int main(){
             else
                 ADMUX = 0x03;
 
+
+            MainsReq =   (10/MainsMAX) * BusI;
+            int test = 0;
+            PWM(test++);
+            if (test > 250)
+                test = 0;
+
             algorithm();
-
-            //PWM((uint8_t)round((MainsReq/10)*255));
-            PWM(255);
-
             drift++;
+            watchdog++;
 
-            if (drift%4)
                 lcd_update();
                 //  Runs the screen at 50Hz.
 
@@ -298,13 +295,22 @@ int main(){
                 OCR0A = 236;
             }
 
+            if(watchdog < 500){
             TIMSK0 |= _BV(OCIE0A);
             adts_enable();
             ADCSRA |=_BV(ADATE);
             ADCSRA |=_BV(ADSC);
             //  Re-enable the TIMER0 Interrupt.
             //  Turning Auto Triggering back on.
-            LS1_lo();
+            }
+            else{
+                watchdog = 0;
+                TIMSK0 |= _BV(OCIE0A);
+                adts_enable();
+                ADCSRA |=_BV(ADATE);
+                ADCSRA |=_BV(ADSC);
+                calibrate_timer0();
+            }
         }
 
     }
