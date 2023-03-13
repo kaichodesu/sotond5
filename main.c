@@ -45,9 +45,12 @@ void init(){
     set_orientation(North);
     init_io();
     init_graphics();
+    kamimashita();
     init_timers();
     init_adc();
     init_PWM();
+    init_graphics();
+    init_adc();
 }
 
 
@@ -160,7 +163,6 @@ void lcd_update(void){
 
 int main(){
     uint8_t i = 0;
-    uint8_t
     init();
     while(1){
         if(sync){
@@ -276,12 +278,12 @@ int main(){
                 lcd_update();
                 //  Runs the screen at 50Hz.
 
-            if (drift == 1 | drift == 3 | drift == 5 | drift == 7){
+            /*if (drift == 1 | drift == 3 | drift == 5 | drift == 7){
                 TIMER0_TOP = 233;
             }
             if (drift == 2 | drift == 4 | drift == 6){
                 TIMER0_TOP = 234;
-            }
+            }*/
             if (drift == 8)
                 drift = 0;
 

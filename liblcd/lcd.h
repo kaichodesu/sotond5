@@ -56,3 +56,4 @@ void LS2_green(void);
 void LS2_red(void);
 void LS3_green(void);
 void LS3_red(void);
+void kamimashita(void);
