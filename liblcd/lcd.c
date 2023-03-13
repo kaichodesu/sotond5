@@ -277,7 +277,7 @@ void pwr_bar_sun(uint8_t pwr)
 //  Each Digit is 21 x 37, Digit texture is 370 tall, starting at 9.
 void pwr_kw(uint8_t digit){
 	if(digit >= 3)
-		digit = 0;
+		digit = 2;
 	uint16_t x, y;
 	uint32_t address = pgm_get_far_address(digit1);
 	//  pgm_get_far_address will throw a r26 undefined error unless the value has been assigned at compile time
@@ -302,7 +302,7 @@ void pwr_kw(uint8_t digit){
 
 void pwr_100(uint8_t digit){
 	if(digit >= 10)
-		digit = 0;
+		digit = 9;
 	uint16_t x, y;
 	uint32_t address = pgm_get_far_address(digit2);
 	write_cmd(COLUMN_ADDRESS_SET);
@@ -326,7 +326,7 @@ void pwr_100(uint8_t digit){
 
 void pwr_10(uint8_t digit){
 	if(digit >= 10)
-		digit = 0;
+		digit = 9;
 	uint16_t x, y;
 	uint32_t address = pgm_get_far_address(d3);
 	write_cmd(COLUMN_ADDRESS_SET);

@@ -56,12 +56,12 @@ void init(){
 
 void lcd_update(void){
     //  We only want to draw to pixels that have changed.
-    wind_pwr = (Wind/3.3) * 94;
-    pv_pwr = (PV/3.3) * 94;
+    wind_pwr = round((Wind/3.3) * 94);
+    pv_pwr = round((PV/3.3) * 94);
 	power = BusI * 300/1000;
-	power1 = (uint8_t) power % 10;
-	power10 = (uint8_t) (power * 10) % 10;
-	power100 = (uint8_t) (power * 100) % 10;
+	power1 = (uint8_t) round(power);
+	power10 = ((uint8_t) round(power * 10)) % 10;
+	power100 = ((uint8_t) round(power * 100)) % 10;
 
 	power_kw_digit[0] = power_kw_digit[1];  //used to make present-state become previous-state
 	power_10_digit[0] = power_10_digit[1];

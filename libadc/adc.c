@@ -63,9 +63,9 @@ void calibrate_timer0(void)
     ADCSRA |=_BV(ADATE);
     ADCSRA |= _BV(ADSC);
     //  start conversions in free running mode
-    while(adc_read < 10){}
+    while(adc_read < 0){}
         //  Waiting for the ADC to rise into the rectified waveform.
-	while(adc_read > 10){}
+	while(adc_read > 0){}
     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
     TCNT0 = 0;
     OCR0A = OFFSET;
