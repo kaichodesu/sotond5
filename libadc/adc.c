@@ -76,6 +76,7 @@ void calibrate_timer0(void)
     //  Reset timer 0 and turn off ADC interrupts
 	while(!sync); //here we have reached a peak
 	TCNT0 = 0; //reset timer count
+	TCCR0B = 0x04;
 	OCR0A = TIMER0_TOP;//output compare 1 cycle after the peak
 	sync = false;
     ADCSRA |= _BV(ADIE);
