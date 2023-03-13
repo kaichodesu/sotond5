@@ -52,8 +52,9 @@ void init(){
 
 
 void lcd_update(void){
-    wind_pwr = (Wind/5) * 94;
-    pv_pwr = (PV/5) * 94;
+    //  We only want to draw to pixels that have changed.
+    wind_pwr = (Wind/3.3) * 94;
+    pv_pwr = (PV/3.3) * 94;
 	power = BusI * 300/1000;
 	power1 = (uint8_t) power % 10;
 	power10 = (uint8_t) (power * 10) % 10;
@@ -180,28 +181,31 @@ int main(){
             //ADMUX = 0x03;
             //adc_mux_rdy = false;
             //  We change ADMUX while the current conversion is taking place
-            while(adc_rdy == 0);
-            adc_rdy = false;
-            //TCCR2B = 0x01;
-            //  Start the ADCMUX timer for the next conversion
-            BusI = adc_read*IBUS_CALIBRATED/1024;
-            adc_rdy = false;
-            ADCSRA |=_BV(ADSC);
-            //adc_mux_rdy = false;
-            //  We change ADMUX while the current conversion is taking place
-            while(adc_rdy == 0);
-            //TCCR2B = 0x01;
-            //  Start the ADCMUX timer for the next conversion
-            BusI = adc_read*IBUS_CALIBRATED/1024;
-            adc_rdy = false;
-            ADCSRA |=_BV(ADSC);
-            //adc_mux_rdy = false;
-            //  We change ADMUX while the current conversion is taking place
-            while(adc_rdy == 0);
-            //TCCR2B = 0x01;
-            //  Start the ADCMUX timer for the next conversion
-            adc_rdy = false;
-            BusI = adc_read*IBUS_CALIBRATED/1024;
+
+            if (drift == 0 || drift == 4){
+                while(adc_rdy == 0);
+                adc_rdy = false;
+                //TCCR2B = 0x01;
+                //  Start the ADCMUX timer for the next conversion
+                BusI = adc_read*IBUS_CALIBRATED/1024;
+                adc_rdy = false;
+                ADCSRA |=_BV(ADSC);
+                //adc_mux_rdy = false;
+                //  We change ADMUX while the current conversion is taking place
+                while(adc_rdy == 0);
+                //TCCR2B = 0x01;
+                //  Start the ADCMUX timer for the next conversion
+                BusI = adc_read*IBUS_CALIBRATED/1024;
+                adc_rdy = false;
+                ADCSRA |=_BV(ADSC);
+                //adc_mux_rdy = false;
+                //  We change ADMUX while the current conversion is taking place
+                while(adc_rdy == 0);
+                //TCCR2B = 0x01;
+                //  Start the ADCMUX timer for the next conversion
+                adc_rdy = false;
+                BusI = adc_read*IBUS_CALIBRATED/1024;
+            }
 
             //  Reading Wind Capacity==========================================
             //while(adc_mux_rdy == 0);
@@ -255,8 +259,12 @@ int main(){
             PV = adc_read*PV_CALIBRATED/1024;
             adc_rdy = false;
 
+            //==================================================================
 
-            ADMUX = 0x06;
+            if (drift == 3 | drift == 7)
+                ADMUX = 0x06;
+            else
+                ADMUX = 0x03;
 
             algorithm();
 
