@@ -52,8 +52,6 @@ if(BusV < 3.3) // bus voltage natural value
 	MainsReq +=0.1;
 }
 
-
-
 if(MainsReq > 10)
 {
 MainsReq = 10;
@@ -70,7 +68,7 @@ if(MainsReq <= 0)
 	MainsReq = 0;
 }
 
-if(LC1 == 0  && LC2 == 0 && LC3 == 0)
+if((LC1 == 0)  && (LC2 == 0) && (LC3 == 0))
 {
 	LS1_lo();  LS1= 0;
 	LS2_lo();  LS2= 0;
@@ -81,7 +79,7 @@ if(LC1 == 0  && LC2 == 0 && LC3 == 0)
 
 }
 
-if(LC1 == 1  && LC2 == 0 && LC3 == 0) //we will take the busI in the next if loop BusIdiff. If BusI < Bus
+if((LC1 == 1)  && (LC2 == 0) && (LC3 == 0)) //we will take the busI in the next if loop BusIdiff. If BusI < Bus
 {
 	if( (MainsMAX + PV + Wind) - Load1 < BatteryChargeI  )
 	{
@@ -103,7 +101,7 @@ if(LC1 == 1  && LC2 == 0 && LC3 == 0) //we will take the busI in the next if loo
 
 
 
-if(LC1 == 0  && LC2 == 1 && LC3 == 0 )
+if((LC1 == 0)  && (LC2 == 1) && (LC3 == 0) )
 {
 	if( (MainsMAX + PV + Wind) - Load2 < BatteryChargeI  )
 	{
@@ -124,7 +122,7 @@ if(LC1 == 0  && LC2 == 1 && LC3 == 0 )
 
 
 
-if(LC1 == 1  && LC2 == 1 && LC3 == 0)
+if((LC1 == 1)  && (LC2 == 1) && (LC3 == 0))
 {
 	if(Load1 + Load2 < MainsMAX + PV + Wind)
 	 {
@@ -163,7 +161,7 @@ if(LC1 == 1  && LC2 == 1 && LC3 == 0)
 }
 
 
-if(LC1 == 0  && LC2 == 0 && LC3 == 1)
+if((LC1 == 0)  && (LC2 == 0) && (LC3 == 1))
 {
 	if(Load3 < MainsMAX + PV + Wind)
 	{
@@ -179,7 +177,7 @@ if(LC1 == 0  && LC2 == 0 && LC3 == 1)
 }
 
 
-if(LC1 == 1  && LC2 == 0 && LC3 == 1)
+if((LC1 == 1)  && (LC2 == 0) && (LC3 == 1))
 {
 	if(Load3 + Load1  < MainsMAX + PV + Wind)
 	{
@@ -217,7 +215,7 @@ if(LC1 == 1  && LC2 == 0 && LC3 == 1)
 
 }
 
-if(LC1 == 0  && LC2 == 1 && LC3 == 1  )
+if((LC1 == 0)  && (LC2 == 1) && (LC3 == 1)  )
 {
 	if(Load2 + Load3 < MainsMAX + PV + Wind)
 	{
@@ -254,7 +252,7 @@ if(LC1 == 0  && LC2 == 1 && LC3 == 1  )
 }
 
 
-if(LC1 == 1 && LC2 == 1 && LC3 == 1 )
+if((LC1 == 1) && (LC2 == 1) && (LC3 == 1) )
 {
 	if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind)
 	{

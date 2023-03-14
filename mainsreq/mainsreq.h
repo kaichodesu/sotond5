@@ -7,6 +7,6 @@
 #define PRESCALER 1UL
 
 void init_PWM(void);
-void PWM(float mainsreq);
+void pwm(float mainsreq);
 
 #endif /* pwm_header_h */
