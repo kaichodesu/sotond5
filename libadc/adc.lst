@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccga4TkX.s 			page 1
+GAS LISTING /tmp/ccxyVAn8.s 			page 1
 
 
    1               		.file	"adc.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
   19:adc.c         ****     TIMSK0 = 0;
   37               		.stabn	68,0,19,.LM4-.LFBB1
   38               	.LM4:
-GAS LISTING /tmp/ccga4TkX.s 			page 2
+GAS LISTING /tmp/ccxyVAn8.s 			page 2
 
 
   39 000a 1092 6E00 		sts 110,__zero_reg__
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
   81               		.stabs	"adts_enable:F(0,1)",36,0,33,adts_enable
   82               	.global	adts_enable
   83               		.type	adts_enable, @function
-GAS LISTING /tmp/ccga4TkX.s 			page 3
+GAS LISTING /tmp/ccxyVAn8.s 			page 3
 
 
   84               	adts_enable:
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
  130               		.stabn	68,0,39,.LM19-.LFBB4
  131               	.LM19:
  132 0046 9093 0000 		sts adc_read+1,r25
-GAS LISTING /tmp/ccga4TkX.s 			page 4
+GAS LISTING /tmp/ccxyVAn8.s 			page 4
 
 
  133 004a 8093 0000 		sts adc_read,r24
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
  178               	.LM25:
  179               	.LFBB6:
  180 0066 1F92 1FB6 		__gcc_isr 1
-GAS LISTING /tmp/ccga4TkX.s 			page 5
+GAS LISTING /tmp/ccxyVAn8.s 			page 5
 
 
  180      1F92 1124 
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
   30:adc.c         **** }
  223               		.stabn	68,0,30,.LM32-.LFBB7
  224               	.LM32:
-GAS LISTING /tmp/ccga4TkX.s 			page 6
+GAS LISTING /tmp/ccxyVAn8.s 			page 6
 
 
  225 0094 1092 7B00 		sts 123,__zero_reg__
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
  265 00d4 0E94 0000 		call adts_enable
   72:adc.c         ****     ADMUX = 0x06;
  266               		.stabn	68,0,72,.LM41-.LFBB7
-GAS LISTING /tmp/ccga4TkX.s 			page 7
+GAS LISTING /tmp/ccxyVAn8.s 			page 7
 
 
  267               	.LM41:
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
  309               	.LM51:
  310 0118 1092 0000 		sts adc_rdy,__zero_reg__
  311               	/* epilogue start */
-GAS LISTING /tmp/ccga4TkX.s 			page 8
+GAS LISTING /tmp/ccxyVAn8.s 			page 8
 
 
   85:adc.c         **** }
@@ -478,7 +478,7 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
  357               		.size	OFFSET, 1
  358               	OFFSET:
  359 0000 00        		.zero	1
-GAS LISTING /tmp/ccga4TkX.s 			page 9
+GAS LISTING /tmp/ccxyVAn8.s 			page 9
 
 
  360               		.stabs	"OFFSET:G(0,2)",32,0,11,0
@@ -524,34 +524,34 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
  400               	.Letext0:
  401               		.ident	"GCC: (GNU) 11.2.0"
  402               	.global __do_clear_bss
-GAS LISTING /tmp/ccga4TkX.s 			page 10
+GAS LISTING /tmp/ccxyVAn8.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 adc.c
-     /tmp/ccga4TkX.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccga4TkX.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccga4TkX.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccga4TkX.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccga4TkX.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccga4TkX.s:18     .text:0000000000000000 init_timers
-     /tmp/ccga4TkX.s:63     .text:0000000000000022 adts_disable
-     /tmp/ccga4TkX.s:84     .text:0000000000000028 adts_enable
-     /tmp/ccga4TkX.s:116    .text:000000000000003a __vector_24
+     /tmp/ccxyVAn8.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccxyVAn8.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccxyVAn8.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccxyVAn8.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccxyVAn8.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccxyVAn8.s:18     .text:0000000000000000 init_timers
+     /tmp/ccxyVAn8.s:63     .text:0000000000000022 adts_disable
+     /tmp/ccxyVAn8.s:84     .text:0000000000000028 adts_enable
+     /tmp/ccxyVAn8.s:116    .text:000000000000003a __vector_24
                             *ABS*:0000000000000001 __gcc_isr.n_pushed.001
-     /tmp/ccga4TkX.s:395    .bss:0000000000000006 adc_read
-     /tmp/ccga4TkX.s:383    .bss:0000000000000004 adc_rdy
-     /tmp/ccga4TkX.s:151    .text:000000000000005a __vector_16
+     /tmp/ccxyVAn8.s:395    .bss:0000000000000006 adc_read
+     /tmp/ccxyVAn8.s:383    .bss:0000000000000004 adc_rdy
+     /tmp/ccxyVAn8.s:151    .text:000000000000005a __vector_16
                             *ABS*:0000000000000001 __gcc_isr.n_pushed.002
-     /tmp/ccga4TkX.s:377    .bss:0000000000000003 sync
-     /tmp/ccga4TkX.s:176    .text:0000000000000066 __vector_9
+     /tmp/ccxyVAn8.s:377    .bss:0000000000000003 sync
+     /tmp/ccxyVAn8.s:176    .text:0000000000000066 __vector_9
                             *ABS*:0000000000000003 __gcc_isr.n_pushed.003
-     /tmp/ccga4TkX.s:370    .bss:0000000000000002 adc_mux_rdy
-     /tmp/ccga4TkX.s:204    .text:0000000000000084 calibrate_timer0
-     /tmp/ccga4TkX.s:389    .bss:0000000000000005 calibrating
-     /tmp/ccga4TkX.s:358    .bss:0000000000000000 OFFSET
-     /tmp/ccga4TkX.s:364    .bss:0000000000000001 TIMER0_TOP
-     /tmp/ccga4TkX.s:321    .text:000000000000011e init_adc
+     /tmp/ccxyVAn8.s:370    .bss:0000000000000002 adc_mux_rdy
+     /tmp/ccxyVAn8.s:204    .text:0000000000000084 calibrate_timer0
+     /tmp/ccxyVAn8.s:389    .bss:0000000000000005 calibrating
+     /tmp/ccxyVAn8.s:358    .bss:0000000000000000 OFFSET
+     /tmp/ccxyVAn8.s:364    .bss:0000000000000001 TIMER0_TOP
+     /tmp/ccxyVAn8.s:321    .text:000000000000011e init_adc
 
 UNDEFINED SYMBOLS
 __do_clear_bss

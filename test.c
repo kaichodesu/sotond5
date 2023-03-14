@@ -1,3 +1,4 @@
+ 
 #define PV_CALIBRATED 4.4
 #define WIND_CALIBRATED 3.79
 #define VBUS_CALIBRATED 3.10
@@ -10,8 +11,6 @@
 #include <util/delay.h>
 #include <math.h>
 #include <stdio.h>
-#include "liblcd/lcd.h"
-#include "liblcd/ili934x.h"
 #include "libio/io.h"
 #include "libadc/adc.h"
 #include "libalg/alg.h"
@@ -44,10 +43,7 @@ float ibusarray[20], windarray[20], pvarray[20];
 void init(){
     TIMER0_TOP = 233;
     OFFSET = 176;
-    init_lcd();
-    set_orientation(North);
     init_io();
-    init_graphics();
     //kamimashita();
     init_adc();
     init_PWM();
@@ -169,6 +165,7 @@ int main(){
     while(1){
         if(sync){
             //  ADMUX preset to PA6
+            LS3_hi();
             //TCCR2B = 0x01;
             //  Starting the ADCMUX timer.
             sync = false;
@@ -194,25 +191,17 @@ int main(){
                 ADCSRA |=_BV(ADSC);
                 //adc_mux_rdy = false;
                 //  We change ADMUX while the current conversion is taking place
+                for(i = 1; i <=10; i++){
                 while(adc_rdy == 0);
-                ibusarray[1] = adc_read/205;
+                ibusarray[i] = adc_read/205;
                 adc_rdy = false;
                 ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                ibusarray[2] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                ibusarray[3] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                ibusarray[4] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-
-                BusI = (ibusarray[0] + ibusarray[1] + ibusarray[2] + ibusarray[3] + ibusarray[4])/5;
-
+                }
+                BusI = 0;
+                for(i = 0; i <= 10; i++){
+                    BusI = BusI + ibusarray[i];
+                }
+                BusI = BusI/10;
 
 
             //  Reading Wind Capacity==========================================
@@ -293,6 +282,8 @@ int main(){
             if (MainsReq >= 10)
                 MainsReq = 10;
 
+            PWM(255);
+
             if (drift == 1){
                 OCR0A = 233;
             }
@@ -318,7 +309,7 @@ int main(){
                 ADCSRA |=_BV(ADSC);
 
             }
-
+            LS3_lo();
         }
 
     }

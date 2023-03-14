@@ -37,7 +37,7 @@ DBAT_hi();
             if(LC1 && ~LC2 && ~LC3){
                 if(Load1 < MainsMAX + PV + Wind){
                     LS1_hi();
-					PWM()
+
                 }
 
             else {
