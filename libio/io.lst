@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cc4U0iv0.s 			page 1
+GAS LISTING /tmp/ccCJamnd.s 			page 1
 
 
    1               		.file	"io.c"
@@ -47,86 +47,93 @@ GAS LISTING /tmp/cc4U0iv0.s 			page 1
   23               	/* frame size = 0 */
   24               	/* stack size = 0 */
   25               	.L__stack_usage = 0
-  22:io.c          ****     DDRD |= _BV(PD5);
+  22:io.c          ****     DDRD |= _BV(PD7);
   26               		.stabn	68,0,22,.LM1-.LFBB1
   27               	.LM1:
-  28 0000 559A      		sbi 0xa,5
-  23:io.c          ****     DDRA &= ~_BV(PA3);
+  28 0000 579A      		sbi 0xa,7
+  23:io.c          ****     DDRD |= _BV(PD5);
   29               		.stabn	68,0,23,.LM2-.LFBB1
   30               	.LM2:
-  31 0002 0B98      		cbi 0x1,3
-  24:io.c          ****     DDRA &= ~_BV(PA4);
+  31 0002 559A      		sbi 0xa,5
+  24:io.c          ****     DDRA &= ~_BV(PA3);
   32               		.stabn	68,0,24,.LM3-.LFBB1
   33               	.LM3:
-GAS LISTING /tmp/cc4U0iv0.s 			page 2
+GAS LISTING /tmp/ccCJamnd.s 			page 2
 
 
-  34 0004 0C98      		cbi 0x1,4
-  25:io.c          ****     DDRA &= ~_BV(PA5);
+  34 0004 0B98      		cbi 0x1,3
+  25:io.c          ****     DDRA &= ~_BV(PA4);
   35               		.stabn	68,0,25,.LM4-.LFBB1
   36               	.LM4:
-  37 0006 0D98      		cbi 0x1,5
-  26:io.c          ****     DDRA &= ~_BV(PA6);
+  37 0006 0C98      		cbi 0x1,4
+  26:io.c          ****     DDRA &= ~_BV(PA5);
   38               		.stabn	68,0,26,.LM5-.LFBB1
   39               	.LM5:
-  40 0008 0E98      		cbi 0x1,6
-  27:io.c          ****     DDRD |= _BV(PD0);
+  40 0008 0D98      		cbi 0x1,5
+  27:io.c          ****     DDRA &= ~_BV(PA6);
   41               		.stabn	68,0,27,.LM6-.LFBB1
   42               	.LM6:
-  43 000a 509A      		sbi 0xa,0
-  28:io.c          ****     DDRD |= _BV(PD1);
+  43 000a 0E98      		cbi 0x1,6
+  28:io.c          ****     DDRD |= _BV(PD0);
   44               		.stabn	68,0,28,.LM7-.LFBB1
   45               	.LM7:
-  46 000c 519A      		sbi 0xa,1
-  29:io.c          ****     DDRD |= _BV(PD2);
+  46 000c 509A      		sbi 0xa,0
+  29:io.c          ****     DDRD |= _BV(PD1);
   47               		.stabn	68,0,29,.LM8-.LFBB1
   48               	.LM8:
-  49 000e 529A      		sbi 0xa,2
-  30:io.c          ****     DDRD |= _BV(PD3);
+  49 000e 519A      		sbi 0xa,1
+  30:io.c          ****     DDRD |= _BV(PD2);
   50               		.stabn	68,0,30,.LM9-.LFBB1
   51               	.LM9:
-  52 0010 539A      		sbi 0xa,3
-  31:io.c          ****     DDRA |= _BV(PA7);
+  52 0010 529A      		sbi 0xa,2
+  31:io.c          ****     DDRD |= _BV(PD3);
   53               		.stabn	68,0,31,.LM10-.LFBB1
   54               	.LM10:
-  55 0012 0F9A      		sbi 0x1,7
-  32:io.c          ****     DDRA &= ~_BV(PA0);
+  55 0012 539A      		sbi 0xa,3
+  32:io.c          ****     DDRA |= _BV(PA7);
   56               		.stabn	68,0,32,.LM11-.LFBB1
   57               	.LM11:
-  58 0014 0898      		cbi 0x1,0
-  33:io.c          ****     DDRA &= ~_BV(PA1);
+  58 0014 0F9A      		sbi 0x1,7
+  33:io.c          ****     DDRA &= ~_BV(PA0);
   59               		.stabn	68,0,33,.LM12-.LFBB1
   60               	.LM12:
-  61 0016 0998      		cbi 0x1,1
-  34:io.c          ****     DDRA &= ~_BV(PA2);
+  61 0016 0898      		cbi 0x1,0
+  34:io.c          ****     DDRA &= ~_BV(PA1);
   62               		.stabn	68,0,34,.LM13-.LFBB1
   63               	.LM13:
-  64 0018 0A98      		cbi 0x1,2
-  35:io.c          ****     PORTA = 0x00;
+  64 0018 0998      		cbi 0x1,1
+  35:io.c          ****     DDRA &= ~_BV(PA2);
   65               		.stabn	68,0,35,.LM14-.LFBB1
   66               	.LM14:
-  67 001a 12B8      		out 0x2,__zero_reg__
-  68               	/* epilogue start */
-  36:io.c          **** }
-  69               		.stabn	68,0,36,.LM15-.LFBB1
-  70               	.LM15:
-  71 001c 0895      		ret
-  72               		.size	init_io, .-init_io
-  73               	.Lscope1:
-  74               		.stabs	"",36,0,0,.Lscope1-.LFBB1
-  75               		.stabs	"",100,0,0,.Letext0
-  76               	.Letext0:
-  77               		.ident	"GCC: (GNU) 11.2.0"
-GAS LISTING /tmp/cc4U0iv0.s 			page 3
+  67 001a 0A98      		cbi 0x1,2
+  36:io.c          ****     PORTA = 0x00;
+  68               		.stabn	68,0,36,.LM15-.LFBB1
+  69               	.LM15:
+  70 001c 12B8      		out 0x2,__zero_reg__
+  71               	/* epilogue start */
+  37:io.c          **** }
+  72               		.stabn	68,0,37,.LM16-.LFBB1
+  73               	.LM16:
+  74 001e 0895      		ret
+  75               		.size	init_io, .-init_io
+  76               	.Lscope1:
+  77               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+GAS LISTING /tmp/ccCJamnd.s 			page 3
+
+
+  78               		.stabs	"",100,0,0,.Letext0
+  79               	.Letext0:
+  80               		.ident	"GCC: (GNU) 11.2.0"
+GAS LISTING /tmp/ccCJamnd.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 io.c
-     /tmp/cc4U0iv0.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/cc4U0iv0.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/cc4U0iv0.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/cc4U0iv0.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/cc4U0iv0.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/cc4U0iv0.s:18     .text:0000000000000000 init_io
+     /tmp/ccCJamnd.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccCJamnd.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccCJamnd.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccCJamnd.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccCJamnd.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccCJamnd.s:18     .text:0000000000000000 init_io
 
 NO UNDEFINED SYMBOLS

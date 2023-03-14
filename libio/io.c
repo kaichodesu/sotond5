@@ -19,6 +19,7 @@
 
 void init_io()
 {
+    DDRD |= _BV(PD7);
     DDRD |= _BV(PD5);
     DDRA &= ~_BV(PA3);
     DDRA &= ~_BV(PA4);
