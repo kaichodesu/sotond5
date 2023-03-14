@@ -1,3 +1,4 @@
+ 
 #define PV_CALIBRATED 4.4
 #define WIND_CALIBRATED 3.79
 #define VBUS_CALIBRATED 3.10
@@ -10,8 +11,6 @@
 #include <util/delay.h>
 #include <math.h>
 #include <stdio.h>
-#include "liblcd/lcd.h"
-#include "liblcd/ili934x.h"
 #include "libio/io.h"
 #include "libadc/adc.h"
 #include "libalg/alg.h"
@@ -44,10 +43,7 @@ float ibusarray[20], windarray[20], pvarray[20];
 void init(){
     TIMER0_TOP = 233;
     OFFSET = 176;
-    init_lcd();
-    set_orientation(North);
     init_io();
-    init_graphics();
     //kamimashita();
     init_adc();
     init_PWM();
@@ -70,6 +66,57 @@ void lcd_update(void){
 	power_100_digit[0] = power_100_digit[1];
 	bar_value_wind[0] = bar_value_wind[1];
 	bar_value_sun[0] = bar_value_sun[1];
+
+	if(PINA &=_BV(0))
+	{
+		LC1_green();
+	}
+	else
+		LC1_red();
+
+	if(PINA &=_BV(1))
+	{
+		LC2_green();
+	}
+	else
+		LC2_red();
+
+	if(PINA &=_BV(2))
+	{
+		LC3_green();
+	}
+	else
+		LC3_red();
+
+	if(PIND &=_BV(2))
+	{
+		LS1_green();
+	}
+	else
+		LS1_red();
+
+	if(PIND &=_BV(3))
+	{
+		LS2_green();
+	}
+	else
+		LS2_red();
+
+	if(PINA &=_BV(7))
+	{
+		LS3_green();
+	}
+	else
+		LS3_red();
+
+
+
+	if(PIND &=_BV(1)) // replace with pin value
+	{
+		battery_pwr_state[1] = 0;
+	}
+	else
+		battery_pwr_state[1] = 1;
 
 	power_kw_digit[1] = power1;
 	power_10_digit[1] = power10;
@@ -111,8 +158,53 @@ void lcd_update(void){
 
 }
 
-void analog_read(){
-    //  Reading Wind Capacity==========================================
+
+int main(){
+    uint8_t i = 0;
+    init();
+    while(1){
+        if(sync){
+            //  ADMUX preset to PA6
+            LS3_hi();
+            //TCCR2B = 0x01;
+            //  Starting the ADCMUX timer.
+            sync = false;
+            TIMSK0 &= ~_BV(OCIE0A);
+            //  Disable TIMER0 Interrupt
+            adts_disable();
+            ADCSRA &=~_BV(ADATE);
+            //  Disable auto triggering.
+
+            //  Reading IBUS value.
+            //while(adc_mux_rdy == 0);
+            //ADMUX = 0x03;
+            //adc_mux_rdy = false;
+            //  We change ADMUX while the current conversion is taking place
+
+
+                while(adc_rdy == 0);
+                adc_rdy = false;
+                //TCCR2B = 0x01;
+                //  Start the ADCMUX timer for the next conversion
+                ibusarray[0] = adc_read/205;
+                adc_rdy = false;
+                ADCSRA |=_BV(ADSC);
+                //adc_mux_rdy = false;
+                //  We change ADMUX while the current conversion is taking place
+                for(i = 1; i <=10; i++){
+                while(adc_rdy == 0);
+                ibusarray[i] = adc_read/205;
+                adc_rdy = false;
+                ADCSRA |=_BV(ADSC);
+                }
+                BusI = 0;
+                for(i = 0; i <= 10; i++){
+                    BusI = BusI + ibusarray[i];
+                }
+                BusI = BusI/10;
+
+
+            //  Reading Wind Capacity==========================================
             //while(adc_mux_rdy == 0);
             ADMUX = 0x03;
             ADCSRA |=_BV(ADSC);
@@ -171,63 +263,16 @@ void analog_read(){
             PV = (pvarray[0] + pvarray[1] + pvarray[2] + pvarray[3] + pvarray[4])/5;
 
             //==================================================================
-            ADMUX = 0x06;
-}
 
-int main(){
-    uint8_t i = 0;
-    PV = 1;
-    Wind = 3;
-    init();
-    while(1){
-        if(sync){
-            //  ADMUX preset to PA6
-            //TCCR2B = 0x01;
-            //  Starting the ADCMUX timer.
-            sync = false;
-            TIMSK0 &= ~_BV(OCIE0A);
-            //  Disable TIMER0 Interrupt
-            adts_disable();
-            ADCSRA &=~_BV(ADATE);
-            //  Disable auto triggering.
-
-            //  Reading IBUS value.
-            //while(adc_mux_rdy == 0);
-            //ADMUX = 0x03;
-            //adc_mux_rdy = false;
-            //  We change ADMUX while the current conversion is taking place
+            if (drift == 3 | drift == 7)
+                ADMUX = 0x06;
+            else
+                ADMUX = 0x03;
 
 
-                while(adc_rdy == 0);
-                adc_rdy = false;
-                //TCCR2B = 0x01;
-                //  Start the ADCMUX timer for the next conversion
-                ibusarray[0] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-                //adc_mux_rdy = false;
-                //  We change ADMUX while the current conversion is taking place
-                while(adc_rdy == 0);
-                ibusarray[1] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                ibusarray[2] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                ibusarray[3] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                ibusarray[4] = adc_read/205;
-                adc_rdy = false;
-                BusI = (ibusarray[0] + ibusarray[1] + ibusarray[2] + ibusarray[3] + ibusarray[4])/5;
 
             algorithm();
             drift++;
-
-
             watchdog++;
 
             lcd_update();
@@ -237,6 +282,8 @@ int main(){
             if (MainsReq >= 10)
                 MainsReq = 10;
 
+            PWM(255);
+
             if (drift == 1){
                 OCR0A = 233;
             }
@@ -244,8 +291,6 @@ int main(){
                 drift = 0;
                 OCR0A = 236;
             }
-
-            void analog_read();
 
             if(watchdog < 500){
             TIMSK0 |= _BV(OCIE0A);
@@ -257,7 +302,6 @@ int main(){
             }
             else{
                 watchdog = 0;
-                ADMUX = 0x05;
                 calibrate_timer0();
                 TIMSK0 |= _BV(OCIE0A);
                 adts_enable();
@@ -265,7 +309,7 @@ int main(){
                 ADCSRA |=_BV(ADSC);
 
             }
-
+            LS3_lo();
         }
 
     }
