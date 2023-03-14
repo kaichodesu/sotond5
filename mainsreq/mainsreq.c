@@ -1,7 +1,7 @@
 #include "mainsreq.h"
 //PWM-----------------------------------------------------
 
-int step;
+uint16_t step;
 
 void init_PWM(void)
 {
@@ -13,9 +13,11 @@ void init_PWM(void)
 	step = 10/((F_CPU)/(2*PRESCALER*FREQ));
 }
 
-void PWM(float mainsreq)
+void pwm(float mainsreq)
 {
+	cli();
     OCR1A = (uint16_t) mainsreq/step;
+	sei();
 }
 //--------------------------------------------------------
 

@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccqFA9Ez.s 			page 1
+GAS LISTING /tmp/ccpcO8NZ.s 			page 1
 
 
    1               		.file	"alg.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
   33               	/* prologue: function */
   34               	/* frame size = 4 */
   35               	/* stack size = 6 */
-GAS LISTING /tmp/ccqFA9Ez.s 			page 2
+GAS LISTING /tmp/ccpcO8NZ.s 			page 2
 
 
   36               	.L__stack_usage = 6
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
   60 0044 0E94 0000 		call __addsf3
   61 0048 6093 0000 		sts MainsReq,r22
   62 004c 7093 0000 		sts MainsReq+1,r23
-GAS LISTING /tmp/ccqFA9Ez.s 			page 3
+GAS LISTING /tmp/ccpcO8NZ.s 			page 3
 
 
   63 0050 8093 0000 		sts MainsReq+2,r24
@@ -126,10 +126,8 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
   65               	.L2:
   53:alg.c         **** }
   54:alg.c         **** 
-  55:alg.c         **** 
-  56:alg.c         **** 
-  57:alg.c         **** if(MainsReq > 10)
-  66               		.stabn	68,0,57,.LM3-.LFBB1
+  55:alg.c         **** if(MainsReq > 10)
+  66               		.stabn	68,0,55,.LM3-.LFBB1
   67               	.LM3:
   68 0058 8091 0000 		lds r24,MainsReq
   69 005c 9091 0000 		lds r25,MainsReq+1
@@ -139,7 +137,7 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
   73 006a 9A83      		std Y+2,r25
   74 006c AB83      		std Y+3,r26
   75 006e BC83      		std Y+4,r27
-  76               		.stabn	68,0,57,.LM4-.LFBB1
+  76               		.stabn	68,0,55,.LM4-.LFBB1
   77               	.LM4:
   78 0070 20E0      		ldi r18,0
   79 0072 30E0      		ldi r19,0
@@ -150,13 +148,13 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
   84 007c 0E94 0000 		call __gtsf2
   85 0080 1816      		cp __zero_reg__,r24
   86 0082 04F0      		brlt .L4
-  58:alg.c         **** {
-  59:alg.c         **** MainsReq = 10;
-  60:alg.c         **** }
-  61:alg.c         **** 
-  62:alg.c         **** 
-  63:alg.c         **** if(MainsReq >= 10)
-  87               		.stabn	68,0,63,.LM5-.LFBB1
+  56:alg.c         **** {
+  57:alg.c         **** MainsReq = 10;
+  58:alg.c         **** }
+  59:alg.c         **** 
+  60:alg.c         **** 
+  61:alg.c         **** if(MainsReq >= 10)
+  87               		.stabn	68,0,61,.LM5-.LFBB1
   88               	.LM5:
   89 0084 20E0      		ldi r18,0
   90 0086 30E0      		ldi r19,0
@@ -170,319 +168,319 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
   98 0098 87FD      		sbrc r24,7
   99 009a 00C0      		rjmp .L27
  100               	.L4:
-  64:alg.c         **** {
-  65:alg.c         **** 	MainsReq = 10;
- 101               		.stabn	68,0,65,.LM6-.LFBB1
+  62:alg.c         **** {
+  63:alg.c         **** 	MainsReq = 10;
+ 101               		.stabn	68,0,63,.LM6-.LFBB1
  102               	.LM6:
  103 009c 80E0      		ldi r24,0
  104 009e 90E0      		ldi r25,0
  105 00a0 A0E2      		ldi r26,lo8(32)
  106 00a2 B1E4      		ldi r27,lo8(65)
-GAS LISTING /tmp/ccqFA9Ez.s 			page 4
-
-
  107 00a4 8093 0000 		sts MainsReq,r24
  108 00a8 9093 0000 		sts MainsReq+1,r25
+GAS LISTING /tmp/ccpcO8NZ.s 			page 4
+
+
  109 00ac A093 0000 		sts MainsReq+2,r26
  110 00b0 B093 0000 		sts MainsReq+3,r27
  111               	.L7:
-  66:alg.c         **** }
-  67:alg.c         **** 
-  68:alg.c         **** if(MainsReq <= 0)
-  69:alg.c         **** {
-  70:alg.c         **** 	MainsReq = 0;
-  71:alg.c         **** }
-  72:alg.c         **** 
-  73:alg.c         **** if(LC1 == 0  && LC2 == 0 && LC3 == 0)
- 112               		.stabn	68,0,73,.LM7-.LFBB1
+  64:alg.c         **** }
+  65:alg.c         **** 
+  66:alg.c         **** if(MainsReq <= 0)
+  67:alg.c         **** {
+  68:alg.c         **** 	MainsReq = 0;
+  69:alg.c         **** }
+  70:alg.c         **** 
+  71:alg.c         **** if((LC1 == 0)  && (LC2 == 0) && (LC3 == 0))
+ 112               		.stabn	68,0,71,.LM7-.LFBB1
  113               	.LM7:
  114 00b4 80B1      		in r24,0
-  74:alg.c         **** {
-  75:alg.c         **** 	LS1_lo();  LS1= 0;
-  76:alg.c         **** 	LS2_lo();  LS2= 0;
-  77:alg.c         **** 	LS3_lo();  LS3= 0;
-  78:alg.c         **** 
-  79:alg.c         **** 	DBAT_lo();
-  80:alg.c         **** 	CBAT_hi();
+  72:alg.c         **** {
+  73:alg.c         **** 	LS1_lo();  LS1= 0;
+  74:alg.c         **** 	LS2_lo();  LS2= 0;
+  75:alg.c         **** 	LS3_lo();  LS3= 0;
+  76:alg.c         **** 
+  77:alg.c         **** 	DBAT_lo();
+  78:alg.c         **** 	CBAT_hi();
+  79:alg.c         **** 
+  80:alg.c         **** }
   81:alg.c         **** 
-  82:alg.c         **** }
-  83:alg.c         **** 
-  84:alg.c         **** if(LC1 == 1  && LC2 == 0 && LC3 == 0) //we will take the busI in the next if loop BusIdiff. If BusI
- 115               		.stabn	68,0,84,.LM8-.LFBB1
+  82:alg.c         **** if((LC1 == 1)  && (LC2 == 0) && (LC3 == 0)) //we will take the busI in the next if loop BusIdiff. I
+ 115               		.stabn	68,0,82,.LM8-.LFBB1
  116               	.LM8:
  117 00b6 0099      		sbic 0,0
- 118               		.stabn	68,0,84,.LM9-.LFBB1
+ 118               		.stabn	68,0,82,.LM9-.LFBB1
  119               	.LM9:
  120 00b8 80B1      		in r24,0
  121               	.L9:
-  85:alg.c         **** {
-  86:alg.c         **** 	if( (MainsMAX + PV + Wind) - Load1 < BatteryChargeI  )
-  87:alg.c         **** 	{
-  88:alg.c         **** 	CBAT_lo();   DBAT_hi();
-  89:alg.c         **** 	}
-  90:alg.c         **** 	else {DBAT_lo();   CBAT_hi();}
-  91:alg.c         **** 
-  92:alg.c         **** 	 if(Load1 < MainsMAX + PV + Wind)
-  93:alg.c         **** 	 {
-  94:alg.c         **** 		 LS1_hi();  LS1= 1;
-  95:alg.c         **** 	 }
-  96:alg.c         **** 	 else {LS1_lo();  LS1= 0;}
-  97:alg.c         **** 	 if(LS1 == 0)
-  98:alg.c         **** 	 {
-  99:alg.c         **** 		 DBAT_lo();   CBAT_hi();
- 100:alg.c         **** 	 }
+  83:alg.c         **** {
+  84:alg.c         **** 	if( (MainsMAX + PV + Wind) - Load1 < BatteryChargeI  )
+  85:alg.c         **** 	{
+  86:alg.c         **** 	CBAT_lo();   DBAT_hi();
+  87:alg.c         **** 	}
+  88:alg.c         **** 	else {DBAT_lo();   CBAT_hi();}
+  89:alg.c         **** 
+  90:alg.c         **** 	 if(Load1 < MainsMAX + PV + Wind)
+  91:alg.c         **** 	 {
+  92:alg.c         **** 		 LS1_hi();  LS1= 1;
+  93:alg.c         **** 	 }
+  94:alg.c         **** 	 else {LS1_lo();  LS1= 0;}
+  95:alg.c         **** 	 if(LS1 == 0)
+  96:alg.c         **** 	 {
+  97:alg.c         **** 		 DBAT_lo();   CBAT_hi();
+  98:alg.c         **** 	 }
+  99:alg.c         **** 
+ 100:alg.c         **** }
  101:alg.c         **** 
- 102:alg.c         **** }
+ 102:alg.c         **** 
  103:alg.c         **** 
- 104:alg.c         **** 
- 105:alg.c         **** 
- 106:alg.c         **** if(LC1 == 0  && LC2 == 1 && LC3 == 0 )
- 122               		.stabn	68,0,106,.LM10-.LFBB1
-GAS LISTING /tmp/ccqFA9Ez.s 			page 5
-
-
+ 104:alg.c         **** if((LC1 == 0)  && (LC2 == 1) && (LC3 == 0) )
+ 122               		.stabn	68,0,104,.LM10-.LFBB1
  123               	.LM10:
  124 00ba 80B1      		in r24,0
- 107:alg.c         **** {
- 108:alg.c         **** 	if( (MainsMAX + PV + Wind) - Load2 < BatteryChargeI  )
- 109:alg.c         **** 	{
- 110:alg.c         **** 	CBAT_lo();   DBAT_hi();
- 111:alg.c         **** 	}
- 112:alg.c         **** 	else {DBAT_lo();   CBAT_hi();}
- 113:alg.c         **** 	if(Load2 < MainsMAX + PV + Wind)
- 114:alg.c         **** 	 {
- 115:alg.c         **** 		 LS2_hi();  LS2= 1;
- 116:alg.c         **** 	 }
- 117:alg.c         **** 	 else {LS2_lo();  LS2= 0;}
- 118:alg.c         **** 	 if(LS2 == 1)
- 119:alg.c         **** 	 {
- 120:alg.c         **** 		 DBAT_lo();   CBAT_hi();
- 121:alg.c         **** 	 }
- 122:alg.c         **** }
+GAS LISTING /tmp/ccpcO8NZ.s 			page 5
+
+
+ 105:alg.c         **** {
+ 106:alg.c         **** 	if( (MainsMAX + PV + Wind) - Load2 < BatteryChargeI  )
+ 107:alg.c         **** 	{
+ 108:alg.c         **** 	CBAT_lo();   DBAT_hi();
+ 109:alg.c         **** 	}
+ 110:alg.c         **** 	else {DBAT_lo();   CBAT_hi();}
+ 111:alg.c         **** 	if(Load2 < MainsMAX + PV + Wind)
+ 112:alg.c         **** 	 {
+ 113:alg.c         **** 		 LS2_hi();  LS2= 1;
+ 114:alg.c         **** 	 }
+ 115:alg.c         **** 	 else {LS2_lo();  LS2= 0;}
+ 116:alg.c         **** 	 if(LS2 == 1)
+ 117:alg.c         **** 	 {
+ 118:alg.c         **** 		 DBAT_lo();   CBAT_hi();
+ 119:alg.c         **** 	 }
+ 120:alg.c         **** }
+ 121:alg.c         **** 
+ 122:alg.c         **** 
  123:alg.c         **** 
  124:alg.c         **** 
- 125:alg.c         **** 
- 126:alg.c         **** 
- 127:alg.c         **** if(LC1 == 1  && LC2 == 1 && LC3 == 0)
- 125               		.stabn	68,0,127,.LM11-.LFBB1
+ 125:alg.c         **** if((LC1 == 1)  && (LC2 == 1) && (LC3 == 0))
+ 125               		.stabn	68,0,125,.LM11-.LFBB1
  126               	.LM11:
  127 00bc 0099      		sbic 0,0
- 128               		.stabn	68,0,127,.LM12-.LFBB1
+ 128               		.stabn	68,0,125,.LM12-.LFBB1
  129               	.LM12:
  130 00be 80B1      		in r24,0
  131               	.L10:
- 128:alg.c         **** {
- 129:alg.c         **** 	if(Load1 + Load2 < MainsMAX + PV + Wind)
- 130:alg.c         **** 	 {
- 131:alg.c         **** 		 LS2_hi();  LS2= 1;
- 132:alg.c         **** 		 if( (MainsMAX + PV + Wind) - (Load1 + Load2) < BatteryChargeI  )
- 133:alg.c         **** 		{
- 134:alg.c         **** 			CBAT_lo();   DBAT_hi();
- 135:alg.c         **** 		}
- 136:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
- 137:alg.c         **** 	 }
- 138:alg.c         **** 	 else LS2_lo();
- 139:alg.c         **** 
- 140:alg.c         **** 	 if(LS2 == 1)
- 141:alg.c         **** 	 {
- 142:alg.c         **** 
- 143:alg.c         **** 	 	if( (MainsMAX + PV + Wind) - Load1 < BatteryChargeI  )
- 144:alg.c         **** 		{
- 145:alg.c         **** 			CBAT_lo();   DBAT_hi();
- 146:alg.c         **** 		}
- 147:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
- 148:alg.c         **** 	 }
- 149:alg.c         **** 
- 150:alg.c         **** 	 if(Load1 < MainsMAX + PV + Wind)
- 151:alg.c         **** 	 {
- 152:alg.c         **** 		 LS1_hi();  LS1= 1;
- 153:alg.c         **** 	 }
- 154:alg.c         **** 	 else {LS1_lo();  LS1= 0;}
-GAS LISTING /tmp/ccqFA9Ez.s 			page 6
+ 126:alg.c         **** {
+ 127:alg.c         **** 	if(Load1 + Load2 < MainsMAX + PV + Wind)
+ 128:alg.c         **** 	 {
+ 129:alg.c         **** 		 LS2_hi();  LS2= 1;
+ 130:alg.c         **** 		 if( (MainsMAX + PV + Wind) - (Load1 + Load2) < BatteryChargeI  )
+ 131:alg.c         **** 		{
+ 132:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 133:alg.c         **** 		}
+ 134:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 135:alg.c         **** 	 }
+ 136:alg.c         **** 	 else LS2_lo();
+ 137:alg.c         **** 
+ 138:alg.c         **** 	 if(LS2 == 1)
+ 139:alg.c         **** 	 {
+ 140:alg.c         **** 
+ 141:alg.c         **** 	 	if( (MainsMAX + PV + Wind) - Load1 < BatteryChargeI  )
+ 142:alg.c         **** 		{
+ 143:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 144:alg.c         **** 		}
+ 145:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 146:alg.c         **** 	 }
+ 147:alg.c         **** 
+ 148:alg.c         **** 	 if(Load1 < MainsMAX + PV + Wind)
+ 149:alg.c         **** 	 {
+ 150:alg.c         **** 		 LS1_hi();  LS1= 1;
+ 151:alg.c         **** 	 }
+ 152:alg.c         **** 	 else {LS1_lo();  LS1= 0;}
+ 153:alg.c         **** 
+ 154:alg.c         **** 	 if(LS1 == 0)
+GAS LISTING /tmp/ccpcO8NZ.s 			page 6
 
 
- 155:alg.c         **** 
- 156:alg.c         **** 	 if(LS1 == 0)
- 157:alg.c         **** 	 {
- 158:alg.c         **** 		 DBAT_lo();   CBAT_hi();
- 159:alg.c         **** 	 }
+ 155:alg.c         **** 	 {
+ 156:alg.c         **** 		 DBAT_lo();   CBAT_hi();
+ 157:alg.c         **** 	 }
+ 158:alg.c         **** 
+ 159:alg.c         **** 
  160:alg.c         **** 
- 161:alg.c         **** 
+ 161:alg.c         **** }
  162:alg.c         **** 
- 163:alg.c         **** }
- 164:alg.c         **** 
- 165:alg.c         **** 
- 166:alg.c         **** if(LC1 == 0  && LC2 == 0 && LC3 == 1)
- 132               		.stabn	68,0,166,.LM13-.LFBB1
+ 163:alg.c         **** 
+ 164:alg.c         **** if((LC1 == 0)  && (LC2 == 0) && (LC3 == 1))
+ 132               		.stabn	68,0,164,.LM13-.LFBB1
  133               	.LM13:
  134 00c0 80B1      		in r24,0
- 167:alg.c         **** {
- 168:alg.c         **** 	if(Load3 < MainsMAX + PV + Wind)
- 169:alg.c         **** 	{
- 170:alg.c         **** 		LS3_hi();  LS3= 1;
- 171:alg.c         **** 		if( (MainsMAX + PV + Wind) - Load3 < BatteryChargeI  )
- 172:alg.c         **** 		{
- 173:alg.c         **** 			CBAT_lo();   DBAT_hi();
- 174:alg.c         **** 		}
- 175:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
- 176:alg.c         **** 	}
- 177:alg.c         **** 	else {LS3_lo();  LS3= 0;}
+ 165:alg.c         **** {
+ 166:alg.c         **** 	if(Load3 < MainsMAX + PV + Wind)
+ 167:alg.c         **** 	{
+ 168:alg.c         **** 		LS3_hi();  LS3= 1;
+ 169:alg.c         **** 		if( (MainsMAX + PV + Wind) - Load3 < BatteryChargeI  )
+ 170:alg.c         **** 		{
+ 171:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 172:alg.c         **** 		}
+ 173:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 174:alg.c         **** 	}
+ 175:alg.c         **** 	else {LS3_lo();  LS3= 0;}
+ 176:alg.c         **** 
+ 177:alg.c         **** }
  178:alg.c         **** 
- 179:alg.c         **** }
- 180:alg.c         **** 
- 181:alg.c         **** 
- 182:alg.c         **** if(LC1 == 1  && LC2 == 0 && LC3 == 1)
- 135               		.stabn	68,0,182,.LM14-.LFBB1
+ 179:alg.c         **** 
+ 180:alg.c         **** if((LC1 == 1)  && (LC2 == 0) && (LC3 == 1))
+ 135               		.stabn	68,0,180,.LM14-.LFBB1
  136               	.LM14:
  137 00c2 0099      		sbic 0,0
- 138               		.stabn	68,0,182,.LM15-.LFBB1
+ 138               		.stabn	68,0,180,.LM15-.LFBB1
  139               	.LM15:
  140 00c4 80B1      		in r24,0
  141               	.L11:
- 183:alg.c         **** {
- 184:alg.c         **** 	if(Load3 + Load1  < MainsMAX + PV + Wind)
- 185:alg.c         **** 	{
- 186:alg.c         **** 		LS3_hi();  LS3= 1;
- 187:alg.c         **** 		if( (MainsMAX + PV + Wind) -  (Load3 + Load1) < BatteryChargeI  )
- 188:alg.c         **** 		{
- 189:alg.c         **** 			CBAT_lo();   DBAT_hi();
- 190:alg.c         **** 		}
- 191:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
- 192:alg.c         **** 
- 193:alg.c         **** 	}
- 194:alg.c         **** 	else {LS3_lo();  LS3= 0;}
- 195:alg.c         **** 
- 196:alg.c         **** 	if(LS3 == 1)
- 197:alg.c         **** 	{
- 198:alg.c         **** 		if( (MainsMAX + PV + Wind) -  Load1 < BatteryChargeI  )
- 199:alg.c         **** 		{
- 200:alg.c         **** 			CBAT_lo();   DBAT_hi();
- 201:alg.c         **** 		}
-GAS LISTING /tmp/ccqFA9Ez.s 			page 7
+ 181:alg.c         **** {
+ 182:alg.c         **** 	if(Load3 + Load1  < MainsMAX + PV + Wind)
+ 183:alg.c         **** 	{
+ 184:alg.c         **** 		LS3_hi();  LS3= 1;
+ 185:alg.c         **** 		if( (MainsMAX + PV + Wind) -  (Load3 + Load1) < BatteryChargeI  )
+ 186:alg.c         **** 		{
+ 187:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 188:alg.c         **** 		}
+ 189:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 190:alg.c         **** 
+ 191:alg.c         **** 	}
+ 192:alg.c         **** 	else {LS3_lo();  LS3= 0;}
+ 193:alg.c         **** 
+ 194:alg.c         **** 	if(LS3 == 1)
+ 195:alg.c         **** 	{
+ 196:alg.c         **** 		if( (MainsMAX + PV + Wind) -  Load1 < BatteryChargeI  )
+ 197:alg.c         **** 		{
+ 198:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 199:alg.c         **** 		}
+ 200:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 201:alg.c         **** 	}
+GAS LISTING /tmp/ccpcO8NZ.s 			page 7
 
 
- 202:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
- 203:alg.c         **** 	}
- 204:alg.c         **** 
- 205:alg.c         **** 	if(Load1 < MainsMAX + PV + Wind)
- 206:alg.c         **** 	{
- 207:alg.c         **** 		LS1_hi();  LS1= 1;
- 208:alg.c         **** 	}
+ 202:alg.c         **** 
+ 203:alg.c         **** 	if(Load1 < MainsMAX + PV + Wind)
+ 204:alg.c         **** 	{
+ 205:alg.c         **** 		LS1_hi();  LS1= 1;
+ 206:alg.c         **** 	}
+ 207:alg.c         **** 
+ 208:alg.c         **** 	else {LS1_lo();  LS1= 0;}
  209:alg.c         **** 
- 210:alg.c         **** 	else {LS1_lo();  LS1= 0;}
- 211:alg.c         **** 
- 212:alg.c         **** 	if(LS1 == 0)
- 213:alg.c         **** 	{
- 214:alg.c         **** 		DBAT_lo();   CBAT_hi();
- 215:alg.c         **** 	}
- 216:alg.c         **** 
+ 210:alg.c         **** 	if(LS1 == 0)
+ 211:alg.c         **** 	{
+ 212:alg.c         **** 		DBAT_lo();   CBAT_hi();
+ 213:alg.c         **** 	}
+ 214:alg.c         **** 
+ 215:alg.c         **** 
+ 216:alg.c         **** }
  217:alg.c         **** 
- 218:alg.c         **** }
- 219:alg.c         **** 
- 220:alg.c         **** if(LC1 == 0  && LC2 == 1 && LC3 == 1  )
- 142               		.stabn	68,0,220,.LM16-.LFBB1
+ 218:alg.c         **** if((LC1 == 0)  && (LC2 == 1) && (LC3 == 1)  )
+ 142               		.stabn	68,0,218,.LM16-.LFBB1
  143               	.LM16:
  144 00c6 80B1      		in r24,0
- 221:alg.c         **** {
- 222:alg.c         **** 	if(Load2 + Load3 < MainsMAX + PV + Wind)
- 223:alg.c         **** 	{
- 224:alg.c         **** 		LS3_hi();  LS3= 1;
- 225:alg.c         **** 		if( (MainsMAX + PV + Wind) - (Load2 + Load3) < BatteryChargeI  )
- 226:alg.c         **** 		{
- 227:alg.c         **** 			CBAT_lo();   DBAT_hi();
- 228:alg.c         **** 		}
- 229:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
- 230:alg.c         **** 
- 231:alg.c         **** 	}
- 232:alg.c         **** 	else {LS3_lo();  LS3= 0;}
- 233:alg.c         **** 	if(LS3 == 1)
- 234:alg.c         **** 	{
- 235:alg.c         **** 		if( (MainsMAX + PV + Wind) - Load2 < BatteryChargeI  )
- 236:alg.c         **** 		{
- 237:alg.c         **** 			CBAT_lo();   DBAT_hi();
- 238:alg.c         **** 		}
- 239:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
- 240:alg.c         **** 	}
- 241:alg.c         **** 
- 242:alg.c         **** 	if(Load2 < MainsMAX + PV + Wind)
- 243:alg.c         **** 	{
- 244:alg.c         **** 		LS2_hi();  LS2= 1;
- 245:alg.c         **** 	}
- 246:alg.c         **** 
- 247:alg.c         **** 	else {LS2_lo();  LS2= 0;}
- 248:alg.c         **** 	if(LS2 == 1)
- 249:alg.c         **** 	{
- 250:alg.c         **** 		DBAT_lo();   CBAT_hi();
- 251:alg.c         **** 	}
- 252:alg.c         **** 
+ 219:alg.c         **** {
+ 220:alg.c         **** 	if(Load2 + Load3 < MainsMAX + PV + Wind)
+ 221:alg.c         **** 	{
+ 222:alg.c         **** 		LS3_hi();  LS3= 1;
+ 223:alg.c         **** 		if( (MainsMAX + PV + Wind) - (Load2 + Load3) < BatteryChargeI  )
+ 224:alg.c         **** 		{
+ 225:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 226:alg.c         **** 		}
+ 227:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 228:alg.c         **** 
+ 229:alg.c         **** 	}
+ 230:alg.c         **** 	else {LS3_lo();  LS3= 0;}
+ 231:alg.c         **** 	if(LS3 == 1)
+ 232:alg.c         **** 	{
+ 233:alg.c         **** 		if( (MainsMAX + PV + Wind) - Load2 < BatteryChargeI  )
+ 234:alg.c         **** 		{
+ 235:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 236:alg.c         **** 		}
+ 237:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 238:alg.c         **** 	}
+ 239:alg.c         **** 
+ 240:alg.c         **** 	if(Load2 < MainsMAX + PV + Wind)
+ 241:alg.c         **** 	{
+ 242:alg.c         **** 		LS2_hi();  LS2= 1;
+ 243:alg.c         **** 	}
+ 244:alg.c         **** 
+ 245:alg.c         **** 	else {LS2_lo();  LS2= 0;}
+ 246:alg.c         **** 	if(LS2 == 1)
+ 247:alg.c         **** 	{
+ 248:alg.c         **** 		DBAT_lo();   CBAT_hi();
+ 249:alg.c         **** 	}
+ 250:alg.c         **** 
+ 251:alg.c         **** 
+ 252:alg.c         **** }
  253:alg.c         **** 
- 254:alg.c         **** }
- 255:alg.c         **** 
-GAS LISTING /tmp/ccqFA9Ez.s 			page 8
+ 254:alg.c         **** 
+ 255:alg.c         **** if((LC1 == 1) && (LC2 == 1) && (LC3 == 1) )
+GAS LISTING /tmp/ccpcO8NZ.s 			page 8
 
 
- 256:alg.c         **** 
- 257:alg.c         **** if(LC1 == 1 && LC2 == 1 && LC3 == 1 )
- 145               		.stabn	68,0,257,.LM17-.LFBB1
+ 145               		.stabn	68,0,255,.LM17-.LFBB1
  146               	.LM17:
  147 00c8 0099      		sbic 0,0
- 148               		.stabn	68,0,257,.LM18-.LFBB1
+ 148               		.stabn	68,0,255,.LM18-.LFBB1
  149               	.LM18:
  150 00ca 80B1      		in r24,0
  151               	.L1:
  152               	/* epilogue start */
- 258:alg.c         **** {
- 259:alg.c         **** 	if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind)
- 260:alg.c         **** 	{
- 261:alg.c         **** 		LS3_hi();  LS3= 1;
- 262:alg.c         **** 		if( (MainsMAX + PV + Wind) - (Load1 + Load2 + Load3) < BatteryChargeI  )
- 263:alg.c         **** 		{
- 264:alg.c         **** 			CBAT_lo();   DBAT_hi();
- 265:alg.c         **** 		}
- 266:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
- 267:alg.c         **** 	}
- 268:alg.c         **** 
- 269:alg.c         **** 	else {LS3_lo();  LS3= 0;}
- 270:alg.c         **** 	if(LS3 == 1)
- 271:alg.c         **** 	{
- 272:alg.c         **** 		if( (MainsMAX + PV + Wind) - (Load1 + Load2) < BatteryChargeI  )
- 273:alg.c         **** 		{
- 274:alg.c         **** 			CBAT_lo();   DBAT_hi();
- 275:alg.c         **** 		}
- 276:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
- 277:alg.c         **** 	}
- 278:alg.c         **** 
- 279:alg.c         **** 
- 280:alg.c         **** 	if(Load2 + Load1 < MainsMAX + PV + Wind)
- 281:alg.c         **** 	{
- 282:alg.c         **** 		LS2_hi();  LS2= 1;
- 283:alg.c         **** 	}
- 284:alg.c         **** 	else {LS2_lo();  LS2= 0;}
- 285:alg.c         **** 
- 286:alg.c         **** 	if(LS2 == 1)
- 287:alg.c         **** 	{
- 288:alg.c         **** 		if( (MainsMAX + PV + Wind) - Load1 < BatteryChargeI  )
- 289:alg.c         **** 		{
- 290:alg.c         **** 			CBAT_lo();   DBAT_hi();
- 291:alg.c         **** 		}
- 292:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
- 293:alg.c         **** 	}
- 294:alg.c         **** 	if(Load1 < MainsMAX + PV + Wind)
- 295:alg.c         **** 	{
- 296:alg.c         **** 		LS1_hi();  LS1= 1;
- 297:alg.c         **** 	}
- 298:alg.c         **** 	else {LS1_lo();  LS1= 0;}
- 299:alg.c         **** 		if(LS1 == 0)
- 300:alg.c         **** 		{
- 301:alg.c         **** 			DBAT_lo();   CBAT_hi();
- 302:alg.c         **** 		}
- 303:alg.c         **** 	}
- 304:alg.c         **** 
-GAS LISTING /tmp/ccqFA9Ez.s 			page 9
+ 256:alg.c         **** {
+ 257:alg.c         **** 	if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind)
+ 258:alg.c         **** 	{
+ 259:alg.c         **** 		LS3_hi();  LS3= 1;
+ 260:alg.c         **** 		if( (MainsMAX + PV + Wind) - (Load1 + Load2 + Load3) < BatteryChargeI  )
+ 261:alg.c         **** 		{
+ 262:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 263:alg.c         **** 		}
+ 264:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 265:alg.c         **** 	}
+ 266:alg.c         **** 
+ 267:alg.c         **** 	else {LS3_lo();  LS3= 0;}
+ 268:alg.c         **** 	if(LS3 == 1)
+ 269:alg.c         **** 	{
+ 270:alg.c         **** 		if( (MainsMAX + PV + Wind) - (Load1 + Load2) < BatteryChargeI  )
+ 271:alg.c         **** 		{
+ 272:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 273:alg.c         **** 		}
+ 274:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 275:alg.c         **** 	}
+ 276:alg.c         **** 
+ 277:alg.c         **** 
+ 278:alg.c         **** 	if(Load2 + Load1 < MainsMAX + PV + Wind)
+ 279:alg.c         **** 	{
+ 280:alg.c         **** 		LS2_hi();  LS2= 1;
+ 281:alg.c         **** 	}
+ 282:alg.c         **** 	else {LS2_lo();  LS2= 0;}
+ 283:alg.c         **** 
+ 284:alg.c         **** 	if(LS2 == 1)
+ 285:alg.c         **** 	{
+ 286:alg.c         **** 		if( (MainsMAX + PV + Wind) - Load1 < BatteryChargeI  )
+ 287:alg.c         **** 		{
+ 288:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 289:alg.c         **** 		}
+ 290:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 291:alg.c         **** 	}
+ 292:alg.c         **** 	if(Load1 < MainsMAX + PV + Wind)
+ 293:alg.c         **** 	{
+ 294:alg.c         **** 		LS1_hi();  LS1= 1;
+ 295:alg.c         **** 	}
+ 296:alg.c         **** 	else {LS1_lo();  LS1= 0;}
+ 297:alg.c         **** 		if(LS1 == 0)
+ 298:alg.c         **** 		{
+ 299:alg.c         **** 			DBAT_lo();   CBAT_hi();
+ 300:alg.c         **** 		}
+ 301:alg.c         **** 	}
+ 302:alg.c         **** 
+ 303:alg.c         **** }
+ 153               		.stabn	68,0,303,.LM19-.LFBB1
+GAS LISTING /tmp/ccpcO8NZ.s 			page 9
 
 
- 305:alg.c         **** }
- 153               		.stabn	68,0,305,.LM19-.LFBB1
  154               	.LM19:
  155 00cc 0F90      		pop __tmp_reg__
  156 00ce 0F90      		pop __tmp_reg__
@@ -492,8 +490,8 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
  160 00d6 CF91      		pop r28
  161 00d8 0895      		ret
  162               	.L27:
-  68:alg.c         **** {
- 163               		.stabn	68,0,68,.LM20-.LFBB1
+  66:alg.c         **** {
+ 163               		.stabn	68,0,66,.LM20-.LFBB1
  164               	.LM20:
  165 00da 20E0      		ldi r18,0
  166 00dc 30E0      		ldi r19,0
@@ -505,8 +503,8 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
  172 00e8 0E94 0000 		call __lesf2
  173 00ec 1816      		cp __zero_reg__,r24
  174 00ee 04F0      		brlt .L7
-  70:alg.c         **** }
- 175               		.stabn	68,0,70,.LM21-.LFBB1
+  68:alg.c         **** }
+ 175               		.stabn	68,0,68,.LM21-.LFBB1
  176               	.LM21:
  177 00f0 1092 0000 		sts MainsReq,__zero_reg__
  178 00f4 1092 0000 		sts MainsReq+1,__zero_reg__
@@ -538,11 +536,11 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
  204               		.stabs	"LS1:G(0,4)",32,0,20,0
  205               	.global	BatteryDischI
  206               		.data
-GAS LISTING /tmp/ccqFA9Ez.s 			page 10
-
-
  207               		.type	BatteryDischI, @object
  208               		.size	BatteryDischI, 2
+GAS LISTING /tmp/ccpcO8NZ.s 			page 10
+
+
  209               	BatteryDischI:
  210 0000 0100      		.word	1
  211               		.stabs	"BatteryDischI:G(0,5)=r(0,5);-32768;32767;",32,0,19,0
@@ -598,11 +596,11 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
  261               		.stabs	"Load3:G(0,7)=k(0,6)",32,0,13,0
  262               	.global	Load2
  263               		.type	Load2, @object
-GAS LISTING /tmp/ccqFA9Ez.s 			page 11
-
-
  264               		.size	Load2, 4
  265               	Load2:
+GAS LISTING /tmp/ccpcO8NZ.s 			page 11
+
+
  266 0004 00        		.byte	0
  267 0005 00        		.byte	0
  268 0006 00        		.byte	0
@@ -635,32 +633,32 @@ GAS LISTING /tmp/ccqFA9Ez.s 			page 1
  295               		.ident	"GCC: (GNU) 11.2.0"
  296               	.global __do_copy_data
  297               	.global __do_clear_bss
-GAS LISTING /tmp/ccqFA9Ez.s 			page 12
+GAS LISTING /tmp/ccpcO8NZ.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 alg.c
-     /tmp/ccqFA9Ez.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccqFA9Ez.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccqFA9Ez.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccqFA9Ez.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccqFA9Ez.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccqFA9Ez.s:23     .text:0000000000000000 algorithm
-     /tmp/ccqFA9Ez.s:217    .bss:0000000000000003 BusV
-     /tmp/ccqFA9Ez.s:224    .bss:0000000000000007 MainsReq
-     /tmp/ccqFA9Ez.s:189    .bss:0000000000000000 LS3
-     /tmp/ccqFA9Ez.s:196    .bss:0000000000000001 LS2
-     /tmp/ccqFA9Ez.s:202    .bss:0000000000000002 LS1
-     /tmp/ccqFA9Ez.s:209    .data:0000000000000000 BatteryDischI
-     /tmp/ccqFA9Ez.s:230    .bss:000000000000000b BusI
-     /tmp/ccqFA9Ez.s:236    .bss:000000000000000f Wind
-     /tmp/ccqFA9Ez.s:242    .bss:0000000000000013 PV
-     /tmp/ccqFA9Ez.s:249    .data:0000000000000002 BusVMAX
-     /tmp/ccqFA9Ez.s:256    .rodata:0000000000000000 Load3
-     /tmp/ccqFA9Ez.s:265    .rodata:0000000000000004 Load2
-     /tmp/ccqFA9Ez.s:274    .rodata:0000000000000008 Load1
-     /tmp/ccqFA9Ez.s:283    .rodata:000000000000000c BatteryChargeI
-     /tmp/ccqFA9Ez.s:289    .rodata:000000000000000d MainsMAX
+     /tmp/ccpcO8NZ.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccpcO8NZ.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccpcO8NZ.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccpcO8NZ.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccpcO8NZ.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccpcO8NZ.s:23     .text:0000000000000000 algorithm
+     /tmp/ccpcO8NZ.s:217    .bss:0000000000000003 BusV
+     /tmp/ccpcO8NZ.s:224    .bss:0000000000000007 MainsReq
+     /tmp/ccpcO8NZ.s:189    .bss:0000000000000000 LS3
+     /tmp/ccpcO8NZ.s:196    .bss:0000000000000001 LS2
+     /tmp/ccpcO8NZ.s:202    .bss:0000000000000002 LS1
+     /tmp/ccpcO8NZ.s:209    .data:0000000000000000 BatteryDischI
+     /tmp/ccpcO8NZ.s:230    .bss:000000000000000b BusI
+     /tmp/ccpcO8NZ.s:236    .bss:000000000000000f Wind
+     /tmp/ccpcO8NZ.s:242    .bss:0000000000000013 PV
+     /tmp/ccpcO8NZ.s:249    .data:0000000000000002 BusVMAX
+     /tmp/ccpcO8NZ.s:256    .rodata:0000000000000000 Load3
+     /tmp/ccpcO8NZ.s:265    .rodata:0000000000000004 Load2
+     /tmp/ccpcO8NZ.s:274    .rodata:0000000000000008 Load1
+     /tmp/ccpcO8NZ.s:283    .rodata:000000000000000c BatteryChargeI
+     /tmp/ccpcO8NZ.s:289    .rodata:000000000000000d MainsMAX
 
 UNDEFINED SYMBOLS
 __ltsf2

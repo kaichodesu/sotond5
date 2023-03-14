@@ -63,7 +63,7 @@ void init(){
 void lcd_update(void){
     //  We only want to draw to pixels that have changed.
     wind_pwr = round((Wind/3.3) * 94);
-    pv_pwr = round((PV/3.3) * 94);
+    pv_pwr = round((PV) * 94);
 	power = BusI * 300/1000;
 	power1 = (uint8_t) floor(power);
 	power10 = ((uint8_t) round(power * 100)) % 10;
@@ -125,23 +125,23 @@ void analog_read(){
             while(adc_rdy == 0);
             //TCCR2B = 0x01;
             //  Start the ADCMUX timer for the next conversion
-            windarray[0] = adc_read*WIND_CALIBRATED*3.3/1024;
+            windarray[0] = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            windarray[1] = adc_read*WIND_CALIBRATED*3.3/1024;
+            windarray[1] = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            windarray[2] = adc_read*WIND_CALIBRATED*3.3/1024;
+            windarray[2] = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            windarray[3] = adc_read*WIND_CALIBRATED*3.3/1024;
+            windarray[3] = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
             ADCSRA |=_BV(ADSC);
             while(adc_rdy == 0);
-            windarray[4] = adc_read*WIND_CALIBRATED*3.3/1024;
+            windarray[4] = adc_read*WIND_CALIBRATED/1024;
             adc_rdy = false;
             Wind = (windarray[0] + windarray[1] + windarray[2] + windarray[3] + windarray[4])/5;
 
@@ -181,6 +181,8 @@ void analog_read(){
 int main(){
     uint8_t i = 0;
     init();
+    PV = 1;
+    Wind = 3;
     while(1){
         if(sync){
             clk_hi();
@@ -260,7 +262,8 @@ int main(){
             watchdog++;
 
 
-MainsReq =   (10/MainsMAX) * (BusI - (PV + Wind));
+            MainsReq =   (10/MainsMAX) * (BusI - (PV + Wind));
+
             if (MainsReq >= 10)
                 MainsReq = 10;
 
@@ -273,7 +276,7 @@ MainsReq =   (10/MainsMAX) * (BusI - (PV + Wind));
                 OCR0A = 236;
             }
 
-            //PWM(MainsReq);
+            pwm(MainsReq);
 
             void analog_read();
 
