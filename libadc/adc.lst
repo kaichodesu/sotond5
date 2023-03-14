@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccga4TkX.s 			page 1
+GAS LISTING /tmp/cc3QgJ8a.s 			page 1
 
 
    1               		.file	"adc.c"
@@ -7,18 +7,15 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
    4               	__SREG__ = 0x3f
    5               	__tmp_reg__ = 0
    6               	__zero_reg__ = 1
-   7               		.stabs	"/home/kaicho/Southampton/sotond5/sotond5/libadc/",100,0,2,.Ltext0
-   8               		.stabs	"adc.c",100,0,2,.Ltext0
-   9               		.text
-  10               	.Ltext0:
-  11               		.stabs	"gcc2_compiled.",60,0,0,0
-  12               		.stabs	"init_timers:F(0,1)=(0,1)",36,0,14,init_timers
-  13               		.stabs	"uint8_t:t(0,2)=(0,3)=@s8;r(0,3);0;255;",128,0,126,0
-  14               		.stabs	"void:t(0,1)",128,0,0,0
-  15               		.stabs	"unsigned char:t(0,3)",128,0,0,0
-  16               	.global	init_timers
-  17               		.type	init_timers, @function
-  18               	init_timers:
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.file 0 "/home/kaicho/Documents/Southampton/D5/update/sotond5/libadc" "adc.c"
+  11               	.global	init_timers
+  12               		.type	init_timers, @function
+  13               	init_timers:
+  14               	.LFB11:
+  15               		.file 1 "adc.c"
    1:adc.c         **** #include <stdio.h>
    2:adc.c         **** #include <avr/io.h>
    3:adc.c         **** #include <util/delay.h>
@@ -34,524 +31,1409 @@ GAS LISTING /tmp/ccga4TkX.s 			page 1
   13:adc.c         **** 
   14:adc.c         **** void init_timers(void)
   15:adc.c         **** {
-  19               		.stabn	68,0,15,.LM0-.LFBB1
-  20               	.LM0:
-  21               	.LFBB1:
-  22               	/* prologue: function */
-  23               	/* frame size = 0 */
-  24               	/* stack size = 0 */
-  25               	.L__stack_usage = 0
+  16               		.loc 1 15 1 view -0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
   16:adc.c         **** 	TCCR0A = 0x02; // set timer0 to CTC mode with 1024 prescaler
-  26               		.stabn	68,0,16,.LM1-.LFBB1
-  27               	.LM1:
-  28 0000 82E0      		ldi r24,lo8(2)
-  29 0002 84BD      		out 0x24,r24
+  22               		.loc 1 16 2 view .LVU1
+  23               		.loc 1 16 9 is_stmt 0 view .LVU2
+  24 0000 82E0      		ldi r24,lo8(2)
+  25 0002 84BD      		out 0x24,r24
   17:adc.c         **** 	TCCR0B = 0x05;
-  30               		.stabn	68,0,17,.LM2-.LFBB1
-  31               	.LM2:
-  32 0004 95E0      		ldi r25,lo8(5)
-  33 0006 95BD      		out 0x25,r25
+  26               		.loc 1 17 2 is_stmt 1 view .LVU3
+  27               		.loc 1 17 9 is_stmt 0 view .LVU4
+  28 0004 95E0      		ldi r25,lo8(5)
+  29 0006 95BD      		out 0x25,r25
   18:adc.c         **** 	TCNT0 = 0;
-  34               		.stabn	68,0,18,.LM3-.LFBB1
-  35               	.LM3:
-  36 0008 16BC      		out 0x26,__zero_reg__
+  30               		.loc 1 18 2 is_stmt 1 view .LVU5
+  31               		.loc 1 18 8 is_stmt 0 view .LVU6
+  32 0008 16BC      		out 0x26,__zero_reg__
   19:adc.c         ****     TIMSK0 = 0;
-  37               		.stabn	68,0,19,.LM4-.LFBB1
-  38               	.LM4:
-GAS LISTING /tmp/ccga4TkX.s 			page 2
-
-
-  39 000a 1092 6E00 		sts 110,__zero_reg__
+  33               		.loc 1 19 5 is_stmt 1 view .LVU7
+  34               		.loc 1 19 12 is_stmt 0 view .LVU8
+  35 000a 1092 6E00 		sts 110,__zero_reg__
   20:adc.c         **** 
   21:adc.c         ****     TCCR2A = 0x02;
-  40               		.stabn	68,0,21,.LM5-.LFBB1
-  41               	.LM5:
-  42 000e 8093 B000 		sts 176,r24
+  36               		.loc 1 21 5 is_stmt 1 view .LVU9
+GAS LISTING /tmp/cc3QgJ8a.s 			page 2
+
+
+  37               		.loc 1 21 12 is_stmt 0 view .LVU10
+  38 000e 8093 B000 		sts 176,r24
   22:adc.c         ****     TCCR2B = 0x00; // Timer2 will be set to CTC mode with no prescaler to sync with the ADC clock.
-  43               		.stabn	68,0,22,.LM6-.LFBB1
-  44               	.LM6:
-  45 0012 1092 B100 		sts 177,__zero_reg__
+  39               		.loc 1 22 5 is_stmt 1 view .LVU11
+  40               		.loc 1 22 12 is_stmt 0 view .LVU12
+  41 0012 1092 B100 		sts 177,__zero_reg__
   23:adc.c         ****     OCR2A = 239;
-  46               		.stabn	68,0,23,.LM7-.LFBB1
-  47               	.LM7:
-  48 0016 9FEE      		ldi r25,lo8(-17)
-  49 0018 9093 B300 		sts 179,r25
+  42               		.loc 1 23 5 is_stmt 1 view .LVU13
+  43               		.loc 1 23 11 is_stmt 0 view .LVU14
+  44 0016 9FEE      		ldi r25,lo8(-17)
+  45 0018 9093 B300 		sts 179,r25
   24:adc.c         ****     TIMSK2 = 0x02; // Setting the interrupt on OCR2A
-  50               		.stabn	68,0,24,.LM8-.LFBB1
-  51               	.LM8:
-  52 001c 8093 7000 		sts 112,r24
-  53               	/* epilogue start */
+  46               		.loc 1 24 5 is_stmt 1 view .LVU15
+  47               		.loc 1 24 12 is_stmt 0 view .LVU16
+  48 001c 8093 7000 		sts 112,r24
+  49               	/* epilogue start */
   25:adc.c         **** 
   26:adc.c         **** 	//set prescaler to 1024, count up to 116 (OCR0A),
   27:adc.c         **** }
-  54               		.stabn	68,0,27,.LM9-.LFBB1
-  55               	.LM9:
-  56 0020 0895      		ret
-  57               		.size	init_timers, .-init_timers
-  58               	.Lscope1:
-  59               		.stabs	"",36,0,0,.Lscope1-.LFBB1
-  60               		.stabs	"adts_disable:F(0,1)",36,0,29,adts_disable
-  61               	.global	adts_disable
-  62               		.type	adts_disable, @function
-  63               	adts_disable:
+  50               		.loc 1 27 1 view .LVU17
+  51 0020 0895      		ret
+  52               		.cfi_endproc
+  53               	.LFE11:
+  54               		.size	init_timers, .-init_timers
+  55               	.global	adts_disable
+  56               		.type	adts_disable, @function
+  57               	adts_disable:
+  58               	.LFB12:
   28:adc.c         **** 
   29:adc.c         **** void adts_disable(void){
-  64               		.stabn	68,0,29,.LM10-.LFBB2
-  65               	.LM10:
-  66               	.LFBB2:
-  67               	/* prologue: function */
-  68               	/* frame size = 0 */
-  69               	/* stack size = 0 */
-  70               	.L__stack_usage = 0
+  59               		.loc 1 29 24 is_stmt 1 view -0
+  60               		.cfi_startproc
+  61               	/* prologue: function */
+  62               	/* frame size = 0 */
+  63               	/* stack size = 0 */
+  64               	.L__stack_usage = 0
   30:adc.c         ****     ADCSRB = 0;
-  71               		.stabn	68,0,30,.LM11-.LFBB2
-  72               	.LM11:
-  73 0022 1092 7B00 		sts 123,__zero_reg__
-  74               	/* epilogue start */
+  65               		.loc 1 30 5 view .LVU19
+  66               		.loc 1 30 12 is_stmt 0 view .LVU20
+  67 0022 1092 7B00 		sts 123,__zero_reg__
+  68               	/* epilogue start */
   31:adc.c         **** }
-  75               		.stabn	68,0,31,.LM12-.LFBB2
-  76               	.LM12:
-  77 0026 0895      		ret
-  78               		.size	adts_disable, .-adts_disable
-  79               	.Lscope2:
-  80               		.stabs	"",36,0,0,.Lscope2-.LFBB2
-  81               		.stabs	"adts_enable:F(0,1)",36,0,33,adts_enable
-  82               	.global	adts_enable
-  83               		.type	adts_enable, @function
-GAS LISTING /tmp/ccga4TkX.s 			page 3
-
-
-  84               	adts_enable:
+  69               		.loc 1 31 1 view .LVU21
+  70 0026 0895      		ret
+  71               		.cfi_endproc
+  72               	.LFE12:
+  73               		.size	adts_disable, .-adts_disable
+  74               	.global	adts_enable
+  75               		.type	adts_enable, @function
+  76               	adts_enable:
+  77               	.LFB13:
   32:adc.c         **** 
   33:adc.c         **** void adts_enable(void){
-  85               		.stabn	68,0,33,.LM13-.LFBB3
-  86               	.LM13:
-  87               	.LFBB3:
-  88               	/* prologue: function */
-  89               	/* frame size = 0 */
-  90               	/* stack size = 0 */
-  91               	.L__stack_usage = 0
+  78               		.loc 1 33 23 is_stmt 1 view -0
+  79               		.cfi_startproc
+  80               	/* prologue: function */
+  81               	/* frame size = 0 */
+GAS LISTING /tmp/cc3QgJ8a.s 			page 3
+
+
+  82               	/* stack size = 0 */
+  83               	.L__stack_usage = 0
   34:adc.c         ****     ADCSRB |=_BV(ADTS1);
-  92               		.stabn	68,0,34,.LM14-.LFBB3
-  93               	.LM14:
-  94 0028 EBE7      		ldi r30,lo8(123)
-  95 002a F0E0      		ldi r31,0
-  96 002c 8081      		ld r24,Z
-  97 002e 8260      		ori r24,lo8(2)
-  98 0030 8083      		st Z,r24
+  84               		.loc 1 34 5 view .LVU23
+  85 0028 EBE7      		ldi r30,lo8(123)
+  86 002a F0E0      		ldi r31,0
+  87 002c 8081      		ld r24,Z
+  88               		.loc 1 34 12 is_stmt 0 view .LVU24
+  89 002e 8260      		ori r24,lo8(2)
+  90 0030 8083      		st Z,r24
   35:adc.c         **** 	ADCSRB |=_BV(ADTS0);
-  99               		.stabn	68,0,35,.LM15-.LFBB3
- 100               	.LM15:
- 101 0032 8081      		ld r24,Z
- 102 0034 8160      		ori r24,lo8(1)
- 103 0036 8083      		st Z,r24
- 104               	/* epilogue start */
+  91               		.loc 1 35 2 is_stmt 1 view .LVU25
+  92 0032 8081      		ld r24,Z
+  93               		.loc 1 35 9 is_stmt 0 view .LVU26
+  94 0034 8160      		ori r24,lo8(1)
+  95 0036 8083      		st Z,r24
+  96               	/* epilogue start */
   36:adc.c         **** }
- 105               		.stabn	68,0,36,.LM16-.LFBB3
- 106               	.LM16:
- 107 0038 0895      		ret
- 108               		.size	adts_enable, .-adts_enable
- 109               	.Lscope3:
- 110               		.stabs	"",36,0,0,.Lscope3-.LFBB3
- 111               		.stabs	"__vector_24:F(0,1)",36,0,38,__vector_24
- 112               		.stabs	"uint16_t:t(0,4)=(0,5)=r(0,5);0;0177777;",128,0,128,0
- 113               		.stabs	"unsigned int:t(0,5)",128,0,0,0
- 114               	.global	__vector_24
- 115               		.type	__vector_24, @function
- 116               	__vector_24:
+  97               		.loc 1 36 1 view .LVU27
+  98 0038 0895      		ret
+  99               		.cfi_endproc
+ 100               	.LFE13:
+ 101               		.size	adts_enable, .-adts_enable
+ 102               	.global	__vector_24
+ 103               		.type	__vector_24, @function
+ 104               	__vector_24:
+ 105               	.LFB14:
   37:adc.c         **** 
   38:adc.c         **** ISR(ADC_vect){
- 117               		.stabn	68,0,38,.LM17-.LFBB4
- 118               	.LM17:
- 119               	.LFBB4:
- 120 003a 8F93      		__gcc_isr 1
- 121 003c 9F93      		push r25
- 122               	/* prologue: Signal */
- 123               	/* frame size = 0 */
- 124               	/* stack size = 1...5 */
- 125               	.L__stack_usage = 1 + __gcc_isr.n_pushed
+ 106               		.loc 1 38 14 is_stmt 1 view -0
+ 107               		.cfi_startproc
+ 108 003a 8F93      		__gcc_isr 1
+ 109 003c 9F93      		push r25
+ 110               		.cfi_def_cfa_offset 3
+ 111               		.cfi_offset 25, -2
+ 112               	/* prologue: Signal */
+ 113               	/* frame size = 0 */
+ 114               	/* stack size = 1...5 */
+ 115               	.L__stack_usage = 1 + __gcc_isr.n_pushed
   39:adc.c         ****     adc_read = ADC;
- 126               		.stabn	68,0,39,.LM18-.LFBB4
- 127               	.LM18:
- 128 003e 8091 7800 		lds r24,120
- 129 0042 9091 7900 		lds r25,120+1
- 130               		.stabn	68,0,39,.LM19-.LFBB4
- 131               	.LM19:
- 132 0046 9093 0000 		sts adc_read+1,r25
-GAS LISTING /tmp/ccga4TkX.s 			page 4
-
-
- 133 004a 8093 0000 		sts adc_read,r24
+ 116               		.loc 1 39 5 view .LVU29
+ 117               		.loc 1 39 16 is_stmt 0 view .LVU30
+ 118 003e 8091 7800 		lds r24,120
+ 119 0042 9091 7900 		lds r25,120+1
+ 120               		.loc 1 39 14 view .LVU31
+ 121 0046 9093 0000 		sts adc_read+1,r25
+ 122 004a 8093 0000 		sts adc_read,r24
   40:adc.c         ****     adc_rdy = true;
- 134               		.stabn	68,0,40,.LM20-.LFBB4
- 135               	.LM20:
- 136 004e 81E0      		ldi r24,lo8(1)
- 137 0050 8093 0000 		sts adc_rdy,r24
- 138               	/* epilogue start */
+ 123               		.loc 1 40 5 is_stmt 1 view .LVU32
+ 124               		.loc 1 40 13 is_stmt 0 view .LVU33
+ 125 004e 81E0      		ldi r24,lo8(1)
+ 126 0050 8093 0000 		sts adc_rdy,r24
+ 127               	/* epilogue start */
   41:adc.c         ****     // a flag for the main loop
   42:adc.c         **** }
- 139               		.stabn	68,0,42,.LM21-.LFBB4
- 140               	.LM21:
- 141 0054 9F91      		pop r25
- 142 0056 8F91      		__gcc_isr 2
- 143 0058 1895      		reti
- 144               		__gcc_isr 0,r24
- 145               		.size	__vector_24, .-__vector_24
- 146               	.Lscope4:
- 147               		.stabs	"",36,0,0,.Lscope4-.LFBB4
- 148               		.stabs	"__vector_16:F(0,1)",36,0,44,__vector_16
- 149               	.global	__vector_16
- 150               		.type	__vector_16, @function
- 151               	__vector_16:
+ 128               		.loc 1 42 1 view .LVU34
+ 129 0054 9F91      		pop r25
+GAS LISTING /tmp/cc3QgJ8a.s 			page 4
+
+
+ 130 0056 8F91      		__gcc_isr 2
+ 131 0058 1895      		reti
+ 132               		__gcc_isr 0,r24
+ 133               		.cfi_endproc
+ 134               	.LFE14:
+ 135               		.size	__vector_24, .-__vector_24
+ 136               	.global	__vector_16
+ 137               		.type	__vector_16, @function
+ 138               	__vector_16:
+ 139               	.LFB15:
   43:adc.c         **** 
   44:adc.c         **** ISR(TIMER0_COMPA_vect){
- 152               		.stabn	68,0,44,.LM22-.LFBB5
- 153               	.LM22:
- 154               	.LFBB5:
- 155 005a 8F93      		__gcc_isr 1
- 156               	/* prologue: Signal */
- 157               	/* frame size = 0 */
- 158               	/* stack size = 0...4 */
- 159               	.L__stack_usage = 0 + __gcc_isr.n_pushed
+ 140               		.loc 1 44 23 is_stmt 1 view -0
+ 141               		.cfi_startproc
+ 142 005a 8F93      		__gcc_isr 1
+ 143               	/* prologue: Signal */
+ 144               	/* frame size = 0 */
+ 145               	/* stack size = 0...4 */
+ 146               	.L__stack_usage = 0 + __gcc_isr.n_pushed
   45:adc.c         ****     sync = true;
- 160               		.stabn	68,0,45,.LM23-.LFBB5
- 161               	.LM23:
- 162 005c 81E0      		ldi r24,lo8(1)
- 163 005e 8093 0000 		sts sync,r24
- 164               	/* epilogue start */
+ 147               		.loc 1 45 5 view .LVU36
+ 148               		.loc 1 45 10 is_stmt 0 view .LVU37
+ 149 005c 81E0      		ldi r24,lo8(1)
+ 150 005e 8093 0000 		sts sync,r24
+ 151               	/* epilogue start */
   46:adc.c         **** }
- 165               		.stabn	68,0,46,.LM24-.LFBB5
- 166               	.LM24:
- 167 0062 8F91      		__gcc_isr 2
- 168 0064 1895      		reti
- 169               		__gcc_isr 0,r24
- 170               		.size	__vector_16, .-__vector_16
- 171               	.Lscope5:
- 172               		.stabs	"",36,0,0,.Lscope5-.LFBB5
- 173               		.stabs	"__vector_9:F(0,1)",36,0,48,__vector_9
- 174               	.global	__vector_9
- 175               		.type	__vector_9, @function
- 176               	__vector_9:
+ 152               		.loc 1 46 1 view .LVU38
+ 153 0062 8F91      		__gcc_isr 2
+ 154 0064 1895      		reti
+ 155               		__gcc_isr 0,r24
+ 156               		.cfi_endproc
+ 157               	.LFE15:
+ 158               		.size	__vector_16, .-__vector_16
+ 159               	.global	__vector_9
+ 160               		.type	__vector_9, @function
+ 161               	__vector_9:
+ 162               	.LFB16:
   47:adc.c         **** 
   48:adc.c         **** ISR(TIMER2_COMPA_vect){
- 177               		.stabn	68,0,48,.LM25-.LFBB6
- 178               	.LM25:
- 179               	.LFBB6:
- 180 0066 1F92 1FB6 		__gcc_isr 1
-GAS LISTING /tmp/ccga4TkX.s 			page 5
-
-
- 180      1F92 1124 
- 180      8F93 
- 181               	/* prologue: Signal */
- 182               	/* frame size = 0 */
- 183               	/* stack size = 0...4 */
- 184               	.L__stack_usage = 0 + __gcc_isr.n_pushed
+ 163               		.loc 1 48 23 is_stmt 1 view -0
+ 164               		.cfi_startproc
+ 165 0066 1F92 1FB6 		__gcc_isr 1
+ 165      1F92 1124 
+ 165      8F93 
+ 166               	/* prologue: Signal */
+ 167               	/* frame size = 0 */
+ 168               	/* stack size = 0...4 */
+ 169               	.L__stack_usage = 0 + __gcc_isr.n_pushed
   49:adc.c         ****     TCCR2B = 0x00;
- 185               		.stabn	68,0,49,.LM26-.LFBB6
- 186               	.LM26:
- 187 0070 1092 B100 		sts 177,__zero_reg__
+ 170               		.loc 1 49 5 view .LVU40
+ 171               		.loc 1 49 12 is_stmt 0 view .LVU41
+ 172 0070 1092 B100 		sts 177,__zero_reg__
   50:adc.c         ****     //  Stop the timer after reset.
   51:adc.c         ****     adc_mux_rdy = true;
- 188               		.stabn	68,0,51,.LM27-.LFBB6
- 189               	.LM27:
- 190 0074 81E0      		ldi r24,lo8(1)
- 191 0076 8093 0000 		sts adc_mux_rdy,r24
- 192               	/* epilogue start */
+ 173               		.loc 1 51 5 is_stmt 1 view .LVU42
+ 174               		.loc 1 51 17 is_stmt 0 view .LVU43
+ 175 0074 81E0      		ldi r24,lo8(1)
+GAS LISTING /tmp/cc3QgJ8a.s 			page 5
+
+
+ 176 0076 8093 0000 		sts adc_mux_rdy,r24
+ 177               	/* epilogue start */
   52:adc.c         **** }
- 193               		.stabn	68,0,52,.LM28-.LFBB6
- 194               	.LM28:
- 195 007a 8F91 1F90 		__gcc_isr 2
- 195      1FBE 1F90 
- 196 0082 1895      		reti
- 197               		__gcc_isr 0,r24
- 198               		.size	__vector_9, .-__vector_9
- 199               	.Lscope6:
- 200               		.stabs	"",36,0,0,.Lscope6-.LFBB6
- 201               		.stabs	"calibrate_timer0:F(0,1)",36,0,54,calibrate_timer0
- 202               	.global	calibrate_timer0
- 203               		.type	calibrate_timer0, @function
- 204               	calibrate_timer0:
+ 178               		.loc 1 52 1 view .LVU44
+ 179 007a 8F91 1F90 		__gcc_isr 2
+ 179      1FBE 1F90 
+ 180 0082 1895      		reti
+ 181               		__gcc_isr 0,r24
+ 182               		.cfi_endproc
+ 183               	.LFE16:
+ 184               		.size	__vector_9, .-__vector_9
+ 185               	.global	calibrate_timer0
+ 186               		.type	calibrate_timer0, @function
+ 187               	calibrate_timer0:
+ 188               	.LFB17:
   53:adc.c         **** 
   54:adc.c         **** void calibrate_timer0(void)
   55:adc.c         **** {
- 205               		.stabn	68,0,55,.LM29-.LFBB7
- 206               	.LM29:
- 207               	.LFBB7:
- 208               	/* prologue: function */
- 209               	/* frame size = 0 */
- 210               	/* stack size = 0 */
- 211               	.L__stack_usage = 0
-  56:adc.c         ****     calibrating = true;
- 212               		.stabn	68,0,56,.LM30-.LFBB7
- 213               	.LM30:
- 214 0084 81E0      		ldi r24,lo8(1)
- 215 0086 8093 0000 		sts calibrating,r24
-  57:adc.c         ****     ADCSRA |= _BV(ADIE);
- 216               		.stabn	68,0,57,.LM31-.LFBB7
- 217               	.LM31:
- 218 008a 8091 7A00 		lds r24,122
- 219 008e 8860      		ori r24,lo8(8)
- 220 0090 8093 7A00 		sts 122,r24
- 221               	.LBB4:
- 222               	.LBB5:
+ 189               		.loc 1 55 1 is_stmt 1 view -0
+ 190               		.cfi_startproc
+ 191               	/* prologue: function */
+ 192               	/* frame size = 0 */
+ 193               	/* stack size = 0 */
+ 194               	.L__stack_usage = 0
+  56:adc.c         ****     int i;
+ 195               		.loc 1 56 5 view .LVU46
+  57:adc.c         ****     calibrating = true;
+ 196               		.loc 1 57 5 view .LVU47
+ 197               		.loc 1 57 17 is_stmt 0 view .LVU48
+ 198 0084 81E0      		ldi r24,lo8(1)
+ 199 0086 8093 0000 		sts calibrating,r24
+  58:adc.c         ****     ADCSRA |= _BV(ADIE);
+ 200               		.loc 1 58 5 is_stmt 1 view .LVU49
+ 201 008a 8091 7A00 		lds r24,122
+ 202               		.loc 1 58 12 is_stmt 0 view .LVU50
+ 203 008e 8860      		ori r24,lo8(8)
+ 204 0090 8093 7A00 		sts 122,r24
+  59:adc.c         ****     adts_disable();
+ 205               		.loc 1 59 5 is_stmt 1 view .LVU51
+ 206               	.LBB4:
+ 207               	.LBI4:
+  29:adc.c         ****     ADCSRB = 0;
+ 208               		.loc 1 29 6 view .LVU52
+ 209               	.LBB5:
   30:adc.c         **** }
- 223               		.stabn	68,0,30,.LM32-.LFBB7
- 224               	.LM32:
-GAS LISTING /tmp/ccga4TkX.s 			page 6
+ 210               		.loc 1 30 5 view .LVU53
+  30:adc.c         **** }
+ 211               		.loc 1 30 12 is_stmt 0 view .LVU54
+ 212 0094 1092 7B00 		sts 123,__zero_reg__
+ 213               	.LBE5:
+ 214               	.LBE4:
+  60:adc.c         ****     //  Turn off OCR0A triggering if it is enabled.
+  61:adc.c         **** 	ADMUX = 0x05;
+ 215               		.loc 1 61 2 is_stmt 1 view .LVU55
+ 216               		.loc 1 61 8 is_stmt 0 view .LVU56
+ 217 0098 85E0      		ldi r24,lo8(5)
+ 218 009a 8093 7C00 		sts 124,r24
+GAS LISTING /tmp/cc3QgJ8a.s 			page 6
 
 
- 225 0094 1092 7B00 		sts 123,__zero_reg__
- 226               	.LBE5:
- 227               	.LBE4:
-  58:adc.c         ****     adts_disable();
-  59:adc.c         ****     //  Turn off OCR0A triggering if it is enabled.
-  60:adc.c         **** 	ADMUX = 0x05;
- 228               		.stabn	68,0,60,.LM33-.LFBB7
- 229               	.LM33:
- 230 0098 85E0      		ldi r24,lo8(5)
- 231 009a 8093 7C00 		sts 124,r24
-  61:adc.c         ****     //  Select PA5 as the ADC source.
-  62:adc.c         ****     ADCSRA |=_BV(ADATE);
- 232               		.stabn	68,0,62,.LM34-.LFBB7
- 233               	.LM34:
- 234 009e 8091 7A00 		lds r24,122
- 235 00a2 8062      		ori r24,lo8(32)
- 236 00a4 8093 7A00 		sts 122,r24
-  63:adc.c         ****     ADCSRA |= _BV(ADSC);
- 237               		.stabn	68,0,63,.LM35-.LFBB7
- 238               	.LM35:
- 239 00a8 8091 7A00 		lds r24,122
- 240 00ac 8064      		ori r24,lo8(64)
- 241 00ae 8093 7A00 		sts 122,r24
- 242               	.L8:
-  64:adc.c         ****     //  start conversions in free running mode
-  65:adc.c         ****     while(adc_read <= 20){}
- 243               		.stabn	68,0,65,.LM36-.LFBB7
- 244               	.LM36:
- 245 00b2 8091 0000 		lds r24,adc_read
- 246 00b6 9091 0000 		lds r25,adc_read+1
- 247 00ba 4597      		sbiw r24,21
- 248 00bc 00F0      		brlo .L8
- 249               	.L9:
-  66:adc.c         ****         //  Waiting for the ADC to rise into the rectified waveform.
-  67:adc.c         **** 	while(adc_read > 0){}
- 250               		.stabn	68,0,67,.LM37-.LFBB7
- 251               	.LM37:
- 252 00be 8091 0000 		lds r24,adc_read
- 253 00c2 9091 0000 		lds r25,adc_read+1
- 254 00c6 892B      		or r24,r25
- 255 00c8 01F4      		brne .L9
-  68:adc.c         ****     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
-  69:adc.c         ****     OCR0A = OFFSET;
- 256               		.stabn	68,0,69,.LM38-.LFBB7
- 257               	.LM38:
- 258 00ca 8091 0000 		lds r24,OFFSET
- 259 00ce 87BD      		out 0x27,r24
-  70:adc.c         ****     init_timers();
- 260               		.stabn	68,0,70,.LM39-.LFBB7
- 261               	.LM39:
- 262 00d0 0E94 0000 		call init_timers
-  71:adc.c         ****     adts_enable();
- 263               		.stabn	68,0,71,.LM40-.LFBB7
- 264               	.LM40:
- 265 00d4 0E94 0000 		call adts_enable
-  72:adc.c         ****     ADMUX = 0x06;
- 266               		.stabn	68,0,72,.LM41-.LFBB7
-GAS LISTING /tmp/ccga4TkX.s 			page 7
+  62:adc.c         ****     //  Select PA5 as the ADC source.
+  63:adc.c         ****     ADCSRA |=_BV(ADATE);
+ 219               		.loc 1 63 5 is_stmt 1 view .LVU57
+ 220 009e 8091 7A00 		lds r24,122
+ 221               		.loc 1 63 12 is_stmt 0 view .LVU58
+ 222 00a2 8062      		ori r24,lo8(32)
+ 223 00a4 8093 7A00 		sts 122,r24
+  64:adc.c         ****     ADCSRA |= _BV(ADSC);
+ 224               		.loc 1 64 5 is_stmt 1 view .LVU59
+ 225 00a8 8091 7A00 		lds r24,122
+ 226               		.loc 1 64 12 is_stmt 0 view .LVU60
+ 227 00ac 8064      		ori r24,lo8(64)
+ 228 00ae 8093 7A00 		sts 122,r24
+  65:adc.c         ****     //  start conversions in free running mode
+  66:adc.c         ****     for(i = 0; i < 20; i++)
+ 229               		.loc 1 66 5 is_stmt 1 view .LVU61
+ 230               	.LVL0:
+ 231               		.loc 1 66 18 view .LVU62
+  64:adc.c         ****     ADCSRA |= _BV(ADSC);
+ 232               		.loc 1 64 12 is_stmt 0 view .LVU63
+ 233 00b2 84E1      		ldi r24,lo8(20)
+ 234 00b4 90E0      		ldi r25,0
+ 235               	.LVL1:
+ 236               	.L8:
+  67:adc.c         ****     while(adc_read <= 20){}
+ 237               		.loc 1 67 27 is_stmt 1 discriminator 1 view .LVU64
+ 238               		.loc 1 67 20 discriminator 1 view .LVU65
+ 239 00b6 2091 0000 		lds r18,adc_read
+ 240 00ba 3091 0000 		lds r19,adc_read+1
+ 241 00be 2531      		cpi r18,21
+ 242 00c0 3105      		cpc r19,__zero_reg__
+ 243 00c2 00F0      		brlo .L8
+  66:adc.c         ****     while(adc_read <= 20){}
+ 244               		.loc 1 66 25 discriminator 2 view .LVU66
+ 245               	.LVL2:
+  66:adc.c         ****     while(adc_read <= 20){}
+ 246               		.loc 1 66 18 discriminator 2 view .LVU67
+ 247 00c4 0197      		sbiw r24,1
+ 248               	.LVL3:
+  66:adc.c         ****     while(adc_read <= 20){}
+ 249               		.loc 1 66 18 is_stmt 0 discriminator 2 view .LVU68
+ 250 00c6 0097      		sbiw r24,0
+ 251 00c8 01F4      		brne .L8
+ 252 00ca 84E1      		ldi r24,lo8(20)
+ 253 00cc 90E0      		ldi r25,0
+ 254               	.LVL4:
+ 255               	.L10:
+  68:adc.c         ****         //  Waiting for the ADC to rise into the rectified waveform.
+  69:adc.c         ****     for(i = 0; i < 20; i++)
+  70:adc.c         **** 	while(adc_read > 0){}
+ 256               		.loc 1 70 22 is_stmt 1 discriminator 1 view .LVU69
+ 257               		.loc 1 70 17 discriminator 1 view .LVU70
+ 258 00ce 2091 0000 		lds r18,adc_read
+ 259 00d2 3091 0000 		lds r19,adc_read+1
+ 260 00d6 232B      		or r18,r19
+ 261 00d8 01F4      		brne .L10
+  69:adc.c         **** 	while(adc_read > 0){}
+GAS LISTING /tmp/cc3QgJ8a.s 			page 7
 
 
- 267               	.LM41:
- 268 00d8 86E0      		ldi r24,lo8(6)
- 269 00da 8093 7C00 		sts 124,r24
-  73:adc.c         ****     ADCSRA &= ~_BV(ADIE);
- 270               		.stabn	68,0,73,.LM42-.LFBB7
- 271               	.LM42:
- 272 00de 8091 7A00 		lds r24,122
- 273 00e2 877F      		andi r24,lo8(-9)
- 274 00e4 8093 7A00 		sts 122,r24
-  74:adc.c         ****     TIMSK0 |= _BV(OCIE0A);
- 275               		.stabn	68,0,74,.LM43-.LFBB7
- 276               	.LM43:
- 277 00e8 8091 6E00 		lds r24,110
- 278 00ec 8260      		ori r24,lo8(2)
- 279 00ee 8093 6E00 		sts 110,r24
- 280               	.L10:
-  75:adc.c         ****     //ADCSRA &= ~_BV(ADIE);
-  76:adc.c         ****     //  Reset timer 0 and turn off ADC interrupts
-  77:adc.c         **** 	while(sync == false); //here we have reached a peak
- 281               		.stabn	68,0,77,.LM44-.LFBB7
- 282               	.LM44:
- 283 00f2 8091 0000 		lds r24,sync
- 284 00f6 8823      		tst r24
- 285 00f8 01F0      		breq .L10
-  78:adc.c         **** 	TCNT0 = 0; //reset timer count
- 286               		.stabn	68,0,78,.LM45-.LFBB7
- 287               	.LM45:
- 288 00fa 16BC      		out 0x26,__zero_reg__
-  79:adc.c         **** 	TCCR0B = 0x05;
- 289               		.stabn	68,0,79,.LM46-.LFBB7
- 290               	.LM46:
- 291 00fc 85E0      		ldi r24,lo8(5)
- 292 00fe 85BD      		out 0x25,r24
-  80:adc.c         **** 	OCR0A = TIMER0_TOP;//output compare 1 cycle after the peak
- 293               		.stabn	68,0,80,.LM47-.LFBB7
- 294               	.LM47:
- 295 0100 8091 0000 		lds r24,TIMER0_TOP
- 296 0104 87BD      		out 0x27,r24
-  81:adc.c         **** 	sync = false;
- 297               		.stabn	68,0,81,.LM48-.LFBB7
- 298               	.LM48:
- 299 0106 1092 0000 		sts sync,__zero_reg__
-  82:adc.c         ****     ADCSRA |= _BV(ADIE);
- 300               		.stabn	68,0,82,.LM49-.LFBB7
- 301               	.LM49:
- 302 010a 8091 7A00 		lds r24,122
- 303 010e 8860      		ori r24,lo8(8)
- 304 0110 8093 7A00 		sts 122,r24
-  83:adc.c         **** 	calibrating = false;
- 305               		.stabn	68,0,83,.LM50-.LFBB7
- 306               	.LM50:
- 307 0114 1092 0000 		sts calibrating,__zero_reg__
-  84:adc.c         ****     adc_rdy = false;
- 308               		.stabn	68,0,84,.LM51-.LFBB7
- 309               	.LM51:
- 310 0118 1092 0000 		sts adc_rdy,__zero_reg__
- 311               	/* epilogue start */
-GAS LISTING /tmp/ccga4TkX.s 			page 8
+ 262               		.loc 1 69 25 discriminator 2 view .LVU71
+ 263               	.LVL5:
+  69:adc.c         **** 	while(adc_read > 0){}
+ 264               		.loc 1 69 18 discriminator 2 view .LVU72
+ 265 00da 0197      		sbiw r24,1
+ 266               	.LVL6:
+  69:adc.c         **** 	while(adc_read > 0){}
+ 267               		.loc 1 69 18 is_stmt 0 discriminator 2 view .LVU73
+ 268 00dc 0097      		sbiw r24,0
+ 269 00de 01F4      		brne .L10
+  71:adc.c         ****     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
+  72:adc.c         ****     OCR0A = OFFSET;
+ 270               		.loc 1 72 5 is_stmt 1 view .LVU74
+ 271               		.loc 1 72 11 is_stmt 0 view .LVU75
+ 272 00e0 8091 0000 		lds r24,OFFSET
+ 273               	.LVL7:
+ 274               		.loc 1 72 11 view .LVU76
+ 275 00e4 87BD      		out 0x27,r24
+  73:adc.c         ****     init_timers();
+ 276               		.loc 1 73 5 is_stmt 1 view .LVU77
+ 277 00e6 0E94 0000 		call init_timers
+ 278               	.LVL8:
+  74:adc.c         ****     adts_enable();
+ 279               		.loc 1 74 5 view .LVU78
+ 280 00ea 0E94 0000 		call adts_enable
+ 281               	.LVL9:
+  75:adc.c         ****     ADMUX = 0x06;
+ 282               		.loc 1 75 5 view .LVU79
+ 283               		.loc 1 75 11 is_stmt 0 view .LVU80
+ 284 00ee 86E0      		ldi r24,lo8(6)
+ 285 00f0 8093 7C00 		sts 124,r24
+  76:adc.c         ****     ADCSRA &= ~_BV(ADIE);
+ 286               		.loc 1 76 5 is_stmt 1 view .LVU81
+ 287               		.loc 1 76 12 is_stmt 0 view .LVU82
+ 288 00f4 8091 7A00 		lds r24,122
+ 289 00f8 877F      		andi r24,lo8(-9)
+ 290 00fa 8093 7A00 		sts 122,r24
+  77:adc.c         ****     TIMSK0 |= _BV(OCIE0A);
+ 291               		.loc 1 77 5 is_stmt 1 view .LVU83
+ 292 00fe 8091 6E00 		lds r24,110
+ 293               		.loc 1 77 12 is_stmt 0 view .LVU84
+ 294 0102 8260      		ori r24,lo8(2)
+ 295 0104 8093 6E00 		sts 110,r24
+  78:adc.c         ****     //ADCSRA &= ~_BV(ADIE);
+  79:adc.c         ****     //  Reset timer 0 and turn off ADC interrupts
+  80:adc.c         **** 	while(sync == false); //here we have reached a peak
+ 296               		.loc 1 80 2 is_stmt 1 view .LVU85
+ 297               	.L12:
+ 298               		.loc 1 80 13 discriminator 1 view .LVU86
+ 299 0108 8091 0000 		lds r24,sync
+ 300 010c 8823      		tst r24
+ 301 010e 01F0      		breq .L12
+  81:adc.c         **** 	TCNT0 = 0; //reset timer count
+ 302               		.loc 1 81 2 view .LVU87
+ 303               		.loc 1 81 8 is_stmt 0 view .LVU88
+ 304 0110 16BC      		out 0x26,__zero_reg__
+  82:adc.c         **** 	OCR0A = TIMER0_TOP;//output compare 1 cycle after the peak
+GAS LISTING /tmp/cc3QgJ8a.s 			page 8
 
 
-  85:adc.c         **** }
- 312               		.stabn	68,0,85,.LM52-.LFBB7
- 313               	.LM52:
- 314 011c 0895      		ret
- 315               		.size	calibrate_timer0, .-calibrate_timer0
- 316               	.Lscope7:
- 317               		.stabs	"",36,0,0,.Lscope7-.LFBB7
- 318               		.stabs	"init_adc:F(0,1)",36,0,87,init_adc
- 319               	.global	init_adc
- 320               		.type	init_adc, @function
- 321               	init_adc:
-  86:adc.c         **** 
-  87:adc.c         **** void init_adc(void){
- 322               		.stabn	68,0,87,.LM53-.LFBB8
- 323               	.LM53:
- 324               	.LFBB8:
- 325               	/* prologue: function */
- 326               	/* frame size = 0 */
- 327               	/* stack size = 0 */
- 328               	.L__stack_usage = 0
-  88:adc.c         ****     sei();
- 329               		.stabn	68,0,88,.LM54-.LFBB8
- 330               	.LM54:
- 331               	/* #APP */
- 332               	 ;  88 "adc.c" 1
- 333 011e 7894      		sei
- 334               	 ;  0 "" 2
-  89:adc.c         ****     ADCSRA |= _BV(ADPS2) |_BV(ADPS1)/*|_BV(ADPS0)*/;
- 335               		.stabn	68,0,89,.LM55-.LFBB8
- 336               	.LM55:
- 337               	/* #NOAPP */
- 338 0120 EAE7      		ldi r30,lo8(122)
- 339 0122 F0E0      		ldi r31,0
- 340 0124 8081      		ld r24,Z
- 341 0126 8660      		ori r24,lo8(6)
- 342 0128 8083      		st Z,r24
-  90:adc.c         ****     //  ADC ~200kHz
-  91:adc.c         ****     ADCSRA |= _BV(ADEN);
- 343               		.stabn	68,0,91,.LM56-.LFBB8
- 344               	.LM56:
- 345 012a 8081      		ld r24,Z
- 346 012c 8068      		ori r24,lo8(-128)
- 347 012e 8083      		st Z,r24
-  92:adc.c         ****     //  Enable ADC
-  93:adc.c         ****     calibrate_timer0();
- 348               		.stabn	68,0,93,.LM57-.LFBB8
- 349               	.LM57:
- 350 0130 0C94 0000 		jmp calibrate_timer0
- 351               		.size	init_adc, .-init_adc
- 352               	.Lscope8:
- 353               		.stabs	"",36,0,0,.Lscope8-.LFBB8
- 354               	.global	OFFSET
- 355               		.section .bss
- 356               		.type	OFFSET, @object
- 357               		.size	OFFSET, 1
- 358               	OFFSET:
- 359 0000 00        		.zero	1
-GAS LISTING /tmp/ccga4TkX.s 			page 9
+ 305               		.loc 1 82 2 is_stmt 1 view .LVU89
+ 306               		.loc 1 82 8 is_stmt 0 view .LVU90
+ 307 0112 8091 0000 		lds r24,TIMER0_TOP
+ 308 0116 87BD      		out 0x27,r24
+  83:adc.c         **** 	sync = false;
+ 309               		.loc 1 83 2 is_stmt 1 view .LVU91
+ 310               		.loc 1 83 7 is_stmt 0 view .LVU92
+ 311 0118 1092 0000 		sts sync,__zero_reg__
+  84:adc.c         ****     ADCSRA |= _BV(ADIE);
+ 312               		.loc 1 84 5 is_stmt 1 view .LVU93
+ 313 011c 8091 7A00 		lds r24,122
+ 314               		.loc 1 84 12 is_stmt 0 view .LVU94
+ 315 0120 8860      		ori r24,lo8(8)
+ 316 0122 8093 7A00 		sts 122,r24
+  85:adc.c         **** 	calibrating = false;
+ 317               		.loc 1 85 2 is_stmt 1 view .LVU95
+ 318               		.loc 1 85 14 is_stmt 0 view .LVU96
+ 319 0126 1092 0000 		sts calibrating,__zero_reg__
+  86:adc.c         ****     adc_rdy = false;
+ 320               		.loc 1 86 5 is_stmt 1 view .LVU97
+ 321               		.loc 1 86 13 is_stmt 0 view .LVU98
+ 322 012a 1092 0000 		sts adc_rdy,__zero_reg__
+ 323               	/* epilogue start */
+  87:adc.c         **** }
+ 324               		.loc 1 87 1 view .LVU99
+ 325 012e 0895      		ret
+ 326               		.cfi_endproc
+ 327               	.LFE17:
+ 328               		.size	calibrate_timer0, .-calibrate_timer0
+ 329               	.global	init_adc
+ 330               		.type	init_adc, @function
+ 331               	init_adc:
+ 332               	.LFB18:
+  88:adc.c         **** 
+  89:adc.c         **** void init_adc(void){
+ 333               		.loc 1 89 20 is_stmt 1 view -0
+ 334               		.cfi_startproc
+ 335               	/* prologue: function */
+ 336               	/* frame size = 0 */
+ 337               	/* stack size = 0 */
+ 338               	.L__stack_usage = 0
+  90:adc.c         ****     sei();
+ 339               		.loc 1 90 5 view .LVU101
+ 340               	/* #APP */
+ 341               	 ;  90 "adc.c" 1
+ 342 0130 7894      		sei
+ 343               	 ;  0 "" 2
+  91:adc.c         ****     ADCSRA |= _BV(ADPS2) |_BV(ADPS1)/*|_BV(ADPS0)*/;
+ 344               		.loc 1 91 5 view .LVU102
+ 345               	/* #NOAPP */
+ 346 0132 EAE7      		ldi r30,lo8(122)
+ 347 0134 F0E0      		ldi r31,0
+ 348 0136 8081      		ld r24,Z
+ 349               		.loc 1 91 12 is_stmt 0 view .LVU103
+ 350 0138 8660      		ori r24,lo8(6)
+ 351 013a 8083      		st Z,r24
+  92:adc.c         ****     //  ADC ~200kHz
+GAS LISTING /tmp/cc3QgJ8a.s 			page 9
 
 
- 360               		.stabs	"OFFSET:G(0,2)",32,0,11,0
- 361               	.global	TIMER0_TOP
- 362               		.type	TIMER0_TOP, @object
- 363               		.size	TIMER0_TOP, 1
- 364               	TIMER0_TOP:
- 365 0001 00        		.zero	1
- 366               		.stabs	"TIMER0_TOP:G(0,2)",32,0,10,0
- 367               	.global	adc_mux_rdy
- 368               		.type	adc_mux_rdy, @object
- 369               		.size	adc_mux_rdy, 1
- 370               	adc_mux_rdy:
- 371 0002 00        		.zero	1
- 372               		.stabs	"adc_mux_rdy:G(0,6)=B(0,7)=@s8;-16;",32,0,9,0
- 373               		.stabs	"_Bool:t(0,7)",128,0,0,0
- 374               	.global	sync
- 375               		.type	sync, @object
- 376               		.size	sync, 1
- 377               	sync:
- 378 0003 00        		.zero	1
- 379               		.stabs	"sync:G(0,6)",32,0,9,0
- 380               	.global	adc_rdy
- 381               		.type	adc_rdy, @object
- 382               		.size	adc_rdy, 1
- 383               	adc_rdy:
- 384 0004 00        		.zero	1
- 385               		.stabs	"adc_rdy:G(0,6)",32,0,9,0
- 386               	.global	calibrating
- 387               		.type	calibrating, @object
- 388               		.size	calibrating, 1
- 389               	calibrating:
- 390 0005 00        		.zero	1
- 391               		.stabs	"calibrating:G(0,6)",32,0,9,0
- 392               	.global	adc_read
- 393               		.type	adc_read, @object
- 394               		.size	adc_read, 2
- 395               	adc_read:
- 396 0006 0000      		.zero	2
- 397               		.stabs	"adc_read:G(0,8)=B(0,4)",32,0,8,0
- 398               		.text
- 399               		.stabs	"",100,0,0,.Letext0
+  93:adc.c         ****     ADCSRA |= _BV(ADEN);
+ 352               		.loc 1 93 5 is_stmt 1 view .LVU104
+ 353 013c 8081      		ld r24,Z
+ 354               		.loc 1 93 12 is_stmt 0 view .LVU105
+ 355 013e 8068      		ori r24,lo8(-128)
+ 356 0140 8083      		st Z,r24
+  94:adc.c         ****     //  Enable ADC
+  95:adc.c         ****     calibrate_timer0();
+ 357               		.loc 1 95 5 is_stmt 1 view .LVU106
+ 358 0142 0C94 0000 		jmp calibrate_timer0
+ 359               	.LVL10:
+ 360               		.cfi_endproc
+ 361               	.LFE18:
+ 362               		.size	init_adc, .-init_adc
+ 363               	.global	OFFSET
+ 364               		.section .bss
+ 365               		.type	OFFSET, @object
+ 366               		.size	OFFSET, 1
+ 367               	OFFSET:
+ 368 0000 00        		.zero	1
+ 369               	.global	TIMER0_TOP
+ 370               		.type	TIMER0_TOP, @object
+ 371               		.size	TIMER0_TOP, 1
+ 372               	TIMER0_TOP:
+ 373 0001 00        		.zero	1
+ 374               	.global	adc_mux_rdy
+ 375               		.type	adc_mux_rdy, @object
+ 376               		.size	adc_mux_rdy, 1
+ 377               	adc_mux_rdy:
+ 378 0002 00        		.zero	1
+ 379               	.global	sync
+ 380               		.type	sync, @object
+ 381               		.size	sync, 1
+ 382               	sync:
+ 383 0003 00        		.zero	1
+ 384               	.global	adc_rdy
+ 385               		.type	adc_rdy, @object
+ 386               		.size	adc_rdy, 1
+ 387               	adc_rdy:
+ 388 0004 00        		.zero	1
+ 389               	.global	calibrating
+ 390               		.type	calibrating, @object
+ 391               		.size	calibrating, 1
+ 392               	calibrating:
+ 393 0005 00        		.zero	1
+ 394               	.global	adc_read
+ 395               		.type	adc_read, @object
+ 396               		.size	adc_read, 2
+ 397               	adc_read:
+ 398 0006 0000      		.zero	2
+ 399               		.text
  400               	.Letext0:
- 401               		.ident	"GCC: (GNU) 11.2.0"
- 402               	.global __do_clear_bss
-GAS LISTING /tmp/ccga4TkX.s 			page 10
+ 401               		.file 2 "/usr/avr/include/stdint.h"
+ 402               		.section	.debug_info,"",@progbits
+ 403               	.Ldebug_info0:
+ 404 0000 D701 0000 		.long	0x1d7
+ 405 0004 0500      		.word	0x5
+GAS LISTING /tmp/cc3QgJ8a.s 			page 10
+
+
+ 406 0006 01        		.byte	0x1
+ 407 0007 04        		.byte	0x4
+ 408 0008 0000 0000 		.long	.Ldebug_abbrev0
+ 409 000c 08        		.uleb128 0x8
+ 410 000d 0000 0000 		.long	.LASF27
+ 411 0011 1D        		.byte	0x1d
+ 412 0012 0000 0000 		.long	.LASF0
+ 413 0016 0000 0000 		.long	.LASF1
+ 414 001a 0000 0000 		.long	.Ltext0
+ 415 001e 4601 0000 		.long	.Letext0-.Ltext0
+ 416 0022 0000 0000 		.long	.Ldebug_line0
+ 417 0026 01        		.uleb128 0x1
+ 418 0027 01        		.byte	0x1
+ 419 0028 06        		.byte	0x6
+ 420 0029 0000 0000 		.long	.LASF2
+ 421 002d 04        		.uleb128 0x4
+ 422 002e 0000 0000 		.long	.LASF4
+ 423 0032 7E        		.byte	0x7e
+ 424 0033 3700 0000 		.long	0x37
+ 425 0037 01        		.uleb128 0x1
+ 426 0038 01        		.byte	0x1
+ 427 0039 08        		.byte	0x8
+ 428 003a 0000 0000 		.long	.LASF3
+ 429 003e 09        		.uleb128 0x9
+ 430 003f 02        		.byte	0x2
+ 431 0040 05        		.byte	0x5
+ 432 0041 696E 7400 		.string	"int"
+ 433 0045 04        		.uleb128 0x4
+ 434 0046 0000 0000 		.long	.LASF5
+ 435 004a 80        		.byte	0x80
+ 436 004b 5400 0000 		.long	0x54
+ 437 004f 05        		.uleb128 0x5
+ 438 0050 4500 0000 		.long	0x45
+ 439 0054 01        		.uleb128 0x1
+ 440 0055 02        		.byte	0x2
+ 441 0056 07        		.byte	0x7
+ 442 0057 0000 0000 		.long	.LASF6
+ 443 005b 01        		.uleb128 0x1
+ 444 005c 04        		.byte	0x4
+ 445 005d 05        		.byte	0x5
+ 446 005e 0000 0000 		.long	.LASF7
+ 447 0062 01        		.uleb128 0x1
+ 448 0063 04        		.byte	0x4
+ 449 0064 07        		.byte	0x7
+ 450 0065 0000 0000 		.long	.LASF8
+ 451 0069 01        		.uleb128 0x1
+ 452 006a 08        		.byte	0x8
+ 453 006b 05        		.byte	0x5
+ 454 006c 0000 0000 		.long	.LASF9
+ 455 0070 01        		.uleb128 0x1
+ 456 0071 08        		.byte	0x8
+ 457 0072 07        		.byte	0x7
+ 458 0073 0000 0000 		.long	.LASF10
+ 459 0077 01        		.uleb128 0x1
+ 460 0078 01        		.byte	0x1
+ 461 0079 08        		.byte	0x8
+ 462 007a 0000 0000 		.long	.LASF11
+GAS LISTING /tmp/cc3QgJ8a.s 			page 11
+
+
+ 463 007e 02        		.uleb128 0x2
+ 464 007f 0000 0000 		.long	.LASF12
+ 465 0083 08        		.byte	0x8
+ 466 0084 13        		.byte	0x13
+ 467 0085 4F00 0000 		.long	0x4f
+ 468 0089 05        		.uleb128 0x5
+ 469 008a 03        		.byte	0x3
+ 470 008b 0000 0000 		.long	adc_read
+ 471 008f 02        		.uleb128 0x2
+ 472 0090 0000 0000 		.long	.LASF13
+ 473 0094 09        		.byte	0x9
+ 474 0095 0F        		.byte	0xf
+ 475 0096 A700 0000 		.long	0xa7
+ 476 009a 05        		.uleb128 0x5
+ 477 009b 03        		.byte	0x3
+ 478 009c 0000 0000 		.long	calibrating
+ 479 00a0 01        		.uleb128 0x1
+ 480 00a1 01        		.byte	0x1
+ 481 00a2 02        		.byte	0x2
+ 482 00a3 0000 0000 		.long	.LASF14
+ 483 00a7 05        		.uleb128 0x5
+ 484 00a8 A000 0000 		.long	0xa0
+ 485 00ac 02        		.uleb128 0x2
+ 486 00ad 0000 0000 		.long	.LASF15
+ 487 00b1 09        		.byte	0x9
+ 488 00b2 1C        		.byte	0x1c
+ 489 00b3 A700 0000 		.long	0xa7
+ 490 00b7 05        		.uleb128 0x5
+ 491 00b8 03        		.byte	0x3
+ 492 00b9 0000 0000 		.long	adc_rdy
+ 493 00bd 02        		.uleb128 0x2
+ 494 00be 0000 0000 		.long	.LASF16
+ 495 00c2 09        		.byte	0x9
+ 496 00c3 25        		.byte	0x25
+ 497 00c4 A700 0000 		.long	0xa7
+ 498 00c8 05        		.uleb128 0x5
+ 499 00c9 03        		.byte	0x3
+ 500 00ca 0000 0000 		.long	sync
+ 501 00ce 02        		.uleb128 0x2
+ 502 00cf 0000 0000 		.long	.LASF17
+ 503 00d3 09        		.byte	0x9
+ 504 00d4 2B        		.byte	0x2b
+ 505 00d5 A700 0000 		.long	0xa7
+ 506 00d9 05        		.uleb128 0x5
+ 507 00da 03        		.byte	0x3
+ 508 00db 0000 0000 		.long	adc_mux_rdy
+ 509 00df 02        		.uleb128 0x2
+ 510 00e0 0000 0000 		.long	.LASF18
+ 511 00e4 0A        		.byte	0xa
+ 512 00e5 09        		.byte	0x9
+ 513 00e6 2D00 0000 		.long	0x2d
+ 514 00ea 05        		.uleb128 0x5
+ 515 00eb 03        		.byte	0x3
+ 516 00ec 0000 0000 		.long	TIMER0_TOP
+ 517 00f0 02        		.uleb128 0x2
+ 518 00f1 0000 0000 		.long	.LASF19
+ 519 00f5 0B        		.byte	0xb
+GAS LISTING /tmp/cc3QgJ8a.s 			page 12
+
+
+ 520 00f6 09        		.byte	0x9
+ 521 00f7 2D00 0000 		.long	0x2d
+ 522 00fb 05        		.uleb128 0x5
+ 523 00fc 03        		.byte	0x3
+ 524 00fd 0000 0000 		.long	OFFSET
+ 525 0101 06        		.uleb128 0x6
+ 526 0102 0000 0000 		.long	.LASF20
+ 527 0106 59        		.byte	0x59
+ 528 0107 0000 0000 		.long	.LFB18
+ 529 010b 1600 0000 		.long	.LFE18-.LFB18
+ 530 010f 01        		.uleb128 0x1
+ 531 0110 9C        		.byte	0x9c
+ 532 0111 1F01 0000 		.long	0x11f
+ 533 0115 0A        		.uleb128 0xa
+ 534 0116 0000 0000 		.long	.LVL10
+ 535 011a 1F01 0000 		.long	0x11f
+ 536 011e 00        		.byte	0
+ 537 011f 06        		.uleb128 0x6
+ 538 0120 0000 0000 		.long	.LASF21
+ 539 0124 36        		.byte	0x36
+ 540 0125 0000 0000 		.long	.LFB17
+ 541 0129 AC00 0000 		.long	.LFE17-.LFB17
+ 542 012d 01        		.uleb128 0x1
+ 543 012e 9C        		.byte	0x9c
+ 544 012f 6D01 0000 		.long	0x16d
+ 545 0133 0B        		.uleb128 0xb
+ 546 0134 6900      		.string	"i"
+ 547 0136 01        		.byte	0x1
+ 548 0137 38        		.byte	0x38
+ 549 0138 09        		.byte	0x9
+ 550 0139 3E00 0000 		.long	0x3e
+ 551 013d 0000 0000 		.long	.LLST0
+ 552 0141 0000 0000 		.long	.LVUS0
+ 553 0145 0C        		.uleb128 0xc
+ 554 0146 B101 0000 		.long	0x1b1
+ 555 014a 0000 0000 		.long	.LBI4
+ 556 014e 01        		.byte	.LVU52
+ 557 014f 0000 0000 		.long	.LBB4
+ 558 0153 0400 0000 		.long	.LBE4-.LBB4
+ 559 0157 01        		.byte	0x1
+ 560 0158 3B        		.byte	0x3b
+ 561 0159 05        		.byte	0x5
+ 562 015a 07        		.uleb128 0x7
+ 563 015b 0000 0000 		.long	.LVL8
+ 564 015f BA01 0000 		.long	0x1ba
+ 565 0163 07        		.uleb128 0x7
+ 566 0164 0000 0000 		.long	.LVL9
+ 567 0168 A001 0000 		.long	0x1a0
+ 568 016c 00        		.byte	0
+ 569 016d 03        		.uleb128 0x3
+ 570 016e 0000 0000 		.long	.LASF22
+ 571 0172 30        		.byte	0x30
+ 572 0173 01        		.byte	0x1
+ 573 0174 0000 0000 		.long	.LFB16
+ 574 0178 1E00 0000 		.long	.LFE16-.LFB16
+ 575 017c 01        		.uleb128 0x1
+ 576 017d 9C        		.byte	0x9c
+GAS LISTING /tmp/cc3QgJ8a.s 			page 13
+
+
+ 577 017e 03        		.uleb128 0x3
+ 578 017f 0000 0000 		.long	.LASF23
+ 579 0183 2C        		.byte	0x2c
+ 580 0184 01        		.byte	0x1
+ 581 0185 0000 0000 		.long	.LFB15
+ 582 0189 0C00 0000 		.long	.LFE15-.LFB15
+ 583 018d 01        		.uleb128 0x1
+ 584 018e 9C        		.byte	0x9c
+ 585 018f 03        		.uleb128 0x3
+ 586 0190 0000 0000 		.long	.LASF24
+ 587 0194 26        		.byte	0x26
+ 588 0195 01        		.byte	0x1
+ 589 0196 0000 0000 		.long	.LFB14
+ 590 019a 2000 0000 		.long	.LFE14-.LFB14
+ 591 019e 01        		.uleb128 0x1
+ 592 019f 9C        		.byte	0x9c
+ 593 01a0 03        		.uleb128 0x3
+ 594 01a1 0000 0000 		.long	.LASF25
+ 595 01a5 21        		.byte	0x21
+ 596 01a6 06        		.byte	0x6
+ 597 01a7 0000 0000 		.long	.LFB13
+ 598 01ab 1200 0000 		.long	.LFE13-.LFB13
+ 599 01af 01        		.uleb128 0x1
+ 600 01b0 9C        		.byte	0x9c
+ 601 01b1 0D        		.uleb128 0xd
+ 602 01b2 0000 0000 		.long	.LASF28
+ 603 01b6 01        		.byte	0x1
+ 604 01b7 1D        		.byte	0x1d
+ 605 01b8 06        		.byte	0x6
+ 606 01b9 01        		.byte	0x1
+ 607 01ba 03        		.uleb128 0x3
+ 608 01bb 0000 0000 		.long	.LASF26
+ 609 01bf 0E        		.byte	0xe
+ 610 01c0 06        		.byte	0x6
+ 611 01c1 0000 0000 		.long	.LFB11
+ 612 01c5 2200 0000 		.long	.LFE11-.LFB11
+ 613 01c9 01        		.uleb128 0x1
+ 614 01ca 9C        		.byte	0x9c
+ 615 01cb 0E        		.uleb128 0xe
+ 616 01cc B101 0000 		.long	0x1b1
+ 617 01d0 0000 0000 		.long	.LFB12
+ 618 01d4 0600 0000 		.long	.LFE12-.LFB12
+ 619 01d8 01        		.uleb128 0x1
+ 620 01d9 9C        		.byte	0x9c
+ 621 01da 00        		.byte	0
+ 622               		.section	.debug_abbrev,"",@progbits
+ 623               	.Ldebug_abbrev0:
+ 624 0000 01        		.uleb128 0x1
+ 625 0001 24        		.uleb128 0x24
+ 626 0002 00        		.byte	0
+ 627 0003 0B        		.uleb128 0xb
+ 628 0004 0B        		.uleb128 0xb
+ 629 0005 3E        		.uleb128 0x3e
+ 630 0006 0B        		.uleb128 0xb
+ 631 0007 03        		.uleb128 0x3
+ 632 0008 0E        		.uleb128 0xe
+ 633 0009 00        		.byte	0
+GAS LISTING /tmp/cc3QgJ8a.s 			page 14
+
+
+ 634 000a 00        		.byte	0
+ 635 000b 02        		.uleb128 0x2
+ 636 000c 34        		.uleb128 0x34
+ 637 000d 00        		.byte	0
+ 638 000e 03        		.uleb128 0x3
+ 639 000f 0E        		.uleb128 0xe
+ 640 0010 3A        		.uleb128 0x3a
+ 641 0011 21        		.uleb128 0x21
+ 642 0012 01        		.sleb128 1
+ 643 0013 3B        		.uleb128 0x3b
+ 644 0014 0B        		.uleb128 0xb
+ 645 0015 39        		.uleb128 0x39
+ 646 0016 0B        		.uleb128 0xb
+ 647 0017 49        		.uleb128 0x49
+ 648 0018 13        		.uleb128 0x13
+ 649 0019 3F        		.uleb128 0x3f
+ 650 001a 19        		.uleb128 0x19
+ 651 001b 02        		.uleb128 0x2
+ 652 001c 18        		.uleb128 0x18
+ 653 001d 00        		.byte	0
+ 654 001e 00        		.byte	0
+ 655 001f 03        		.uleb128 0x3
+ 656 0020 2E        		.uleb128 0x2e
+ 657 0021 00        		.byte	0
+ 658 0022 3F        		.uleb128 0x3f
+ 659 0023 19        		.uleb128 0x19
+ 660 0024 03        		.uleb128 0x3
+ 661 0025 0E        		.uleb128 0xe
+ 662 0026 3A        		.uleb128 0x3a
+ 663 0027 21        		.uleb128 0x21
+ 664 0028 01        		.sleb128 1
+ 665 0029 3B        		.uleb128 0x3b
+ 666 002a 0B        		.uleb128 0xb
+ 667 002b 39        		.uleb128 0x39
+ 668 002c 0B        		.uleb128 0xb
+ 669 002d 27        		.uleb128 0x27
+ 670 002e 19        		.uleb128 0x19
+ 671 002f 11        		.uleb128 0x11
+ 672 0030 01        		.uleb128 0x1
+ 673 0031 12        		.uleb128 0x12
+ 674 0032 06        		.uleb128 0x6
+ 675 0033 40        		.uleb128 0x40
+ 676 0034 18        		.uleb128 0x18
+ 677 0035 7A        		.uleb128 0x7a
+ 678 0036 19        		.uleb128 0x19
+ 679 0037 00        		.byte	0
+ 680 0038 00        		.byte	0
+ 681 0039 04        		.uleb128 0x4
+ 682 003a 16        		.uleb128 0x16
+ 683 003b 00        		.byte	0
+ 684 003c 03        		.uleb128 0x3
+ 685 003d 0E        		.uleb128 0xe
+ 686 003e 3A        		.uleb128 0x3a
+ 687 003f 21        		.uleb128 0x21
+ 688 0040 02        		.sleb128 2
+ 689 0041 3B        		.uleb128 0x3b
+ 690 0042 0B        		.uleb128 0xb
+GAS LISTING /tmp/cc3QgJ8a.s 			page 15
+
+
+ 691 0043 39        		.uleb128 0x39
+ 692 0044 21        		.uleb128 0x21
+ 693 0045 16        		.sleb128 22
+ 694 0046 49        		.uleb128 0x49
+ 695 0047 13        		.uleb128 0x13
+ 696 0048 00        		.byte	0
+ 697 0049 00        		.byte	0
+ 698 004a 05        		.uleb128 0x5
+ 699 004b 35        		.uleb128 0x35
+ 700 004c 00        		.byte	0
+ 701 004d 49        		.uleb128 0x49
+ 702 004e 13        		.uleb128 0x13
+ 703 004f 00        		.byte	0
+ 704 0050 00        		.byte	0
+ 705 0051 06        		.uleb128 0x6
+ 706 0052 2E        		.uleb128 0x2e
+ 707 0053 01        		.byte	0x1
+ 708 0054 3F        		.uleb128 0x3f
+ 709 0055 19        		.uleb128 0x19
+ 710 0056 03        		.uleb128 0x3
+ 711 0057 0E        		.uleb128 0xe
+ 712 0058 3A        		.uleb128 0x3a
+ 713 0059 21        		.uleb128 0x21
+ 714 005a 01        		.sleb128 1
+ 715 005b 3B        		.uleb128 0x3b
+ 716 005c 0B        		.uleb128 0xb
+ 717 005d 39        		.uleb128 0x39
+ 718 005e 21        		.uleb128 0x21
+ 719 005f 06        		.sleb128 6
+ 720 0060 27        		.uleb128 0x27
+ 721 0061 19        		.uleb128 0x19
+ 722 0062 11        		.uleb128 0x11
+ 723 0063 01        		.uleb128 0x1
+ 724 0064 12        		.uleb128 0x12
+ 725 0065 06        		.uleb128 0x6
+ 726 0066 40        		.uleb128 0x40
+ 727 0067 18        		.uleb128 0x18
+ 728 0068 7A        		.uleb128 0x7a
+ 729 0069 19        		.uleb128 0x19
+ 730 006a 01        		.uleb128 0x1
+ 731 006b 13        		.uleb128 0x13
+ 732 006c 00        		.byte	0
+ 733 006d 00        		.byte	0
+ 734 006e 07        		.uleb128 0x7
+ 735 006f 48        		.uleb128 0x48
+ 736 0070 00        		.byte	0
+ 737 0071 7D        		.uleb128 0x7d
+ 738 0072 01        		.uleb128 0x1
+ 739 0073 7F        		.uleb128 0x7f
+ 740 0074 13        		.uleb128 0x13
+ 741 0075 00        		.byte	0
+ 742 0076 00        		.byte	0
+ 743 0077 08        		.uleb128 0x8
+ 744 0078 11        		.uleb128 0x11
+ 745 0079 01        		.byte	0x1
+ 746 007a 25        		.uleb128 0x25
+ 747 007b 0E        		.uleb128 0xe
+GAS LISTING /tmp/cc3QgJ8a.s 			page 16
+
+
+ 748 007c 13        		.uleb128 0x13
+ 749 007d 0B        		.uleb128 0xb
+ 750 007e 03        		.uleb128 0x3
+ 751 007f 1F        		.uleb128 0x1f
+ 752 0080 1B        		.uleb128 0x1b
+ 753 0081 1F        		.uleb128 0x1f
+ 754 0082 11        		.uleb128 0x11
+ 755 0083 01        		.uleb128 0x1
+ 756 0084 12        		.uleb128 0x12
+ 757 0085 06        		.uleb128 0x6
+ 758 0086 10        		.uleb128 0x10
+ 759 0087 17        		.uleb128 0x17
+ 760 0088 00        		.byte	0
+ 761 0089 00        		.byte	0
+ 762 008a 09        		.uleb128 0x9
+ 763 008b 24        		.uleb128 0x24
+ 764 008c 00        		.byte	0
+ 765 008d 0B        		.uleb128 0xb
+ 766 008e 0B        		.uleb128 0xb
+ 767 008f 3E        		.uleb128 0x3e
+ 768 0090 0B        		.uleb128 0xb
+ 769 0091 03        		.uleb128 0x3
+ 770 0092 08        		.uleb128 0x8
+ 771 0093 00        		.byte	0
+ 772 0094 00        		.byte	0
+ 773 0095 0A        		.uleb128 0xa
+ 774 0096 48        		.uleb128 0x48
+ 775 0097 00        		.byte	0
+ 776 0098 7D        		.uleb128 0x7d
+ 777 0099 01        		.uleb128 0x1
+ 778 009a 8201      		.uleb128 0x82
+ 779 009c 19        		.uleb128 0x19
+ 780 009d 7F        		.uleb128 0x7f
+ 781 009e 13        		.uleb128 0x13
+ 782 009f 00        		.byte	0
+ 783 00a0 00        		.byte	0
+ 784 00a1 0B        		.uleb128 0xb
+ 785 00a2 34        		.uleb128 0x34
+ 786 00a3 00        		.byte	0
+ 787 00a4 03        		.uleb128 0x3
+ 788 00a5 08        		.uleb128 0x8
+ 789 00a6 3A        		.uleb128 0x3a
+ 790 00a7 0B        		.uleb128 0xb
+ 791 00a8 3B        		.uleb128 0x3b
+ 792 00a9 0B        		.uleb128 0xb
+ 793 00aa 39        		.uleb128 0x39
+ 794 00ab 0B        		.uleb128 0xb
+ 795 00ac 49        		.uleb128 0x49
+ 796 00ad 13        		.uleb128 0x13
+ 797 00ae 02        		.uleb128 0x2
+ 798 00af 17        		.uleb128 0x17
+ 799 00b0 B742      		.uleb128 0x2137
+ 800 00b2 17        		.uleb128 0x17
+ 801 00b3 00        		.byte	0
+ 802 00b4 00        		.byte	0
+ 803 00b5 0C        		.uleb128 0xc
+ 804 00b6 1D        		.uleb128 0x1d
+GAS LISTING /tmp/cc3QgJ8a.s 			page 17
+
+
+ 805 00b7 00        		.byte	0
+ 806 00b8 31        		.uleb128 0x31
+ 807 00b9 13        		.uleb128 0x13
+ 808 00ba 52        		.uleb128 0x52
+ 809 00bb 01        		.uleb128 0x1
+ 810 00bc B842      		.uleb128 0x2138
+ 811 00be 0B        		.uleb128 0xb
+ 812 00bf 11        		.uleb128 0x11
+ 813 00c0 01        		.uleb128 0x1
+ 814 00c1 12        		.uleb128 0x12
+ 815 00c2 06        		.uleb128 0x6
+ 816 00c3 58        		.uleb128 0x58
+ 817 00c4 0B        		.uleb128 0xb
+ 818 00c5 59        		.uleb128 0x59
+ 819 00c6 0B        		.uleb128 0xb
+ 820 00c7 57        		.uleb128 0x57
+ 821 00c8 0B        		.uleb128 0xb
+ 822 00c9 00        		.byte	0
+ 823 00ca 00        		.byte	0
+ 824 00cb 0D        		.uleb128 0xd
+ 825 00cc 2E        		.uleb128 0x2e
+ 826 00cd 00        		.byte	0
+ 827 00ce 3F        		.uleb128 0x3f
+ 828 00cf 19        		.uleb128 0x19
+ 829 00d0 03        		.uleb128 0x3
+ 830 00d1 0E        		.uleb128 0xe
+ 831 00d2 3A        		.uleb128 0x3a
+ 832 00d3 0B        		.uleb128 0xb
+ 833 00d4 3B        		.uleb128 0x3b
+ 834 00d5 0B        		.uleb128 0xb
+ 835 00d6 39        		.uleb128 0x39
+ 836 00d7 0B        		.uleb128 0xb
+ 837 00d8 27        		.uleb128 0x27
+ 838 00d9 19        		.uleb128 0x19
+ 839 00da 20        		.uleb128 0x20
+ 840 00db 0B        		.uleb128 0xb
+ 841 00dc 00        		.byte	0
+ 842 00dd 00        		.byte	0
+ 843 00de 0E        		.uleb128 0xe
+ 844 00df 2E        		.uleb128 0x2e
+ 845 00e0 00        		.byte	0
+ 846 00e1 31        		.uleb128 0x31
+ 847 00e2 13        		.uleb128 0x13
+ 848 00e3 11        		.uleb128 0x11
+ 849 00e4 01        		.uleb128 0x1
+ 850 00e5 12        		.uleb128 0x12
+ 851 00e6 06        		.uleb128 0x6
+ 852 00e7 40        		.uleb128 0x40
+ 853 00e8 18        		.uleb128 0x18
+ 854 00e9 7A        		.uleb128 0x7a
+ 855 00ea 19        		.uleb128 0x19
+ 856 00eb 00        		.byte	0
+ 857 00ec 00        		.byte	0
+ 858 00ed 00        		.byte	0
+ 859               		.section	.debug_loclists,"",@progbits
+ 860 0000 4700 0000 		.long	.Ldebug_loc3-.Ldebug_loc2
+ 861               	.Ldebug_loc2:
+GAS LISTING /tmp/cc3QgJ8a.s 			page 18
+
+
+ 862 0004 0500      		.word	0x5
+ 863 0006 04        		.byte	0x4
+ 864 0007 00        		.byte	0
+ 865 0008 0000 0000 		.long	0
+ 866               	.Ldebug_loc0:
+ 867               	.LVUS0:
+ 868 000c 01        		.uleb128 .LVU62
+ 869 000d 00        		.uleb128 .LVU64
+ 870 000e 01        		.uleb128 .LVU67
+ 871 000f 00        		.uleb128 .LVU68
+ 872 0010 00        		.uleb128 .LVU68
+ 873 0011 00        		.uleb128 .LVU69
+ 874 0012 01        		.uleb128 .LVU72
+ 875 0013 00        		.uleb128 .LVU73
+ 876 0014 00        		.uleb128 .LVU73
+ 877 0015 00        		.uleb128 .LVU76
+ 878               	.LLST0:
+ 879 0016 04        		.byte	0x4
+ 880 0017 B201      		.uleb128 .LVL0-.Ltext0
+ 881 0019 B601      		.uleb128 .LVL1-.Ltext0
+ 882 001b 02        		.uleb128 0x2
+ 883 001c 30        		.byte	0x30
+ 884 001d 9F        		.byte	0x9f
+ 885 001e 04        		.byte	0x4
+ 886 001f C401      		.uleb128 .LVL2-.Ltext0
+ 887 0021 C601      		.uleb128 .LVL3-.Ltext0
+ 888 0023 05        		.uleb128 0x5
+ 889 0024 45        		.byte	0x45
+ 890 0025 88        		.byte	0x88
+ 891 0026 00        		.sleb128 0
+ 892 0027 1C        		.byte	0x1c
+ 893 0028 9F        		.byte	0x9f
+ 894 0029 04        		.byte	0x4
+ 895 002a C601      		.uleb128 .LVL3-.Ltext0
+ 896 002c CE01      		.uleb128 .LVL4-.Ltext0
+ 897 002e 05        		.uleb128 0x5
+ 898 002f 44        		.byte	0x44
+ 899 0030 88        		.byte	0x88
+ 900 0031 00        		.sleb128 0
+ 901 0032 1C        		.byte	0x1c
+ 902 0033 9F        		.byte	0x9f
+ 903 0034 04        		.byte	0x4
+ 904 0035 DA01      		.uleb128 .LVL5-.Ltext0
+ 905 0037 DC01      		.uleb128 .LVL6-.Ltext0
+ 906 0039 05        		.uleb128 0x5
+ 907 003a 45        		.byte	0x45
+ 908 003b 88        		.byte	0x88
+ 909 003c 00        		.sleb128 0
+ 910 003d 1C        		.byte	0x1c
+ 911 003e 9F        		.byte	0x9f
+ 912 003f 04        		.byte	0x4
+ 913 0040 DC01      		.uleb128 .LVL6-.Ltext0
+ 914 0042 E401      		.uleb128 .LVL7-.Ltext0
+ 915 0044 05        		.uleb128 0x5
+ 916 0045 44        		.byte	0x44
+ 917 0046 88        		.byte	0x88
+ 918 0047 00        		.sleb128 0
+GAS LISTING /tmp/cc3QgJ8a.s 			page 19
+
+
+ 919 0048 1C        		.byte	0x1c
+ 920 0049 9F        		.byte	0x9f
+ 921 004a 00        		.byte	0
+ 922               	.Ldebug_loc3:
+ 923               		.section	.debug_aranges,"",@progbits
+ 924 0000 1C00 0000 		.long	0x1c
+ 925 0004 0200      		.word	0x2
+ 926 0006 0000 0000 		.long	.Ldebug_info0
+ 927 000a 04        		.byte	0x4
+ 928 000b 00        		.byte	0
+ 929 000c 0000      		.word	0
+ 930 000e 0000      		.word	0
+ 931 0010 0000 0000 		.long	.Ltext0
+ 932 0014 4601 0000 		.long	.Letext0-.Ltext0
+ 933 0018 0000 0000 		.long	0
+ 934 001c 0000 0000 		.long	0
+ 935               		.section	.debug_line,"",@progbits
+ 936               	.Ldebug_line0:
+ 937 0000 1104 0000 		.section	.debug_str,"MS",@progbits,1
+ 937      0500 0400 
+ 937      3300 0000 
+ 937      0201 01FB 
+ 937      0E0D 0001 
+ 938               	.LASF17:
+ 939 0000 6164 635F 		.string	"adc_mux_rdy"
+ 939      6D75 785F 
+ 939      7264 7900 
+ 940               	.LASF27:
+ 941 000c 474E 5520 		.string	"GNU C17 12.2.0 -mn-flash=1 -mno-skip-bug -mdouble=32 -mlong-double=64 -mmcu=avr5 -g -Os -
+ 941      4331 3720 
+ 941      3132 2E32 
+ 941      2E30 202D 
+ 941      6D6E 2D66 
+ 942               	.LASF25:
+ 943 0097 6164 7473 		.string	"adts_enable"
+ 943      5F65 6E61 
+ 943      626C 6500 
+ 944               	.LASF20:
+ 945 00a3 696E 6974 		.string	"init_adc"
+ 945      5F61 6463 
+ 945      00
+ 946               	.LASF28:
+ 947 00ac 6164 7473 		.string	"adts_disable"
+ 947      5F64 6973 
+ 947      6162 6C65 
+ 947      00
+ 948               	.LASF23:
+ 949 00b9 5F5F 7665 		.string	"__vector_16"
+ 949      6374 6F72 
+ 949      5F31 3600 
+ 950               	.LASF3:
+ 951 00c5 756E 7369 		.string	"unsigned char"
+ 951      676E 6564 
+ 951      2063 6861 
+ 951      7200 
+ 952               	.LASF18:
+ 953 00d3 5449 4D45 		.string	"TIMER0_TOP"
+GAS LISTING /tmp/cc3QgJ8a.s 			page 20
+
+
+ 953      5230 5F54 
+ 953      4F50 00
+ 954               	.LASF8:
+ 955 00de 6C6F 6E67 		.string	"long unsigned int"
+ 955      2075 6E73 
+ 955      6967 6E65 
+ 955      6420 696E 
+ 955      7400 
+ 956               	.LASF13:
+ 957 00f0 6361 6C69 		.string	"calibrating"
+ 957      6272 6174 
+ 957      696E 6700 
+ 958               	.LASF21:
+ 959 00fc 6361 6C69 		.string	"calibrate_timer0"
+ 959      6272 6174 
+ 959      655F 7469 
+ 959      6D65 7230 
+ 959      00
+ 960               	.LASF16:
+ 961 010d 7379 6E63 		.string	"sync"
+ 961      00
+ 962               	.LASF6:
+ 963 0112 756E 7369 		.string	"unsigned int"
+ 963      676E 6564 
+ 963      2069 6E74 
+ 963      00
+ 964               	.LASF10:
+ 965 011f 6C6F 6E67 		.string	"long long unsigned int"
+ 965      206C 6F6E 
+ 965      6720 756E 
+ 965      7369 676E 
+ 965      6564 2069 
+ 966               	.LASF4:
+ 967 0136 7569 6E74 		.string	"uint8_t"
+ 967      385F 7400 
+ 968               	.LASF12:
+ 969 013e 6164 635F 		.string	"adc_read"
+ 969      7265 6164 
+ 969      00
+ 970               	.LASF9:
+ 971 0147 6C6F 6E67 		.string	"long long int"
+ 971      206C 6F6E 
+ 971      6720 696E 
+ 971      7400 
+ 972               	.LASF11:
+ 973 0155 6368 6172 		.string	"char"
+ 973      00
+ 974               	.LASF24:
+ 975 015a 5F5F 7665 		.string	"__vector_24"
+ 975      6374 6F72 
+ 975      5F32 3400 
+ 976               	.LASF26:
+ 977 0166 696E 6974 		.string	"init_timers"
+ 977      5F74 696D 
+ 977      6572 7300 
+ 978               	.LASF5:
+ 979 0172 7569 6E74 		.string	"uint16_t"
+GAS LISTING /tmp/cc3QgJ8a.s 			page 21
+
+
+ 979      3136 5F74 
+ 979      00
+ 980               	.LASF19:
+ 981 017b 4F46 4653 		.string	"OFFSET"
+ 981      4554 00
+ 982               	.LASF7:
+ 983 0182 6C6F 6E67 		.string	"long int"
+ 983      2069 6E74 
+ 983      00
+ 984               	.LASF22:
+ 985 018b 5F5F 7665 		.string	"__vector_9"
+ 985      6374 6F72 
+ 985      5F39 00
+ 986               	.LASF2:
+ 987 0196 7369 676E 		.string	"signed char"
+ 987      6564 2063 
+ 987      6861 7200 
+ 988               	.LASF15:
+ 989 01a2 6164 635F 		.string	"adc_rdy"
+ 989      7264 7900 
+ 990               	.LASF14:
+ 991 01aa 5F42 6F6F 		.string	"_Bool"
+ 991      6C00 
+ 992               		.section	.debug_line_str,"MS",@progbits,1
+ 993               	.LASF0:
+ 994 0000 6164 632E 		.string	"adc.c"
+ 994      6300 
+ 995               	.LASF1:
+ 996 0006 2F68 6F6D 		.string	"/home/kaicho/Documents/Southampton/D5/update/sotond5/libadc"
+ 996      652F 6B61 
+ 996      6963 686F 
+ 996      2F44 6F63 
+ 996      756D 656E 
+ 997               		.ident	"GCC: (GNU) 12.2.0"
+ 998 0042 2F68 6F6D 	.global __do_clear_bss
+ 998      652F 6B61 
+ 998      6963 686F 
+ 998      2F44 6F63 
+ 998      756D 656E 
+GAS LISTING /tmp/cc3QgJ8a.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 adc.c
-     /tmp/ccga4TkX.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccga4TkX.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccga4TkX.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccga4TkX.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccga4TkX.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccga4TkX.s:18     .text:0000000000000000 init_timers
-     /tmp/ccga4TkX.s:63     .text:0000000000000022 adts_disable
-     /tmp/ccga4TkX.s:84     .text:0000000000000028 adts_enable
-     /tmp/ccga4TkX.s:116    .text:000000000000003a __vector_24
+     /tmp/cc3QgJ8a.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc3QgJ8a.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc3QgJ8a.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc3QgJ8a.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc3QgJ8a.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc3QgJ8a.s:13     .text:0000000000000000 init_timers
+     /tmp/cc3QgJ8a.s:16     .text:0000000000000000 .Loc.0
+     /tmp/cc3QgJ8a.s:17     .text:0000000000000000 L0
+     /tmp/cc3QgJ8a.s:22     .text:0000000000000000 .Loc.1
+     /tmp/cc3QgJ8a.s:23     .text:0000000000000000 .Loc.2
+     /tmp/cc3QgJ8a.s:26     .text:0000000000000004 .Loc.3
+     /tmp/cc3QgJ8a.s:27     .text:0000000000000004 .Loc.4
+     /tmp/cc3QgJ8a.s:30     .text:0000000000000008 .Loc.5
+     /tmp/cc3QgJ8a.s:31     .text:0000000000000008 .Loc.6
+     /tmp/cc3QgJ8a.s:33     .text:000000000000000a .Loc.7
+     /tmp/cc3QgJ8a.s:34     .text:000000000000000a .Loc.8
+     /tmp/cc3QgJ8a.s:36     .text:000000000000000e .Loc.9
+     /tmp/cc3QgJ8a.s:37     .text:000000000000000e .Loc.10
+     /tmp/cc3QgJ8a.s:39     .text:0000000000000012 .Loc.11
+     /tmp/cc3QgJ8a.s:40     .text:0000000000000012 .Loc.12
+     /tmp/cc3QgJ8a.s:42     .text:0000000000000016 .Loc.13
+     /tmp/cc3QgJ8a.s:43     .text:0000000000000016 .Loc.14
+     /tmp/cc3QgJ8a.s:46     .text:000000000000001c .Loc.15
+     /tmp/cc3QgJ8a.s:47     .text:000000000000001c .Loc.16
+     /tmp/cc3QgJ8a.s:50     .text:0000000000000020 .Loc.17
+     /tmp/cc3QgJ8a.s:52     .text:0000000000000022 L0
+     /tmp/cc3QgJ8a.s:57     .text:0000000000000022 adts_disable
+     /tmp/cc3QgJ8a.s:59     .text:0000000000000022 .Loc.18
+     /tmp/cc3QgJ8a.s:60     .text:0000000000000022 L0
+     /tmp/cc3QgJ8a.s:65     .text:0000000000000022 .Loc.19
+     /tmp/cc3QgJ8a.s:66     .text:0000000000000022 .Loc.20
+     /tmp/cc3QgJ8a.s:69     .text:0000000000000026 .Loc.21
+     /tmp/cc3QgJ8a.s:71     .text:0000000000000028 L0
+     /tmp/cc3QgJ8a.s:76     .text:0000000000000028 adts_enable
+     /tmp/cc3QgJ8a.s:78     .text:0000000000000028 .Loc.22
+     /tmp/cc3QgJ8a.s:79     .text:0000000000000028 L0
+     /tmp/cc3QgJ8a.s:84     .text:0000000000000028 .Loc.23
+     /tmp/cc3QgJ8a.s:88     .text:000000000000002e .Loc.24
+     /tmp/cc3QgJ8a.s:91     .text:0000000000000032 .Loc.25
+     /tmp/cc3QgJ8a.s:93     .text:0000000000000034 .Loc.26
+     /tmp/cc3QgJ8a.s:97     .text:0000000000000038 .Loc.27
+     /tmp/cc3QgJ8a.s:99     .text:000000000000003a L0
+     /tmp/cc3QgJ8a.s:104    .text:000000000000003a __vector_24
+     /tmp/cc3QgJ8a.s:106    .text:000000000000003a .Loc.28
+     /tmp/cc3QgJ8a.s:107    .text:000000000000003a L0
                             *ABS*:0000000000000001 __gcc_isr.n_pushed.001
-     /tmp/ccga4TkX.s:395    .bss:0000000000000006 adc_read
-     /tmp/ccga4TkX.s:383    .bss:0000000000000004 adc_rdy
-     /tmp/ccga4TkX.s:151    .text:000000000000005a __vector_16
+     /tmp/cc3QgJ8a.s:116    .text:000000000000003e .Loc.29
+     /tmp/cc3QgJ8a.s:117    .text:000000000000003e .Loc.30
+     /tmp/cc3QgJ8a.s:120    .text:0000000000000046 .Loc.31
+     /tmp/cc3QgJ8a.s:397    .bss:0000000000000006 adc_read
+     /tmp/cc3QgJ8a.s:123    .text:000000000000004e .Loc.32
+     /tmp/cc3QgJ8a.s:124    .text:000000000000004e .Loc.33
+     /tmp/cc3QgJ8a.s:387    .bss:0000000000000004 adc_rdy
+     /tmp/cc3QgJ8a.s:128    .text:0000000000000054 .Loc.34
+     /tmp/cc3QgJ8a.s:133    .text:000000000000005a L0
+GAS LISTING /tmp/cc3QgJ8a.s 			page 23
+
+
+     /tmp/cc3QgJ8a.s:138    .text:000000000000005a __vector_16
+     /tmp/cc3QgJ8a.s:140    .text:000000000000005a .Loc.35
+     /tmp/cc3QgJ8a.s:141    .text:000000000000005a L0
                             *ABS*:0000000000000001 __gcc_isr.n_pushed.002
-     /tmp/ccga4TkX.s:377    .bss:0000000000000003 sync
-     /tmp/ccga4TkX.s:176    .text:0000000000000066 __vector_9
+     /tmp/cc3QgJ8a.s:147    .text:000000000000005c .Loc.36
+     /tmp/cc3QgJ8a.s:148    .text:000000000000005c .Loc.37
+     /tmp/cc3QgJ8a.s:382    .bss:0000000000000003 sync
+     /tmp/cc3QgJ8a.s:152    .text:0000000000000062 .Loc.38
+     /tmp/cc3QgJ8a.s:156    .text:0000000000000066 L0
+     /tmp/cc3QgJ8a.s:161    .text:0000000000000066 __vector_9
+     /tmp/cc3QgJ8a.s:163    .text:0000000000000066 .Loc.39
+     /tmp/cc3QgJ8a.s:164    .text:0000000000000066 L0
                             *ABS*:0000000000000003 __gcc_isr.n_pushed.003
-     /tmp/ccga4TkX.s:370    .bss:0000000000000002 adc_mux_rdy
-     /tmp/ccga4TkX.s:204    .text:0000000000000084 calibrate_timer0
-     /tmp/ccga4TkX.s:389    .bss:0000000000000005 calibrating
-     /tmp/ccga4TkX.s:358    .bss:0000000000000000 OFFSET
-     /tmp/ccga4TkX.s:364    .bss:0000000000000001 TIMER0_TOP
-     /tmp/ccga4TkX.s:321    .text:000000000000011e init_adc
+     /tmp/cc3QgJ8a.s:170    .text:0000000000000070 .Loc.40
+     /tmp/cc3QgJ8a.s:171    .text:0000000000000070 .Loc.41
+     /tmp/cc3QgJ8a.s:173    .text:0000000000000074 .Loc.42
+     /tmp/cc3QgJ8a.s:174    .text:0000000000000074 .Loc.43
+     /tmp/cc3QgJ8a.s:377    .bss:0000000000000002 adc_mux_rdy
+     /tmp/cc3QgJ8a.s:178    .text:000000000000007a .Loc.44
+     /tmp/cc3QgJ8a.s:182    .text:0000000000000084 L0
+     /tmp/cc3QgJ8a.s:187    .text:0000000000000084 calibrate_timer0
+     /tmp/cc3QgJ8a.s:189    .text:0000000000000084 .Loc.45
+     /tmp/cc3QgJ8a.s:190    .text:0000000000000084 L0
+     /tmp/cc3QgJ8a.s:195    .text:0000000000000084 .Loc.46
+     /tmp/cc3QgJ8a.s:196    .text:0000000000000084 .Loc.47
+     /tmp/cc3QgJ8a.s:197    .text:0000000000000084 .Loc.48
+     /tmp/cc3QgJ8a.s:392    .bss:0000000000000005 calibrating
+     /tmp/cc3QgJ8a.s:200    .text:000000000000008a .Loc.49
+     /tmp/cc3QgJ8a.s:202    .text:000000000000008e .Loc.50
+     /tmp/cc3QgJ8a.s:205    .text:0000000000000094 .Loc.51
+     /tmp/cc3QgJ8a.s:208    .text:0000000000000094 .Loc.52
+     /tmp/cc3QgJ8a.s:210    .text:0000000000000094 .Loc.53
+     /tmp/cc3QgJ8a.s:211    .text:0000000000000094 .Loc.54
+     /tmp/cc3QgJ8a.s:215    .text:0000000000000098 .Loc.55
+     /tmp/cc3QgJ8a.s:216    .text:0000000000000098 .Loc.56
+     /tmp/cc3QgJ8a.s:219    .text:000000000000009e .Loc.57
+     /tmp/cc3QgJ8a.s:221    .text:00000000000000a2 .Loc.58
+     /tmp/cc3QgJ8a.s:224    .text:00000000000000a8 .Loc.59
+     /tmp/cc3QgJ8a.s:226    .text:00000000000000ac .Loc.60
+     /tmp/cc3QgJ8a.s:229    .text:00000000000000b2 .Loc.61
+     /tmp/cc3QgJ8a.s:231    .text:00000000000000b2 .Loc.62
+     /tmp/cc3QgJ8a.s:232    .text:00000000000000b2 .Loc.63
+     /tmp/cc3QgJ8a.s:237    .text:00000000000000b6 .Loc.64
+     /tmp/cc3QgJ8a.s:238    .text:00000000000000b6 .Loc.65
+     /tmp/cc3QgJ8a.s:244    .text:00000000000000c4 .Loc.66
+     /tmp/cc3QgJ8a.s:246    .text:00000000000000c4 .Loc.67
+     /tmp/cc3QgJ8a.s:249    .text:00000000000000c6 .Loc.68
+     /tmp/cc3QgJ8a.s:256    .text:00000000000000ce .Loc.69
+     /tmp/cc3QgJ8a.s:257    .text:00000000000000ce .Loc.70
+     /tmp/cc3QgJ8a.s:262    .text:00000000000000da .Loc.71
+     /tmp/cc3QgJ8a.s:264    .text:00000000000000da .Loc.72
+     /tmp/cc3QgJ8a.s:267    .text:00000000000000dc .Loc.73
+     /tmp/cc3QgJ8a.s:270    .text:00000000000000e0 .Loc.74
+     /tmp/cc3QgJ8a.s:271    .text:00000000000000e0 .Loc.75
+     /tmp/cc3QgJ8a.s:367    .bss:0000000000000000 OFFSET
+     /tmp/cc3QgJ8a.s:274    .text:00000000000000e4 .Loc.76
+     /tmp/cc3QgJ8a.s:276    .text:00000000000000e6 .Loc.77
+GAS LISTING /tmp/cc3QgJ8a.s 			page 24
+
+
+     /tmp/cc3QgJ8a.s:279    .text:00000000000000ea .Loc.78
+     /tmp/cc3QgJ8a.s:282    .text:00000000000000ee .Loc.79
+     /tmp/cc3QgJ8a.s:283    .text:00000000000000ee .Loc.80
+     /tmp/cc3QgJ8a.s:286    .text:00000000000000f4 .Loc.81
+     /tmp/cc3QgJ8a.s:287    .text:00000000000000f4 .Loc.82
+     /tmp/cc3QgJ8a.s:291    .text:00000000000000fe .Loc.83
+     /tmp/cc3QgJ8a.s:293    .text:0000000000000102 .Loc.84
+     /tmp/cc3QgJ8a.s:296    .text:0000000000000108 .Loc.85
+     /tmp/cc3QgJ8a.s:298    .text:0000000000000108 .Loc.86
+     /tmp/cc3QgJ8a.s:302    .text:0000000000000110 .Loc.87
+     /tmp/cc3QgJ8a.s:303    .text:0000000000000110 .Loc.88
+     /tmp/cc3QgJ8a.s:305    .text:0000000000000112 .Loc.89
+     /tmp/cc3QgJ8a.s:306    .text:0000000000000112 .Loc.90
+     /tmp/cc3QgJ8a.s:372    .bss:0000000000000001 TIMER0_TOP
+     /tmp/cc3QgJ8a.s:309    .text:0000000000000118 .Loc.91
+     /tmp/cc3QgJ8a.s:310    .text:0000000000000118 .Loc.92
+     /tmp/cc3QgJ8a.s:312    .text:000000000000011c .Loc.93
+     /tmp/cc3QgJ8a.s:314    .text:0000000000000120 .Loc.94
+     /tmp/cc3QgJ8a.s:317    .text:0000000000000126 .Loc.95
+     /tmp/cc3QgJ8a.s:318    .text:0000000000000126 .Loc.96
+     /tmp/cc3QgJ8a.s:320    .text:000000000000012a .Loc.97
+     /tmp/cc3QgJ8a.s:321    .text:000000000000012a .Loc.98
+     /tmp/cc3QgJ8a.s:324    .text:000000000000012e .Loc.99
+     /tmp/cc3QgJ8a.s:326    .text:0000000000000130 L0
+     /tmp/cc3QgJ8a.s:331    .text:0000000000000130 init_adc
+     /tmp/cc3QgJ8a.s:333    .text:0000000000000130 .Loc.100
+     /tmp/cc3QgJ8a.s:334    .text:0000000000000130 L0
+     /tmp/cc3QgJ8a.s:339    .text:0000000000000130 .Loc.101
+     /tmp/cc3QgJ8a.s:344    .text:0000000000000132 .Loc.102
+     /tmp/cc3QgJ8a.s:349    .text:0000000000000138 .Loc.103
+     /tmp/cc3QgJ8a.s:352    .text:000000000000013c .Loc.104
+     /tmp/cc3QgJ8a.s:354    .text:000000000000013e .Loc.105
+     /tmp/cc3QgJ8a.s:357    .text:0000000000000142 .Loc.106
+     /tmp/cc3QgJ8a.s:360    .text:0000000000000146 L0
+     /tmp/cc3QgJ8a.s:402    .text:0000000000000146 L0
+                     .debug_frame:0000000000000000 L0
+     /tmp/cc3QgJ8a.s:236    .text:00000000000000b6 .L8
+     /tmp/cc3QgJ8a.s:255    .text:00000000000000ce .L10
+     /tmp/cc3QgJ8a.s:297    .text:0000000000000108 .L12
+     /tmp/cc3QgJ8a.s:623    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/cc3QgJ8a.s:8      .text:0000000000000000 .Ltext0
+     /tmp/cc3QgJ8a.s:400    .text:0000000000000146 .Letext0
+     /tmp/cc3QgJ8a.s:936    .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/cc3QgJ8a.s:332    .text:0000000000000130 .LFB18
+     /tmp/cc3QgJ8a.s:361    .text:0000000000000146 .LFE18
+     /tmp/cc3QgJ8a.s:359    .text:0000000000000146 .LVL10
+     /tmp/cc3QgJ8a.s:188    .text:0000000000000084 .LFB17
+     /tmp/cc3QgJ8a.s:327    .text:0000000000000130 .LFE17
+     /tmp/cc3QgJ8a.s:878    .debug_loclists:0000000000000016 .LLST0
+     /tmp/cc3QgJ8a.s:867    .debug_loclists:000000000000000c .LVUS0
+     /tmp/cc3QgJ8a.s:207    .text:0000000000000094 .LBI4
+     /tmp/cc3QgJ8a.s:206    .text:0000000000000094 .LBB4
+     /tmp/cc3QgJ8a.s:214    .text:0000000000000098 .LBE4
+     /tmp/cc3QgJ8a.s:278    .text:00000000000000ea .LVL8
+     /tmp/cc3QgJ8a.s:281    .text:00000000000000ee .LVL9
+     /tmp/cc3QgJ8a.s:162    .text:0000000000000066 .LFB16
+     /tmp/cc3QgJ8a.s:183    .text:0000000000000084 .LFE16
+GAS LISTING /tmp/cc3QgJ8a.s 			page 25
+
+
+     /tmp/cc3QgJ8a.s:139    .text:000000000000005a .LFB15
+     /tmp/cc3QgJ8a.s:157    .text:0000000000000066 .LFE15
+     /tmp/cc3QgJ8a.s:105    .text:000000000000003a .LFB14
+     /tmp/cc3QgJ8a.s:134    .text:000000000000005a .LFE14
+     /tmp/cc3QgJ8a.s:77     .text:0000000000000028 .LFB13
+     /tmp/cc3QgJ8a.s:100    .text:000000000000003a .LFE13
+     /tmp/cc3QgJ8a.s:14     .text:0000000000000000 .LFB11
+     /tmp/cc3QgJ8a.s:53     .text:0000000000000022 .LFE11
+     /tmp/cc3QgJ8a.s:58     .text:0000000000000022 .LFB12
+     /tmp/cc3QgJ8a.s:72     .text:0000000000000028 .LFE12
+     /tmp/cc3QgJ8a.s:403    .debug_info:0000000000000000 .Ldebug_info0
 
 UNDEFINED SYMBOLS
 __do_clear_bss

@@ -5,9 +5,11 @@
 void init_PWM(void)
 {
 	DDRD |= _BV(PD5);
-	TCCR1A = _BV(COM1A1)|_BV(WGM10)|_BV(WGM12);
+	// TCCR1A = _BV(COM1A1)|_BV(WGM10)|_BV(WGM12);
 	//  Fast PWM
 	TCCR1B = _BV(CS10);
+	PORTD |= _BV(PD5);
+
 }
 
 void PWM(uint8_t duty_cycle)
