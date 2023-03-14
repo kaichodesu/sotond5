@@ -53,6 +53,7 @@ ISR(TIMER2_COMPA_vect){
 
 void calibrate_timer0(void)
 {
+    int i;
     calibrating = true;
     ADCSRA |= _BV(ADIE);
     adts_disable();
@@ -62,8 +63,10 @@ void calibrate_timer0(void)
     ADCSRA |=_BV(ADATE);
     ADCSRA |= _BV(ADSC);
     //  start conversions in free running mode
+    for(i = 0; i < 20; i++)
     while(adc_read <= 20){}
         //  Waiting for the ADC to rise into the rectified waveform.
+    for(i = 0; i < 20; i++)
 	while(adc_read > 0){}
     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
     OCR0A = OFFSET;

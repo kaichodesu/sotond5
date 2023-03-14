@@ -71,57 +71,6 @@ void lcd_update(void){
 	bar_value_wind[0] = bar_value_wind[1];
 	bar_value_sun[0] = bar_value_sun[1];
 
-	if(PINA &=_BV(0))
-	{
-		LC1_green();
-	}
-	else
-		LC1_red();
-
-	if(PINA &=_BV(1))
-	{
-		LC2_green();
-	}
-	else
-		LC2_red();
-
-	if(PINA &=_BV(2))
-	{
-		LC3_green();
-	}
-	else
-		LC3_red();
-
-	if(PIND &=_BV(2))
-	{
-		LS1_green();
-	}
-	else
-		LS1_red();
-
-	if(PIND &=_BV(3))
-	{
-		LS2_green();
-	}
-	else
-		LS2_red();
-
-	if(PINA &=_BV(7))
-	{
-		LS3_green();
-	}
-	else
-		LS3_red();
-
-
-
-	if(PIND &=_BV(1)) // replace with pin value
-	{
-		battery_pwr_state[1] = 0;
-	}
-	else
-		battery_pwr_state[1] = 1;
-
 	power_kw_digit[1] = power1;
 	power_10_digit[1] = power10;
 	power_100_digit[1] = power100;
@@ -162,60 +111,8 @@ void lcd_update(void){
 
 }
 
-
-int main(){
-    uint8_t i = 0;
-    init();
-    while(1){
-        if(sync){
-            //  ADMUX preset to PA6
-            //TCCR2B = 0x01;
-            //  Starting the ADCMUX timer.
-            sync = false;
-            TIMSK0 &= ~_BV(OCIE0A);
-            //  Disable TIMER0 Interrupt
-            adts_disable();
-            ADCSRA &=~_BV(ADATE);
-            //  Disable auto triggering.
-
-            //  Reading IBUS value.
-            //while(adc_mux_rdy == 0);
-            //ADMUX = 0x03;
-            //adc_mux_rdy = false;
-            //  We change ADMUX while the current conversion is taking place
-
-
-                while(adc_rdy == 0);
-                adc_rdy = false;
-                //TCCR2B = 0x01;
-                //  Start the ADCMUX timer for the next conversion
-                ibusarray[0] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-                //adc_mux_rdy = false;
-                //  We change ADMUX while the current conversion is taking place
-                while(adc_rdy == 0);
-                ibusarray[1] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                ibusarray[2] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                ibusarray[3] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-                while(adc_rdy == 0);
-                ibusarray[4] = adc_read/205;
-                adc_rdy = false;
-                ADCSRA |=_BV(ADSC);
-
-                BusI = (ibusarray[0] + ibusarray[1] + ibusarray[2] + ibusarray[3] + ibusarray[4])/5;
-
-
-
-            //  Reading Wind Capacity==========================================
+void analog_read(){
+    //  Reading Wind Capacity==========================================
             //while(adc_mux_rdy == 0);
             ADMUX = 0x03;
             ADCSRA |=_BV(ADSC);
@@ -274,16 +171,63 @@ int main(){
             PV = (pvarray[0] + pvarray[1] + pvarray[2] + pvarray[3] + pvarray[4])/5;
 
             //==================================================================
+            ADMUX = 0x06;
+}
 
-            if (drift == 3 | drift == 7)
-                ADMUX = 0x06;
-            else
-                ADMUX = 0x03;
+int main(){
+    uint8_t i = 0;
+    PV = 1;
+    Wind = 3;
+    init();
+    while(1){
+        if(sync){
+            //  ADMUX preset to PA6
+            //TCCR2B = 0x01;
+            //  Starting the ADCMUX timer.
+            sync = false;
+            TIMSK0 &= ~_BV(OCIE0A);
+            //  Disable TIMER0 Interrupt
+            adts_disable();
+            ADCSRA &=~_BV(ADATE);
+            //  Disable auto triggering.
+
+            //  Reading IBUS value.
+            //while(adc_mux_rdy == 0);
+            //ADMUX = 0x03;
+            //adc_mux_rdy = false;
+            //  We change ADMUX while the current conversion is taking place
 
 
+                while(adc_rdy == 0);
+                adc_rdy = false;
+                //TCCR2B = 0x01;
+                //  Start the ADCMUX timer for the next conversion
+                ibusarray[0] = adc_read/205;
+                adc_rdy = false;
+                ADCSRA |=_BV(ADSC);
+                //adc_mux_rdy = false;
+                //  We change ADMUX while the current conversion is taking place
+                while(adc_rdy == 0);
+                ibusarray[1] = adc_read/205;
+                adc_rdy = false;
+                ADCSRA |=_BV(ADSC);
+                while(adc_rdy == 0);
+                ibusarray[2] = adc_read/205;
+                adc_rdy = false;
+                ADCSRA |=_BV(ADSC);
+                while(adc_rdy == 0);
+                ibusarray[3] = adc_read/205;
+                adc_rdy = false;
+                ADCSRA |=_BV(ADSC);
+                while(adc_rdy == 0);
+                ibusarray[4] = adc_read/205;
+                adc_rdy = false;
+                BusI = (ibusarray[0] + ibusarray[1] + ibusarray[2] + ibusarray[3] + ibusarray[4])/5;
 
             algorithm();
             drift++;
+
+
             watchdog++;
 
             lcd_update();
@@ -300,6 +244,8 @@ int main(){
                 drift = 0;
                 OCR0A = 236;
             }
+
+            void analog_read();
 
             if(watchdog < 500){
             TIMSK0 |= _BV(OCIE0A);
