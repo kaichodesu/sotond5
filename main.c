@@ -257,6 +257,7 @@ int main(){
             }
             else{
                 watchdog = 0;
+                ADMUX = 0x05;
                 calibrate_timer0();
                 TIMSK0 |= _BV(OCIE0A);
                 adts_enable();
