@@ -20,8 +20,8 @@ void algorithm(void){
 
 	if(BusI + BatteryChargeI < MainsMAX + PV + Wind)
 {
-CBAT_hi();
 DBAT_lo();
+CBAT_hi();
 bat_pwr(true);
 }
 else{
