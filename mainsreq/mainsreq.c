@@ -1,20 +1,21 @@
 #include "mainsreq.h"
-#include <avr/interrupt.h>
-
 //PWM-----------------------------------------------------
+
+int step;
+
 void init_PWM(void)
 {
 	DDRD |= _BV(PD5);
-	// TCCR1A = _BV(COM1A1)|_BV(WGM10)|_BV(WGM12);
-	//  Fast PWM
-	TCCR1B = _BV(CS10);
-	PORTD |= _BV(PD5);
-
+	TCCR1A = _BV(COM1A0)
+		 |_BV(WGM10);
+	TCCR1B = _BV(WGM13)
+		 | _BV(CS11);
+	step = 10/((F_CPU)/(2*PRESCALER*FREQ));
 }
 
-void PWM(uint8_t duty_cycle)
+void PWM(float mainsreq)
 {
-    OCR1A = (uint8_t) duty_cycle;
+    OCR1A = (uint16_t) mainsreq/step;
 }
 //--------------------------------------------------------
 

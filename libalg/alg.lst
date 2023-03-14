@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccxROBC7.s 			page 1
+GAS LISTING /tmp/ccqFA9Ez.s 			page 1
 
 
    1               		.file	"alg.c"
@@ -7,18 +7,23 @@ GAS LISTING /tmp/ccxROBC7.s 			page 1
    4               	__SREG__ = 0x3f
    5               	__tmp_reg__ = 0
    6               	__zero_reg__ = 1
-   7               		.text
-   8               	.Ltext0:
-   9               		.cfi_sections	.debug_frame
-  10               		.file 0 "/home/kaicho/Documents/Southampton/D5/update/sotond5/libalg" "alg.c"
-  11               	.global	__addsf3
+   7               		.stabs	"/home/kaicho/Southampton/sotond5/sotond5/libalg/",100,0,2,.Ltext0
+   8               		.stabs	"alg.c",100,0,2,.Ltext0
+   9               		.text
+  10               	.Ltext0:
+  11               		.stabs	"gcc2_compiled.",60,0,0,0
   12               	.global	__ltsf2
-  13               	.global	__gtsf2
-  14               	.global	algorithm
-  15               		.type	algorithm, @function
-  16               	algorithm:
-  17               	.LFB10:
-  18               		.file 1 "alg.c"
+  13               	.global	__addsf3
+  14               	.global	__gtsf2
+  15               	.global	__gesf2
+  16               	.global	__lesf2
+  17               		.stabs	"algorithm:F(0,1)=(0,1)",36,0,22,algorithm
+  18               		.stabs	"uint8_t:t(0,2)=(0,3)=@s8;r(0,3);0;255;",128,0,126,0
+  19               		.stabs	"void:t(0,1)",128,0,0,0
+  20               		.stabs	"unsigned char:t(0,3)",128,0,0,0
+  21               	.global	algorithm
+  22               		.type	algorithm, @function
+  23               	algorithm:
    1:alg.c         **** #include <stdbool.h>
    2:alg.c         **** #include <math.h>
    3:alg.c         **** #include "../libio/io.h"
@@ -32,2345 +37,636 @@ GAS LISTING /tmp/ccxROBC7.s 			page 1
   11:alg.c         **** const float Load1 = 1.2;
   12:alg.c         **** const float Load2 = 2;
   13:alg.c         **** const float Load3 = 0.8;
-  14:alg.c         **** //========================================================================//
-  15:alg.c         **** 
-  16:alg.c         **** //  uints for initial time sensitive data storage
-  17:alg.c         **** float PV, Wind, BusI, MainsReq;
-  18:alg.c         **** 
-  19:alg.c         **** void algorithm(void){
-  19               		.loc 1 19 21 view -0
-  20               		.cfi_startproc
-  21 0000 0F93      		push r16
-  22               		.cfi_def_cfa_offset 3
-  23               		.cfi_offset 16, -2
-  24 0002 1F93      		push r17
-  25               		.cfi_def_cfa_offset 4
-  26               		.cfi_offset 17, -3
-  27 0004 CF93      		push r28
-  28               		.cfi_def_cfa_offset 5
-  29               		.cfi_offset 28, -4
-  30 0006 DF93      		push r29
-  31               		.cfi_def_cfa_offset 6
-  32               		.cfi_offset 29, -5
-  33 0008 00D0      		rcall .
-  34 000a 00D0      		rcall .
-  35 000c 00D0      		rcall .
-  36               		.cfi_def_cfa_offset 12
-  37 000e CDB7      		in r28,__SP_L__
-  38 0010 DEB7      		in r29,__SP_H__
-GAS LISTING /tmp/ccxROBC7.s 			page 2
+  14:alg.c         **** int BusVMAX = 2;
+  15:alg.c         **** //========================================================================//
+  16:alg.c         **** 
+  17:alg.c         **** //  uints for initial time sensitive data storage
+  18:alg.c         **** float PV, Wind, BusI, MainsReq, BusV;
+  19:alg.c         **** int BatteryDischI = 1;
+  20:alg.c         **** bool LS1, LS2, LS3;
+  21:alg.c         **** 
+  22:alg.c         **** void algorithm(void){
+  24               		.stabn	68,0,22,.LM0-.LFBB1
+  25               	.LM0:
+  26               	.LFBB1:
+  27 0000 CF93      		push r28
+  28 0002 DF93      		push r29
+  29 0004 00D0      		rcall .
+  30 0006 00D0      		rcall .
+  31 0008 CDB7      		in r28,__SP_L__
+  32 000a DEB7      		in r29,__SP_H__
+  33               	/* prologue: function */
+  34               	/* frame size = 4 */
+  35               	/* stack size = 6 */
+GAS LISTING /tmp/ccqFA9Ez.s 			page 2
 
 
-  39               		.cfi_def_cfa_register 28
-  40               	/* prologue: function */
-  41               	/* frame size = 6 */
-  42               	/* stack size = 10 */
-  43               	.L__stack_usage = 10
-  20:alg.c         **** 
-  21:alg.c         **** 	if(BusI + BatteryChargeI < MainsMAX + PV + Wind)
-  44               		.loc 1 21 2 view .LVU1
-  45               		.loc 1 21 10 is_stmt 0 view .LVU2
-  46 0012 20E0      		ldi r18,0
-  47 0014 30E0      		ldi r19,0
-  48 0016 40E8      		ldi r20,lo8(-128)
-  49 0018 5FE3      		ldi r21,lo8(63)
-  50 001a 6091 0000 		lds r22,BusI
-  51 001e 7091 0000 		lds r23,BusI+1
-  52 0022 8091 0000 		lds r24,BusI+2
-  53 0026 9091 0000 		lds r25,BusI+3
-  54 002a 0E94 0000 		call __addsf3
-  55               	.LVL0:
-  56 002e 8B01      		movw r16,r22
-  57 0030 8E83      		std Y+6,r24
-  58 0032 9D83      		std Y+5,r25
-  59               		.loc 1 21 38 view .LVU3
-  60 0034 20E0      		ldi r18,0
-  61 0036 30E0      		ldi r19,0
-  62 0038 40E0      		ldi r20,0
-  63 003a 50E4      		ldi r21,lo8(64)
-  64 003c 6091 0000 		lds r22,PV
-  65 0040 7091 0000 		lds r23,PV+1
-  66 0044 8091 0000 		lds r24,PV+2
-  67 0048 9091 0000 		lds r25,PV+3
-  68 004c 0E94 0000 		call __addsf3
-  69               	.LVL1:
-  70               		.loc 1 21 43 view .LVU4
-  71 0050 2091 0000 		lds r18,Wind
-  72 0054 3091 0000 		lds r19,Wind+1
-  73 0058 4091 0000 		lds r20,Wind+2
-  74 005c 5091 0000 		lds r21,Wind+3
-  75 0060 6983      		std Y+1,r22
-  76 0062 7A83      		std Y+2,r23
-  77 0064 8B83      		std Y+3,r24
-  78 0066 9C83      		std Y+4,r25
-  79 0068 6981      		ldd r22,Y+1
-  80 006a 7A81      		ldd r23,Y+2
-  81 006c 8B81      		ldd r24,Y+3
-  82 006e 9C81      		ldd r25,Y+4
-  83 0070 0E94 0000 		call __addsf3
-  84               	.LVL2:
-  85               		.loc 1 21 4 view .LVU5
-  86 0074 9B01      		movw r18,r22
-  87 0076 AC01      		movw r20,r24
-  88 0078 0983      		std Y+1,r16
-  89 007a 1A83      		std Y+2,r17
-  90 007c 8E81      		ldd r24,Y+6
-  91 007e 8B83      		std Y+3,r24
-  92 0080 8D81      		ldd r24,Y+5
-  93 0082 8C83      		std Y+4,r24
-GAS LISTING /tmp/ccxROBC7.s 			page 3
-
-
-  94 0084 6981      		ldd r22,Y+1
-  95 0086 7A81      		ldd r23,Y+2
-  96 0088 8B81      		ldd r24,Y+3
-  97 008a 9C81      		ldd r25,Y+4
-  98 008c 0E94 0000 		call __ltsf2
-  99               	.LVL3:
- 100 0090 87FF      		sbrs r24,7
- 101 0092 00C0      		rjmp .L91
-  22:alg.c         **** {
-  23:alg.c         **** DBAT_lo();
- 102               		.loc 1 23 1 is_stmt 1 view .LVU6
- 103 0094 5998      		cbi 0xb,1
-  24:alg.c         **** CBAT_hi();
- 104               		.loc 1 24 1 view .LVU7
- 105 0096 589A      		sbi 0xb,0
-  25:alg.c         **** bat_pwr(true);
- 106               		.loc 1 25 1 view .LVU8
- 107 0098 81E0      		ldi r24,lo8(1)
- 108               	.L104:
-  26:alg.c         **** }
-  27:alg.c         **** else{
-  28:alg.c         **** CBAT_lo();
-  29:alg.c         **** DBAT_hi();
-  30:alg.c         **** bat_pwr(false);
- 109               		.loc 1 30 1 is_stmt 0 view .LVU9
- 110 009a 0E94 0000 		call bat_pwr
- 111               	.LVL4:
-  31:alg.c         **** }
-  32:alg.c         ****             if(~LC1 && ~LC2 && ~LC3){
- 112               		.loc 1 32 13 is_stmt 1 view .LVU10
- 113               		.loc 1 32 15 is_stmt 0 view .LVU11
- 114 009e 0099      		sbic 0,0
- 115 00a0 00C0      		rjmp .L5
- 116               		.loc 1 32 21 discriminator 1 view .LVU12
- 117 00a2 0199      		sbic 0,1
- 118 00a4 00C0      		rjmp .L5
- 119               		.loc 1 32 29 discriminator 2 view .LVU13
- 120 00a6 0299      		sbic 0,2
- 121 00a8 00C0      		rjmp .L5
-  33:alg.c         ****                 LS1_lo();
- 122               		.loc 1 33 17 is_stmt 1 view .LVU14
- 123 00aa 5A98      		cbi 0xb,2
-  34:alg.c         ****                 LS1_red();
- 124               		.loc 1 34 17 view .LVU15
- 125 00ac 0E94 0000 		call LS1_red
- 126               	.LVL5:
-  35:alg.c         ****                 LS2_lo();
- 127               		.loc 1 35 17 view .LVU16
- 128 00b0 5B98      		cbi 0xb,3
-  36:alg.c         ****                 LS2_red();
- 129               		.loc 1 36 17 view .LVU17
- 130 00b2 0E94 0000 		call LS2_red
- 131               	.LVL6:
-  37:alg.c         ****                 LS3_lo();
- 132               		.loc 1 37 17 view .LVU18
- 133 00b6 1798      		cbi 0x2,7
-  38:alg.c         ****                 LS3_red();
-GAS LISTING /tmp/ccxROBC7.s 			page 4
-
-
- 134               		.loc 1 38 17 view .LVU19
- 135 00b8 0E94 0000 		call LS3_red
- 136               	.LVL7:
- 137               	.L5:
-  39:alg.c         ****             }
-  40:alg.c         **** 
-  41:alg.c         ****             if(LC1 && ~LC2 && ~LC3){
- 138               		.loc 1 41 13 view .LVU20
- 139               		.loc 1 41 15 is_stmt 0 view .LVU21
- 140 00bc 009B      		sbis 0,0
- 141 00be 00C0      		rjmp .L6
- 142               		.loc 1 41 20 discriminator 1 view .LVU22
- 143 00c0 0199      		sbic 0,1
- 144 00c2 00C0      		rjmp .L6
- 145               		.loc 1 41 28 discriminator 2 view .LVU23
- 146 00c4 0299      		sbic 0,2
- 147 00c6 00C0      		rjmp .L6
-  42:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
- 148               		.loc 1 42 17 is_stmt 1 view .LVU24
- 149               		.loc 1 42 37 is_stmt 0 view .LVU25
- 150 00c8 20E0      		ldi r18,0
- 151 00ca 30E0      		ldi r19,0
- 152 00cc 40E0      		ldi r20,0
- 153 00ce 50E4      		ldi r21,lo8(64)
- 154 00d0 6091 0000 		lds r22,PV
- 155 00d4 7091 0000 		lds r23,PV+1
- 156 00d8 8091 0000 		lds r24,PV+2
- 157 00dc 9091 0000 		lds r25,PV+3
- 158 00e0 0E94 0000 		call __addsf3
- 159               	.LVL8:
- 160               		.loc 1 42 42 view .LVU26
- 161 00e4 2091 0000 		lds r18,Wind
- 162 00e8 3091 0000 		lds r19,Wind+1
- 163 00ec 4091 0000 		lds r20,Wind+2
- 164 00f0 5091 0000 		lds r21,Wind+3
- 165 00f4 6983      		std Y+1,r22
- 166 00f6 7A83      		std Y+2,r23
- 167 00f8 8B83      		std Y+3,r24
- 168 00fa 9C83      		std Y+4,r25
- 169 00fc 6981      		ldd r22,Y+1
- 170 00fe 7A81      		ldd r23,Y+2
- 171 0100 8B81      		ldd r24,Y+3
- 172 0102 9C81      		ldd r25,Y+4
- 173 0104 0E94 0000 		call __addsf3
- 174               	.LVL9:
- 175               		.loc 1 42 19 view .LVU27
- 176 0108 2AE9      		ldi r18,lo8(-102)
- 177 010a 39E9      		ldi r19,lo8(-103)
- 178 010c 49E9      		ldi r20,lo8(-103)
- 179 010e 5FE3      		ldi r21,lo8(63)
- 180 0110 6983      		std Y+1,r22
- 181 0112 7A83      		std Y+2,r23
- 182 0114 8B83      		std Y+3,r24
- 183 0116 9C83      		std Y+4,r25
- 184 0118 6981      		ldd r22,Y+1
- 185 011a 7A81      		ldd r23,Y+2
- 186 011c 8B81      		ldd r24,Y+3
-GAS LISTING /tmp/ccxROBC7.s 			page 5
-
-
- 187 011e 9C81      		ldd r25,Y+4
- 188 0120 0E94 0000 		call __gtsf2
- 189               	.LVL10:
- 190 0124 1816      		cp __zero_reg__,r24
- 191 0126 04F0      		brlt .+2
- 192 0128 00C0      		rjmp .L92
-  43:alg.c         ****                     LS1_hi();
- 193               		.loc 1 43 21 is_stmt 1 view .LVU28
- 194 012a 5A9A      		sbi 0xb,2
- 195               	.L6:
+  36               	.L__stack_usage = 6
+  23:alg.c         **** 
+  24:alg.c         **** 	// setting up output variables
+  25:alg.c         **** 
+  26:alg.c         **** 
+  27:alg.c         **** //Initialisation here, Load1,2,3, BatteryChargeI, PV and Wind will be calculated from their respect
+  28:alg.c         **** 
+  29:alg.c         **** //We will monitor the pin until its value is approx 0, start a timer until the max value is reached
+  30:alg.c         **** 
+  31:alg.c         **** // The interrupt will be defined on initialisation, every time we reach TOP, it will trigger.
+  32:alg.c         **** 
+  33:alg.c         **** //Need to set up a PWM (Phase & frequency correct mode on timer 1)
+  34:alg.c         **** 
+  35:alg.c         **** //Need to initialise ADC ports (free-running mode)
+  36:alg.c         **** 
+  37:alg.c         **** //On interrupt we should also calculate MainsMAX. To do this:
+  38:alg.c         **** 
+  39:alg.c         **** /* On initialisation, Measure BusI and keep loads off while battery charges for a brief moment whil
+  40:alg.c         ****  Measure BusI and request 10
+  41:alg.c         ****  lower the request by some value and monitor BusV
+  42:alg.c         ****  when BusV drops below BusVMAX (approx 2.38)increment BusV so that BusV is back to normal
+  43:alg.c         ****  */
   44:alg.c         **** 
-  45:alg.c         ****                 }
+  45:alg.c         **** //We enter the algorithm below.
   46:alg.c         **** 
-  47:alg.c         ****             else {
-  48:alg.c         **** 				LS1_lo();
-  49:alg.c         ****                 LS1_red();
-  50:alg.c         **** 			}
-  51:alg.c         **** 			}
-  52:alg.c         **** 
-  53:alg.c         ****             if(~LC1 && LC2 && ~LC3 ){
- 196               		.loc 1 53 13 view .LVU29
- 197               		.loc 1 53 15 is_stmt 0 view .LVU30
- 198 012c 0099      		sbic 0,0
- 199 012e 00C0      		rjmp .L9
- 200               		.loc 1 53 21 discriminator 1 view .LVU31
- 201 0130 019B      		sbis 0,1
- 202 0132 00C0      		rjmp .L9
- 203               		.loc 1 53 28 discriminator 2 view .LVU32
- 204 0134 0299      		sbic 0,2
- 205 0136 00C0      		rjmp .L9
-  54:alg.c         ****                 if(Load2 < MainsMAX + PV + Wind){
- 206               		.loc 1 54 17 is_stmt 1 view .LVU33
- 207               		.loc 1 54 37 is_stmt 0 view .LVU34
- 208 0138 20E0      		ldi r18,0
- 209 013a 30E0      		ldi r19,0
- 210 013c 40E0      		ldi r20,0
- 211 013e 50E4      		ldi r21,lo8(64)
- 212 0140 6091 0000 		lds r22,PV
- 213 0144 7091 0000 		lds r23,PV+1
- 214 0148 8091 0000 		lds r24,PV+2
- 215 014c 9091 0000 		lds r25,PV+3
- 216 0150 0E94 0000 		call __addsf3
- 217               	.LVL11:
- 218               		.loc 1 54 42 view .LVU35
- 219 0154 2091 0000 		lds r18,Wind
- 220 0158 3091 0000 		lds r19,Wind+1
- 221 015c 4091 0000 		lds r20,Wind+2
- 222 0160 5091 0000 		lds r21,Wind+3
- 223 0164 6983      		std Y+1,r22
- 224 0166 7A83      		std Y+2,r23
- 225 0168 8B83      		std Y+3,r24
- 226 016a 9C83      		std Y+4,r25
- 227 016c 6981      		ldd r22,Y+1
- 228 016e 7A81      		ldd r23,Y+2
- 229 0170 8B81      		ldd r24,Y+3
- 230 0172 9C81      		ldd r25,Y+4
- 231 0174 0E94 0000 		call __addsf3
-GAS LISTING /tmp/ccxROBC7.s 			page 6
+  47:alg.c         **** 
+  48:alg.c         **** //if the difference between busI and MainsMAX + PV + Wind less than BatteryChargeI, discharge batte
+  49:alg.c         **** 
+  50:alg.c         **** if(BusV < 3.3) // bus voltage natural value
+  37               		.stabn	68,0,50,.LM1-.LFBB1
+  38               	.LM1:
+  39 000c 23E3      		ldi r18,lo8(51)
+  40 000e 33E3      		ldi r19,lo8(51)
+  41 0010 43E5      		ldi r20,lo8(83)
+  42 0012 50E4      		ldi r21,lo8(64)
+  43 0014 6091 0000 		lds r22,BusV
+  44 0018 7091 0000 		lds r23,BusV+1
+  45 001c 8091 0000 		lds r24,BusV+2
+  46 0020 9091 0000 		lds r25,BusV+3
+  47 0024 0E94 0000 		call __ltsf2
+  48 0028 87FF      		sbrs r24,7
+  49 002a 00C0      		rjmp .L2
+  51:alg.c         **** {
+  52:alg.c         **** 	MainsReq +=0.1;
+  50               		.stabn	68,0,52,.LM2-.LFBB1
+  51               	.LM2:
+  52 002c 2DEC      		ldi r18,lo8(-51)
+  53 002e 3CEC      		ldi r19,lo8(-52)
+  54 0030 4CEC      		ldi r20,lo8(-52)
+  55 0032 5DE3      		ldi r21,lo8(61)
+  56 0034 6091 0000 		lds r22,MainsReq
+  57 0038 7091 0000 		lds r23,MainsReq+1
+  58 003c 8091 0000 		lds r24,MainsReq+2
+  59 0040 9091 0000 		lds r25,MainsReq+3
+  60 0044 0E94 0000 		call __addsf3
+  61 0048 6093 0000 		sts MainsReq,r22
+  62 004c 7093 0000 		sts MainsReq+1,r23
+GAS LISTING /tmp/ccqFA9Ez.s 			page 3
 
 
- 232               	.LVL12:
- 233               		.loc 1 54 19 view .LVU36
- 234 0178 20E0      		ldi r18,0
- 235 017a 30E0      		ldi r19,0
- 236 017c 40E0      		ldi r20,0
- 237 017e 50E4      		ldi r21,lo8(64)
- 238 0180 6983      		std Y+1,r22
- 239 0182 7A83      		std Y+2,r23
- 240 0184 8B83      		std Y+3,r24
- 241 0186 9C83      		std Y+4,r25
- 242 0188 6981      		ldd r22,Y+1
- 243 018a 7A81      		ldd r23,Y+2
- 244 018c 8B81      		ldd r24,Y+3
- 245 018e 9C81      		ldd r25,Y+4
- 246 0190 0E94 0000 		call __gtsf2
- 247               	.LVL13:
- 248 0194 1816      		cp __zero_reg__,r24
- 249 0196 04F0      		brlt .+2
- 250 0198 00C0      		rjmp .L93
-  55:alg.c         ****                     LS2_hi();
- 251               		.loc 1 55 21 is_stmt 1 view .LVU37
- 252 019a 5B9A      		sbi 0xb,3
-  56:alg.c         ****                     LS2_green();
- 253               		.loc 1 56 21 view .LVU38
- 254 019c 0E94 0000 		call LS2_green
- 255               	.LVL14:
- 256               	.L9:
-  57:alg.c         ****                 }
-  58:alg.c         ****                 else{
-  59:alg.c         **** 					LS2_lo();
-  60:alg.c         ****                     LS2_red();
-  61:alg.c         **** 				}
-  62:alg.c         ****             }
-  63:alg.c         **** 
-  64:alg.c         ****             if( LC1 && LC2 && ~LC3){
- 257               		.loc 1 64 13 view .LVU39
- 258               		.loc 1 64 15 is_stmt 0 view .LVU40
- 259 01a0 009B      		sbis 0,0
- 260 01a2 00C0      		rjmp .L12
- 261               		.loc 1 64 21 discriminator 1 view .LVU41
- 262 01a4 019B      		sbis 0,1
- 263 01a6 00C0      		rjmp .L12
- 264               		.loc 1 64 28 discriminator 2 view .LVU42
- 265 01a8 0299      		sbic 0,2
- 266 01aa 00C0      		rjmp .L12
-  65:alg.c         ****                 if(Load1 + Load2 < MainsMAX + PV + Wind){
- 267               		.loc 1 65 17 is_stmt 1 view .LVU43
- 268               		.loc 1 65 45 is_stmt 0 view .LVU44
- 269 01ac 20E0      		ldi r18,0
- 270 01ae 30E0      		ldi r19,0
- 271 01b0 40E0      		ldi r20,0
- 272 01b2 50E4      		ldi r21,lo8(64)
- 273 01b4 6091 0000 		lds r22,PV
- 274 01b8 7091 0000 		lds r23,PV+1
- 275 01bc 8091 0000 		lds r24,PV+2
- 276 01c0 9091 0000 		lds r25,PV+3
- 277 01c4 0E94 0000 		call __addsf3
-GAS LISTING /tmp/ccxROBC7.s 			page 7
+  63 0050 8093 0000 		sts MainsReq+2,r24
+  64 0054 9093 0000 		sts MainsReq+3,r25
+  65               	.L2:
+  53:alg.c         **** }
+  54:alg.c         **** 
+  55:alg.c         **** 
+  56:alg.c         **** 
+  57:alg.c         **** if(MainsReq > 10)
+  66               		.stabn	68,0,57,.LM3-.LFBB1
+  67               	.LM3:
+  68 0058 8091 0000 		lds r24,MainsReq
+  69 005c 9091 0000 		lds r25,MainsReq+1
+  70 0060 A091 0000 		lds r26,MainsReq+2
+  71 0064 B091 0000 		lds r27,MainsReq+3
+  72 0068 8983      		std Y+1,r24
+  73 006a 9A83      		std Y+2,r25
+  74 006c AB83      		std Y+3,r26
+  75 006e BC83      		std Y+4,r27
+  76               		.stabn	68,0,57,.LM4-.LFBB1
+  77               	.LM4:
+  78 0070 20E0      		ldi r18,0
+  79 0072 30E0      		ldi r19,0
+  80 0074 40E2      		ldi r20,lo8(32)
+  81 0076 51E4      		ldi r21,lo8(65)
+  82 0078 BC01      		movw r22,r24
+  83 007a CD01      		movw r24,r26
+  84 007c 0E94 0000 		call __gtsf2
+  85 0080 1816      		cp __zero_reg__,r24
+  86 0082 04F0      		brlt .L4
+  58:alg.c         **** {
+  59:alg.c         **** MainsReq = 10;
+  60:alg.c         **** }
+  61:alg.c         **** 
+  62:alg.c         **** 
+  63:alg.c         **** if(MainsReq >= 10)
+  87               		.stabn	68,0,63,.LM5-.LFBB1
+  88               	.LM5:
+  89 0084 20E0      		ldi r18,0
+  90 0086 30E0      		ldi r19,0
+  91 0088 40E2      		ldi r20,lo8(32)
+  92 008a 51E4      		ldi r21,lo8(65)
+  93 008c 6981      		ldd r22,Y+1
+  94 008e 7A81      		ldd r23,Y+2
+  95 0090 8B81      		ldd r24,Y+3
+  96 0092 9C81      		ldd r25,Y+4
+  97 0094 0E94 0000 		call __gesf2
+  98 0098 87FD      		sbrc r24,7
+  99 009a 00C0      		rjmp .L27
+ 100               	.L4:
+  64:alg.c         **** {
+  65:alg.c         **** 	MainsReq = 10;
+ 101               		.stabn	68,0,65,.LM6-.LFBB1
+ 102               	.LM6:
+ 103 009c 80E0      		ldi r24,0
+ 104 009e 90E0      		ldi r25,0
+ 105 00a0 A0E2      		ldi r26,lo8(32)
+ 106 00a2 B1E4      		ldi r27,lo8(65)
+GAS LISTING /tmp/ccqFA9Ez.s 			page 4
 
 
- 278               	.LVL15:
- 279               		.loc 1 65 50 view .LVU45
- 280 01c8 2091 0000 		lds r18,Wind
- 281 01cc 3091 0000 		lds r19,Wind+1
- 282 01d0 4091 0000 		lds r20,Wind+2
- 283 01d4 5091 0000 		lds r21,Wind+3
- 284 01d8 6983      		std Y+1,r22
- 285 01da 7A83      		std Y+2,r23
- 286 01dc 8B83      		std Y+3,r24
- 287 01de 9C83      		std Y+4,r25
- 288 01e0 6981      		ldd r22,Y+1
- 289 01e2 7A81      		ldd r23,Y+2
- 290 01e4 8B81      		ldd r24,Y+3
- 291 01e6 9C81      		ldd r25,Y+4
- 292 01e8 0E94 0000 		call __addsf3
- 293               	.LVL16:
- 294               		.loc 1 65 19 view .LVU46
- 295 01ec 2DEC      		ldi r18,lo8(-51)
- 296 01ee 3CEC      		ldi r19,lo8(-52)
- 297 01f0 4CE4      		ldi r20,lo8(76)
- 298 01f2 50E4      		ldi r21,lo8(64)
- 299 01f4 6983      		std Y+1,r22
- 300 01f6 7A83      		std Y+2,r23
- 301 01f8 8B83      		std Y+3,r24
- 302 01fa 9C83      		std Y+4,r25
- 303 01fc 6981      		ldd r22,Y+1
- 304 01fe 7A81      		ldd r23,Y+2
- 305 0200 8B81      		ldd r24,Y+3
- 306 0202 9C81      		ldd r25,Y+4
- 307 0204 0E94 0000 		call __gtsf2
- 308               	.LVL17:
- 309 0208 1816      		cp __zero_reg__,r24
- 310 020a 04F0      		brlt .+2
- 311 020c 00C0      		rjmp .L94
-  66:alg.c         ****                     LS2_hi();
- 312               		.loc 1 66 21 is_stmt 1 view .LVU47
- 313 020e 5B9A      		sbi 0xb,3
-  67:alg.c         ****                     LS2_green();
- 314               		.loc 1 67 21 view .LVU48
- 315 0210 0E94 0000 		call LS2_green
- 316               	.LVL18:
- 317               	.L15:
-  68:alg.c         ****                 }
-  69:alg.c         ****                 else{
-  70:alg.c         **** 					LS2_lo();
-  71:alg.c         ****                     LS2_red();
-  72:alg.c         **** 				}
-  73:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
- 318               		.loc 1 73 17 view .LVU49
- 319               		.loc 1 73 37 is_stmt 0 view .LVU50
- 320 0214 20E0      		ldi r18,0
- 321 0216 30E0      		ldi r19,0
- 322 0218 40E0      		ldi r20,0
- 323 021a 50E4      		ldi r21,lo8(64)
- 324 021c 6091 0000 		lds r22,PV
- 325 0220 7091 0000 		lds r23,PV+1
- 326 0224 8091 0000 		lds r24,PV+2
-GAS LISTING /tmp/ccxROBC7.s 			page 8
-
-
- 327 0228 9091 0000 		lds r25,PV+3
- 328 022c 0E94 0000 		call __addsf3
- 329               	.LVL19:
- 330               		.loc 1 73 42 view .LVU51
- 331 0230 2091 0000 		lds r18,Wind
- 332 0234 3091 0000 		lds r19,Wind+1
- 333 0238 4091 0000 		lds r20,Wind+2
- 334 023c 5091 0000 		lds r21,Wind+3
- 335 0240 6983      		std Y+1,r22
- 336 0242 7A83      		std Y+2,r23
- 337 0244 8B83      		std Y+3,r24
- 338 0246 9C83      		std Y+4,r25
- 339 0248 6981      		ldd r22,Y+1
- 340 024a 7A81      		ldd r23,Y+2
- 341 024c 8B81      		ldd r24,Y+3
- 342 024e 9C81      		ldd r25,Y+4
- 343 0250 0E94 0000 		call __addsf3
- 344               	.LVL20:
- 345               		.loc 1 73 19 view .LVU52
- 346 0254 2AE9      		ldi r18,lo8(-102)
- 347 0256 39E9      		ldi r19,lo8(-103)
- 348 0258 49E9      		ldi r20,lo8(-103)
- 349 025a 5FE3      		ldi r21,lo8(63)
- 350 025c 6983      		std Y+1,r22
- 351 025e 7A83      		std Y+2,r23
- 352 0260 8B83      		std Y+3,r24
- 353 0262 9C83      		std Y+4,r25
- 354 0264 6981      		ldd r22,Y+1
- 355 0266 7A81      		ldd r23,Y+2
- 356 0268 8B81      		ldd r24,Y+3
- 357 026a 9C81      		ldd r25,Y+4
- 358 026c 0E94 0000 		call __gtsf2
- 359               	.LVL21:
- 360 0270 1816      		cp __zero_reg__,r24
- 361 0272 04F0      		brlt .+2
- 362 0274 00C0      		rjmp .L95
-  74:alg.c         ****                     LS1_hi();
- 363               		.loc 1 74 21 is_stmt 1 view .LVU53
- 364 0276 5A9A      		sbi 0xb,2
-  75:alg.c         ****                     LS1_green();
- 365               		.loc 1 75 21 view .LVU54
- 366 0278 0E94 0000 		call LS1_green
- 367               	.LVL22:
- 368               	.L12:
-  76:alg.c         ****                 }
-  77:alg.c         ****                 else {
-  78:alg.c         **** 					LS1_lo();
-  79:alg.c         ****                     LS1_red();
-  80:alg.c         **** 				}
-  81:alg.c         ****             }
-  82:alg.c         **** 
-  83:alg.c         ****             if(~LC1 && ~LC2 && LC3){
- 369               		.loc 1 83 13 view .LVU55
- 370               		.loc 1 83 15 is_stmt 0 view .LVU56
- 371 027c 0099      		sbic 0,0
- 372 027e 00C0      		rjmp .L18
- 373               		.loc 1 83 21 discriminator 1 view .LVU57
-GAS LISTING /tmp/ccxROBC7.s 			page 9
-
-
- 374 0280 0199      		sbic 0,1
- 375 0282 00C0      		rjmp .L18
- 376               		.loc 1 83 29 discriminator 2 view .LVU58
- 377 0284 029B      		sbis 0,2
- 378 0286 00C0      		rjmp .L18
-  84:alg.c         ****                 if(Load3 < MainsMAX + PV + Wind){
- 379               		.loc 1 84 17 is_stmt 1 view .LVU59
- 380               		.loc 1 84 37 is_stmt 0 view .LVU60
- 381 0288 20E0      		ldi r18,0
- 382 028a 30E0      		ldi r19,0
- 383 028c 40E0      		ldi r20,0
- 384 028e 50E4      		ldi r21,lo8(64)
- 385 0290 6091 0000 		lds r22,PV
- 386 0294 7091 0000 		lds r23,PV+1
- 387 0298 8091 0000 		lds r24,PV+2
- 388 029c 9091 0000 		lds r25,PV+3
- 389 02a0 0E94 0000 		call __addsf3
- 390               	.LVL23:
- 391               		.loc 1 84 42 view .LVU61
- 392 02a4 2091 0000 		lds r18,Wind
- 393 02a8 3091 0000 		lds r19,Wind+1
- 394 02ac 4091 0000 		lds r20,Wind+2
- 395 02b0 5091 0000 		lds r21,Wind+3
- 396 02b4 6983      		std Y+1,r22
- 397 02b6 7A83      		std Y+2,r23
- 398 02b8 8B83      		std Y+3,r24
- 399 02ba 9C83      		std Y+4,r25
- 400 02bc 6981      		ldd r22,Y+1
- 401 02be 7A81      		ldd r23,Y+2
- 402 02c0 8B81      		ldd r24,Y+3
- 403 02c2 9C81      		ldd r25,Y+4
- 404 02c4 0E94 0000 		call __addsf3
- 405               	.LVL24:
- 406               		.loc 1 84 19 view .LVU62
- 407 02c8 2DEC      		ldi r18,lo8(-51)
- 408 02ca 3CEC      		ldi r19,lo8(-52)
- 409 02cc 4CE4      		ldi r20,lo8(76)
- 410 02ce 5FE3      		ldi r21,lo8(63)
- 411 02d0 6983      		std Y+1,r22
- 412 02d2 7A83      		std Y+2,r23
- 413 02d4 8B83      		std Y+3,r24
- 414 02d6 9C83      		std Y+4,r25
- 415 02d8 6981      		ldd r22,Y+1
- 416 02da 7A81      		ldd r23,Y+2
- 417 02dc 8B81      		ldd r24,Y+3
- 418 02de 9C81      		ldd r25,Y+4
- 419 02e0 0E94 0000 		call __gtsf2
- 420               	.LVL25:
- 421 02e4 1816      		cp __zero_reg__,r24
- 422 02e6 04F0      		brlt .+2
- 423 02e8 00C0      		rjmp .L96
-  85:alg.c         ****                     LS3_hi();
- 424               		.loc 1 85 21 is_stmt 1 view .LVU63
- 425 02ea 179A      		sbi 0x2,7
- 426               	.L18:
-  86:alg.c         ****                 }
-  87:alg.c         ****                 else{
-GAS LISTING /tmp/ccxROBC7.s 			page 10
-
-
-  88:alg.c         **** 					LS3_lo();
-  89:alg.c         ****                     LS3_red();
-  90:alg.c         **** 				}
+ 107 00a4 8093 0000 		sts MainsReq,r24
+ 108 00a8 9093 0000 		sts MainsReq+1,r25
+ 109 00ac A093 0000 		sts MainsReq+2,r26
+ 110 00b0 B093 0000 		sts MainsReq+3,r27
+ 111               	.L7:
+  66:alg.c         **** }
+  67:alg.c         **** 
+  68:alg.c         **** if(MainsReq <= 0)
+  69:alg.c         **** {
+  70:alg.c         **** 	MainsReq = 0;
+  71:alg.c         **** }
+  72:alg.c         **** 
+  73:alg.c         **** if(LC1 == 0  && LC2 == 0 && LC3 == 0)
+ 112               		.stabn	68,0,73,.LM7-.LFBB1
+ 113               	.LM7:
+ 114 00b4 80B1      		in r24,0
+  74:alg.c         **** {
+  75:alg.c         **** 	LS1_lo();  LS1= 0;
+  76:alg.c         **** 	LS2_lo();  LS2= 0;
+  77:alg.c         **** 	LS3_lo();  LS3= 0;
+  78:alg.c         **** 
+  79:alg.c         **** 	DBAT_lo();
+  80:alg.c         **** 	CBAT_hi();
+  81:alg.c         **** 
+  82:alg.c         **** }
+  83:alg.c         **** 
+  84:alg.c         **** if(LC1 == 1  && LC2 == 0 && LC3 == 0) //we will take the busI in the next if loop BusIdiff. If BusI
+ 115               		.stabn	68,0,84,.LM8-.LFBB1
+ 116               	.LM8:
+ 117 00b6 0099      		sbic 0,0
+ 118               		.stabn	68,0,84,.LM9-.LFBB1
+ 119               	.LM9:
+ 120 00b8 80B1      		in r24,0
+ 121               	.L9:
+  85:alg.c         **** {
+  86:alg.c         **** 	if( (MainsMAX + PV + Wind) - Load1 < BatteryChargeI  )
+  87:alg.c         **** 	{
+  88:alg.c         **** 	CBAT_lo();   DBAT_hi();
+  89:alg.c         **** 	}
+  90:alg.c         **** 	else {DBAT_lo();   CBAT_hi();}
   91:alg.c         **** 
-  92:alg.c         ****             }
-  93:alg.c         **** 
-  94:alg.c         ****             if(LC1 && ~LC2 && LC3){
- 427               		.loc 1 94 13 view .LVU64
- 428               		.loc 1 94 15 is_stmt 0 view .LVU65
- 429 02ec 009B      		sbis 0,0
- 430 02ee 00C0      		rjmp .L21
- 431               		.loc 1 94 20 discriminator 1 view .LVU66
- 432 02f0 0199      		sbic 0,1
- 433 02f2 00C0      		rjmp .L21
- 434               		.loc 1 94 28 discriminator 2 view .LVU67
- 435 02f4 029B      		sbis 0,2
- 436 02f6 00C0      		rjmp .L21
-  95:alg.c         ****                 if(Load3 + Load1  < MainsMAX + PV + Wind){
- 437               		.loc 1 95 17 is_stmt 1 view .LVU68
- 438               		.loc 1 95 46 is_stmt 0 view .LVU69
- 439 02f8 20E0      		ldi r18,0
- 440 02fa 30E0      		ldi r19,0
- 441 02fc 40E0      		ldi r20,0
- 442 02fe 50E4      		ldi r21,lo8(64)
- 443 0300 6091 0000 		lds r22,PV
- 444 0304 7091 0000 		lds r23,PV+1
- 445 0308 8091 0000 		lds r24,PV+2
- 446 030c 9091 0000 		lds r25,PV+3
- 447 0310 0E94 0000 		call __addsf3
- 448               	.LVL26:
- 449               		.loc 1 95 51 view .LVU70
- 450 0314 2091 0000 		lds r18,Wind
- 451 0318 3091 0000 		lds r19,Wind+1
- 452 031c 4091 0000 		lds r20,Wind+2
- 453 0320 5091 0000 		lds r21,Wind+3
- 454 0324 6983      		std Y+1,r22
- 455 0326 7A83      		std Y+2,r23
- 456 0328 8B83      		std Y+3,r24
- 457 032a 9C83      		std Y+4,r25
- 458 032c 6981      		ldd r22,Y+1
- 459 032e 7A81      		ldd r23,Y+2
- 460 0330 8B81      		ldd r24,Y+3
- 461 0332 9C81      		ldd r25,Y+4
- 462 0334 0E94 0000 		call __addsf3
- 463               	.LVL27:
- 464               		.loc 1 95 19 view .LVU71
- 465 0338 20E0      		ldi r18,0
- 466 033a 30E0      		ldi r19,0
- 467 033c 40E0      		ldi r20,0
- 468 033e 50E4      		ldi r21,lo8(64)
- 469 0340 6983      		std Y+1,r22
- 470 0342 7A83      		std Y+2,r23
- 471 0344 8B83      		std Y+3,r24
- 472 0346 9C83      		std Y+4,r25
- 473 0348 6981      		ldd r22,Y+1
- 474 034a 7A81      		ldd r23,Y+2
- 475 034c 8B81      		ldd r24,Y+3
-GAS LISTING /tmp/ccxROBC7.s 			page 11
-
-
- 476 034e 9C81      		ldd r25,Y+4
- 477 0350 0E94 0000 		call __gtsf2
- 478               	.LVL28:
- 479 0354 1816      		cp __zero_reg__,r24
- 480 0356 04F0      		brlt .+2
- 481 0358 00C0      		rjmp .L97
-  96:alg.c         ****                     LS3_hi();
- 482               		.loc 1 96 21 is_stmt 1 view .LVU72
- 483 035a 179A      		sbi 0x2,7
-  97:alg.c         ****                     LS3_green();
- 484               		.loc 1 97 21 view .LVU73
- 485 035c 0E94 0000 		call LS3_green
- 486               	.LVL29:
- 487               	.L24:
-  98:alg.c         ****                 }
-  99:alg.c         ****                 else {
- 100:alg.c         **** 					LS3_lo();
- 101:alg.c         ****                     LS3_red();
- 102:alg.c         **** 				}
+  92:alg.c         **** 	 if(Load1 < MainsMAX + PV + Wind)
+  93:alg.c         **** 	 {
+  94:alg.c         **** 		 LS1_hi();  LS1= 1;
+  95:alg.c         **** 	 }
+  96:alg.c         **** 	 else {LS1_lo();  LS1= 0;}
+  97:alg.c         **** 	 if(LS1 == 0)
+  98:alg.c         **** 	 {
+  99:alg.c         **** 		 DBAT_lo();   CBAT_hi();
+ 100:alg.c         **** 	 }
+ 101:alg.c         **** 
+ 102:alg.c         **** }
  103:alg.c         **** 
- 104:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
- 488               		.loc 1 104 17 view .LVU74
- 489               		.loc 1 104 37 is_stmt 0 view .LVU75
- 490 0360 20E0      		ldi r18,0
- 491 0362 30E0      		ldi r19,0
- 492 0364 40E0      		ldi r20,0
- 493 0366 50E4      		ldi r21,lo8(64)
- 494 0368 6091 0000 		lds r22,PV
- 495 036c 7091 0000 		lds r23,PV+1
- 496 0370 8091 0000 		lds r24,PV+2
- 497 0374 9091 0000 		lds r25,PV+3
- 498 0378 0E94 0000 		call __addsf3
- 499               	.LVL30:
- 500               		.loc 1 104 42 view .LVU76
- 501 037c 2091 0000 		lds r18,Wind
- 502 0380 3091 0000 		lds r19,Wind+1
- 503 0384 4091 0000 		lds r20,Wind+2
- 504 0388 5091 0000 		lds r21,Wind+3
- 505 038c 6983      		std Y+1,r22
- 506 038e 7A83      		std Y+2,r23
- 507 0390 8B83      		std Y+3,r24
- 508 0392 9C83      		std Y+4,r25
- 509 0394 6981      		ldd r22,Y+1
- 510 0396 7A81      		ldd r23,Y+2
- 511 0398 8B81      		ldd r24,Y+3
- 512 039a 9C81      		ldd r25,Y+4
- 513 039c 0E94 0000 		call __addsf3
- 514               	.LVL31:
- 515               		.loc 1 104 19 view .LVU77
- 516 03a0 2AE9      		ldi r18,lo8(-102)
- 517 03a2 39E9      		ldi r19,lo8(-103)
- 518 03a4 49E9      		ldi r20,lo8(-103)
- 519 03a6 5FE3      		ldi r21,lo8(63)
- 520 03a8 6983      		std Y+1,r22
- 521 03aa 7A83      		std Y+2,r23
- 522 03ac 8B83      		std Y+3,r24
- 523 03ae 9C83      		std Y+4,r25
-GAS LISTING /tmp/ccxROBC7.s 			page 12
+ 104:alg.c         **** 
+ 105:alg.c         **** 
+ 106:alg.c         **** if(LC1 == 0  && LC2 == 1 && LC3 == 0 )
+ 122               		.stabn	68,0,106,.LM10-.LFBB1
+GAS LISTING /tmp/ccqFA9Ez.s 			page 5
 
 
- 524 03b0 6981      		ldd r22,Y+1
- 525 03b2 7A81      		ldd r23,Y+2
- 526 03b4 8B81      		ldd r24,Y+3
- 527 03b6 9C81      		ldd r25,Y+4
- 528 03b8 0E94 0000 		call __gtsf2
- 529               	.LVL32:
- 530 03bc 1816      		cp __zero_reg__,r24
- 531 03be 04F0      		brlt .+2
- 532 03c0 00C0      		rjmp .L98
- 105:alg.c         ****                     LS1_hi();
- 533               		.loc 1 105 21 is_stmt 1 view .LVU78
- 534 03c2 5A9A      		sbi 0xb,2
- 106:alg.c         ****                     LS1_green();
- 535               		.loc 1 106 21 view .LVU79
- 536 03c4 0E94 0000 		call LS1_green
- 537               	.LVL33:
- 538               	.L21:
- 107:alg.c         ****                 }
- 108:alg.c         ****                 else{
- 109:alg.c         **** 					LS1_lo();
- 110:alg.c         ****                     LS1_red();
- 111:alg.c         **** 				}
- 112:alg.c         ****             }
- 113:alg.c         **** 
- 114:alg.c         ****             if(~LC1 && LC2 && LC3  ){
- 539               		.loc 1 114 13 view .LVU80
- 540               		.loc 1 114 15 is_stmt 0 view .LVU81
- 541 03c8 0099      		sbic 0,0
- 542 03ca 00C0      		rjmp .L27
- 543               		.loc 1 114 21 discriminator 1 view .LVU82
- 544 03cc 019B      		sbis 0,1
- 545 03ce 00C0      		rjmp .L27
- 546               		.loc 1 114 28 discriminator 2 view .LVU83
- 547 03d0 029B      		sbis 0,2
- 548 03d2 00C0      		rjmp .L27
- 115:alg.c         ****                 if(Load2 + Load3 < MainsMAX + PV + Wind){
- 549               		.loc 1 115 17 is_stmt 1 view .LVU84
- 550               		.loc 1 115 45 is_stmt 0 view .LVU85
- 551 03d4 20E0      		ldi r18,0
- 552 03d6 30E0      		ldi r19,0
- 553 03d8 40E0      		ldi r20,0
- 554 03da 50E4      		ldi r21,lo8(64)
- 555 03dc 6091 0000 		lds r22,PV
- 556 03e0 7091 0000 		lds r23,PV+1
- 557 03e4 8091 0000 		lds r24,PV+2
- 558 03e8 9091 0000 		lds r25,PV+3
- 559 03ec 0E94 0000 		call __addsf3
- 560               	.LVL34:
- 561               		.loc 1 115 50 view .LVU86
- 562 03f0 2091 0000 		lds r18,Wind
- 563 03f4 3091 0000 		lds r19,Wind+1
- 564 03f8 4091 0000 		lds r20,Wind+2
- 565 03fc 5091 0000 		lds r21,Wind+3
- 566 0400 6983      		std Y+1,r22
- 567 0402 7A83      		std Y+2,r23
- 568 0404 8B83      		std Y+3,r24
- 569 0406 9C83      		std Y+4,r25
-GAS LISTING /tmp/ccxROBC7.s 			page 13
-
-
- 570 0408 6981      		ldd r22,Y+1
- 571 040a 7A81      		ldd r23,Y+2
- 572 040c 8B81      		ldd r24,Y+3
- 573 040e 9C81      		ldd r25,Y+4
- 574 0410 0E94 0000 		call __addsf3
- 575               	.LVL35:
- 576               		.loc 1 115 19 view .LVU87
- 577 0414 23E3      		ldi r18,lo8(51)
- 578 0416 33E3      		ldi r19,lo8(51)
- 579 0418 43E3      		ldi r20,lo8(51)
- 580 041a 50E4      		ldi r21,lo8(64)
- 581 041c 6983      		std Y+1,r22
- 582 041e 7A83      		std Y+2,r23
- 583 0420 8B83      		std Y+3,r24
- 584 0422 9C83      		std Y+4,r25
- 585 0424 6981      		ldd r22,Y+1
- 586 0426 7A81      		ldd r23,Y+2
- 587 0428 8B81      		ldd r24,Y+3
- 588 042a 9C81      		ldd r25,Y+4
- 589 042c 0E94 0000 		call __gtsf2
- 590               	.LVL36:
- 591 0430 1816      		cp __zero_reg__,r24
- 592 0432 04F0      		brlt .+2
- 593 0434 00C0      		rjmp .L99
- 116:alg.c         ****                     LS3_hi();
- 594               		.loc 1 116 21 is_stmt 1 view .LVU88
- 595 0436 179A      		sbi 0x2,7
- 117:alg.c         ****                     LS3_green();
- 596               		.loc 1 117 21 view .LVU89
- 597 0438 0E94 0000 		call LS3_green
- 598               	.LVL37:
- 599               	.L30:
- 118:alg.c         ****                 }
- 119:alg.c         ****                 else {
- 120:alg.c         **** 					LS3_lo();
- 121:alg.c         ****                     LS3_red();
- 122:alg.c         **** 				}
+ 123               	.LM10:
+ 124 00ba 80B1      		in r24,0
+ 107:alg.c         **** {
+ 108:alg.c         **** 	if( (MainsMAX + PV + Wind) - Load2 < BatteryChargeI  )
+ 109:alg.c         **** 	{
+ 110:alg.c         **** 	CBAT_lo();   DBAT_hi();
+ 111:alg.c         **** 	}
+ 112:alg.c         **** 	else {DBAT_lo();   CBAT_hi();}
+ 113:alg.c         **** 	if(Load2 < MainsMAX + PV + Wind)
+ 114:alg.c         **** 	 {
+ 115:alg.c         **** 		 LS2_hi();  LS2= 1;
+ 116:alg.c         **** 	 }
+ 117:alg.c         **** 	 else {LS2_lo();  LS2= 0;}
+ 118:alg.c         **** 	 if(LS2 == 1)
+ 119:alg.c         **** 	 {
+ 120:alg.c         **** 		 DBAT_lo();   CBAT_hi();
+ 121:alg.c         **** 	 }
+ 122:alg.c         **** }
  123:alg.c         **** 
- 124:alg.c         ****                 if(Load2 < MainsMAX + PV + Wind){
- 600               		.loc 1 124 17 view .LVU90
- 601               		.loc 1 124 37 is_stmt 0 view .LVU91
- 602 043c 20E0      		ldi r18,0
- 603 043e 30E0      		ldi r19,0
- 604 0440 40E0      		ldi r20,0
- 605 0442 50E4      		ldi r21,lo8(64)
- 606 0444 6091 0000 		lds r22,PV
- 607 0448 7091 0000 		lds r23,PV+1
- 608 044c 8091 0000 		lds r24,PV+2
- 609 0450 9091 0000 		lds r25,PV+3
- 610 0454 0E94 0000 		call __addsf3
- 611               	.LVL38:
- 612               		.loc 1 124 42 view .LVU92
- 613 0458 2091 0000 		lds r18,Wind
- 614 045c 3091 0000 		lds r19,Wind+1
- 615 0460 4091 0000 		lds r20,Wind+2
- 616 0464 5091 0000 		lds r21,Wind+3
- 617 0468 6983      		std Y+1,r22
-GAS LISTING /tmp/ccxROBC7.s 			page 14
+ 124:alg.c         **** 
+ 125:alg.c         **** 
+ 126:alg.c         **** 
+ 127:alg.c         **** if(LC1 == 1  && LC2 == 1 && LC3 == 0)
+ 125               		.stabn	68,0,127,.LM11-.LFBB1
+ 126               	.LM11:
+ 127 00bc 0099      		sbic 0,0
+ 128               		.stabn	68,0,127,.LM12-.LFBB1
+ 129               	.LM12:
+ 130 00be 80B1      		in r24,0
+ 131               	.L10:
+ 128:alg.c         **** {
+ 129:alg.c         **** 	if(Load1 + Load2 < MainsMAX + PV + Wind)
+ 130:alg.c         **** 	 {
+ 131:alg.c         **** 		 LS2_hi();  LS2= 1;
+ 132:alg.c         **** 		 if( (MainsMAX + PV + Wind) - (Load1 + Load2) < BatteryChargeI  )
+ 133:alg.c         **** 		{
+ 134:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 135:alg.c         **** 		}
+ 136:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 137:alg.c         **** 	 }
+ 138:alg.c         **** 	 else LS2_lo();
+ 139:alg.c         **** 
+ 140:alg.c         **** 	 if(LS2 == 1)
+ 141:alg.c         **** 	 {
+ 142:alg.c         **** 
+ 143:alg.c         **** 	 	if( (MainsMAX + PV + Wind) - Load1 < BatteryChargeI  )
+ 144:alg.c         **** 		{
+ 145:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 146:alg.c         **** 		}
+ 147:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 148:alg.c         **** 	 }
+ 149:alg.c         **** 
+ 150:alg.c         **** 	 if(Load1 < MainsMAX + PV + Wind)
+ 151:alg.c         **** 	 {
+ 152:alg.c         **** 		 LS1_hi();  LS1= 1;
+ 153:alg.c         **** 	 }
+ 154:alg.c         **** 	 else {LS1_lo();  LS1= 0;}
+GAS LISTING /tmp/ccqFA9Ez.s 			page 6
 
 
- 618 046a 7A83      		std Y+2,r23
- 619 046c 8B83      		std Y+3,r24
- 620 046e 9C83      		std Y+4,r25
- 621 0470 6981      		ldd r22,Y+1
- 622 0472 7A81      		ldd r23,Y+2
- 623 0474 8B81      		ldd r24,Y+3
- 624 0476 9C81      		ldd r25,Y+4
- 625 0478 0E94 0000 		call __addsf3
- 626               	.LVL39:
- 627               		.loc 1 124 19 view .LVU93
- 628 047c 20E0      		ldi r18,0
- 629 047e 30E0      		ldi r19,0
- 630 0480 40E0      		ldi r20,0
- 631 0482 50E4      		ldi r21,lo8(64)
- 632 0484 6983      		std Y+1,r22
- 633 0486 7A83      		std Y+2,r23
- 634 0488 8B83      		std Y+3,r24
- 635 048a 9C83      		std Y+4,r25
- 636 048c 6981      		ldd r22,Y+1
- 637 048e 7A81      		ldd r23,Y+2
- 638 0490 8B81      		ldd r24,Y+3
- 639 0492 9C81      		ldd r25,Y+4
- 640 0494 0E94 0000 		call __gtsf2
- 641               	.LVL40:
- 642 0498 1816      		cp __zero_reg__,r24
- 643 049a 04F0      		brlt .+2
- 644 049c 00C0      		rjmp .L100
- 125:alg.c         ****                     LS2_hi();
- 645               		.loc 1 125 21 is_stmt 1 view .LVU94
- 646 049e 5B9A      		sbi 0xb,3
- 126:alg.c         ****                     LS2_green();
- 647               		.loc 1 126 21 view .LVU95
- 648 04a0 0E94 0000 		call LS2_green
- 649               	.LVL41:
- 650               	.L27:
- 127:alg.c         ****                 }
- 128:alg.c         ****                 else{
- 129:alg.c         **** 					LS2_lo();
- 130:alg.c         ****                     LS2_red();
- 131:alg.c         **** 				}
- 132:alg.c         ****             }
- 133:alg.c         **** 
- 134:alg.c         ****             if(LC1 && LC2 && LC3 ){
- 651               		.loc 1 134 13 view .LVU96
- 652               		.loc 1 134 15 is_stmt 0 view .LVU97
- 653 04a4 009B      		sbis 0,0
- 654 04a6 00C0      		rjmp .L1
- 655               		.loc 1 134 20 discriminator 1 view .LVU98
- 656 04a8 019B      		sbis 0,1
- 657 04aa 00C0      		rjmp .L1
- 658               		.loc 1 134 27 discriminator 2 view .LVU99
- 659 04ac 029B      		sbis 0,2
- 660 04ae 00C0      		rjmp .L1
- 135:alg.c         ****                 if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind){
- 661               		.loc 1 135 17 is_stmt 1 view .LVU100
- 662               		.loc 1 135 54 is_stmt 0 view .LVU101
- 663 04b0 20E0      		ldi r18,0
-GAS LISTING /tmp/ccxROBC7.s 			page 15
-
-
- 664 04b2 30E0      		ldi r19,0
- 665 04b4 40E0      		ldi r20,0
- 666 04b6 50E4      		ldi r21,lo8(64)
- 667 04b8 6091 0000 		lds r22,PV
- 668 04bc 7091 0000 		lds r23,PV+1
- 669 04c0 8091 0000 		lds r24,PV+2
- 670 04c4 9091 0000 		lds r25,PV+3
- 671 04c8 0E94 0000 		call __addsf3
- 672               	.LVL42:
- 673               		.loc 1 135 59 view .LVU102
- 674 04cc 2091 0000 		lds r18,Wind
- 675 04d0 3091 0000 		lds r19,Wind+1
- 676 04d4 4091 0000 		lds r20,Wind+2
- 677 04d8 5091 0000 		lds r21,Wind+3
- 678 04dc 6983      		std Y+1,r22
- 679 04de 7A83      		std Y+2,r23
- 680 04e0 8B83      		std Y+3,r24
- 681 04e2 9C83      		std Y+4,r25
- 682 04e4 6981      		ldd r22,Y+1
- 683 04e6 7A81      		ldd r23,Y+2
- 684 04e8 8B81      		ldd r24,Y+3
- 685 04ea 9C81      		ldd r25,Y+4
- 686 04ec 0E94 0000 		call __addsf3
- 687               	.LVL43:
- 688               		.loc 1 135 19 view .LVU103
- 689 04f0 20E0      		ldi r18,0
- 690 04f2 30E0      		ldi r19,0
- 691 04f4 40E8      		ldi r20,lo8(-128)
- 692 04f6 50E4      		ldi r21,lo8(64)
- 693 04f8 6983      		std Y+1,r22
- 694 04fa 7A83      		std Y+2,r23
- 695 04fc 8B83      		std Y+3,r24
- 696 04fe 9C83      		std Y+4,r25
- 697 0500 6981      		ldd r22,Y+1
- 698 0502 7A81      		ldd r23,Y+2
- 699 0504 8B81      		ldd r24,Y+3
- 700 0506 9C81      		ldd r25,Y+4
- 701 0508 0E94 0000 		call __gtsf2
- 702               	.LVL44:
- 703 050c 1816      		cp __zero_reg__,r24
- 704 050e 04F0      		brlt .+2
- 705 0510 00C0      		rjmp .L101
- 136:alg.c         ****                     LS3_hi();
- 706               		.loc 1 136 21 is_stmt 1 view .LVU104
- 707 0512 179A      		sbi 0x2,7
- 137:alg.c         ****                     LS3_green();
- 708               		.loc 1 137 21 view .LVU105
- 709 0514 0E94 0000 		call LS3_green
- 710               	.LVL45:
- 711               	.L36:
- 138:alg.c         ****                 }
- 139:alg.c         ****                 else {
- 140:alg.c         **** 					LS3_lo();
- 141:alg.c         ****                     LS3_red();
- 142:alg.c         **** 				}
- 143:alg.c         **** 
- 144:alg.c         **** 
-GAS LISTING /tmp/ccxROBC7.s 			page 16
-
-
- 145:alg.c         ****                 if(Load2 + Load1 < MainsMAX + PV + Wind){
- 712               		.loc 1 145 17 view .LVU106
- 713               		.loc 1 145 45 is_stmt 0 view .LVU107
- 714 0518 20E0      		ldi r18,0
- 715 051a 30E0      		ldi r19,0
- 716 051c 40E0      		ldi r20,0
- 717 051e 50E4      		ldi r21,lo8(64)
- 718 0520 6091 0000 		lds r22,PV
- 719 0524 7091 0000 		lds r23,PV+1
- 720 0528 8091 0000 		lds r24,PV+2
- 721 052c 9091 0000 		lds r25,PV+3
- 722 0530 0E94 0000 		call __addsf3
- 723               	.LVL46:
- 724               		.loc 1 145 50 view .LVU108
- 725 0534 2091 0000 		lds r18,Wind
- 726 0538 3091 0000 		lds r19,Wind+1
- 727 053c 4091 0000 		lds r20,Wind+2
- 728 0540 5091 0000 		lds r21,Wind+3
- 729 0544 6983      		std Y+1,r22
- 730 0546 7A83      		std Y+2,r23
- 731 0548 8B83      		std Y+3,r24
- 732 054a 9C83      		std Y+4,r25
- 733 054c 6981      		ldd r22,Y+1
- 734 054e 7A81      		ldd r23,Y+2
- 735 0550 8B81      		ldd r24,Y+3
- 736 0552 9C81      		ldd r25,Y+4
- 737 0554 0E94 0000 		call __addsf3
- 738               	.LVL47:
- 739               		.loc 1 145 19 view .LVU109
- 740 0558 2DEC      		ldi r18,lo8(-51)
- 741 055a 3CEC      		ldi r19,lo8(-52)
- 742 055c 4CE4      		ldi r20,lo8(76)
- 743 055e 50E4      		ldi r21,lo8(64)
- 744 0560 6983      		std Y+1,r22
- 745 0562 7A83      		std Y+2,r23
- 746 0564 8B83      		std Y+3,r24
- 747 0566 9C83      		std Y+4,r25
- 748 0568 6981      		ldd r22,Y+1
- 749 056a 7A81      		ldd r23,Y+2
- 750 056c 8B81      		ldd r24,Y+3
- 751 056e 9C81      		ldd r25,Y+4
- 752 0570 0E94 0000 		call __gtsf2
- 753               	.LVL48:
- 754 0574 1816      		cp __zero_reg__,r24
- 755 0576 04F0      		brlt .+2
- 756 0578 00C0      		rjmp .L102
- 146:alg.c         ****                     LS2_hi();
- 757               		.loc 1 146 21 is_stmt 1 view .LVU110
- 758 057a 5B9A      		sbi 0xb,3
- 147:alg.c         ****                     LS2_green();
- 759               		.loc 1 147 21 view .LVU111
- 760 057c 0E94 0000 		call LS2_green
- 761               	.LVL49:
- 762               	.L39:
- 148:alg.c         **** 				}
- 149:alg.c         ****                 else{
- 150:alg.c         **** 					LS2_lo();
-GAS LISTING /tmp/ccxROBC7.s 			page 17
-
-
- 151:alg.c         ****                     LS2_red();
- 152:alg.c         **** 				}
- 153:alg.c         **** 
- 154:alg.c         ****                 if(Load1 < MainsMAX + PV + Wind){
- 763               		.loc 1 154 17 view .LVU112
- 764               		.loc 1 154 37 is_stmt 0 view .LVU113
- 765 0580 20E0      		ldi r18,0
- 766 0582 30E0      		ldi r19,0
- 767 0584 40E0      		ldi r20,0
- 768 0586 50E4      		ldi r21,lo8(64)
- 769 0588 6091 0000 		lds r22,PV
- 770 058c 7091 0000 		lds r23,PV+1
- 771 0590 8091 0000 		lds r24,PV+2
- 772 0594 9091 0000 		lds r25,PV+3
- 773 0598 0E94 0000 		call __addsf3
- 774               	.LVL50:
- 775               		.loc 1 154 42 view .LVU114
- 776 059c 2091 0000 		lds r18,Wind
- 777 05a0 3091 0000 		lds r19,Wind+1
- 778 05a4 4091 0000 		lds r20,Wind+2
- 779 05a8 5091 0000 		lds r21,Wind+3
- 780 05ac 6983      		std Y+1,r22
- 781 05ae 7A83      		std Y+2,r23
- 782 05b0 8B83      		std Y+3,r24
- 783 05b2 9C83      		std Y+4,r25
- 784 05b4 6981      		ldd r22,Y+1
- 785 05b6 7A81      		ldd r23,Y+2
- 786 05b8 8B81      		ldd r24,Y+3
- 787 05ba 9C81      		ldd r25,Y+4
- 788 05bc 0E94 0000 		call __addsf3
- 789               	.LVL51:
- 790               		.loc 1 154 19 view .LVU115
- 791 05c0 2AE9      		ldi r18,lo8(-102)
- 792 05c2 39E9      		ldi r19,lo8(-103)
- 793 05c4 49E9      		ldi r20,lo8(-103)
- 794 05c6 5FE3      		ldi r21,lo8(63)
- 795 05c8 6983      		std Y+1,r22
- 796 05ca 7A83      		std Y+2,r23
- 797 05cc 8B83      		std Y+3,r24
- 798 05ce 9C83      		std Y+4,r25
- 799 05d0 6981      		ldd r22,Y+1
- 800 05d2 7A81      		ldd r23,Y+2
- 801 05d4 8B81      		ldd r24,Y+3
- 802 05d6 9C81      		ldd r25,Y+4
- 803 05d8 0E94 0000 		call __gtsf2
- 804               	.LVL52:
- 805 05dc 1816      		cp __zero_reg__,r24
- 806 05de 04F4      		brge .L103
- 155:alg.c         ****                     LS1_hi();
- 807               		.loc 1 155 21 is_stmt 1 view .LVU116
- 808 05e0 5A9A      		sbi 0xb,2
- 156:alg.c         ****                     LS1_green();
- 809               		.loc 1 156 21 view .LVU117
- 810               	/* epilogue start */
- 157:alg.c         ****                 }
- 158:alg.c         ****                 else{
- 159:alg.c         **** 					LS1_lo();
-GAS LISTING /tmp/ccxROBC7.s 			page 18
-
-
- 160:alg.c         ****                     LS1_red();
- 161:alg.c         **** 				}
- 162:alg.c         ****             }
+ 155:alg.c         **** 
+ 156:alg.c         **** 	 if(LS1 == 0)
+ 157:alg.c         **** 	 {
+ 158:alg.c         **** 		 DBAT_lo();   CBAT_hi();
+ 159:alg.c         **** 	 }
+ 160:alg.c         **** 
+ 161:alg.c         **** 
+ 162:alg.c         **** 
  163:alg.c         **** }
- 811               		.loc 1 163 1 is_stmt 0 view .LVU118
- 812 05e2 0F90      		pop __tmp_reg__
- 813 05e4 0F90      		pop __tmp_reg__
- 814 05e6 0F90      		pop __tmp_reg__
- 815 05e8 0F90      		pop __tmp_reg__
- 816 05ea 0F90      		pop __tmp_reg__
- 817 05ec 0F90      		pop __tmp_reg__
- 818 05ee DF91      		pop r29
- 819 05f0 CF91      		pop r28
- 820 05f2 1F91      		pop r17
- 821 05f4 0F91      		pop r16
- 156:alg.c         ****                     LS1_green();
- 822               		.loc 1 156 21 view .LVU119
- 823 05f6 0C94 0000 		jmp LS1_green
- 824               	.LVL53:
- 825               	.L91:
-  28:alg.c         **** DBAT_hi();
- 826               		.loc 1 28 1 is_stmt 1 view .LVU120
- 827 05fa 5898      		cbi 0xb,0
-  29:alg.c         **** bat_pwr(false);
- 828               		.loc 1 29 1 view .LVU121
- 829 05fc 599A      		sbi 0xb,1
-  30:alg.c         **** }
- 830               		.loc 1 30 1 view .LVU122
- 831 05fe 80E0      		ldi r24,0
- 832 0600 00C0      		rjmp .L104
- 833               	.L92:
-  48:alg.c         ****                 LS1_red();
- 834               		.loc 1 48 5 view .LVU123
- 835 0602 5A98      		cbi 0xb,2
-  49:alg.c         **** 			}
- 836               		.loc 1 49 17 view .LVU124
- 837 0604 0E94 0000 		call LS1_red
- 838               	.LVL54:
- 839 0608 00C0      		rjmp .L6
- 840               	.L93:
-  59:alg.c         ****                     LS2_red();
- 841               		.loc 1 59 6 view .LVU125
- 842 060a 5B98      		cbi 0xb,3
-  60:alg.c         **** 				}
- 843               		.loc 1 60 21 view .LVU126
- 844 060c 0E94 0000 		call LS2_red
- 845               	.LVL55:
- 846 0610 00C0      		rjmp .L9
- 847               	.L94:
-  70:alg.c         ****                     LS2_red();
- 848               		.loc 1 70 6 view .LVU127
- 849 0612 5B98      		cbi 0xb,3
-  71:alg.c         **** 				}
- 850               		.loc 1 71 21 view .LVU128
- 851 0614 0E94 0000 		call LS2_red
- 852               	.LVL56:
- 853 0618 00C0      		rjmp .L15
-GAS LISTING /tmp/ccxROBC7.s 			page 19
+ 164:alg.c         **** 
+ 165:alg.c         **** 
+ 166:alg.c         **** if(LC1 == 0  && LC2 == 0 && LC3 == 1)
+ 132               		.stabn	68,0,166,.LM13-.LFBB1
+ 133               	.LM13:
+ 134 00c0 80B1      		in r24,0
+ 167:alg.c         **** {
+ 168:alg.c         **** 	if(Load3 < MainsMAX + PV + Wind)
+ 169:alg.c         **** 	{
+ 170:alg.c         **** 		LS3_hi();  LS3= 1;
+ 171:alg.c         **** 		if( (MainsMAX + PV + Wind) - Load3 < BatteryChargeI  )
+ 172:alg.c         **** 		{
+ 173:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 174:alg.c         **** 		}
+ 175:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 176:alg.c         **** 	}
+ 177:alg.c         **** 	else {LS3_lo();  LS3= 0;}
+ 178:alg.c         **** 
+ 179:alg.c         **** }
+ 180:alg.c         **** 
+ 181:alg.c         **** 
+ 182:alg.c         **** if(LC1 == 1  && LC2 == 0 && LC3 == 1)
+ 135               		.stabn	68,0,182,.LM14-.LFBB1
+ 136               	.LM14:
+ 137 00c2 0099      		sbic 0,0
+ 138               		.stabn	68,0,182,.LM15-.LFBB1
+ 139               	.LM15:
+ 140 00c4 80B1      		in r24,0
+ 141               	.L11:
+ 183:alg.c         **** {
+ 184:alg.c         **** 	if(Load3 + Load1  < MainsMAX + PV + Wind)
+ 185:alg.c         **** 	{
+ 186:alg.c         **** 		LS3_hi();  LS3= 1;
+ 187:alg.c         **** 		if( (MainsMAX + PV + Wind) -  (Load3 + Load1) < BatteryChargeI  )
+ 188:alg.c         **** 		{
+ 189:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 190:alg.c         **** 		}
+ 191:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 192:alg.c         **** 
+ 193:alg.c         **** 	}
+ 194:alg.c         **** 	else {LS3_lo();  LS3= 0;}
+ 195:alg.c         **** 
+ 196:alg.c         **** 	if(LS3 == 1)
+ 197:alg.c         **** 	{
+ 198:alg.c         **** 		if( (MainsMAX + PV + Wind) -  Load1 < BatteryChargeI  )
+ 199:alg.c         **** 		{
+ 200:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 201:alg.c         **** 		}
+GAS LISTING /tmp/ccqFA9Ez.s 			page 7
 
 
- 854               	.L95:
-  78:alg.c         ****                     LS1_red();
- 855               		.loc 1 78 6 view .LVU129
- 856 061a 5A98      		cbi 0xb,2
-  79:alg.c         **** 				}
- 857               		.loc 1 79 21 view .LVU130
- 858 061c 0E94 0000 		call LS1_red
- 859               	.LVL57:
- 860 0620 00C0      		rjmp .L12
- 861               	.L96:
-  88:alg.c         ****                     LS3_red();
- 862               		.loc 1 88 6 view .LVU131
- 863 0622 1798      		cbi 0x2,7
-  89:alg.c         **** 				}
- 864               		.loc 1 89 21 view .LVU132
- 865 0624 0E94 0000 		call LS3_red
- 866               	.LVL58:
- 867 0628 00C0      		rjmp .L18
- 868               	.L97:
- 100:alg.c         ****                     LS3_red();
- 869               		.loc 1 100 6 view .LVU133
- 870 062a 1798      		cbi 0x2,7
- 101:alg.c         **** 				}
- 871               		.loc 1 101 21 view .LVU134
- 872 062c 0E94 0000 		call LS3_red
- 873               	.LVL59:
- 874 0630 00C0      		rjmp .L24
- 875               	.L98:
- 109:alg.c         ****                     LS1_red();
- 876               		.loc 1 109 6 view .LVU135
- 877 0632 5A98      		cbi 0xb,2
- 110:alg.c         **** 				}
- 878               		.loc 1 110 21 view .LVU136
- 879 0634 0E94 0000 		call LS1_red
- 880               	.LVL60:
- 881 0638 00C0      		rjmp .L21
- 882               	.L99:
- 120:alg.c         ****                     LS3_red();
- 883               		.loc 1 120 6 view .LVU137
- 884 063a 1798      		cbi 0x2,7
- 121:alg.c         **** 				}
- 885               		.loc 1 121 21 view .LVU138
- 886 063c 0E94 0000 		call LS3_red
- 887               	.LVL61:
- 888 0640 00C0      		rjmp .L30
- 889               	.L100:
- 129:alg.c         ****                     LS2_red();
- 890               		.loc 1 129 6 view .LVU139
- 891 0642 5B98      		cbi 0xb,3
- 130:alg.c         **** 				}
- 892               		.loc 1 130 21 view .LVU140
- 893 0644 0E94 0000 		call LS2_red
- 894               	.LVL62:
- 895 0648 00C0      		rjmp .L27
- 896               	.L101:
- 140:alg.c         ****                     LS3_red();
- 897               		.loc 1 140 6 view .LVU141
-GAS LISTING /tmp/ccxROBC7.s 			page 20
+ 202:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 203:alg.c         **** 	}
+ 204:alg.c         **** 
+ 205:alg.c         **** 	if(Load1 < MainsMAX + PV + Wind)
+ 206:alg.c         **** 	{
+ 207:alg.c         **** 		LS1_hi();  LS1= 1;
+ 208:alg.c         **** 	}
+ 209:alg.c         **** 
+ 210:alg.c         **** 	else {LS1_lo();  LS1= 0;}
+ 211:alg.c         **** 
+ 212:alg.c         **** 	if(LS1 == 0)
+ 213:alg.c         **** 	{
+ 214:alg.c         **** 		DBAT_lo();   CBAT_hi();
+ 215:alg.c         **** 	}
+ 216:alg.c         **** 
+ 217:alg.c         **** 
+ 218:alg.c         **** }
+ 219:alg.c         **** 
+ 220:alg.c         **** if(LC1 == 0  && LC2 == 1 && LC3 == 1  )
+ 142               		.stabn	68,0,220,.LM16-.LFBB1
+ 143               	.LM16:
+ 144 00c6 80B1      		in r24,0
+ 221:alg.c         **** {
+ 222:alg.c         **** 	if(Load2 + Load3 < MainsMAX + PV + Wind)
+ 223:alg.c         **** 	{
+ 224:alg.c         **** 		LS3_hi();  LS3= 1;
+ 225:alg.c         **** 		if( (MainsMAX + PV + Wind) - (Load2 + Load3) < BatteryChargeI  )
+ 226:alg.c         **** 		{
+ 227:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 228:alg.c         **** 		}
+ 229:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 230:alg.c         **** 
+ 231:alg.c         **** 	}
+ 232:alg.c         **** 	else {LS3_lo();  LS3= 0;}
+ 233:alg.c         **** 	if(LS3 == 1)
+ 234:alg.c         **** 	{
+ 235:alg.c         **** 		if( (MainsMAX + PV + Wind) - Load2 < BatteryChargeI  )
+ 236:alg.c         **** 		{
+ 237:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 238:alg.c         **** 		}
+ 239:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 240:alg.c         **** 	}
+ 241:alg.c         **** 
+ 242:alg.c         **** 	if(Load2 < MainsMAX + PV + Wind)
+ 243:alg.c         **** 	{
+ 244:alg.c         **** 		LS2_hi();  LS2= 1;
+ 245:alg.c         **** 	}
+ 246:alg.c         **** 
+ 247:alg.c         **** 	else {LS2_lo();  LS2= 0;}
+ 248:alg.c         **** 	if(LS2 == 1)
+ 249:alg.c         **** 	{
+ 250:alg.c         **** 		DBAT_lo();   CBAT_hi();
+ 251:alg.c         **** 	}
+ 252:alg.c         **** 
+ 253:alg.c         **** 
+ 254:alg.c         **** }
+ 255:alg.c         **** 
+GAS LISTING /tmp/ccqFA9Ez.s 			page 8
 
 
- 898 064a 1798      		cbi 0x2,7
- 141:alg.c         **** 				}
- 899               		.loc 1 141 21 view .LVU142
- 900 064c 0E94 0000 		call LS3_red
- 901               	.LVL63:
- 902 0650 00C0      		rjmp .L36
- 903               	.L102:
- 150:alg.c         ****                     LS2_red();
- 904               		.loc 1 150 6 view .LVU143
- 905 0652 5B98      		cbi 0xb,3
- 151:alg.c         **** 				}
- 906               		.loc 1 151 21 view .LVU144
- 907 0654 0E94 0000 		call LS2_red
- 908               	.LVL64:
- 909 0658 00C0      		rjmp .L39
- 910               	.L103:
- 159:alg.c         ****                     LS1_red();
- 911               		.loc 1 159 6 view .LVU145
- 912 065a 5A98      		cbi 0xb,2
- 160:alg.c         **** 				}
- 913               		.loc 1 160 21 view .LVU146
- 914               	/* epilogue start */
- 915               		.loc 1 163 1 is_stmt 0 view .LVU147
- 916 065c 0F90      		pop __tmp_reg__
- 917 065e 0F90      		pop __tmp_reg__
- 918 0660 0F90      		pop __tmp_reg__
- 919 0662 0F90      		pop __tmp_reg__
- 920 0664 0F90      		pop __tmp_reg__
- 921 0666 0F90      		pop __tmp_reg__
- 922 0668 DF91      		pop r29
- 923 066a CF91      		pop r28
- 924 066c 1F91      		pop r17
- 925 066e 0F91      		pop r16
- 160:alg.c         **** 				}
- 926               		.loc 1 160 21 view .LVU148
- 927 0670 0C94 0000 		jmp LS1_red
- 928               	.LVL65:
- 929               	.L1:
- 930               	/* epilogue start */
- 931               		.loc 1 163 1 view .LVU149
- 932 0674 0F90      		pop __tmp_reg__
- 933 0676 0F90      		pop __tmp_reg__
- 934 0678 0F90      		pop __tmp_reg__
- 935 067a 0F90      		pop __tmp_reg__
- 936 067c 0F90      		pop __tmp_reg__
- 937 067e 0F90      		pop __tmp_reg__
- 938 0680 DF91      		pop r29
- 939 0682 CF91      		pop r28
- 940 0684 1F91      		pop r17
- 941 0686 0F91      		pop r16
- 942 0688 0895      		ret
- 943               		.cfi_endproc
- 944               	.LFE10:
- 945               		.size	algorithm, .-algorithm
- 946               	.global	MainsReq
- 947               		.section .bss
- 948               		.type	MainsReq, @object
-GAS LISTING /tmp/ccxROBC7.s 			page 21
+ 256:alg.c         **** 
+ 257:alg.c         **** if(LC1 == 1 && LC2 == 1 && LC3 == 1 )
+ 145               		.stabn	68,0,257,.LM17-.LFBB1
+ 146               	.LM17:
+ 147 00c8 0099      		sbic 0,0
+ 148               		.stabn	68,0,257,.LM18-.LFBB1
+ 149               	.LM18:
+ 150 00ca 80B1      		in r24,0
+ 151               	.L1:
+ 152               	/* epilogue start */
+ 258:alg.c         **** {
+ 259:alg.c         **** 	if(Load1 + Load2 + Load3  < MainsMAX + PV + Wind)
+ 260:alg.c         **** 	{
+ 261:alg.c         **** 		LS3_hi();  LS3= 1;
+ 262:alg.c         **** 		if( (MainsMAX + PV + Wind) - (Load1 + Load2 + Load3) < BatteryChargeI  )
+ 263:alg.c         **** 		{
+ 264:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 265:alg.c         **** 		}
+ 266:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 267:alg.c         **** 	}
+ 268:alg.c         **** 
+ 269:alg.c         **** 	else {LS3_lo();  LS3= 0;}
+ 270:alg.c         **** 	if(LS3 == 1)
+ 271:alg.c         **** 	{
+ 272:alg.c         **** 		if( (MainsMAX + PV + Wind) - (Load1 + Load2) < BatteryChargeI  )
+ 273:alg.c         **** 		{
+ 274:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 275:alg.c         **** 		}
+ 276:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 277:alg.c         **** 	}
+ 278:alg.c         **** 
+ 279:alg.c         **** 
+ 280:alg.c         **** 	if(Load2 + Load1 < MainsMAX + PV + Wind)
+ 281:alg.c         **** 	{
+ 282:alg.c         **** 		LS2_hi();  LS2= 1;
+ 283:alg.c         **** 	}
+ 284:alg.c         **** 	else {LS2_lo();  LS2= 0;}
+ 285:alg.c         **** 
+ 286:alg.c         **** 	if(LS2 == 1)
+ 287:alg.c         **** 	{
+ 288:alg.c         **** 		if( (MainsMAX + PV + Wind) - Load1 < BatteryChargeI  )
+ 289:alg.c         **** 		{
+ 290:alg.c         **** 			CBAT_lo();   DBAT_hi();
+ 291:alg.c         **** 		}
+ 292:alg.c         **** 		else {DBAT_lo();   CBAT_hi();}
+ 293:alg.c         **** 	}
+ 294:alg.c         **** 	if(Load1 < MainsMAX + PV + Wind)
+ 295:alg.c         **** 	{
+ 296:alg.c         **** 		LS1_hi();  LS1= 1;
+ 297:alg.c         **** 	}
+ 298:alg.c         **** 	else {LS1_lo();  LS1= 0;}
+ 299:alg.c         **** 		if(LS1 == 0)
+ 300:alg.c         **** 		{
+ 301:alg.c         **** 			DBAT_lo();   CBAT_hi();
+ 302:alg.c         **** 		}
+ 303:alg.c         **** 	}
+ 304:alg.c         **** 
+GAS LISTING /tmp/ccqFA9Ez.s 			page 9
 
 
- 949               		.size	MainsReq, 4
- 950               	MainsReq:
- 951 0000 0000 0000 		.zero	4
- 952               	.global	BusI
- 953               		.type	BusI, @object
- 954               		.size	BusI, 4
- 955               	BusI:
- 956 0004 0000 0000 		.zero	4
- 957               	.global	Wind
- 958               		.type	Wind, @object
- 959               		.size	Wind, 4
- 960               	Wind:
- 961 0008 0000 0000 		.zero	4
- 962               	.global	PV
- 963               		.type	PV, @object
- 964               		.size	PV, 4
- 965               	PV:
- 966 000c 0000 0000 		.zero	4
- 967               	.global	Load3
- 968               		.section	.rodata
- 969               		.type	Load3, @object
- 970               		.size	Load3, 4
- 971               	Load3:
- 972 0000 CD        		.byte	-51
- 973 0001 CC        		.byte	-52
- 974 0002 4C        		.byte	76
- 975 0003 3F        		.byte	63
- 976               	.global	Load2
- 977               		.type	Load2, @object
- 978               		.size	Load2, 4
- 979               	Load2:
- 980 0004 00        		.byte	0
- 981 0005 00        		.byte	0
- 982 0006 00        		.byte	0
- 983 0007 40        		.byte	64
- 984               	.global	Load1
- 985               		.type	Load1, @object
- 986               		.size	Load1, 4
- 987               	Load1:
- 988 0008 9A        		.byte	-102
- 989 0009 99        		.byte	-103
- 990 000a 99        		.byte	-103
- 991 000b 3F        		.byte	63
- 992               	.global	BatteryChargeI
- 993               		.type	BatteryChargeI, @object
- 994               		.size	BatteryChargeI, 1
- 995               	BatteryChargeI:
- 996 000c 01        		.byte	1
- 997               	.global	MainsMAX
- 998               		.type	MainsMAX, @object
- 999               		.size	MainsMAX, 1
- 1000               	MainsMAX:
- 1001 000d 02        		.byte	2
- 1002               		.text
- 1003               	.Letext0:
- 1004               		.file 2 "../liblcd/lcd.h"
- 1005               		.file 3 "/usr/avr/include/stdint.h"
-GAS LISTING /tmp/ccxROBC7.s 			page 22
+ 305:alg.c         **** }
+ 153               		.stabn	68,0,305,.LM19-.LFBB1
+ 154               	.LM19:
+ 155 00cc 0F90      		pop __tmp_reg__
+ 156 00ce 0F90      		pop __tmp_reg__
+ 157 00d0 0F90      		pop __tmp_reg__
+ 158 00d2 0F90      		pop __tmp_reg__
+ 159 00d4 DF91      		pop r29
+ 160 00d6 CF91      		pop r28
+ 161 00d8 0895      		ret
+ 162               	.L27:
+  68:alg.c         **** {
+ 163               		.stabn	68,0,68,.LM20-.LFBB1
+ 164               	.LM20:
+ 165 00da 20E0      		ldi r18,0
+ 166 00dc 30E0      		ldi r19,0
+ 167 00de A901      		movw r20,r18
+ 168 00e0 6981      		ldd r22,Y+1
+ 169 00e2 7A81      		ldd r23,Y+2
+ 170 00e4 8B81      		ldd r24,Y+3
+ 171 00e6 9C81      		ldd r25,Y+4
+ 172 00e8 0E94 0000 		call __lesf2
+ 173 00ec 1816      		cp __zero_reg__,r24
+ 174 00ee 04F0      		brlt .L7
+  70:alg.c         **** }
+ 175               		.stabn	68,0,70,.LM21-.LFBB1
+ 176               	.LM21:
+ 177 00f0 1092 0000 		sts MainsReq,__zero_reg__
+ 178 00f4 1092 0000 		sts MainsReq+1,__zero_reg__
+ 179 00f8 1092 0000 		sts MainsReq+2,__zero_reg__
+ 180 00fc 1092 0000 		sts MainsReq+3,__zero_reg__
+ 181 0100 00C0      		rjmp .L7
+ 182               		.size	algorithm, .-algorithm
+ 183               	.Lscope1:
+ 184               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 185               	.global	LS3
+ 186               		.section .bss
+ 187               		.type	LS3, @object
+ 188               		.size	LS3, 1
+ 189               	LS3:
+ 190 0000 00        		.zero	1
+ 191               		.stabs	"LS3:G(0,4)=@s8;-16;",32,0,20,0
+ 192               		.stabs	"_Bool:t(0,4)",128,0,0,0
+ 193               	.global	LS2
+ 194               		.type	LS2, @object
+ 195               		.size	LS2, 1
+ 196               	LS2:
+ 197 0001 00        		.zero	1
+ 198               		.stabs	"LS2:G(0,4)",32,0,20,0
+ 199               	.global	LS1
+ 200               		.type	LS1, @object
+ 201               		.size	LS1, 1
+ 202               	LS1:
+ 203 0002 00        		.zero	1
+ 204               		.stabs	"LS1:G(0,4)",32,0,20,0
+ 205               	.global	BatteryDischI
+ 206               		.data
+GAS LISTING /tmp/ccqFA9Ez.s 			page 10
 
 
- 1006               		.section	.debug_info,"",@progbits
- 1007               	.Ldebug_info0:
- 1008 0000 D903 0000 		.long	0x3d9
- 1009 0004 0500      		.word	0x5
- 1010 0006 01        		.byte	0x1
- 1011 0007 04        		.byte	0x4
- 1012 0008 0000 0000 		.long	.Ldebug_abbrev0
- 1013 000c 08        		.uleb128 0x8
- 1014 000d 0000 0000 		.long	.LASF29
- 1015 0011 1D        		.byte	0x1d
- 1016 0012 0000 0000 		.long	.LASF0
- 1017 0016 0000 0000 		.long	.LASF1
- 1018 001a 0000 0000 		.long	.Ltext0
- 1019 001e 8A06 0000 		.long	.Letext0-.Ltext0
- 1020 0022 0000 0000 		.long	.Ldebug_line0
- 1021 0026 02        		.uleb128 0x2
- 1022 0027 01        		.byte	0x1
- 1023 0028 06        		.byte	0x6
- 1024 0029 0000 0000 		.long	.LASF2
- 1025 002d 09        		.uleb128 0x9
- 1026 002e 0000 0000 		.long	.LASF30
- 1027 0032 03        		.byte	0x3
- 1028 0033 7E        		.byte	0x7e
- 1029 0034 16        		.byte	0x16
- 1030 0035 3E00 0000 		.long	0x3e
- 1031 0039 06        		.uleb128 0x6
- 1032 003a 2D00 0000 		.long	0x2d
- 1033 003e 02        		.uleb128 0x2
- 1034 003f 01        		.byte	0x1
- 1035 0040 08        		.byte	0x8
- 1036 0041 0000 0000 		.long	.LASF3
- 1037 0045 0A        		.uleb128 0xa
- 1038 0046 02        		.byte	0x2
- 1039 0047 05        		.byte	0x5
- 1040 0048 696E 7400 		.string	"int"
- 1041 004c 02        		.uleb128 0x2
- 1042 004d 02        		.byte	0x2
- 1043 004e 07        		.byte	0x7
- 1044 004f 0000 0000 		.long	.LASF4
- 1045 0053 02        		.uleb128 0x2
- 1046 0054 04        		.byte	0x4
- 1047 0055 05        		.byte	0x5
- 1048 0056 0000 0000 		.long	.LASF5
- 1049 005a 02        		.uleb128 0x2
- 1050 005b 04        		.byte	0x4
- 1051 005c 07        		.byte	0x7
- 1052 005d 0000 0000 		.long	.LASF6
- 1053 0061 02        		.uleb128 0x2
- 1054 0062 08        		.byte	0x8
- 1055 0063 05        		.byte	0x5
- 1056 0064 0000 0000 		.long	.LASF7
- 1057 0068 02        		.uleb128 0x2
- 1058 0069 08        		.byte	0x8
- 1059 006a 07        		.byte	0x7
- 1060 006b 0000 0000 		.long	.LASF8
- 1061 006f 02        		.uleb128 0x2
- 1062 0070 01        		.byte	0x1
-GAS LISTING /tmp/ccxROBC7.s 			page 23
+ 207               		.type	BatteryDischI, @object
+ 208               		.size	BatteryDischI, 2
+ 209               	BatteryDischI:
+ 210 0000 0100      		.word	1
+ 211               		.stabs	"BatteryDischI:G(0,5)=r(0,5);-32768;32767;",32,0,19,0
+ 212               		.stabs	"int:t(0,5)",128,0,0,0
+ 213               	.global	BusV
+ 214               		.section .bss
+ 215               		.type	BusV, @object
+ 216               		.size	BusV, 4
+ 217               	BusV:
+ 218 0003 0000 0000 		.zero	4
+ 219               		.stabs	"BusV:G(0,6)=r(0,5);4;0;",32,0,18,0
+ 220               		.stabs	"float:t(0,6)",128,0,0,0
+ 221               	.global	MainsReq
+ 222               		.type	MainsReq, @object
+ 223               		.size	MainsReq, 4
+ 224               	MainsReq:
+ 225 0007 0000 0000 		.zero	4
+ 226               		.stabs	"MainsReq:G(0,6)",32,0,18,0
+ 227               	.global	BusI
+ 228               		.type	BusI, @object
+ 229               		.size	BusI, 4
+ 230               	BusI:
+ 231 000b 0000 0000 		.zero	4
+ 232               		.stabs	"BusI:G(0,6)",32,0,18,0
+ 233               	.global	Wind
+ 234               		.type	Wind, @object
+ 235               		.size	Wind, 4
+ 236               	Wind:
+ 237 000f 0000 0000 		.zero	4
+ 238               		.stabs	"Wind:G(0,6)",32,0,18,0
+ 239               	.global	PV
+ 240               		.type	PV, @object
+ 241               		.size	PV, 4
+ 242               	PV:
+ 243 0013 0000 0000 		.zero	4
+ 244               		.stabs	"PV:G(0,6)",32,0,18,0
+ 245               	.global	BusVMAX
+ 246               		.data
+ 247               		.type	BusVMAX, @object
+ 248               		.size	BusVMAX, 2
+ 249               	BusVMAX:
+ 250 0002 0200      		.word	2
+ 251               		.stabs	"BusVMAX:G(0,5)",32,0,14,0
+ 252               	.global	Load3
+ 253               		.section	.rodata
+ 254               		.type	Load3, @object
+ 255               		.size	Load3, 4
+ 256               	Load3:
+ 257 0000 CD        		.byte	-51
+ 258 0001 CC        		.byte	-52
+ 259 0002 4C        		.byte	76
+ 260 0003 3F        		.byte	63
+ 261               		.stabs	"Load3:G(0,7)=k(0,6)",32,0,13,0
+ 262               	.global	Load2
+ 263               		.type	Load2, @object
+GAS LISTING /tmp/ccqFA9Ez.s 			page 11
 
 
- 1063 0071 08        		.byte	0x8
- 1064 0072 0000 0000 		.long	.LASF9
- 1065 0076 03        		.uleb128 0x3
- 1066 0077 0000 0000 		.long	.LASF10
- 1067 007b 09        		.byte	0x9
- 1068 007c 0F        		.byte	0xf
- 1069 007d 3900 0000 		.long	0x39
- 1070 0081 05        		.uleb128 0x5
- 1071 0082 03        		.byte	0x3
- 1072 0083 0000 0000 		.long	MainsMAX
- 1073 0087 03        		.uleb128 0x3
- 1074 0088 0000 0000 		.long	.LASF11
- 1075 008c 0A        		.byte	0xa
- 1076 008d 0F        		.byte	0xf
- 1077 008e 3900 0000 		.long	0x39
- 1078 0092 05        		.uleb128 0x5
- 1079 0093 03        		.byte	0x3
- 1080 0094 0000 0000 		.long	BatteryChargeI
- 1081 0098 03        		.uleb128 0x3
- 1082 0099 0000 0000 		.long	.LASF12
- 1083 009d 0B        		.byte	0xb
- 1084 009e 0D        		.byte	0xd
- 1085 009f B000 0000 		.long	0xb0
- 1086 00a3 05        		.uleb128 0x5
- 1087 00a4 03        		.byte	0x3
- 1088 00a5 0000 0000 		.long	Load1
- 1089 00a9 02        		.uleb128 0x2
- 1090 00aa 04        		.byte	0x4
- 1091 00ab 04        		.byte	0x4
- 1092 00ac 0000 0000 		.long	.LASF13
- 1093 00b0 06        		.uleb128 0x6
- 1094 00b1 A900 0000 		.long	0xa9
- 1095 00b5 03        		.uleb128 0x3
- 1096 00b6 0000 0000 		.long	.LASF14
- 1097 00ba 0C        		.byte	0xc
- 1098 00bb 0D        		.byte	0xd
- 1099 00bc B000 0000 		.long	0xb0
- 1100 00c0 05        		.uleb128 0x5
- 1101 00c1 03        		.byte	0x3
- 1102 00c2 0000 0000 		.long	Load2
- 1103 00c6 03        		.uleb128 0x3
- 1104 00c7 0000 0000 		.long	.LASF15
- 1105 00cb 0D        		.byte	0xd
- 1106 00cc 0D        		.byte	0xd
- 1107 00cd B000 0000 		.long	0xb0
- 1108 00d1 05        		.uleb128 0x5
- 1109 00d2 03        		.byte	0x3
- 1110 00d3 0000 0000 		.long	Load3
- 1111 00d7 0B        		.uleb128 0xb
- 1112 00d8 5056 00   		.string	"PV"
- 1113 00db 01        		.byte	0x1
- 1114 00dc 11        		.byte	0x11
- 1115 00dd 07        		.byte	0x7
- 1116 00de A900 0000 		.long	0xa9
- 1117 00e2 05        		.uleb128 0x5
- 1118 00e3 03        		.byte	0x3
- 1119 00e4 0000 0000 		.long	PV
-GAS LISTING /tmp/ccxROBC7.s 			page 24
-
-
- 1120 00e8 03        		.uleb128 0x3
- 1121 00e9 0000 0000 		.long	.LASF16
- 1122 00ed 11        		.byte	0x11
- 1123 00ee 0B        		.byte	0xb
- 1124 00ef A900 0000 		.long	0xa9
- 1125 00f3 05        		.uleb128 0x5
- 1126 00f4 03        		.byte	0x3
- 1127 00f5 0000 0000 		.long	Wind
- 1128 00f9 03        		.uleb128 0x3
- 1129 00fa 0000 0000 		.long	.LASF17
- 1130 00fe 11        		.byte	0x11
- 1131 00ff 11        		.byte	0x11
- 1132 0100 A900 0000 		.long	0xa9
- 1133 0104 05        		.uleb128 0x5
- 1134 0105 03        		.byte	0x3
- 1135 0106 0000 0000 		.long	BusI
- 1136 010a 03        		.uleb128 0x3
- 1137 010b 0000 0000 		.long	.LASF18
- 1138 010f 11        		.byte	0x11
- 1139 0110 17        		.byte	0x17
- 1140 0111 A900 0000 		.long	0xa9
- 1141 0115 05        		.uleb128 0x5
- 1142 0116 03        		.byte	0x3
- 1143 0117 0000 0000 		.long	MainsReq
- 1144 011b 04        		.uleb128 0x4
- 1145 011c 0000 0000 		.long	.LASF19
- 1146 0120 39        		.byte	0x39
- 1147 0121 04        		.uleb128 0x4
- 1148 0122 0000 0000 		.long	.LASF20
- 1149 0126 35        		.byte	0x35
- 1150 0127 04        		.uleb128 0x4
- 1151 0128 0000 0000 		.long	.LASF21
- 1152 012c 37        		.byte	0x37
- 1153 012d 04        		.uleb128 0x4
- 1154 012e 0000 0000 		.long	.LASF22
- 1155 0132 3A        		.byte	0x3a
- 1156 0133 04        		.uleb128 0x4
- 1157 0134 0000 0000 		.long	.LASF23
- 1158 0138 38        		.byte	0x38
- 1159 0139 04        		.uleb128 0x4
- 1160 013a 0000 0000 		.long	.LASF24
- 1161 013e 36        		.byte	0x36
- 1162 013f 0C        		.uleb128 0xc
- 1163 0140 0000 0000 		.long	.LASF31
- 1164 0144 02        		.byte	0x2
- 1165 0145 29        		.byte	0x29
- 1166 0146 06        		.byte	0x6
- 1167 0147 5101 0000 		.long	0x151
- 1168 014b 0D        		.uleb128 0xd
- 1169 014c 5101 0000 		.long	0x151
- 1170 0150 00        		.byte	0
- 1171 0151 02        		.uleb128 0x2
- 1172 0152 01        		.byte	0x1
- 1173 0153 02        		.byte	0x2
- 1174 0154 0000 0000 		.long	.LASF25
- 1175 0158 0E        		.uleb128 0xe
- 1176 0159 0000 0000 		.long	.LASF32
-GAS LISTING /tmp/ccxROBC7.s 			page 25
-
-
- 1177 015d 01        		.byte	0x1
- 1178 015e 13        		.byte	0x13
- 1179 015f 06        		.byte	0x6
- 1180 0160 0000 0000 		.long	.LFB10
- 1181 0164 8A06 0000 		.long	.LFE10-.LFB10
- 1182 0168 01        		.uleb128 0x1
- 1183 0169 9C        		.byte	0x9c
- 1184 016a C103 0000 		.long	0x3c1
- 1185 016e 01        		.uleb128 0x1
- 1186 016f 0000 0000 		.long	.LVL0
- 1187 0173 C103 0000 		.long	0x3c1
- 1188 0177 01        		.uleb128 0x1
- 1189 0178 0000 0000 		.long	.LVL1
- 1190 017c C103 0000 		.long	0x3c1
- 1191 0180 01        		.uleb128 0x1
- 1192 0181 0000 0000 		.long	.LVL2
- 1193 0185 C103 0000 		.long	0x3c1
- 1194 0189 01        		.uleb128 0x1
- 1195 018a 0000 0000 		.long	.LVL3
- 1196 018e CA03 0000 		.long	0x3ca
- 1197 0192 01        		.uleb128 0x1
- 1198 0193 0000 0000 		.long	.LVL4
- 1199 0197 3F01 0000 		.long	0x13f
- 1200 019b 01        		.uleb128 0x1
- 1201 019c 0000 0000 		.long	.LVL5
- 1202 01a0 3901 0000 		.long	0x139
- 1203 01a4 01        		.uleb128 0x1
- 1204 01a5 0000 0000 		.long	.LVL6
- 1205 01a9 3301 0000 		.long	0x133
- 1206 01ad 01        		.uleb128 0x1
- 1207 01ae 0000 0000 		.long	.LVL7
- 1208 01b2 2D01 0000 		.long	0x12d
- 1209 01b6 01        		.uleb128 0x1
- 1210 01b7 0000 0000 		.long	.LVL8
- 1211 01bb C103 0000 		.long	0x3c1
- 1212 01bf 01        		.uleb128 0x1
- 1213 01c0 0000 0000 		.long	.LVL9
- 1214 01c4 C103 0000 		.long	0x3c1
- 1215 01c8 01        		.uleb128 0x1
- 1216 01c9 0000 0000 		.long	.LVL10
- 1217 01cd D303 0000 		.long	0x3d3
- 1218 01d1 01        		.uleb128 0x1
- 1219 01d2 0000 0000 		.long	.LVL11
- 1220 01d6 C103 0000 		.long	0x3c1
- 1221 01da 01        		.uleb128 0x1
- 1222 01db 0000 0000 		.long	.LVL12
- 1223 01df C103 0000 		.long	0x3c1
- 1224 01e3 01        		.uleb128 0x1
- 1225 01e4 0000 0000 		.long	.LVL13
- 1226 01e8 D303 0000 		.long	0x3d3
- 1227 01ec 01        		.uleb128 0x1
- 1228 01ed 0000 0000 		.long	.LVL14
- 1229 01f1 2701 0000 		.long	0x127
- 1230 01f5 01        		.uleb128 0x1
- 1231 01f6 0000 0000 		.long	.LVL15
- 1232 01fa C103 0000 		.long	0x3c1
- 1233 01fe 01        		.uleb128 0x1
-GAS LISTING /tmp/ccxROBC7.s 			page 26
-
-
- 1234 01ff 0000 0000 		.long	.LVL16
- 1235 0203 C103 0000 		.long	0x3c1
- 1236 0207 01        		.uleb128 0x1
- 1237 0208 0000 0000 		.long	.LVL17
- 1238 020c D303 0000 		.long	0x3d3
- 1239 0210 01        		.uleb128 0x1
- 1240 0211 0000 0000 		.long	.LVL18
- 1241 0215 2701 0000 		.long	0x127
- 1242 0219 01        		.uleb128 0x1
- 1243 021a 0000 0000 		.long	.LVL19
- 1244 021e C103 0000 		.long	0x3c1
- 1245 0222 01        		.uleb128 0x1
- 1246 0223 0000 0000 		.long	.LVL20
- 1247 0227 C103 0000 		.long	0x3c1
- 1248 022b 01        		.uleb128 0x1
- 1249 022c 0000 0000 		.long	.LVL21
- 1250 0230 D303 0000 		.long	0x3d3
- 1251 0234 01        		.uleb128 0x1
- 1252 0235 0000 0000 		.long	.LVL22
- 1253 0239 2101 0000 		.long	0x121
- 1254 023d 01        		.uleb128 0x1
- 1255 023e 0000 0000 		.long	.LVL23
- 1256 0242 C103 0000 		.long	0x3c1
- 1257 0246 01        		.uleb128 0x1
- 1258 0247 0000 0000 		.long	.LVL24
- 1259 024b C103 0000 		.long	0x3c1
- 1260 024f 01        		.uleb128 0x1
- 1261 0250 0000 0000 		.long	.LVL25
- 1262 0254 D303 0000 		.long	0x3d3
- 1263 0258 01        		.uleb128 0x1
- 1264 0259 0000 0000 		.long	.LVL26
- 1265 025d C103 0000 		.long	0x3c1
- 1266 0261 01        		.uleb128 0x1
- 1267 0262 0000 0000 		.long	.LVL27
- 1268 0266 C103 0000 		.long	0x3c1
- 1269 026a 01        		.uleb128 0x1
- 1270 026b 0000 0000 		.long	.LVL28
- 1271 026f D303 0000 		.long	0x3d3
- 1272 0273 01        		.uleb128 0x1
- 1273 0274 0000 0000 		.long	.LVL29
- 1274 0278 1B01 0000 		.long	0x11b
- 1275 027c 01        		.uleb128 0x1
- 1276 027d 0000 0000 		.long	.LVL30
- 1277 0281 C103 0000 		.long	0x3c1
- 1278 0285 01        		.uleb128 0x1
- 1279 0286 0000 0000 		.long	.LVL31
- 1280 028a C103 0000 		.long	0x3c1
- 1281 028e 01        		.uleb128 0x1
- 1282 028f 0000 0000 		.long	.LVL32
- 1283 0293 D303 0000 		.long	0x3d3
- 1284 0297 01        		.uleb128 0x1
- 1285 0298 0000 0000 		.long	.LVL33
- 1286 029c 2101 0000 		.long	0x121
- 1287 02a0 01        		.uleb128 0x1
- 1288 02a1 0000 0000 		.long	.LVL34
- 1289 02a5 C103 0000 		.long	0x3c1
- 1290 02a9 01        		.uleb128 0x1
-GAS LISTING /tmp/ccxROBC7.s 			page 27
-
-
- 1291 02aa 0000 0000 		.long	.LVL35
- 1292 02ae C103 0000 		.long	0x3c1
- 1293 02b2 01        		.uleb128 0x1
- 1294 02b3 0000 0000 		.long	.LVL36
- 1295 02b7 D303 0000 		.long	0x3d3
- 1296 02bb 01        		.uleb128 0x1
- 1297 02bc 0000 0000 		.long	.LVL37
- 1298 02c0 1B01 0000 		.long	0x11b
- 1299 02c4 01        		.uleb128 0x1
- 1300 02c5 0000 0000 		.long	.LVL38
- 1301 02c9 C103 0000 		.long	0x3c1
- 1302 02cd 01        		.uleb128 0x1
- 1303 02ce 0000 0000 		.long	.LVL39
- 1304 02d2 C103 0000 		.long	0x3c1
- 1305 02d6 01        		.uleb128 0x1
- 1306 02d7 0000 0000 		.long	.LVL40
- 1307 02db D303 0000 		.long	0x3d3
- 1308 02df 01        		.uleb128 0x1
- 1309 02e0 0000 0000 		.long	.LVL41
- 1310 02e4 2701 0000 		.long	0x127
- 1311 02e8 01        		.uleb128 0x1
- 1312 02e9 0000 0000 		.long	.LVL42
- 1313 02ed C103 0000 		.long	0x3c1
- 1314 02f1 01        		.uleb128 0x1
- 1315 02f2 0000 0000 		.long	.LVL43
- 1316 02f6 C103 0000 		.long	0x3c1
- 1317 02fa 01        		.uleb128 0x1
- 1318 02fb 0000 0000 		.long	.LVL44
- 1319 02ff D303 0000 		.long	0x3d3
- 1320 0303 01        		.uleb128 0x1
- 1321 0304 0000 0000 		.long	.LVL45
- 1322 0308 1B01 0000 		.long	0x11b
- 1323 030c 01        		.uleb128 0x1
- 1324 030d 0000 0000 		.long	.LVL46
- 1325 0311 C103 0000 		.long	0x3c1
- 1326 0315 01        		.uleb128 0x1
- 1327 0316 0000 0000 		.long	.LVL47
- 1328 031a C103 0000 		.long	0x3c1
- 1329 031e 01        		.uleb128 0x1
- 1330 031f 0000 0000 		.long	.LVL48
- 1331 0323 D303 0000 		.long	0x3d3
- 1332 0327 01        		.uleb128 0x1
- 1333 0328 0000 0000 		.long	.LVL49
- 1334 032c 2701 0000 		.long	0x127
- 1335 0330 01        		.uleb128 0x1
- 1336 0331 0000 0000 		.long	.LVL50
- 1337 0335 C103 0000 		.long	0x3c1
- 1338 0339 01        		.uleb128 0x1
- 1339 033a 0000 0000 		.long	.LVL51
- 1340 033e C103 0000 		.long	0x3c1
- 1341 0342 01        		.uleb128 0x1
- 1342 0343 0000 0000 		.long	.LVL52
- 1343 0347 D303 0000 		.long	0x3d3
- 1344 034b 07        		.uleb128 0x7
- 1345 034c 0000 0000 		.long	.LVL53
- 1346 0350 2101 0000 		.long	0x121
- 1347 0354 01        		.uleb128 0x1
-GAS LISTING /tmp/ccxROBC7.s 			page 28
-
-
- 1348 0355 0000 0000 		.long	.LVL54
- 1349 0359 3901 0000 		.long	0x139
- 1350 035d 01        		.uleb128 0x1
- 1351 035e 0000 0000 		.long	.LVL55
- 1352 0362 3301 0000 		.long	0x133
- 1353 0366 01        		.uleb128 0x1
- 1354 0367 0000 0000 		.long	.LVL56
- 1355 036b 3301 0000 		.long	0x133
- 1356 036f 01        		.uleb128 0x1
- 1357 0370 0000 0000 		.long	.LVL57
- 1358 0374 3901 0000 		.long	0x139
- 1359 0378 01        		.uleb128 0x1
- 1360 0379 0000 0000 		.long	.LVL58
- 1361 037d 2D01 0000 		.long	0x12d
- 1362 0381 01        		.uleb128 0x1
- 1363 0382 0000 0000 		.long	.LVL59
- 1364 0386 2D01 0000 		.long	0x12d
- 1365 038a 01        		.uleb128 0x1
- 1366 038b 0000 0000 		.long	.LVL60
- 1367 038f 3901 0000 		.long	0x139
- 1368 0393 01        		.uleb128 0x1
- 1369 0394 0000 0000 		.long	.LVL61
- 1370 0398 2D01 0000 		.long	0x12d
- 1371 039c 01        		.uleb128 0x1
- 1372 039d 0000 0000 		.long	.LVL62
- 1373 03a1 3301 0000 		.long	0x133
- 1374 03a5 01        		.uleb128 0x1
- 1375 03a6 0000 0000 		.long	.LVL63
- 1376 03aa 2D01 0000 		.long	0x12d
- 1377 03ae 01        		.uleb128 0x1
- 1378 03af 0000 0000 		.long	.LVL64
- 1379 03b3 3301 0000 		.long	0x133
- 1380 03b7 07        		.uleb128 0x7
- 1381 03b8 0000 0000 		.long	.LVL65
- 1382 03bc 3901 0000 		.long	0x139
- 1383 03c0 00        		.byte	0
- 1384 03c1 05        		.uleb128 0x5
- 1385 03c2 0000 0000 		.long	.LASF26
- 1386 03c6 0000 0000 		.long	.LASF26
- 1387 03ca 05        		.uleb128 0x5
- 1388 03cb 0000 0000 		.long	.LASF27
- 1389 03cf 0000 0000 		.long	.LASF27
- 1390 03d3 05        		.uleb128 0x5
- 1391 03d4 0000 0000 		.long	.LASF28
- 1392 03d8 0000 0000 		.long	.LASF28
- 1393 03dc 00        		.byte	0
- 1394               		.section	.debug_abbrev,"",@progbits
- 1395               	.Ldebug_abbrev0:
- 1396 0000 01        		.uleb128 0x1
- 1397 0001 48        		.uleb128 0x48
- 1398 0002 00        		.byte	0
- 1399 0003 7D        		.uleb128 0x7d
- 1400 0004 01        		.uleb128 0x1
- 1401 0005 7F        		.uleb128 0x7f
- 1402 0006 13        		.uleb128 0x13
- 1403 0007 00        		.byte	0
- 1404 0008 00        		.byte	0
-GAS LISTING /tmp/ccxROBC7.s 			page 29
-
-
- 1405 0009 02        		.uleb128 0x2
- 1406 000a 24        		.uleb128 0x24
- 1407 000b 00        		.byte	0
- 1408 000c 0B        		.uleb128 0xb
- 1409 000d 0B        		.uleb128 0xb
- 1410 000e 3E        		.uleb128 0x3e
- 1411 000f 0B        		.uleb128 0xb
- 1412 0010 03        		.uleb128 0x3
- 1413 0011 0E        		.uleb128 0xe
- 1414 0012 00        		.byte	0
- 1415 0013 00        		.byte	0
- 1416 0014 03        		.uleb128 0x3
- 1417 0015 34        		.uleb128 0x34
- 1418 0016 00        		.byte	0
- 1419 0017 03        		.uleb128 0x3
- 1420 0018 0E        		.uleb128 0xe
- 1421 0019 3A        		.uleb128 0x3a
- 1422 001a 21        		.uleb128 0x21
- 1423 001b 01        		.sleb128 1
- 1424 001c 3B        		.uleb128 0x3b
- 1425 001d 0B        		.uleb128 0xb
- 1426 001e 39        		.uleb128 0x39
- 1427 001f 0B        		.uleb128 0xb
- 1428 0020 49        		.uleb128 0x49
- 1429 0021 13        		.uleb128 0x13
- 1430 0022 3F        		.uleb128 0x3f
- 1431 0023 19        		.uleb128 0x19
- 1432 0024 02        		.uleb128 0x2
- 1433 0025 18        		.uleb128 0x18
- 1434 0026 00        		.byte	0
- 1435 0027 00        		.byte	0
- 1436 0028 04        		.uleb128 0x4
- 1437 0029 2E        		.uleb128 0x2e
- 1438 002a 00        		.byte	0
- 1439 002b 3F        		.uleb128 0x3f
- 1440 002c 19        		.uleb128 0x19
- 1441 002d 03        		.uleb128 0x3
- 1442 002e 0E        		.uleb128 0xe
- 1443 002f 3A        		.uleb128 0x3a
- 1444 0030 21        		.uleb128 0x21
- 1445 0031 02        		.sleb128 2
- 1446 0032 3B        		.uleb128 0x3b
- 1447 0033 0B        		.uleb128 0xb
- 1448 0034 39        		.uleb128 0x39
- 1449 0035 21        		.uleb128 0x21
- 1450 0036 06        		.sleb128 6
- 1451 0037 27        		.uleb128 0x27
- 1452 0038 19        		.uleb128 0x19
- 1453 0039 3C        		.uleb128 0x3c
- 1454 003a 19        		.uleb128 0x19
- 1455 003b 00        		.byte	0
- 1456 003c 00        		.byte	0
- 1457 003d 05        		.uleb128 0x5
- 1458 003e 2E        		.uleb128 0x2e
- 1459 003f 00        		.byte	0
- 1460 0040 3F        		.uleb128 0x3f
- 1461 0041 19        		.uleb128 0x19
-GAS LISTING /tmp/ccxROBC7.s 			page 30
-
-
- 1462 0042 3C        		.uleb128 0x3c
- 1463 0043 19        		.uleb128 0x19
- 1464 0044 6E        		.uleb128 0x6e
- 1465 0045 0E        		.uleb128 0xe
- 1466 0046 03        		.uleb128 0x3
- 1467 0047 0E        		.uleb128 0xe
- 1468 0048 00        		.byte	0
- 1469 0049 00        		.byte	0
- 1470 004a 06        		.uleb128 0x6
- 1471 004b 26        		.uleb128 0x26
- 1472 004c 00        		.byte	0
- 1473 004d 49        		.uleb128 0x49
- 1474 004e 13        		.uleb128 0x13
- 1475 004f 00        		.byte	0
- 1476 0050 00        		.byte	0
- 1477 0051 07        		.uleb128 0x7
- 1478 0052 48        		.uleb128 0x48
- 1479 0053 00        		.byte	0
- 1480 0054 7D        		.uleb128 0x7d
- 1481 0055 01        		.uleb128 0x1
- 1482 0056 8201      		.uleb128 0x82
- 1483 0058 19        		.uleb128 0x19
- 1484 0059 7F        		.uleb128 0x7f
- 1485 005a 13        		.uleb128 0x13
- 1486 005b 00        		.byte	0
- 1487 005c 00        		.byte	0
- 1488 005d 08        		.uleb128 0x8
- 1489 005e 11        		.uleb128 0x11
- 1490 005f 01        		.byte	0x1
- 1491 0060 25        		.uleb128 0x25
- 1492 0061 0E        		.uleb128 0xe
- 1493 0062 13        		.uleb128 0x13
- 1494 0063 0B        		.uleb128 0xb
- 1495 0064 03        		.uleb128 0x3
- 1496 0065 1F        		.uleb128 0x1f
- 1497 0066 1B        		.uleb128 0x1b
- 1498 0067 1F        		.uleb128 0x1f
- 1499 0068 11        		.uleb128 0x11
- 1500 0069 01        		.uleb128 0x1
- 1501 006a 12        		.uleb128 0x12
- 1502 006b 06        		.uleb128 0x6
- 1503 006c 10        		.uleb128 0x10
- 1504 006d 17        		.uleb128 0x17
- 1505 006e 00        		.byte	0
- 1506 006f 00        		.byte	0
- 1507 0070 09        		.uleb128 0x9
- 1508 0071 16        		.uleb128 0x16
- 1509 0072 00        		.byte	0
- 1510 0073 03        		.uleb128 0x3
- 1511 0074 0E        		.uleb128 0xe
- 1512 0075 3A        		.uleb128 0x3a
- 1513 0076 0B        		.uleb128 0xb
- 1514 0077 3B        		.uleb128 0x3b
- 1515 0078 0B        		.uleb128 0xb
- 1516 0079 39        		.uleb128 0x39
- 1517 007a 0B        		.uleb128 0xb
- 1518 007b 49        		.uleb128 0x49
-GAS LISTING /tmp/ccxROBC7.s 			page 31
-
-
- 1519 007c 13        		.uleb128 0x13
- 1520 007d 00        		.byte	0
- 1521 007e 00        		.byte	0
- 1522 007f 0A        		.uleb128 0xa
- 1523 0080 24        		.uleb128 0x24
- 1524 0081 00        		.byte	0
- 1525 0082 0B        		.uleb128 0xb
- 1526 0083 0B        		.uleb128 0xb
- 1527 0084 3E        		.uleb128 0x3e
- 1528 0085 0B        		.uleb128 0xb
- 1529 0086 03        		.uleb128 0x3
- 1530 0087 08        		.uleb128 0x8
- 1531 0088 00        		.byte	0
- 1532 0089 00        		.byte	0
- 1533 008a 0B        		.uleb128 0xb
- 1534 008b 34        		.uleb128 0x34
- 1535 008c 00        		.byte	0
- 1536 008d 03        		.uleb128 0x3
- 1537 008e 08        		.uleb128 0x8
- 1538 008f 3A        		.uleb128 0x3a
- 1539 0090 0B        		.uleb128 0xb
- 1540 0091 3B        		.uleb128 0x3b
- 1541 0092 0B        		.uleb128 0xb
- 1542 0093 39        		.uleb128 0x39
- 1543 0094 0B        		.uleb128 0xb
- 1544 0095 49        		.uleb128 0x49
- 1545 0096 13        		.uleb128 0x13
- 1546 0097 3F        		.uleb128 0x3f
- 1547 0098 19        		.uleb128 0x19
- 1548 0099 02        		.uleb128 0x2
- 1549 009a 18        		.uleb128 0x18
- 1550 009b 00        		.byte	0
- 1551 009c 00        		.byte	0
- 1552 009d 0C        		.uleb128 0xc
- 1553 009e 2E        		.uleb128 0x2e
- 1554 009f 01        		.byte	0x1
- 1555 00a0 3F        		.uleb128 0x3f
- 1556 00a1 19        		.uleb128 0x19
- 1557 00a2 03        		.uleb128 0x3
- 1558 00a3 0E        		.uleb128 0xe
- 1559 00a4 3A        		.uleb128 0x3a
- 1560 00a5 0B        		.uleb128 0xb
- 1561 00a6 3B        		.uleb128 0x3b
- 1562 00a7 0B        		.uleb128 0xb
- 1563 00a8 39        		.uleb128 0x39
- 1564 00a9 0B        		.uleb128 0xb
- 1565 00aa 27        		.uleb128 0x27
- 1566 00ab 19        		.uleb128 0x19
- 1567 00ac 3C        		.uleb128 0x3c
- 1568 00ad 19        		.uleb128 0x19
- 1569 00ae 01        		.uleb128 0x1
- 1570 00af 13        		.uleb128 0x13
- 1571 00b0 00        		.byte	0
- 1572 00b1 00        		.byte	0
- 1573 00b2 0D        		.uleb128 0xd
- 1574 00b3 05        		.uleb128 0x5
- 1575 00b4 00        		.byte	0
-GAS LISTING /tmp/ccxROBC7.s 			page 32
-
-
- 1576 00b5 49        		.uleb128 0x49
- 1577 00b6 13        		.uleb128 0x13
- 1578 00b7 00        		.byte	0
- 1579 00b8 00        		.byte	0
- 1580 00b9 0E        		.uleb128 0xe
- 1581 00ba 2E        		.uleb128 0x2e
- 1582 00bb 01        		.byte	0x1
- 1583 00bc 3F        		.uleb128 0x3f
- 1584 00bd 19        		.uleb128 0x19
- 1585 00be 03        		.uleb128 0x3
- 1586 00bf 0E        		.uleb128 0xe
- 1587 00c0 3A        		.uleb128 0x3a
- 1588 00c1 0B        		.uleb128 0xb
- 1589 00c2 3B        		.uleb128 0x3b
- 1590 00c3 0B        		.uleb128 0xb
- 1591 00c4 39        		.uleb128 0x39
- 1592 00c5 0B        		.uleb128 0xb
- 1593 00c6 27        		.uleb128 0x27
- 1594 00c7 19        		.uleb128 0x19
- 1595 00c8 11        		.uleb128 0x11
- 1596 00c9 01        		.uleb128 0x1
- 1597 00ca 12        		.uleb128 0x12
- 1598 00cb 06        		.uleb128 0x6
- 1599 00cc 40        		.uleb128 0x40
- 1600 00cd 18        		.uleb128 0x18
- 1601 00ce 7A        		.uleb128 0x7a
- 1602 00cf 19        		.uleb128 0x19
- 1603 00d0 01        		.uleb128 0x1
- 1604 00d1 13        		.uleb128 0x13
- 1605 00d2 00        		.byte	0
- 1606 00d3 00        		.byte	0
- 1607 00d4 00        		.byte	0
- 1608               		.section	.debug_aranges,"",@progbits
- 1609 0000 1C00 0000 		.long	0x1c
- 1610 0004 0200      		.word	0x2
- 1611 0006 0000 0000 		.long	.Ldebug_info0
- 1612 000a 04        		.byte	0x4
- 1613 000b 00        		.byte	0
- 1614 000c 0000      		.word	0
- 1615 000e 0000      		.word	0
- 1616 0010 0000 0000 		.long	.Ltext0
- 1617 0014 8A06 0000 		.long	.Letext0-.Ltext0
- 1618 0018 0000 0000 		.long	0
- 1619 001c 0000 0000 		.long	0
- 1620               		.section	.debug_line,"",@progbits
- 1621               	.Ldebug_line0:
- 1622 0000 4605 0000 		.section	.debug_str,"MS",@progbits,1
- 1622      0500 0400 
- 1622      3C00 0000 
- 1622      0201 01FB 
- 1622      0E0D 0001 
- 1623               	.LASF29:
- 1624 0000 474E 5520 		.string	"GNU C17 12.2.0 -mn-flash=1 -mno-skip-bug -mdouble=32 -mlong-double=64 -mmcu=avr5 -g -Os -
- 1624      4331 3720 
- 1624      3132 2E32 
- 1624      2E30 202D 
- 1624      6D6E 2D66 
-GAS LISTING /tmp/ccxROBC7.s 			page 33
-
-
- 1625               	.LASF32:
- 1626 008b 616C 676F 		.string	"algorithm"
- 1626      7269 7468 
- 1626      6D00 
- 1627               	.LASF17:
- 1628 0095 4275 7349 		.string	"BusI"
- 1628      00
- 1629               	.LASF16:
- 1630 009a 5769 6E64 		.string	"Wind"
- 1630      00
- 1631               	.LASF10:
- 1632 009f 4D61 696E 		.string	"MainsMAX"
- 1632      734D 4158 
- 1632      00
- 1633               	.LASF23:
- 1634 00a8 4C53 325F 		.string	"LS2_red"
- 1634      7265 6400 
- 1635               	.LASF20:
- 1636 00b0 4C53 315F 		.string	"LS1_green"
- 1636      6772 6565 
- 1636      6E00 
- 1637               	.LASF11:
- 1638 00ba 4261 7474 		.string	"BatteryChargeI"
- 1638      6572 7943 
- 1638      6861 7267 
- 1638      6549 00
- 1639               	.LASF13:
- 1640 00c9 666C 6F61 		.string	"float"
- 1640      7400 
- 1641               	.LASF3:
- 1642 00cf 756E 7369 		.string	"unsigned char"
- 1642      676E 6564 
- 1642      2063 6861 
- 1642      7200 
- 1643               	.LASF22:
- 1644 00dd 4C53 335F 		.string	"LS3_red"
- 1644      7265 6400 
- 1645               	.LASF26:
- 1646 00e5 5F5F 6164 		.string	"__addsf3"
- 1646      6473 6633 
- 1646      00
- 1647               	.LASF6:
- 1648 00ee 6C6F 6E67 		.string	"long unsigned int"
- 1648      2075 6E73 
- 1648      6967 6E65 
- 1648      6420 696E 
- 1648      7400 
- 1649               	.LASF28:
- 1650 0100 5F5F 6774 		.string	"__gtsf2"
- 1650      7366 3200 
- 1651               	.LASF31:
- 1652 0108 6261 745F 		.string	"bat_pwr"
- 1652      7077 7200 
- 1653               	.LASF27:
- 1654 0110 5F5F 6C74 		.string	"__ltsf2"
- 1654      7366 3200 
- 1655               	.LASF18:
-GAS LISTING /tmp/ccxROBC7.s 			page 34
-
-
- 1656 0118 4D61 696E 		.string	"MainsReq"
- 1656      7352 6571 
- 1656      00
- 1657               	.LASF4:
- 1658 0121 756E 7369 		.string	"unsigned int"
- 1658      676E 6564 
- 1658      2069 6E74 
- 1658      00
- 1659               	.LASF8:
- 1660 012e 6C6F 6E67 		.string	"long long unsigned int"
- 1660      206C 6F6E 
- 1660      6720 756E 
- 1660      7369 676E 
- 1660      6564 2069 
- 1661               	.LASF30:
- 1662 0145 7569 6E74 		.string	"uint8_t"
- 1662      385F 7400 
- 1663               	.LASF21:
- 1664 014d 4C53 325F 		.string	"LS2_green"
- 1664      6772 6565 
- 1664      6E00 
- 1665               	.LASF19:
- 1666 0157 4C53 335F 		.string	"LS3_green"
- 1666      6772 6565 
- 1666      6E00 
- 1667               	.LASF7:
- 1668 0161 6C6F 6E67 		.string	"long long int"
- 1668      206C 6F6E 
- 1668      6720 696E 
- 1668      7400 
- 1669               	.LASF9:
- 1670 016f 6368 6172 		.string	"char"
- 1670      00
- 1671               	.LASF12:
- 1672 0174 4C6F 6164 		.string	"Load1"
- 1672      3100 
- 1673               	.LASF14:
- 1674 017a 4C6F 6164 		.string	"Load2"
- 1674      3200 
- 1675               	.LASF15:
- 1676 0180 4C6F 6164 		.string	"Load3"
- 1676      3300 
- 1677               	.LASF5:
- 1678 0186 6C6F 6E67 		.string	"long int"
- 1678      2069 6E74 
- 1678      00
- 1679               	.LASF2:
- 1680 018f 7369 676E 		.string	"signed char"
- 1680      6564 2063 
- 1680      6861 7200 
- 1681               	.LASF25:
- 1682 019b 5F42 6F6F 		.string	"_Bool"
- 1682      6C00 
- 1683               	.LASF24:
- 1684 01a1 4C53 315F 		.string	"LS1_red"
- 1684      7265 6400 
- 1685               		.section	.debug_line_str,"MS",@progbits,1
-GAS LISTING /tmp/ccxROBC7.s 			page 35
-
-
- 1686               	.LASF0:
- 1687 0000 616C 672E 		.string	"alg.c"
- 1687      6300 
- 1688               	.LASF1:
- 1689 0006 2F68 6F6D 		.string	"/home/kaicho/Documents/Southampton/D5/update/sotond5/libalg"
- 1689      652F 6B61 
- 1689      6963 686F 
- 1689      2F44 6F63 
- 1689      756D 656E 
- 1690               		.ident	"GCC: (GNU) 12.2.0"
- 1691               	.global __do_copy_data
- 1692 0042 2F68 6F6D 	.global __do_clear_bss
- 1692      652F 6B61 
- 1692      6963 686F 
- 1692      2F44 6F63 
- 1692      756D 656E 
-GAS LISTING /tmp/ccxROBC7.s 			page 36
+ 264               		.size	Load2, 4
+ 265               	Load2:
+ 266 0004 00        		.byte	0
+ 267 0005 00        		.byte	0
+ 268 0006 00        		.byte	0
+ 269 0007 40        		.byte	64
+ 270               		.stabs	"Load2:G(0,7)",32,0,12,0
+ 271               	.global	Load1
+ 272               		.type	Load1, @object
+ 273               		.size	Load1, 4
+ 274               	Load1:
+ 275 0008 9A        		.byte	-102
+ 276 0009 99        		.byte	-103
+ 277 000a 99        		.byte	-103
+ 278 000b 3F        		.byte	63
+ 279               		.stabs	"Load1:G(0,7)",32,0,11,0
+ 280               	.global	BatteryChargeI
+ 281               		.type	BatteryChargeI, @object
+ 282               		.size	BatteryChargeI, 1
+ 283               	BatteryChargeI:
+ 284 000c 01        		.byte	1
+ 285               		.stabs	"BatteryChargeI:G(0,8)=k(0,2)",32,0,10,0
+ 286               	.global	MainsMAX
+ 287               		.type	MainsMAX, @object
+ 288               		.size	MainsMAX, 1
+ 289               	MainsMAX:
+ 290 000d 02        		.byte	2
+ 291               		.stabs	"MainsMAX:G(0,8)",32,0,9,0
+ 292               		.text
+ 293               		.stabs	"",100,0,0,.Letext0
+ 294               	.Letext0:
+ 295               		.ident	"GCC: (GNU) 11.2.0"
+ 296               	.global __do_copy_data
+ 297               	.global __do_clear_bss
+GAS LISTING /tmp/ccqFA9Ez.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 alg.c
-     /tmp/ccxROBC7.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccxROBC7.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccxROBC7.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccxROBC7.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccxROBC7.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccxROBC7.s:16     .text:0000000000000000 algorithm
-     /tmp/ccxROBC7.s:19     .text:0000000000000000 .Loc.0
-     /tmp/ccxROBC7.s:20     .text:0000000000000000 L0
-     /tmp/ccxROBC7.s:33     .text:000000000000000a L0
-     /tmp/ccxROBC7.s:34     .text:000000000000000c L0
-     /tmp/ccxROBC7.s:35     .text:000000000000000e L0
-     /tmp/ccxROBC7.s:44     .text:0000000000000012 .Loc.1
-     /tmp/ccxROBC7.s:45     .text:0000000000000012 .Loc.2
-     /tmp/ccxROBC7.s:955    .bss:0000000000000004 BusI
-     /tmp/ccxROBC7.s:59     .text:0000000000000034 .Loc.3
-     /tmp/ccxROBC7.s:965    .bss:000000000000000c PV
-     /tmp/ccxROBC7.s:70     .text:0000000000000050 .Loc.4
-     /tmp/ccxROBC7.s:960    .bss:0000000000000008 Wind
-     /tmp/ccxROBC7.s:85     .text:0000000000000074 .Loc.5
-     /tmp/ccxROBC7.s:102    .text:0000000000000094 .Loc.6
-     /tmp/ccxROBC7.s:104    .text:0000000000000096 .Loc.7
-     /tmp/ccxROBC7.s:106    .text:0000000000000098 .Loc.8
-     /tmp/ccxROBC7.s:109    .text:000000000000009a .Loc.9
-     /tmp/ccxROBC7.s:112    .text:000000000000009e .Loc.10
-     /tmp/ccxROBC7.s:113    .text:000000000000009e .Loc.11
-     /tmp/ccxROBC7.s:116    .text:00000000000000a2 .Loc.12
-     /tmp/ccxROBC7.s:119    .text:00000000000000a6 .Loc.13
-     /tmp/ccxROBC7.s:122    .text:00000000000000aa .Loc.14
-     /tmp/ccxROBC7.s:124    .text:00000000000000ac .Loc.15
-     /tmp/ccxROBC7.s:127    .text:00000000000000b0 .Loc.16
-     /tmp/ccxROBC7.s:129    .text:00000000000000b2 .Loc.17
-     /tmp/ccxROBC7.s:132    .text:00000000000000b6 .Loc.18
-     /tmp/ccxROBC7.s:134    .text:00000000000000b8 .Loc.19
-     /tmp/ccxROBC7.s:138    .text:00000000000000bc .Loc.20
-     /tmp/ccxROBC7.s:139    .text:00000000000000bc .Loc.21
-     /tmp/ccxROBC7.s:142    .text:00000000000000c0 .Loc.22
-     /tmp/ccxROBC7.s:145    .text:00000000000000c4 .Loc.23
-     /tmp/ccxROBC7.s:148    .text:00000000000000c8 .Loc.24
-     /tmp/ccxROBC7.s:149    .text:00000000000000c8 .Loc.25
-     /tmp/ccxROBC7.s:160    .text:00000000000000e4 .Loc.26
-     /tmp/ccxROBC7.s:175    .text:0000000000000108 .Loc.27
-     /tmp/ccxROBC7.s:191    .text:0000000000000128 L0
-     /tmp/ccxROBC7.s:193    .text:000000000000012a .Loc.28
-     /tmp/ccxROBC7.s:196    .text:000000000000012c .Loc.29
-     /tmp/ccxROBC7.s:197    .text:000000000000012c .Loc.30
-     /tmp/ccxROBC7.s:200    .text:0000000000000130 .Loc.31
-     /tmp/ccxROBC7.s:203    .text:0000000000000134 .Loc.32
-     /tmp/ccxROBC7.s:206    .text:0000000000000138 .Loc.33
-     /tmp/ccxROBC7.s:207    .text:0000000000000138 .Loc.34
-     /tmp/ccxROBC7.s:218    .text:0000000000000154 .Loc.35
-     /tmp/ccxROBC7.s:233    .text:0000000000000178 .Loc.36
-     /tmp/ccxROBC7.s:249    .text:0000000000000198 L0
-     /tmp/ccxROBC7.s:251    .text:000000000000019a .Loc.37
-     /tmp/ccxROBC7.s:253    .text:000000000000019c .Loc.38
-     /tmp/ccxROBC7.s:257    .text:00000000000001a0 .Loc.39
-GAS LISTING /tmp/ccxROBC7.s 			page 37
-
-
-     /tmp/ccxROBC7.s:258    .text:00000000000001a0 .Loc.40
-     /tmp/ccxROBC7.s:261    .text:00000000000001a4 .Loc.41
-     /tmp/ccxROBC7.s:264    .text:00000000000001a8 .Loc.42
-     /tmp/ccxROBC7.s:267    .text:00000000000001ac .Loc.43
-     /tmp/ccxROBC7.s:268    .text:00000000000001ac .Loc.44
-     /tmp/ccxROBC7.s:279    .text:00000000000001c8 .Loc.45
-     /tmp/ccxROBC7.s:294    .text:00000000000001ec .Loc.46
-     /tmp/ccxROBC7.s:310    .text:000000000000020c L0
-     /tmp/ccxROBC7.s:312    .text:000000000000020e .Loc.47
-     /tmp/ccxROBC7.s:314    .text:0000000000000210 .Loc.48
-     /tmp/ccxROBC7.s:318    .text:0000000000000214 .Loc.49
-     /tmp/ccxROBC7.s:319    .text:0000000000000214 .Loc.50
-     /tmp/ccxROBC7.s:330    .text:0000000000000230 .Loc.51
-     /tmp/ccxROBC7.s:345    .text:0000000000000254 .Loc.52
-     /tmp/ccxROBC7.s:361    .text:0000000000000274 L0
-     /tmp/ccxROBC7.s:363    .text:0000000000000276 .Loc.53
-     /tmp/ccxROBC7.s:365    .text:0000000000000278 .Loc.54
-     /tmp/ccxROBC7.s:369    .text:000000000000027c .Loc.55
-     /tmp/ccxROBC7.s:370    .text:000000000000027c .Loc.56
-     /tmp/ccxROBC7.s:373    .text:0000000000000280 .Loc.57
-     /tmp/ccxROBC7.s:376    .text:0000000000000284 .Loc.58
-     /tmp/ccxROBC7.s:379    .text:0000000000000288 .Loc.59
-     /tmp/ccxROBC7.s:380    .text:0000000000000288 .Loc.60
-     /tmp/ccxROBC7.s:391    .text:00000000000002a4 .Loc.61
-     /tmp/ccxROBC7.s:406    .text:00000000000002c8 .Loc.62
-     /tmp/ccxROBC7.s:422    .text:00000000000002e8 L0
-     /tmp/ccxROBC7.s:424    .text:00000000000002ea .Loc.63
-     /tmp/ccxROBC7.s:427    .text:00000000000002ec .Loc.64
-     /tmp/ccxROBC7.s:428    .text:00000000000002ec .Loc.65
-     /tmp/ccxROBC7.s:431    .text:00000000000002f0 .Loc.66
-     /tmp/ccxROBC7.s:434    .text:00000000000002f4 .Loc.67
-     /tmp/ccxROBC7.s:437    .text:00000000000002f8 .Loc.68
-     /tmp/ccxROBC7.s:438    .text:00000000000002f8 .Loc.69
-     /tmp/ccxROBC7.s:449    .text:0000000000000314 .Loc.70
-     /tmp/ccxROBC7.s:464    .text:0000000000000338 .Loc.71
-     /tmp/ccxROBC7.s:480    .text:0000000000000358 L0
-     /tmp/ccxROBC7.s:482    .text:000000000000035a .Loc.72
-     /tmp/ccxROBC7.s:484    .text:000000000000035c .Loc.73
-     /tmp/ccxROBC7.s:488    .text:0000000000000360 .Loc.74
-     /tmp/ccxROBC7.s:489    .text:0000000000000360 .Loc.75
-     /tmp/ccxROBC7.s:500    .text:000000000000037c .Loc.76
-     /tmp/ccxROBC7.s:515    .text:00000000000003a0 .Loc.77
-     /tmp/ccxROBC7.s:531    .text:00000000000003c0 L0
-     /tmp/ccxROBC7.s:533    .text:00000000000003c2 .Loc.78
-     /tmp/ccxROBC7.s:535    .text:00000000000003c4 .Loc.79
-     /tmp/ccxROBC7.s:539    .text:00000000000003c8 .Loc.80
-     /tmp/ccxROBC7.s:540    .text:00000000000003c8 .Loc.81
-     /tmp/ccxROBC7.s:543    .text:00000000000003cc .Loc.82
-     /tmp/ccxROBC7.s:546    .text:00000000000003d0 .Loc.83
-     /tmp/ccxROBC7.s:549    .text:00000000000003d4 .Loc.84
-     /tmp/ccxROBC7.s:550    .text:00000000000003d4 .Loc.85
-     /tmp/ccxROBC7.s:561    .text:00000000000003f0 .Loc.86
-     /tmp/ccxROBC7.s:576    .text:0000000000000414 .Loc.87
-     /tmp/ccxROBC7.s:592    .text:0000000000000434 L0
-     /tmp/ccxROBC7.s:594    .text:0000000000000436 .Loc.88
-     /tmp/ccxROBC7.s:596    .text:0000000000000438 .Loc.89
-     /tmp/ccxROBC7.s:600    .text:000000000000043c .Loc.90
-GAS LISTING /tmp/ccxROBC7.s 			page 38
-
-
-     /tmp/ccxROBC7.s:601    .text:000000000000043c .Loc.91
-     /tmp/ccxROBC7.s:612    .text:0000000000000458 .Loc.92
-     /tmp/ccxROBC7.s:627    .text:000000000000047c .Loc.93
-     /tmp/ccxROBC7.s:643    .text:000000000000049c L0
-     /tmp/ccxROBC7.s:645    .text:000000000000049e .Loc.94
-     /tmp/ccxROBC7.s:647    .text:00000000000004a0 .Loc.95
-     /tmp/ccxROBC7.s:651    .text:00000000000004a4 .Loc.96
-     /tmp/ccxROBC7.s:652    .text:00000000000004a4 .Loc.97
-     /tmp/ccxROBC7.s:655    .text:00000000000004a8 .Loc.98
-     /tmp/ccxROBC7.s:658    .text:00000000000004ac .Loc.99
-     /tmp/ccxROBC7.s:661    .text:00000000000004b0 .Loc.100
-     /tmp/ccxROBC7.s:662    .text:00000000000004b0 .Loc.101
-     /tmp/ccxROBC7.s:673    .text:00000000000004cc .Loc.102
-     /tmp/ccxROBC7.s:688    .text:00000000000004f0 .Loc.103
-     /tmp/ccxROBC7.s:704    .text:0000000000000510 L0
-     /tmp/ccxROBC7.s:706    .text:0000000000000512 .Loc.104
-     /tmp/ccxROBC7.s:708    .text:0000000000000514 .Loc.105
-     /tmp/ccxROBC7.s:712    .text:0000000000000518 .Loc.106
-     /tmp/ccxROBC7.s:713    .text:0000000000000518 .Loc.107
-     /tmp/ccxROBC7.s:724    .text:0000000000000534 .Loc.108
-     /tmp/ccxROBC7.s:739    .text:0000000000000558 .Loc.109
-     /tmp/ccxROBC7.s:755    .text:0000000000000578 L0
-     /tmp/ccxROBC7.s:757    .text:000000000000057a .Loc.110
-     /tmp/ccxROBC7.s:759    .text:000000000000057c .Loc.111
-     /tmp/ccxROBC7.s:763    .text:0000000000000580 .Loc.112
-     /tmp/ccxROBC7.s:764    .text:0000000000000580 .Loc.113
-     /tmp/ccxROBC7.s:775    .text:000000000000059c .Loc.114
-     /tmp/ccxROBC7.s:790    .text:00000000000005c0 .Loc.115
-     /tmp/ccxROBC7.s:807    .text:00000000000005e0 .Loc.116
-     /tmp/ccxROBC7.s:809    .text:00000000000005e2 .Loc.117
-     /tmp/ccxROBC7.s:811    .text:00000000000005e2 .Loc.118
-     /tmp/ccxROBC7.s:822    .text:00000000000005f6 .Loc.119
-     /tmp/ccxROBC7.s:826    .text:00000000000005fa .Loc.120
-     /tmp/ccxROBC7.s:828    .text:00000000000005fc .Loc.121
-     /tmp/ccxROBC7.s:830    .text:00000000000005fe .Loc.122
-     /tmp/ccxROBC7.s:834    .text:0000000000000602 .Loc.123
-     /tmp/ccxROBC7.s:836    .text:0000000000000604 .Loc.124
-     /tmp/ccxROBC7.s:841    .text:000000000000060a .Loc.125
-     /tmp/ccxROBC7.s:843    .text:000000000000060c .Loc.126
-     /tmp/ccxROBC7.s:848    .text:0000000000000612 .Loc.127
-     /tmp/ccxROBC7.s:850    .text:0000000000000614 .Loc.128
-     /tmp/ccxROBC7.s:855    .text:000000000000061a .Loc.129
-     /tmp/ccxROBC7.s:857    .text:000000000000061c .Loc.130
-     /tmp/ccxROBC7.s:862    .text:0000000000000622 .Loc.131
-     /tmp/ccxROBC7.s:864    .text:0000000000000624 .Loc.132
-     /tmp/ccxROBC7.s:869    .text:000000000000062a .Loc.133
-     /tmp/ccxROBC7.s:871    .text:000000000000062c .Loc.134
-     /tmp/ccxROBC7.s:876    .text:0000000000000632 .Loc.135
-     /tmp/ccxROBC7.s:878    .text:0000000000000634 .Loc.136
-     /tmp/ccxROBC7.s:883    .text:000000000000063a .Loc.137
-     /tmp/ccxROBC7.s:885    .text:000000000000063c .Loc.138
-     /tmp/ccxROBC7.s:890    .text:0000000000000642 .Loc.139
-     /tmp/ccxROBC7.s:892    .text:0000000000000644 .Loc.140
-     /tmp/ccxROBC7.s:897    .text:000000000000064a .Loc.141
-     /tmp/ccxROBC7.s:899    .text:000000000000064c .Loc.142
-     /tmp/ccxROBC7.s:904    .text:0000000000000652 .Loc.143
-     /tmp/ccxROBC7.s:906    .text:0000000000000654 .Loc.144
-GAS LISTING /tmp/ccxROBC7.s 			page 39
-
-
-     /tmp/ccxROBC7.s:911    .text:000000000000065a .Loc.145
-     /tmp/ccxROBC7.s:913    .text:000000000000065c .Loc.146
-     /tmp/ccxROBC7.s:915    .text:000000000000065c .Loc.147
-     /tmp/ccxROBC7.s:926    .text:0000000000000670 .Loc.148
-     /tmp/ccxROBC7.s:931    .text:0000000000000674 .Loc.149
-     /tmp/ccxROBC7.s:943    .text:000000000000068a L0
-     /tmp/ccxROBC7.s:950    .bss:0000000000000000 MainsReq
-     /tmp/ccxROBC7.s:971    .rodata:0000000000000000 Load3
-     /tmp/ccxROBC7.s:979    .rodata:0000000000000004 Load2
-     /tmp/ccxROBC7.s:987    .rodata:0000000000000008 Load1
-     /tmp/ccxROBC7.s:995    .rodata:000000000000000c BatteryChargeI
-     /tmp/ccxROBC7.s:1000   .rodata:000000000000000d MainsMAX
-     /tmp/ccxROBC7.s:1006   .text:000000000000068a L0
-                     .debug_frame:0000000000000000 L0
-     /tmp/ccxROBC7.s:825    .text:00000000000005fa .L91
-     /tmp/ccxROBC7.s:137    .text:00000000000000bc .L5
-     /tmp/ccxROBC7.s:195    .text:000000000000012c .L6
-     /tmp/ccxROBC7.s:833    .text:0000000000000602 .L92
-     /tmp/ccxROBC7.s:256    .text:00000000000001a0 .L9
-     /tmp/ccxROBC7.s:840    .text:000000000000060a .L93
-     /tmp/ccxROBC7.s:368    .text:000000000000027c .L12
-     /tmp/ccxROBC7.s:847    .text:0000000000000612 .L94
-     /tmp/ccxROBC7.s:854    .text:000000000000061a .L95
-     /tmp/ccxROBC7.s:426    .text:00000000000002ec .L18
-     /tmp/ccxROBC7.s:861    .text:0000000000000622 .L96
-     /tmp/ccxROBC7.s:538    .text:00000000000003c8 .L21
-     /tmp/ccxROBC7.s:868    .text:000000000000062a .L97
-     /tmp/ccxROBC7.s:875    .text:0000000000000632 .L98
-     /tmp/ccxROBC7.s:650    .text:00000000000004a4 .L27
-     /tmp/ccxROBC7.s:882    .text:000000000000063a .L99
-     /tmp/ccxROBC7.s:889    .text:0000000000000642 .L100
-     /tmp/ccxROBC7.s:929    .text:0000000000000674 .L1
-     /tmp/ccxROBC7.s:896    .text:000000000000064a .L101
-     /tmp/ccxROBC7.s:903    .text:0000000000000652 .L102
-     /tmp/ccxROBC7.s:910    .text:000000000000065a .L103
-     /tmp/ccxROBC7.s:108    .text:000000000000009a .L104
-     /tmp/ccxROBC7.s:317    .text:0000000000000214 .L15
-     /tmp/ccxROBC7.s:487    .text:0000000000000360 .L24
-     /tmp/ccxROBC7.s:599    .text:000000000000043c .L30
-     /tmp/ccxROBC7.s:711    .text:0000000000000518 .L36
-     /tmp/ccxROBC7.s:762    .text:0000000000000580 .L39
-     /tmp/ccxROBC7.s:1395   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
-     /tmp/ccxROBC7.s:8      .text:0000000000000000 .Ltext0
-     /tmp/ccxROBC7.s:1003   .text:000000000000068a .Letext0
-     /tmp/ccxROBC7.s:1621   .debug_line:0000000000000000 .Ldebug_line0
-     /tmp/ccxROBC7.s:17     .text:0000000000000000 .LFB10
-     /tmp/ccxROBC7.s:944    .text:000000000000068a .LFE10
-     /tmp/ccxROBC7.s:55     .text:000000000000002e .LVL0
-     /tmp/ccxROBC7.s:69     .text:0000000000000050 .LVL1
-     /tmp/ccxROBC7.s:84     .text:0000000000000074 .LVL2
-     /tmp/ccxROBC7.s:99     .text:0000000000000090 .LVL3
-     /tmp/ccxROBC7.s:111    .text:000000000000009e .LVL4
-     /tmp/ccxROBC7.s:126    .text:00000000000000b0 .LVL5
-     /tmp/ccxROBC7.s:131    .text:00000000000000b6 .LVL6
-     /tmp/ccxROBC7.s:136    .text:00000000000000bc .LVL7
-     /tmp/ccxROBC7.s:159    .text:00000000000000e4 .LVL8
-     /tmp/ccxROBC7.s:174    .text:0000000000000108 .LVL9
-GAS LISTING /tmp/ccxROBC7.s 			page 40
-
-
-     /tmp/ccxROBC7.s:189    .text:0000000000000124 .LVL10
-     /tmp/ccxROBC7.s:217    .text:0000000000000154 .LVL11
-     /tmp/ccxROBC7.s:232    .text:0000000000000178 .LVL12
-     /tmp/ccxROBC7.s:247    .text:0000000000000194 .LVL13
-     /tmp/ccxROBC7.s:255    .text:00000000000001a0 .LVL14
-     /tmp/ccxROBC7.s:278    .text:00000000000001c8 .LVL15
-     /tmp/ccxROBC7.s:293    .text:00000000000001ec .LVL16
-     /tmp/ccxROBC7.s:308    .text:0000000000000208 .LVL17
-     /tmp/ccxROBC7.s:316    .text:0000000000000214 .LVL18
-     /tmp/ccxROBC7.s:329    .text:0000000000000230 .LVL19
-     /tmp/ccxROBC7.s:344    .text:0000000000000254 .LVL20
-     /tmp/ccxROBC7.s:359    .text:0000000000000270 .LVL21
-     /tmp/ccxROBC7.s:367    .text:000000000000027c .LVL22
-     /tmp/ccxROBC7.s:390    .text:00000000000002a4 .LVL23
-     /tmp/ccxROBC7.s:405    .text:00000000000002c8 .LVL24
-     /tmp/ccxROBC7.s:420    .text:00000000000002e4 .LVL25
-     /tmp/ccxROBC7.s:448    .text:0000000000000314 .LVL26
-     /tmp/ccxROBC7.s:463    .text:0000000000000338 .LVL27
-     /tmp/ccxROBC7.s:478    .text:0000000000000354 .LVL28
-     /tmp/ccxROBC7.s:486    .text:0000000000000360 .LVL29
-     /tmp/ccxROBC7.s:499    .text:000000000000037c .LVL30
-     /tmp/ccxROBC7.s:514    .text:00000000000003a0 .LVL31
-     /tmp/ccxROBC7.s:529    .text:00000000000003bc .LVL32
-     /tmp/ccxROBC7.s:537    .text:00000000000003c8 .LVL33
-     /tmp/ccxROBC7.s:560    .text:00000000000003f0 .LVL34
-     /tmp/ccxROBC7.s:575    .text:0000000000000414 .LVL35
-     /tmp/ccxROBC7.s:590    .text:0000000000000430 .LVL36
-     /tmp/ccxROBC7.s:598    .text:000000000000043c .LVL37
-     /tmp/ccxROBC7.s:611    .text:0000000000000458 .LVL38
-     /tmp/ccxROBC7.s:626    .text:000000000000047c .LVL39
-     /tmp/ccxROBC7.s:641    .text:0000000000000498 .LVL40
-     /tmp/ccxROBC7.s:649    .text:00000000000004a4 .LVL41
-     /tmp/ccxROBC7.s:672    .text:00000000000004cc .LVL42
-     /tmp/ccxROBC7.s:687    .text:00000000000004f0 .LVL43
-     /tmp/ccxROBC7.s:702    .text:000000000000050c .LVL44
-     /tmp/ccxROBC7.s:710    .text:0000000000000518 .LVL45
-     /tmp/ccxROBC7.s:723    .text:0000000000000534 .LVL46
-     /tmp/ccxROBC7.s:738    .text:0000000000000558 .LVL47
-     /tmp/ccxROBC7.s:753    .text:0000000000000574 .LVL48
-     /tmp/ccxROBC7.s:761    .text:0000000000000580 .LVL49
-     /tmp/ccxROBC7.s:774    .text:000000000000059c .LVL50
-     /tmp/ccxROBC7.s:789    .text:00000000000005c0 .LVL51
-     /tmp/ccxROBC7.s:804    .text:00000000000005dc .LVL52
-     /tmp/ccxROBC7.s:824    .text:00000000000005fa .LVL53
-     /tmp/ccxROBC7.s:838    .text:0000000000000608 .LVL54
-     /tmp/ccxROBC7.s:845    .text:0000000000000610 .LVL55
-     /tmp/ccxROBC7.s:852    .text:0000000000000618 .LVL56
-     /tmp/ccxROBC7.s:859    .text:0000000000000620 .LVL57
-     /tmp/ccxROBC7.s:866    .text:0000000000000628 .LVL58
-     /tmp/ccxROBC7.s:873    .text:0000000000000630 .LVL59
-     /tmp/ccxROBC7.s:880    .text:0000000000000638 .LVL60
-     /tmp/ccxROBC7.s:887    .text:0000000000000640 .LVL61
-     /tmp/ccxROBC7.s:894    .text:0000000000000648 .LVL62
-     /tmp/ccxROBC7.s:901    .text:0000000000000650 .LVL63
-     /tmp/ccxROBC7.s:908    .text:0000000000000658 .LVL64
-     /tmp/ccxROBC7.s:928    .text:0000000000000674 .LVL65
-     /tmp/ccxROBC7.s:1007   .debug_info:0000000000000000 .Ldebug_info0
-GAS LISTING /tmp/ccxROBC7.s 			page 41
-
-
+     /tmp/ccqFA9Ez.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccqFA9Ez.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccqFA9Ez.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccqFA9Ez.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccqFA9Ez.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccqFA9Ez.s:23     .text:0000000000000000 algorithm
+     /tmp/ccqFA9Ez.s:217    .bss:0000000000000003 BusV
+     /tmp/ccqFA9Ez.s:224    .bss:0000000000000007 MainsReq
+     /tmp/ccqFA9Ez.s:189    .bss:0000000000000000 LS3
+     /tmp/ccqFA9Ez.s:196    .bss:0000000000000001 LS2
+     /tmp/ccqFA9Ez.s:202    .bss:0000000000000002 LS1
+     /tmp/ccqFA9Ez.s:209    .data:0000000000000000 BatteryDischI
+     /tmp/ccqFA9Ez.s:230    .bss:000000000000000b BusI
+     /tmp/ccqFA9Ez.s:236    .bss:000000000000000f Wind
+     /tmp/ccqFA9Ez.s:242    .bss:0000000000000013 PV
+     /tmp/ccqFA9Ez.s:249    .data:0000000000000002 BusVMAX
+     /tmp/ccqFA9Ez.s:256    .rodata:0000000000000000 Load3
+     /tmp/ccqFA9Ez.s:265    .rodata:0000000000000004 Load2
+     /tmp/ccqFA9Ez.s:274    .rodata:0000000000000008 Load1
+     /tmp/ccqFA9Ez.s:283    .rodata:000000000000000c BatteryChargeI
+     /tmp/ccqFA9Ez.s:289    .rodata:000000000000000d MainsMAX
 
 UNDEFINED SYMBOLS
-__addsf3
 __ltsf2
+__addsf3
 __gtsf2
-bat_pwr
-LS1_red
-LS2_red
-LS3_red
-LS2_green
-LS1_green
-LS3_green
+__gesf2
+__lesf2
 __do_copy_data
 __do_clear_bss

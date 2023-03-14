@@ -7,8 +7,8 @@
 
 volatile uint16_t adc_read;
 volatile bool calibrating, adc_rdy, sync, adc_mux_rdy;
-uint8_t TIMER0_TOP;
-uint8_t OFFSET;
+uint8_t TIMER0_TOP = 233;
+uint8_t phase_delay = 176;
 //  TOP value used to fine tune the phase delay to capture the mains AC phase.
 
 void init_timers(void)
@@ -17,12 +17,7 @@ void init_timers(void)
 	TCCR0B = 0x05;
 	TCNT0 = 0;
     TIMSK0 = 0;
-
-    TCCR2A = 0x02;
-    TCCR2B = 0x00; // Timer2 will be set to CTC mode with no prescaler to sync with the ADC clock.
-    OCR2A = 239;
-    TIMSK2 = 0x02; // Setting the interrupt on OCR2A
-
+    sync = false;
 	//set prescaler to 1024, count up to 116 (OCR0A),
 }
 
@@ -69,21 +64,25 @@ void calibrate_timer0(void)
     for(i = 0; i < 20; i++)
 	while(adc_read > 0){}
     //  The instant the ADC reaches 0 again, we are in phase, and can reset the timer.
-    OCR0A = OFFSET;
-    init_timers();
-    adts_enable();
-    ADMUX = 0x06;
     ADCSRA &= ~_BV(ADIE);
+    //  Turn off ADC interrupts
+    init_timers();
+    //  Start Timer
+    OCR0A = phase_delay;
     TIMSK0 |= _BV(OCIE0A);
     //ADCSRA &= ~_BV(ADIE);
     //  Reset timer 0 and turn off ADC interrupts
+    sync = false;
 	while(sync == false); //here we have reached a peak
 	TCNT0 = 0; //reset timer count
 	OCR0A = TIMER0_TOP;//output compare 1 cycle after the peak
-	sync = false;
+
+    ADMUX = 0x06;
+    adts_enable();
     ADCSRA |= _BV(ADIE);
 	calibrating = false;
     adc_rdy = false;
+    //  Restart ADC on Timer0 interrupts
 }
 
 void init_adc(void){

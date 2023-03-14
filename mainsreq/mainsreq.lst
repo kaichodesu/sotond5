@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccAzi2Qm.s 			page 1
+GAS LISTING /tmp/ccaYNlsK.s 			page 1
 
 
    1               		.file	"mainsreq.c"
@@ -12,7 +12,7 @@ GAS LISTING /tmp/ccAzi2Qm.s 			page 1
    9               		.text
   10               	.Ltext0:
   11               		.stabs	"gcc2_compiled.",60,0,0,0
-  12               		.stabs	"init_PWM:F(0,1)=(0,1)",36,0,5,init_PWM
+  12               		.stabs	"init_PWM:F(0,1)=(0,1)",36,0,6,init_PWM
   13               		.stabs	"uint8_t:t(0,2)=(0,3)=@s8;r(0,3);0;255;",128,0,126,0
   14               		.stabs	"void:t(0,1)",128,0,0,0
   15               		.stabs	"unsigned char:t(0,3)",128,0,0,0
@@ -20,92 +20,100 @@ GAS LISTING /tmp/ccAzi2Qm.s 			page 1
   17               		.type	init_PWM, @function
   18               	init_PWM:
    1:mainsreq.c    **** #include "mainsreq.h"
-   2:mainsreq.c    **** #include <avr/interrupt.h>
+   2:mainsreq.c    **** //PWM-----------------------------------------------------
    3:mainsreq.c    **** 
-   4:mainsreq.c    **** //PWM-----------------------------------------------------
-   5:mainsreq.c    **** void init_PWM(void)
-   6:mainsreq.c    **** {
-  19               		.stabn	68,0,6,.LM0-.LFBB1
+   4:mainsreq.c    **** int step;
+   5:mainsreq.c    **** 
+   6:mainsreq.c    **** void init_PWM(void)
+   7:mainsreq.c    **** {
+  19               		.stabn	68,0,7,.LM0-.LFBB1
   20               	.LM0:
   21               	.LFBB1:
   22               	/* prologue: function */
   23               	/* frame size = 0 */
   24               	/* stack size = 0 */
   25               	.L__stack_usage = 0
-   7:mainsreq.c    **** 	DDRD |= _BV(PD5);
-  26               		.stabn	68,0,7,.LM1-.LFBB1
+   8:mainsreq.c    **** 	DDRD |= _BV(PD5);
+  26               		.stabn	68,0,8,.LM1-.LFBB1
   27               	.LM1:
   28 0000 559A      		sbi 0xa,5
-   8:mainsreq.c    **** 	// TCCR1A = _BV(COM1A1)|_BV(WGM10)|_BV(WGM12);
-   9:mainsreq.c    **** 	//  Fast PWM
-  10:mainsreq.c    **** 	TCCR1B = _BV(CS10);
-  29               		.stabn	68,0,10,.LM2-.LFBB1
+   9:mainsreq.c    **** 	TCCR1A = _BV(COM1A0)
+  29               		.stabn	68,0,9,.LM2-.LFBB1
   30               	.LM2:
-  31 0002 81E0      		ldi r24,lo8(1)
-  32 0004 8093 8100 		sts 129,r24
-  11:mainsreq.c    **** 	PORTD |= _BV(PD5);
+  31 0002 81E4      		ldi r24,lo8(65)
+  32 0004 8093 8000 		sts 128,r24
+  10:mainsreq.c    **** 		 |_BV(WGM10);
+  11:mainsreq.c    **** 	TCCR1B = _BV(WGM13)
   33               		.stabn	68,0,11,.LM3-.LFBB1
   34               	.LM3:
-  35 0008 5D9A      		sbi 0xb,5
-  36               	/* epilogue start */
-  12:mainsreq.c    **** 
+  35 0008 82E1      		ldi r24,lo8(18)
+  36 000a 8093 8100 		sts 129,r24
+  37               	/* epilogue start */
+  12:mainsreq.c    **** 		 | _BV(CS11);
   13:mainsreq.c    **** }
-  37               		.stabn	68,0,13,.LM4-.LFBB1
-  38               	.LM4:
-  39 000a 0895      		ret
-  40               		.size	init_PWM, .-init_PWM
-  41               	.Lscope1:
-  42               		.stabs	"",36,0,0,.Lscope1-.LFBB1
-  43               		.stabs	"PWM:F(0,1)",36,0,15,PWM
-  44               		.stabs	"uint16_t:t(0,4)=(0,5)=r(0,5);0;0177777;",128,0,128,0
-GAS LISTING /tmp/ccAzi2Qm.s 			page 2
+  38               		.stabn	68,0,13,.LM4-.LFBB1
+  39               	.LM4:
+  40 000e 0895      		ret
+  41               		.size	init_PWM, .-init_PWM
+  42               	.Lscope1:
+  43               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+  44               		.stabs	"PWM:F(0,1)",36,0,15,PWM
+GAS LISTING /tmp/ccaYNlsK.s 			page 2
 
 
-  45               		.stabs	"unsigned int:t(0,5)",128,0,0,0
-  46               		.stabs	"duty_cycle:P(0,2)",64,0,15,24
-  47               	.global	PWM
-  48               		.type	PWM, @function
-  49               	PWM:
+  45               		.stabs	"uint16_t:t(0,4)=(0,5)=r(0,5);0;0177777;",128,0,128,0
+  46               		.stabs	"unsigned int:t(0,5)",128,0,0,0
+  47               		.stabs	"mainsreq:P(0,6)=r(0,0);4;0;",64,0,15,22
+  48               		.stabs	"float:t(0,6)",128,0,0,0
+  49               	.global	PWM
+  50               		.type	PWM, @function
+  51               	PWM:
   14:mainsreq.c    **** 
-  15:mainsreq.c    **** void PWM(uint8_t duty_cycle)
+  15:mainsreq.c    **** void PWM(float mainsreq)
   16:mainsreq.c    **** {
-  50               		.stabn	68,0,16,.LM5-.LFBB2
-  51               	.LM5:
-  52               	.LFBB2:
-  53               	/* prologue: function */
-  54               	/* frame size = 0 */
-  55               	/* stack size = 0 */
-  56               	.L__stack_usage = 0
-  17:mainsreq.c    ****     OCR1A = (uint8_t) duty_cycle;
-  57               		.stabn	68,0,17,.LM6-.LFBB2
-  58               	.LM6:
-  59 000c 90E0      		ldi r25,0
-  60               		.stabn	68,0,17,.LM7-.LFBB2
-  61               	.LM7:
-  62 000e 9093 8900 		sts 136+1,r25
-  63 0012 8093 8800 		sts 136,r24
-  64               	/* epilogue start */
-  18:mainsreq.c    **** }
-  65               		.stabn	68,0,18,.LM8-.LFBB2
-  66               	.LM8:
-  67 0016 0895      		ret
-  68               		.size	PWM, .-PWM
-  69               	.Lscope2:
-  70               		.stabs	"",36,0,0,.Lscope2-.LFBB2
-  71               		.stabs	"",100,0,0,.Letext0
-  72               	.Letext0:
-  73               		.ident	"GCC: (GNU) 11.2.0"
-GAS LISTING /tmp/ccAzi2Qm.s 			page 3
+  52               		.stabn	68,0,16,.LM5-.LFBB2
+  53               	.LM5:
+  54               	.LFBB2:
+  55               	/* prologue: function */
+  56               	/* frame size = 0 */
+  57               	/* stack size = 0 */
+  58               	.L__stack_usage = 0
+  17:mainsreq.c    ****     step = 10/((F_CPU)/(2*PRESCALER*FREQ));
+  59               		.stabn	68,0,17,.LM6-.LFBB2
+  60               	.LM6:
+  61 0010 1092 0000 		sts step+1,__zero_reg__
+  62 0014 1092 0000 		sts step,__zero_reg__
+  63 0018 0E94 0000 		call abort
+  64               		.size	PWM, .-PWM
+  65               	.Lscope2:
+  66               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+  67               	.global	step
+  68               		.section .bss
+  69               		.type	step, @object
+  70               		.size	step, 2
+  71               	step:
+  72 0000 0000      		.zero	2
+  73               		.stabs	"step:G(0,7)=r(0,7);-32768;32767;",32,0,4,0
+  74               		.stabs	"int:t(0,7)",128,0,0,0
+  75               		.text
+  76               		.stabs	"",100,0,0,.Letext0
+  77               	.Letext0:
+  78               		.ident	"GCC: (GNU) 11.2.0"
+  79               	.global __do_clear_bss
+GAS LISTING /tmp/ccaYNlsK.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 mainsreq.c
-     /tmp/ccAzi2Qm.s:2      *ABS*:000000000000003e __SP_H__
-     /tmp/ccAzi2Qm.s:3      *ABS*:000000000000003d __SP_L__
-     /tmp/ccAzi2Qm.s:4      *ABS*:000000000000003f __SREG__
-     /tmp/ccAzi2Qm.s:5      *ABS*:0000000000000000 __tmp_reg__
-     /tmp/ccAzi2Qm.s:6      *ABS*:0000000000000001 __zero_reg__
-     /tmp/ccAzi2Qm.s:18     .text:0000000000000000 init_PWM
-     /tmp/ccAzi2Qm.s:49     .text:000000000000000c PWM
+     /tmp/ccaYNlsK.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccaYNlsK.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccaYNlsK.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccaYNlsK.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccaYNlsK.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccaYNlsK.s:18     .text:0000000000000000 init_PWM
+     /tmp/ccaYNlsK.s:51     .text:0000000000000010 PWM
+     /tmp/ccaYNlsK.s:71     .bss:0000000000000000 step
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+abort
+__do_clear_bss
