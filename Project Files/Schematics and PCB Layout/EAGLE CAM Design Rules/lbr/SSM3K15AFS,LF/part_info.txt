@@ -1,0 +1,9 @@
+Manufacturer=Toshiba
+PartNumber=SSM3K15AFS,LF
+PartCategory=MOSFET (N-Channel)
+PackageCategory=SOT23 (3-Pin)
+PinCount=3
+Version=2.1
+Released=2018-11-15 05:06:56
+Downloaded=2023-02-16 07:34:50
+3D=Y

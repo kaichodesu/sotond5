@@ -1,0 +1,120 @@
+********************************
+* Copyright:                   *
+* Vishay Intertechnology, Inc. *
+********************************
+*Aug 01, 2016
+*ECN S16-1479, Rev. B
+*File Name: SiHB24N65E_PS_RC.txt and SiHB24N65E_PS_RC.lib
+*This document is intended as a SPICE modeling guideline and does not
+*constitute a commercial product datasheet. Designers should refer to the
+*appropriate datasheet of the same number for guaranteed specification
+*limits.
+.SUBCKT SiHB24N65E D G S
+M1 3 GX S S NMOS W= 2113196u L= 2u 
+M2 S GX S D PMOS W= 2113196u L= 4u 
+M2B S GX S 3 PMOS2 W= 2113196u L= 0.8u 
+R1 4 3 4.800e-02 TC=4.896e-03,-5.500e-05
+J1 D S 4 JD 2113196u 
+.MODEL JD NJF (VTO = -1.403e+01 BETA = 2.735e-01 LAMBDA = 1.000e-02 
++BETATCE = -1.65 VTOTC = -0.0819 IS = 1e-18 N = 10 )
+CGS GX S 1.932e-09 
+CGD GX D 15.277e-12 
+RG G GY 0.68 
+RTCV 100 S 1e6 TC=3.427e-03,0
+ETCV GX GY 100 200 1 
+ITCV S 100 1u 
+VTCV 200 S 1 
+DBD S D DBD 2113196u 
+**************************************************************** 
+.MODEL NMOS NMOS ( LEVEL = 3 TOX = 10e-8 
++ RS = 0 KP = 1.363e-05 NSUB = 8.828e+16 
++ KAPPA = 6.482e-01 NFS = 1.000e+12 
++ LD = 0 IS = 0 TPG = 1 )
+*************************************************************** 
+.MODEL PMOS PMOS ( LEVEL = 3 TOX = 10e-8 
++NSUB = 3.000e+13 IS = 0 TPG = -1    )
+.MODEL PMOS2 PMOS ( LEVEL = 3 TOX = 10e-8 
++NSUB = 3e13 IS = 0 TPG = -1 )
+**************************************************************** 
+.MODEL DBD D ( 
++FC = 0.1 TT = 4.330e-07 T_measured = 25 BV = 651
++RS = 1.157e-02 N = 1.455e+00 IS = 14.026e-10 
++EG = 1.204e+00 XTI = 3.615e-01 TRS1 = 2.979e-03
++CJO = 5.815e-09 VJ = 1.618e+00 M = 9.990e-01 ) 
+.ENDS 
+
+* source COMPONENT GENERATOR
+.SUBCKT SiHB24N65E_PS_RC D G S PARAMS: C2=1000 C3=1000 R1=1M C4=1000 R2=1M
++  C5=1000 R3=1M R4=1M R5=1M C1=1000
+R_RT5         J-C-TEMP-TANK N1122006  129.1430m TC=0,0 
+C_CF7         0 N1120938  103.0346m  TC=0,0 
+G_G7         0 JUNCTION-TEMPERATURE-1RC VALUE {
++  (V(Drain)*I(V_V_Drain)+V(Gate)*I(V_V_Gate)+V(Source)*I(V_V_Source)) }
+C_C10         N94536 N94151  {C4}  TC=0,0 
+C_C12         N95722 N95798  {C2}  TC=0,0 
+C_C5         N92368 N92773  {C2}  TC=0,0 
+C_CT5         J-C-TEMP-TANK N1122006  233.7601m  TC=0,0 
+V_V_Gate         G GATE 0VDC
+C_C8         N94061 N94123  {C2}  TC=0,0 
+R_R10         N94536 N94151  {R4} TC=0,0 
+R_R5         N92368 N92773  {R2} TC=0,0 
+C_CT8         N1122014 N1122030  235.2573m  TC=0,0 
+C_C3         N91434 N91125  {C2}  TC=0,0 
+R_R12         N95722 N95798  {R2} TC=0,0 
+R_R8         N94061 N94123  {R2} TC=0,0 
+C_CT7         N1122010 N1122014  62.5731m  TC=0,0 
+R_R3         N91434 N91125  {R2} TC=0,0 
+R_RF8         N1120944 N1120948  65.8791m TC=0,0 
+G_G6         0 J-C-TEMP-TANK VALUE {
++  (V(Drain)*I(V_V_Drain)+V(Gate)*I(V_V_Gate)+V(Source)*I(V_V_Source)) }
+C_C1         JUNCTION-TEMPERATURE-1RC N89014  {C1}  TC=0,0 
+R_RF5         J-C-TEMP-FILTER N1120932  160.9229m TC=0,0 
+C_C13         N95798 N95860  {C3}  TC=0,0 
+C_C9         N94123 N94536  {C3}  TC=0,0 
+R_R13         N95798 N95860  {R3} TC=0,0 
+R_RF7         N1120938 N1120944  82.6955m TC=0,0 
+R_RT8         N1122014 N1122030  132.6152m TC=0,0 
+X_U1         DRAIN GATE SOURCE SIHB24N65E 
+R_R9         N94123 N94536  {R3} TC=0,0 
+C_CF5         0 J-C-TEMP-FILTER  13.7113m  TC=0,0 
+C_C4         JUNCTION-TEMPERATURE-3RC N92368  {C1}  TC=0,0 
+C_CF6         0 N1120932  32.5283m  TC=0,0 
+C_C14         N95860 N96370  {C4}  TC=0,0 
+C_C11         JUNCTION-TEMPERATURE-5RC N95722  {C1}  TC=0,0 
+C_C7         JUNCTION-TEMPERATURE-4RC N94061  {C1}  TC=0,0 
+R_R1         JUNCTION-TEMPERATURE-1RC N89014  {R1} TC=0,0 
+C_C2         JUNCTION-TEMPERATURE-2RC N91434  {C1}  TC=0,0 
+R_R4         JUNCTION-TEMPERATURE-3RC N92368  {R1} TC=0,0 
+R_RF6         N1120932 N1120938  190.5025m TC=0,0 
+R_R14         N95860 N96370  {R4} TC=0,0 
+R_R11         JUNCTION-TEMPERATURE-5RC N95722  {R1} TC=0,0 
+C_CT6         N1122006 N1122010  20.4418m  TC=0,0 
+R_R7         JUNCTION-TEMPERATURE-4RC N94061  {R1} TC=0,0 
+R_R2         JUNCTION-TEMPERATURE-2RC N91434  {R1} TC=0,0 
+C_C15         N96370 N95888  {C5}  TC=0,0 
+V_V9         N92392 0 {TEMP}
+R_RT7         N1122010 N1122014  154.9629m TC=0,0 
+C_CF8         0 N1120944  613.9810u  TC=0,0 
+V_V_Source         SOURCE S 0VDC
+V_V11         N95888 0 {TEMP}
+V_V10         N94151 0 {TEMP}
+R_R15         N96370 N95888  {R5} TC=0,0 
+V_V8         N91125 0 {TEMP}
+C_C6         N92773 N92392  {C3}  TC=0,0 
+V_V4         N1122030 0 {TEMP}
+G_G4         0 J-C-TEMP-FILTER VALUE {
++  (V(Drain)*I(V_V_Drain)+V(Gate)*I(V_V_Gate)+V(Source)*I(V_V_Source)) }
+G_G9         0 JUNCTION-TEMPERATURE-3RC VALUE {
++  (V(Drain)*I(V_V_Drain)+V(Gate)*I(V_V_Gate)+V(Source)*I(V_V_Source)) }
+R_R6         N92773 N92392  {R3} TC=0,0 
+G_G11         0 JUNCTION-TEMPERATURE-5RC VALUE {
++  (V(Drain)*I(V_V_Drain)+V(Gate)*I(V_V_Gate)+V(Source)*I(V_V_Source)) }
+V_V7         N89014 0 {TEMP}
+G_G10         0 JUNCTION-TEMPERATURE-4RC VALUE {
++  (V(Drain)*I(V_V_Drain)+V(Gate)*I(V_V_Gate)+V(Source)*I(V_V_Source)) }
+G_G8         0 JUNCTION-TEMPERATURE-2RC VALUE {
++  (V(Drain)*I(V_V_Drain)+V(Gate)*I(V_V_Gate)+V(Source)*I(V_V_Source)) }
+V_V_Drain         D DRAIN 0VDC
+R_RT6         N1122006 N1122010  83.2789m TC=0,0 
+V_V6         N1120948 0 {TEMP}
+.ENDS

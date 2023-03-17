@@ -1,0 +1,44 @@
+********************************
+* Copyright:                   *
+* Vishay Intertechnology, Inc. *
+********************************
+*Aug 01, 2016
+*ECN S16-1479, Rev. B
+*File Name: SiHB24N65E_PS.txt and SiHB24N65E_PS.lib
+*This document is intended as a SPICE modeling guideline and does not
+*constitute a commercial product datasheet. Designers should refer to the
+*appropriate datasheet of the same number for guaranteed specification
+*limits.
+.SUBCKT SiHB24N65E D G S
+M1 3 GX S S NMOS W= 2113196u L= 2u 
+M2 S GX S D PMOS W= 2113196u L= 4u 
+M2B S GX S 3 PMOS2 W= 2113196u L= 0.8u 
+R1 4 3 4.800e-02 TC=4.896e-03,-5.500e-05
+J1 D S 4 JD 2113196u 
+.MODEL JD NJF (VTO = -1.403e+01 BETA = 2.735e-01 LAMBDA = 1.000e-02 
++BETATCE = -1.65 VTOTC = -0.0819 IS = 1e-18 N = 10 )
+CGS GX S 1.932e-09 
+CGD GX D 15.277e-12 
+RG G GY 0.68 
+RTCV 100 S 1e6 TC=3.427e-03,0
+ETCV GX GY 100 200 1 
+ITCV S 100 1u 
+VTCV 200 S 1 
+DBD S D DBD 2113196u 
+**************************************************************** 
+.MODEL NMOS NMOS ( LEVEL = 3 TOX = 10e-8 
++ RS = 0 KP = 1.363e-05 NSUB = 8.828e+16 
++ KAPPA = 6.482e-01 NFS = 1.000e+12 
++ LD = 0 IS = 0 TPG = 1 )
+*************************************************************** 
+.MODEL PMOS PMOS ( LEVEL = 3 TOX = 10e-8 
++NSUB = 3.000e+13 IS = 0 TPG = -1    )
+.MODEL PMOS2 PMOS ( LEVEL = 3 TOX = 10e-8 
++NSUB = 3e13 IS = 0 TPG = -1 )
+**************************************************************** 
+.MODEL DBD D ( 
++FC = 0.1 TT = 4.330e-07 T_measured = 25 BV = 651
++RS = 1.157e-02 N = 1.455e+00 IS = 14.026e-10 
++EG = 1.204e+00 XTI = 3.615e-01 TRS1 = 2.979e-03
++CJO = 5.815e-09 VJ = 1.618e+00 M = 9.990e-01 ) 
+.ENDS 

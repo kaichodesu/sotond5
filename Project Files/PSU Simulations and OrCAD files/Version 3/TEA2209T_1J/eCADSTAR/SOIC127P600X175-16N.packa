@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "TEA2209T_1J"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2022-12-27-12:55:45)
+    (mountForm default
+        (footprintRef "SOIC127P600X175-16N")
+        (spec "System")
+    )
+)

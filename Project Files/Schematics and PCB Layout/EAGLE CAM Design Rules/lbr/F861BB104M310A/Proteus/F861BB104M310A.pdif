@@ -1,0 +1,126 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "F861BB104M310A"
+   (description "F861, Film, Metallized Polypropylene, Safety, 0.1 uF, 20%, 310 VAC, 310 VAC (X2), 310 VAC, 630 VDC, 110C, -40C, 110C, 0.3 % , 30 GOhms, 400 V/us, 2, 1.239 g, 18mm, 10mm, 4mm, Lead Spacing = 15mm, 1500, 104  Weeks")
+   (family "CAP")
+   (package "F861BB104M310A")
+   (attribute "Datasheet Link" "https://content.kemet.com/datasheets/KEM_F3001_F861_X2_310.pdf")
+   (attribute "Geometry.Height" "10mm")
+   (attribute "Mouser Part Number" "")
+   (attribute "Mouser Price/Stock" "")
+   (attribute "Manufacturer_Name" "KEMET")
+   (attribute "Manufacturer_Part_Number" "F861BB104M310A")
+   (gate
+    (symbol "F861BB104M310A")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+   )
+  )
+  (symbol "F861BB104M310A"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 220 100) (pt 220 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 280 100) (pt 280 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 200 0) (pt 220 0))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 280 0) (pt 300 0))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 500 0) (rot 0) (mir X) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "F861BB104M310A"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1.5 2)
+      (pt 16.5 2)
+      (pt 16.5 -2)
+      (pt -1.5 -2)
+      (pt -1.5 2))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -1.5 2)
+      (pt 16.5 2)
+      (pt 16.5 -2)
+      (pt -1.5 -2)
+      (pt -1.5 2))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.5 3)
+      (pt 17.5 3)
+      (pt 17.5 -3)
+      (pt -2.5 -3)
+      (pt -2.5 3))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2 0.2)
+      (arc (pt -2.000 0.200) (pt -2.100 0.150) (pt -2.000 0.250) (start 180.0) (sweep .0))
+      (pt -2.1 0.2)
+      (arc (pt -2.100 0.200) (pt -2.100 0.150) (pt -2.000 0.250) (start 180.0) (sweep 180.0))
+      (pt -2 0.2))))
+   (leg 1 (pt 0.000 0.000) (padstack 0))
+   (leg 2 (pt 15.000 0.000) (padstack 2))
+   (padstack 0
+    (hole 1)
+    (plated true)
+    (pad (layer TCOP) (square 1.500))
+    (pad (layer INNER) (round 1.500))
+    (pad (layer BCOP) (square 1.500))
+   )
+   (padstack 2
+    (hole 1)
+    (plated true)
+    (pad (layer TCOP) (round 1.500))
+    (pad (layer INNER) (round 1.500))
+    (pad (layer BCOP) (round 1.500))
+   )
+   (model "F861BB104M310A.stp"
+    (euler 90 0 0)
+    (offset -1.25 1.75 0.44999998807907104)
+   )
+  )
+ )
+)

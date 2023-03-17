@@ -1,0 +1,26 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model ACGRAT103L-HF
+#/1228088/1061851/2.49/2/4/Diode
+DEF ACGRAT103L-HF D 0 30 Y Y 1 F N
+F0 "D" 450 200 50 H V L CNN
+F1 "ACGRAT103L-HF" 450 100 50 H V L CNN
+F2 "DIOC4522X116N" 450 0 50 H I L CNN
+F3 "https://4donline.ihs.com/images/VipMasterIC/IC/COMC/COMC-S-A0003293254/COMC-S-A0003293254-1.pdf?hkey=EF798316E3902B6ED9A73243A3159BB0" 450 -100 50 H I L CNN
+F4 "Rectifiers LOW VF 1A 600V AEC-Q101" 450 -200 50 H I L CNN "Description"
+F5 "1.16" 450 -300 50 H I L CNN "Height"
+F6 "750-ACGRAT103L-HF" 450 -400 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Comchip-Technology/ACGRAT103L-HF?qs=vdiGlTBG6Ju%2Fx90PaXpRhA%3D%3D" 450 -500 50 H I L CNN "Mouser Price/Stock"
+F8 "Comchip Technology" 450 -600 50 H I L CNN "Manufacturer_Name"
+F9 "ACGRAT103L-HF" 450 -700 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X ~ 1 0 0 100 R 50 50 0 0 P
+X ~ 2 600 0 100 L 50 50 0 0 P
+P 2 0 1 6 200 100 200 -100 N
+P 2 0 1 6 100 0 200 0 N
+P 2 0 1 6 400 0 500 0 N
+P 4 0 1 10 200 0 400 100 400 -100 200 0 F
+ENDDRAW
+ENDDEF
+#
+#End Library

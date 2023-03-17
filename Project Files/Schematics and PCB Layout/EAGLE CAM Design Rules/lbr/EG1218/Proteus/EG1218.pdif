@@ -1,0 +1,113 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "EG1218"
+   (description "Slide Switches PC MNT 3 PIN SLIDE")
+   (family "SWI")
+   (package "EG1218")
+   (attribute "Datasheet Link" "https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/119/EG.pdf")
+   (attribute "Geometry.Height" "7.4mm")
+   (attribute "Mouser Part Number" "612-EG1218")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/E-Switch/EG1218?qs=xDsBkp9LkocT0c8K%252B5e%2FgA%3D%3D")
+   (attribute "Manufacturer_Name" "E-Switch")
+   (attribute "Manufacturer_Part_Number" "EG1218")
+   (gate
+    (symbol "EG1218")
+    (pin "NC" 1 NC)
+    (pin "COMM" 2 PS)
+    (pin "NO" 3 PS)
+   )
+  )
+  (symbol "EG1218"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 700 100) (pt 700 -300) (pt 200 -300) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "EG1218"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -3.3 2)
+      (pt 8.3 2)
+      (pt 8.3 -2)
+      (pt -3.3 -2)
+      (pt -3.3 2))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -3.3 2)
+      (pt 8.3 2)
+      (pt 8.3 -2)
+      (pt -3.3 -2)
+      (pt -3.3 2))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -5.5 3)
+      (pt 9.3 3)
+      (pt 9.3 -3)
+      (pt -5.5 -3)
+      (pt -5.5 3))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -4.5 0)
+      (arc (pt -4.500 0.000) (pt -4.500 -0.100) (pt -4.300 0.100) (start 180.0) (sweep 180.0))
+      (pt -4.3 0)
+      (arc (pt -4.300 0.000) (pt -4.500 -0.100) (pt -4.300 0.100) (start 180.0) (sweep .0))
+      (pt -4.5 0))))
+   (leg 1 (pt 0.000 0.000) (padstack 0))
+   (leg 2 (pt 2.500 0.000) (padstack 0))
+   (leg 3 (pt 5.000 0.000) (padstack 0))
+   (padstack 0
+    (hole 1)
+    (plated true)
+    (pad (layer TCOP) (round 1.500))
+    (pad (layer INNER) (round 1.500))
+    (pad (layer BCOP) (round 1.500))
+   )
+   (model "EG1218.stp"
+    (euler 90 0 0)
+    (offset 2.5399999618530273 0 3.0299999713897705)
+   )
+  )
+ )
+)

@@ -1,0 +1,9 @@
+Manufacturer=TAIYO YUDEN
+PartNumber=EMK325ABJ107MM-T
+PartCategory=Capacitor
+PackageCategory=Capacitor Chip Non-polarised
+PinCount=2
+Version=5.1
+Released=2017-12-08 05:18:31
+Downloaded=2023-02-13 22:10:51
+3D=Y

@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "FSM4JH"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "FSM4JH")
+        (spec "default")
+    )
+)

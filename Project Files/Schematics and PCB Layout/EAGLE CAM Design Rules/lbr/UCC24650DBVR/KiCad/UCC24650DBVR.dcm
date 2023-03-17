@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP UCC24650DBVR
+D 200-V Wake-up Monitor for Fast Transient Primary-side Regulation
+K
+F http://www.ti.com/lit/gpn/ucc24650
+$ENDCMP
+#
+#End Doc Library

@@ -1,0 +1,44 @@
+*****************************************************************
+******STMicroelectronics MOSFET, IGBT and Bipolar Library *******
+*****************************************************************
+*																*
+* Models provided by STMicroelectronics are not guaranteed to	*
+* fully represent all the specifications and operating			*
+* characteristics of the product behavior that they reproduce.	*
+* The model describes the characteristics of a typical device.	*
+* In all cases, the current product data sheet contains all		*
+* information to be used like final design guidelines and the	*
+* only actual performance specification.						*
+* Altough models can be a useful tool in evaluating device		*
+* performance, they cannot model exact device performance under	*
+* all conditions.												*
+* STMicroelectronics therefore does not assume any				*
+* responsibility arising from their use.						*
+* STMicroelectronics reserves the right to change models		*
+* without prior notice.											*
+*																*
+*****************************************************************
+
+.SUBCKT STD12N65M2_TN  Tj Tcase
+*******************************************
+******    Thermal Net Junction Case  ******
+*******************************************
+R_Gpower 0 TJ 1E6
+Rx Tj Tj1 0.1u
+
+.PARAM Kth=1.25
+
+Rth1 Tj1 Th1	{55E-04*Kth}
+Rth2 Th1 Th2	{11E-02*Kth}
+Rth3 Th2 Th3	{43E-02*Kth}
+Rth4 Th3 Th4	{175E-03*Kth}
+Rth5 Th4 Tcase	{0.425*Kth}
+
+Cth1 Tj1 0		{1E-05/Kth}
+Cth2 Th1 0		{15E-04/Kth}
+Cth3 Th2 0		{6E-03/Kth}
+Cth4 Th3 0		{50E-03/Kth}
+Cth5 Th4 0		{0.255/Kth}
+Cth6 Tcase 0	0.255 
+*******************************************
+.ENDS STD12N65M2_TN

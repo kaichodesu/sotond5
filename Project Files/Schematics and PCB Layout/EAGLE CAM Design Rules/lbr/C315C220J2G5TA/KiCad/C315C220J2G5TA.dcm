@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP C315C220J2G5TA
+D GoldMax 300 Comm C0G, Ceramic, 22 pF, 5%, 200 VDC, 500 VDC, 125C, -55C, C0G, GoldMax, Commercial Standard, 0.1 % , 100 GOhms, 3.81mm, 3.14mm, 2.54mm, Lead Spacing = 2.54mm, 7mm, 0.51mm, 500, 120
+K
+F https://content.kemet.com/datasheets/KEM_C1049_GOLDMAX_C0G.pdf
+$ENDCMP
+#
+#End Doc Library

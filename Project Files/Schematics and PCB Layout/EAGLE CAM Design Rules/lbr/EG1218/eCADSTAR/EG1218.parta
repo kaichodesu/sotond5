@@ -1,0 +1,70 @@
+(Japanese_coding: sjis)
+(function "ECS_12863335"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2020-09-17-08:32:10)
+    (utime 2021-10-22-06:29:00)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+        (port "3" (symbPinId 3) (portType INOUT))
+    )
+    (property "symbolName" "EG1218")
+)
+
+
+(pinAssign "ECS_12863335"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2020-09-17-08:32:10)
+    (utime 2021-10-22-06:29:00)
+    (interface
+        (port "1" (symbPinId 1) (portName "NC") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "COMM") (portType INOUT))
+        (port "3" (symbPinId 3) (portName "NO") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_12863335")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+                (port "3" (match "3"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "EG1218")
+)
+
+
+(part "EG1218"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2020-09-17-08:32:10)
+    (utime 2021-10-22-06:29:00)
+    (packageRef "EG1218")
+    (pinAssignRef "ECS_12863335")
+    (interface
+        (port "1" (symbPinId 1) (portName "NC") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "COMM") (portType INOUT))
+        (port "3" (symbPinId 3) (portName "NO") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "YES")
+    (property "refDesPrefix" "S")
+    (property "description" "Slide Switches PC MNT 3 PIN SLIDE")
+    (property "Mouser_Part_Number" "612-EG1218")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/E-Switch/EG1218?qs=xDsBkp9LkocT0c8K%252B5e%2FgA%3D%3D")
+    (property "Manufacturer_Name" "E-Switch")
+    (property "Manufacturer_Part_Number" "EG1218")
+    (property "Datasheet_Link" "https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/119/EG.pdf")
+    (property "compAreaTopHeight" 7.4)
+)
+
+

@@ -1,0 +1,20 @@
+.750311771 :1 ;Power Transformers WE-FB Flyback 500uH 3A 15V
+"750311771"
+*STM PS
+*NGS
+*PLB 1="1" 2="2" 3="3" 4="4" 5="5" 6="6" 7="7" 8="8" 9="9" 10="10" 11="11" 12="12"
+*MXP 12
+*DFN 750311771
+~!Manufacturer_Name (Wurth Elektronik)
+~!Manufacturer_Part_Number (750311771)
+~!Mouser Part Number (710-750311771)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/750311771?qs=J4sk5G6CMwYUnCXRsU%2FeCw%3D%3D)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Mouser Testing Part Number (-)
+~!Mouser Testing Price/Stock (-)
+~!Link Datasheet (https://katalog.we-online.com/pbs/datasheet/750311771.pdf)
+~!Height (13.69mm)
+~!3D_Model (750311771)
+"750311771"
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 9.1!U 10.1!U 11.1!U 12.1!U 

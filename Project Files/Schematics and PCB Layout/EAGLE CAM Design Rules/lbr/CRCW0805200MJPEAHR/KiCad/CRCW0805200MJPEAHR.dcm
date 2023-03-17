@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CRCW0805200MJPEAHR
+D Res Thick Film 0805 200M Ohm 5% 0.125W(1/8W) +/-500ppm/C Pad SMD T/R
+K
+F https://www.arrow.com/en/products/crcw0805200mjpeahr/vishay
+$ENDCMP
+#
+#End Doc Library

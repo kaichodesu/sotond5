@@ -1,0 +1,16 @@
+.CR1206-FX-6491ELF :1 ;Thick Film Resistors - SMD 6.49K 1%
+RESC3216X75N
+*STM R
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN CR1206-FX-6491ELF
+~!Mouser Part Number (652-CR1206FX-6491ELF)
+~!Link Mouser Price/Stock (https://www.mouser.com/Search/Refine.aspx?Keyword=652-CR1206FX-6491ELF)
+~!Manufacturer_Name (Bourns)
+~!Manufacturer_Part_Number (CR1206-FX-6491ELF)
+~!Link Datasheet (https://componentsearchengine.com/Datasheets/1/CR1206-FX-6491ELF.pdf)
+~!Height (0.75mm)
+~!3D_Model (CR1206-FX-6491ELF)
+CR1206-FX-6491ELF
+1.1!U 2.1!U 

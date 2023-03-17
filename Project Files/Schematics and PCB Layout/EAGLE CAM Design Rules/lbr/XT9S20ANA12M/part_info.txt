@@ -1,0 +1,9 @@
+Manufacturer=Vishay
+PartNumber=XT9S20ANA12M
+PartCategory=Crystal or Oscillator
+PackageCategory=Other
+PinCount=2
+Version=1.5
+Released=2019-09-13 16:09:45
+Downloaded=2023-02-16 01:08:31
+3D=Y

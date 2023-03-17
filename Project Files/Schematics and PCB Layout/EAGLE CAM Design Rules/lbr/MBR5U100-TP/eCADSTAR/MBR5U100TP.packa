@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "MBR5U100-TP"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2022-06-29-07:31:16)
+    (mountForm default
+        (footprintRef "MBR5U100TP")
+        (spec "System")
+    )
+)

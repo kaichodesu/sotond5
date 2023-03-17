@@ -1,0 +1,16 @@
+.MCP1799-3302H_DB :1 ;LDO Voltage Regulators High Voltage LDO 3.3V 3-Ld SOT-223 Tube
+SOT230P700X180-4N
+*STM IC
+*NGS
+*PLB 1="VIN" 2="GND_1" 3="VOUT" 4="GND_2"
+*MXP 4
+*DFN MCP1799-3302H_DB
+~!Mouser Part Number (579-MCP1799-3302H/DB)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Microchip-Technology-Atmel/MCP1799-3302H-DB?qs=BJlw7L4Cy7%2Fcz2TtAqJdSg%3D%3D)
+~!Manufacturer_Name (Microchip)
+~!Manufacturer_Part_Number (MCP1799-3302H/DB)
+~!Link Datasheet (https://datasheet.datasheetarchive.com/originals/distributors/Datasheets_SAMA/2add369fe97b3d22cf8b2b374aafb195.pdf)
+~!Height (1.8mm)
+~!3D_Model (MCP1799-3302H_DB)
+MCP1799-3302H_DB
+1.1!U 2.1!U 3.1!U 4.1!U 

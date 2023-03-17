@@ -1,0 +1,70 @@
+(Japanese_coding: sjis)
+(function "ECS_629302"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2021-03-29-16:03:32)
+    (utime 2021-03-30-06:25:27)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "890334024005")
+)
+
+
+(pinAssign "ECS_629302"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2021-03-29-16:03:32)
+    (utime 2021-03-30-06:25:27)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_629302")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "890334024005")
+)
+
+
+(part "890334024005"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2021-03-29-16:03:32)
+    (utime 2021-03-30-06:25:27)
+    (packageRef "890334024005")
+    (pinAssignRef "ECS_629302")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "C")
+    (property "description" "Wurth Elektronik 470nF Polypropylene Capacitor PP 310V ac +/-10% Tolerance WCAP-FTXX Series")
+    (property "Manufacturer_Name" "Wurth Elektronik")
+    (property "Manufacturer_Part_Number" "890334024005")
+    (property "Mouser_Part_Number" "710-890334024005")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/890334024005?qs=pceeu5JH%2FH931a333DfnpQ%3D%3D")
+    (property "Arrow_Part_Number" "")
+    (property "Arrow_Price/Stock" "")
+    (property "Mouser_Testing_Part_Number" "")
+    (property "Mouser_Testing_Price/Stock" "")
+    (property "Datasheet_Link" "https://katalog.we-online.de/pbs/datasheet/890334024005.pdf")
+    (property "compAreaTopHeight" 16.5)
+)
+
+

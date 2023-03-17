@@ -1,0 +1,9 @@
+Manufacturer=Panasonic
+PartNumber=ERA-6VEB1000V
+PartCategory=Resistor
+PackageCategory=Other
+PinCount=2
+Version=2.1
+Released=2021-09-05 18:27:21
+Downloaded=2023-02-13 00:03:40
+3D=Y

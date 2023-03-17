@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "MBR5U100TP"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "MBR5U100TP")
+        (spec "default")
+    )
+)

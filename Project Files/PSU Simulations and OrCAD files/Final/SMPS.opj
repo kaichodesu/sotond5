@@ -1,0 +1,259 @@
+(ExpressProject "SMPS"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S028 (4018475)  [3/9/2022]-[02/25/23]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (Allegro Netlist Directory "allegro")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify)
+    (File ".\smps.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (RootChangedForceReNetlist "x"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\smps-pspicefiles\schematic1\schematic1.net"
+      (Type "Report"))
+    (File ".\smps-pspicefiles\active bleed\active bleed.net"
+      (Type "Report"))
+    (File ".\smps-pspicefiles\opamp\opamp.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\smps-pspicefiles\schematic1\main.sim"
+        (DisplayName "SCHEMATIC1-Main")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\smps-pspicefiles\schematic1\double.sim"
+        (DisplayName "SCHEMATIC1-Double")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\smps-pspicefiles\schematic1\bleed.sim"
+        (DisplayName "SCHEMATIC1-Bleed")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\smps-pspicefiles\active bleed\bleed.sim"
+        (DisplayName "Active Bleed-Bleed")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\smps-pspicefiles\opamp\test.sim"
+        (DisplayName "OPAMP-test")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\smps-pspicefiles\schematic1\300n.sim"
+        (DisplayName "SCHEMATIC1-300n")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\smps-pspicefiles\schematic1\dischargetest.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\smps-pspicefiles\schematic1\dischargetest.sim"
+        (DisplayName "SCHEMATIC1-dischargetest")
+        (Type "PSpice Profile")))
+    (Folder "Stimulus Files")
+    (Folder "Include Files")
+    (Folder "Model Libraries"
+      (File ".\smps-pspicefiles\smps.lib"
+        (DisplayName ".\smps-pspicefiles\smps.lib")
+        (Type "PSpiceLibrary"))
+      (File
+         ".\3rd party spice models\simulation_model_coolmos_p7_mosfet_700v_spice.lib"
+        (DisplayName
+           ".\3rd party spice models\simulation_model_coolmos_p7_mosfet_700v_spice.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\3rd party spice models\ucc24650_netlist.lib"
+        (DisplayName ".\3rd party spice models\ucc24650_netlist.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\3rd party spice models\ucc28730_netlist.lib"
+        (DisplayName ".\3rd party spice models\ucc28730_netlist.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\3rd party spice models\st_field_effect_ rectifier_v7.lib"
+        (DisplayName
+           ".\3rd party spice models\st_field_effect_ rectifier_v7.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\3rd party spice models\we-fb.lib"
+        (DisplayName ".\3rd party spice models\we-fb.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\transformer.lib"
+        (DisplayName ".\transformer.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\3rd party spice models\stn9360.lib"
+        (DisplayName ".\3rd party spice models\stn9360.lib")
+        (Type "PSpiceLibrary"))
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (Folder "Logs")
+  (PartMRUSelector
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (LM324/NS
+      (FullPartName "LM324/NS.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\NAT_SEMI.OLB")
+      (DeviceIndex "0"))
+    (Dbreak
+      (FullPartName "Dbreak.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (VSIN
+      (FullPartName "VSIN.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (POWER_DIODE_P
+      (FullPartName "POWER_DIODE_P.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICEMODELAPP\POWERDIODE\HYBRID\SUPPORTFILES\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (STN9360
+      (FullPartName "STN9360.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5 PSU\3RD PARTY SPICE MODELS\STN9360.OLB")
+      (DeviceIndex "0"))
+    (zener
+      (FullPartName "zener.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICEMODELAPP\ZENER\HYBRID\SUPPORTFILES\ZENER.OLB")
+      (DeviceIndex "0"))
+    (POWER_PMOS_P
+      (FullPartName "POWER_PMOS_P.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICEMODELAPP\POWERMOSFET\HYBRID\SUPPORTFILES\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (QbreakP
+      (FullPartName "QbreakP.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (FB_EFD25_750311771
+      (FullPartName "FB_EFD25_750311771.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5 PSU\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\WE-FB.OLB")
+      (DeviceIndex "0"))
+    (IPN70R2K0P7S_L1
+      (FullPartName "IPN70R2K0P7S_L1.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5 PSU\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\SIMULATION_MODEL_COOLMOS_P7_MOSFET_700V_SPICE.OLB")
+      (DeviceIndex "0"))
+    (UCC24650
+      (FullPartName "UCC24650.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5 PSU\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\UCC24650_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (UCC28730_NETLIST
+      (FullPartName "UCC28730_NETLIST.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5 PSU\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\UCC28730_NETLIST.OLB")
+      (DeviceIndex "0")))
+  (LastUsedLibraryBrowseDirectory
+     "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\D5 PSU\3rd Party SPICE models")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps.dsn")
+      (Path "Design Resources"
+         "d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps.dsn"
+         "SCHEMATIC1")
+      (Path "Design Resources"
+         "d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps.dsn"
+         "3900u")
+      (Path "Design Resources"
+         "d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps.dsn"
+         "Active Bleed")
+      (Path "Design Resources"
+         "d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps.dsn"
+         "DC ONLY")
+      (Path "Design Resources"
+         "d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps.dsn"
+         "OPAMP")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Model Libraries")
+      (Path "PSpice Resources" "Simulation Profiles")
+      (Select "Design Resources"
+         "d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps.dsn"
+         "OPAMP" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 153 0 1115"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2305 24 1133")
+        (Scroll "550 168")
+        (Zoom "140")
+        (Occurrence "/"))
+      (Path
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5 PSU\SMPS.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2305 24 1133")
+        (Scroll "-425 -12")
+        (Zoom "146"))
+      (Path
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5 PSU\SMPS.DSN")
+      (Schematic "DC ONLY")
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2305 24 1133")
+        (Scroll "-425 -12")
+        (Zoom "146"))
+      (Path
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5 PSU\SMPS.DSN")
+      (Schematic "Active Bleed")
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2305 24 1133")
+        (Scroll "-425 -12")
+        (Zoom "146"))
+      (Path
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5 PSU\SMPS.DSN")
+      (Schematic "3900u")
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2305 24 1133")
+        (Scroll "-425 -12")
+        (Zoom "146"))
+      (Path
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5 PSU\SMPS.DSN")
+      (Schematic "OPAMP")
+      (Page "PAGE1")))
+  (MPSSessionName "kaicho"))

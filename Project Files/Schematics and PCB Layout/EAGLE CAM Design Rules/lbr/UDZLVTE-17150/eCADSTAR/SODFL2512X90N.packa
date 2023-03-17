@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "UDZLVTE-17150"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2021-02-15-07:26:30)
+    (mountForm default
+        (footprintRef "SODFL2512X90N")
+        (spec "System")
+    )
+)

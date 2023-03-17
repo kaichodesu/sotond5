@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ACGRAT103L-HF
+D Rectifiers LOW VF 1A 600V AEC-Q101
+K
+F https://4donline.ihs.com/images/VipMasterIC/IC/COMC/COMC-S-A0003293254/COMC-S-A0003293254-1.pdf?hkey=EF798316E3902B6ED9A73243A3159BB0
+$ENDCMP
+#
+#End Doc Library

@@ -1,0 +1,73 @@
+(Japanese_coding: sjis)
+(function "ECS_520772"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-12-31-00:01:05)
+    (utime 2020-11-30-19:47:12)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+        (port "3" (symbPinId 3) (portType INOUT))
+        (port "4" (symbPinId 4) (portType INOUT))
+    )
+    (property "symbolName" "BAS3007ARPPE6327HTSA1")
+)
+
+
+(pinAssign "ECS_520772"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-12-31-00:01:05)
+    (utime 2020-11-30-19:47:12)
+    (interface
+        (port "1" (symbPinId 1) (portName "-") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "AC_1") (portType INOUT))
+        (port "3" (symbPinId 3) (portName "AC_2") (portType INOUT))
+        (port "4" (symbPinId 4) (portName "+") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_520772")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+                (port "3" (match "3"))
+                (port "4" (match "4"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "BAS3007ARPPE6327HTSA1")
+)
+
+
+(part "BAS3007ARPPE6327HTSA1"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-12-31-00:01:05)
+    (utime 2020-11-30-19:47:12)
+    (packageRef "BAS3007ARPPE6327HTSA1")
+    (pinAssignRef "ECS_520772")
+    (interface
+        (port "1" (symbPinId 1) (portName "-") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "AC_1") (portType INOUT))
+        (port "3" (symbPinId 3) (portName "AC_2") (portType INOUT))
+        (port "4" (symbPinId 4) (portName "+") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "D")
+    (property "description" "Infineon BAS3007ARPPE6327HTSA1 SMT Schottky Diode, 30V 900mA, 4-Pin SOT-143")
+    (property "Mouser_Part_Number" "726-BAS3007A-RPPE6")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Infineon-Technologies/BAS3007ARPPE6327HTSA1?qs=OwbwYO03UsIpevUvLWxseg%3D%3D")
+    (property "Manufacturer_Name" "Infineon")
+    (property "Manufacturer_Part_Number" "BAS3007ARPPE6327HTSA1")
+    (property "Datasheet_Link" "https://www.mouser.co.uk/datasheet/2/196/Infineon-BAS3007ASERIES-DS-v01_01-en-1225497.pdf")
+)
+
+

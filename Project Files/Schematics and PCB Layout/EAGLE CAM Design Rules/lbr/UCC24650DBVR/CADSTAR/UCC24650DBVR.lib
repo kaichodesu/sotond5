@@ -1,0 +1,20 @@
+.UCC24650DBVR :1 ;200-V Wake-up Monitor for Fast Transient Primary-side Regulation
+SOT95P280X145-5N
+*STM IC
+*NGS
+*PLB 1="VDD" 2="GND" 3="ENS" 4="N.C." 5="WAKE"
+*MXP 5
+*DFN UCC24650DBVR
+~!Manufacturer_Name (Texas Instruments)
+~!Manufacturer_Part_Number (UCC24650DBVR)
+~!Mouser Part Number (595-UCC24650DBVR)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Texas-Instruments/UCC24650DBVR?qs=Lb6%252B0IsOw48DAHpAvVALpw%3D%3D)
+~!Arrow Part Number (UCC24650DBVR)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/ucc24650dbvr/texas-instruments)
+~!Mouser Testing Part Number (-)
+~!Mouser Testing Price/Stock (-)
+~!Link Datasheet (http://www.ti.com/lit/gpn/ucc24650)
+~!Height (1.45mm)
+~!3D_Model (UCC24650DBVR)
+UCC24650DBVR
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 

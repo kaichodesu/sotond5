@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP EG1218
+D Slide Switches PC MNT 3 PIN SLIDE
+K
+F https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/119/EG.pdf
+$ENDCMP
+#
+#End Doc Library

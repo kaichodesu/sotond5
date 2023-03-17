@@ -1,0 +1,16 @@
+.BAS3007ARPPE6327HTSA1 :1 ;Infineon BAS3007ARPPE6327HTSA1 SMT Schottky Diode, 30V 900mA, 4-Pin SOT-143
+BF998215
+*STM D
+*NGS
+*PLB 1="-" 2="~_1" 3="~_2" 4="+"
+*MXP 4
+*DFN BAS3007ARPPE6327HTSA1
+~!Mouser Part Number (726-BAS3007A-RPPE6)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Infineon-Technologies/BAS3007ARPPE6327HTSA1?qs=OwbwYO03UsIpevUvLWxseg%3D%3D)
+~!Manufacturer_Name (Infineon)
+~!Manufacturer_Part_Number (BAS3007ARPPE6327HTSA1)
+~!Link Datasheet (https://www.mouser.co.uk/datasheet/2/196/Infineon-BAS3007ASERIES-DS-v01_01-en-1225497.pdf)
+~!Height (-)
+~!3D_Model (BAS3007ARPPE6327HTSA1)
+BAS3007ARPPE6327HTSA1
+1.1!U 2.1!U 3.1!U 4.1!U 

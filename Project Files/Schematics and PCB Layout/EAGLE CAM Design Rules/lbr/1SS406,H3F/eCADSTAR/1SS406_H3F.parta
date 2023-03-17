@@ -1,0 +1,70 @@
+(Japanese_coding: sjis)
+(function "ECS_11527096"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2021-02-17-11:02:30)
+    (utime 2022-12-07-16:30:45)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "1SS406_H3F")
+)
+
+
+(pinAssign "ECS_11527096"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2021-02-17-11:02:30)
+    (utime 2022-12-07-16:30:45)
+    (interface
+        (port "1" (symbPinId 1) (portName "K") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "A") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_11527096")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "1SS406_H3F")
+)
+
+
+(part "1SS406_H3F"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2021-02-17-11:02:30)
+    (utime 2022-12-07-16:30:45)
+    (packageRef "1SS406_H3F")
+    (pinAssignRef "ECS_11527096")
+    (interface
+        (port "1" (symbPinId 1) (portName "K") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "A") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "D")
+    (property "description" "Small Signal Schottky Barrier Diode VR=20V, IO=0.05A, in SOD-323 package")
+    (property "Manufacturer_Name" "Toshiba")
+    (property "Manufacturer_Part_Number" "1SS406,H3F")
+    (property "Mouser_Part_Number" "757-1SS406H3F")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Toshiba/1SS406H3F?qs=bZr6mbWTK5l7KVDflTlTGA%3D%3D")
+    (property "Arrow_Part_Number" "")
+    (property "Arrow_Price/Stock" "")
+    (property "Mouser_Testing_Part_Number" "")
+    (property "Mouser_Testing_Price/Stock" "")
+    (property "Datasheet_Link" "https://www.mouser.fr/datasheet/2/408/1SS406_datasheet_en_20140301-1853419.pdf")
+    (property "compAreaTopHeight" 1.15)
+)
+
+

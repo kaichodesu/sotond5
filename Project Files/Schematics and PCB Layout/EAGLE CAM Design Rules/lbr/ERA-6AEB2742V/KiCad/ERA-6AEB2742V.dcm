@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ERA-6AEB2742V
+D Thin Film Resistors - SMD 0805 27.4Kohm 0.1% 25ppm
+K
+F http://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf
+$ENDCMP
+#
+#End Doc Library

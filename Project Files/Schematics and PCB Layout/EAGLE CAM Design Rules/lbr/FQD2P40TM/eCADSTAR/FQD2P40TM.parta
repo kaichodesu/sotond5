@@ -1,0 +1,73 @@
+(Japanese_coding: sjis)
+(function "ECS_1066347"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-03-11-17:19:42)
+    (utime 2019-11-12-22:37:16)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+        (port "3" (symbPinId 3) (portType INOUT))
+    )
+    (property "symbolName" "FQD2P40TM")
+)
+
+
+(pinAssign "ECS_1066347"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-03-11-17:19:42)
+    (utime 2019-11-12-22:37:16)
+    (interface
+        (port "1" (symbPinId 1) (portName "G") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "D") (portType INOUT))
+        (port "3" (symbPinId 3) (portName "S") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_1066347")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+                (port "3" (match "3"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "FQD2P40TM")
+)
+
+
+(part "FQD2P40TM"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-03-11-17:19:42)
+    (utime 2019-11-12-22:37:16)
+    (packageRef "FQD2P40TM")
+    (pinAssignRef "ECS_1066347")
+    (interface
+        (port "1" (symbPinId 1) (portName "G") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "D") (portType INOUT))
+        (port "3" (symbPinId 3) (portName "S") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "YES")
+    (property "refDesPrefix" "Q")
+    (property "description" "MOSFET QF -400V 6.5OHM DPAK")
+    (property "Manufacturer_Name" "onsemi")
+    (property "Manufacturer_Part_Number" "FQD2P40TM")
+    (property "Mouser_Part_Number" "512-FQD2P40TM")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/onsemi-Fairchild/FQD2P40TM?qs=wg6chLqwgwqz4IFYQILlYg%3D%3D")
+    (property "Arrow_Part_Number" "FQD2P40TM")
+    (property "Arrow_Price/Stock" "https://www.arrow.com/en/products/fqd2p40tm/on-semiconductor?region=nac")
+    (property "Mouser_Testing_Part_Number" "")
+    (property "Mouser_Testing_Price/Stock" "")
+    (property "Datasheet_Link" "https://www.onsemi.com/pub/Collateral/FQD2P40-D.pdf")
+)
+
+

@@ -1,0 +1,26 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model C315C220J2G5TA
+#/167982/1061851/2.49/2/2/Capacitor
+DEF C315C220J2G5TA C 0 30 Y Y 1 F N
+F0 "C" 350 250 50 H V L CNN
+F1 "C315C220J2G5TA" 350 150 50 H V L CNN
+F2 "C315" 350 50 50 H I L CNN
+F3 "https://content.kemet.com/datasheets/KEM_C1049_GOLDMAX_C0G.pdf" 350 -50 50 H I L CNN
+F4 "GoldMax 300 Comm C0G, Ceramic, 22 pF, 5%, 200 VDC, 500 VDC, 125C, -55C, C0G, GoldMax, Commercial Standard, 0.1 % , 100 GOhms, 3.81mm, 3.14mm, 2.54mm, Lead Spacing = 2.54mm, 7mm, 0.51mm, 500, 120" 350 -150 50 H I L CNN "Description"
+F5 "3.14" 350 -250 50 H I L CNN "Height"
+F6 "80-C315C220J2G" 350 -350 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/KEMET/C315C220J2G5TA?qs=6DDjpUaD9G3WE9%2F2Ct37CQ%3D%3D" 350 -450 50 H I L CNN "Mouser Price/Stock"
+F8 "KEMET" 350 -550 50 H I L CNN "Manufacturer_Name"
+F9 "C315C220J2G5TA" 350 -650 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X ~ 1 0 0 200 R 50 50 0 0 P
+X ~ 2 500 0 200 L 50 50 0 0 P
+P 2 0 1 6 220 100 220 -100 N
+P 2 0 1 6 280 100 280 -100 N
+P 2 0 1 6 200 0 220 0 N
+P 2 0 1 6 280 0 300 0 N
+ENDDRAW
+ENDDEF
+#
+#End Library

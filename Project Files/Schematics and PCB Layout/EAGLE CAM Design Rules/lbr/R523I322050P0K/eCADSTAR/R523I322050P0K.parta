@@ -1,0 +1,70 @@
+(Japanese_coding: sjis)
+(function "ECS_17441467"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2023-02-15-21:12:45)
+    (utime 2023-02-15-21:12:45)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "R523I322050P0K")
+)
+
+
+(pinAssign "ECS_17441467"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime )
+    (utime 2023-02-15-21:12:45)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_17441467")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "R523I322050P0K")
+)
+
+
+(part "R523I322050P0K"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime )
+    (utime 2023-02-15-21:12:45)
+    (packageRef "R523I322050P0K")
+    (pinAssignRef "ECS_17441467")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "C")
+    (property "description" "R52 310 VAC MINI, Film, Metallized Polypropylene, Automotive Safety, 0.22 uF, 10%, 310 VAC, 310 VAC (X2), 310 VAC, 630 VDC, 110C, -40C, 110C, 0.2 % , 100 GOhms, 400 V/us, 2, 1.6 g, 18mm, 12mm, 6mm, Lead Spacing = 15mm, 900")
+    (property "Manufacturer_Name" "KEMET")
+    (property "Manufacturer_Part_Number" "R523I322050P0K")
+    (property "Mouser_Part_Number" "")
+    (property "Mouser_Price/Stock" "")
+    (property "Arrow_Part_Number" "")
+    (property "Arrow_Price/Stock" "")
+    (property "Mouser_Testing_Part_Number" "")
+    (property "Mouser_Testing_Price/Stock" "")
+    (property "Datasheet_Link" "https://content.kemet.com/datasheets/KEM_F3123_R52_X2_310_110C_MIN.pdf")
+    (property "compAreaTopHeight" 12.4)
+)
+
+

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP R463I32204002M
+D R46 310 VAC, Film, Metallized Polypropylene, Safety, 0.22 uF, 20%, 310 VAC, 310 VAC (X2), 310 VAC, 630 VDC, 110C, -40C, 110C, 0.1 % , 100 GOhms, 400 V/us, 2, 2.4 g, 18mm, 17.5mm, 6mm, Lead Spacing = 15mm, 700
+K
+F https://content.kemet.com/datasheets/KEM_F3095_R46_X2_310_110C.pdf
+$ENDCMP
+#
+#End Doc Library

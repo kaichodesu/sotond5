@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 1SS406,H3F
+D Small Signal Schottky Barrier Diode VR=20V, IO=0.05A, in SOD-323 package
+K
+F https://www.mouser.fr/datasheet/2/408/1SS406_datasheet_en_20140301-1853419.pdf
+$ENDCMP
+#
+#End Doc Library

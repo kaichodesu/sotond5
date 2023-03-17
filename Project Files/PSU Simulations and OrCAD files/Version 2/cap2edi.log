@@ -1,0 +1,24 @@
+
+Copyright (c) 2006-2021, Elgris Technologies, Inc.
+
+OrCAD Capture to EDIF 2 0 0 Schematic Conversion Program SPB 17.40_1.116 built Feb  6 2021
+
+Started on Wed Feb  8 20:50:12 2023
+
+Reading config file c:\cadence\spb_17.4\tools\capture\cap2edi.cfg
+
+orcadread :Converting file D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\D5 SMPS.DSN 
+Converting SchematicView   500uH 
+	Converting elements on  page PAGE1
+		Converting Parts
+		converting Globals of Page PAGE1 of SchematicView 500uH
+		Converting Buses and Nets of Schematic View 500uH 
+
+Writing EDIF: D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\D5 SMPS.EDF
+.............................................................
+
+
+Finished on Wed Feb  8 20:50:13 2023
+
+
+0 errors detected, 0 warnings detected

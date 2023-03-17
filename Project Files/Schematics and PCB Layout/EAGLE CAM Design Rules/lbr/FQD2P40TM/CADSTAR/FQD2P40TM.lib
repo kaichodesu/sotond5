@@ -1,0 +1,20 @@
+.FQD2P40TM :1 ;MOSFET QF -400V 6.5OHM DPAK
+FDD8874
+*STM Q
+*NGS
+*PLB 1="G" 2="D" 3="S"
+*MXP 3
+*DFN FQD2P40TM
+~!Manufacturer_Name (onsemi)
+~!Manufacturer_Part_Number (FQD2P40TM)
+~!Mouser Part Number (512-FQD2P40TM)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/onsemi-Fairchild/FQD2P40TM?qs=wg6chLqwgwqz4IFYQILlYg%3D%3D)
+~!Arrow Part Number (FQD2P40TM)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/fqd2p40tm/on-semiconductor?region=nac)
+~!Mouser Testing Part Number (-)
+~!Mouser Testing Price/Stock (-)
+~!Link Datasheet (https://www.onsemi.com/pub/Collateral/FQD2P40-D.pdf)
+~!Height (-)
+~!3D_Model (FQD2P40TM)
+FQD2P40TM
+1.1!U 2.1!U 3.1!U 

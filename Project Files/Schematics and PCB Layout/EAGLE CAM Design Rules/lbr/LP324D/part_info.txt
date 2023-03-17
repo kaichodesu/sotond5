@@ -1,0 +1,9 @@
+Manufacturer=Texas Instruments
+PartNumber=LP324D
+PartCategory=Integrated Circuit
+PackageCategory=Small Outline Packages
+PinCount=14
+Version=1.1
+Released=2021-04-10 07:10:42
+Downloaded=2023-02-16 11:29:30
+3D=Y

@@ -1,0 +1,8 @@
+STATUS: PSpice Schematics to Capture translator (17.4.0.d001)
+STATUS:  
+STATUS: Translator started at Saturday, February 04, 2023 12:05:35
+STATUS: c:\cadence\spb_17.4\tools\bin\sch2cap -f "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\PSU\UCC28730_PSPICE_TRANS\Simulation_model_CoolMOS_PFD7_MOSFET_600V_Spice.lib" -o "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\PSU\UCC28730_PSPICE_TRANS\Simulation_model_CoolMOS_PFD7_MOSFET_600V_Spice.olb" -i C:\SPB_DATA\cdssetup\OrCAD_PSpice/17.4.0/PSpice.ini
+INFO(ORSCH-1029): Using existing library 'c:\cadence\spb_17.4\tools\Capture\Library\PSpice\modeled.etc'.
+INFO(ORSCH-1029): Using existing library 'D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\PSU\UCC28730_PSPICE_TRANS\Simulation_model_CoolMOS_PFD7_MOSFET_600V_Spice.olb'.
+STATUS: Translator stopped at Saturday, February 04, 2023 12:05:36
+STATUS: 0 Error messages, 0 Warning messages

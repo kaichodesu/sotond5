@@ -1,0 +1,9 @@
+Manufacturer=SAMSUNG
+PartNumber=CL21A475KLCLQNC
+PartCategory=Capacitor
+PackageCategory=Capacitor Chip Non-polarised
+PinCount=2
+Version=2.1
+Released=2021-02-24 10:01:30
+Downloaded=2023-02-13 22:08:50
+3D=Y

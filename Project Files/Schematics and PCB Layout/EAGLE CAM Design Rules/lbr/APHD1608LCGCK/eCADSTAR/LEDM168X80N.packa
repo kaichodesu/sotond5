@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "APHD1608LCGCK"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2018-09-05-10:29:57)
+    (mountForm default
+        (footprintRef "LEDM168X80N")
+        (spec "System")
+    )
+)

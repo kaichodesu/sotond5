@@ -1,0 +1,9 @@
+Manufacturer=Nichicon
+PartNumber=UUJ2W100MNQ1MS
+PartCategory=Capacitor Polarised
+PackageCategory=Capacitor Al Electrolytic
+PinCount=2
+Version=2.1
+Released=2020-06-30 09:07:15
+Downloaded=2023-02-12 20:47:12
+3D=Y

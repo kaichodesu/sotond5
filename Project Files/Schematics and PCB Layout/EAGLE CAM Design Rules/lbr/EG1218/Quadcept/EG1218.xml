@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--/12863335/1061851/2.49/3/4/Switch/-->
+<quadcept_library>
+  <setting unit="mil" />
+  <textstyle name="Default" height="47.244094488189" strokewidth="7.8740157480315" charwidth="47.244094488189" />
+  <textstyle name="Dimension" height="19.6850393700787" strokewidth="0" charwidth="19.6850393700787" />
+  <textstyle name="H127W0635TH00762" height="50" strokewidth="3" charwidth="25" />
+  <textstyle name="H15W15TH02" height="59.0551181102362" strokewidth="7.8740157480315" charwidth="59.0551181102362" />
+  <padstyle name="c150_h100" surface="False" plated="True" isvia="False" nopaste="True" nomask="True" complex="False" holesize="39.370078740157">
+    <padshape layer="TOP" shape="round" width="59.055118110235" height="59.055118110235" />
+    <padshape layer="TOP_SOLDER_MASK" shape="round" width="66.929133858267" height="66.929133858267" />
+    <padshape layer="INNER" shape="round" width="59.055118110235" height="59.055118110235" />
+    <padshape layer="BOTTOM" shape="round" width="59.055118110235" height="59.055118110235" />
+    <padshape layer="BOTTOM_SOLDER_MASK" shape="round" width="66.929133858267" height="66.929133858267" />
+  </padstyle>
+  <footprint name="EG1218" originx="0" originy="0" pickpointx="0" pickpointy="0">
+    <pcbpin number="1" name="1" style="c150_h100" originx="0" originy="0" rotation="90" />
+    <pcbpin number="2" name="2" style="c150_h100" originx="98.425196850392" originy="0" rotation="90" />
+    <pcbpin number="3" name="3" style="c150_h100" originx="196.85039370078" originy="0" rotation="90" />
+    <line layer="TOP_ASSEMBLY" originx="-129.92125984252" originy="78.740157480314" endx="326.7716535433" endy="78.740157480314" width="7.8740157480314" />
+    <line layer="TOP_ASSEMBLY" originx="326.7716535433" originy="78.740157480314" endx="326.7716535433" endy="-78.740157480314" width="7.8740157480314" />
+    <line layer="TOP_ASSEMBLY" originx="326.7716535433" originy="-78.740157480314" endx="-129.92125984252" endy="-78.740157480314" width="7.8740157480314" />
+    <line layer="TOP_ASSEMBLY" originx="-129.92125984252" originy="-78.740157480314" endx="-129.92125984252" endy="78.740157480314" width="7.8740157480314" />
+    <line layer="TOP_SILKSCREEN" originx="-129.92125984252" originy="78.740157480314" endx="326.7716535433" endy="78.740157480314" width="3.9370078740157" />
+    <line layer="TOP_SILKSCREEN" originx="326.7716535433" originy="78.740157480314" endx="326.7716535433" endy="-78.740157480314" width="3.9370078740157" />
+    <line layer="TOP_SILKSCREEN" originx="326.7716535433" originy="-78.740157480314" endx="-129.92125984252" endy="-78.740157480314" width="3.9370078740157" />
+    <line layer="TOP_SILKSCREEN" originx="-129.92125984252" originy="-78.740157480314" endx="-129.92125984252" endy="78.740157480314" width="3.9370078740157" />
+    <line layer="TOP_PLACE_BOUND" originx="-216.53543307086" originy="118.11023622047" endx="366.14173228346" endy="118.11023622047" width="3.9370078740157" />
+    <line layer="TOP_PLACE_BOUND" originx="366.14173228346" originy="118.11023622047" endx="366.14173228346" endy="-118.11023622047" width="3.9370078740157" />
+    <line layer="TOP_PLACE_BOUND" originx="366.14173228346" originy="-118.11023622047" endx="-216.53543307086" endy="-118.11023622047" width="3.9370078740157" />
+    <line layer="TOP_PLACE_BOUND" originx="-216.53543307086" originy="-118.11023622047" endx="-216.53543307086" endy="118.11023622047" width="3.9370078740157" />
+    <line layer="TOP_SILKSCREEN" originx="-177.16535433071" originy="0" endx="-177.16535433071" endy="0" width="7.8740157480314" />
+    <arc layer="TOP_SILKSCREEN" originx="-173.22834645669" originy="0" startangle="180.0" sweepangle="180.0" radius="3.9370078740157" width="7.8740157480314" />
+    <line layer="TOP_SILKSCREEN" originx="-169.29133858268" originy="0" endx="-169.29133858268" endy="0" width="7.8740157480314" />
+    <arc layer="TOP_SILKSCREEN" originx="-173.22834645669" originy="0" startangle=".0" sweepangle="180.0" radius="3.9370078740157" width="7.8740157480314" />
+  </footprint>
+  <symbol name="EG1218" originx="0" originy="0">
+    <line originx="200" originy="100" endx="700" endy="100" width="0" />
+    <line originx="700" originy="-300" endx="700" endy="100" width="0" />
+    <line originx="700" originy="-300" endx="200" endy="-300" width="0" />
+    <line originx="200" originy="100" endx="200" endy="-300" width="0" />
+    <sympin number="1" originx="200" originy="0" rotation="180" length="100" width="7.8740157480315" flipped="False">
+      <text name="pinname" originx="230" originy="0" style="Default" rotation="0" justify="left" flipped="False" hidden="False" data="NC" />
+      <text name="pindes" originx="140" originy="20" style="Default" rotation="0" justify="lowerright" flipped="False" hidden="False" data="1" />
+    </sympin>
+    <sympin number="2" originx="200" originy="-100" rotation="180" length="100" width="7.8740157480315" flipped="False">
+      <text name="pinname" originx="230" originy="-100" style="Default" rotation="0" justify="left" flipped="False" hidden="False" data="COMM" />
+      <text name="pindes" originx="140" originy="-80" style="Default" rotation="0" justify="lowerright" flipped="False" hidden="False" data="2" />
+    </sympin>
+    <sympin number="3" originx="200" originy="-200" rotation="180" length="100" width="7.8740157480315" flipped="False">
+      <text name="pinname" originx="230" originy="-200" style="Default" rotation="0" justify="left" flipped="False" hidden="False" data="NO" />
+      <text name="pindes" originx="140" originy="-180" style="Default" rotation="0" justify="lowerright" flipped="False" hidden="False" data="3" />
+    </sympin>
+  </symbol>
+  <component name="EG1218" designatorprefix="S" height="291.33858267716" footprint="EG1218">
+    <comppin designator="1" sympin="1" pinswap="0" gateswap="0" gate="1" group="1" side="" type="Any" name="NC" />
+    <comppin designator="2" sympin="2" pinswap="0" gateswap="0" gate="1" group="1" side="" type="Any" name="COMM" />
+    <comppin designator="3" sympin="3" pinswap="0" gateswap="0" gate="1" group="1" side="" type="Any" name="NO" />
+    <attached_symbol gate="1" name="EG1218" />
+    <pinmap designator="1" footprintpin="1" />
+    <pinmap designator="2" footprintpin="2" />
+    <pinmap designator="3" footprintpin="3" />
+    <text name="Datasheet" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/119/EG.pdf" />
+    <text name="Description" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="Slide Switches PC MNT 3 PIN SLIDE" />
+    <text name="Mouser Part Number" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="612-EG1218" />
+    <text name="Mouser Price/Stock" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="https://www.mouser.co.uk/ProductDetail/E-Switch/EG1218?qs=xDsBkp9LkocT0c8K%252B5e%2FgA%3D%3D" />
+    <text name="Manufacturer_Name" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="E-Switch" />
+    <text name="Manufacturer_Part_Number" originx="750" originy="200" style="Default" rotation="0" justify="left" flipped="False" hidden="False" data="EG1218" />
+  </component>
+</quadcept_library>

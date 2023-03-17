@@ -1,0 +1,16 @@
+.CDBC5200-HF :1 ;Diode 200 V 5A Surface Mount DO-214AB (SMC)
+DIOM8059X290N
+*STM D
+*NGS
+*PLB 1="K" 2="A"
+*MXP 2
+*DFN CDBC5200-HF
+~!Mouser Part Number (750-CDBC5200-HF)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Comchip-Technology/CDBC5200-HF?qs=XEIV%2Fho1H6e7FEPE4wQmfQ%3D%3D)
+~!Manufacturer_Name (Comchip Technology)
+~!Manufacturer_Part_Number (CDBC5200-HF)
+~!Link Datasheet (https://www.comchiptech.com/admin/files/product/CDBC5150-HF%20Thru913202.%20CDBC5200-HF%20RevB.pdf)
+~!Height (2.9mm)
+~!3D_Model (CDBC5200-HF)
+CDBC5200-HF
+1.1!U 2.1!U 

@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_996383"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2022-06-23-09:38:43)
+    (utime 2022-06-24-06:25:22)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "VY2472M41Y5VS63V7")
+)
+
+
+(pinAssign "ECS_996383"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2022-06-23-09:38:43)
+    (utime 2022-06-24-06:25:22)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_996383")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "VY2472M41Y5VS63V7")
+)
+
+
+(part "VY2472M41Y5VS63V7"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2022-06-23-09:38:43)
+    (utime 2022-06-24-06:25:22)
+    (packageRef "VY2472M41Y5VS63V7")
+    (pinAssignRef "ECS_996383")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "C")
+    (property "description" "VY2 Ceramic Capacitor 4,7NF 20% Y5V")
+    (property "Mouser_Part_Number" "72-VY2472M41Y5VS63V7")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-BC-Components/VY2472M41Y5VS63V7?qs=Au78WOuo%252BOfMPadVWrHO1A%3D%3D")
+    (property "Manufacturer_Name" "Vishay")
+    (property "Manufacturer_Part_Number" "VY2472M41Y5VS63V7")
+    (property "Datasheet_Link" "https://www.vishay.com/docs/28535/vy2series.pdf")
+    (property "compAreaTopHeight" 13.5)
+)
+
+

@@ -1,0 +1,19 @@
+.R523I322050P0K :1 ;R52 310 VAC MINI, Film, Metallized Polypropylene, Automotive Safety, 0.22 uF, 10%, 310 VAC, 310 VAC (X2), 310 VAC, 630 VDC, 110C, -40C, 110C, 0.2 % , 100 GOhms, 400 V/us, 2, 1.6 g, 18mm, 12mm, 6mm, Lead Spacing = 15mm, 900
+HDRV2W65P0X1500_1X2_1790X585X1240P
+*STM C
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN R523I322050P0K
+~!Manufacturer_Name (KEMET)
+~!Manufacturer_Part_Number (R523I322050P0K)
+~!Mouser Part Number (-)
+~!Mouser Price/Stock (-)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Mouser Testing Part Number (-)
+~!Mouser Testing Price/Stock (-)
+~!Link Datasheet (https://content.kemet.com/datasheets/KEM_F3123_R52_X2_310_110C_MIN.pdf)
+~!Height (12.4mm)
+R523I322050P0K
+1.1!U 2.1!U 

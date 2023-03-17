@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_1911192"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2022-04-28-04:45:23)
+    (utime 2022-04-28-06:28:51)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "CD214B-FS2K")
+)
+
+
+(pinAssign "ECS_1911192"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2022-04-28-04:45:23)
+    (utime 2022-04-28-06:28:51)
+    (interface
+        (port "1" (symbPinId 1) (portName "K") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "A") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_1911192")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "CD214B-FS2K")
+)
+
+
+(part "CD214B-FS2K"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2022-04-28-04:45:23)
+    (utime 2022-04-28-06:28:51)
+    (packageRef "CD214B-FS2K")
+    (pinAssignRef "ECS_1911192")
+    (interface
+        (port "1" (symbPinId 1) (portName "K") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "A") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "YES")
+    (property "refDesPrefix" "BR")
+    (property "description" "Rectifiers 800V 2A")
+    (property "Mouser_Part_Number" "652-CD214B-FS2K")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Bourns/CD214B-FS2K?qs=f9yNj16SXrLQSBa%252BXyEv0g%3D%3D")
+    (property "Manufacturer_Name" "Bourns")
+    (property "Manufacturer_Part_Number" "CD214B-FS2K")
+    (property "Datasheet_Link" "http://www.bourns.com/docs/product-datasheets/CD214B-FS2x.pdf")
+    (property "compAreaTopHeight" 1.25)
+)
+
+

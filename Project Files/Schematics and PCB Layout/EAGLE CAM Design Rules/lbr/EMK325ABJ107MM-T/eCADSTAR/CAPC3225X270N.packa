@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "EMK325ABJ107MM-T"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2019-04-29-07:54:08)
+    (mountForm default
+        (footprintRef "CAPC3225X270N")
+        (spec "System")
+    )
+)

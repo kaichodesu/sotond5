@@ -1,0 +1,175 @@
+(ExpressProject "UCC28730_deb"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S028 (4018475)  [3/9/2022]-[02/04/23]")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\ucc28730_netlist.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\ucc28730_deb.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (RootChangedForceReNetlist "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\ucc28730_deb-pspicefiles\test_full_2chips\test_full_2chips.net"
+      (Type "Report"))
+    (File ".\ucc28730_deb-pspicefiles\for_netlists\for_netlists.net"
+      (Type "Report"))
+    (File
+       ".\ucc28730_deb-pspicefiles\test_2chip_netlists\test_2chip_netlists.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\ucc28730_deb-pspicefiles\test_2chip_netlists\tr.sim"
+        (DisplayName "Test_2CHIP_netlists-TR")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\ucc28730_deb-pspicefiles\test_2chip_netlists\tr.sim"))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\transformer.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\transformer.lib"))
+      (File
+         ".\ucc28730_deb-PSpiceFiles\PSpiceModelApps\PSpiceModelApps_Include.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName
+           ".\ucc28730_deb-PSpiceFiles\PSpiceModelApps\PSpiceModelApps_Include.lib"))
+      (File ".\ucc24650_netlist.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\ucc24650_netlist.lib"))
+      (File ".\ucc28730_netlist.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\ucc28730_netlist.lib"))
+      (File ".\simulation_model_coolmos_pfd7_mosfet_600v_spice.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\simulation_model_coolmos_pfd7_mosfet_600v_spice.lib"))))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (L
+      (FullPartName "L.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICESOURCEAPP\HYBRID\SUPPORTFILES\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (SPW11N80C3
+      (FullPartName "SPW11N80C3.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\INFINEON_COOLMOS_800.OLB")
+      (DeviceIndex "0"))
+    (SPW11N80C3_L1
+      (FullPartName "SPW11N80C3_L1.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\INFINEON_COOLMOS_800.OLB")
+      (DeviceIndex "0"))
+    (IPS60R1K0PFD7S_L1
+      (FullPartName "IPS60R1K0PFD7S_L1.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\PSU\UCC28730_PSPICE_TRANS\SIMULATION_MODEL_COOLMOS_PFD7_MOSFET_600V_SPICE.OLB")
+      (DeviceIndex "0"))
+    (SPP08N80C2/L1/INF
+      (FullPartName "SPP08N80C2/L1/INF.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\INFINEON.OLB")
+      (DeviceIndex "0"))
+    (SPP08N80C2/L3/INF
+      (FullPartName "SPP08N80C2/L3/INF.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\INFINEON.OLB")
+      (DeviceIndex "0"))
+    (SPP08N80C2/L2/INF
+      (FullPartName "SPP08N80C2/L2/INF.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\INFINEON.OLB")
+      (DeviceIndex "0"))
+    (IRFZ44N
+      (FullPartName "IRFZ44N.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ADVANLS\MFN.OLB")
+      (DeviceIndex "0"))
+    (S
+      (FullPartName "S.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICEMODELAPP\SWITCH\HYBRID\SUPPORTFILES\SWITCH.OLB")
+      (DeviceIndex "0"))
+    (IPS60R1K0PFD7S_L3
+      (FullPartName "IPS60R1K0PFD7S_L3.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\PSU\UCC28730_PSPICE_TRANS\SIMULATION_MODEL_COOLMOS_PFD7_MOSFET_600V_SPICE.OLB")
+      (DeviceIndex "0"))
+    (FWDR
+      (FullPartName "FWDR.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICEMODELAPP\TRANSFORMER\HYBRID\SUPPORTFILES\TRANSFORMER.OLB")
+      (DeviceIndex "0"))
+    (UCC24650DBV_TRANS
+      (FullPartName "UCC24650DBV_TRANS.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\UCC24650DBV_TRANS.OLB")
+      (DeviceIndex "0"))
+    (UCC24650_NETLIST
+      (FullPartName "UCC24650_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\UCC24650_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (UCC28730_NETLIST
+      (FullPartName "UCC28730_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\UCC28730_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (CURRENT_CNTL_NETLIST
+      (FullPartName "CURRENT_CNTL_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\CURRENT_CNTL_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (PWR_MGNT_NETLIST
+      (FullPartName "PWR_MGNT_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\PWR_MGNT_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (MODULATOR_NETLIST
+      (FullPartName "MODULATOR_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\MODULATOR_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (CNT_LAW_NETLIST
+      (FullPartName "CNT_LAW_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\CNTL_LAW_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (SAMPLER_NETLIST
+      (FullPartName "SAMPLER_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\SAMPLER_NETLIST.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Model Libraries")
+      (Path "PSpice Resources" "Simulation Profiles")
+      (Select "Design Resources"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 0 799 0 0 0 200 0 513"))
+      (Tab 0)))
+  (MPSSessionName "kaicho")
+  (LastUsedLibraryBrowseDirectory
+     "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\PSU\UCC28730_PSPICE_TRANS")
+  (Folder "Logs"))

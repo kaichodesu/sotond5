@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "VY2472M41Y5VS63V7"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "VY2472M41Y5VS63V7")
+        (spec "default")
+    )
+)

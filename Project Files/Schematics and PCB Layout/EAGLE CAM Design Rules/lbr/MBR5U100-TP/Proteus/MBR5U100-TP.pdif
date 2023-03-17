@@ -1,0 +1,122 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "MBR5U100-TP"
+   (description "Diode Schottky 100 V 5A Surface Mount TO-277")
+   (family "DIO")
+   (package "MBR5U100TP")
+   (attribute "Datasheet Link" "https://www.mccsemi.com/pdf/Products/MBR5U100(TO-277).pdf")
+   (attribute "Geometry.Height" "1.2mm")
+   (attribute "Manufacturer_Name" "MCC")
+   (attribute "Manufacturer_Part_Number" "MBR5U100-TP")
+   (attribute "Mouser Part Number" "")
+   (attribute "Mouser Price/Stock" "")
+   (attribute "Arrow Part Number" "")
+   (attribute "Arrow Price/Stock" "")
+   (attribute "Mouser Testing Part Number" "")
+   (attribute "Mouser Testing Price/Stock" "")
+   (gate
+    (symbol "MBR5U100-TP")
+    (pin "ANODE_1" 1 PS)
+    (pin "ANODE_2" 2 PS)
+    (pin "COMMON_CATHODE" 3 PS)
+   )
+  )
+  (symbol "MBR5U100-TP"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 1600 100) (pt 1600 -200) (pt 200 -200) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1800 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "MBR5U100TP"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.7 -2)
+      (pt 2.7 -2)
+      (pt 2.7 2)
+      (pt -2.7 2)
+      (pt -2.7 -2))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -4.555 -3)
+      (pt 4.555 -3)
+      (pt 4.555 3)
+      (pt -4.555 3)
+      (pt -4.555 -3))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -2.6 2)
+      (pt 2.7 2))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -2.7 -2)
+      (pt 2.7 -2))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -4 -1)
+      (arc (pt -4.000 -1.000) (pt -4.050 -1.000) (pt -3.950 -0.900) (start 180.0) (sweep -90.0))
+      (pt -4 -0.9)
+      (arc (pt -4.000 -0.900) (pt -4.050 -1.000) (pt -3.950 -0.900) (start 180.0) (sweep 90.0))
+      (pt -4 -1))))
+   (leg 1 (pt -2.855 -0.920) (padstack 0))
+   (leg 2 (pt -2.855 0.920) (padstack 0))
+   (leg 3 (pt 1.125 0.000) (padstack 3))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (square 1.400))
+   )
+   (padstack 3
+    (plated false)
+    (pad (layer TCOP) (rectf 3.360 4.860 0 0 0.000))
+   )
+   (model "MBR5U100-TP.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

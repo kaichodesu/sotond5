@@ -1,0 +1,16 @@
+.LP324D :1 ;Texas Instruments LP324D, Quad Op Amp, 0.1MHz, 5  28 V, 14-Pin SOIC
+SOIC127P600X175-14N
+*STM IC
+*NGS
+*PLB 1="1OUT" 2="1IN-" 3="1IN+" 4="VCC" 5="2IN+" 6="2IN-" 7="2OUT" 8="3OUT" 9="3IN-" 10="3IN+" 11="GND" 12="4IN+" 13="4IN-" 14="4OUT"
+*MXP 14
+*DFN LP324D
+~!Mouser Part Number (595-LP324D)
+~!Link Mouser Price/Stock (https://www.mouser.com/Search/Refine.aspx?Keyword=595-LP324D)
+~!Manufacturer_Name (Texas Instruments)
+~!Manufacturer_Part_Number (LP324D)
+~!Link Datasheet (https://www.ti.com/lit/ds/symlink/lp324.pdf?ts=1617974975875&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FLP324)
+~!Height (1.75mm)
+~!3D_Model (LP324D)
+LP324D
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 14.1!U 13.1!U 12.1!U 11.1!U 10.1!U 9.1!U 8.1!U 

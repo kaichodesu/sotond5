@@ -1,0 +1,9 @@
+Manufacturer=Bourns
+PartNumber=CR0603-FX-4701ELF
+PartCategory=Resistor
+PackageCategory=Resistor Chip
+PinCount=2
+Version=1.2
+Released=2016-06-24 13:36:39
+Downloaded=2023-02-16 07:42:28
+3D=Y

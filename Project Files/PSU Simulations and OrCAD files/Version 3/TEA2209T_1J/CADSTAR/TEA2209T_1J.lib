@@ -1,0 +1,16 @@
+.TEA2209T_1J :1 ;Bridge Rectifiers TEA2209T
+SOIC127P600X175-16N
+*STM IC
+*NGS
+*PLB 1="L" 2="VCCHL" 3="GATEHL" 4="HVS_1" 5="GATELL" 6="VCC" 7="GND" 8="COMP_POL" 9="COMP" 10="GATELR" 11="HVS_2" 12="R" 13="VCCHR" 14="GATEHR" 15="HVS_3" 16="VR"
+*MXP 16
+*DFN TEA2209T_1J
+~!Mouser Part Number (-)
+~!Mouser Price/Stock (-)
+~!Manufacturer_Name (NXP)
+~!Manufacturer_Part_Number (TEA2209T/1J)
+~!Link Datasheet (https://www.nxp.com/docs/en/data-sheet/TEA2209T.pdf)
+~!Height (1.75mm)
+~!3D_Model (TEA2209T_1J)
+TEA2209T_1J
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 16.1!U 15.1!U 14.1!U 13.1!U 12.1!U 11.1!U 10.1!U 9.1!U 

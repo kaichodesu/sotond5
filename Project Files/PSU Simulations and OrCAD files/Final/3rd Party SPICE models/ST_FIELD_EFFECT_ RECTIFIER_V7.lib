@@ -1,0 +1,760 @@
+*
+* File     : field effect rectifier_v7.LIB
+* Revision : 7.0
+* Date     : DEC 2021
+**********************************************************************
+*Please Read Carefully:
+*Information in this document is provided solely in connection with ST products.
+*STMicroelectronics NV and its subsidiaries (“ST”) reserve the right to make :
+*changes, corrections, modifications or improvements, to this document,
+*and the products and services described herein at any time, without notice.
+*All ST products are sold pursuant to ST’s terms and conditions of sale.
+*Purchasers are solely responsible for the choice, selection and use of the ST products, and services described herein,
+*and ST assumes no liability whatsoever relating to the choice, selection or use of the ST products and services described herein.
+*No license, express or implied, by estoppel or otherwise, to any intellectual property rights is granted under this document.
+*If any part of this document refers to any third party products or
+*services it shall not be deemed a license grant by ST for the use of such third party products or
+*services, or any intellectual property contained therein or
+*considered as a warranty covering the use in any manner whatsoever of such third party products or
+*services or any intellectual property contained therein.
+*UNLESS OTHERWISE SET FORTH IN ST’S TERMS AND CONDITIONS OF SALE ST DISCLAIMS ANY EXPRESS OR IMPLIED
+*WARRANTY WITH RESPECT TO THE USE AND/OR SALE OF ST PRODUCTS INCLUDING WITHOUT LIMITATION IMPLIED
+*WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE (AND THEIR EQUIVALENTS UNDER THE LAWS
+*OF ANY JURISDICTION), OR INFRINGEMENT OF ANY PATENT, COPYRIGHT OR OTHER INTELLECTUAL PROPERTY RIGHT.
+*UNLESS EXPRESSLY APPROVED IN WRITING BY AN AUTHORIZED ST REPRESENTATIVE, ST PRODUCTS ARE NOT
+*RECOMMENDED, AUTHORIZED OR WARRANTED FOR USE IN MILITARY, AIR CRAFT, SPACE, LIFE SAVING, OR LIFE SUSTAINING
+*APPLICATIONS, NOR IN PRODUCTS OR SYSTEMS WHERE FAILURE OR MALFUNCTION MAY RESULT IN PERSONAL INJURY,
+*DEATH, OR SEVERE PROPERTY OR ENVIRONMENTAL DAMAGE. ST PRODUCTS WHICH ARE NOT SPECIFIED AS "AUTOMOTIVE
+*GRADE" MAY ONLY BE USED IN AUTOMOTIVE APPLICATIONS AT USER’S OWN RISK.
+*Resale of ST products with provisions different from the statements and/or technical features
+*set forth in this document shall immediately void any warranty granted by ST for the ST product or
+*service described herein and shall not create or extend in any manner whatsoever, any liability of ST.
+*ST and the ST logo are trademarks or registered trademarks of ST in various countries.
+*Information in this document supersedes and replaces all information previously supplied.
+*The ST logo is a registered trademark of STMicroelectronics.
+*All other names are the property of their respective owners.
+*
+*© 2006 STMicroelectronics - All rights reserved
+*
+*STMicroelectronics group of companies
+*Australia - Belgium - Brazil - Canada - China - Czech Republic - Finland - France
+*Germany - Hong Kong - India - Israel - Italy - Japan - Malaysia - Malta - Morocco
+*Singapore - Spain - Sweden - Switzerland - United Kingdom - United States of America
+*www.st.com
+*
+
+
+*******************************************************************
+*FIELD EFFECT RECTIFIER DIODE 45V               L60
+*******************************************************************
+*FIELD EFFECT RECTIFIER DIODE 50V               L203
+*******************************************************************
+*FIELD EFFECT RECTIFIER DIODE 60V               L313
+*******************************************************************
+*FIELD EFFECT RECTIFIER DIODE 100V              L560
+*******************************************************************
+
+
+ 
+*******************************************************************
+*FIELD EFFECT RECTIFIER DIODE 45V               
+*******************************************************************
+
+*******************************************************************
+* Model name       : FERD2045SB
+* Description      : Field effect rectifier
+* Package type     : DPAK
+*******************************************************************
+*model FERD2045SB        anode1
+*				         | cathode
+*				         | | anode2
+*				         | | |
+.subckt FERD2045SB       1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=29.201E-6 N=.99518 RS=5.4737E-3 IKF=3.2656 CJO=4.5155E-9 M=.84327
++ VJ=.61168 ISR=2.9643E-6 NR=1.1025 TT=0 XTI=2 EG=.444 FC=0.5)
+
+*	STMicroelectronics	case=DPAK     Delivery = Tube
+.ends
+ 
+*******************************************************************
+* Model name       : FERD30M45CG-TR
+* Description      : Field effect rectifier
+* Package type     : D²PAK   in tape&reel
+*******************************************************************
+*model FERD30M45CG-TR   anode1
+*		   				| anode2
+*		   				| | cathode
+*		   				| | |
+.subckt FERD30M45CG-TR  1 3 4
+d1 1 4 dx
+d2 3 4 dx
+.model dx	D(IS=83.812E-6 N=1.0252 RS=6.3334E-3 IKF=11.098 CJO=8.5562E-9 M=.89671
++ VJ=.44018 ISR=843.35E-9 NR=4.9950 FC=0.5 TT=0 EG=0.444 XTI=2)
+
+*	STMicroelectronics	case=D²PAK       Delivery = Tape&reel
+.ends
+ 
+*******************************************************************
+* Model name       : FERD30M45CR
+* Description      : Field effect rectifier
+* Package type     : I²PAK
+*******************************************************************
+*model FERD30M45CR  anode1
+*				    | cathode
+*				    | | anode2
+*				    | | |
+.subckt FERD30M45CR 1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=131.27E-6 N=1.0305 RS=5.9576E-3 IKF=7.9313 CJO=8.3646E-9 M=.89195
++ 			VJ=.44841 ISR=1.9409E-6 NR=4.9950 TT=0 XTI=2 EG=0.46 FC=0.5)
+
+*	STMicroelectronics	case=I²PAK       Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD30M45D
+* Description      : Single field effect rectifier
+* Package type     : TO-220AC
+*******************************************************************
+.MODEL FERD30M45D  D(IS=89.844E-6 N=.9324 RS=1.1670E-3 IKF=1.7786 CJO=11.709E-9 M=.76627
++ VJ=.3925 ISR=9.1622E-6 NR=1.0236 TT=0 XTI=2 EG=.423 FC=0.5)
+*$
+
+ *	STMicroelectronics	case=TO-220AB   Delivery= Tape&reel
+.ends
+
+*******************************************************************
+* Model name       : FERD30M45CT
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD30M45CT   anode1
+*				     | cathode
+*				     | | anode2
+*				     | | |
+.subckt FERD30M45CT  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=83.812E-6 N=1.0252 RS=6.3334E-3 IKF=11.098 CJO=8.5562E-9 M=.89671
++			  VJ=.44018 ISR=843.35E-9 NR=4.9950 FC=0.5 TT=0 EG=0.444 XTI=2)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD40M45CG
+* Description      : Field effect rectifier
+* Package type     : D²PAK   in tape&reel
+*******************************************************************
+*model FERD40M45CG   anode1
+*		   		     | anode2
+*		   		     | | cathode
+*		   		  	 | | |
+.subckt FERD40M45CG  1 3 4
+d1 1 4 dx
+d2 3 4 dx
+.model dx	D(IS=179.53E-6 N=1.0276 RS=4.4043E-3 IKF=5.2285 CJO=9.7192E-9 M=1.0467
++ VJ=.53867 ISR=1.8606E-6 NR=1.0541 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=D²PAK       Delivery = Tape&reel
+.ends
+
+*******************************************************************
+* Model name       : FERD40M45CT
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD40M45CT   anode1
+*				     | cathode
+*				     | | anode2
+*				     | | |
+.subckt FERD40M45CT  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=140.25E-6 N=1.0496 RS=5.2626E-3 IKF=10.982 CJO=9.7192E-9 M=1.0467 
++ VJ=.53867 ISR=1.2931E-6 NR=1.0433 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD60U45CT
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD60U45CT   anode1
+*				     | cathode
+*				     | | anode2
+*				     | | |
+.subckt FERD60U45CT  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=150.90E-6 N=1.0316 RS=3.8951E-3 IKF=21.849 CJO=18.120E-9 M=1.0217
++ VJ=.3905 ISR=1.5765E-6 NR=4.9950 TT=0 XTI=2 EG=.44 FC=0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+*FIELD EFFECT RECTIFIER DIODE 50V               
+*******************************************************************
+
+*******************************************************************
+* Model name       : FERD15S50DJF-TF
+* Description      : Field effect rectifier
+* Package type     : PowerFLAT 5x6
+*******************************************************************
+*model FERD15S50DJF-TF  anode1
+*					    | anode2
+*					    | | anode3
+*				        | | | anode4
+*					    | | | | cathode
+*				        | | | | | 
+.subckt FERD15S50DJF-TF 1 2 3 4 5
+d1 12 5 dx
+r1 1 12 0.1E-3
+r2 2 12 0.1E-3
+r3 3 12 0.1E-3
+r4 4 12 0.1E-3
+.model dx	D(IS=100.22E-6 N=1.0214 RS=8.0030E-3 IKF=5.1978  CJO=6.2280E-9 M=1.0973
++ VJ=.50623 ISR=574.28E-9 NR=1.1714 TT=0 XTI=2 EG=.444 FC=0.5)
+
+*	STMicroelectronics	case=PowerFLAT 5x6   Delivery= Tape&reel
+.ends
+
+*******************************************************************
+* Model name       : FERD15S50SB
+* Description      : Field effect rectifier
+* Package type     : DPAK
+*******************************************************************
+*model FERD15S50SB       anode1
+*				         | cathode
+*				         | | anode2
+*				         | | |
+.subckt FERD15S50SB      1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=86.671E-6 N=1.0593 RS=8.3313E-3 IKF=4.1253 CJO=6.0706E-9
++ M=.83737 VJ=.3905 ISR=2.0457E-6 NR=4.9950 TT=0 XTI=2 EG=.423)
+
+*	STMicroelectronics	case=DPAK     Delivery = Tube
+.ends 
+
+*******************************************************************
+* Model name       : FERD20U50DJF
+* Description      : Field effect rectifier
+* Package type     : PowerFLAT 5x6
+*******************************************************************
+*model FERD20U50DJF  anode1
+*					 | anode2
+*					 | | anode3
+*				     | | | anode4
+*					 | | | | cathode
+*				     | | | | | 
+.subckt FERD20U50DJF 1 2 3 4 5
+d1 12 5 dx
+r1 1 12 0.1E-3
+r2 2 12 0.1E-3
+r3 3 12 0.1E-3
+r4 4 12 0.1E-3
+.model dx	D(IS=99.566E-6 N=1.0126 RS=4.1127E-3 IKF=20.5024 CJO=9.9163E-9 M=.86068
++ VJ=.3905 ISR=1.8365E-6 NR=4.9950 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=PowerFLAT 5x6   Delivery= Tape&reel
+.ends
+*******************************************************************
+* Model name       : FERD30S50DJF
+* Description      : Field effect rectifier
+* Package type     : PowerFLAT 5x6
+*******************************************************************
+*model FERD30S50DJF  anode1
+*					 | anode2
+*					 | | anode3
+*				     | | | anode4
+*					 | | | | cathode
+*				     | | | | | 
+.subckt FERD30S50DJF 1 2 3 4 5
+d1 12 5 dx
+r1 1 12 0.1E-3
+r2 2 12 0.1E-3
+r3 3 12 0.1E-3
+r4 4 12 0.1E-3
+.model dx	D(IS=124.39E-6 N=1.0114 RS=3.7984E-3 IKF=5.5926 CJO=11.435E-9 M=1.2042
++ VJ=.61842 ISR=645.70E-9 NR=1.0723 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=PowerFLAT 5x6   Delivery= Tape&reel
+.ends     
+
+*******************************************************************
+* Model name       : FERD40U50CFP
+* Description      : Field effect rectifier
+* Package type     : TO-220FPAB
+*******************************************************************
+*model FERD40U50CFP  anode1
+*				     | cathode
+*				     | | anode2
+*				     | | |
+.subckt FERD40U50CFP 1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=140.25E-6 N=1.0496 RS=5.2626E-3 IKF=10.982 CJO=9.7192E-9 M=1.0467 
++ VJ=.53867 ISR=1.2931E-6 NR=1.0433 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=TO-220FPAB     Delivery = Tube
+.ends
+
+
+*******************************************************************
+*FIELD EFFECT RECTIFIER DIODE 60V               
+*******************************************************************
+
+*******************************************************************
+* Model name       : FERD20H60CTS
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD20H60CTS   anode1
+*				      | cathode
+*				      | | anode2
+*				      | | |
+.subckt FERD20H60CTS  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=17.691E-6 N=1.0216 RS=15.124E-3 IKF=8.4593+ CJO=3.4128E-9 M=.82861
++ VJ=.3905 ISR=851.99E-9 NR=.94376 TT=0 XTI=2 EG=.444 FC = 0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD20H60CG-TR
+* Description      : Field effect rectifier
+* Package type     : D²PAK
+*******************************************************************
+*model FERD20H60CG-TR   anode1
+*				        | cathode
+*				        | | anode2
+*				        | | |
+.subckt FERD20H60CG-TR  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=17.691E-6 N=1.0216 RS=15.124E-3 IKF=8.4593+ CJO=3.4128E-9 M=.82861
++ VJ=.3905 ISR=851.99E-9 NR=.94376 TT=0 XTI=2 EG=.444 FC = 0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+
+*******************************************************************
+* Model name       : FERD20L60CTS
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD20L60CTS   anode1
+*				      | cathode
+*				      | | anode2
+*				      | | |
+.subckt FERD20L60CTS  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=72.592E-6 N=1.0218 RS=13.934E-3 IKF=3.9218 CJO=3.9451E-9 M=.88244
++ VJ=.3905 ISR=1.6595E-6 NR=1.1457 TT=0 XTI=2 EG=.444 FC = 0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD20L60CG-TR
+* Description      : Field effect rectifier
+* Package type     : D²PAK
+*******************************************************************
+*model FERD20L60CG-TR   anode1
+*				        | cathode
+*				        | | anode2
+*				        | | |
+.subckt FERD20L60CG-TR  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=72.592E-6 N=1.0218 RS=13.934E-3 IKF=3.9218 CJO=3.9451E-9 M=.88244
++ VJ=.3905 ISR=1.6595E-6 NR=1.1457 TT=0 XTI=2 EG=.444 FC = 0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD20M60SR
+* Description      : Field effect rectifier
+* Package type     : I2PACK
+*******************************************************************
+*model FERD20M60SR   anode1
+*				     | cathode
+*				     | | anode2
+*				     | | |
+.subckt FERD20M60SR  1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=19.890E-6 N=.99409 RS=5.6107E-3 IKF=4.1201 CJO=4.7073E-9 M=4.6337
++ VJ=10 ISR=10.010E-21 NR=4.9950 TT=0 XTI=2 EG=.444)
+
+*	STMicroelectronics	case=I2PACK     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD20M60ST
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD20M60ST   anode1
+*				     | cathode
+*				     | | anode2
+*				     | | |
+.subckt FERD20M60ST  1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=19.890E-6 N=.99409 RS=5.6107E-3 IKF=4.1201 CJO=4.7073E-9 M=4.6337
++ VJ=10 ISR=10.010E-21 NR=4.9950 TT=0 XTI=2 EG=.444)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD20U60DJF
+* Description      : Field effect rectifier
+* Package type     : PowerFLAT 5x6
+*******************************************************************
+*model FERD20U60DJF  anode1
+*					 | anode2
+*					 | | anode3
+*				     | | | anode4
+*					 | | | | cathode
+*				     | | | | | 
+.subckt FERD20U60DJF 1 2 3 4 5
+d1 12 5 dx
+r1 1 12 0.1E-3
+r2 2 12 0.1E-3
+r3 3 12 0.1E-3
+r4 4 12 0.1E-3
+.model dx	D(IS=149.28E-6 N=1.0209 RS=5.7154E-3 IKF=7.7399 CJO=9.9869E-9 M=.89047
++ VJ=.3905 ISR=2.1603E-6 NR=4.9950 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=PowerFLAT 5x6   Delivery= Tape&reel
+.ends
+
+*******************************************************************
+* Model name       : FERD30H60CTS
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD30H60CTS   anode1
+*				      | cathode
+*				      | | anode2
+*				      | | |
+.subckt FERD30H60CTS  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=20.118E-6 N=1.0316 RS=9.2566E-3 IKF=5.1786 CJO=5.3968E-9 M=.84546
++ VJ=.3905 ISR=481.00E-9 NR=.99031 TT=0 XTI=2 EG=.444 FC = 0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD30H60CG-TR
+* Description      : Field effect rectifier
+* Package type     : D²PAK
+*******************************************************************
+*model FERD30H60CG-TR   anode1
+*				        | cathode
+*				        | | anode2
+*				        | | |
+.subckt FERD30H60CG-TR  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=20.118E-6 N=1.0316 RS=9.2566E-3 IKF=5.1786 CJO=5.3968E-9 M=.84546
++ VJ=.3905 ISR=481.00E-9 NR=.99031 TT=0 XTI=2 EG=.444 FC = 0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD30L60CTS
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD30L60CTS   anode1
+*				      | cathode
+*				      | | anode2
+*				      | | |
+.subckt FERD30L60CTS  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=80.428E-6 N=1.0377 RS=9.0126E-3 IKF=5.6355 CJO=5.5314E-9 M=.87738
++ VJ=.43934 ISR=1.9601E-6 NR=1.2988 TT=0 XTI=2 EG=.444 FC = 0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD30L60CG-TR
+* Description      : Field effect rectifier
+* Package type     : D²PAK
+*******************************************************************
+*model FERD30L60CG-TR   anode1
+*				        | cathode
+*				        | | anode2
+*				        | | |
+.subckt FERD30L60CG-TR  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=80.428E-6 N=1.0377 RS=9.0126E-3 IKF=5.6355 CJO=5.5314E-9 M=.87738
++ VJ=.43934 ISR=1.9601E-6 NR=1.2988 TT=0 XTI=2 EG=.444 FC = 0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD40L60CTS
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD40L60CTS   anode1
+*				      | cathode
+*				      | | anode2
+*				      | | |
+.subckt FERD40L60CTS  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=88.807E-6 N=1.0306 RS=7.4934E-3 IKF=15.096 CJO=3.2382E-9 M=1.3999
++ VJ=3.1731 ISR=3.7401E-6 NR=4.9950 TT=0 XTI=2 EG=.444 FC=0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD40L60CG-TR
+* Description      : Field effect rectifier
+* Package type     : D²PAK
+*******************************************************************
+*model FERD40L60CG-TR   anode1
+*				        | cathode
+*				        | | anode2
+*				        | | |
+.subckt FERD40L60CG-TR  1 2 3
+d1 1 2 dx
+d2 3 2 dx
+.model dx	D(IS=88.807E-6 N=1.0306 RS=7.4934E-3 IKF=15.096 CJO=3.2382E-9 M=1.3999
++ VJ=3.1731 ISR=3.7401E-6 NR=4.9950 TT=0 XTI=2 EG=.444 FC=0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+
+*******************************************************************
+*FIELD EFFECT RECTIFIER DIODE 100V               
+*******************************************************************
+
+*******************************************************************
+* Model name       : FERD20S100STS
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD20S100STS   anode1
+*				       | cathode
+*				       | | anode2
+*				       | | |
+.subckt FERD20S100STS  1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=8.1636E-6 N=1.0339 RS=29.687E-3 IKF=770.09 CJO=4.8847E-9 M=10
++ VJ=8.1791 ISR=135.44E-18 NR=4.9950 TT=0 XTI=2 EG=.423 FC=0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD20S100SB-TR
+* Description      : Field effect rectifier
+* Package type     : DPAK
+*******************************************************************
+*model FERD20S100SB-TR   anode1
+*				         | cathode
+*				         | | anode2
+*				         | | |
+.subckt FERD20S100SB-TR  1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=8.1636E-6 N=1.0339 RS=29.687E-3 IKF=770.09 CJO=4.8847E-9 M=10
++ VJ=8.1791 ISR=135.44E-18 NR=4.9950 TT=0 XTI=2 EG=.423 FC=0.5)
+
+*	STMicroelectronics	case=DPAK     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD20S100SH
+* Description      : Field effect rectifier
+* Package type     : IPAK
+*******************************************************************
+*model FERD20S100SH   anode1
+*				      | cathode
+*				      | | anode2
+*				      | | |
+.subckt FERD20S100SH  1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=8.1636E-6 N=1.0339 RS=29.687E-3 IKF=770.09 CJO=4.8847E-9 M=10
++ VJ=8.1791 ISR=135.44E-18 NR=4.9950 TT=0 XTI=2 EG=.423 FC=0.5)
+
+*	STMicroelectronics	case=IPAK     Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD30H100SB
+* Description      : Field effect rectifier
+* Package type     : DPAK
+*******************************************************************
+*model FERD30H100SB   anode
+*				      | cathode
+*				      | | anode
+*				      | | |
+.subckt FERD30H100SB  1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=8.4991E-6 N=1.0007 RS=14.783E-3 IKF=2.8959 CJO=18.766E-9 M=10
++ VJ=7.1132 ISR=44.694E-18 NR=4.9950 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=I²PAK       Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD30H100SH
+* Description      : Field effect rectifier
+* Package type     : I²PAK
+*******************************************************************
+*model FERD30H100SH   anode
+*				      | cathode
+*				      | | anode
+*				      | | |
+.subckt FERD30H100SH  1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=8.4991E-6 N=1.0007 RS=14.783E-3 IKF=2.8959 CJO=18.766E-9 M=10
++ VJ=7.1132 ISR=44.694E-18 NR=4.9950 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=I²PAK       Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD30H100STS
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD30H100STS  anode
+*				      | cathode
+*				      | | anode
+*				      | | |
+.subckt FERD30H100STS 1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=7.9665E-6 N=1.1180 RS=16.107E-3 IKF=402.26 CJO=8.6940E-9 M=3.4498
++ VJ=2.3955 ISR=10.010E-21 NR=4.9950 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+ 
+*******************************************************************
+* Model name       : FERD30SM100DJF
+* Description      : Single field effect rectifier
+* Package type     : PowerFLAT 5x6
+*******************************************************************
+.MODEL FERD30SM100DJF  D(IS=11.195E-6 N=1.0147 RS=14.281E-3 IKF=6.3241 CJO=12.947E-9 M=1.7449
++ VJ=.3905 ISR=830.72E-12 NR=4.9950 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=       Delivery = Tube
+.ends
+
+
+*******************************************************************
+* Model name       : FERD30SM100ST
+* Description      : Single field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+.MODEL FERD30SM100ST  D(IS=9.8510E-6 N=1.0096 RS=14.613E-3 IKF=999.97 CJO=12.947E-9 M=1.7449
++ VJ=.3905 ISR=866.07E-12 NR=4.9950 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=TO-220AB       Delivery = Tube
+.ends
+
+*******************************************************************
+* Model name       : FERD40H100SG
+* Description      : Field effect rectifier
+* Package type     : D²PAK
+*******************************************************************
+*model FERD40H100SG  anode
+*				     | cathode
+*				     | |
+.subckt FERD40H100SG 3 4
+d1 3 4 dx
+.model dx	D(IS=11.310E-6 N=.99886 RS=8.3350E-3 IKF=4.5587 CJO=18.766E-9 M=10
++ VJ=7.1132 ISR=60.707E-18 NR=4.9950 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=D²PAK   Delivery= Tape&reel
+.ends
+
+*******************************************************************
+* Model name       : FERD40H100STS
+* Description      : Field effect rectifier
+* Package type     : TO-220AB
+*******************************************************************
+*model FERD40H100STS  anode1
+*				      | cathode
+*				      | | anode2
+*				      | | |
+.subckt FERD40H100STS 1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=11.310E-6 N=.99886 RS=8.3350E-3 IKF=4.5587 CJO=18.766E-9 M=10
++ VJ=7.1132 ISR=60.707E-18 NR=4.9950 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+
+*******************************************************************
+* Model name       : FERD40H100SFP
+* Description      : Field effect rectifier
+* Package type     : TO-220FPAB
+*******************************************************************
+*model FERD40H100SFP  anode1
+*				      | cathode
+*				      | | anode2
+*				      | | |
+.subckt FERD40H100SFP 1 2 3
+d1 12 3 dx
+r1 1 12 0.1E-6
+r2 2 12 0.1E-6
+.model dx	D(IS=11.310E-6 N=.99886 RS=8.3350E-3 IKF=4.5587 CJO=18.766E-9 M=10
++ VJ=7.1132 ISR=60.707E-18 NR=4.9950 TT=0 XTI=2 EG=.46 FC=0.5)
+
+*	STMicroelectronics	case=TO-220AB     Delivery = Tube
+.ends
+
+*-------------------------------------
+*THANKS TO USE THE ST'S PRODUCTS
+*-------------------------------------
+
+* End of library.
+*$

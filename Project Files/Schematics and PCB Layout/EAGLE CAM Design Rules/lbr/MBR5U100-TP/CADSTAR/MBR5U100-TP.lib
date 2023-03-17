@@ -1,0 +1,20 @@
+.MBR5U100-TP :1 ;Diode Schottky 100 V 5A Surface Mount TO-277
+MBR5U100TP
+*STM D
+*NGS
+*PLB 1="ANODE_1" 2="ANODE_2" 3="COMMON CATHODE"
+*MXP 3
+*DFN MBR5U100-TP
+~!Manufacturer_Name (MCC)
+~!Manufacturer_Part_Number (MBR5U100-TP)
+~!Mouser Part Number (-)
+~!Mouser Price/Stock (-)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Mouser Testing Part Number (-)
+~!Mouser Testing Price/Stock (-)
+~!Link Datasheet (https://www.mccsemi.com/pdf/Products/MBR5U100(TO-277).pdf)
+~!Height (1.2mm)
+~!3D_Model (MBR5U100-TP)
+MBR5U100-TP
+1.1!U 2.1!U 3.1!U 

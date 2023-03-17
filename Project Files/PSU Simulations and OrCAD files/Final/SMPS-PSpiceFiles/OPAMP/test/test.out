@@ -1,0 +1,132 @@
+
+**** 02/25/23 18:11:09 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "OPAMP-test"  [ d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps-PSpiceFiles\OPAMP\test.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "test.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../smps-pspicefiles/smps.lib" 
+.LIB "../../../3rd party spice models/simulation_model_coolmos_p7_mosfet_700v_spice.lib" 
+.LIB "../../../3rd party spice models/ucc24650_netlist.lib" 
+.LIB "../../../3rd party spice models/ucc28730_netlist.lib" 
+.LIB "../../../3rd party spice models/st_field_effect_ rectifier_v7.lib" 
+.LIB "../../../3rd party spice models/we-fb.lib" 
+.LIB "../../../transformer.lib" 
+.LIB "../../../3rd party spice models/stn9360.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_DATA\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1 0 1u SKIPBP 
+.OPTIONS PREORDER
+.OPTIONS ADVCONV
+.OPTIONS LIMIT= 1e10
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\OPAMP.net" 
+
+
+
+**** INCLUDING OPAMP.net ****
+* source SMPS
+X_U1A         N02665 N02628 N02669 0 N02602 LM324/NS
+R_R1         N02628 N02602  4k TC=0,0 
+R_R2         N02628 0  2k TC=0,0 
+R_R3         N02665 N02931  10k TC=0,0 
+V_V2         N02669 0 15
+V_V3         N02931 0 DC 0 AC 0
++SIN 0 4 50 0 0 0
+X_D1         0 N02665 power_diode_p PARAMS: I_REV_LEAK=1e-5 CT_ZERO_VOLTS=300p
++  V_BR=600 VJ_KNEE=0.9 VJ_SPEC=1.6 IF_SPEC=6
+
+**** RESUMING test.cir ****
+.END
+
+**** 02/25/23 18:11:09 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "OPAMP-test"  [ d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps-PSpiceFiles\OPAMP\test.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.DX        X_D1.D1exp      
+          IS    1.000000E-15   10.000000E-06 
+          BV                  600            
+          RS                     .116667     
+         CJO                  300.000000E-12 
+
+
+**** 02/25/23 18:11:09 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "OPAMP-test"  [ d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps-PSpiceFiles\OPAMP\test.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.QX        
+               PNP             
+       LEVEL    1            
+          IS  100.000000E-18 
+          BF    1.111000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.2          
+           D     .52         
+
+
+
+          JOB CONCLUDED
+
+**** 02/25/23 18:11:09 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "OPAMP-test"  [ d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps-PSpiceFiles\OPAMP\test.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =      114.42
+  Total job time (using Solver 1)   =       46.89
+

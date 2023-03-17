@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP F861BB104M310A
+D F861, Film, Metallized Polypropylene, Safety, 0.1 uF, 20%, 310 VAC, 310 VAC (X2), 310 VAC, 630 VDC, 110C, -40C, 110C, 0.3 % , 30 GOhms, 400 V/us, 2, 1.239 g, 18mm, 10mm, 4mm, Lead Spacing = 15mm, 1500, 104  Weeks
+K
+F https://content.kemet.com/datasheets/KEM_F3001_F861_X2_310.pdf
+$ENDCMP
+#
+#End Doc Library

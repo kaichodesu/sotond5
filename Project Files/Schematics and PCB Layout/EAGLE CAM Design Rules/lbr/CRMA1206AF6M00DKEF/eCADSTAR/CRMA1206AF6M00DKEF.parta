@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_15175436"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2021-09-26-05:27:34)
+    (utime 2021-09-26-05:27:34)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "CRMA1206AF6M00DKEF")
+)
+
+
+(pinAssign "ECS_15175436"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2021-09-26-05:27:34)
+    (utime 2021-09-26-05:27:34)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_15175436")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "CRMA1206AF6M00DKEF")
+)
+
+
+(part "CRMA1206AF6M00DKEF"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2021-09-26-05:27:34)
+    (utime 2021-09-26-05:27:34)
+    (packageRef "CRMA1206AF6M00DKEF")
+    (pinAssignRef "ECS_15175436")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "R")
+    (property "description" "Thick Film Resistors - SMD 0.30W 6Mohm .5% AEC-Q200")
+    (property "Mouser_Part_Number" "")
+    (property "Mouser_Price/Stock" "")
+    (property "Manufacturer_Name" "Vishay")
+    (property "Manufacturer_Part_Number" "CRMA1206AF6M00DKEF")
+    (property "Datasheet_Link" "https://www.vishay.com/doc?68043")
+    (property "compAreaTopHeight" 0.74)
+)
+
+

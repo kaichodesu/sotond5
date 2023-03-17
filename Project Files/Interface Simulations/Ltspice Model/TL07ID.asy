@@ -1,0 +1,27 @@
+Version 4
+SymbolType BLOCK
+LINE Normal 16 17 16 -64
+LINE Normal 96 -32 16 17
+LINE Normal 16 -64 96 -32
+LINE Normal 48 -51 48 -64
+LINE Normal 48 -2 48 16
+WINDOW 0 101 -83 Bottom 2
+WINDOW 3 98 25 Top 2
+SYMATTR Value TL07ID
+SYMATTR Prefix X
+SYMATTR ModelFile H:\D5\Interface\Ltspice Model\TL07ID.sub
+PIN 16 0 RIGHT 8
+PINATTR PinName 1
+PINATTR SpiceOrder 1
+PIN 16 -48 RIGHT 8
+PINATTR PinName 2
+PINATTR SpiceOrder 2
+PIN 48 16 LEFT 8
+PINATTR PinName 3
+PINATTR SpiceOrder 3
+PIN 48 -64 LEFT 8
+PINATTR PinName 4
+PINATTR SpiceOrder 4
+PIN 96 -32 LEFT 8
+PINATTR PinName 5
+PINATTR SpiceOrder 5

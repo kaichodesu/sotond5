@@ -1,0 +1,16 @@
+.SSM3K15AFS_LF :1 ;MOSFET SM Sig N-CH MOS 30V 0.1A 20V VGSS
+SOT50P160X90-3N
+*STM Q
+*NGS
+*PLB 1="G" 2="D" 3="S"
+*MXP 3
+*DFN SSM3K15AFS_LF
+~!Mouser Part Number (757-SSM3K15AFSLF)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Toshiba/SSM3K15AFSLF?qs=%252B8yZ8wZTKG7AGhIhPkr1lQ%3D%3D)
+~!Manufacturer_Name (Toshiba)
+~!Manufacturer_Part_Number (SSM3K15AFS,LF)
+~!Link Datasheet (https://componentsearchengine.com/Datasheets/1/SSM3K15AFS,LF.pdf)
+~!Height (0.9mm)
+~!3D_Model (SSM3K15AFS,LF)
+SSM3K15AFS_LF
+1.1!U 2.1!U 3.1!U 

@@ -1,0 +1,16 @@
+.CRMA1206AF6M00DKEF :1 ;Thick Film Resistors - SMD 0.30W 6Mohm .5% AEC-Q200
+RESC3216X74N
+*STM R
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN CRMA1206AF6M00DKEF
+~!Mouser Part Number (-)
+~!Mouser Price/Stock (-)
+~!Manufacturer_Name (Vishay)
+~!Manufacturer_Part_Number (CRMA1206AF6M00DKEF)
+~!Link Datasheet (https://www.vishay.com/doc?68043)
+~!Height (0.74mm)
+~!3D_Model (CRMA1206AF6M00DKEF)
+CRMA1206AF6M00DKEF
+1.1!U 2.1!U 

@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_5095110"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-11-16-15:36:10)
+    (utime 2020-03-28-20:36:34)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "1C20C0G220J050B")
+)
+
+
+(pinAssign "ECS_5095110"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-11-16-15:36:10)
+    (utime 2020-03-28-20:36:34)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_5095110")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "1C20C0G220J050B")
+)
+
+
+(part "1C20C0G220J050B"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-11-16-15:36:10)
+    (utime 2020-03-28-20:36:34)
+    (packageRef "1C20C0G220J050B")
+    (pinAssignRef "ECS_5095110")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "C")
+    (property "description" "22pF +/-5% 50V Ceramic Capacitor C0G, NP0 Radial")
+    (property "Mouser_Part_Number" "75-1C20C0G220J050B")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Sprague/1C20C0G220J050B?qs=So2q653Ab4nrWddw6vx7vg%3D%3D")
+    (property "Manufacturer_Name" "Vishay")
+    (property "Manufacturer_Part_Number" "1C20C0G220J050B")
+    (property "Datasheet_Link" "https://media.digikey.com/pdf/Data%20Sheets/BC%20Components%20PDFs/1C-9C_Series_Rev_Sep_2015.pdf")
+    (property "compAreaTopHeight" 6.35)
+)
+
+

@@ -1,0 +1,220 @@
+(ExpressProject "D5"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S028 (4018475)  [3/9/2022]-[02/03/23]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (Allegro Netlist Directory "allegro")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify)
+    (File ".\d5.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\d5-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\d5-pspicefiles\schematic1\powertest.sim"
+        (DisplayName "SCHEMATIC1-PowerTest")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\d5-pspicefiles\schematic1\powertest2.sim"
+        (DisplayName "SCHEMATIC1-PowerTest2")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\d5-pspicefiles\schematic1\powertest.sim"))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User))
+    (Folder "Model Libraries"
+      (File ".\psu\ucc28730_pspice_trans\ucc24650_netlist.lib"
+        (DisplayName ".\psu\ucc28730_pspice_trans\ucc24650_netlist.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\psu\ucc28730_pspice_trans\ucc28730_netlist.lib"
+        (DisplayName ".\psu\ucc28730_pspice_trans\ucc28730_netlist.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\psu\power magnetics\sub\we-fb.lib"
+        (DisplayName ".\psu\power magnetics\sub\we-fb.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\d5-PSpiceFiles\PSpiceModelApps\PSpiceModelApps_Include.lib"
+        (DisplayName
+           ".\d5-PSpiceFiles\PSpiceModelApps\PSpiceModelApps_Include.lib")
+        (Type "PSpiceLibrary"))
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (Folder "Logs")
+  (PartMRUSelector
+    (XFRM_NONLIN/CT-PRI
+      (FullPartName "XFRM_NONLIN/CT-PRI.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANL_MISC.OLB")
+      (DeviceIndex "0"))
+    (kbreak
+      (FullPartName "kbreak.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (WINDING
+      (FullPartName "WINDING.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ADVANLS\PSPICE_ELEM.OLB")
+      (DeviceIndex "0"))
+    (XFRM_LINEAR
+      (FullPartName "XFRM_LINEAR.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (SPW11N80C3_L1
+      (FullPartName "SPW11N80C3_L1.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\INFINEON_COOLMOS_800.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (BATTERY
+      (FullPartName "BATTERY.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ADVANLS\SPICE_ELEM.OLB")
+      (DeviceIndex "0"))
+    (2KBP10M_3N259
+      (FullPartName "2KBP10M_3N259.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\DIODE_FULLBRIDGE.OLB")
+      (DeviceIndex "0"))
+    (Dbreak
+      (FullPartName "Dbreak.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (GND
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (VSIN
+      (FullPartName "VSIN.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (K_Linear
+      (FullPartName "K_Linear.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (DMBRS2040LT3/ON
+      (FullPartName "DMBRS2040LT3/ON.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ON_DIODE.OLB")
+      (DeviceIndex "0"))
+    (10MQ060N
+      (FullPartName "10MQ060N.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\IRF.OLB")
+      (DeviceIndex "0"))
+    (L
+      (FullPartName "L.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (SPW11N80C3
+      (FullPartName "SPW11N80C3.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\INFINEON_COOLMOS_800.OLB")
+      (DeviceIndex "0"))
+    (MURS160T3G
+      (FullPartName "MURS160T3G.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\DIODE.OLB")
+      (DeviceIndex "0"))
+    (1smb5935bt3/ON
+      (FullPartName "1smb5935bt3/ON.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ON_DIODE.OLB")
+      (DeviceIndex "0"))
+    (UCC28730_NETLIST
+      (FullPartName "UCC28730_NETLIST.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\PSU\UCC28730_PSPICE_TRANS\UCC28730_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (TOP_UCC28730_NETLIST_U2_S1
+      (FullPartName "TOP_UCC28730_NETLIST_U2_S1.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\PSU\UCC28730_PSPICE_TRANS\UCC28730_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (UCC24650DBV_TRANS
+      (FullPartName "UCC24650DBV_TRANS.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\PSU\UCC28730_PSPICE_TRANS\UCC24650DBV_TRANS.OLB")
+      (DeviceIndex "0"))
+    (LPO2506O-474LD
+      (FullPartName "LPO2506O-474LD.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\COILCRAFT_IND.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0")))
+  (MPSSessionName "kaicho")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\d5.dsn")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\d5.dsn"
+         "SCHEMATIC1")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\d5.dsn"
+         "SCHEMATIC2")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\d5.dsn"
+         "Design Cache")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Model Libraries")
+      (Path "PSpice Resources" "Simulation Profiles")
+      (Select "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\d5.dsn"
+         "SCHEMATIC2"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 301 0 1092"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 24 5 1837 24 1133")
+        (Scroll "-191 -12")
+        (Zoom "146")
+        (Occurrence "/"))
+      (Path "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 24 5 1837 24 1133")
+        (Scroll "-172 0")
+        (Zoom "150"))
+      (Path "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\D5.DSN")
+      (Schematic "SCHEMATIC2")
+      (Page "PAGE2")))
+  (LastUsedLibraryBrowseDirectory
+     "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\PSU\UCC28730_PSPICE_TRANS"))

@@ -1,0 +1,28 @@
+*PSpice Modeling Apps Index library File
+*$
+ .SUBCKT FLB_Model P1 P2 S1 S2
+* Model generated on 2023 February 2
+* MODEL FORMAT: PSpice
+* MODEL Type: FLB_Model
+RP1 P1 PI 450m
+LP1 PI P2 500u
+LS1 S1 SI1 1.8000e-2
+RS1 SI1 SI2 50m
+LL1 SI2 S2 5u
+K1 LP1 LS1 1
+RG1 S2 0 1G
+.ends FLB_Model
+ .SUBCKT FWDR_Model P1 P2 RS1 RS2 S1 S2
+* Model generated on 2023 February 2
+* MODEL FORMAT: PSpice
+* MODEL Type: FWDR_Model
+RP1 P1 PI 450m
+LP1 PI P2 500u
+LS1 S1 SI1 1.8000e-2
+LL1 SI1 SI2 5u
+RS1 SI2 S2 50m
+LRS1 RS2 RS1 1.8000e-2
+K1 LP1 LS1 LRS1 1
+RG1 S2 0 1G
+RG2 RS2 0 1G
+.ends FWDR_Model

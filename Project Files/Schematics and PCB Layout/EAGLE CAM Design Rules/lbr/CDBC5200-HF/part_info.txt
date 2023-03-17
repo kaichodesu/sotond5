@@ -1,0 +1,9 @@
+Manufacturer=Comchip Technology
+PartNumber=CDBC5200-HF
+PartCategory=Schottky Diode
+PackageCategory=Diodes Moulded
+PinCount=2
+Version=1.1
+Released=2023-02-13 04:54:30
+Downloaded=2023-02-14 20:32:03
+3D=Y

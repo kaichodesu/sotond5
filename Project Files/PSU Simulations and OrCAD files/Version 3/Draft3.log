@@ -1,0 +1,22 @@
+Circuit: * D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\PSU\Draft3.asc
+
+.OP point found by inspection.
+
+Date: Wed Feb 15 20:11:56 2023
+Total elapsed time: 0.547 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 133091
+traniter = 133091
+tranpoints = 63617
+accept = 43103
+rejected = 20514
+matrix size = 5
+fillins = 1
+solver = Normal
+Avg thread counts: 1.0/1.0/1.0/1.0
+Matrix Compiler1:      15 opcodes  0.2/[0.1]/0.2
+Matrix Compiler2: 369 bytes object code size  0.1/0.1/[0.0]
+

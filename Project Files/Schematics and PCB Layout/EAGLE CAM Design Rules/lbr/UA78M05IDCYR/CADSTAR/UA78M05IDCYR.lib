@@ -1,0 +1,16 @@
+.UA78M05IDCYR :1 ;500-mA, 25-V, Linear Voltage Regulators
+SOT230P700X180-4N
+*STM PS
+*NGS
+*PLB 1="INPUT" 2="COMMON_1" 3="OUTPUT" 4="COMMON_2"
+*MXP 4
+*DFN UA78M05IDCYR
+~!Mouser Part Number (595-UA78M05IDCYR)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Texas-Instruments/UA78M05IDCYR?qs=0O%2FZFlpUpJXf0Y5v1qo1ow%3D%3D)
+~!Manufacturer_Name (Texas Instruments)
+~!Manufacturer_Part_Number (UA78M05IDCYR)
+~!Link Datasheet (http://www.ti.com/lit/gpn/ua78m)
+~!Height (1.8mm)
+~!3D_Model (UA78M05IDCYR)
+UA78M05IDCYR
+1.1!U 2.1!U 3.1!U 4.1!U 

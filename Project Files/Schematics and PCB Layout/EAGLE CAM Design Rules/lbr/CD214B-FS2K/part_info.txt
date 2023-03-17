@@ -1,0 +1,9 @@
+Manufacturer=Bourns
+PartNumber=CD214B-FS2K
+PartCategory=Bridge Rectifier
+PackageCategory=Other
+PinCount=2
+Version=1.1
+Released=2022-04-28 04:45:23
+Downloaded=2023-02-12 23:37:06
+3D=Y

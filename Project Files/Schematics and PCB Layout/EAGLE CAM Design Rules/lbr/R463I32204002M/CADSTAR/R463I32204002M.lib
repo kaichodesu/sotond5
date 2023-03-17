@@ -1,0 +1,16 @@
+.R463I32204002M :1 ;R46 310 VAC, Film, Metallized Polypropylene, Safety, 0.22 uF, 20%, 310 VAC, 310 VAC (X2), 310 VAC, 630 VDC, 110C, -40C, 110C, 0.1 % , 100 GOhms, 400 V/us, 2, 2.4 g, 18mm, 17.5mm, 6mm, Lead Spacing = 15mm, 700
+R463I32204002M
+*STM C
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN R463I32204002M
+~!Mouser Part Number (80-R463I32204002M)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/KEMET/R463I32204002M?qs=%252BEew9%252B0nqrCK%252BJI8ePwnUw%3D%3D)
+~!Manufacturer_Name (KEMET)
+~!Manufacturer_Part_Number (R463I32204002M)
+~!Link Datasheet (https://content.kemet.com/datasheets/KEM_F3095_R46_X2_310_110C.pdf)
+~!Height (13.6mm)
+~!3D_Model (R463I32204002M)
+R463I32204002M
+1.1!U 2.1!U 

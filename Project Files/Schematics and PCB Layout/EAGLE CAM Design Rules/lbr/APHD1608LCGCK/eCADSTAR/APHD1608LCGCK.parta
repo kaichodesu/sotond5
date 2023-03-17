@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_911060"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-10-16-17:10:51)
+    (utime 2023-01-20-12:01:09)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "APHD1608LCGCK")
+)
+
+
+(pinAssign "ECS_911060"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-10-16-17:10:51)
+    (utime 2023-01-20-12:01:09)
+    (interface
+        (port "1" (symbPinId 1) (portName "K") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "A") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_911060")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "APHD1608LCGCK")
+)
+
+
+(part "APHD1608LCGCK"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-10-16-17:10:51)
+    (utime 2023-01-20-12:01:09)
+    (packageRef "APHD1608LCGCK")
+    (pinAssignRef "ECS_911060")
+    (interface
+        (port "1" (symbPinId 1) (portName "K") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "A") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "YES")
+    (property "refDesPrefix" "LED")
+    (property "description" "Standard LEDs - SMD 0603 Dome Lens LED Green- 570nm")
+    (property "Mouser_Part_Number" "604-APHD1608LCGCK")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Kingbright/APHD1608LCGCK?qs=AQlKX63v8RvqPbV1LDSVuw%3D%3D")
+    (property "Manufacturer_Name" "Kingbright")
+    (property "Manufacturer_Part_Number" "APHD1608LCGCK")
+    (property "Datasheet_Link" "http://www.kingbrightusa.com/images/catalog/SPEC/APHD1608LCGCK.pdf")
+    (property "compAreaTopHeight" 0.8)
+)
+
+

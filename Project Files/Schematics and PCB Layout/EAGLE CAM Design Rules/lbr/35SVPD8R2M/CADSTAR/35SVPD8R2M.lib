@@ -1,0 +1,16 @@
+.35SVPD8R2M :1 ;Aluminum Organic Polymer Capacitors 35volt 8.2uF 70mOhm 8x7mm OS-CON
+"16SVF270M"
+*STM C
+*NGS
+*PLB 1="+" 2="-"
+*MXP 2
+*DFN 35SVPD8R2M
+~!Mouser Part Number (667-35SVPD8R2M)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Panasonic/35SVPD8R2M?qs=LkACrQhHtvBb%2FZ1Chbx9Cg%3D%3D)
+~!Manufacturer_Name (Panasonic)
+~!Manufacturer_Part_Number (35SVPD8R2M)
+~!Link Datasheet (http://industrial.panasonic.com/cdbs/www-data/pdf/AAB8000/AAB8000C181.pdf)
+~!Height (7mm)
+~!3D_Model (35SVPD8R2M)
+"35SVPD8R2M"
+1.1!U 2.1!U 

@@ -1,0 +1,20 @@
+.CD-DF406SL :1 ;Bridge Rectifiers VRRM 600V 4A SMD DFS Bridge Rectifier
+CDDF406SL
+*STM BR
+*NGS
+*PLB 1="+" 2="~_1" 3="~_2" 4="-"
+*MXP 4
+*DFN CD-DF406SL
+~!Manufacturer_Name (Bourns)
+~!Manufacturer_Part_Number (CD-DF406SL)
+~!Mouser Part Number (652-CD-DF406SL)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Bourns/CD-DF406SL?qs=zwwtnr6GuIwJRuaaRN0u3A%3D%3D)
+~!Arrow Part Number (CD-DF406SL)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/cd-df406sl/bourns?region=nac)
+~!Mouser Testing Part Number (-)
+~!Mouser Testing Price/Stock (-)
+~!Link Datasheet (http://www.bourns.com/docs/Product-Datasheets/CD-DF4xxSL.pdf)
+~!Height (1.55mm)
+~!3D_Model (CD-DF406SL)
+CD-DF406SL
+1.1!U 2.1!U 3.1!U 4.1!U 

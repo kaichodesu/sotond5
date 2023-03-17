@@ -1,0 +1,9 @@
+Manufacturer=Panasonic
+PartNumber=35SVPD8R2M
+PartCategory=Capacitor Polarised
+PackageCategory=Other
+PinCount=2
+Version=6.1
+Released=2021-09-07 15:54:34
+Downloaded=2023-02-13 17:58:49
+3D=Y

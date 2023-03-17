@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "CRMA1206AF6M00DKEF"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2019-11-15-12:30:15)
+    (mountForm default
+        (footprintRef "RESC3216X74N")
+        (spec "System")
+    )
+)

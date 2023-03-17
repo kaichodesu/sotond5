@@ -1,0 +1,9 @@
+Manufacturer=NXP
+PartNumber=TEA2209T/1J
+PartCategory=Integrated Circuit
+PackageCategory=Small Outline Packages
+PinCount=16
+Version=1.1
+Released=2022-06-17 11:53:16
+Downloaded=2023-01-30 16:28:00
+3D=Y

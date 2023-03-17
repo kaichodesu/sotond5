@@ -1,0 +1,70 @@
+(Japanese_coding: sjis)
+(function "ECS_277545"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-11-15-05:06:56)
+    (utime 2019-04-28-06:46:04)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+        (port "3" (symbPinId 3) (portType INOUT))
+    )
+    (property "symbolName" "SSM3K15AFS_LF")
+)
+
+
+(pinAssign "ECS_277545"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-11-15-05:06:56)
+    (utime 2019-04-28-06:46:04)
+    (interface
+        (port "1" (symbPinId 1) (portName "G") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "D") (portType INOUT))
+        (port "3" (symbPinId 3) (portName "S") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_277545")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+                (port "3" (match "3"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "SSM3K15AFS_LF")
+)
+
+
+(part "SSM3K15AFS_LF"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-11-15-05:06:56)
+    (utime 2019-04-28-06:46:04)
+    (packageRef "SSM3K15AFS_LF")
+    (pinAssignRef "ECS_277545")
+    (interface
+        (port "1" (symbPinId 1) (portName "G") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "D") (portType INOUT))
+        (port "3" (symbPinId 3) (portName "S") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "YES")
+    (property "refDesPrefix" "Q")
+    (property "description" "MOSFET SM Sig N-CH MOS 30V 0.1A 20V VGSS")
+    (property "Mouser_Part_Number" "757-SSM3K15AFSLF")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Toshiba/SSM3K15AFSLF?qs=%252B8yZ8wZTKG7AGhIhPkr1lQ%3D%3D")
+    (property "Manufacturer_Name" "Toshiba")
+    (property "Manufacturer_Part_Number" "SSM3K15AFS,LF")
+    (property "Datasheet_Link" "https://componentsearchengine.com/Datasheets/1/SSM3K15AFS,LF.pdf")
+    (property "compAreaTopHeight" 0.9)
+)
+
+

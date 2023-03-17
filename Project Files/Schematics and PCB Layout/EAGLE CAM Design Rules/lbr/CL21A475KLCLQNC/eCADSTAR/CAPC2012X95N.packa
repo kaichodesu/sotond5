@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "CL21A475KLCLQNC"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2021-02-24-10:01:30)
+    (mountForm default
+        (footprintRef "CAPC2012X95N")
+        (spec "System")
+    )
+)

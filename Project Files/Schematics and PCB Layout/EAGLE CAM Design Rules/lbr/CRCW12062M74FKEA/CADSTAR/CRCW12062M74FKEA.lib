@@ -1,0 +1,16 @@
+.CRCW12062M74FKEA :1 ;RESISTOR, 1206 2.74M Ohms +/-1% 0.25W
+RESC3216X60N
+*STM R
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN CRCW12062M74FKEA
+~!Mouser Part Number (-)
+~!Mouser Price/Stock (-)
+~!Manufacturer_Name (Vishay)
+~!Manufacturer_Part_Number (CRCW12062M74FKEA)
+~!Link Datasheet (-)
+~!Height (0.6mm)
+~!3D_Model (CRCW12062M74FKEA)
+CRCW12062M74FKEA
+1.1!U 2.1!U 

@@ -1,0 +1,9 @@
+Manufacturer=Diodes Inc.
+PartNumber=BZX84C3V3-7-F
+PartCategory=Zener Diode
+PackageCategory=SOT23 (3-Pin)
+PinCount=3
+Version=1.1
+Released=2021-04-20 18:49:00
+Downloaded=2023-02-16 14:41:35
+3D=Y

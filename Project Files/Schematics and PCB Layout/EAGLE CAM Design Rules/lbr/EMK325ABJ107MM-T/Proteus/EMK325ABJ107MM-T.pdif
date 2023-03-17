@@ -1,0 +1,103 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "EMK325ABJ107MM-T"
+   (description "TAIYO YUDEN - EMK325ABJ107MM-T - CAP, MLCC, X5R, 100UF, 16V, 1210")
+   (family "CAP")
+   (package "CAPC3225X270N")
+   (attribute "Datasheet Link" "https://componentsearchengine.com/Datasheets/2/EMK325ABJ107MM-T.pdf")
+   (attribute "Geometry.Height" "2.7mm")
+   (attribute "Mouser Part Number" "963-EMK325ABJ107MM-T")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Taiyo-Yuden/EMK325ABJ107MM-T?qs=I6KAKw0tg2y0ShKbEoYruw%3D%3D")
+   (attribute "Manufacturer_Name" "TAIYO YUDEN")
+   (attribute "Manufacturer_Part_Number" "EMK325ABJ107MM-T")
+   (gate
+    (symbol "EMK325ABJ107MM-T")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+   )
+  )
+  (symbol "EMK325ABJ107MM-T"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 220 100) (pt 220 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 280 100) (pt 280 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 200 0) (pt 220 0))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 280 0) (pt 300 0))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 500 0) (rot 0) (mir X) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "CAPC3225X270N"
+   (units MM)
+   (layer OCCA
+    (graphic
+     (stroke 0.05)
+     (path
+      (closed true)
+      (pt -2.11 1.51)
+      (pt 2.11 1.51)
+      (pt 2.11 -1.51)
+      (pt -2.11 -1.51)
+      (pt -2.11 1.51))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1.6 1.25)
+      (pt 1.6 1.25)
+      (pt 1.6 -1.25)
+      (pt -1.6 -1.25)
+      (pt -1.6 1.25))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt 0 1.15)
+      (pt 0 -1.15))))
+   (leg 1 (pt -1.35 0) (padstack 0))
+   (leg 2 (pt 1.35 0) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 1.22 2.72 0 0 90))
+   )
+   (model "EMK325ABJ107MM-T.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

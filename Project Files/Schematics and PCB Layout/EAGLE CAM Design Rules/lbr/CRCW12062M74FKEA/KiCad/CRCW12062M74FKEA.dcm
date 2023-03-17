@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CRCW12062M74FKEA
+D RESISTOR, 1206 2.74M Ohms +/-1% 0.25W
+K
+F 
+$ENDCMP
+#
+#End Doc Library

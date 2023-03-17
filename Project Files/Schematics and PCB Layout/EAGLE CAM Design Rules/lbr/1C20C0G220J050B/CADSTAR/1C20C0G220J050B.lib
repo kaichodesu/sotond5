@@ -1,0 +1,16 @@
+.1C20C0G220J050B :1 ;22pF +/-5% 50V Ceramic Capacitor C0G, NP0 Radial
+"1C20C0G220J050B"
+*STM C
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN 1C20C0G220J050B
+~!Mouser Part Number (75-1C20C0G220J050B)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Vishay-Sprague/1C20C0G220J050B?qs=So2q653Ab4nrWddw6vx7vg%3D%3D)
+~!Manufacturer_Name (Vishay)
+~!Manufacturer_Part_Number (1C20C0G220J050B)
+~!Link Datasheet (https://media.digikey.com/pdf/Data%20Sheets/BC%20Components%20PDFs/1C-9C_Series_Rev_Sep_2015.pdf)
+~!Height (6.35mm)
+~!3D_Model (1C20C0G220J050B)
+"1C20C0G220J050B"
+1.1!U 2.1!U 

@@ -1,0 +1,16 @@
+.CRCW0805200MJPEAHR :1 ;Res Thick Film 0805 200M Ohm 5% 0.125W(1/8W) +/-500ppm/C Pad SMD T/R
+RESC2012X50N
+*STM R
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN CRCW0805200MJPEAHR
+~!Mouser Part Number (71-CRCW0805200MJPEAR)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Vishay-Dale/CRCW0805200MJPEAHR?qs=1Y%252Bwz%2FmXx1X9mklwBLyslQ%3D%3D)
+~!Manufacturer_Name (Vishay)
+~!Manufacturer_Part_Number (CRCW0805200MJPEAHR)
+~!Link Datasheet (https://www.arrow.com/en/products/crcw0805200mjpeahr/vishay)
+~!Height (0.5mm)
+~!3D_Model (CRCW0805200MJPEAHR)
+CRCW0805200MJPEAHR
+1.1!U 2.1!U 

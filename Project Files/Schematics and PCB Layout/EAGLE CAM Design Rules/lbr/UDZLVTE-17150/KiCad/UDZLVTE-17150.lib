@@ -1,0 +1,28 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model UDZLVTE-17150
+#/609439/1061851/2.49/2/3/Zener Diode
+DEF UDZLVTE-17150 Z 0 30 Y Y 1 F N
+F0 "Z" 400 350 50 H V L CNN
+F1 "UDZLVTE-17150" 400 250 50 H V L CNN
+F2 "SODFL2512X90N" 400 150 50 H I L CNN
+F3 "https://componentsearchengine.com/Datasheets/2/UDZLVTE-17150.pdf" 400 50 50 H I L CNN
+F4 "ROHM - UDZLVTE-17150 - Zener Single Diode, 150 V, 200 mW, SOD-323FL, 2 Pins, 150 C" 400 -50 50 H I L CNN "Description"
+F5 "0.9" 400 -150 50 H I L CNN "Height"
+F6 "755-UDZLVTE-17150" 400 -250 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/ROHM-Semiconductor/UDZLVTE-17150/?qs=uPV7ZbtEjc5dJhqDrwh%252BYA%3D%3D" 400 -350 50 H I L CNN "Mouser Price/Stock"
+F8 "ROHM Semiconductor" 400 -450 50 H I L CNN "Manufacturer_Name"
+F9 "UDZLVTE-17150" 400 -550 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X ~ 1 0 0 100 R 50 50 0 0 P
+X ~ 2 600 0 100 L 50 50 0 0 P
+P 2 0 1 6 200 80 200 -80 N
+P 2 0 1 6 200 80 240 100 N
+P 2 0 1 6 160 -100 200 -80 N
+P 2 0 1 6 100 0 200 0 N
+P 2 0 1 6 500 0 400 0 N
+P 4 0 1 10 200 0 400 100 400 -100 200 0 F
+ENDDRAW
+ENDDEF
+#
+#End Library

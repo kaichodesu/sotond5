@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "XT9S20ANA12M"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2019-09-13-16:09:45)
+    (mountForm default
+        (footprintRef "XT9S20ANA12M")
+        (spec "System")
+    )
+)

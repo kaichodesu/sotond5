@@ -1,0 +1,9 @@
+Manufacturer=Microchip
+PartNumber=MCP1799-3302H/DB
+PartCategory=Integrated Circuit
+PackageCategory=SOT223 (3-Pin)
+PinCount=4
+Version=3.1
+Released=2020-04-02 10:55:19
+Downloaded=2023-02-16 02:52:36
+3D=Y

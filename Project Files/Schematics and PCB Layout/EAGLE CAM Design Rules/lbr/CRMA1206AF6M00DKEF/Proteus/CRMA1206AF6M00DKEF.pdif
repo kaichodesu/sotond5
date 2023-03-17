@@ -1,0 +1,91 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "CRMA1206AF6M00DKEF"
+   (description "Thick Film Resistors - SMD 0.30W 6Mohm .5% AEC-Q200")
+   (family "RES")
+   (package "RESC3216X74N")
+   (attribute "Datasheet Link" "https://www.vishay.com/doc?68043")
+   (attribute "Geometry.Height" "0.74mm")
+   (attribute "Mouser Part Number" "")
+   (attribute "Mouser Price/Stock" "")
+   (attribute "Manufacturer_Name" "Vishay")
+   (attribute "Manufacturer_Part_Number" "CRMA1206AF6M00DKEF")
+   (gate
+    (symbol "CRMA1206AF6M00DKEF")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+   )
+  )
+  (symbol "CRMA1206AF6M00DKEF"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 50) (pt 500 50) (pt 500 -50) (pt 200 -50) (pt 200 50) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 700 0) (rot 0) (mir X) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "RESC3216X74N"
+   (units MM)
+   (layer OCCA
+    (graphic
+     (stroke 0.05)
+     (path
+      (closed true)
+      (pt -2.275 1.15)
+      (pt 2.275 1.15)
+      (pt 2.275 -1.15)
+      (pt -2.275 -1.15)
+      (pt -2.275 1.15))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1.59 0.8)
+      (pt 1.59 0.8)
+      (pt 1.59 -0.8)
+      (pt -1.59 -0.8)
+      (pt -1.59 0.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt 0 0.7)
+      (pt 0 -0.7))))
+   (leg 1 (pt -1.45 0) (padstack 0))
+   (leg 2 (pt 1.45 0) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 1.15 1.8 0 0 90))
+   )
+   (model "CRMA1206AF6M00DKEF.stp"
+    (euler 90 0 0)
+    (offset 0 20.31999969482422 15.239999771118164)
+   )
+  )
+ )
+)

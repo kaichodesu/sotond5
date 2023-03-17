@@ -1,0 +1,138 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "CD-DF406SL"
+   (description "Bridge Rectifiers VRRM 600V 4A SMD DFS Bridge Rectifier")
+   (family "ANA")
+   (package "CDDF406SL")
+   (attribute "Datasheet Link" "http://www.bourns.com/docs/Product-Datasheets/CD-DF4xxSL.pdf")
+   (attribute "Geometry.Height" "1.55mm")
+   (attribute "Manufacturer_Name" "Bourns")
+   (attribute "Manufacturer_Part_Number" "CD-DF406SL")
+   (attribute "Mouser Part Number" "652-CD-DF406SL")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Bourns/CD-DF406SL?qs=zwwtnr6GuIwJRuaaRN0u3A%3D%3D")
+   (attribute "Arrow Part Number" "CD-DF406SL")
+   (attribute "Arrow Price/Stock" "https://www.arrow.com/en/products/cd-df406sl/bourns?region=nac")
+   (attribute "Mouser Testing Part Number" "")
+   (attribute "Mouser Testing Price/Stock" "")
+   (gate
+    (symbol "CD-DF406SL")
+    (pin "+" 1 PS)
+    (pin "~_1" 2 PS)
+    (pin "~_2" 3 PS)
+    (pin "-" 4 PS)
+   )
+  )
+  (symbol "CD-DF406SL"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 800 100) (pt 800 -200) (pt 200 -200) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 1000 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1000 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "CDDF406SL"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -4.05 5.25)
+      (pt 4.05 5.25)
+      (pt 4.05 -5.25)
+      (pt -4.05 -5.25)
+      (pt -4.05 5.25))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -5.05 7.05)
+      (pt 5.05 7.05)
+      (pt 5.05 -7.05)
+      (pt -5.05 -7.05)
+      (pt -5.05 7.05))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -1 5.25)
+      (pt 1 5.25))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt 4.05 1.2)
+      (pt 4.05 -1.2))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt 1 -5.25)
+      (pt -1 -5.25))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -4.05 -1.2)
+      (pt -4.05 1.2))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt 2.6 6.6)
+      (arc (pt 2.600 6.600) (pt 2.600 6.500) (pt 2.800 6.700) (start 180.0) (sweep 180.0))
+      (pt 2.8 6.6)
+      (arc (pt 2.800 6.600) (pt 2.600 6.500) (pt 2.800 6.700) (start 180.0) (sweep .0))
+      (pt 2.6 6.6))))
+   (leg 1 (pt 2.550 3.850) (padstack 0))
+   (leg 2 (pt 2.550 -3.850) (padstack 0))
+   (leg 3 (pt -2.550 -3.850) (padstack 0))
+   (leg 4 (pt -2.550 3.850) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 2.300 4.300 0 0 90.000))
+   )
+   (model "CD-DF406SL.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

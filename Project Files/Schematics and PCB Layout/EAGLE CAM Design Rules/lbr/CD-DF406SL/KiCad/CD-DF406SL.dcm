@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CD-DF406SL
+D Bridge Rectifiers VRRM 600V 4A SMD DFS Bridge Rectifier
+K
+F http://www.bourns.com/docs/Product-Datasheets/CD-DF4xxSL.pdf
+$ENDCMP
+#
+#End Doc Library

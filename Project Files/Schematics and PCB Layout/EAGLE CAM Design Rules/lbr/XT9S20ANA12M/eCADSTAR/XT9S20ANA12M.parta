@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_295926"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-09-13-16:09:45)
+    (utime 2019-09-14-06:56:53)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "XT9S20ANA12M")
+)
+
+
+(pinAssign "ECS_295926"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-09-13-16:09:45)
+    (utime 2019-09-14-06:56:53)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_295926")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "XT9S20ANA12M")
+)
+
+
+(part "XT9S20ANA12M"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-09-13-16:09:45)
+    (utime 2019-09-14-06:56:53)
+    (packageRef "XT9S20ANA12M")
+    (pinAssignRef "ECS_295926")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "YES")
+    (property "refDesPrefix" "Y")
+    (property "description" "Crystals 12MHz 20pF")
+    (property "Mouser_Part_Number" "73-XT49S1200-20")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Dale/XT9S20ANA12M?qs=dEWVFCiHFQU3RvQOkgKjqw%3D%3D")
+    (property "Manufacturer_Name" "Vishay")
+    (property "Manufacturer_Part_Number" "XT9S20ANA12M")
+    (property "Datasheet_Link" "")
+    (property "compAreaTopHeight" 3.5)
+)
+
+

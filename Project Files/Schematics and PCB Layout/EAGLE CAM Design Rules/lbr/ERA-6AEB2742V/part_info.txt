@@ -1,0 +1,9 @@
+Manufacturer=Panasonic
+PartNumber=ERA-6AEB2742V
+PartCategory=Resistor
+PackageCategory=Other
+PinCount=2
+Version=4.1
+Released=2020-03-23 20:21:29
+Downloaded=2023-02-13 00:00:52
+3D=Y

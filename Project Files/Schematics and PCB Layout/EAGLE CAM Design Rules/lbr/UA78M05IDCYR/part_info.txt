@@ -1,0 +1,9 @@
+Manufacturer=Texas Instruments
+PartNumber=UA78M05IDCYR
+PartCategory=Power Supply
+PackageCategory=SOT223 (3-Pin)
+PinCount=4
+Version=3.1
+Released=2017-10-10 13:08:45
+Downloaded=2023-02-16 03:41:11
+3D=Y

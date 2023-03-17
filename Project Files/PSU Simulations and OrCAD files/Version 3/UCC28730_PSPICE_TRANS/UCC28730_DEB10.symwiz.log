@@ -1,0 +1,7 @@
+STATUS: PSpice Model Import Wizard for "Capture" (17.4.0.d001)
+STATUS:  
+   INFO: OLB driven flow
+   INFO: Input File: D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\PSU\UCC28730_PSPICE_TRANS\UCC28730_DEB10.olb
+   INFO: Symbol Name: FWDR_2
+  ERROR: Symbol "FWDR_2" not found in symbol library "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\PSU\UCC28730_PSPICE_TRANS\UCC28730_DEB10.olb".
+STATUS: 1 Error messages, 0 Warning messages

@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_976953"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2022-02-03-07:59:30)
+    (utime 2022-02-04-06:28:50)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "CRCW0805200MJPEAHR")
+)
+
+
+(pinAssign "ECS_976953"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2022-02-03-07:59:30)
+    (utime 2022-02-04-06:28:50)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_976953")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "CRCW0805200MJPEAHR")
+)
+
+
+(part "CRCW0805200MJPEAHR"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2022-02-03-07:59:30)
+    (utime 2022-02-04-06:28:50)
+    (packageRef "CRCW0805200MJPEAHR")
+    (pinAssignRef "ECS_976953")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "R")
+    (property "description" "Res Thick Film 0805 200M Ohm 5% 0.125W(1/8W) +/-500ppm/C Pad SMD T/R")
+    (property "Mouser_Part_Number" "71-CRCW0805200MJPEAR")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Dale/CRCW0805200MJPEAHR?qs=1Y%252Bwz%2FmXx1X9mklwBLyslQ%3D%3D")
+    (property "Manufacturer_Name" "Vishay")
+    (property "Manufacturer_Part_Number" "CRCW0805200MJPEAHR")
+    (property "Datasheet_Link" "https://www.arrow.com/en/products/crcw0805200mjpeahr/vishay")
+    (property "compAreaTopHeight" 0.5)
+)
+
+

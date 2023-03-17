@@ -1,0 +1,16 @@
+.ACGRAT103L-HF :1 ;Rectifiers LOW VF 1A 600V AEC-Q101
+DIOC4522X116N
+*STM D
+*NGS
+*PLB 1="K" 2="A"
+*MXP 2
+*DFN ACGRAT103L-HF
+~!Mouser Part Number (750-ACGRAT103L-HF)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Comchip-Technology/ACGRAT103L-HF?qs=vdiGlTBG6Ju%2Fx90PaXpRhA%3D%3D)
+~!Manufacturer_Name (Comchip Technology)
+~!Manufacturer_Part_Number (ACGRAT103L-HF)
+~!Link Datasheet (https://4donline.ihs.com/images/VipMasterIC/IC/COMC/COMC-S-A0003293254/COMC-S-A0003293254-1.pdf?hkey=EF798316E3902B6ED9A73243A3159BB0)
+~!Height (1.16mm)
+~!3D_Model (ACGRAT103L-HF)
+ACGRAT103L-HF
+1.1!U 2.1!U 

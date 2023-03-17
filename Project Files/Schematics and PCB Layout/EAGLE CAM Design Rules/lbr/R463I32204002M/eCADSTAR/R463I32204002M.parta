@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_2399973"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-10-12-11:57:04)
+    (utime 2022-09-10-07:22:46)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "R463I32204002M")
+)
+
+
+(pinAssign "ECS_2399973"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-10-12-11:57:04)
+    (utime 2022-09-10-07:22:46)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_2399973")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "R463I32204002M")
+)
+
+
+(part "R463I32204002M"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-10-12-11:57:04)
+    (utime 2022-09-10-07:22:46)
+    (packageRef "R463I32204002M")
+    (pinAssignRef "ECS_2399973")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "C")
+    (property "description" "R46 310 VAC, Film, Metallized Polypropylene, Safety, 0.22 uF, 20%, 310 VAC, 310 VAC (X2), 310 VAC, 630 VDC, 110C, -40C, 110C, 0.1 % , 100 GOhms, 400 V/us, 2, 2.4 g, 18mm, 17.5mm, 6mm, Lead Spacing = 15mm, 700")
+    (property "Mouser_Part_Number" "80-R463I32204002M")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/KEMET/R463I32204002M?qs=%252BEew9%252B0nqrCK%252BJI8ePwnUw%3D%3D")
+    (property "Manufacturer_Name" "KEMET")
+    (property "Manufacturer_Part_Number" "R463I32204002M")
+    (property "Datasheet_Link" "https://content.kemet.com/datasheets/KEM_F3095_R46_X2_310_110C.pdf")
+    (property "compAreaTopHeight" 13.6)
+)
+
+

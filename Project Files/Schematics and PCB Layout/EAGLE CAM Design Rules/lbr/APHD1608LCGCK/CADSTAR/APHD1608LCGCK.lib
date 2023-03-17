@@ -1,0 +1,16 @@
+.APHD1608LCGCK :1 ;Standard LEDs - SMD 0603 Dome Lens LED Green- 570nm
+LEDM168X80N
+*STM LED
+*NGS
+*PLB 1="K" 2="A"
+*MXP 2
+*DFN APHD1608LCGCK
+~!Mouser Part Number (604-APHD1608LCGCK)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Kingbright/APHD1608LCGCK?qs=AQlKX63v8RvqPbV1LDSVuw%3D%3D)
+~!Manufacturer_Name (Kingbright)
+~!Manufacturer_Part_Number (APHD1608LCGCK)
+~!Link Datasheet (http://www.kingbrightusa.com/images/catalog/SPEC/APHD1608LCGCK.pdf)
+~!Height (0.8mm)
+~!3D_Model (APHD1608LCGCK)
+APHD1608LCGCK
+1.1!U 2.1!U 

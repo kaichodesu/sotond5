@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CD214B-FS2K
+D Rectifiers 800V 2A
+K
+F http://www.bourns.com/docs/product-datasheets/CD214B-FS2x.pdf
+$ENDCMP
+#
+#End Doc Library

@@ -1,0 +1,113 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "XT9S20ANA12M"
+   (description "Crystals 12MHz 20pF")
+   (family "OSC")
+   (package "XT9S20ANA12M")
+   (attribute "Datasheet Link" "")
+   (attribute "Geometry.Height" "3.5mm")
+   (attribute "Mouser Part Number" "73-XT49S1200-20")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Dale/XT9S20ANA12M?qs=dEWVFCiHFQU3RvQOkgKjqw%3D%3D")
+   (attribute "Manufacturer_Name" "Vishay")
+   (attribute "Manufacturer_Part_Number" "XT9S20ANA12M")
+   (gate
+    (symbol "XT9S20ANA12M")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+   )
+  )
+  (symbol "XT9S20ANA12M"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 120 100) (pt 120 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 280 100) (pt 280 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 160 140) (pt 160 -140) (pt 240 -140) (pt 240 140) (pt 160 140) (closed))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 280 0) (pt 300 0))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 120 0) (pt 100 0))
+   )
+   (terminal
+    (body (symbol "PINSHORT") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 140 10) (rot 0) (just MIDDLE LEFT) (visible false))
+    (number (pt 60 10) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PINSHORT") (pt 400 0) (rot 0) (mir X) (visible true))
+    (name (pt 140 10) (rot 0) (just MIDDLE LEFT) (visible false))
+    (number (pt 60 10) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "XT9S20ANA12M"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -2.68 1.905)
+      (pt 7.56 1.905)
+      (pt 7.56 -1.905)
+      (pt -2.68 -1.905)
+      (pt -2.68 1.905))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.68 1.905)
+      (pt 7.56 1.905)
+      (pt 7.56 -1.905)
+      (pt -2.68 -1.905)
+      (pt -2.68 1.905))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -3.68 2.905)
+      (pt 8.56 2.905)
+      (pt 8.56 -2.905)
+      (pt -3.68 -2.905)
+      (pt -3.68 2.905))))
+   (leg 1 (pt 0.000 0.000) (padstack 0))
+   (leg 2 (pt 4.880 0.000) (padstack 0))
+   (padstack 0
+    (hole 0.68)
+    (plated true)
+    (pad (layer TCOP) (round 1.247))
+    (pad (layer INNER) (round 1.247))
+    (pad (layer BCOP) (round 1.247))
+   )
+   (model "XT9S20ANA12M.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

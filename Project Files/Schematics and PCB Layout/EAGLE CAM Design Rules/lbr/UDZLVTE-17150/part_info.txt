@@ -1,0 +1,9 @@
+Manufacturer=ROHM Semiconductor
+PartNumber=UDZLVTE-17150
+PartCategory=Zener Diode
+PackageCategory=Small Outline Diode Flat Lead
+PinCount=2
+Version=1.1
+Released=2021-02-15 07:26:30
+Downloaded=2023-02-12 23:38:19
+3D=Y

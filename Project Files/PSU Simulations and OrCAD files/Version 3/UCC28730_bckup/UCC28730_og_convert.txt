@@ -1,0 +1,9 @@
+The conversion of the project was successful.
+
+The new directory structure is as follows:
+
+D:/Users/mbt0c/OneDrive/Dokumente/Southampton/Part 2/D5/PSU/UCC28730_bckup
+    UCC28730_og.opj
+    ucc28730_deb.dsn
+D:/Users/mbt0c/OneDrive/Dokumente/Southampton/Part 2/D5/PSU/UCC28730_bckup/UCC28730_og-PSpiceFiles
+D:/Users/mbt0c/OneDrive/Dokumente/Southampton/Part 2/D5/PSU/UCC28730_bckup/UCC28730_og-PSpiceFiles/Test_2CHIP_netlists

@@ -1,0 +1,220 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "750311771"
+   (description "Power Transformers WE-FB Flyback 500uH 3A 15V")
+   (family "ANA")
+   (package "750311771")
+   (attribute "Datasheet Link" "https://katalog.we-online.com/pbs/datasheet/750311771.pdf")
+   (attribute "Geometry.Height" "13.69mm")
+   (attribute "Manufacturer_Name" "Wurth Elektronik")
+   (attribute "Manufacturer_Part_Number" "750311771")
+   (attribute "Mouser Part Number" "710-750311771")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/750311771?qs=J4sk5G6CMwYUnCXRsU%2FeCw%3D%3D")
+   (attribute "Arrow Part Number" "")
+   (attribute "Arrow Price/Stock" "")
+   (attribute "Mouser Testing Part Number" "")
+   (attribute "Mouser Testing Price/Stock" "")
+   (gate
+    (symbol "750311771")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+    (pin "3" 3 PS)
+    (pin "4" 4 PS)
+    (pin "5" 5 PS)
+    (pin "6" 6 PS)
+    (pin "7" 7 PS)
+    (pin "8" 8 PS)
+    (pin "9" 9 PS)
+    (pin "10" 10 PS)
+    (pin "11" 11 PS)
+    (pin "12" 12 PS)
+   )
+  )
+  (symbol "750311771"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 700 100) (pt 700 -600) (pt 200 -600) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -300) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -400) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -500) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 900 -500) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 900 -400) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 900 -300) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 900 -200) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 900 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 900 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "750311771"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -16.155 -13.515)
+      (pt 16.155 -13.515)
+      (pt 16.155 13.515)
+      (pt -16.155 13.515)
+      (pt -16.155 -13.515))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -16.155 13.515)
+      (pt 16.155 13.515)
+      (pt 16.155 13.515)
+      (pt -16.155 13.515)
+      (pt -16.155 13.515))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt 16.155 13.515)
+      (pt 16.155 13.515)
+      (pt 16.155 11.25)
+      (pt 16.155 11.25)
+      (pt 16.155 13.515))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt 16.155 -11.25)
+      (pt 16.155 -11.25)
+      (pt 16.155 -13.515)
+      (pt 16.155 -13.515)
+      (pt 16.155 -11.25))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt 16.155 -13.5)
+      (pt -16.155 -13.5)
+      (pt -16.155 -13.515)
+      (pt 16.155 -13.515)
+      (pt 16.155 -13.5))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -16.155 -11)
+      (pt -16.155 -11)
+      (pt -16.155 -13.5)
+      (pt -16.155 -13.5)
+      (pt -16.155 -11))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -16.155 13.5)
+      (pt -16.155 13.5)
+      (pt -16.155 11.25)
+      (pt -16.155 11.25)
+      (pt -16.155 13.5))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -19 14.515)
+      (pt 17.44 14.515)
+      (pt 17.44 -14.515)
+      (pt -19 -14.515)
+      (pt -19 14.515))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -18 9.4)
+      (arc (pt -18.000 9.400) (pt -18.000 9.350) (pt -17.900 9.450) (start 180.0) (sweep 180.0))
+      (pt -17.9 9.4)
+      (arc (pt -17.900 9.400) (pt -18.000 9.350) (pt -17.900 9.450) (start 180.0) (sweep .0))
+      (pt -18 9.4)
+      (arc (pt -18.000 9.400) (pt -18.000 9.350) (pt -17.900 9.450) (start 180.0) (sweep 180.0))
+      (pt -17.9 9.4))))
+   (leg 1 (pt -15.190 9.400) (padstack 0))
+   (leg 2 (pt -15.190 5.640) (padstack 0))
+   (leg 3 (pt -15.190 1.880) (padstack 0))
+   (leg 4 (pt -15.190 -1.880) (padstack 0))
+   (leg 5 (pt -15.190 -5.640) (padstack 0))
+   (leg 6 (pt -15.190 -9.400) (padstack 0))
+   (leg 7 (pt 15.190 -9.400) (padstack 0))
+   (leg 8 (pt 15.190 -5.640) (padstack 0))
+   (leg 9 (pt 15.190 -1.880) (padstack 0))
+   (leg 10 (pt 15.190 1.880) (padstack 0))
+   (leg 11 (pt 15.190 5.640) (padstack 0))
+   (leg 12 (pt 15.190 9.400) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 1.520 2.500 0 0 0.000))
+   )
+   (model "750311771.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

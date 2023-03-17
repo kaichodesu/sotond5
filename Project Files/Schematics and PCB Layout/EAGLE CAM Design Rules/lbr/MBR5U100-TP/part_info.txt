@@ -1,0 +1,9 @@
+Manufacturer=MCC
+PartNumber=MBR5U100-TP
+PartCategory=Schottky Diode
+PackageCategory=Other
+PinCount=3
+Version=1.2
+Released=2022-06-29 07:31:16
+Downloaded=2023-02-13 00:30:32
+3D=Y

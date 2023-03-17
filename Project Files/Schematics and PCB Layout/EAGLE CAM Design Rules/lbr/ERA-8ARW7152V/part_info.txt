@@ -1,0 +1,9 @@
+Manufacturer=Panasonic
+PartNumber=ERA-8ARW7152V
+PartCategory=Resistor
+PackageCategory=Other
+PinCount=2
+Version=3.1
+Released=2020-03-23 13:22:20
+Downloaded=2023-02-12 23:48:34
+3D=Y

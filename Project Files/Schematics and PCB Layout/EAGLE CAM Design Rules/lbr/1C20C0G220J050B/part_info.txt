@@ -1,0 +1,9 @@
+Manufacturer=Vishay
+PartNumber=1C20C0G220J050B
+PartCategory=Capacitor
+PackageCategory=Other
+PinCount=2
+Version=1.1
+Released=2019-11-16 15:36:10
+Downloaded=2023-02-16 01:17:58
+3D=Y

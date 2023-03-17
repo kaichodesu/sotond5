@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ATMEGA644P-20PU
+D 8-bit MCU
+K
+F 
+$ENDCMP
+#
+#End Doc Library

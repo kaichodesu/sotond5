@@ -1,0 +1,30 @@
+** Profile: "SCHEMATIC1-300n"  [ d:\users\mbt0c\onedrive\dokumente\southampton\part 2\d5\d5 psu\smps-PSpiceFiles\SCHEMATIC1\300n.sim ] 
+
+** Creating circuit file "300n.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../smps-pspicefiles/smps.lib" 
+.LIB "../../../3rd party spice models/simulation_model_coolmos_p7_mosfet_700v_spice.lib" 
+.LIB "../../../3rd party spice models/ucc24650_netlist.lib" 
+.LIB "../../../3rd party spice models/ucc28730_netlist.lib" 
+.LIB "../../../3rd party spice models/st_field_effect_ rectifier_v7.lib" 
+.LIB "../../../3rd party spice models/we-fb.lib" 
+.LIB "../../../transformer.lib" 
+.LIB "../../../3rd party spice models/stn9360.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_DATA\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.1 0 25n SKIPBP 
+.OPTIONS PREORDER
+.OPTIONS ADVCONV
+.OPTIONS LIMIT= 1e10
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

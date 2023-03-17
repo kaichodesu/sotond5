@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "BZX84C3V3-7-F"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2020-08-18-05:13:38)
+    (mountForm default
+        (footprintRef "SOT96P240X120-3N")
+        (spec "System")
+    )
+)

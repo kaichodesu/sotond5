@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MBR5U100-TP
+D Diode Schottky 100 V 5A Surface Mount TO-277
+K
+F https://www.mccsemi.com/pdf/Products/MBR5U100(TO-277).pdf
+$ENDCMP
+#
+#End Doc Library

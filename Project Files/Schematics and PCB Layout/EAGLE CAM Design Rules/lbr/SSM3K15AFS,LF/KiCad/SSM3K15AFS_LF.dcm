@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SSM3K15AFS,LF
+D MOSFET SM Sig N-CH MOS 30V 0.1A 20V VGSS
+K
+F https://componentsearchengine.com/Datasheets/1/SSM3K15AFS,LF.pdf
+$ENDCMP
+#
+#End Doc Library

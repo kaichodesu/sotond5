@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "CD214BFS2K"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "CD214BFS2K")
+        (spec "default")
+    )
+)

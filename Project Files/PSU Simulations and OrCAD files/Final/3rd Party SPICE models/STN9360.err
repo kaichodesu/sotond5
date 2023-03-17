@@ -1,0 +1,8 @@
+STATUS: PSpice Schematics to Capture translator (17.4.0.d001)
+STATUS:  
+STATUS: Translator started at Wednesday, February 15, 2023 02:18:55
+STATUS: c:\cadence\spb_17.4\tools\bin\sch2cap -f "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\D5 PSU\3rd Party SPICE models\STN9360.LIB" -o "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\D5 PSU\3rd Party SPICE models\STN9360.olb" -i C:\SPB_DATA\cdssetup\OrCAD_PSpice/17.4.0/PSpice.ini
+INFO(ORSCH-1029): Using existing library 'c:\cadence\spb_17.4\tools\Capture\Library\PSpice\modeled.etc'.
+INFO(ORSCH-1031): Created new library 'D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\D5 PSU\3rd Party SPICE models\STN9360.olb'.
+STATUS: Translator stopped at Wednesday, February 15, 2023 02:18:55
+STATUS: 0 Error messages, 0 Warning messages

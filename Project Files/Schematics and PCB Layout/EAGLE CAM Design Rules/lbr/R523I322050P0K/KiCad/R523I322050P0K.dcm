@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP R523I322050P0K
+D R52 310 VAC MINI, Film, Metallized Polypropylene, Automotive Safety, 0.22 uF, 10%, 310 VAC, 310 VAC (X2), 310 VAC, 630 VDC, 110C, -40C, 110C, 0.2 % , 100 GOhms, 400 V/us, 2, 1.6 g, 18mm, 12mm, 6mm, Lead Spacing = 15mm, 900
+K
+F https://content.kemet.com/datasheets/KEM_F3123_R52_X2_310_110C_MIN.pdf
+$ENDCMP
+#
+#End Doc Library

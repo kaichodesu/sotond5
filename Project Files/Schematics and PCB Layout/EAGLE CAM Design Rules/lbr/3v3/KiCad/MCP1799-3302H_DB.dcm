@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MCP1799-3302H_DB
+D LDO Voltage Regulators High Voltage LDO 3.3V 3-Ld SOT-223 Tube
+K
+F https://datasheet.datasheetarchive.com/originals/distributors/Datasheets_SAMA/2add369fe97b3d22cf8b2b374aafb195.pdf
+$ENDCMP
+#
+#End Doc Library

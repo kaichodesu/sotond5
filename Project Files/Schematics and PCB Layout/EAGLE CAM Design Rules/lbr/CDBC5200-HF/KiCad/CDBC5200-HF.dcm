@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CDBC5200-HF
+D Diode 200 V 5A Surface Mount DO-214AB (SMC)
+K
+F https://www.comchiptech.com/admin/files/product/CDBC5150-HF%20Thru913202.%20CDBC5200-HF%20RevB.pdf
+$ENDCMP
+#
+#End Doc Library

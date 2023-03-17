@@ -1,0 +1,16 @@
+.CR0603-FX-4701ELF :1 ;SMD 0603 thick film resistor 4K7 1% Bourns CR0603-FX Series Thick Film Surface Mount Fixed Resistor 0603 Case 4.7k +/-1% 0.1W +/-100ppm/C
+RESC1608X55N
+*STM R
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN CR0603-FX-4701ELF
+~!Mouser Part Number (652-CR0603FX-4701ELF)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Bourns/CR0603-FX-4701ELF?qs=CCIlxZRRv7jGwxSydcgiTA%3D%3D)
+~!Manufacturer_Name (Bourns)
+~!Manufacturer_Part_Number (CR0603-FX-4701ELF)
+~!Link Datasheet (https://www.bourns.com/pdfs/chpreztr.pdf)
+~!Height (0.55mm)
+~!3D_Model (CR0603-FX-4701ELF)
+CR0603-FX-4701ELF
+1.1!U 2.1!U 

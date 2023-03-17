@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "ERA-8ARW7152V"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2021-09-05-19:33:20)
+    (mountForm default
+        (footprintRef "ERA8A__0805_")
+        (spec "System")
+    )
+)

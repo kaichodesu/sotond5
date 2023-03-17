@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "1C20C0G220J050B"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "1C20C0G220J050B")
+        (spec "default")
+    )
+)

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP FQD2P40TM
+D MOSFET QF -400V 6.5OHM DPAK
+K
+F https://www.onsemi.com/pub/Collateral/FQD2P40-D.pdf
+$ENDCMP
+#
+#End Doc Library

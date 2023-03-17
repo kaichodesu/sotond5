@@ -1,0 +1,9 @@
+.ALIASES
+X_U1A           U1A(+=N02665 -=N02628 V+=N02669 V-=0 OUT=N02602 ) CN @SMPS.OPAMP(sch_1):INS2511@NAT_SEMI.LM324/NS.Normal(chips)
+R_R1            R1(1=N02628 2=N02602 ) CN @SMPS.OPAMP(sch_1):INS2682@ANALOG.R.Normal(chips)
+R_R2            R2(1=N02628 2=0 ) CN @SMPS.OPAMP(sch_1):INS2715@ANALOG.R.Normal(chips)
+R_R3            R3(1=N02665 2=N02931 ) CN @SMPS.OPAMP(sch_1):INS2750@ANALOG.R.Normal(chips)
+V_V2            V2(+=N02669 -=0 ) CN @SMPS.OPAMP(sch_1):INS2947@SOURCE.VDC.Normal(chips)
+V_V3            V3(+=N02931 -=0 ) CN @SMPS.OPAMP(sch_1):INS3966@SOURCE.VSIN.Normal(chips)
+X_D1            D1(1=0 2=N02665 ) CN @SMPS.OPAMP(sch_1):INS4277@BREAKOUT.POWER_DIODE_P.Normal(chips)
+.ENDALIASES

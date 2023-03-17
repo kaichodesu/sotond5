@@ -1,0 +1,9 @@
+Manufacturer=Comchip Technology
+PartNumber=ACGRAT103L-HF
+PartCategory=Diode
+PackageCategory=Diodes Chip
+PinCount=2
+Version=1.1
+Released=2022-02-21 10:18:48
+Downloaded=2023-02-14 00:05:27
+3D=Y

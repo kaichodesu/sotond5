@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "LEDM168X80N"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "LEDM168X80N")
+        (spec "default")
+    )
+)

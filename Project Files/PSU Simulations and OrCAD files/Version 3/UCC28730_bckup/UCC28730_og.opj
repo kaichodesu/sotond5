@@ -1,0 +1,112 @@
+(ExpressProject "UCC28730_deb"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S028 (4018475)  [3/9/2022]-[02/03/23]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\ucc28730_netlist.olb"
+        (DisplayName ".\ucc28730_netlist.olb")
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\ucc28730_deb.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (RootChangedForceReNetlist "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\ucc28730_deb-pspicefiles\test_full_2chips\test_full_2chips.net"
+      (Type "Report"))
+    (File ".\ucc28730_deb-pspicefiles\for_netlists\for_netlists.net"
+      (Type "Report"))
+    (File
+       ".\ucc28730_deb-pspicefiles\test_2chip_netlists\test_2chip_netlists.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles")
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User))
+    (Folder "Model Libraries"
+      (File ".\transformer.lib"
+        (DisplayName ".\transformer.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\ucc24650_netlist.lib"
+        (DisplayName ".\ucc24650_netlist.lib")
+        (Type "PSpiceLibrary"))
+      (File ".\ucc28730_netlist.lib"
+        (DisplayName ".\ucc28730_netlist.lib")
+        (Type "PSpiceLibrary"))
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (UCC24650DBV_TRANS
+      (FullPartName "UCC24650DBV_TRANS.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\UCC24650DBV_TRANS.OLB")
+      (DeviceIndex "0"))
+    (UCC24650_NETLIST
+      (FullPartName "UCC24650_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\UCC24650_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (UCC28730_NETLIST
+      (FullPartName "UCC28730_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\UCC28730_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (CURRENT_CNTL_NETLIST
+      (FullPartName "CURRENT_CNTL_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\CURRENT_CNTL_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (PWR_MGNT_NETLIST
+      (FullPartName "PWR_MGNT_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\PWR_MGNT_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (MODULATOR_NETLIST
+      (FullPartName "MODULATOR_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\MODULATOR_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (CNT_LAW_NETLIST
+      (FullPartName "CNT_LAW_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\CNTL_LAW_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (SAMPLER_NETLIST
+      (FullPartName "SAMPLER_NETLIST.Normal")
+      (LibraryName
+         "C:\USERS\A0199733\DOCUMENTS\ARASH_PARTS_FOLDER\DEBUG_UCC28730_NETLIST\SAMPLER_NETLIST.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\PSU\UCC28730_bckup\ucc28730_deb.dsn")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\PSU\UCC28730_bckup\ucc28730_deb.dsn"
+         "Test_2CHIP_netlists")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\PSU\UCC28730_bckup\ucc28730_deb.dsn"
+         "Design Cache")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Model Libraries")
+      (Select "Design Resources"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 0 799 0 0 0 200 0 513"))
+      (Tab 0)))
+  (MPSSessionName "kaicho")
+  (LastUsedLibraryBrowseDirectory
+     "C:\Users\a0199733\Documents\Arash_PARTS_FOLDER\Debug_UCC28730_netlist")
+  (Folder "Logs"))

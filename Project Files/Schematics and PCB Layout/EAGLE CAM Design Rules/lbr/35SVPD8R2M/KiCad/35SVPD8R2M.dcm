@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 35SVPD8R2M
+D Aluminum Organic Polymer Capacitors 35volt 8.2uF 70mOhm 8x7mm OS-CON
+K
+F http://industrial.panasonic.com/cdbs/www-data/pdf/AAB8000/AAB8000C181.pdf
+$ENDCMP
+#
+#End Doc Library

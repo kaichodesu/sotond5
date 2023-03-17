@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP VY2472M41Y5VS63V7
+D VY2 Ceramic Capacitor 4,7NF 20% Y5V
+K
+F https://www.vishay.com/docs/28535/vy2series.pdf
+$ENDCMP
+#
+#End Doc Library

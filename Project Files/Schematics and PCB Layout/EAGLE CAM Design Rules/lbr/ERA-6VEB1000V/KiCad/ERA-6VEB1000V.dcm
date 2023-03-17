@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ERA-6VEB1000V
+D Thin Film Chip Resistor, High Stability & Reliability, 0805, 0.25W
+K
+F http://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/RDM0000C331.pdf
+$ENDCMP
+#
+#End Doc Library

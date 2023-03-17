@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_263990"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2017-12-08-05:18:31)
+    (utime 2022-04-29-06:25:44)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "EMK325ABJ107MM-T")
+)
+
+
+(pinAssign "ECS_263990"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2017-12-08-05:18:31)
+    (utime 2022-04-29-06:25:44)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_263990")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "EMK325ABJ107MM-T")
+)
+
+
+(part "EMK325ABJ107MM-T"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2017-12-08-05:18:31)
+    (utime 2022-04-29-06:25:44)
+    (packageRef "EMK325ABJ107MM-T")
+    (pinAssignRef "ECS_263990")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "C")
+    (property "description" "TAIYO YUDEN - EMK325ABJ107MM-T - CAP, MLCC, X5R, 100UF, 16V, 1210")
+    (property "Mouser_Part_Number" "963-EMK325ABJ107MM-T")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Taiyo-Yuden/EMK325ABJ107MM-T?qs=I6KAKw0tg2y0ShKbEoYruw%3D%3D")
+    (property "Manufacturer_Name" "TAIYO YUDEN")
+    (property "Manufacturer_Part_Number" "EMK325ABJ107MM-T")
+    (property "Datasheet_Link" "https://componentsearchengine.com/Datasheets/2/EMK325ABJ107MM-T.pdf")
+    (property "compAreaTopHeight" 2.7)
+)
+
+

@@ -1,0 +1,284 @@
+(ExpressProject "D5 SMPS"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S028 (4018475)  [3/9/2022]-[02/09/23]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    ("Allegro Netlist Directory" "allegro")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify)
+    (File ".\d5 smps.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (RootChangedForceReNetlist "x"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\d5 smps-pspicefiles\500uh\500uh.net"
+      (Type "Report"))
+    (File ".\d5 smps-pspicefiles\ipp65r190c7\ipp65r190c7.net"
+      (Type "Report"))
+    (File ".\d5 smps-pspicefiles\3900uh\3900uh.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\d5 smps-pspicefiles\500uh\main.sim"
+        (DisplayName "500uH-Main")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\d5 smps-pspicefiles\ipp65r190c7\ipp65r190c7.sim"
+        (DisplayName "IPP65R190C7-IPP65R190C7")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\d5 smps-pspicefiles\500uh\diode.sim"
+        (DisplayName "500uH-Diode")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\d5 smps-pspicefiles\3900uh\main.sim"
+        (DisplayName "3900uH-Main")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\d5 smps-pspicefiles\500uh\main.sim"))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\d5 smps-PSpiceFiles\PSpiceModelApps\PSpiceModelApps_Include.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName
+           ".\d5 smps-PSpiceFiles\PSpiceModelApps\PSpiceModelApps_Include.lib"))
+      (File ".\3rd party spice models\coolmos_p7_mosfet_800v_spice.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName
+           ".\3rd party spice models\coolmos_p7_mosfet_800v_spice.lib"))
+      (File ".\3rd party spice models\ifx_p7_600v.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\3rd party spice models\ifx_p7_600v.lib"))
+      (File ".\3rd party spice models\sic.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\3rd party spice models\sic.lib"))
+      (File ".\3rd party spice models\sihb24n65e_ps_rc_rev_b.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\3rd party spice models\sihb24n65e_ps_rc_rev_b.lib"))
+      (File ".\3rd party spice models\sihb24n65e_ps_rev_b.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\3rd party spice models\sihb24n65e_ps_rev_b.lib"))
+      (File
+         ".\3rd party spice models\simulation_model_coolmos_p7_mosfet_700v_spice.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName
+           ".\3rd party spice models\simulation_model_coolmos_p7_mosfet_700v_spice.lib"))
+      (File
+         ".\3rd party spice models\simulation_model_coolmos_pfd7_mosfet_600v_spice.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName
+           ".\3rd party spice models\simulation_model_coolmos_pfd7_mosfet_600v_spice.lib"))
+      (File
+         ".\3rd party spice models\simulationmodel_coolmos_p7_mosfet_950v_spice.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName
+           ".\3rd party spice models\simulationmodel_coolmos_p7_mosfet_950v_spice.lib"))
+      (File ".\3rd party spice models\std12n65m2_tn.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\3rd party spice models\std12n65m2_tn.lib"))
+      (File ".\3rd party spice models\std12n65m2_v2.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\3rd party spice models\std12n65m2_v2.lib"))
+      (File ".\3rd party spice models\std12n65m2_v3.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\3rd party spice models\std12n65m2_v3.lib"))
+      (File ".\transformer.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\transformer.lib"))
+      (File
+         ".\3rd party spice models\infineon_simulation model_coolmos_c7_mosfet_650v_spice.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName
+           ".\3rd party spice models\infineon_simulation model_coolmos_c7_mosfet_650v_spice.lib"))
+      (File ".\3rd party spice models\st_field_effect_ rectifier_v7.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName
+           ".\3rd party spice models\st_field_effect_ rectifier_v7.lib"))
+      (File ".\3rd party spice models\ucc28730_netlist.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\3rd party spice models\ucc28730_netlist.lib"))
+      (File ".\3rd party spice models\ucc24650_netlist.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\3rd party spice models\ucc24650_netlist.lib"))
+      (File ".\3rd party spice models\ucc28730.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\3rd party spice models\ucc28730.lib")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (Folder "Logs"
+    (File ".\3rd party spice models\ucc28730_netlist.ind"
+      (Type "Log File")))
+  (PartMRUSelector
+    (MbreakP3
+      (FullPartName "MbreakP3.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (UCC24650
+      (FullPartName "UCC24650.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\UCC24650_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (UCC28730_NETLIST
+      (FullPartName "UCC28730_NETLIST.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\UCC28730_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (D_D1
+      (FullPartName "D_D1.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\UCC24650_NETLIST.OLB")
+      (DeviceIndex "0"))
+    (VSIN
+      (FullPartName "VSIN.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICESOURCEAPP\HYBRID\SUPPORTFILES\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VBO13_04N01
+      (FullPartName "VBO13_04N01.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ADVANLS\DIF.OLB")
+      (DeviceIndex "0"))
+    (L
+      (FullPartName "L.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (FERD20S100SB-TR
+      (FullPartName "FERD20S100SB-TR.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\ST_FIELD_EFFECT_RECTIFIER_V7.OLB")
+      (DeviceIndex "0"))
+    (Dbreak
+      (FullPartName "Dbreak.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (zener
+      (FullPartName "zener.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICEMODELAPP\ZENER\HYBRID\SUPPORTFILES\ZENER.OLB")
+      (DeviceIndex "0"))
+    (IPP65R190C7_L1
+      (FullPartName "IPP65R190C7_L1.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\INFINEON_SIMULATION MODEL_COOLMOS_C7_MOSFET_650V_SPICE.OLB")
+      (DeviceIndex "0"))
+    (IPW65R190C7_L1
+      (FullPartName "IPW65R190C7_L1.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\INFINEON_SIMULATION MODEL_COOLMOS_C7_MOSFET_650V_SPICE.OLB")
+      (DeviceIndex "0"))
+    (Sw_tClose
+      (FullPartName "Sw_tClose.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICEMODELAPP\SWITCH\HYBRID\SUPPORTFILES\SWITCH.OLB")
+      (DeviceIndex "0"))
+    (POWER_DIODE_P
+      (FullPartName "POWER_DIODE_P.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICEMODELAPP\POWERDIODE\HYBRID\SUPPORTFILES\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (IPN70R1K4P7S_L1
+      (FullPartName "IPN70R1K4P7S_L1.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\SIMULATION_MODEL_COOLMOS_P7_MOSFET_700V_SPICE.OLB")
+      (DeviceIndex "0"))
+    (IPN70R2K0P7S_L1
+      (FullPartName "IPN70R2K0P7S_L1.Normal")
+      (LibraryName
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\3RD PARTY SPICE MODELS\CAPTURE LIBRARY\SIMULATION_MODEL_COOLMOS_P7_MOSFET_700V_SPICE.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (FWDR
+      (FullPartName "FWDR.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICEMODELAPP\TRANSFORMER\HYBRID\SUPPORTFILES\TRANSFORMER.OLB")
+      (DeviceIndex "0"))
+    (VPWL_GENERIC
+      (FullPartName "VPWL_GENERIC.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICESOURCEAPP\HYBRID\SUPPORTFILES\SOURCE.OLB")
+      (DeviceIndex "0")))
+  (MPSSessionName "kaicho")
+  (LastUsedLibraryBrowseDirectory
+     "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\SMPS\3rd Party SPICE models\Capture Library")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\SMPS\d5 smps.dsn")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\SMPS\d5 smps.dsn"
+         "500uH")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\SMPS\d5 smps.dsn"
+         "3900uH")
+      (Path "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\SMPS\d5 smps.dsn"
+         "IPP65R190C7")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Model Libraries")
+      (Path "PSpice Resources" "Simulation Profiles")
+      (Path "Logs")
+      (Select "Design Resources"
+         "D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\SMPS\d5 smps.dsn"
+         "3900uH" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 1092"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2314 24 1133")
+        (Scroll "-430 -12")
+        (Zoom "146")
+        (Occurrence "/"))
+      (Path
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\D5 SMPS.DSN")
+      (Schematic "500uH")
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2314 24 1133")
+        (Scroll "-430 -12")
+        (Zoom "146"))
+      (Path
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\D5 SMPS.DSN")
+      (Schematic "3900uH")
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2314 24 1133")
+        (Scroll "-430 -12")
+        (Zoom "146"))
+      (Path
+         "D:\USERS\MBT0C\ONEDRIVE\DOKUMENTE\SOUTHAMPTON\PART 2\D5\SMPS\D5 SMPS.DSN")
+      (Schematic "IPP65R190C7")
+      (Page "PAGE1"))))

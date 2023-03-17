@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "CDBC5200-HF"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2023-02-13-04:54:30)
+    (mountForm default
+        (footprintRef "DIOM8059X290N")
+        (spec "System")
+    )
+)

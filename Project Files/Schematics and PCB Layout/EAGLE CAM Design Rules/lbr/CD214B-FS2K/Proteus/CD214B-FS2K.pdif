@@ -1,0 +1,108 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "CD214B-FS2K"
+   (description "Rectifiers 800V 2A")
+   (family "ANA")
+   (package "CD214BFS2K")
+   (attribute "Datasheet Link" "http://www.bourns.com/docs/product-datasheets/CD214B-FS2x.pdf")
+   (attribute "Geometry.Height" "1.25mm")
+   (attribute "Mouser Part Number" "652-CD214B-FS2K")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Bourns/CD214B-FS2K?qs=f9yNj16SXrLQSBa%252BXyEv0g%3D%3D")
+   (attribute "Manufacturer_Name" "Bourns")
+   (attribute "Manufacturer_Part_Number" "CD214B-FS2K")
+   (gate
+    (symbol "CD214B-FS2K")
+    (pin "K" 1 PS)
+    (pin "A" 2 PS)
+   )
+  )
+  (symbol "CD214B-FS2K"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 600 100) (pt 600 -200) (pt 200 -200) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "CD214BFS2K"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.6 1.8)
+      (pt 2.6 1.8)
+      (pt 2.6 -1.8)
+      (pt -2.6 -1.8)
+      (pt -2.6 1.8))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -4.325 2.8)
+      (pt 4.325 2.8)
+      (pt 4.325 -2.8)
+      (pt -4.325 -2.8)
+      (pt -4.325 2.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -2.6 -1.8)
+      (pt 2.6 -1.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -2.6 1.8)
+      (pt 2.6 1.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -3.8 0)
+      (arc (pt -3.800 0.000) (pt -3.900 -0.050) (pt -3.800 0.050) (start 180.0) (sweep .0))
+      (pt -3.9 0)
+      (arc (pt -3.900 0.000) (pt -3.900 -0.050) (pt -3.800 0.050) (start 180.0) (sweep -180.0))
+      (pt -3.8 0))))
+   (leg 1 (pt -2.325 0.000) (padstack 0))
+   (leg 2 (pt 2.325 0.000) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 2.000 3.000 0 0 90.000))
+   )
+   (model "CD214B-FS2K.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

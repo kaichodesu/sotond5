@@ -1,0 +1,126 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "VY2472M41Y5VS63V7"
+   (description "VY2 Ceramic Capacitor 4,7NF 20% Y5V")
+   (family "CAP")
+   (package "VY2472M41Y5VS63V7")
+   (attribute "Datasheet Link" "https://www.vishay.com/docs/28535/vy2series.pdf")
+   (attribute "Geometry.Height" "13.5mm")
+   (attribute "Mouser Part Number" "72-VY2472M41Y5VS63V7")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-BC-Components/VY2472M41Y5VS63V7?qs=Au78WOuo%252BOfMPadVWrHO1A%3D%3D")
+   (attribute "Manufacturer_Name" "Vishay")
+   (attribute "Manufacturer_Part_Number" "VY2472M41Y5VS63V7")
+   (gate
+    (symbol "VY2472M41Y5VS63V7")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+   )
+  )
+  (symbol "VY2472M41Y5VS63V7"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 220 100) (pt 220 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 280 100) (pt 280 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 200 0) (pt 220 0))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 280 0) (pt 300 0))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 500 0) (rot 0) (mir X) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "VY2472M41Y5VS63V7"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1.5 -2.5)
+      (pt 9 -2.5)
+      (pt 9 2.5)
+      (pt -1.5 2.5)
+      (pt -1.5 -2.5))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -1.5 2.5)
+      (pt 9 2.5)
+      (pt 9 -2.5)
+      (pt -1.5 -2.5)
+      (pt -1.5 2.5))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.5 3.5)
+      (pt 10 3.5)
+      (pt 10 -3.5)
+      (pt -2.5 -3.5)
+      (pt -2.5 3.5))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.1 0)
+      (arc (pt -2.100 0.000) (pt -2.100 -0.050) (pt -2.000 0.050) (start 180.0) (sweep 180.0))
+      (pt -2 0)
+      (arc (pt -2.000 0.000) (pt -2.100 -0.050) (pt -2.000 0.050) (start 180.0) (sweep .0))
+      (pt -2.1 0))))
+   (leg 1 (pt 0.000 0.000) (padstack 0))
+   (leg 2 (pt 7.500 0.000) (padstack 2))
+   (padstack 0
+    (hole 0.8)
+    (plated true)
+    (pad (layer TCOP) (square 1.300))
+    (pad (layer INNER) (round 1.300))
+    (pad (layer BCOP) (square 1.300))
+   )
+   (padstack 2
+    (hole 0.8)
+    (plated true)
+    (pad (layer TCOP) (round 1.300))
+    (pad (layer INNER) (round 1.300))
+    (pad (layer BCOP) (round 1.300))
+   )
+   (model "VY2472M41Y5VS63V7.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

@@ -1,0 +1,9 @@
+Manufacturer=Infineon
+PartNumber=IPN70R1K2P7SATMA1
+PartCategory=MOSFET (N-Channel)
+PackageCategory=Other
+PinCount=3
+Version=1.2
+Released=2022-12-15 06:08:08
+Downloaded=2023-02-12 20:18:32
+3D=N

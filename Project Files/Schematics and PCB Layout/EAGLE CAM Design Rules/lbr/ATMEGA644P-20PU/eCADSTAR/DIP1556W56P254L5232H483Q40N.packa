@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "ATMEGA644P-20PU"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2020-10-01-12:59:40)
+    (mountForm default
+        (footprintRef "DIP1556W56P254L5232H483Q40N")
+        (spec "System")
+    )
+)

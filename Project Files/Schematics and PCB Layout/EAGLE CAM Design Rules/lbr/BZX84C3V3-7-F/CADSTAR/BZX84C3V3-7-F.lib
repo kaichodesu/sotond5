@@ -1,0 +1,16 @@
+.BZX84C3V3-7-F :1 ;Zener Diodes 300mW 3.3V Zener AEC-Q101 Qualified
+SOT96P240X120-3N
+*STM Z
+*NGS
+*PLB 1="A" 2="NC" 3="K"
+*MXP 3
+*DFN BZX84C3V3-7-F
+~!Mouser Part Number (621-BZX84C3V3-F)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/BZX84C3V3-7-F?qs=mdgdZEim3xD%252BgHGo8QKO%2Fg%3D%3D)
+~!Manufacturer_Name (Diodes Inc.)
+~!Manufacturer_Part_Number (BZX84C3V3-7-F)
+~!Link Datasheet (https://datasheet.datasheetarchive.com/originals/dk/DKDS-29/577741.pdf)
+~!Height (1.2mm)
+~!3D_Model (BZX84C3V3-7-F)
+BZX84C3V3-7-F
+1.1!U 2.1!U 3.1!U 

@@ -1,0 +1,9 @@
+Manufacturer=Kingbright
+PartNumber=APHD1608LCGCK
+PartCategory=LED
+PackageCategory=LED Moulded
+PinCount=2
+Version=1.1
+Released=2018-10-16 17:10:51
+Downloaded=2023-02-13 00:29:37
+3D=Y

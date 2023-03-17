@@ -1,0 +1,9 @@
+Manufacturer=Panasonic
+PartNumber=ERJ-HP6D4702V
+PartCategory=Resistor
+PackageCategory=Other
+PinCount=2
+Version=5.1
+Released=2022-02-07 00:00:27
+Downloaded=2023-02-12 22:33:05
+3D=Y

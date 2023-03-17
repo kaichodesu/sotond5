@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "DIOC4522X116N"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "DIOC4522X116N")
+        (spec "default")
+    )
+)

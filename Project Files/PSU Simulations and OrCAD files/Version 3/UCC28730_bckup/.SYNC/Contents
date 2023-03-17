@@ -1,0 +1,12 @@
+2
+keyed
+<Name><State><Vault><Branch><Version><DateFetched><Log><Conflict><StickyTag><MergedFrom>
+<UCC28730_NETLIST.OLB><L><sync://sync24324.design.ti.com:24324/Projects/ELAB_MODEL_DS/Part_Numbers/UCC28730/Release_TI/PSPICE/UCC28730_PSPICE_TRANS/UCC28730_NETLIST.OLB;><1><1.1><1452268233><check out><F><><><Checksum=55b41591><Size=12288><vctime=1455821475>
+<UCC28730_netlist.lib><L><sync://sync24324.design.ti.com:24324/Projects/ELAB_MODEL_DS/Part_Numbers/UCC28730/Release_TI/PSPICE/UCC28730_PSPICE_TRANS/UCC28730_netlist.lib;><1><1.2><1456517699><check out><F><><><Checksum=f7c8aff1><Size=78044><vctime=1456517699>
+<UCC24650_netlist.lib><L><sync://sync24324.design.ti.com:24324/Projects/ELAB_MODEL_DS/Part_Numbers/UCC28730/Release_TI/PSPICE/UCC28730_PSPICE_TRANS/UCC24650_netlist.lib;><1><1.1><1455821475><check out><F><><><Checksum=1109cfb3><Size=32292><vctime=1455821475>
+<UCC28730_DEB.DSN><L><sync://sync24324.design.ti.com:24324/Projects/ELAB_MODEL_DS/Part_Numbers/UCC28730/Release_TI/PSPICE/UCC28730_PSPICE_TRANS/UCC28730_DEB.DSN;><1><1.1><1452879539><check out><F><><><Checksum=c44e845e><Size=365568><vctime=1455821475>
+<UCC28730_deb.opj><L><sync://sync24324.design.ti.com:24324/Projects/ELAB_MODEL_DS/Part_Numbers/UCC28730/Release_TI/PSPICE/UCC28730_PSPICE_TRANS/UCC28730_deb.opj;><1><1.1><1455821475><check out><F><><><Checksum=47ead45b><Size=4421><vctime=1455821475>
+<transformer.lib><L><sync://sync24324.design.ti.com:24324/Projects/ELAB_MODEL_DS/Part_Numbers/UCC28730/Release_TI/PSPICE/UCC28730_PSPICE_TRANS/transformer.lib;><1><1.1><1455821475><check out><F><><><Checksum=45725296><Size=326><vctime=1455821475>
+<UCC24650DBV_TRANS.OLB><L><sync://sync24324.design.ti.com:24324/Projects/ELAB_MODEL_DS/Part_Numbers/UCC28730/Release_TI/PSPICE/UCC28730_PSPICE_TRANS/UCC24650DBV_TRANS.OLB;><1><1.1><1452098961><check out><F><><><Checksum=f9dea2d5><Size=11776><vctime=1455821475>
+
+

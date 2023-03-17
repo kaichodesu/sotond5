@@ -1,0 +1,156 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "FQD2P40TM"
+   (description "MOSFET QF -400V 6.5OHM DPAK")
+   (family "TRX")
+   (package "FDD8874")
+   (attribute "Datasheet Link" "https://www.onsemi.com/pub/Collateral/FQD2P40-D.pdf")
+   (attribute "Manufacturer_Name" "onsemi")
+   (attribute "Manufacturer_Part_Number" "FQD2P40TM")
+   (attribute "Mouser Part Number" "512-FQD2P40TM")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/onsemi-Fairchild/FQD2P40TM?qs=wg6chLqwgwqz4IFYQILlYg%3D%3D")
+   (attribute "Arrow Part Number" "FQD2P40TM")
+   (attribute "Arrow Price/Stock" "https://www.arrow.com/en/products/fqd2p40tm/on-semiconductor?region=nac")
+   (attribute "Mouser Testing Part Number" "")
+   (attribute "Mouser Testing Price/Stock" "")
+   (gate
+    (symbol "FQD2P40TM")
+    (pin "G" 1 PS)
+    (pin "D" 2 PS)
+    (pin "S" 3 PS)
+   )
+  )
+  (symbol "FQD2P40TM"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (circle (pt 400 100) (pt 100 100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 300 100) (pt 300 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 300 200) (pt 300 300))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 100 0) (pt 200 0) (pt 200 200))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 300 100) (pt 230 100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 300 200) (pt 230 200))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 230 0) (pt 300 0))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 230 220) (pt 230 180))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 230 -20) (pt 230 20))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 230 80) (pt 230 120))
+   )
+   (graphic
+    (stroke 10)
+    (path (closed true) (pt 300 100) (pt 260 120) (pt 260 80) (pt 300 100))
+   )
+   (terminal
+    (body (symbol "PINSHORT") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 0 -20) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 80 10) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PINSHORT") (pt 300 400) (rot 90) (mir X) (visible true))
+    (name (pt 0 -20) (rot 90) (just TOP RIGHT) (visible false))
+    (number (pt 0 20) (rot 90) (just TOP LEFT) (visible true)))
+   (terminal
+    (body (symbol "PINSHORT") (pt 300 -200) (rot 90) (mir 0) (visible true))
+    (name (pt 0 -20) (rot 90) (just TOP RIGHT) (visible false))
+    (number (pt 0 20) (rot 90) (just TOP LEFT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "FDD8874"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -3.365 5.14)
+      (pt 3.365 5.14)
+      (pt 3.365 -1.08)
+      (pt -3.365 -1.08)
+      (pt -3.365 5.14))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -4.365 7.41)
+      (pt 4.365 7.41)
+      (pt 4.365 -6.14)
+      (pt -4.365 -6.14)
+      (pt -4.365 7.41))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -3.365 5.14)
+      (pt -3.365 -1.08)
+      (pt 3.365 -1.08)
+      (pt 3.365 5.14))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -2.4 -5.04)
+      (arc (pt -2.400 -5.040) (pt -2.400 -5.140) (pt -2.200 -4.940) (start 180.0) (sweep 180.0))
+      (pt -2.2 -5.04)
+      (arc (pt -2.200 -5.040) (pt -2.400 -5.140) (pt -2.200 -4.940) (start 180.0) (sweep .0))
+      (pt -2.4 -5.04))))
+   (leg 1 (pt -2.280 -3.240) (padstack 0))
+   (leg 2 (pt 0.000 3.160) (padstack 2))
+   (leg 3 (pt 2.280 -3.240) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 1.250 2.850 0 0 90.000))
+   )
+   (padstack 2
+    (plated false)
+    (pad (layer TCOP) (rectf 5.500 6.500 0 0 90.000))
+   )
+   (model "FQD2P40TM.stp"
+    (euler 0 180 0)
+    (offset 0 1.4500000476837158 2.509999990463257)
+   )
+  )
+ )
+)

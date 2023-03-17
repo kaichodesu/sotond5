@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "35SVPD8R2M"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2021-04-01-10:46:50)
+    (mountForm default
+        (footprintRef "16SVF270M")
+        (spec "System")
+    )
+)

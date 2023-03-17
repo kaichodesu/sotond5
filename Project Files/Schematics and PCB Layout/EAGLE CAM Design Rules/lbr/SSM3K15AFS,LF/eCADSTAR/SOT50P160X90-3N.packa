@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "SSM3K15AFS_LF"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2019-04-27-21:30:54)
+    (mountForm default
+        (footprintRef "SOT50P160X90-3N")
+        (spec "System")
+    )
+)

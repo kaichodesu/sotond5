@@ -1,0 +1,16 @@
+.CD214B-FS2K :1 ;Rectifiers 800V 2A
+CD214BFS2K
+*STM BR
+*NGS
+*PLB 1="K" 2="A"
+*MXP 2
+*DFN CD214B-FS2K
+~!Mouser Part Number (652-CD214B-FS2K)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Bourns/CD214B-FS2K?qs=f9yNj16SXrLQSBa%252BXyEv0g%3D%3D)
+~!Manufacturer_Name (Bourns)
+~!Manufacturer_Part_Number (CD214B-FS2K)
+~!Link Datasheet (http://www.bourns.com/docs/product-datasheets/CD214B-FS2x.pdf)
+~!Height (1.25mm)
+~!3D_Model (CD214B-FS2K)
+CD214B-FS2K
+1.1!U 2.1!U 

@@ -1,0 +1,4 @@
+ lib="D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\D5 PSU\3rd party spice models\stn9360.lib", offset=1090, size=559
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\dif.lib, offset=10701, size=651
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\breakout.lib, offset=33459, size=390
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\templates.lib, offset=29852, size=2209

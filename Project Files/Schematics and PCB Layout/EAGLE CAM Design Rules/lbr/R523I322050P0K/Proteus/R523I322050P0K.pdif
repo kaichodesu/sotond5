@@ -1,0 +1,116 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "R523I322050P0K"
+   (description "R52 310 VAC MINI, Film, Metallized Polypropylene, Automotive Safety, 0.22 uF, 10%, 310 VAC, 310 VAC (X2), 310 VAC, 630 VDC, 110C, -40C, 110C, 0.2 % , 100 GOhms, 400 V/us, 2, 1.6 g, 18mm, 12mm, 6mm, Lead Spacing = 15mm, 900")
+   (family "CAP")
+   (package "HDRV2W65P0X1500_1X2_1790X585X1240P")
+   (attribute "Datasheet Link" "https://content.kemet.com/datasheets/KEM_F3123_R52_X2_310_110C_MIN.pdf")
+   (attribute "Geometry.Height" "12.4mm")
+   (attribute "Manufacturer_Name" "KEMET")
+   (attribute "Manufacturer_Part_Number" "R523I322050P0K")
+   (attribute "Mouser Part Number" "")
+   (attribute "Mouser Price/Stock" "")
+   (attribute "Arrow Part Number" "")
+   (attribute "Arrow Price/Stock" "")
+   (attribute "Mouser Testing Part Number" "")
+   (attribute "Mouser Testing Price/Stock" "")
+   (gate
+    (symbol "R523I322050P0K")
+    (pin "1" 1 IO)
+    (pin "2" 2 IO)
+   )
+  )
+  (symbol "R523I322050P0K"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 220 100) (pt 220 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 280 100) (pt 280 -100))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 200 0) (pt 220 0))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 280 0) (pt 300 0))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 500 0) (rot 0) (mir X) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "HDRV2W65P0X1500_1X2_1790X585X1240P"
+   (units MM)
+   (layer OCCA
+    (graphic
+     (stroke 0.05)
+     (path
+      (closed false)
+      (pt -1.9 -3.35)
+      (pt -1.9 3.35)
+      (pt 16.9 3.35)
+      (pt 16.9 -3.35)
+      (pt -1.9 -3.35))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1.65 -3.1)
+      (pt -1.65 3.1)
+      (pt 16.65 3.1)
+      (pt 16.65 -3.1)
+      (pt -1.65 -3.1))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -1.65 0)
+      (pt -1.65 -3.1)
+      (pt 16.65 -3.1)
+      (pt 16.65 3.1)
+      (pt 0 3.1))))
+   (leg 1 (pt 0 0) (padstack 1))
+   (leg 2 (pt 15 0) (padstack 0))
+   (padstack 0
+    (hole 0.85)
+    (plated true)
+    (pad (layer TCOP) (round 1.275))
+    (pad (layer INNER) (round 1.275))
+    (pad (layer BCOP) (round 1.275))
+   )
+   (padstack 1
+    (hole 0.85)
+    (plated true)
+    (pad (layer TCOP) (square 1.275))
+    (pad (layer INNER) (round 1.275))
+    (pad (layer BCOP) (square 1.275))
+   )
+  )
+ )
+)

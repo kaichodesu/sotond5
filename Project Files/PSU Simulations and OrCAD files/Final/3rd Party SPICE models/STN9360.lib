@@ -1,0 +1,55 @@
+*****************************************************************
+******STMicroelectronics MOSFET, IGBT and Bipolar Library *******
+*****************************************************************
+*																*
+* Models provided by STMicroelectronics are not guaranteed to	*
+* fully represent all the specifications and operating			*
+* characteristics of the product behavior that they reproduce.	*
+* The model describes the characteristics of a typical device.	*
+* In all cases, the current product data sheet contains all		*
+* information to be used like final design guidelines and the	*
+* only actual performance specification.						*
+* Altough models can be a useful tool in evaluating device		*
+* performance, they cannot model exact device performance under	*
+* all conditions.												*
+* STMicroelectronics therefore does not assume any				*
+* responsibility arising from their use.						*
+* STMicroelectronics reserves the right to change models		*
+* without prior notice.											*
+*																*
+*****************************************************************
+
+.MODEL STN9360 PNP
++Is    = 0.564E-11
++Bf    = 239
++Vaf   = 62.0
++Ikf   = 0.380E-01
++Ise   = 0.137E-11
++Ne    = 1.76
++Br    = 0.664
++Var   = 47.7
++Ikr   = 0.793E-01
++Isc   = 0.115E-11
++Nc    = 1.87
++Nk    = 0.579
++Rb    = 2.11
++Rbm   = 0.902E-01
++Nf    = 0.832
++Re    = 0.153E-01
++Rc    = 0.111E-01
++Qco   = 0.929E-10
++Rco   = 0.308
++Vo    = 33.0
++Gamma = 0.285E-10
++Cjc   = 0.791E-11
++Vjc   = 0.723
++Mjc   = 0.350
++Cje   = 0.297E-11
++Vje   = 0.734
++Mje   = 0.350
++Fc    = 0.497
++Tr    = 0.102E-04
++Tf    = 0.832E-08
++Itf   = 0.160
++Vtf   = 26.6
++Xtf   = 2.63

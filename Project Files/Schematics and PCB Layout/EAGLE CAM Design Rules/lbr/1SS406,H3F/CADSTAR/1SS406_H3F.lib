@@ -1,0 +1,20 @@
+.1SS406_H3F :1 ;Small Signal Schottky Barrier Diode VR=20V, IO=0.05A, in SOD-323 package
+SOD2513X115N
+*STM D
+*NGS
+*PLB 1="K" 2="A"
+*MXP 2
+*DFN 1SS406_H3F
+~!Manufacturer_Name (Toshiba)
+~!Manufacturer_Part_Number (1SS406,H3F)
+~!Mouser Part Number (757-1SS406H3F)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Toshiba/1SS406H3F?qs=bZr6mbWTK5l7KVDflTlTGA%3D%3D)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Mouser Testing Part Number (-)
+~!Mouser Testing Price/Stock (-)
+~!Link Datasheet (https://www.mouser.fr/datasheet/2/408/1SS406_datasheet_en_20140301-1853419.pdf)
+~!Height (1.15mm)
+~!3D_Model (1SS406,H3F)
+"1SS406_H3F"
+1.1!U 2.1!U 

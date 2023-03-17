@@ -1,0 +1,166 @@
+
+**** 02/15/23 03:31:15 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Active Bleed-Bleed"  [ D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\D5 PSU\SMPS-PSpiceFiles\Active Bleed\Ble
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Bleed.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../smps-pspicefiles/smps.lib" 
+.LIB "../../../3rd party spice models/simulation_model_coolmos_p7_mosfet_700v_spice.lib" 
+.LIB "../../../3rd party spice models/ucc24650_netlist.lib" 
+.LIB "../../../3rd party spice models/ucc28730_netlist.lib" 
+.LIB "../../../3rd party spice models/st_field_effect_ rectifier_v7.lib" 
+.LIB "../../../3rd party spice models/we-fb.lib" 
+.LIB "../../../transformer.lib" 
+.LIB "../../../3rd party spice models/stn9360.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_DATA\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100ms 0 100n SKIPBP 
+.OPTIONS PREORDER
+.OPTIONS ADVCONV
+.OPTIONS LIMIT= 1e10
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\Active Bleed.net" 
+
+
+
+**** INCLUDING "Active Bleed.net" ****
+* source SMPS
+V_V3         N34022 N34026 DC 0 AC 0
++SIN 0 375 50 0 0 0
+R_R13         N35539 N33998  10M TC=0,0 
+L_L1         N33812 N33892  470u  
+C_C3         0 N33892  470n  TC=0,0 
+R_R11         N34038 0  2.7M TC=0,0 
+C_C4         0 N33812  470n  TC=0,0 
+X_D9         N33812 N34026 0 N34022 awbvbo13_04n01 PARAMS:              
+Q_Q1         N34038 N33998 N33812 STN9360 
+X_D10         N34022 N35539 power_diode_p PARAMS: I_REV_LEAK=1e-5
++  CT_ZERO_VOLTS=300p V_BR=1000 VJ_KNEE=0.9 VJ_SPEC=1.6 IF_SPEC=6
+R_R14         N33998 0  1M TC=0,0 
+
+**** RESUMING Bleed.cir ****
+.END
+
+**** 02/15/23 03:31:15 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Active Bleed-Bleed"  [ D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\D5 PSU\SMPS-PSpiceFiles\Active Bleed\Ble
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_D10.D1exp     
+          IS   10.000000E-06 
+          BV    1.000000E+03 
+          RS     .116667     
+         CJO  300.000000E-12 
+
+
+**** 02/15/23 03:31:15 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Active Bleed-Bleed"  [ D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\D5 PSU\SMPS-PSpiceFiles\Active Bleed\Ble
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               STN9360         
+               PNP             
+       LEVEL    1            
+          IS    5.640000E-12 
+          BF  239            
+          NF     .832        
+         VAF   62            
+         IKF     .038        
+         ISE    1.370000E-12 
+          NE    1.76         
+          BR     .664        
+          NR    1            
+         VAR   47.7          
+         IKR     .0793       
+         ISC    1.150000E-12 
+          NC    1.87         
+          NK     .579        
+         ISS    0            
+          RB    2.11         
+         RBM     .0902       
+          RE     .0153       
+          RC     .0111       
+         CJE    2.970000E-12 
+         VJE     .734        
+         MJE     .35         
+         CJC    7.910000E-12 
+         VJC     .723        
+         MJC     .35         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          FC     .497        
+          TF    8.320000E-09 
+         XTF    2.6          
+         VTF   26.6          
+         ITF     .16         
+          TR   10.200000E-06 
+         QCO   92.900000E-12 
+         RCO     .308        
+          VO   33            
+       GAMMA   28.500000E-12 
+          KF    0            
+          AF    1            
+          CN    2.2          
+           D     .52         
+
+
+
+          JOB CONCLUDED
+ AutoConverge Simulator Options
+ ITL1 = 150
+ ITL2 = 20
+ ITL4 = 10
+ RELTOL = 0.001
+ ABSTOL = 1e-12
+ VNTOL = 1e-06
+ PIVTOL = 1e-13
+
+**** 02/15/23 03:31:15 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Active Bleed-Bleed"  [ D:\Users\mbt0c\OneDrive\Dokumente\Southampton\Part 2\D5\D5 PSU\SMPS-PSpiceFiles\Active Bleed\Ble
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =      725.78
+  Total job time (using Solver 1)   =        8.73
+

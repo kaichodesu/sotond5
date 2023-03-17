@@ -1,0 +1,32 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model 1SS406,H3F
+#/11527096/1061851/2.49/2/2/Schottky Diode
+DEF 1SS406,H3F D 0 30 Y Y 1 F N
+F0 "D" 500 350 50 H V L CNN
+F1 "1SS406,H3F" 500 250 50 H V L CNN
+F2 "SOD2513X115N" 500 150 50 H I L CNN
+F3 "https://www.mouser.fr/datasheet/2/408/1SS406_datasheet_en_20140301-1853419.pdf" 500 50 50 H I L CNN
+F4 "Small Signal Schottky Barrier Diode VR=20V, IO=0.05A, in SOD-323 package" 500 -50 50 H I L CNN "Description"
+F5 "1.15" 500 -150 50 H I L CNN "Height"
+F6 "Toshiba" 500 -250 50 H I L CNN "Manufacturer_Name"
+F7 "1SS406,H3F" 500 -350 50 H I L CNN "Manufacturer_Part_Number"
+F8 "757-1SS406H3F" 500 -450 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.co.uk/ProductDetail/Toshiba/1SS406H3F?qs=bZr6mbWTK5l7KVDflTlTGA%3D%3D" 500 -550 50 H I L CNN "Mouser Price/Stock"
+F10 "" 500 -650 50 H I L CNN "Arrow Part Number"
+F11 "" 500 -750 50 H I L CNN "Arrow Price/Stock"
+F12 "" 500 -850 50 H I L CNN "Mouser Testing Part Number"
+F13 "" 500 -950 50 H I L CNN "Mouser Testing Price/Stock"
+DRAW
+X ~ 1 100 0 100 R 50 50 0 0 P
+X ~ 2 700 0 100 L 50 50 0 0 P
+P 2 0 1 6 300 100 300 -100 N
+P 3 0 1 6 300 100 340 100 340 60 N
+P 3 0 1 6 300 -100 260 -100 260 -60 N
+P 2 0 1 6 200 0 300 0 N
+P 2 0 1 6 500 0 600 0 N
+P 4 0 1 10 300 0 500 100 500 -100 300 0 F
+ENDDRAW
+ENDDEF
+#
+#End Library

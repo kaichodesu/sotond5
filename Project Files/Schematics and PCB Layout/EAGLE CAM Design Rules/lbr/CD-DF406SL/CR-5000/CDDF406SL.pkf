@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "CDDF406SL"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "CDDF406SL")
+        (spec "default")
+    )
+)

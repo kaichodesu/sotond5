@@ -1,0 +1,22 @@
+("trans"
+    ("Creator"	"Device property file created by Property Controller")
+    ("device_info"
+        ("model_type"	"22")
+        ("symbol_name"	"Diode")
+        ("port_order"
+            ("AN")
+            ("CAT")
+        )
+    )
+    ("model_params"
+        ("level_0"
+        )
+    )
+    ("device_pre_smoke"
+        ("TERM_AN"	"AN")
+        ("NODE_AN"	"AN")
+        ("NODE_CAT"	"CAT")
+        ("DERATE_TYPE"	"DIODE")
+    )
+    ("device_max_ops")
+)

@@ -1,0 +1,9 @@
+Manufacturer=Toshiba
+PartNumber=1SS406,H3F
+PartCategory=Schottky Diode
+PackageCategory=Small Outline Diode
+PinCount=2
+Version=3.1
+Released=2021-02-17 11:02:30
+Downloaded=2023-02-14 19:44:07
+3D=Y

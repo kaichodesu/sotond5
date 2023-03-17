@@ -1,0 +1,20 @@
+.890334024005 :1 ;Wurth Elektronik 470nF Polypropylene Capacitor PP 310V ac +/-10% Tolerance WCAP-FTXX Series
+"890334024005"
+*STM C
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN 890334024005
+~!Manufacturer_Name (Wurth Elektronik)
+~!Manufacturer_Part_Number (890334024005)
+~!Mouser Part Number (710-890334024005)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/890334024005?qs=pceeu5JH%2FH931a333DfnpQ%3D%3D)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Mouser Testing Part Number (-)
+~!Mouser Testing Price/Stock (-)
+~!Link Datasheet (https://katalog.we-online.de/pbs/datasheet/890334024005.pdf)
+~!Height (16.5mm)
+~!3D_Model (890334024005)
+"890334024005"
+1.1!U 2.1!U 

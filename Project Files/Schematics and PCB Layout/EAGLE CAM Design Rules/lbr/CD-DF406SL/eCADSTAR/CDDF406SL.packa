@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "CD-DF406SL"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2021-05-19-15:28:09)
+    (mountForm default
+        (footprintRef "CDDF406SL")
+        (spec "System")
+    )
+)

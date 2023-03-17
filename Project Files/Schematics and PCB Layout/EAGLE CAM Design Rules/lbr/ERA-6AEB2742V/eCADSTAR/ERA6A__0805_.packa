@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "ERA-6AEB2742V"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2021-09-05-19:21:39)
+    (mountForm default
+        (footprintRef "ERA6A__0805_")
+        (spec "System")
+    )
+)
